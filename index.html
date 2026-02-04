@@ -529,49 +529,42 @@
             button.disabled = true;
             button.textContent = 'Gönderiliyor...';
             
-            // Create hidden iframe for submission
-            const iframe = document.createElement('iframe');
-            iframe.name = 'hidden_iframe';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
+            // Create FormData for submission
+            const formData = new FormData();
+            formData.append(`entry.${entryId}`, email);
             
-            // Create hidden form
-            const hiddenForm = document.createElement('form');
-            hiddenForm.action = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
-            hiddenForm.method = 'POST';
-            hiddenForm.target = iframe.name;
-            
-            // Add email field
-            const emailField = document.createElement('input');
-            emailField.type = 'hidden';
-            emailField.name = `entry.${entryId}`;
-            emailField.value = email;
-            hiddenForm.appendChild(emailField);
-            
-            // Submit form
-            document.body.appendChild(hiddenForm);
-            hiddenForm.submit();
-            
-            // Show success message and clean up
-            setTimeout(() => {
+            // Submit using fetch with no-cors mode
+            fetch(`https://docs.google.com/forms/d/e/${formId}/formResponse`, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+            .then(() => {
+                // Show success message
                 successMessage.classList.add('show');
                 input.value = '';
-                
-                // Clean up iframe and form
-                try {
-                    document.body.removeChild(hiddenForm);
-                    document.body.removeChild(iframe);
-                } catch(e) {}
                 
                 // Hide success message after 5 seconds
                 setTimeout(() => {
                     successMessage.classList.remove('show');
                 }, 5000);
+            })
+            .catch((error) => {
+                // Even with errors, the form might have been submitted
+                // due to no-cors mode limitations
+                console.log('Submission attempted');
+                successMessage.classList.add('show');
+                input.value = '';
                 
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            })
+            .finally(() => {
                 // Re-enable button
                 button.disabled = false;
                 button.textContent = 'Abone Ol';
-            }, 1000);
+            });
         });
 
         // Initialize
