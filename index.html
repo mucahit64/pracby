@@ -259,6 +259,19 @@
             display: block;
         }
 
+        /* Error Message */
+        .error-message {
+            display: none;
+            color: #f56565;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
         /* Footer */
         .footer {
             position: absolute;
@@ -459,11 +472,14 @@
         <div class="subscribe">
             <h3>Haberdar Olmak İster Misiniz?</h3>
             <form class="subscribe-form" id="subscribeForm">
-                <input type="email" placeholder="E-posta adresinizi girin" required>
+                <input type="email" id="emailInput" placeholder="E-posta adresinizi girin" required>
                 <button type="submit">Abone Ol</button>
             </form>
             <p class="success-message" id="successMessage">
                 <i class="fas fa-check-circle"></i> Teşekkürler! Abone oldunuz.
+            </p>
+            <p class="error-message" id="errorMessage">
+                <i class="fas fa-exclamation-circle"></i> Bir hata oluştu. Lütfen tekrar deneyin.
             </p>
         </div>
     </div>
@@ -492,20 +508,70 @@
         }
 
 
-        // Subscribe Form Handler
+        // Subscribe Form Handler - Google Forms Integration
         document.getElementById('subscribeForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const successMessage = document.getElementById('successMessage');
-            const input = this.querySelector('input');
+            const errorMessage = document.getElementById('errorMessage');
+            const input = document.getElementById('emailInput');
+            const button = this.querySelector('button');
+            const email = input.value;
             
-            // Show success message
-            successMessage.classList.add('show');
-            input.value = '';
+            // Google Forms configuration
+            const formId = '1FAIpQLSd16wIVA3I3Et-SB3Qr1qadnVyqf1xfiJs3GcJYvQYxQVzEWw';
+            const entryId = '320629298';
             
-            // Hide after 5 seconds
+            // Hide any existing messages
+            successMessage.classList.remove('show');
+            errorMessage.classList.remove('show');
+            
+            // Disable button during submission
+            button.disabled = true;
+            button.textContent = 'Gönderiliyor...';
+            
+            // Create hidden iframe for submission
+            const iframe = document.createElement('iframe');
+            iframe.name = 'hidden_iframe';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            
+            // Create hidden form
+            const hiddenForm = document.createElement('form');
+            hiddenForm.action = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+            hiddenForm.method = 'POST';
+            hiddenForm.target = iframe.name;
+            
+            // Add email field
+            const emailField = document.createElement('input');
+            emailField.type = 'hidden';
+            emailField.name = `entry.${entryId}`;
+            emailField.value = email;
+            hiddenForm.appendChild(emailField);
+            
+            // Submit form
+            document.body.appendChild(hiddenForm);
+            hiddenForm.submit();
+            
+            // Show success message and clean up
             setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
+                successMessage.classList.add('show');
+                input.value = '';
+                
+                // Clean up iframe and form
+                try {
+                    document.body.removeChild(hiddenForm);
+                    document.body.removeChild(iframe);
+                } catch(e) {}
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+                
+                // Re-enable button
+                button.disabled = false;
+                button.textContent = 'Abone Ol';
+            }, 1000);
         });
 
         // Initialize
