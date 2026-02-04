@@ -517,9 +517,17 @@
             const button = this.querySelector('button');
             const email = input.value;
             
+            // Validate email
+            if (!email || !email.includes('@')) {
+                errorMessage.classList.add('show');
+                setTimeout(() => errorMessage.classList.remove('show'), 3000);
+                return;
+            }
+            
             // Google Forms configuration
             const formId = '1FAIpQLSd16wIVA3I3Et-SB3Qr1qadnVyqf1xfiJs3GcJYvQYxQVzEWw';
             const entryId = '320629298';
+            const formUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse?entry.${entryId}=${encodeURIComponent(email)}&submit=Submit`;
             
             // Hide any existing messages
             successMessage.classList.remove('show');
@@ -529,18 +537,12 @@
             button.disabled = true;
             button.textContent = 'Gönderiliyor...';
             
-            // Create FormData for submission
-            const formData = new FormData();
-            formData.append(`entry.${entryId}`, email);
+            // Method 1: Try using image tag (most reliable for cross-origin)
+            const img = new Image();
+            img.src = formUrl;
             
-            // Submit using fetch with no-cors mode
-            fetch(`https://docs.google.com/forms/d/e/${formId}/formResponse`, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formData
-            })
-            .then(() => {
-                // Show success message
+            // Show success after short delay
+            setTimeout(() => {
                 successMessage.classList.add('show');
                 input.value = '';
                 
@@ -548,23 +550,11 @@
                 setTimeout(() => {
                     successMessage.classList.remove('show');
                 }, 5000);
-            })
-            .catch((error) => {
-                // Even with errors, the form might have been submitted
-                // due to no-cors mode limitations
-                console.log('Submission attempted');
-                successMessage.classList.add('show');
-                input.value = '';
                 
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                }, 5000);
-            })
-            .finally(() => {
                 // Re-enable button
                 button.disabled = false;
                 button.textContent = 'Abone Ol';
-            });
+            }, 800);
         });
 
         // Initialize
