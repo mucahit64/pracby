@@ -1,0 +1,19 @@
+{
+  "name": "pracby",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.29.2",
+  "dependencies": {
+    "knex": "^3.2.8"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  }
+}

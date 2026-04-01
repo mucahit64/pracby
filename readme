@@ -1,1 +1,45 @@
-Hello world!
+# Pracby
+
+Pracby, KPSS ve YKS öğrencileri için tasarlanmış, kısa süreli pratiklerle öğrenmeyi hedefleyen bir mikro öğrenme uygulamasıdır. Amaç, kullanıcıya düzenli tekrar alışkanlığı kazandırmak ve konuları hızlı şekilde pekiştirmektir.
+
+## Özellikler
+
+* Kullanıcı kayıt ve giriş sistemi
+* Quiz tabanlı öğrenme
+* XP ve level sistemi
+* Günlük seri (streak) takibi
+* Arkadaş ekleme ve karşılaştırma
+
+## MVP Kapsamı
+
+* Kullanıcı girişi
+* Tek ders (örneğin Tarih)
+* Temel quiz sistemi
+* XP ve level mekanizması
+* Günlük streak
+
+## Gelecek Özellikler
+
+* PDF yükleyerek otomatik soru üretme
+* Kişisel performans analizi
+* AI destekli içerik üretimi
+* Gelişmiş arkadaş sistemi
+
+## Teknoloji (Öneri)
+
+* Frontend: Vue 3 + Quasar
+* Backend: Node.js
+* Veritabanı: PostgreSQL
+
+## Kurulum
+
+```bash
+git clone https://github.com/your-username/Pracby.git
+cd Pracby
+npm install
+npm run dev
+```
+
+## Lisans
+
+MIT License
