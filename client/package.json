@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "nuxt": "^3.17.5",
-    "nuxt-quasar-ui": "^3.0.1"
+    "nuxt-quasar-ui": "^3.0.1",
+    "quasar": "^2.19.2"
   },
   "packageManager": "pnpm@10.29.2"
 }
