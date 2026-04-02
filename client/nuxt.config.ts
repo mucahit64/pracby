@@ -1,7 +1,10 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-10",
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ["nuxt-quasar-ui"],
+  build: {
+    transpile: ["quasar"],
+  },
   quasar: {
     plugins: ["Notify", "Dialog"],
     extras: {
