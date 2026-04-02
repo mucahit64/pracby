@@ -1,0 +1,17 @@
+{
+  "name": "pracby-client",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.17.5",
+    "nuxt-quasar-ui": "^3.0.1"
+  },
+  "packageManager": "pnpm@10.29.2"
+}

@@ -1,7 +1,7 @@
 node_modules/
-dist/
-.env
-*.log
-.DS_Store
 .nuxt/
 .output/
+.env
+.git/
+*.log
+.DS_Store

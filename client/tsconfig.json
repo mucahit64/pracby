@@ -1,0 +1,5 @@
+{
+  // Nuxt auto-generates its own tsconfig via .nuxt/
+  // This file extends the Nuxt-generated config
+  "extends": "./.nuxt/tsconfig.json"
+}

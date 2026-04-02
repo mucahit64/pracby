@@ -1,7 +1,10 @@
 node_modules/
 dist/
 .env
+.git/
+.gitignore
 *.log
 .DS_Store
-.nuxt/
-.output/
+client/
+docs/
+readme
