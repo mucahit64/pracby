@@ -15,11 +15,11 @@ const config: Knex.Config = {
     database: process.env.DB_NAME,
   },
   migrations: {
-    directory: isProd ? "./dist/src/db/migrations" : "./src/db/migrations",
+    directory: isProd ? "./src/db/migrations" : "./src/db/migrations",
     extension: isProd ? "js" : "ts",
   },
   seeds: {
-    directory: isProd ? "./dist/src/db/seeds" : "./src/db/seeds",
+    directory: isProd ? "./src/db/seeds" : "./src/db/seeds",
   },
 };
 
