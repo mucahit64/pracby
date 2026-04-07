@@ -1,8 +1,12 @@
 import db from "../../db/knex";
 import { AppError } from "../../middleware/error";
 
-export const getCourses = async () => {
-  return db("courses").orderBy("sort_order");
+export const getCourses = async (examTypeId?: string) => {
+  const query = db("courses").orderBy("sort_order");
+  if (examTypeId) {
+    query.where({ exam_type_id: examTypeId });
+  }
+  return query;
 };
 
 export const getCourseById = async (id: string) => {

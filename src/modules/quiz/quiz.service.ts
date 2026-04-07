@@ -9,7 +9,7 @@ export const startSession = async (userId: string, input: StartQuizInput) => {
   const questions = await db("questions")
     .where({ topic_id: input.topicId, status: "approved" })
     .orderByRaw("RANDOM()")
-    .limit(10);
+    .limit(20);
 
   if (questions.length === 0) throw new AppError(404, "No questions available for this topic");
 
@@ -62,7 +62,13 @@ export const finishSession = async (userId: string, sessionId: string) => {
   const totalSeconds = Math.round(
     (Date.now() - new Date(session.started_at as string).getTime()) / 1000,
   );
-  const xpEarned = correctCount * 10;
+
+  const correctAnswerIds = answers.filter((a) => a.is_correct).map((a) => a.question_id);
+  let xpEarned = 0;
+  if (correctAnswerIds.length > 0) {
+    const questions = await db("questions").whereIn("id", correctAnswerIds).select("point_value");
+    xpEarned = questions.reduce((sum, q) => sum + (Number(q.point_value) || 1), 0);
+  }
 
   const [updated] = await db("quiz_sessions")
     .where({ id: sessionId })

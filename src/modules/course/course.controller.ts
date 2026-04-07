@@ -1,8 +1,9 @@
 import type { Request, Response } from "express";
 import * as CourseService from "./course.service";
 
-export const getCourses = async (_req: Request, res: Response): Promise<void> => {
-  const courses = await CourseService.getCourses();
+export const getCourses = async (req: Request, res: Response): Promise<void> => {
+  const examTypeId = req.query.exam_type_id as string | undefined;
+  const courses = await CourseService.getCourses(examTypeId);
   res.json(courses);
 };
 

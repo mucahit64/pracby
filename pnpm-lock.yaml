@@ -63,6 +63,9 @@ importers:
       nuxt-quasar-ui:
         specifier: ^3.0.1
         version: 3.0.1(@quasar/extras@1.17.0)(magicast@0.5.2)(quasar@2.19.2)
+      quasar:
+        specifier: ^2.19.2
+        version: 2.19.2
 
 packages:
 

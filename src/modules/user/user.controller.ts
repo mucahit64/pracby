@@ -20,3 +20,18 @@ export const updateProfile = async (req: Request, res: Response): Promise<void> 
   const updated = await UserService.updateProfile(req.user!.userId, req.body);
   res.json(updated);
 };
+
+export const getEnrollments = async (req: Request, res: Response): Promise<void> => {
+  const enrollments = await UserService.getEnrollments(req.user!.userId);
+  res.json(enrollments);
+};
+
+export const addEnrollment = async (req: Request, res: Response): Promise<void> => {
+  const enrollment = await UserService.addEnrollment(req.user!.userId, req.body.exam_type_id);
+  res.status(201).json(enrollment);
+};
+
+export const switchActiveExam = async (req: Request, res: Response): Promise<void> => {
+  const updated = await UserService.switchActiveExam(req.user!.userId, req.body.exam_type_id);
+  res.json(updated);
+};

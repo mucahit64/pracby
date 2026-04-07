@@ -1,44 +1,96 @@
 # Pracby
 
-Pracby, KPSS ve YKS öğrencileri için tasarlanmış, kısa süreli pratiklerle öğrenmeyi hedefleyen bir mikro öğrenme uygulamasıdır. Amaç, kullanıcıya düzenli tekrar alışkanlığı kazandırmak ve konuları hızlı şekilde pekiştirmektir.
+Pracby, KPSS başta olmak üzere YKS, ALES, DGS gibi sınavlara hazırlanan öğrenciler için tasarlanmış bir mikro öğrenme uygulamasıdır. Duolingo benzeri bir roadmap yapısıyla konuları adım adım tamamlayan kullanıcı, XP kazanarak ilerler ve düzenli tekrar alışkanlığı edinir.
 
 ## Özellikler
 
-* Kullanıcı kayıt ve giriş sistemi
-* Quiz tabanlı öğrenme
+* Kullanıcı kayıt ve giriş sistemi (JWT tabanlı)
+* Kayıt sırasında sınav tipi seçimi (KPSS Lisans / Önlisans / Ortaöğretim; ileride YKS, ALES, DGS)
+* Aynı anda birden fazla sınava kayıt — her sınavın ilerleme kaydı ayrı tutulur
+* Aktif sınavı profil ekranından değiştirme
+* Duolingo tarzı konu roadmap'i: her kurs kendi içinde lineer bir path
+* Quiz tabanlı öğrenme — her test 20 soru
+* Puan sistemi: normal soru 1 XP, zor soru (difficulty 4-5) 2 XP
 * XP ve level sistemi
 * Günlük seri (streak) takibi
-* Arkadaş ekleme ve karşılaştırma
+* Liderlik tablosu (lig sistemi: Bronz / Gümüş / Altın / Elmas)
+* Başarım (achievement) sistemi
+
+## Sınav Yapısı
+
+```
+Sınav Grubu (exam_group)
+  └── Sınav Tipi (exam_type)
+        └── Kurs (course)
+              └── Konu (topic)
+                    └── Soru (question)  [point_value: 1 veya 2]
+```
+
+### Mevcut Sınav Grupları
+| Grup | Tipler | Durum |
+|------|--------|-------|
+| KPSS | Lisans, Önlisans, Ortaöğretim | ✅ Aktif |
+| YKS | — | 🔜 Yakında |
+| ALES | — | 🔜 Yakında |
+| DGS | — | 🔜 Yakında |
 
 ## MVP Kapsamı
 
-* Kullanıcı girişi
-* Tek ders (örneğin Tarih)
-* Temel quiz sistemi
+* Kullanıcı kayıt (onboarding: sınav tipi seçimi) ve giriş
+* KPSS dersleri (Genel Yetenek, Genel Kültür, Alan Bilgisi)
+* Temel quiz sistemi (20 soru / test)
 * XP ve level mekanizması
 * Günlük streak
 
 ## Gelecek Özellikler
 
-* PDF yükleyerek otomatik soru üretme
+* PDF yükleyerek otomatik soru üretme (AI destekli)
 * Kişisel performans analizi
-* AI destekli içerik üretimi
-* Gelişmiş arkadaş sistemi
+* Arkadaş ekleme ve karşılaştırma
+* Bildirim sistemi
+* Günlük görevler
+* Soru bankası yönetimi (admin paneli)
 
-## Teknoloji (Öneri)
+## Teknoloji
 
-* Frontend: Vue 3 + Quasar
-* Backend: Node.js
-* Veritabanı: PostgreSQL
+* **Frontend:** Nuxt 3 + Vue 3 + Quasar UI
+* **Backend:** Node.js + Express + TypeScript
+* **Veritabanı:** PostgreSQL + Knex.js
+* **Auth:** JWT (7 günlük token)
+* **Infra:** Docker + Nginx
 
 ## Kurulum
 
 ```bash
 git clone https://github.com/your-username/Pracby.git
 cd Pracby
-npm install
-npm run dev
+pnpm install
+
+# Veritabanı migration
+pnpm knex migrate:latest
+
+# Backend
+pnpm dev
+
+# Frontend (ayrı terminal)
+cd client
+pnpm dev
 ```
+
+## API Özeti
+
+| Yöntem | Endpoint | Açıklama |
+|--------|----------|----------|
+| POST | `/api/auth/register` | Kayıt (exam_type_id opsiyonel) |
+| POST | `/api/auth/login` | Giriş → JWT |
+| GET | `/api/exam-groups` | Sınav grupları + tipler |
+| GET | `/api/courses?exam_type_id=` | Sınava göre kurslar |
+| GET | `/api/users/me/enrollments` | Kayıtlı sınavlar |
+| POST | `/api/users/me/enrollments` | Yeni sınava kayıt |
+| PATCH | `/api/users/me/active-exam` | Aktif sınavı değiştir |
+| POST | `/api/quiz/start` | Quiz başlat (20 soru) |
+| POST | `/api/quiz/:id/answer` | Cevap gönder |
+| POST | `/api/quiz/:id/finish` | Quiz bitir → XP kazan |
 
 ## Lisans
 

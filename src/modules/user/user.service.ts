@@ -25,6 +25,60 @@ export const getAchievements = async (userId: string) => {
     .orderBy("ua.earned_at", "desc");
 };
 
+export const getEnrollments = async (userId: string) => {
+  return db("user_exam_enrollments as ue")
+    .join("exam_types as et", "ue.exam_type_id", "et.id")
+    .join("exam_groups as eg", "et.exam_group_id", "eg.id")
+    .where("ue.user_id", userId)
+    .where("ue.is_active", true)
+    .select(
+      "ue.id",
+      "ue.exam_type_id",
+      "ue.enrolled_at",
+      "et.name as exam_type_name",
+      "et.slug as exam_type_slug",
+      "eg.name as exam_group_name",
+      "eg.slug as exam_group_slug",
+    )
+    .orderBy("ue.enrolled_at");
+};
+
+export const addEnrollment = async (userId: string, examTypeId: string) => {
+  const examType = await db("exam_types").where({ id: examTypeId, is_active: true }).first();
+  if (!examType) throw new AppError(404, "Exam type not found");
+
+  const existing = await db("user_exam_enrollments")
+    .where({ user_id: userId, exam_type_id: examTypeId })
+    .first();
+
+  if (existing) {
+    if (existing.is_active) throw new AppError(409, "Already enrolled");
+    const [updated] = await db("user_exam_enrollments")
+      .where({ id: existing.id })
+      .update({ is_active: true })
+      .returning("*");
+    return updated;
+  }
+
+  const [enrollment] = await db("user_exam_enrollments")
+    .insert({ user_id: userId, exam_type_id: examTypeId })
+    .returning("*");
+  return enrollment;
+};
+
+export const switchActiveExam = async (userId: string, examTypeId: string) => {
+  const enrollment = await db("user_exam_enrollments")
+    .where({ user_id: userId, exam_type_id: examTypeId, is_active: true })
+    .first();
+  if (!enrollment) throw new AppError(404, "Not enrolled in this exam type");
+
+  const [updated] = await db("users")
+    .where({ id: userId })
+    .update({ active_exam_type_id: examTypeId })
+    .returning(["id", "username", "email", "active_exam_type_id"]);
+  return updated;
+};
+
 export const updateProfile = async (userId: string, input: UpdateProfileInput) => {
   if (input.username) {
     const exists = await db("users")

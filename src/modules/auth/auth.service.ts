@@ -19,11 +19,26 @@ export const register = async (input: RegisterInput) => {
 
   const passwordHash = await bcrypt.hash(input.password, BCRYPT_ROUNDS);
 
+  let examTypeId = input.exam_type_id;
+  if (!examTypeId) {
+    const defaultType = await db("exam_types").where({ slug: "lisans" }).first();
+    examTypeId = defaultType?.id;
+  }
+
   const [user] = await db("users")
-    .insert({ email: input.email, username: input.username, password_hash: passwordHash })
-    .returning(["id", "email", "username", "created_at"]);
+    .insert({
+      email: input.email,
+      username: input.username,
+      password_hash: passwordHash,
+      ...(examTypeId && { active_exam_type_id: examTypeId }),
+    })
+    .returning(["id", "email", "username", "active_exam_type_id", "created_at"]);
 
   await db("user_stats").insert({ user_id: user.id });
+
+  if (examTypeId) {
+    await db("user_exam_enrollments").insert({ user_id: user.id, exam_type_id: examTypeId });
+  }
 
   return { user, token: signToken(user.id as string, user.username as string) };
 };

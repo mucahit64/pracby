@@ -1,5 +1,6 @@
 import type { Knex } from "knex";
 import dotenv from "dotenv";
+import path from "path";
 
 dotenv.config();
 
@@ -15,11 +16,11 @@ const config: Knex.Config = {
     database: process.env.DB_NAME,
   },
   migrations: {
-    directory: isProd ? "./src/db/migrations" : "./src/db/migrations",
+    directory: path.join(__dirname, "src/db/migrations"),
     extension: isProd ? "js" : "ts",
   },
   seeds: {
-    directory: isProd ? "./src/db/seeds" : "./src/db/seeds",
+    directory: path.join(__dirname, "src/db/seeds"),
   },
 };
 
