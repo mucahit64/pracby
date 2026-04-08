@@ -7,12 +7,27 @@
         <span class="pb-stat-value">{{ stats.streak }}</span>
       </div>
       <div class="pb-stat-item">
-        <span class="pb-stat-icon gem">💎</span>
-        <span class="pb-stat-value">{{ stats.gems }}</span>
+        <span class="pb-stat-icon acorn">🌰</span>
+        <span class="pb-stat-value">{{ stats.acorns }}</span>
       </div>
-      <div class="pb-stat-item">
-        <span class="pb-stat-icon heart">❤️</span>
-        <span class="pb-stat-value">{{ stats.hearts }}</span>
+    </div>
+
+    <!-- Hearts card -->
+    <div class="pb-hearts-card">
+      <div class="pb-hearts-row">
+        <span
+          v-for="i in 5"
+          :key="i"
+          class="pb-heart-icon"
+          :class="{ 'pb-heart-icon--lost': i > sharedHearts }"
+        >❤️</span>
+      </div>
+      <div v-if="heartCountdown" class="pb-hearts-regen">
+        <span class="pb-hearts-regen-label">Sonraki can</span>
+        <span class="pb-hearts-regen-timer">⏱ {{ heartCountdown }}</span>
+      </div>
+      <div v-else-if="sharedHearts >= 5" class="pb-hearts-full">
+        Canların dolu!
       </div>
     </div>
 
@@ -78,20 +93,39 @@
 </template>
 
 <script setup lang="ts">
+const sharedHearts = useState('userHearts', () => 5);
+const heartCountdown = useState('heartCountdown', () => '');
+
 const stats = ref({
-  streak: 7,
-  gems: 500,
-  hearts: 5,
-  lessonsToLeaderboard: 4,
-  dailyXp: 35,
+  streak: 0,
+  acorns: 0,
+  lessonsToLeaderboard: 10,
+  dailyXp: 0,
   dailyGoal: 50,
 });
 
 const dailyQuests = ref([
-  { id: 1, icon: "⚡", name: "10 XP Kazan", current: 10, target: 10, xp: 10 },
-  { id: 2, icon: "🎯", name: "5 Soru Çöz", current: 3, target: 5, xp: 20 },
-  { id: 3, icon: "🔥", name: "3 Ders Tamamla", current: 1, target: 3, xp: 30 },
+  { id: 1, icon: "⚡", name: "10 XP Kazan", current: 0, target: 10, xp: 10 },
+  { id: 2, icon: "🎯", name: "5 Soru Çöz", current: 0, target: 5, xp: 20 },
+  { id: 3, icon: "🔥", name: "3 Ders Tamamla", current: 0, target: 3, xp: 30 },
 ]);
+
+onMounted(async () => {
+  const token = localStorage.getItem('pb_token');
+  if (!token) return;
+  const h = { Authorization: `Bearer ${token}` };
+  try {
+    const [user, userStats] = await Promise.all([
+      $fetch<{ acorn_balance?: number; hearts?: number; daily_goal_xp?: number }>('/api/users/me', { headers: h }),
+      $fetch<{ streak?: number; daily_xp?: number }>('/api/users/me/stats', { headers: h }),
+    ]);
+    stats.value.acorns = user.acorn_balance ?? 0;
+    sharedHearts.value = user.hearts ?? 5;
+    stats.value.dailyGoal = user.daily_goal_xp ?? 50;
+    stats.value.streak = (userStats as { streak?: number }).streak ?? 0;
+    stats.value.dailyXp = (userStats as { daily_xp?: number }).daily_xp ?? 0;
+  } catch { /* skip */ }
+});
 </script>
 
 <style scoped>
@@ -102,6 +136,60 @@ const dailyQuests = ref([
   flex-direction: column;
   gap: 16px;
   padding: 24px 0 24px 16px;
+}
+
+.pb-hearts-card {
+  background: var(--pb-bg-card);
+  border: 2px solid var(--pb-border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.pb-hearts-row {
+  display: flex;
+  gap: 4px;
+  font-size: 1.4rem;
+}
+
+.pb-heart-icon {
+  transition: filter 0.2s;
+}
+
+.pb-heart-icon--lost {
+  filter: grayscale(1) opacity(0.3);
+}
+
+.pb-hearts-regen {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.pb-hearts-regen-label {
+  font-size: 0.78rem;
+  color: var(--pb-text-muted);
+  font-weight: 700;
+}
+
+.pb-hearts-regen-timer {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--pb-red);
+  background: rgba(255, 75, 75, 0.1);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.pb-hearts-full {
+  font-size: 0.75rem;
+  color: var(--pb-text-muted);
 }
 
 .pb-stats-row {

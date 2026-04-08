@@ -2,9 +2,9 @@
   <!-- Mobile top bar -->
   <header v-if="isMobile" class="pb-mobile-header">
     <div class="pb-mobile-header-stats">
-      <span class="pb-mobile-stat">🔥 {{ 7 }}</span>
-      <span class="pb-mobile-stat">💎 {{ 500 }}</span>
-      <span class="pb-mobile-stat">❤️ {{ 5 }}</span>
+      <span class="pb-mobile-stat">🔥 {{ streakCount }}</span>
+      <span class="pb-mobile-stat">🌰 {{ acornBalance }}</span>
+      <span class="pb-mobile-stat">❤️ {{ heartsCount }} <span v-if="heartCountdown" class="pb-heart-timer">{{ heartCountdown }}</span></span>
     </div>
   </header>
 
@@ -70,7 +70,7 @@ const mobileMenuOpen = ref(false);
 
 const screen = ref({ lt: { md: false } });
 
-onMounted(() => {
+onMounted(async () => {
   const token = localStorage.getItem('pb_token');
   if (!token) {
     router.replace('/auth/login');
@@ -83,13 +83,68 @@ onMounted(() => {
   checkMobile();
   window.addEventListener('resize', checkMobile);
   onUnmounted(() => window.removeEventListener('resize', checkMobile));
+
+  // Fetch user stats for header
+  try {
+    const [user, userStats] = await Promise.all([
+      $fetch<{ acorn_balance?: number; hearts?: number; next_heart_at?: string | null }>('/api/users/me', {
+        headers: { Authorization: `Bearer ${token}` },
+      }),
+      $fetch<{ streak?: number }>('/api/users/me/stats', {
+        headers: { Authorization: `Bearer ${token}` },
+      }),
+    ]);
+    acornBalance.value = user.acorn_balance ?? 0;
+    heartsCount.value = user.hearts ?? 5;
+    streakCount.value = userStats.streak ?? 0;
+    nextHeartAt.value = user.next_heart_at ?? null;
+    startHeartCountdown(token);
+  } catch { /* skip */ }
 });
 
 const isMobile = computed(() => screen.value.lt.md);
 
+const acornBalance = ref(0);
+const streakCount = ref(0);
+const heartsCount = useState('userHearts', () => 5);
+const heartCountdown = useState('heartCountdown', () => '');
+const nextHeartAt = ref<string | null>(null);
+let heartTimer: ReturnType<typeof setInterval> | null = null;
+
+function startHeartCountdown(token: string) {
+  if (heartTimer) clearInterval(heartTimer);
+  heartTimer = setInterval(async () => {
+    if (!nextHeartAt.value || heartsCount.value >= 5) {
+      heartCountdown.value = '';
+      return;
+    }
+    const diff = new Date(nextHeartAt.value).getTime() - Date.now();
+    if (diff <= 0) {
+      // Refetch from server
+      heartCountdown.value = '';
+      try {
+        const user = await $fetch<{ hearts?: number; next_heart_at?: string | null }>('/api/users/me', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        heartsCount.value = user.hearts ?? heartsCount.value;
+        nextHeartAt.value = user.next_heart_at ?? null;
+      } catch { /* skip */ }
+      return;
+    }
+    const mins = Math.floor(diff / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+    heartCountdown.value = `${mins}:${String(secs).padStart(2, '0')}`;
+  }, 1000);
+}
+
+onUnmounted(() => {
+  if (heartTimer) clearInterval(heartTimer);
+});
+
 const navItems = [
   { emoji: '📚', label: 'Öğren', to: '/', exact: true },
   { emoji: '🏆', label: 'Liderlik', to: '/leaderboard', exact: false },
+  { emoji: '🌰', label: 'Market', to: '/store', exact: false },
   { emoji: '👤', label: 'Profil', to: '/profile', exact: false },
 ];
 </script>
@@ -243,6 +298,7 @@ a { text-decoration: none; color: inherit; }
   position: sticky;
   top: 0;
   z-index: 100;
+  justify-content: flex-end;
 }
 
 .pb-mobile-header-stats {
@@ -255,6 +311,18 @@ a { text-decoration: none; color: inherit; }
   font-size: 1rem;
   font-weight: 800;
   color: var(--pb-text);
+}
+
+.pb-heart-timer {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--pb-red);
+  background: rgba(255, 75, 75, 0.12);
+  padding: 1px 6px;
+  border-radius: 20px;
+  margin-left: 2px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
 }
 
 /* ===== Mobile Bottom Nav ===== */

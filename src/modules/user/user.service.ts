@@ -2,19 +2,88 @@ import db from "../../db/knex";
 import { AppError } from "../../middleware/error";
 import type { UpdateProfileInput } from "./user.schema";
 
-export const getProfile = async (userId: string) => {
+const MAX_HEARTS = 5;
+const REGEN_INTERVAL_MS = 10 * 60 * 1000; // 10 minutes
+
+export const regenerateHearts = async (userId: string) => {
   const user = await db("users")
     .where({ id: userId })
-    .select("id", "email", "username", "avatar_url", "daily_goal_xp", "hearts", "created_at")
+    .select("hearts", "hearts_refreshed_at")
+    .first();
+  if (!user) return;
+
+  if (user.hearts >= MAX_HEARTS) {
+    return;
+  }
+
+  const refreshedAt = new Date(user.hearts_refreshed_at).getTime();
+  const now = Date.now();
+  const elapsed = now - refreshedAt;
+  const heartsToAdd = Math.floor(elapsed / REGEN_INTERVAL_MS);
+
+  if (heartsToAdd <= 0) return;
+
+  const newHearts = Math.min(MAX_HEARTS, user.hearts + heartsToAdd);
+  const advanceMs = heartsToAdd * REGEN_INTERVAL_MS;
+
+  await db("users").where({ id: userId }).update({
+    hearts: newHearts,
+    hearts_refreshed_at: newHearts >= MAX_HEARTS
+      ? new Date(now)
+      : new Date(refreshedAt + advanceMs),
+  });
+};
+
+export const getProfile = async (userId: string) => {
+  await regenerateHearts(userId);
+
+  const user = await db("users")
+    .where({ id: userId })
+    .select("id", "email", "username", "avatar_url", "daily_goal_xp", "hearts", "hearts_refreshed_at", "acorn_balance", "active_exam_type_id", "created_at")
     .first();
   if (!user) throw new AppError(404, "User not found");
-  return user;
+
+  const nextHeartAt = user.hearts < MAX_HEARTS
+    ? new Date(new Date(user.hearts_refreshed_at).getTime() + REGEN_INTERVAL_MS).toISOString()
+    : null;
+
+  return { ...user, next_heart_at: nextHeartAt };
 };
 
 export const getStats = async (userId: string) => {
   const stats = await db("user_stats").where({ user_id: userId }).first();
   if (!stats) throw new AppError(404, "Stats not found");
   return stats;
+};
+
+export const getStreakHistory = async (userId: string) => {
+  // Return last 7 days (Mon to Sun of current week)
+  const days: string[] = [];
+  const today = new Date();
+  const dayOfWeek = today.getDay(); // 0 = Sunday
+  const monday = new Date(today);
+  monday.setDate(today.getDate() - ((dayOfWeek + 6) % 7));
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(monday);
+    d.setDate(monday.getDate() + i);
+    days.push(d.toISOString().split("T")[0]);
+  }
+
+  const rows = await db("streak_history")
+    .where("user_id", userId)
+    .whereIn("date", days)
+    .select("date", "quizzes_completed");
+
+  const rowMap = new Map(rows.map((r) => [r.date instanceof Date ? r.date.toISOString().split("T")[0] : String(r.date).split("T")[0], r]));
+  const todayStr = today.toISOString().split("T")[0];
+  const labels = ["Pzt", "Sal", "Çrş", "Per", "Cum", "Cts", "Paz"];
+
+  return days.map((date, i) => ({
+    label: labels[i],
+    date,
+    done: (rowMap.get(date)?.quizzes_completed ?? 0) > 0,
+    isToday: date === todayStr,
+  }));
 };
 
 export const getAchievements = async (userId: string) => {

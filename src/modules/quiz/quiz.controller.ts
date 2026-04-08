@@ -16,6 +16,15 @@ export const submitAnswer = async (req: Request, res: Response): Promise<void> =
 };
 
 export const finishSession = async (req: Request, res: Response): Promise<void> => {
-  const result = await QuizService.finishSession(req.user!.userId, req.params.sessionId as string);
+  const result = await QuizService.finishSession(
+    req.user!.userId,
+    req.params.sessionId as string,
+    Boolean(req.body?.skip_rewards),
+  );
+  res.json(result);
+};
+
+export const claimReward = async (req: Request, res: Response): Promise<void> => {
+  const result = await QuizService.claimReward(req.user!.userId, req.params.stepId as string);
   res.json(result);
 };

@@ -11,5 +11,6 @@ router.use(authenticate);
 router.post("/start", validate(StartQuizSchema), QuizController.startSession);
 router.post("/:sessionId/answer", validate(AnswerSchema), QuizController.submitAnswer);
 router.post("/:sessionId/finish", QuizController.finishSession);
+router.post("/reward/:stepId/claim", QuizController.claimReward);
 
 export default router;

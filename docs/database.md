@@ -51,6 +51,18 @@ CREATE TABLE friendships (
   UNIQUE(user_id, friend_id)
 );
 
+-- MODULES (örn: Genel Yetenek, Genel Kültür)
+CREATE TABLE modules (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  exam_type_id UUID REFERENCES exam_types(id) ON DELETE CASCADE NOT NULL,
+  name TEXT NOT NULL,
+  description TEXT,
+  icon_url TEXT,
+  sort_order INT DEFAULT 0,
+  is_active BOOLEAN DEFAULT TRUE,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
 -- COURSES (örn: Tarih, Matematik)
 CREATE TABLE courses (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -58,7 +70,9 @@ CREATE TABLE courses (
   description TEXT,
   icon_url TEXT,
   color TEXT, -- UI renk kodu
-  sort_order INT DEFAULT 0
+  sort_order INT DEFAULT 0,
+  exam_type_id UUID REFERENCES exam_types(id) ON DELETE SET NULL,
+  module_id UUID REFERENCES modules(id) ON DELETE SET NULL
 );
 
 -- TOPICS (örn: Osmanlı, İnkilaplar) — Duolingo'daki "skill" karşılığı
@@ -185,6 +199,9 @@ CREATE TABLE notifications (
 -- =============================================
 -- INDEXLER (performans için kritik)
 -- =============================================
+CREATE INDEX idx_modules_exam_type ON modules(exam_type_id);
+CREATE INDEX idx_courses_module ON courses(module_id);
+CREATE INDEX idx_courses_exam_type ON courses(exam_type_id);
 CREATE INDEX idx_questions_topic ON questions(topic_id);
 CREATE INDEX idx_questions_status ON questions(status);
 CREATE INDEX idx_answers_question ON answers(question_id);

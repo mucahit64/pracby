@@ -30,6 +30,9 @@
 
     <!-- Players list -->
     <div class="lb-list">
+      <div v-if="loadingLb" class="lb-loading">Yükleniyor…</div>
+      <div v-else-if="leaderboard.length === 0" class="lb-empty">Bu ligde henüz kimse yok.</div>
+      <template v-else>
       <!-- Promotion zone -->
       <div class="lb-zone-label lb-zone-promote">↑ Yükselme Bölgesi</div>
 
@@ -53,7 +56,7 @@
 
         <!-- Avatar -->
         <div class="lb-avatar" :style="{ background: player.avatarColor }">
-          {{ player.username[0].toUpperCase() }}
+          {{ player.username?.[0]?.toUpperCase() ?? '?' }}
           <div v-if="player.isMe" class="lb-avatar-badge">SEN</div>
         </div>
 
@@ -63,18 +66,18 @@
             {{ player.username }}
             <span v-if="player.isMe" class="lb-me-tag">sen</span>
           </div>
-          <div class="lb-level">Seviye {{ player.level }}</div>
         </div>
 
         <!-- XP -->
         <div class="lb-xp">
-          <span class="lb-xp-value">{{ player.xp.toLocaleString('tr') }}</span>
+          <span class="lb-xp-value">{{ player.xp_earned.toLocaleString('tr') }}</span>
           <span class="lb-xp-label">XP</span>
         </div>
       </div>
 
       <!-- Demotion zone separator -->
       <div class="lb-zone-label lb-zone-demote">↓ Düşme Bölgesi</div>
+    </template>
     </div>
   </div>
 </template>
@@ -100,18 +103,48 @@ const currentLeague = computed(() => leagueMap[activeLeague.value]);
 
 const avatarColors = ['#7c3aed', '#059669', '#dc2626', '#2563eb', '#d97706', '#db2777', '#0891b2', '#65a30d', '#ea580c', '#7c3aed'];
 
-const leaderboard = ref([
-  { username: 'ahmet_k', level: 8, xp: 2520, isMe: false, avatarColor: avatarColors[0] },
-  { username: 'elif_y', level: 7, xp: 2480, isMe: false, avatarColor: avatarColors[1] },
-  { username: 'mehmet_d', level: 7, xp: 2410, isMe: false, avatarColor: avatarColors[2] },
-  { username: 'zeynep_a', level: 6, xp: 2350, isMe: false, avatarColor: avatarColors[3] },
-  { username: 'can_b', level: 5, xp: 2320, isMe: false, avatarColor: avatarColors[4] },
-  { username: 'selin_t', level: 5, xp: 2280, isMe: false, avatarColor: avatarColors[5] },
-  { username: 'mucahit', level: 5, xp: 1250, isMe: true, avatarColor: avatarColors[6] },
-  { username: 'emre_g', level: 4, xp: 1100, isMe: false, avatarColor: avatarColors[7] },
-  { username: 'buse_k', level: 3, xp: 820, isMe: false, avatarColor: avatarColors[8] },
-  { username: 'kerem_a', level: 2, xp: 540, isMe: false, avatarColor: avatarColors[9] },
-]);
+interface LeaderboardEntry {
+  username: string;
+  avatar_url: string | null;
+  xp_earned: number;
+  rank: number;
+  isMe?: boolean;
+  avatarColor?: string;
+}
+
+const myUsername = ref('');
+const leaderboard = ref<LeaderboardEntry[]>([]);
+const loadingLb = ref(false);
+
+async function fetchLeaderboard(league: string) {
+  loadingLb.value = true;
+  try {
+    const token = localStorage.getItem('pb_token') ?? '';
+    const data = await $fetch<LeaderboardEntry[]>(`/api/leaderboard?league=${league}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    leaderboard.value = data.map((p, i) => ({
+      ...p,
+      isMe: p.username === myUsername.value,
+      avatarColor: avatarColors[i % avatarColors.length],
+    }));
+  } catch { /* keep empty list */ }
+  loadingLb.value = false;
+}
+
+watch(activeLeague, (league) => fetchLeaderboard(league));
+
+onMounted(async () => {
+  const token = localStorage.getItem('pb_token') ?? '';
+  if (!token) return;
+  try {
+    const me = await $fetch<{ username: string }>('/api/users/me', {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    myUsername.value = me.username;
+  } catch { /* skip */ }
+  fetchLeaderboard(activeLeague.value);
+});
 </script>
 
 <style scoped>

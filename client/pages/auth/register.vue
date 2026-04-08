@@ -48,6 +48,7 @@
         <p class="pb-auth-subtitle">İleride birden fazla sınav ekleyebilirsin.</p>
 
         <div v-if="loadingExams" class="pb-auth-loading">Yükleniyor…</div>
+        <div v-else-if="error" class="pb-auth-error">{{ error }}</div>
         <div v-else class="pb-exam-grid">
           <button
             v-for="group in examGroups"
@@ -146,12 +147,17 @@ const selectedGroupTypes = computed(() => {
 
 const fetchExamGroups = async () => {
   loadingExams.value = true;
+  error.value = '';
   try {
     examGroups.value = await $fetch<ExamGroup[]>('/api/exam-groups');
+  } catch {
+    error.value = 'Sınav listesi yüklenemedi. Sayfayı yenileyin.';
   } finally {
     loadingExams.value = false;
   }
 };
+
+console.log('Exam groups:', examGroups.value);
 
 const nextStep = () => {
   error.value = '';

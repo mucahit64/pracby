@@ -16,6 +16,11 @@ export const getAchievements = async (req: Request, res: Response): Promise<void
   res.json(achievements);
 };
 
+export const getStreakHistory = async (req: Request, res: Response): Promise<void> => {
+  const history = await UserService.getStreakHistory(req.user!.userId);
+  res.json(history);
+};
+
 export const updateProfile = async (req: Request, res: Response): Promise<void> => {
   const updated = await UserService.updateProfile(req.user!.userId, req.body);
   res.json(updated);

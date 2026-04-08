@@ -3,7 +3,7 @@
     <!-- Profile Header -->
     <div class="prof-header">
       <div class="prof-avatar-wrap">
-        <div class="prof-avatar">{{ profile.username[0].toUpperCase() }}</div>
+        <div class="prof-avatar">{{ profile.username?.[0]?.toUpperCase() ?? '?' }}</div>
         <div class="prof-level-badge">Seviye {{ profile.level }}</div>
       </div>
       <div class="prof-info">
@@ -42,6 +42,11 @@
         <div class="prof-stat-icon">🎯</div>
         <div class="prof-stat-value">{{ profile.quizzesCompleted }}</div>
         <div class="prof-stat-label">Quiz</div>
+      </div>
+      <div class="prof-stat-card">
+        <div class="prof-stat-icon">🌰</div>
+        <div class="prof-stat-value">{{ profile.acornBalance.toLocaleString('tr') }}</div>
+        <div class="prof-stat-label">Acorn</div>
       </div>
     </div>
 
@@ -133,28 +138,6 @@ const enrollments = ref<Enrollment[]>([]);
 const loadingEnrollments = ref(false);
 const showEnrollModal = ref(false);
 
-const fetchEnrollments = async () => {
-  const token = localStorage.getItem('pb_token');
-  if (!token) return;
-  loadingEnrollments.value = true;
-  try {
-    const [userProfile, list] = await Promise.all([
-      $fetch<{ active_exam_type_id?: string }>('/api/users/me', {
-        headers: { Authorization: `Bearer ${token}` },
-      }),
-      $fetch<Enrollment[]>('/api/users/me/enrollments', {
-        headers: { Authorization: `Bearer ${token}` },
-      }),
-    ]);
-    activeExamTypeId.value = userProfile.active_exam_type_id ?? '';
-    enrollments.value = list;
-  } catch {
-    // silently fail
-  } finally {
-    loadingEnrollments.value = false;
-  }
-};
-
 const switchExam = async (examTypeId: string) => {
   const token = localStorage.getItem('pb_token');
   if (!token) return;
@@ -175,41 +158,136 @@ const signOut = () => {
   router.replace('/auth/login');
 };
 
-onMounted(fetchEnrollments);
-
 const profile = ref({
-  username: 'mucahit',
-  email: 'mucahit@pracby.com',
-  totalXp: 1250,
-  level: 5,
-  xpInLevel: 250,
+  username: '',
+  email: '',
+  totalXp: 0,
+  level: 1,
+  xpInLevel: 0,
   xpNextLevel: 500,
-  currentStreak: 7,
-  maxStreak: 12,
-  quizzesCompleted: 28,
+  currentStreak: 0,
+  maxStreak: 0,
+  quizzesCompleted: 0,
+  acornBalance: 0,
 });
 
 const weekDays = ref([
-  { label: 'Pzt', done: true, isToday: false },
-  { label: 'Sal', done: true, isToday: false },
-  { label: 'Çrş', done: true, isToday: false },
-  { label: 'Per', done: true, isToday: false },
-  { label: 'Cum', done: true, isToday: false },
-  { label: 'Cts', done: true, isToday: false },
-  { label: 'Paz', done: false, isToday: true },
+  { label: 'Pzt', done: false, isToday: false },
+  { label: 'Sal', done: false, isToday: false },
+  { label: 'Çrş', done: false, isToday: false },
+  { label: 'Per', done: false, isToday: false },
+  { label: 'Cum', done: false, isToday: false },
+  { label: 'Cts', done: false, isToday: false },
+  { label: 'Paz', done: false, isToday: false },
 ]);
 
-const achievements = ref([
-  { name: 'İlk Adım', icon: '⭐', description: 'İlk quizi tamamla', earned: true },
-  { name: '7 Günlük', icon: '🔥', description: '7 gün seri yap', earned: true },
-  { name: '1K XP', icon: '⚡', description: '1000 XP kazan', earned: true },
-  { name: 'Hızlı Top', icon: '⚡', description: '3 dersi arka arkaya tamamla', earned: true },
-  { name: '30 Günlük', icon: '🌟', description: '30 gün seri yap', earned: false },
-  { name: '5K XP', icon: '💎', description: '5000 XP kazan', earned: false },
-  { name: '10 Arkadaş', icon: '👥', description: '10 arkadaş edin', earned: false },
-  { name: 'Altın Lig', icon: '🏆', description: "Altın Lig'e ulaş", earned: false },
-  { name: 'Mükemmel', icon: '✨', description: 'Bir quizi hatasız bitir', earned: false },
-]);
+interface Achievement {
+  name: string;
+  icon: string;
+  description: string;
+  earned: boolean;
+}
+
+const achievements = ref<Achievement[]>([]);
+
+const fetchProfile = async () => {
+  const token = localStorage.getItem('pb_token');
+  if (!token) return;
+  const h = { Authorization: `Bearer ${token}` };
+  try {
+    const [user, stats, earnedAchievements, allAchievements, streakHistory] = await Promise.all([
+      $fetch<{
+        username: string;
+        email: string;
+        acorn_balance: number;
+        active_exam_type_id?: string;
+      }>('/api/users/me', { headers: h }),
+      $fetch<{
+        xp: number;
+        total_xp: number;
+        level: number;
+        current_streak: number;
+        max_streak: number;
+        quizzes_completed: number;
+      }>('/api/users/me/stats', { headers: h }),
+      $fetch<{
+        id: string;
+        name: string;
+        icon_url: string;
+        description: string;
+        earned_at: string;
+      }[]>('/api/users/me/achievements', { headers: h }),
+      // We don't have a GET /achievements yet, so we skip fetching all
+      Promise.resolve([] as { id: string; name: string; icon_url: string; description: string }[]),
+      $fetch<{ label: string; date: string; done: boolean; isToday: boolean }[]>('/api/users/me/streak-history', { headers: h }),
+    ]);
+
+    const level = stats.level ?? Math.floor((stats.total_xp ?? 0) / 500) + 1;
+    const xpForLevel = (stats.total_xp ?? 0) % 500;
+
+    profile.value = {
+      username: user.username,
+      email: user.email,
+      totalXp: stats.total_xp ?? 0,
+      level,
+      xpInLevel: xpForLevel,
+      xpNextLevel: 500,
+      currentStreak: stats.current_streak ?? 0,
+      maxStreak: stats.max_streak ?? 0,
+      quizzesCompleted: stats.quizzes_completed ?? 0,
+      acornBalance: user.acorn_balance ?? 0,
+    };
+
+    activeExamTypeId.value = user.active_exam_type_id ?? '';
+
+    // Update week days from streak history
+    if (streakHistory && streakHistory.length === 7) {
+      weekDays.value = streakHistory;
+    }
+
+    const earnedIds = new Set(earnedAchievements.map((a) => a.name));
+    achievements.value = earnedAchievements.map((a) => ({
+      name: a.name,
+      icon: a.icon_url || '🏅',
+      description: a.description,
+      earned: true,
+    }));
+    // Add unearned from all achievements if available
+    for (const a of allAchievements) {
+      if (!earnedIds.has(a.name)) {
+        achievements.value.push({
+          name: a.name,
+          icon: a.icon_url || '🏅',
+          description: a.description,
+          earned: false,
+        });
+      }
+    }
+  } catch {
+    // silently fail
+  }
+};
+
+const fetchEnrollments = async () => {
+  const token = localStorage.getItem('pb_token');
+  if (!token) return;
+  loadingEnrollments.value = true;
+  try {
+    const list = await $fetch<Enrollment[]>('/api/users/me/enrollments', {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    enrollments.value = list;
+  } catch {
+    // silently fail
+  } finally {
+    loadingEnrollments.value = false;
+  }
+};
+
+onMounted(() => {
+  fetchProfile();
+  fetchEnrollments();
+});
 </script>
 
 <style scoped>

@@ -11,6 +11,7 @@ router.use(authenticate);
 router.get("/me", UserController.getProfile);
 router.get("/me/stats", UserController.getStats);
 router.get("/me/achievements", UserController.getAchievements);
+router.get("/me/streak-history", UserController.getStreakHistory);
 router.patch("/me", validate(UpdateProfileSchema), UserController.updateProfile);
 router.get("/me/enrollments", UserController.getEnrollments);
 router.post("/me/enrollments", UserController.addEnrollment);
