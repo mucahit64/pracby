@@ -43,7 +43,7 @@
           <span class="quiz-xp-live">⚡ +{{ xpEarned }} XP</span>
         </div>
 
-        <div class="quiz-question">{{ currentQuestion.question_text }}</div>
+        <div v-if="currentQuestion.question_type !== 'swipe'" class="quiz-question">{{ currentQuestion.question_text }}</div>
 
         <!-- Multiple choice / True-false -->
         <template v-if="currentQuestion.question_type === 'multiple_choice' || currentQuestion.question_type === 'true_false'">
@@ -64,7 +64,50 @@
 
         <!-- Fill in the blank -->
         <template v-else-if="currentQuestion.question_type === 'fill_blank'">
-          <div class="quiz-fill-blank">
+          <!-- Word chip mode -->
+          <div v-if="currentQuestion.type_data?.word_options?.length" class="quiz-fill-chip">
+            <div class="quiz-fill-sentence">
+              <template v-for="(part, pi) in fillBlankParts" :key="pi">
+                <span
+                  v-if="/^_+$/.test(part)"
+                  class="quiz-fill-slot"
+                  :class="{
+                    'quiz-fill-slot--filled': selectedFillWord,
+                    'quiz-fill-slot--correct': answered && lastAnswerCorrect,
+                    'quiz-fill-slot--wrong': answered && !lastAnswerCorrect,
+                  }"
+                  @click="!answered && selectedFillWord ? (selectedFillWord = '') : undefined"
+                >
+                  {{ selectedFillWord || '______' }}
+                </span>
+                <span v-else>{{ part }}</span>
+              </template>
+            </div>
+            <div class="quiz-fill-chips">
+              <button
+                v-for="word in currentQuestion.type_data.word_options"
+                :key="word"
+                class="quiz-fill-chip-btn"
+                :class="{
+                  'quiz-fill-chip-btn--selected': selectedFillWord === word,
+                  'quiz-fill-chip-btn--disabled': !!selectedFillWord && selectedFillWord !== word,
+                }"
+                :disabled="answered || (!!selectedFillWord && selectedFillWord !== word)"
+                @click="toggleFillWord(word)"
+              >
+                {{ word }}
+              </button>
+            </div>
+            <button
+              v-if="!answered && selectedFillWord"
+              class="pb-btn-primary quiz-fill-check"
+              @click="answerFillBlankChip"
+            >
+              KONTROL ET
+            </button>
+          </div>
+          <!-- Text input mode (fallback) -->
+          <div v-else class="quiz-fill-blank">
             <input
               v-model="fillBlankText"
               class="quiz-fill-input"
@@ -184,6 +227,34 @@
           </div>
         </template>
 
+        <!-- Swipe (Doğru/Yanlış) -->
+        <template v-else-if="currentQuestion.question_type === 'swipe'">
+          <div class="quiz-swipe-wrap">
+            <div
+              class="quiz-swipe-card"
+              :style="swipeCardStyle"
+              @mousedown.prevent="swipeMouseDown"
+              @touchstart.prevent="swipeTouchStart"
+              @touchmove.prevent="swipeTouchMove"
+              @touchend="swipeTouchEnd"
+            >
+              <div class="quiz-swipe-overlay quiz-swipe-overlay--right" :style="{ opacity: swipeRightOpacity }">
+                DOĞRU ✓
+              </div>
+              <div class="quiz-swipe-overlay quiz-swipe-overlay--left" :style="{ opacity: swipeLeftOpacity }">
+                YANLIŞ ✗
+              </div>
+              <div class="quiz-swipe-content">
+                {{ currentQuestion.question_text }}
+              </div>
+            </div>
+            <div v-if="!answered" class="quiz-swipe-hint">
+              <span class="quiz-swipe-hint--left">← YANLIŞ</span>
+              <span class="quiz-swipe-hint--right">DOĞRU →</span>
+            </div>
+          </div>
+        </template>
+
         <!-- Feedback -->
         <transition name="fade-up">
           <div v-if="answered" class="quiz-feedback" :class="lastAnswerCorrect ? 'quiz-feedback--correct' : 'quiz-feedback--wrong'">
@@ -204,13 +275,13 @@
 
     <!-- === Quiz finished === -->
     <template v-else-if="finished">
-      <div class="quiz-result">
-        <div class="quiz-result-mascot">
+      <div class="quiz-result" :class="{ 'quiz-result--boss': isBossSession }">
+        <div class="quiz-result-mascot" :class="{ 'quiz-result-mascot--boss': isBossSession && stepCompleted }">
           <PbMascot :width="120" :height="150" />
         </div>
 
-        <h1 class="quiz-result-title">{{ heartsDepleted ? 'Canların Bitti! 💔' : 'Tebrikler! 🎊' }}</h1>
-        <p class="quiz-result-sub">{{ heartsDepleted ? 'Kalplerin tükendi, test sonlandırıldı.' : 'Quiz tamamlandı!' }}</p>
+        <h1 class="quiz-result-title">{{ heartsDepleted ? 'Canların Bitti! 💔' : (isBossSession && stepCompleted ? '⚔️ Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
+        <p class="quiz-result-sub">{{ heartsDepleted ? 'Kalplerin tükendi, test sonlandırıldı.' : (isBossSession ? 'Adım finali tamamlandı!' : 'Quiz tamamlandı!') }}</p>
 
         <div class="quiz-result-stats">
           <div class="quiz-result-stat quiz-result-stat--correct">
@@ -342,6 +413,7 @@ interface Question {
   type_data?: {
     back?: string;
     acceptable_answers?: string[];
+    word_options?: string[];
     pairs?: { left: string; right: string }[];
     items?: { text: string; position: number }[];
   };
@@ -365,6 +437,8 @@ const acornEarned = ref(0);
 const lastAnswerCorrect = ref(false);
 const stepCompleted = ref(false);
 const topicCompleted = ref(false);
+
+const isBossSession = computed(() => route.query.sessionType === 'step_final');
 
 // Hearts dialog state
 const heartsEmptyDialog = ref(false);
@@ -398,8 +472,43 @@ const matchingUserPairs = ref<{ leftIndex: number; rightIndex: number }[]>([]);
 // Ordering state
 const orderingItems = ref<{ text: string; originalIndex: number }[]>([]);
 
+// Swipe state
+const swipeDragX = ref(0);
+const swipeStartX = ref(0);
+const swipeDragging = ref(false);
+const swipeExiting = ref(false);
+const swipeExitDirection = ref<'left' | 'right' | null>(null);
+const SWIPE_THRESHOLD = 100;
+
+// Fill-blank chip state
+const selectedFillWord = ref('');
+
 const currentQuestion = computed(() => questions.value[currentIndex.value]);
 const currentAnswers = computed(() => currentQuestion.value?.answers ?? []);
+
+const swipeCardStyle = computed(() => {
+  if (swipeExiting.value) {
+    const dir = swipeExitDirection.value === 'right' ? 1 : -1;
+    return {
+      transform: `translateX(${dir * 120}%) rotate(${dir * 15}deg)`,
+      opacity: '0',
+      transition: 'transform 0.4s ease, opacity 0.4s ease',
+    };
+  }
+  return {
+    transform: `translateX(${swipeDragX.value}px) rotate(${swipeDragX.value * 0.06}deg)`,
+    transition: swipeDragging.value ? 'none' : 'transform 0.3s ease',
+  };
+});
+
+const swipeRightOpacity = computed(() => Math.min(1, Math.max(0, swipeDragX.value / SWIPE_THRESHOLD)));
+const swipeLeftOpacity = computed(() => Math.min(1, Math.max(0, -swipeDragX.value / SWIPE_THRESHOLD)));
+
+const fillBlankParts = computed(() => {
+  const text = currentQuestion.value?.question_text ?? '';
+  const parts = text.split(/(_{2,})/);
+  return parts.filter(p => p.length > 0);
+});
 
 function getToken() {
   return localStorage.getItem('pb_token') ?? '';
@@ -454,6 +563,12 @@ function initQuestionState() {
   matchingWrongLeft.value = -1;
   matchingWrongRight.value = -1;
   matchingUserPairs.value = [];
+  selectedFillWord.value = '';
+  swipeDragX.value = 0;
+  swipeStartX.value = 0;
+  swipeDragging.value = false;
+  swipeExiting.value = false;
+  swipeExitDirection.value = null;
 
   if (q.question_type === 'matching' && q.type_data?.pairs) {
     matchingPairs.value = q.type_data.pairs;
@@ -597,6 +712,86 @@ async function submitOrdering() {
   });
 }
 
+// Swipe
+function onSwipeStart(clientX: number) {
+  if (answered.value || swipeExiting.value) return;
+  swipeDragging.value = true;
+  swipeStartX.value = clientX;
+  swipeDragX.value = 0;
+}
+
+function onSwipeMove(clientX: number) {
+  if (!swipeDragging.value) return;
+  swipeDragX.value = clientX - swipeStartX.value;
+}
+
+function onSwipeEnd() {
+  if (!swipeDragging.value) return;
+  swipeDragging.value = false;
+  if (Math.abs(swipeDragX.value) >= SWIPE_THRESHOLD) {
+    const isTrue = swipeDragX.value > 0;
+    swipeExiting.value = true;
+    swipeExitDirection.value = isTrue ? 'right' : 'left';
+    answerSwipe(isTrue);
+  } else {
+    swipeDragX.value = 0;
+  }
+}
+
+function swipeMouseDown(e: MouseEvent) {
+  onSwipeStart(e.clientX);
+  document.addEventListener('mousemove', swipeMouseMove);
+  document.addEventListener('mouseup', swipeMouseUp);
+}
+
+function swipeMouseMove(e: MouseEvent) {
+  onSwipeMove(e.clientX);
+}
+
+function swipeMouseUp() {
+  onSwipeEnd();
+  document.removeEventListener('mousemove', swipeMouseMove);
+  document.removeEventListener('mouseup', swipeMouseUp);
+}
+
+function swipeTouchStart(e: TouchEvent) {
+  onSwipeStart(e.touches[0].clientX);
+}
+
+function swipeTouchMove(e: TouchEvent) {
+  onSwipeMove(e.touches[0].clientX);
+}
+
+function swipeTouchEnd() {
+  onSwipeEnd();
+}
+
+async function answerSwipe(isTrue: boolean) {
+  const answers = currentAnswers.value;
+  const targetText = isTrue ? 'Doğru' : 'Yanlış';
+  const answer = answers.find(a => a.answer_text === targetText) || answers[isTrue ? 0 : 1];
+  if (answer) {
+    await submitToBackend({
+      questionId: currentQuestion.value.id,
+      answerId: answer.id,
+    });
+  }
+}
+
+// Fill-blank chip
+function toggleFillWord(word: string) {
+  if (answered.value) return;
+  selectedFillWord.value = selectedFillWord.value === word ? '' : word;
+}
+
+async function answerFillBlankChip() {
+  if (!selectedFillWord.value) return;
+  await submitToBackend({
+    questionId: currentQuestion.value.id,
+    textAnswer: selectedFillWord.value,
+  });
+}
+
 // Navigation
 function nextQuestion() {
   if (heartsDepleted.value) {
@@ -718,6 +913,11 @@ function restartQuiz() {
 }
 
 onMounted(startQuiz);
+
+onUnmounted(() => {
+  document.removeEventListener('mousemove', swipeMouseMove);
+  document.removeEventListener('mouseup', swipeMouseUp);
+});
 </script>
 
 <style scoped>
@@ -1159,6 +1359,30 @@ onMounted(startQuiz);
   background: rgba(255, 215, 0, 0.12);
   border-color: var(--pb-gold);
   color: var(--pb-gold);
+}
+
+/* Boss result screen */
+.quiz-result--boss {
+  position: relative;
+}
+
+.quiz-result--boss::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: 24px;
+}
+
+.quiz-result-mascot--boss {
+  animation: boss-bounce 0.8s ease infinite alternate;
+  filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.5));
+}
+
+@keyframes boss-bounce {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(-16px) scale(1.05); }
 }
 
 /* Loading */
@@ -1683,5 +1907,173 @@ onMounted(startQuiz);
 .hd-btn-exit:hover {
   border-color: var(--pb-red);
   color: var(--pb-red);
+}
+
+/* ===== Swipe (D/Y) ===== */
+.quiz-swipe-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.quiz-swipe-card {
+  position: relative;
+  width: 100%;
+  min-height: 240px;
+  background: var(--pb-bg-card);
+  border: 2px solid var(--pb-border);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+.quiz-swipe-card:active {
+  cursor: grabbing;
+}
+
+.quiz-swipe-content {
+  padding: 32px 24px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--pb-text);
+  text-align: center;
+  line-height: 1.5;
+  z-index: 1;
+}
+
+.quiz-swipe-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  border-radius: 18px;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.05s;
+}
+
+.quiz-swipe-overlay--right {
+  background: rgba(88, 204, 2, 0.15);
+  color: var(--pb-green);
+  border: 3px solid var(--pb-green);
+}
+
+.quiz-swipe-overlay--left {
+  background: rgba(255, 75, 75, 0.15);
+  color: var(--pb-red);
+  border: 3px solid var(--pb-red);
+}
+
+.quiz-swipe-hint {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.quiz-swipe-hint--left { color: var(--pb-red); }
+.quiz-swipe-hint--right { color: var(--pb-green); }
+
+/* ===== Fill-blank Chip Mode ===== */
+.quiz-fill-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.quiz-fill-sentence {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--pb-text);
+  line-height: 2.2;
+  text-align: center;
+}
+
+.quiz-fill-slot {
+  display: inline-block;
+  min-width: 80px;
+  padding: 4px 16px;
+  margin: 0 4px;
+  border-bottom: 3px solid var(--pb-purple);
+  color: var(--pb-text-muted);
+  font-weight: 800;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border-radius: 8px 8px 0 0;
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.quiz-fill-slot--filled {
+  background: rgba(124, 58, 237, 0.15);
+  color: var(--pb-text);
+  border-color: var(--pb-purple-light);
+}
+
+.quiz-fill-slot--correct {
+  background: rgba(88, 204, 2, 0.15);
+  border-color: var(--pb-green);
+  color: var(--pb-green);
+}
+
+.quiz-fill-slot--wrong {
+  background: rgba(255, 75, 75, 0.15);
+  border-color: var(--pb-red);
+  color: var(--pb-red);
+}
+
+.quiz-fill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.quiz-fill-chip-btn {
+  background: var(--pb-bg-card);
+  border: 2px solid var(--pb-border);
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--pb-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quiz-fill-chip-btn:hover:not(:disabled) {
+  border-color: var(--pb-purple-light);
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.quiz-fill-chip-btn--selected {
+  border-color: var(--pb-purple);
+  background: rgba(124, 58, 237, 0.2);
+  color: var(--pb-purple-light);
+  transform: scale(0.95);
+  opacity: 0.7;
+}
+
+.quiz-fill-chip-btn--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quiz-fill-check {
+  align-self: center;
 }
 </style>

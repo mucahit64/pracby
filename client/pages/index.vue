@@ -79,7 +79,7 @@
               <!-- Node button -->
               <button
                 class="lesson-node"
-                :class="[`lesson-node--${node.status}`, node.type === 'chest' ? 'lesson-node--chest' : '', node.type === 'boss' ? 'lesson-node--boss' : '']"
+                :class="[`lesson-node--${node.status}`, node.type === 'chest' ? 'lesson-node--chest' : '', node.type === 'boss' ? 'lesson-node--boss' : '', node.isBossNext ? 'lesson-node--step-boss' : '']"
                 :disabled="node.status === 'locked'"
                 @click="goToLesson(node)"
               >
@@ -97,6 +97,27 @@
                   {{ node.status === 'locked' ? '🔒' : node.icon }}
                 </span>
               </button>
+
+              <!-- Step progress dots (lesson nodes only) -->
+              <div v-if="node.type === 'lesson' && node.testsRequired > 0" class="step-progress-dots">
+                <span
+                  v-for="t in node.testsRequired"
+                  :key="'t'+t"
+                  class="step-dot"
+                  :class="{
+                    'step-dot--done': t <= node.testsCompleted,
+                    'step-dot--next': t === node.testsCompleted + 1 && node.status !== 'locked',
+                  }"
+                />
+                <!-- Final dot -->
+                <span
+                  class="step-dot step-dot--final"
+                  :class="{
+                    'step-dot--final-done': node.status === 'completed',
+                    'step-dot--final-ready': node.isFinalAvailable,
+                  }"
+                />
+              </div>
 
               <!-- Lesson name below node -->
               <div class="lesson-label" :class="{ 'lesson-label--muted': node.status === 'locked' }">
@@ -116,6 +137,58 @@
     <div v-else-if="!loadingFull && !courseFull" class="empty-state">
       <p>Başlamak için yukarıdan modül ve ders seçin.</p>
     </div>
+
+    <!-- ===== Step Preview Dialog ===== -->
+    <transition name="dialog-fade">
+      <div v-if="stepDialogOpen && selectedNode" class="sd-overlay" @click.self="stepDialogOpen = false">
+        <!-- FINAL dialog -->
+        <div v-if="selectedNode.isFinalAvailable || selectedNode.type === 'boss'" class="sd-modal sd-modal--final" :class="{ 'sd-modal--step-boss': selectedNode.isBossNext }">
+          <div class="sd-final-header" :class="{ 'sd-final-header--step-boss': selectedNode.isBossNext }">
+            <span class="sd-final-icon">⚔️</span>
+            <div class="sd-final-title">{{ selectedNode.type === 'boss' ? 'Konu Finali' : 'Adım Finali' }}</div>
+            <div class="sd-final-sub">{{ selectedNode.name }}</div>
+          </div>
+          <div class="sd-final-body">
+            <div v-if="selectedNode.type !== 'boss'" class="sd-final-check">
+              <span class="sd-final-check-icon">✓</span>
+              <span>{{ selectedNode.testsRequired }} / {{ selectedNode.testsRequired }} test tamamlandı</span>
+            </div>
+            <p class="sd-final-desc">{{ selectedNode.isBossNext ? 'Bu final testini geçerek adımı tamamla!' : 'Tüm adım sorularından karma olarak sınav yapılacak.' }}</p>
+          </div>
+          <div class="sd-actions">
+            <button class="pb-btn-primary sd-btn-start" @click="startLesson">⚔️ ŞIMDI BAŞLAT</button>
+            <button class="pb-btn-outline sd-btn-cancel" @click="stepDialogOpen = false">Kapat</button>
+          </div>
+        </div>
+
+        <!-- NORMAL test dialog -->
+        <div v-else class="sd-modal">
+          <div class="sd-header">
+            <span class="sd-icon">📝</span>
+            <div class="sd-title">{{ selectedNode.name }}</div>
+          </div>
+          <div class="sd-test-label">Test {{ selectedNode.testsCompleted + 1 }} / {{ selectedNode.testsRequired + 1 }}</div>
+          <!-- Progress dots row -->
+          <div class="sd-dots">
+            <span
+              v-for="t in selectedNode.testsRequired"
+              :key="'sd-t'+t"
+              class="sd-dot"
+              :class="{
+                'sd-dot--done': t <= selectedNode.testsCompleted,
+                'sd-dot--active': t === selectedNode.testsCompleted + 1,
+              }"
+            />
+            <span class="sd-dot sd-dot--final" />
+          </div>
+          <p class="sd-desc">Bu testi tamamladığında bir sonraki adıma geçeceksin.</p>
+          <div class="sd-actions">
+            <button class="pb-btn-primary sd-btn-start" @click="startLesson">BAŞLAT</button>
+            <button class="pb-btn-outline sd-btn-cancel" @click="stepDialogOpen = false">Kapat</button>
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -187,6 +260,13 @@ interface LessonNode {
   stepId?: string;
   testId?: string;
   sessionType: string;
+  // step-level test progress (lesson nodes only)
+  testsCompleted: number;
+  testsRequired: number;
+  isFinalAvailable: boolean;
+  isBossNext: boolean;
+  nextTestId?: string;
+  tests: Test[];
 }
 
 const activeExamName = ref('');
@@ -197,6 +277,10 @@ const courses = ref<Course[]>([]);
 const selectedCourseId = ref('');
 const courseFull = ref<CourseFull | null>(null);
 const loadingFull = ref(false);
+
+// Step preview dialog
+const selectedNode = ref<LessonNode | null>(null);
+const stepDialogOpen = ref(false);
 
 function getToken() {
   return localStorage.getItem('pb_token') ?? '';
@@ -291,7 +375,6 @@ function buildLessonNodes(topic: Topic): LessonNode[] {
 
   for (const step of topic.steps) {
     if (step.step_type === 'reward') {
-      // Reward steps appear as chest nodes
       const prevCompleted = nodes.length > 0 && nodes[nodes.length - 1].status === 'completed';
       nodes.push({
         id: `reward-${step.id}`,
@@ -303,38 +386,61 @@ function buildLessonNodes(topic: Topic): LessonNode[] {
         topicId: topic.id,
         stepId: step.id,
         sessionType: 'lesson',
+        testsCompleted: 0,
+        testsRequired: 0,
+        isFinalAvailable: false,
+        isBossNext: false,
+        tests: [],
       });
       continue;
     }
 
-    // Each test in the step becomes a lesson node
-    for (const test of step.tests) {
-      const isCompleted = step.progress?.is_step_completed ?? false;
-      const crowns = step.progress?.stars ?? 0;
+    // One node per step
+    const isCompleted = step.progress?.is_step_completed ?? false;
+    const crowns = step.progress?.stars ?? 0;
+    const testsCompleted = step.progress?.tests_completed ?? 0;
+    const testsRequired = step.tests_required ?? 1;
+    const stepFinalPassed = step.progress?.step_final_passed ?? false;
+    const isFinalAvailable = testsCompleted >= testsRequired && !stepFinalPassed && !isCompleted;
 
-      let status: 'completed' | 'active' | 'locked';
-      if (isCompleted) {
-        status = 'completed';
-      } else if (!foundActive) {
-        status = 'active';
-        foundActive = true;
-      } else {
-        status = 'locked';
-      }
+    // Which test to start next (first not-yet last-completed)
+    const sortedTests = [...step.tests].sort((a, b) => a.sort_order - b.sort_order);
+    const nextTestIndex = Math.min(testsCompleted, sortedTests.length - 1);
+    const nextTest = sortedTests[nextTestIndex];
+    // Last test in the step is the Boss Node (step final)
+    const isBossNext = sortedTests.length > 1
+      && nextTestIndex === sortedTests.length - 1
+      && !stepFinalPassed
+      && !isCompleted;
 
-      nodes.push({
-        id: test.id,
-        name: step.name,
-        icon: '📝',
-        type: 'lesson',
-        status,
-        crowns,
-        topicId: topic.id,
-        stepId: step.id,
-        testId: test.id,
-        sessionType: 'lesson',
-      });
+    let status: 'completed' | 'active' | 'locked';
+    if (isCompleted) {
+      status = 'completed';
+    } else if (!foundActive) {
+      status = 'active';
+      foundActive = true;
+    } else {
+      status = 'locked';
     }
+
+    nodes.push({
+      id: step.id,
+      name: step.name,
+      icon: isBossNext ? '⚔️' : '📝',
+      type: 'lesson',
+      status,
+      crowns,
+      topicId: topic.id,
+      stepId: step.id,
+      testId: nextTest?.id,
+      sessionType: (isFinalAvailable || isBossNext) ? 'step_final' : 'lesson',
+      testsCompleted,
+      testsRequired,
+      isFinalAvailable: isFinalAvailable || isBossNext,
+      isBossNext,
+      nextTestId: nextTest?.id,
+      tests: sortedTests,
+    });
   }
 
   // Boss node at end (topic final)
@@ -352,6 +458,11 @@ function buildLessonNodes(topic: Topic): LessonNode[] {
       crowns: 0,
       topicId: topic.id,
       sessionType: 'topic_final',
+      testsCompleted: 0,
+      testsRequired: 0,
+      isFinalAvailable: false,
+      isBossNext: false,
+      tests: [],
     });
   }
 
@@ -360,16 +471,22 @@ function buildLessonNodes(topic: Topic): LessonNode[] {
 
 function goToLesson(node: LessonNode) {
   if (node.status === 'locked') return;
+  if (node.type === 'chest') return;
 
-  if (node.type === 'chest') {
-    // Reward claim — handled differently
-    return;
-  }
+  selectedNode.value = node;
+  stepDialogOpen.value = true;
+}
+
+function startLesson() {
+  const node = selectedNode.value;
+  if (!node) return;
+  stepDialogOpen.value = false;
 
   const query: Record<string, string> = {};
   if (node.stepId) query.stepId = node.stepId;
-  if (node.testId) query.testId = node.testId;
   if (node.sessionType) query.sessionType = node.sessionType;
+  // Pass testId for normal lessons and boss (step_final) tests
+  if ((node.sessionType === 'lesson' || node.sessionType === 'step_final') && node.nextTestId) query.testId = node.nextTestId;
 
   navigateTo({ path: `/quiz/${node.topicId}`, query });
 }
@@ -680,6 +797,28 @@ function openGuidebook(topic: Topic) {
   box-shadow: 0 5px 0 rgba(0,0,0,0.4);
 }
 
+/* Step boss node (last test in step) */
+.lesson-node--step-boss {
+  background: linear-gradient(145deg, #7c3aed, #dc2626);
+  box-shadow: 0 6px 0 #4c1d95;
+  width: 76px;
+  height: 76px;
+}
+
+.lesson-node--step-boss.lesson-node--locked {
+  background: var(--pb-bg-card);
+  box-shadow: 0 5px 0 rgba(0,0,0,0.4);
+}
+
+.lesson-node--step-boss.lesson-node--active {
+  animation: pulse-boss 2s infinite;
+}
+
+@keyframes pulse-boss {
+  0%, 100% { box-shadow: 0 6px 0 #4c1d95; }
+  50% { box-shadow: 0 6px 24px rgba(220, 38, 38, 0.6); }
+}
+
 @keyframes pulse {
   0%, 100% { box-shadow: 0 6px 0 var(--pb-purple-dark); }
   50% { box-shadow: 0 6px 20px rgba(124, 58, 237, 0.6); }
@@ -756,5 +895,245 @@ function openGuidebook(topic: Topic) {
   transform: translateX(-50%);
   border: 5px solid transparent;
   border-top-color: var(--pb-border);
+}
+
+/* ===== Step Progress Dots (on node) ===== */
+.step-progress-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.step-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--pb-border);
+  transition: background 0.2s;
+}
+
+.step-dot--done {
+  background: var(--pb-green);
+}
+
+.step-dot--next {
+  background: var(--pb-purple-light);
+  box-shadow: 0 0 5px rgba(139, 92, 246, 0.6);
+}
+
+.step-dot--final {
+  background: var(--pb-border);
+  border: 2px solid #78350f;
+  width: 11px;
+  height: 11px;
+}
+
+.step-dot--final-ready {
+  background: var(--pb-gold);
+  border-color: #92400e;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.7);
+}
+
+.step-dot--final-done {
+  background: var(--pb-gold);
+  border-color: #92400e;
+}
+
+/* ===== Step Dialog ===== */
+.sd-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.sd-modal {
+  background: var(--pb-bg-card);
+  border: 2px solid var(--pb-border);
+  border-radius: 24px;
+  padding: 28px 26px 22px;
+  max-width: 360px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.sd-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.sd-icon {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.sd-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--pb-text);
+  text-align: center;
+}
+
+.sd-test-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--pb-purple-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sd-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.sd-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--pb-border);
+  transition: background 0.2s;
+}
+
+.sd-dot--done {
+  background: var(--pb-green);
+}
+
+.sd-dot--active {
+  background: var(--pb-purple);
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.7);
+  width: 14px;
+  height: 14px;
+}
+
+.sd-dot--final {
+  background: var(--pb-border);
+  border: 2px solid #78350f;
+  width: 14px;
+  height: 14px;
+}
+
+.sd-desc {
+  font-size: 0.82rem;
+  color: var(--pb-text-muted);
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+.sd-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.sd-btn-start {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.sd-btn-cancel {
+  width: 100%;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+/* Final dialog variant */
+.sd-modal--final {
+  border-color: #78350f;
+}
+
+/* Step boss final dialog variant */
+.sd-modal--step-boss {
+  border-color: #7c3aed;
+}
+
+.sd-final-header {
+  width: 100%;
+  background: linear-gradient(135deg, #92400e 0%, #d97706 100%);
+  border-radius: 16px;
+  padding: 20px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.sd-final-header--step-boss {
+  background: linear-gradient(135deg, #4c1d95 0%, #dc2626 100%);
+}
+
+.sd-final-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.sd-final-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: white;
+}
+
+.sd-final-sub {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sd-final-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.sd-final-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--pb-green);
+}
+
+.sd-final-check-icon {
+  font-size: 1rem;
+}
+
+.sd-final-desc {
+  font-size: 0.82rem;
+  color: var(--pb-text-muted);
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+/* Dialog transition */
+.dialog-fade-enter-active,
+.dialog-fade-leave-active {
+  transition: opacity 0.18s ease;
+}
+
+.dialog-fade-enter-from,
+.dialog-fade-leave-to {
+  opacity: 0;
 }
 </style>

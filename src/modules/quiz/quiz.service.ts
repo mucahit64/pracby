@@ -54,8 +54,15 @@ export const startSession = async (userId: string, input: StartQuizInput) => {
     // Topic final: questions from all steps, mixed by difficulty
     questions = await fetchQuestionsForFinal("topic_id", input.topicId, TOPIC_FINAL_DISTRIBUTION);
   } else if (input.sessionType === "step_final" && input.stepId) {
-    // Step final: questions from all tests in this step, mixed by difficulty
-    questions = await fetchQuestionsForFinal("step_id", input.stepId, STEP_FINAL_DISTRIBUTION);
+    if (input.testId) {
+      // Boss test: static questions from a specific final test
+      questions = await db("questions")
+        .where({ test_id: input.testId, status: "approved" })
+        .orderBy("sort_order", "asc");
+    } else {
+      // Step final: questions from all tests in this step, mixed by difficulty
+      questions = await fetchQuestionsForFinal("step_id", input.stepId, STEP_FINAL_DISTRIBUTION);
+    }
   } else if (input.testId) {
     // Normal test: fixed questions from this specific test, ordered by sort_order
     questions = await db("questions")
@@ -79,7 +86,7 @@ export const startSession = async (userId: string, input: StartQuizInput) => {
 
   // Fetch answers for multiple_choice and true_false questions
   const mcQuestionIds = questions
-    .filter((q) => q.question_type === "multiple_choice" || q.question_type === "true_false")
+    .filter((q) => q.question_type === "multiple_choice" || q.question_type === "true_false" || q.question_type === "swipe")
     .map((q) => q.id);
 
   const answers = mcQuestionIds.length > 0
@@ -129,6 +136,7 @@ export const submitAnswer = async (
 
   if (!input.isSkipped) {
     switch (question.question_type) {
+      case "swipe":
       case "multiple_choice":
       case "true_false": {
         if (input.answerId) {
