@@ -108,7 +108,7 @@
           </button>
           <span v-else class="enrollment-active-badge">Aktif</span>
         </div>
-        <button class="enrollment-add-btn" @click="showEnrollModal = true">+ Sınav Ekle</button>
+        <button class="enrollment-add-btn" @click="openEnrollModal">+ Sınav Ekle</button>
       </div>
     </div>
 
@@ -118,6 +118,64 @@
       <button class="pb-btn-outline prof-signout-btn" @click="signOut">🚪 Çıkış</button>
     </div>
   </div>
+
+  <!-- Enroll Modal -->
+  <transition name="dialog-fade">
+    <div v-if="showEnrollModal" class="enroll-overlay" @click.self="closeEnrollModal">
+      <div class="enroll-modal">
+        <button class="enroll-close" @click="closeEnrollModal">✕</button>
+
+        <!-- Step 1: Group selection -->
+        <template v-if="enrollStep === 1">
+          <h2 class="enroll-title">Sınav Grubu Seç</h2>
+          <div v-if="loadingExamGroups" class="enroll-loading">Yükleniyor…</div>
+          <div v-else class="enroll-grid">
+            <button
+              v-for="group in examGroups"
+              :key="group.id"
+              class="enroll-card"
+              :class="{
+                'enroll-card--selected': selectedGroupId === group.id,
+                'enroll-card--disabled': !group.is_active,
+              }"
+              :disabled="!group.is_active"
+              @click="selectGroup(group)"
+            >
+              <span class="enroll-card-name">{{ group.name }}</span>
+              <span class="enroll-card-desc">{{ group.description }}</span>
+              <span v-if="!group.is_active" class="enroll-card-soon">Yakında</span>
+            </button>
+          </div>
+          <button class="pb-btn-primary enroll-next" :disabled="!selectedGroupId" @click="enrollStep = 2">Devam →</button>
+        </template>
+
+        <!-- Step 2: Type selection -->
+        <template v-else-if="enrollStep === 2">
+          <h2 class="enroll-title">Sınav Türü Seç</h2>
+          <div class="enroll-grid">
+            <button
+              v-for="type in availableTypes"
+              :key="type.id"
+              class="enroll-card"
+              :class="{ 'enroll-card--selected': selectedTypeId === type.id }"
+              @click="selectedTypeId = type.id"
+            >
+              <span class="enroll-card-name">{{ type.name }}</span>
+              <span class="enroll-card-desc">{{ type.description }}</span>
+            </button>
+          </div>
+          <div v-if="availableTypes.length === 0" class="enroll-empty">Bu gruptaki tüm sınavlara zaten kayıtlısın.</div>
+          <p v-if="enrollError" class="enroll-error">{{ enrollError }}</p>
+          <div class="enroll-actions">
+            <button class="pb-btn-outline" @click="enrollStep = 1">← Geri</button>
+            <button class="pb-btn-primary" :disabled="!selectedTypeId || enrolling" @click="submitEnrollment">
+              {{ enrolling ? 'Ekleniyor…' : 'Sınav Ekle' }}
+            </button>
+          </div>
+        </template>
+      </div>
+    </div>
+  </transition>
 </template>
 
 <script setup lang="ts">
@@ -137,6 +195,83 @@ const activeExamTypeId = ref('');
 const enrollments = ref<Enrollment[]>([]);
 const loadingEnrollments = ref(false);
 const showEnrollModal = ref(false);
+
+// Enroll modal state
+interface ExamGroup {
+  id: string;
+  name: string;
+  description: string;
+  is_active: boolean;
+  exam_types: { id: string; name: string; description: string }[];
+}
+
+const enrollStep = ref(1);
+const examGroups = ref<ExamGroup[]>([]);
+const loadingExamGroups = ref(false);
+const selectedGroupId = ref('');
+const selectedTypeId = ref('');
+const enrolling = ref(false);
+const enrollError = ref('');
+
+const availableTypes = computed(() => {
+  const group = examGroups.value.find(g => g.id === selectedGroupId.value);
+  if (!group) return [];
+  const enrolledIds = new Set(enrollments.value.map(e => e.exam_type_id));
+  return group.exam_types.filter(t => !enrolledIds.has(t.id));
+});
+
+function selectGroup(group: ExamGroup) {
+  selectedGroupId.value = group.id;
+  selectedTypeId.value = '';
+}
+
+function closeEnrollModal() {
+  showEnrollModal.value = false;
+  enrollStep.value = 1;
+  selectedGroupId.value = '';
+  selectedTypeId.value = '';
+  enrollError.value = '';
+}
+
+async function openEnrollModal() {
+  showEnrollModal.value = true;
+  enrollStep.value = 1;
+  selectedGroupId.value = '';
+  selectedTypeId.value = '';
+  enrollError.value = '';
+  if (examGroups.value.length === 0) {
+    loadingExamGroups.value = true;
+    try {
+      const groups = await $fetch<ExamGroup[]>('/api/exam-groups', {
+        headers: { Authorization: `Bearer ${localStorage.getItem('pb_token')}` },
+      });
+      examGroups.value = groups;
+    } catch { /* skip */ }
+    loadingExamGroups.value = false;
+  }
+}
+
+async function submitEnrollment() {
+  if (!selectedTypeId.value) return;
+  enrolling.value = true;
+  enrollError.value = '';
+  const token = localStorage.getItem('pb_token');
+  if (!token) return;
+  try {
+    await $fetch('/api/users/me/enrollments', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+      body: { exam_type_id: selectedTypeId.value },
+    });
+    closeEnrollModal();
+    await fetchEnrollments();
+  } catch (e: unknown) {
+    const data = (e as { data?: { error?: string } })?.data;
+    enrollError.value = data?.error || 'Kayıt başarısız. Tekrar dene.';
+  } finally {
+    enrolling.value = false;
+  }
+}
 
 const switchExam = async (examTypeId: string) => {
   const token = localStorage.getItem('pb_token');
@@ -648,5 +783,161 @@ onMounted(() => {
 
 .prof-signout-btn:hover {
   background: rgba(255, 75, 75, 0.08);
+}
+
+/* ===== Enroll Modal ===== */
+.enroll-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  padding: 20px;
+}
+
+.enroll-modal {
+  background: var(--pb-bg-card);
+  border: 2px solid var(--pb-border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.enroll-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--pb-bg);
+  color: var(--pb-text-muted);
+  font-size: 0.9rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  transition: background 0.12s, color 0.12s;
+}
+
+.enroll-close:hover {
+  background: var(--pb-bg-card-hover);
+  color: var(--pb-text);
+}
+
+.enroll-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--pb-text);
+}
+
+.enroll-loading {
+  color: var(--pb-text-muted);
+  font-size: 0.9rem;
+  padding: 16px 0;
+}
+
+.enroll-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.enroll-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 2px solid var(--pb-border);
+  background: var(--pb-bg);
+  color: var(--pb-text);
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+  position: relative;
+}
+
+.enroll-card:hover {
+  background: var(--pb-bg-card-hover);
+}
+
+.enroll-card--selected {
+  border-color: var(--pb-purple-light);
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.enroll-card--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.enroll-card-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.enroll-card-desc {
+  font-size: 0.78rem;
+  color: var(--pb-text-muted);
+  font-weight: 600;
+}
+
+.enroll-card-soon {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--pb-orange);
+  background: rgba(255, 150, 0, 0.12);
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.enroll-empty {
+  color: var(--pb-text-muted);
+  font-size: 0.85rem;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.enroll-error {
+  color: var(--pb-red);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.enroll-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.enroll-next {
+  align-self: stretch;
+}
+
+/* Dialog fade transition */
+.dialog-fade-enter-active,
+.dialog-fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+.dialog-fade-enter-from,
+.dialog-fade-leave-to {
+  opacity: 0;
 }
 </style>

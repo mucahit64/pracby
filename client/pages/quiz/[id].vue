@@ -16,7 +16,7 @@
     <template v-else-if="!finished && questions.length > 0">
       <!-- Top bar -->
       <div class="quiz-topbar">
-        <NuxtLink to="/" class="quiz-close">✕</NuxtLink>
+        <button class="quiz-close" @click="handleClose">✕</button>
         <div class="quiz-progress-wrap">
           <div class="quiz-progress-bar">
             <div
@@ -26,12 +26,7 @@
           </div>
         </div>
         <div class="quiz-hearts">
-          <span
-            v-for="i in 5"
-            :key="i"
-            class="quiz-heart"
-            :class="{ 'quiz-heart--lost': i > hearts }"
-          >❤️</span>
+          <span class="quiz-heart-display">❤️ {{ hearts }}</span>
         </div>
       </div>
 
@@ -384,6 +379,8 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({ layout: false });
+
 const route = useRoute();
 const router = useRouter();
 
@@ -482,6 +479,9 @@ const SWIPE_THRESHOLD = 100;
 
 // Fill-blank chip state
 const selectedFillWord = ref('');
+
+// Answer tracking for exit dialog
+const totalAnswered = ref(0);
 
 const currentQuestion = computed(() => questions.value[currentIndex.value]);
 const currentAnswers = computed(() => currentQuestion.value?.answers ?? []);
@@ -601,6 +601,7 @@ async function submitToBackend(body: Record<string, unknown>) {
     });
     lastAnswerCorrect.value = result.isCorrect;
     answered.value = true;
+    totalAnswered.value++;
     if (result.isCorrect) {
       correctCount.value++;
       xpEarned.value += 1;
@@ -613,6 +614,7 @@ async function submitToBackend(body: Record<string, unknown>) {
   } catch {
     lastAnswerCorrect.value = false;
     answered.value = true;
+    totalAnswered.value++;
   }
 }
 
@@ -897,6 +899,14 @@ function exitQuiz() {
   router.replace('/');
 }
 
+function handleClose() {
+  if (totalAnswered.value === 0) {
+    exitQuiz();
+  } else {
+    exitWarningDialog.value = true;
+  }
+}
+
 function restartQuiz() {
   currentIndex.value = 0;
   answered.value = false;
@@ -907,6 +917,7 @@ function restartQuiz() {
   acornEarned.value = 0;
   stepCompleted.value = false;
   topicCompleted.value = false;
+  totalAnswered.value = 0;
   loading.value = true;
   error.value = '';
   startQuiz();
@@ -928,7 +939,9 @@ onUnmounted(() => {
   flex-direction: column;
   max-width: 600px;
   margin: 0 auto;
-  padding-bottom: 40px;
+  padding: 0 16px 40px;
+  color: var(--pb-text);
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
 }
 
 /* Top bar */
@@ -955,6 +968,10 @@ onUnmounted(() => {
   border-radius: 50%;
   transition: background 0.12s, color 0.12s;
   flex-shrink: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .quiz-close:hover {
@@ -982,18 +999,13 @@ onUnmounted(() => {
 }
 
 .quiz-hearts {
-  display: flex;
-  gap: 4px;
   flex-shrink: 0;
 }
 
-.quiz-heart {
+.quiz-heart-display {
   font-size: 1rem;
-  transition: filter 0.2s;
-}
-
-.quiz-heart--lost {
-  filter: grayscale(1) opacity(0.3);
+  font-weight: 900;
+  color: var(--pb-text);
 }
 
 /* Question body */

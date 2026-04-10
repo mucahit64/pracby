@@ -31,6 +31,21 @@
           <span class="pb-nav-label">{{ item.label }}</span>
         </NuxtLink>
       </nav>
+
+      <!-- Exam switcher (only when multiple enrollments) -->
+      <div v-if="enrollments.length > 1" class="pb-exam-switcher">
+        <div class="pb-exam-switcher-label">Sınav</div>
+        <button
+          v-for="enr in enrollments"
+          :key="enr.exam_type_id"
+          class="pb-exam-btn"
+          :class="{ 'pb-exam-btn--active': enr.exam_type_id === activeExamTypeId }"
+          @click="switchExam(enr.exam_type_id)"
+        >
+          <span class="pb-exam-btn-name">{{ enr.exam_type_name }}</span>
+          <span v-if="enr.exam_type_id === activeExamTypeId" class="pb-exam-active-dot" />
+        </button>
+      </div>
     </aside>
 
     <!-- Main content area -->
@@ -46,17 +61,31 @@
 
   <!-- Mobile bottom nav -->
   <nav v-if="isMobile" class="pb-bottom-nav">
-    <NuxtLink
-      v-for="item in navItems"
-      :key="item.to"
-      :to="item.to"
-      class="pb-bottom-nav-item"
-      active-class="pb-bottom-nav-item--active"
-      :exact="item.exact"
-    >
-      <span class="pb-bottom-nav-icon">{{ item.emoji }}</span>
-      <span class="pb-bottom-nav-label">{{ item.label }}</span>
-    </NuxtLink>
+    <!-- Exam switcher row (mobile, multiple enrollments) -->
+    <div v-if="enrollments.length > 1" class="pb-bottom-exam-row">
+      <button
+        v-for="enr in enrollments"
+        :key="enr.exam_type_id"
+        class="pb-bottom-exam-btn"
+        :class="{ 'pb-bottom-exam-btn--active': enr.exam_type_id === activeExamTypeId }"
+        @click="switchExam(enr.exam_type_id)"
+      >
+        {{ enr.exam_type_name }}
+      </button>
+    </div>
+    <div class="pb-bottom-nav-items">
+      <NuxtLink
+        v-for="item in navItems"
+        :key="item.to"
+        :to="item.to"
+        class="pb-bottom-nav-item"
+        active-class="pb-bottom-nav-item--active"
+        :exact="item.exact"
+      >
+        <span class="pb-bottom-nav-icon">{{ item.emoji }}</span>
+        <span class="pb-bottom-nav-label">{{ item.label }}</span>
+      </NuxtLink>
+    </div>
   </nav>
 </template>
 
@@ -86,11 +115,14 @@ onMounted(async () => {
 
   // Fetch user stats for header
   try {
-    const [user, userStats] = await Promise.all([
-      $fetch<{ acorn_balance?: number; hearts?: number; next_heart_at?: string | null }>('/api/users/me', {
+    const [user, userStats, enrollmentList] = await Promise.all([
+      $fetch<{ acorn_balance?: number; hearts?: number; next_heart_at?: string | null; active_exam_type_id?: string }>('/api/users/me', {
         headers: { Authorization: `Bearer ${token}` },
       }),
       $fetch<{ streak?: number }>('/api/users/me/stats', {
+        headers: { Authorization: `Bearer ${token}` },
+      }),
+      $fetch<{ exam_type_id: string; exam_type_name: string; exam_group_name: string }[]>('/api/users/me/enrollments', {
         headers: { Authorization: `Bearer ${token}` },
       }),
     ]);
@@ -98,6 +130,8 @@ onMounted(async () => {
     heartsCount.value = user.hearts ?? 5;
     streakCount.value = userStats.streak ?? 0;
     nextHeartAt.value = user.next_heart_at ?? null;
+    activeExamTypeId.value = user.active_exam_type_id ?? '';
+    enrollments.value = enrollmentList;
     startHeartCountdown(token);
   } catch { /* skip */ }
 });
@@ -147,6 +181,31 @@ const navItems = [
   { emoji: '🌰', label: 'Market', to: '/store', exact: false },
   { emoji: '👤', label: 'Profil', to: '/profile', exact: false },
 ];
+
+interface Enrollment {
+  exam_type_id: string;
+  exam_type_name: string;
+  exam_group_name: string;
+}
+
+const enrollments = ref<Enrollment[]>([]);
+const activeExamTypeId = ref('');
+
+async function switchExam(examTypeId: string) {
+  if (examTypeId === activeExamTypeId.value) return;
+  const token = localStorage.getItem('pb_token');
+  if (!token) return;
+  try {
+    await $fetch('/api/users/me/active-exam', {
+      method: 'PATCH',
+      headers: { Authorization: `Bearer ${token}` },
+      body: { exam_type_id: examTypeId },
+    });
+    activeExamTypeId.value = examTypeId;
+    // Reload to reflect new exam's courses/modules
+    window.location.href = '/';
+  } catch { /* skip */ }
+}
 </script>
 
 <style>
@@ -334,9 +393,15 @@ a { text-decoration: none; color: inherit; }
   right: 0;
   background: var(--pb-bg);
   border-top: 2px solid var(--pb-border);
-  padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+  padding: 0 0 env(safe-area-inset-bottom);
   z-index: 200;
+  flex-direction: column;
+}
+
+.pb-bottom-nav-items {
+  display: flex;
   justify-content: space-around;
+  padding: 8px 0;
 }
 
 .pb-bottom-nav-item {
@@ -434,6 +499,96 @@ a { text-decoration: none; color: inherit; }
 
 .pb-card:hover {
   background: var(--pb-bg-card-hover);
+}
+
+/* ===== Exam Switcher (Sidebar) ===== */
+.pb-exam-switcher {
+  border-top: 2px solid var(--pb-border);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pb-exam-switcher-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--pb-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0 8px 4px;
+}
+
+.pb-exam-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: transparent;
+  color: var(--pb-text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pb-exam-btn:hover {
+  background: var(--pb-bg-card);
+  color: var(--pb-text);
+}
+
+.pb-exam-btn--active {
+  background: rgba(124, 58, 237, 0.12);
+  color: var(--pb-purple-light);
+  border-color: rgba(124, 58, 237, 0.25);
+}
+
+.pb-exam-btn-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pb-exam-active-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--pb-purple-light);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ===== Exam Switcher (Mobile Bottom Nav) ===== */
+.pb-bottom-exam-row {
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px 0;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--pb-border);
+}
+
+.pb-bottom-exam-btn {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 2px solid var(--pb-border);
+  background: transparent;
+  color: var(--pb-text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.pb-bottom-exam-btn--active {
+  background: rgba(124, 58, 237, 0.15);
+  color: var(--pb-purple-light);
+  border-color: rgba(124, 58, 237, 0.4);
 }
 
 /* Quasar overrides */

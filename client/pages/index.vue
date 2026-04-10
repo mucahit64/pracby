@@ -1,11 +1,5 @@
 <template>
   <div class="learn-page">
-    <!-- Active exam badge -->
-    <div v-if="activeExamName" class="active-exam-banner">
-      <span class="active-exam-label">Aktif Sınav</span>
-      <span class="active-exam-name">{{ activeExamName }}</span>
-    </div>
-
     <!-- Module tabs -->
     <div v-if="modules.length > 0" class="module-tabs">
       <button
@@ -73,50 +67,34 @@
 
             <!-- Lesson Node -->
             <div class="lesson-node-wrapper">
-              <!-- START label above active -->
-              <div v-if="node.status === 'active'" class="lesson-start-label">BAŞLA</div>
-
-              <!-- Node button -->
-              <button
-                class="lesson-node"
-                :class="[`lesson-node--${node.status}`, node.type === 'chest' ? 'lesson-node--chest' : '', node.type === 'boss' ? 'lesson-node--boss' : '', node.isBossNext ? 'lesson-node--step-boss' : '']"
-                :disabled="node.status === 'locked'"
-                @click="goToLesson(node)"
-              >
-                <!-- Crown indicator dots for completed lessons -->
-                <div v-if="node.status === 'completed'" class="crown-dots">
-                  <span
-                    v-for="i in 5"
-                    :key="i"
-                    class="crown-dot"
-                    :class="{ 'crown-dot--filled': i <= node.crowns }"
+              <!-- Node button with circular progress ring / tick -->
+              <div class="node-ring-wrap">
+                <button
+                  class="lesson-node"
+                  :class="[`lesson-node--${node.status}`, node.type === 'chest' ? 'lesson-node--chest' : '', node.type === 'boss' ? 'lesson-node--boss' : '', node.isBossNext ? 'lesson-node--step-boss' : '']"
+                  :disabled="node.status === 'locked'"
+                  @click="goToLesson(node)"
+                >
+                  <span v-if="node.status === 'completed' && node.type === 'lesson'" class="lesson-tick">✓</span>
+                  <span v-else class="lesson-icon">
+                    {{ node.status === 'locked' ? '🔒' : node.icon }}
+                  </span>
+                </button>
+                <!-- Progress ring: active nodes only -->
+                <svg
+                  v-if="node.type === 'lesson' && node.testsRequired > 0 && node.status === 'active'"
+                  class="step-ring"
+                  viewBox="0 0 88 88"
+                >
+                  <circle class="step-ring-bg" cx="44" cy="44" r="38" />
+                  <circle
+                    class="step-ring-fill"
+                    cx="44"
+                    cy="44"
+                    r="38"
+                    :style="ringStyle(node)"
                   />
-                </div>
-
-                <span class="lesson-icon">
-                  {{ node.status === 'locked' ? '🔒' : node.icon }}
-                </span>
-              </button>
-
-              <!-- Step progress dots (lesson nodes only) -->
-              <div v-if="node.type === 'lesson' && node.testsRequired > 0" class="step-progress-dots">
-                <span
-                  v-for="t in node.testsRequired"
-                  :key="'t'+t"
-                  class="step-dot"
-                  :class="{
-                    'step-dot--done': t <= node.testsCompleted,
-                    'step-dot--next': t === node.testsCompleted + 1 && node.status !== 'locked',
-                  }"
-                />
-                <!-- Final dot -->
-                <span
-                  class="step-dot step-dot--final"
-                  :class="{
-                    'step-dot--final-done': node.status === 'completed',
-                    'step-dot--final-ready': node.isFinalAvailable,
-                  }"
-                />
+                </svg>
               </div>
 
               <!-- Lesson name below node -->
@@ -469,9 +447,22 @@ function buildLessonNodes(topic: Topic): LessonNode[] {
   return nodes;
 }
 
+const RING_CIRCUMFERENCE = 2 * Math.PI * 38;
+
+function ringStyle(node: LessonNode) {
+  const total = node.testsRequired + 1; // +1 for the boss/final test
+  const done = node.status === 'completed' ? total : node.testsCompleted;
+  const progress = total > 0 ? done / total : 0;
+  return {
+    strokeDasharray: RING_CIRCUMFERENCE,
+    strokeDashoffset: RING_CIRCUMFERENCE * (1 - progress),
+  };
+}
+
 function goToLesson(node: LessonNode) {
   if (node.status === 'locked') return;
   if (node.type === 'chest') return;
+  if (node.status === 'completed') return;
 
   selectedNode.value = node;
   stepDialogOpen.value = true;
@@ -497,31 +488,6 @@ function openGuidebook(topic: Topic) {
 </script>
 
 <style scoped>
-.active-exam-banner {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(124, 58, 237, 0.15);
-  border: 2px solid rgba(124, 58, 237, 0.35);
-  border-radius: 14px;
-  padding: 10px 18px;
-  max-width: 480px;
-}
-
-.active-exam-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-}
-
-.active-exam-name {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--pb-purple-light);
-}
-
 .learn-page {
   display: flex;
   flex-direction: column;
@@ -739,114 +705,103 @@ function openGuidebook(topic: Topic) {
   justify-content: center;
   gap: 2px;
   font-size: 1.6rem;
-  transition: transform 0.12s, box-shadow 0.12s;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
   position: relative;
   font-family: inherit;
 }
 
 .lesson-node:hover:not(:disabled) {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 .lesson-node:active:not(:disabled) {
-  transform: translateY(2px);
+  transform: translateY(3px);
 }
 
 /* Completed */
 .lesson-node--completed {
-  background: var(--pb-purple);
-  box-shadow: 0 6px 0 var(--pb-purple-dark);
+  background: linear-gradient(160deg, #9f6ef5 0%, var(--pb-purple) 55%, #5b21b6 100%);
+  box-shadow:
+    0 7px 0 #3b1591,
+    0 8px 16px rgba(109, 40, 217, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* Active (current) */
 .lesson-node--active {
-  background: var(--pb-purple);
-  box-shadow: 0 6px 0 var(--pb-purple-dark);
-  animation: pulse 2s infinite;
+  background: linear-gradient(160deg, #a78bfa 0%, var(--pb-purple) 55%, #5b21b6 100%);
+  box-shadow:
+    0 7px 0 #3b1591,
+    0 8px 20px rgba(124, 58, 237, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 /* Locked */
 .lesson-node--locked {
-  background: var(--pb-bg-card);
-  box-shadow: 0 5px 0 rgba(0,0,0,0.4);
+  background: linear-gradient(160deg, #2d2b50 0%, #1e1c35 100%);
+  box-shadow:
+    0 5px 0 rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
   cursor: not-allowed;
-  border: 3px solid var(--pb-border);
+  border: 2px solid var(--pb-border);
 }
 
 /* Chest node */
 .lesson-node--chest {
-  background: linear-gradient(145deg, #d97706, #f59e0b);
-  box-shadow: 0 6px 0 #92400e;
+  background: linear-gradient(160deg, #fcd34d 0%, #f59e0b 55%, #b45309 100%);
+  box-shadow:
+    0 7px 0 #78350f,
+    0 8px 16px rgba(245, 158, 11, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .lesson-node--chest.lesson-node--locked {
-  background: var(--pb-bg-card);
-  box-shadow: 0 5px 0 rgba(0,0,0,0.4);
+  background: linear-gradient(160deg, #2d2b50 0%, #1e1c35 100%);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 /* Boss node */
 .lesson-node--boss {
-  background: linear-gradient(145deg, #dc2626, #ef4444);
-  box-shadow: 0 6px 0 #991b1b;
+  background: linear-gradient(160deg, #f87171 0%, #dc2626 55%, #7f1d1d 100%);
+  box-shadow:
+    0 7px 0 #7f1d1d,
+    0 8px 20px rgba(220, 38, 38, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   width: 80px;
   height: 80px;
 }
 
 .lesson-node--boss.lesson-node--locked {
-  background: var(--pb-bg-card);
-  box-shadow: 0 5px 0 rgba(0,0,0,0.4);
+  background: linear-gradient(160deg, #2d2b50 0%, #1e1c35 100%);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 /* Step boss node (last test in step) */
 .lesson-node--step-boss {
-  background: linear-gradient(145deg, #7c3aed, #dc2626);
-  box-shadow: 0 6px 0 #4c1d95;
+  background: linear-gradient(160deg, #a78bfa 0%, #7c3aed 40%, #dc2626 100%);
+  box-shadow:
+    0 7px 0 #4c1d95,
+    0 8px 20px rgba(124, 58, 237, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   width: 76px;
   height: 76px;
 }
 
 .lesson-node--step-boss.lesson-node--locked {
-  background: var(--pb-bg-card);
-  box-shadow: 0 5px 0 rgba(0,0,0,0.4);
-}
-
-.lesson-node--step-boss.lesson-node--active {
-  animation: pulse-boss 2s infinite;
-}
-
-@keyframes pulse-boss {
-  0%, 100% { box-shadow: 0 6px 0 #4c1d95; }
-  50% { box-shadow: 0 6px 24px rgba(220, 38, 38, 0.6); }
-}
-
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 6px 0 var(--pb-purple-dark); }
-  50% { box-shadow: 0 6px 20px rgba(124, 58, 237, 0.6); }
+  background: linear-gradient(160deg, #2d2b50 0%, #1e1c35 100%);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .lesson-icon {
   line-height: 1;
 }
 
-/* Crown dots */
-.crown-dots {
-  display: flex;
-  gap: 3px;
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.crown-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-}
-
-.crown-dot--filled {
-  background: var(--pb-gold);
+.lesson-tick {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .lesson-label {
@@ -897,47 +852,36 @@ function openGuidebook(topic: Topic) {
   border-top-color: var(--pb-border);
 }
 
-/* ===== Step Progress Dots (on node) ===== */
-.step-progress-dots {
+/* ===== Circular Progress Ring ===== */
+.node-ring-wrap {
+  position: relative;
   display: flex;
-  gap: 5px;
   align-items: center;
-  margin-top: 2px;
+  justify-content: center;
 }
 
-.step-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--pb-border);
-  transition: background 0.2s;
+.step-ring {
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
 }
 
-.step-dot--done {
-  background: var(--pb-green);
+.step-ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 5;
 }
 
-.step-dot--next {
-  background: var(--pb-purple-light);
-  box-shadow: 0 0 5px rgba(139, 92, 246, 0.6);
-}
-
-.step-dot--final {
-  background: var(--pb-border);
-  border: 2px solid #78350f;
-  width: 11px;
-  height: 11px;
-}
-
-.step-dot--final-ready {
-  background: var(--pb-gold);
-  border-color: #92400e;
-  box-shadow: 0 0 6px rgba(255, 215, 0, 0.7);
-}
-
-.step-dot--final-done {
-  background: var(--pb-gold);
-  border-color: #92400e;
+.step-ring-fill {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 5;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
 }
 
 /* ===== Step Dialog ===== */
