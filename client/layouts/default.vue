@@ -12,8 +12,7 @@
     <!-- Left Sidebar -->
     <aside class="pb-sidebar" :class="{ 'pb-sidebar-mobile': isMobile, 'pb-sidebar-open': mobileMenuOpen }">
       <!-- Logo -->
-      <NuxtLink to="/" class="pb-logo-link">
-        <PbMascot :width="44" :height="55" />
+      <NuxtLink to="/" class="pb-logo-link" >
         <span class="pb-logo-text">pracby</span>
       </NuxtLink>
 
@@ -48,15 +47,17 @@
       </div>
     </aside>
 
-    <!-- Main content area -->
-    <main class="pb-main">
-      <slot />
-    </main>
+    <!-- Content area (centered) -->
+    <div class="pb-content-area">
+      <main class="pb-main">
+        <slot />
+      </main>
 
-    <!-- Right panel (hidden on quiz pages and mobile) -->
-    <aside v-if="showRightPanel && !isMobile" class="pb-right-panel-wrapper">
-      <PbRightPanel />
-    </aside>
+      <!-- Right panel (hidden on quiz pages and mobile) -->
+      <aside v-if="showRightPanel && !isMobile" class="pb-right-panel-wrapper">
+        <PbRightPanel />
+      </aside>
+    </div>
   </div>
 
   <!-- Mobile bottom nav -->
@@ -101,10 +102,7 @@ const screen = ref({ lt: { md: false } });
 
 onMounted(async () => {
   const token = localStorage.getItem('pb_token');
-  if (!token) {
-    router.replace('/auth/login');
-    return;
-  }
+  if (!token) return;
 
   const checkMobile = () => {
     screen.value.lt.md = window.innerWidth < 900;
@@ -330,21 +328,28 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ===== Main Content ===== */
-.pb-main {
+.pb-content-area {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.pb-main {
+  width: 100%;
+  max-width: 700px;
   min-width: 0;
   overflow-y: auto;
   padding: 24px 16px;
-  max-width: 700px;
 }
 
 /* ===== Right Panel Wrapper ===== */
 .pb-right-panel-wrapper {
   width: var(--pb-right-panel-width);
   min-width: var(--pb-right-panel-width);
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  flex-shrink: 0;
   overflow-y: auto;
 }
 
@@ -430,6 +435,7 @@ a { text-decoration: none; color: inherit; }
   .pb-mobile-header { display: flex; }
   .pb-sidebar { display: none; }
   .pb-right-panel-wrapper { display: none; }
+  .pb-content-area { height: auto; }
   .pb-bottom-nav { display: flex; }
 
   .pb-main {

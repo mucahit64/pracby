@@ -2,13 +2,20 @@ import { z } from "zod/v4";
 
 export const RegisterSchema = z.object({
   email: z.string().email(),
-  username: z.string().min(3).max(30),
-  password: z.string().min(8),
+  username: z
+    .string()
+    .min(3)
+    .max(30)
+    .regex(
+      /^[a-z0-9._]+$/,
+      "Username can only contain lowercase letters, numbers, dots and underscores",
+    ),
+  password: z.string().min(6, "Password must be at least 6 characters"),
   exam_type_id: z.string().uuid().optional(),
 });
 
 export const LoginSchema = z.object({
-  email: z.string().email(),
+  identifier: z.string().min(1, "Email or username is required"),
   password: z.string().min(1),
 });
 

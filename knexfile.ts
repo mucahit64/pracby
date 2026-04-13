@@ -15,6 +15,11 @@ const config: Knex.Config = {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
   },
+  pool: {
+    min: isProd ? 2 : 0,
+    max: isProd ? 10 : 5,
+    acquireTimeoutMillis: 30000,
+  },
   migrations: {
     directory: path.join(__dirname, "src/db/migrations"),
     extension: isProd ? "js" : "ts",

@@ -35,7 +35,7 @@
 
         <div class="pb-field">
           <label class="pb-label">Şifre</label>
-          <input v-model="form.password" type="password" class="pb-input" placeholder="En az 8 karakter" autocomplete="new-password" minlength="8" required />
+          <input v-model="form.password" type="password" class="pb-input" placeholder="En az 6 karakter" autocomplete="new-password" minlength="6" required />
         </div>
 
         <p v-if="error" class="pb-auth-error">{{ error }}</p>

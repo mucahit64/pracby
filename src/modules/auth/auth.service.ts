@@ -44,7 +44,10 @@ export const register = async (input: RegisterInput) => {
 };
 
 export const login = async (input: LoginInput) => {
-  const user = await db("users").where({ email: input.email }).first();
+  const isEmail = input.identifier.includes("@");
+  const user = isEmail
+    ? await db("users").where({ email: input.identifier }).first()
+    : await db("users").where({ username: input.identifier }).first();
   if (!user) throw new AppError(401, "Invalid credentials");
 
   const valid = await bcrypt.compare(input.password, user.password_hash as string);

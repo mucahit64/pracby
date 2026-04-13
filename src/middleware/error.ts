@@ -1,4 +1,5 @@
 import type { Request, Response, NextFunction } from "express";
+import { logger } from "../config/logger";
 
 export class AppError extends Error {
   constructor(
@@ -21,14 +22,22 @@ export const asyncHandler =
 // Must be registered last in Express (4 params)
 export const errorHandler = (
   err: unknown,
-  _req: Request,
+  req: Request,
   res: Response,
   _next: NextFunction,
 ): void => {
   if (err instanceof AppError) {
+    if (err.statusCode >= 500) {
+      logger.error({ err, method: req.method, url: req.url }, err.message);
+    }
     res.status(err.statusCode).json({ error: err.message });
     return;
   }
-  console.error("[Unhandled Error]", err);
+
+  logger.error(
+    { err, method: req.method, url: req.url },
+    "Unhandled error",
+  );
+
   res.status(500).json({ error: "Internal server error" });
 };

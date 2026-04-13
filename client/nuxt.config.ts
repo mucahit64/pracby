@@ -48,12 +48,12 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBase: "http://localhost:3000",
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || "http://localhost:3000",
     },
   },
   nitro: {
     routeRules: {
-      "/api/**": { proxy: "http://localhost/api/**" },
+      "/api/**": { proxy: `${process.env.NUXT_PUBLIC_API_BASE || "http://localhost:3000"}/api/**` },
     },
   },
 });

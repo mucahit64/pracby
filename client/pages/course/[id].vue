@@ -5,7 +5,9 @@
       ← Geri
     </NuxtLink>
 
-    <!-- Course header -->
+    <div v-if="loading" class="course-loading">Yükleniyor…</div>
+
+    <template v-else>
     <div class="course-header">
       <div class="course-emoji">{{ course.emoji }}</div>
       <div class="course-header-info">
@@ -64,18 +66,22 @@
         </div>
       </div>
     </div>
+    </template>
   </div>
 </template>
 
 <script setup lang="ts">
 const route = useRoute();
-const _courseId = route.params.id;
+const courseId = route.params.id as string;
+const { api } = useApi();
+
+const loading = ref(true);
 
 const course = ref({
-  name: 'Tarih',
-  emoji: '🏺',
-  description: 'KPSS Genel Kültür — Osmanlı\'dan Cumhuriyet\'e',
-  progress: 35,
+  name: '',
+  emoji: '📚',
+  description: '',
+  progress: 0,
 });
 
 interface Topic {
@@ -87,15 +93,83 @@ interface Topic {
   xpReward: number;
 }
 
-const topics = ref<Topic[]>([
-  { id: '1', name: 'İlk Türk Devletleri', icon: '⚔️', status: 'completed', crownLevel: 5, xpReward: 20 },
-  { id: '2', name: 'Osmanlı Kuruluş', icon: '🏰', status: 'completed', crownLevel: 3, xpReward: 20 },
-  { id: '3', name: 'Osmanlı Yükselme', icon: '🌙', status: 'completed', crownLevel: 1, xpReward: 25 },
-  { id: '4', name: 'Osmanlı Duraklama', icon: '⏸️', status: 'active', crownLevel: 0, xpReward: 25 },
-  { id: '5', name: 'Tanzimat Dönemi', icon: '📜', status: 'locked', crownLevel: 0, xpReward: 30 },
-  { id: '6', name: 'Kurtuluş Savaşı', icon: '🇹🇷', status: 'locked', crownLevel: 0, xpReward: 30 },
-  { id: '7', name: 'Cumhuriyet', icon: '🌟', status: 'locked', crownLevel: 0, xpReward: 35 },
-]);
+const topics = ref<Topic[]>([]);
+
+interface ApiTopic {
+  id: string;
+  name: string;
+  icon_url?: string;
+  unlock_after?: string | null;
+  steps?: { id: string; step_type: string; progress?: { is_step_completed?: boolean } | null }[];
+  progress?: { crown_level?: number; lessons_completed?: number; is_unlocked?: boolean } | null;
+}
+
+interface ApiCourseFull {
+  name: string;
+  icon_url?: string;
+  color?: string;
+  description?: string;
+  topics: ApiTopic[];
+}
+
+function deriveTopicStatus(topic: ApiTopic, idx: number, allTopics: ApiTopic[]): 'completed' | 'active' | 'locked' {
+  const progress = topic.progress;
+  if (!progress) {
+    return idx === 0 ? 'active' : 'locked';
+  }
+  if (progress.is_unlocked === false) return 'locked';
+
+  const steps = topic.steps ?? [];
+  const lessonSteps = steps.filter((s) => s.step_type === 'lesson');
+  const allDone = lessonSteps.length > 0 && lessonSteps.every((s) => s.progress?.is_step_completed);
+  if (allDone) return 'completed';
+
+  // If previous topic is completed or this is the first, it's active
+  if (idx === 0) return 'active';
+  const prevTopic = allTopics[idx - 1];
+  const prevProgress = prevTopic?.progress;
+  if (prevProgress) {
+    const prevSteps = prevTopic.steps ?? [];
+    const prevLessons = prevSteps.filter((s) => s.step_type === 'lesson');
+    const prevAllDone = prevLessons.length > 0 && prevLessons.every((s) => s.progress?.is_step_completed);
+    if (prevAllDone) return 'active';
+  }
+  return 'locked';
+}
+
+onMounted(async () => {
+  try {
+    const data = await api<ApiCourseFull>(`/api/courses/${courseId}/full`);
+    course.value = {
+      name: data.name,
+      emoji: data.icon_url ?? '📚',
+      description: data.description ?? '',
+      progress: 0,
+    };
+
+    const mappedTopics: Topic[] = data.topics.map((t, idx) => {
+      const status = deriveTopicStatus(t, idx, data.topics);
+      return {
+        id: t.id,
+        name: t.name,
+        icon: t.icon_url ?? '📖',
+        status,
+        crownLevel: t.progress?.crown_level ?? 0,
+        xpReward: 20,
+      };
+    });
+
+    topics.value = mappedTopics;
+
+    // Calculate progress
+    const completed = mappedTopics.filter((t) => t.status === 'completed').length;
+    course.value.progress = mappedTopics.length > 0 ? Math.round((completed / mappedTopics.length) * 100) : 0;
+  } catch {
+    // Silently handle — empty state shown
+  } finally {
+    loading.value = false;
+  }
+});
 
 function startQuiz(topic: Topic) {
   if (topic.status === 'locked') return;
@@ -124,6 +198,13 @@ function startQuiz(topic: Topic) {
 }
 
 .course-back-btn:hover { color: var(--pb-text); }
+
+.course-loading {
+  text-align: center;
+  color: var(--pb-text-muted);
+  padding: 40px 0;
+  font-weight: 700;
+}
 
 /* Course header */
 .course-header {

@@ -7,6 +7,9 @@ import quizRoutes from "./quiz/quiz.routes";
 import userRoutes from "./user/user.routes";
 import leaderboardRoutes from "./leaderboard/leaderboard.routes";
 import storeRoutes from "./store/store.routes";
+import adminRoutes from "./admin/admin.routes";
+import notificationRoutes from "./notification/notification.routes";
+import friendRoutes from "./friend/friend.routes";
 
 const router = Router();
 
@@ -18,5 +21,8 @@ router.use("/quiz", quizRoutes);
 router.use("/users", userRoutes);
 router.use("/leaderboard", leaderboardRoutes);
 router.use("/store", storeRoutes);
+router.use("/admin", adminRoutes);
+router.use("/notifications", notificationRoutes);
+router.use("/friends", friendRoutes);
 
 export default router;

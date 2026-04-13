@@ -10,13 +10,13 @@
 
       <form class="pb-auth-form" @submit.prevent="submit">
         <div class="pb-field">
-          <label class="pb-label">E-posta</label>
+          <label class="pb-label">E-posta veya Kullanıcı Adı</label>
           <input
-            v-model="form.email"
-            type="email"
+            v-model="form.identifier"
+            type="text"
             class="pb-input"
-            placeholder="you@example.com"
-            autocomplete="email"
+            placeholder="E-posta veya kullanıcı adı"
+            autocomplete="username"
             required
           />
         </div>
@@ -53,7 +53,7 @@
 definePageMeta({ layout: false });
 
 const router = useRouter();
-const form = reactive({ email: '', password: '' });
+const form = reactive({ identifier: '', password: '' });
 const error = ref('');
 const loading = ref(false);
 
