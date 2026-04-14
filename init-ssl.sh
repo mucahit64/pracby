@@ -12,10 +12,13 @@ mkdir -p certbot/conf certbot/www
 
 echo "▶ Creating temporary self-signed certificate for nginx to start..."
 mkdir -p "certbot/conf/live/$DOMAIN"
-openssl req -x509 -nodes -newkey rsa:2048 -days 1 \
-  -keyout "certbot/conf/live/$DOMAIN/privkey.pem" \
-  -out "certbot/conf/live/$DOMAIN/fullchain.pem" \
-  -subj "/CN=$DOMAIN" 2>/dev/null
+# Only create self-signed if no real cert exists yet
+if [ ! -f "certbot/conf/live/$DOMAIN/fullchain.pem" ]; then
+  openssl req -x509 -nodes -newkey rsa:2048 -days 1 \
+    -keyout "certbot/conf/live/$DOMAIN/privkey.pem" \
+    -out "certbot/conf/live/$DOMAIN/fullchain.pem" \
+    -subj "/CN=$DOMAIN" 2>/dev/null
+fi
 
 echo "▶ Starting nginx with temporary certificate..."
 docker compose up -d nginx
@@ -27,7 +30,7 @@ docker compose run --rm certbot certonly \
   --email "$EMAIL" \
   --agree-tos \
   --no-eff-email \
-  --overwrite-cert \
+  --force-renewal \
   -d "$DOMAIN" \
   -d "www.$DOMAIN"
 
