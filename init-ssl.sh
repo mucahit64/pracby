@@ -27,6 +27,7 @@ docker compose run --rm certbot certonly \
   --email "$EMAIL" \
   --agree-tos \
   --no-eff-email \
+  --overwrite-cert \
   -d "$DOMAIN" \
   -d "www.$DOMAIN"
 
