@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { z } from "zod/v4";
+import { z } from "zod";
 import * as LeaderboardService from "./leaderboard.service";
 import { AppError } from "../../middleware/error";
 

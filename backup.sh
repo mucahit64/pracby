@@ -6,12 +6,23 @@ set -e
 # Cron example (daily at 3 AM):
 #   0 3 * * * cd /path/to/pracby && ./backup.sh >> /var/log/pracby-backup.log 2>&1
 
+# Load environment variables
+if [ -f .env ]; then
+  # shellcheck disable=SC1091
+  . ./.env
+else
+  echo "[$(date)] ERROR: .env file not found" >&2
+  exit 1
+fi
+
 BACKUP_DIR="./backups"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 BACKUP_FILE="$BACKUP_DIR/pracby_${TIMESTAMP}.sql.gz"
 KEEP_DAYS=7
 
 mkdir -p "$BACKUP_DIR"
+
+export PGPASSWORD="$DB_PASSWORD"
 
 echo "[$(date)] Starting backup..."
 docker compose exec -T postgres pg_dump -U "$DB_USER" "$DB_NAME" | gzip > "$BACKUP_FILE"
