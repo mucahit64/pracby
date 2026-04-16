@@ -5,10 +5,10 @@ export const RegisterSchema = z.object({
   username: z
     .string()
     .min(3)
-    .max(30)
+    .max(20)
     .regex(
-      /^[a-z0-9._]+$/,
-      "Username can only contain lowercase letters, numbers, dots and underscores",
+      /^[a-z0-9](?!.*[._]{2})[a-z0-9._]{1,18}[a-z0-9]$/,
+      "Username must be 3-20 chars, start/end with alphanumeric, no consecutive dots/underscores",
     ),
   password: z.string().min(6, "Password must be at least 6 characters"),
   exam_type_id: z.string().uuid().optional(),

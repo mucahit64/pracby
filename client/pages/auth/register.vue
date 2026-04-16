@@ -25,21 +25,71 @@
 
         <div class="pb-field">
           <label class="pb-label">E-posta</label>
-          <input v-model="form.email" type="email" class="pb-input" placeholder="you@example.com" autocomplete="email" required />
+          <div class="pb-input-wrap">
+            <input
+              v-model="form.email"
+              type="email"
+              class="pb-input"
+              :class="{ 'pb-input--error': fieldErrors.email, 'pb-input--ok': emailStatus === 'ok' }"
+              placeholder="you@example.com"
+              autocomplete="email"
+              @blur="checkEmailAvailability"
+            />
+            <span v-if="emailStatus === 'checking'" class="pb-input-addon">⏳</span>
+            <span v-else-if="emailStatus === 'ok'" class="pb-input-addon">✅</span>
+          </div>
+          <span v-if="fieldErrors.email" class="pb-field-error">
+            {{ fieldErrors.email }}
+            <NuxtLink v-if="fieldErrors.email.includes('kayıtlı')" to="/auth/login" class="pb-auth-link"> Giriş yapmak ister misiniz?</NuxtLink>
+          </span>
         </div>
 
         <div class="pb-field">
           <label class="pb-label">Kullanıcı Adı</label>
-          <input v-model="form.username" type="text" class="pb-input" placeholder="kullanici_adi" minlength="3" maxlength="30" required />
+          <div class="pb-input-wrap">
+            <input
+              v-model="form.username"
+              type="text"
+              class="pb-input"
+              :class="{ 'pb-input--error': fieldErrors.username, 'pb-input--ok': usernameStatus === 'ok' }"
+              placeholder="kullanici_adi"
+              maxlength="20"
+              autocomplete="username"
+              @input="onUsernameInput"
+              @blur="checkUsernameAvailability"
+            />
+            <span v-if="usernameStatus === 'checking'" class="pb-input-addon">⏳</span>
+            <span v-else-if="usernameStatus === 'ok'" class="pb-input-addon">✅</span>
+          </div>
+          <span v-if="fieldErrors.username" class="pb-field-error">{{ fieldErrors.username }}</span>
         </div>
 
         <div class="pb-field">
           <label class="pb-label">Şifre</label>
-          <input v-model="form.password" type="password" class="pb-input" placeholder="En az 6 karakter" autocomplete="new-password" minlength="6" required />
+          <div class="pb-input-wrap">
+            <input
+              v-model="form.password"
+              :type="showPassword ? 'text' : 'password'"
+              class="pb-input pb-input-password"
+              :class="{ 'pb-input--ok': passwordOk }"
+              placeholder="En az 6 karakter"
+              autocomplete="new-password"
+              maxlength="64"
+              @blur="onPasswordBlur"
+            />
+            <button type="button" class="pb-eye-btn" tabindex="-1" @click="showPassword = !showPassword">
+              {{ showPassword ? '🙈' : '👁️' }}
+            </button>
+          </div>
+          <span class="pb-password-hint" :class="{ 'pb-password-hint--ok': passwordOk }">
+            <template v-if="form.password.length > 0">
+              En az 6 karakter (Şu an: {{ form.password.length }}) <span v-if="passwordOk">✅</span>
+            </template>
+          </span>
         </div>
 
         <p v-if="error" class="pb-auth-error">{{ error }}</p>
-        <button type="submit" class="pb-btn-primary">Devam →</button>
+        <button type="submit" class="pb-btn-primary" :disabled="!step1Valid">Devam →</button>
       </form>
 
       <!-- Step 2: Exam group -->
@@ -133,6 +183,11 @@ const loadingExams = ref(false);
 const examGroups = ref<ExamGroup[]>([]);
 const selectedGroupId = ref('');
 
+const fieldErrors = reactive({ email: '', username: '', password: '' });
+const emailStatus = ref<'idle' | 'checking' | 'ok' | 'error'>('idle');
+const usernameStatus = ref<'idle' | 'checking' | 'ok' | 'error'>('idle');
+const showPassword = ref(false);
+
 const form = reactive({
   email: '',
   username: '',
@@ -144,6 +199,11 @@ const selectedGroupTypes = computed(() => {
   const group = examGroups.value.find((g) => g.id === selectedGroupId.value);
   return group?.exam_types ?? [];
 });
+
+const passwordOk = computed(() => form.password.trim().length >= 6);
+const step1Valid = computed(
+  () => emailStatus.value === 'ok' && usernameStatus.value === 'ok' && passwordOk.value,
+);
 
 const fetchExamGroups = async () => {
   loadingExams.value = true;
@@ -157,7 +217,75 @@ const fetchExamGroups = async () => {
   }
 };
 
-console.log('Exam groups:', examGroups.value);
+const checkEmailAvailability = async () => {
+  const email = form.email.trim();
+  if (!email || !email.includes('@')) return;
+  emailStatus.value = 'checking';
+  fieldErrors.email = '';
+  try {
+    const res = await $fetch<{ available: boolean }>('/api/auth/check-email', { query: { email } });
+    if (res.available) {
+      emailStatus.value = 'ok';
+    } else {
+      emailStatus.value = 'error';
+      fieldErrors.email = 'Bu e-mail zaten kayıtlı.';
+    }
+  } catch {
+    emailStatus.value = 'idle';
+  }
+};
+
+const usernameRegex = /^[a-z0-9](?!.*[._]{2})[a-z0-9._]{1,18}[a-z0-9]$/;
+
+const validateUsernameFormat = (u: string): string => {
+  if (!u) return '';
+  if (/[^a-z0-9._]/.test(u))
+    return 'Kullanıcı adları sadece rakam, harf, alt çizgi ve nokta içerebilir.';
+  if (/[._]{2}/.test(u))
+    return 'Art arda gelen özel karakterler içermeyen bir kullanıcı adı seç.';
+  if (u.length > 20)
+    return '20 karakterden kısa bir kullanıcı adı seç.';
+  return '';
+};
+
+const onUsernameInput = () => {
+  form.username = form.username.toLowerCase();
+  usernameStatus.value = 'idle';
+  fieldErrors.username = validateUsernameFormat(form.username);
+};
+
+const checkUsernameAvailability = async () => {
+  const username = form.username;
+  if (!username) return;
+  const formatError = validateUsernameFormat(username);
+  if (formatError) {
+    fieldErrors.username = formatError;
+    usernameStatus.value = 'error';
+    return;
+  }
+  if (!usernameRegex.test(username)) {
+    fieldErrors.username = 'Kullanıcı adı 3-20 karakter olmalı, harf veya rakamla başlayıp bitmelidir.';
+    usernameStatus.value = 'error';
+    return;
+  }
+  usernameStatus.value = 'checking';
+  fieldErrors.username = '';
+  try {
+    const res = await $fetch<{ available: boolean }>('/api/auth/check-username', { query: { username } });
+    if (res.available) {
+      usernameStatus.value = 'ok';
+    } else {
+      usernameStatus.value = 'error';
+      fieldErrors.username = `"${username}" kullanıcı adını alamazsın.`;
+    }
+  } catch {
+    usernameStatus.value = 'idle';
+  }
+};
+
+const onPasswordBlur = () => {
+  form.password = form.password.trim();
+};
 
 const nextStep = () => {
   error.value = '';
@@ -173,18 +301,44 @@ const selectGroup = (group: ExamGroup) => {
 
 const submit = async () => {
   error.value = '';
+  fieldErrors.email = '';
+  fieldErrors.username = '';
+  fieldErrors.password = '';
   loading.value = true;
   try {
     const data = await $fetch<{ token: string }>('/api/auth/register', {
       method: 'POST',
-      body: form,
+      body: { ...form, password: form.password.trim() },
     });
     localStorage.setItem('pb_token', data.token);
     await router.push('/');
   } catch (e: unknown) {
-    const err = e as { data?: { message?: string } };
-    error.value = err?.data?.message ?? 'Kayıt başarısız. Bilgilerini kontrol et.';
-    step.value = 1;
+    const err = e as { data?: { errors?: Record<string, { _errors: string[] }>; error?: string } };
+    const zodErrors = err?.data?.errors;
+    const serviceError = err?.data?.error;
+    if (zodErrors) {
+      fieldErrors.email = zodErrors.email?._errors[0] ?? '';
+      fieldErrors.username = zodErrors.username?._errors[0] ?? '';
+      fieldErrors.password = zodErrors.password?._errors[0] ?? '';
+      if (fieldErrors.email) emailStatus.value = 'error';
+      if (fieldErrors.username) usernameStatus.value = 'error';
+      step.value = 1;
+    } else if (serviceError) {
+      const msg = serviceError.toLowerCase();
+      if (msg.includes('email')) {
+        fieldErrors.email = 'Bu e-posta adresi zaten kullanılıyor.';
+        emailStatus.value = 'error';
+        step.value = 1;
+      } else if (msg.includes('username')) {
+        fieldErrors.username = 'Bu kullanıcı adı zaten alınmış.';
+        usernameStatus.value = 'error';
+        step.value = 1;
+      } else {
+        error.value = serviceError;
+      }
+    } else {
+      error.value = 'Kayıt başarısız. Bilgilerini kontrol et.';
+    }
   } finally {
     loading.value = false;
   }
@@ -310,6 +464,66 @@ const submit = async () => {
 
 .pb-input:focus {
   border-color: var(--pb-purple-light);
+}
+
+.pb-input--error {
+  border-color: var(--pb-red) !important;
+}
+
+.pb-input--ok {
+  border-color: var(--pb-green) !important;
+}
+
+.pb-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pb-input-wrap .pb-input {
+  width: 100%;
+}
+
+.pb-input-addon {
+  position: absolute;
+  right: 12px;
+  font-size: 1rem;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.pb-input-password {
+  padding-right: 44px;
+}
+
+.pb-eye-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 4px;
+  line-height: 1;
+  color: var(--pb-text-muted);
+}
+
+.pb-password-hint {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--pb-text-muted);
+  margin-top: -2px;
+}
+
+.pb-password-hint--ok {
+  color: var(--pb-green);
+}
+
+.pb-field-error {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--pb-red);
+  margin-top: -2px;
 }
 
 .pb-auth-error {

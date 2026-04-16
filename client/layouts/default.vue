@@ -343,6 +343,11 @@ a { text-decoration: none; color: inherit; }
   min-width: 0;
   overflow-y: auto;
   padding: 24px 16px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  pb-main::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
 }
 
 /* ===== Right Panel Wrapper ===== */

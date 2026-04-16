@@ -10,3 +10,17 @@ export const login = async (req: Request, res: Response): Promise<void> => {
   const result = await AuthService.login(req.body);
   res.json(result);
 };
+
+export const checkEmail = async (req: Request, res: Response): Promise<void> => {
+  const email = String(req.query.email ?? "");
+  if (!email) { res.status(400).json({ error: "email required" }); return; }
+  const result = await AuthService.checkEmail(email);
+  res.json(result);
+};
+
+export const checkUsername = async (req: Request, res: Response): Promise<void> => {
+  const username = String(req.query.username ?? "");
+  if (!username) { res.status(400).json({ error: "username required" }); return; }
+  const result = await AuthService.checkUsername(username);
+  res.json(result);
+};

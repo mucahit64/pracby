@@ -58,3 +58,13 @@ export const login = async (input: LoginInput) => {
     token: signToken(user.id as string, user.username as string),
   };
 };
+
+export const checkEmail = async (email: string) => {
+  const exists = await db("users").where({ email }).first();
+  return { available: !exists };
+};
+
+export const checkUsername = async (username: string) => {
+  const exists = await db("users").where({ username }).first();
+  return { available: !exists };
+};
