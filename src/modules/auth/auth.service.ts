@@ -30,6 +30,8 @@ export const register = async (input: RegisterInput) => {
       email: input.email,
       username: input.username,
       password_hash: passwordHash,
+      acorn_balance: input.acorn_balance ?? 500,
+      hearts: input.hearts ?? 5,
       ...(examTypeId && { active_exam_type_id: examTypeId }),
     })
     .returning(["id", "email", "username", "active_exam_type_id", "created_at"]);

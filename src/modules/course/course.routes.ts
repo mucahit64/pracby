@@ -1,14 +1,12 @@
 import { Router } from "express";
-import { authenticate } from "../../middleware/auth";
+import { optionalAuth } from "../../middleware/optionalAuth";
 import * as CourseController from "./course.controller";
 
 const router = Router();
 
-router.use(authenticate);
-
-router.get("/", CourseController.getCourses);
-router.get("/:id", CourseController.getCourseById);
-router.get("/:id/topics", CourseController.getTopicsByCourse);
-router.get("/:id/full", CourseController.getCourseFull);
+router.get("/", optionalAuth, CourseController.getCourses);
+router.get("/:id", optionalAuth, CourseController.getCourseById);
+router.get("/:id/topics", optionalAuth, CourseController.getTopicsByCourse);
+router.get("/:id/full", optionalAuth, CourseController.getCourseFull);
 
 export default router;

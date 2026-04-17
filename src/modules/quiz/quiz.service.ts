@@ -120,6 +120,58 @@ export const startSession = async (userId: string, input: StartQuizInput) => {
   return { session, questions: questionsWithAnswers };
 };
 
+export const guestStartSession = async (input: {
+  topicId: string;
+  stepId?: string;
+  testId?: string;
+  sessionType: string;
+}) => {
+  const topic = await db("topics").where({ id: input.topicId }).first();
+  if (!topic) throw new AppError(404, "Topic not found");
+
+  let questions;
+
+  if (input.testId) {
+    questions = await db("questions")
+      .where({ test_id: input.testId, status: "approved" })
+      .orderBy("sort_order", "asc");
+  } else if (input.stepId) {
+    questions = await db("questions")
+      .where({ step_id: input.stepId, status: "approved" })
+      .orderByRaw("RANDOM()")
+      .limit(10);
+  } else {
+    questions = await db("questions")
+      .where({ topic_id: input.topicId, status: "approved" })
+      .orderByRaw("RANDOM()")
+      .limit(10);
+  }
+
+  if (questions.length === 0) throw new AppError(404, "No questions available");
+
+  const mcQuestionIds = questions
+    .filter((q) => q.question_type === "multiple_choice" || q.question_type === "true_false" || q.question_type === "swipe")
+    .map((q) => q.id);
+
+  const answers = mcQuestionIds.length > 0
+    ? await db("answers").whereIn("question_id", mcQuestionIds).select("id", "question_id", "answer_text", "is_correct")
+    : [];
+
+  const answersByQuestion = new Map<string, typeof answers>();
+  for (const a of answers) {
+    const list = answersByQuestion.get(a.question_id) ?? [];
+    list.push(a);
+    answersByQuestion.set(a.question_id, list);
+  }
+
+  const questionsWithAnswers = questions.map((q) => ({
+    ...q,
+    answers: answersByQuestion.get(q.id) ?? [],
+  }));
+
+  return { questions: questionsWithAnswers };
+};
+
 export const submitAnswer = async (
   userId: string,
   sessionId: string,

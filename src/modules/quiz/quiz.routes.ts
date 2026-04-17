@@ -6,6 +6,9 @@ import * as QuizController from "./quiz.controller";
 
 const router = Router();
 
+// Public guest endpoint (no auth required)
+router.get("/guest-start", QuizController.guestStartSession);
+
 router.use(authenticate);
 
 router.post("/start", validate(StartQuizSchema), QuizController.startSession);

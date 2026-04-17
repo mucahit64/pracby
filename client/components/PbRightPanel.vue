@@ -1,8 +1,8 @@
 <template>
   <div class="pb-right-panel">
+    <!-- Logged in content -->
     <!-- Stats Row -->
     <div class="pb-stats-row">
-
       <!-- 🔥 Streak -->
       <div class="pb-stat-wrap" @mouseenter="openTooltip('streak')" @mouseleave="closeTooltip">
         <div class="pb-stat-item">
@@ -162,10 +162,18 @@
         <span>{{ stats.dailyGoal }} XP</span>
       </div>
     </div>
+    
+    <!-- Guest CTA -->
+    <div v-if="!isLoggedIn" class="pb-panel-card pb-guest-cta">
+      <p class="pb-guest-cta-text">İlerlemeni kaydetmek için bir profil oluştur!</p>
+      <NuxtLink to="/auth/register" class="pb-btn-primary pb-guest-cta-btn">Bir profil oluştur</NuxtLink>
+      <NuxtLink to="/auth/login" class="pb-btn-outline pb-guest-cta-btn">Giriş yap</NuxtLink>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const isLoggedIn = ref(false);
 const sharedHearts = useState('userHearts', () => 5);
 const heartCountdown = useState('heartCountdown', () => '');
 
@@ -225,7 +233,27 @@ async function buyHeart(pkg: HeartPackage) {
   purchasingId.value = pkg.id;
   purchaseMsg.value = '';
   purchaseFailed.value = false;
+
+  // Guest: local purchase
   const token = getToken();
+  if (!token) {
+    const { spendAcorns, setHearts } = useGuestState();
+    const heartsToAdd = (pkg as HeartPackage & { metadata?: { heart_count?: number } }).metadata?.heart_count ?? 1;
+    if (!spendAcorns(pkg.price_acorn)) {
+      purchaseMsg.value = 'Yetersiz palamut.';
+      purchaseFailed.value = true;
+      purchasingId.value = null;
+      return;
+    }
+    stats.value.acorns -= pkg.price_acorn;
+    const newHearts = Math.min(5, sharedHearts.value + heartsToAdd);
+    sharedHearts.value = newHearts;
+    setHearts(newHearts);
+    purchaseMsg.value = `${pkg.name} satın alındı! ❤️`;
+    purchasingId.value = null;
+    return;
+  }
+
   try {
     await $fetch('/api/store/purchase', {
       method: 'POST',
@@ -248,7 +276,20 @@ async function buyHeart(pkg: HeartPackage) {
 
 onMounted(async () => {
   const token = getToken();
-  if (!token) return;
+  if (!token) {
+    isLoggedIn.value = false;
+    // Load guest state (acorns + hearts)
+    const { state: gs } = useGuestState();
+    stats.value.acorns = gs.value.acornBalance;
+    sharedHearts.value = gs.value.heartsCount;
+    // Load packages from public endpoint
+    try {
+      const items = await $fetch<HeartPackage[]>('/api/store/items');
+      heartPackages.value = items.filter(i => i.item_type === 'heart_refill');
+    } catch { /* skip */ }
+    return;
+  }
+  isLoggedIn.value = true;
   const h = { Authorization: `Bearer ${token}` };
   try {
     const [user, userStats, items, streakHist] = await Promise.all([
@@ -276,6 +317,39 @@ onMounted(async () => {
   flex-direction: column;
   gap: 16px;
   padding: 24px 0 24px 16px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.pb-right-panel::-webkit-scrollbar {
+  display: none;
+}
+/* Guest CTA */
+.pb-guest-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.pb-guest-cta-icon {
+  font-size: 2rem;
+}
+
+.pb-guest-cta-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--pb-text);
+  line-height: 1.4;
+}
+
+.pb-guest-cta-btn {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 .pb-stats-row {

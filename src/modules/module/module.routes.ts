@@ -1,12 +1,10 @@
 import { Router } from "express";
-import { authenticate } from "../../middleware/auth";
+import { optionalAuth } from "../../middleware/optionalAuth";
 import * as ModuleController from "./module.controller";
 
 const router = Router();
 
-router.use(authenticate);
-
-router.get("/", ModuleController.getModules);
-router.get("/:id", ModuleController.getModuleById);
+router.get("/", optionalAuth, ModuleController.getModules);
+router.get("/:id", optionalAuth, ModuleController.getModuleById);
 
 export default router;

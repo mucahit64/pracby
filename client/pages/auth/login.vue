@@ -1,5 +1,6 @@
 <template>
   <div class="pb-auth-page">
+    <NuxtLink to="/" class="pb-auth-close">✕</NuxtLink>
     <div class="pb-auth-card">
       <div class="pb-auth-logo">
         <PbMascot :width="64" :height="80" />
@@ -27,7 +28,7 @@
             v-model="form.password"
             type="password"
             class="pb-input"
-            placeholder="••••••••"
+            placeholder="••••••"
             autocomplete="current-password"
             required
           />
@@ -84,6 +85,31 @@ const submit = async () => {
   justify-content: center;
   background: var(--pb-bg);
   padding: 24px;
+  position: relative;
+}
+
+.pb-auth-close {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--pb-bg-card);
+  border: 2px solid var(--pb-border);
+  color: var(--pb-text);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 10;
+  transition: background 0.15s;
+}
+
+.pb-auth-close:hover {
+  background: var(--pb-border);
 }
 
 .pb-auth-card {

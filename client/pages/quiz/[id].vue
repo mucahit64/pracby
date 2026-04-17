@@ -21,7 +21,7 @@
           <div class="quiz-progress-bar">
             <div
               class="quiz-progress-fill"
-              :style="{ width: `${((currentIndex) / questions.length) * 100}%` }"
+              :style="{ width: `${(answeredCount / questions.length) * 100}%` }"
             />
           </div>
         </div>
@@ -38,7 +38,7 @@
           <span class="quiz-xp-live">⚡ +{{ xpEarned }} XP</span>
         </div>
 
-        <div v-if="currentQuestion.question_type !== 'swipe'" class="quiz-question">{{ currentQuestion.question_text }}</div>
+        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="quiz-question">{{ currentQuestion.question_text }}</div>
 
         <!-- Multiple choice / True-false -->
         <template v-if="currentQuestion.question_type === 'multiple_choice' || currentQuestion.question_type === 'true_false'">
@@ -316,8 +316,8 @@
         </div>
 
         <div class="quiz-result-actions">
-          <NuxtLink to="/" class="pb-btn-primary">🏠 Ana Sayfaya Dön</NuxtLink>
           <button class="pb-btn-outline" @click="restartQuiz">🔄 Tekrar Dene</button>
+          <NuxtLink :to="guestMode ? '/auth/register-wall' : '/'" class="pb-btn-primary">Devam Et →</NuxtLink>
         </div>
       </div>
     </template>
@@ -432,8 +432,10 @@ const heartsDepleted = ref(false);
 const xpEarned = ref(0);
 const acornEarned = ref(0);
 const lastAnswerCorrect = ref(false);
+const answeredCount = ref(0);
 const stepCompleted = ref(false);
 const topicCompleted = ref(false);
+const guestMode = ref(false);
 
 const isBossSession = computed(() => route.query.sessionType === 'step_final');
 
@@ -517,7 +519,32 @@ function getToken() {
 async function startQuiz() {
   const topicId = route.params.id as string;
   const token = getToken();
-  if (!token) { error.value = 'Giriş yapmalısınız'; loading.value = false; return; }
+  const isGuest = !token;
+
+  if (isGuest) {
+    // Guest mode: use public endpoint, no session creation
+    try {
+      const query = route.query;
+      const params = new URLSearchParams({ topicId });
+      if (query.stepId) params.set('stepId', query.stepId as string);
+      if (query.testId) params.set('testId', query.testId as string);
+      if (query.sessionType) params.set('sessionType', query.sessionType as string);
+
+      const data = await $fetch<{ questions: Question[] }>(`/api/quiz/guest-start?${params.toString()}`);
+      guestMode.value = true;
+      // Sync hearts from localStorage
+      const { state: gs } = useGuestState();
+      hearts.value = gs.value.heartsCount;
+      questions.value = data.questions;
+      initQuestionState();
+    } catch (e: unknown) {
+      const errData = (e as { data?: { error?: string; message?: string } })?.data;
+      error.value = errData?.error || errData?.message || 'Quiz başlatılamadı';
+    } finally {
+      loading.value = false;
+    }
+    return;
+  }
 
   try {
     const query = route.query;
@@ -592,6 +619,60 @@ function initQuestionState() {
 }
 
 async function submitToBackend(body: Record<string, unknown>) {
+  // Guest mode: client-side validation
+  if (guestMode.value) {
+    const q = currentQuestion.value;
+    let isCorrect = false;
+
+    switch (q.question_type) {
+      case 'multiple_choice':
+      case 'true_false':
+      case 'swipe': {
+        const answer = q.answers?.find((a) => a.id === body.answerId);
+        isCorrect = Boolean(answer?.is_correct);
+        break;
+      }
+      case 'fill_blank': {
+        const acceptable: string[] = q.type_data?.acceptable_answers ?? [];
+        const userAnswer = String(body.textAnswer ?? '').trim().toLowerCase();
+        isCorrect = acceptable.some((a) => a.toLowerCase() === userAnswer);
+        break;
+      }
+      case 'matching': {
+        const pairs = body.matchingAnswer as { leftIndex: number; rightIndex: number }[];
+        isCorrect = pairs.every((p) => p.leftIndex === p.rightIndex);
+        break;
+      }
+      case 'ordering': {
+        const indices = body.orderedIndices as number[];
+        isCorrect = indices.every((val, idx) => val === idx);
+        break;
+      }
+      case 'flashcard': {
+        isCorrect = Boolean(body.isCorrect);
+        break;
+      }
+    }
+
+    lastAnswerCorrect.value = isCorrect;
+    answered.value = true;
+    totalAnswered.value++;
+    answeredCount.value++;
+    if (isCorrect) {
+      correctCount.value++;
+      xpEarned.value += 1;
+    } else {
+      hearts.value = Math.max(0, hearts.value - 1);
+      if (hearts.value === 0) {
+        heartsDepleted.value = true;
+      }
+      // Persist hearts to localStorage
+      const { setHearts: persistHearts } = useGuestState();
+      persistHearts(hearts.value);
+    }
+    return;
+  }
+
   const token = getToken();
   try {
     const result = await $fetch<{ isCorrect: boolean; hearts_remaining: number }>(`/api/quiz/${sessionId.value}/answer`, {
@@ -602,6 +683,7 @@ async function submitToBackend(body: Record<string, unknown>) {
     lastAnswerCorrect.value = result.isCorrect;
     answered.value = true;
     totalAnswered.value++;
+    answeredCount.value++;
     if (result.isCorrect) {
       correctCount.value++;
       xpEarned.value += 1;
@@ -615,6 +697,7 @@ async function submitToBackend(body: Record<string, unknown>) {
     lastAnswerCorrect.value = false;
     answered.value = true;
     totalAnswered.value++;
+    answeredCount.value++;
   }
 }
 
@@ -809,6 +892,12 @@ function nextQuestion() {
 }
 
 async function finishQuiz() {
+  if (guestMode.value) {
+    acornEarned.value = correctCount.value;
+    finished.value = true;
+    return;
+  }
+
   const token = getToken();
   try {
     const result = await $fetch<{
@@ -838,6 +927,19 @@ async function openHeartsDialog() {
   heartsEmptyDialog.value = true;
   purchaseError.value = '';
   loadingPackages.value = true;
+
+  if (guestMode.value) {
+    // Load packages from public endpoint, balance from localStorage
+    const { state: gs } = useGuestState();
+    acornBalanceForDialog.value = gs.value.acornBalance;
+    try {
+      const items = await $fetch<HeartPackage[]>('/api/store/items');
+      heartPackages.value = items.filter((i) => i.item_type === 'heart_refill');
+    } catch { heartPackages.value = []; }
+    loadingPackages.value = false;
+    return;
+  }
+
   const token = getToken();
   try {
     const [items, user] = await Promise.all([
@@ -853,6 +955,33 @@ async function openHeartsDialog() {
 async function buyHeartInDialog(pkg: HeartPackage) {
   purchasingHeart.value = pkg.id;
   purchaseError.value = '';
+
+  // Guest: local purchase
+  if (guestMode.value) {
+    const { spendAcorns, setHearts } = useGuestState();
+    const heartsToAdd = (pkg as HeartPackage & { metadata?: { heart_count?: number } }).metadata?.heart_count ?? 1;
+    if (!spendAcorns(pkg.price_acorn)) {
+      purchaseError.value = 'Yetersiz palamut.';
+      purchasingHeart.value = null;
+      return;
+    }
+    acornBalanceForDialog.value -= pkg.price_acorn;
+    const newHearts = Math.min(5, hearts.value + heartsToAdd);
+    hearts.value = newHearts;
+    setHearts(newHearts);
+    heartsDepleted.value = false;
+    heartsEmptyDialog.value = false;
+    exitWarningDialog.value = false;
+    purchasingHeart.value = null;
+    if (currentIndex.value < questions.value.length - 1) {
+      currentIndex.value++;
+      initQuestionState();
+    } else {
+      await finishQuiz();
+    }
+    return;
+  }
+
   const token = getToken();
   try {
     const result = await $fetch<{ balance: number; hearts: number }>('/api/store/purchase', {
@@ -890,6 +1019,10 @@ function continueFromWarning() {
 }
 
 function exitQuiz() {
+  if (guestMode.value) {
+    router.replace('/');
+    return;
+  }
   const token = getToken();
   $fetch(`/api/quiz/${sessionId.value}/finish`, {
     method: 'POST',
@@ -913,6 +1046,7 @@ function restartQuiz() {
   finished.value = false;
   heartsDepleted.value = false;
   correctCount.value = 0;
+  answeredCount.value = 0;
   xpEarned.value = 0;
   acornEarned.value = 0;
   stepCompleted.value = false;
@@ -1339,6 +1473,15 @@ onUnmounted(() => {
   gap: 12px;
   width: 100%;
   max-width: 340px;
+}
+
+.quiz-result-actions--row {
+  flex-direction: row;
+}
+
+.quiz-result-actions--row .pb-btn-primary,
+.quiz-result-actions--row .pb-btn-outline {
+  flex: 1;
 }
 
 .quiz-result-actions .pb-btn-primary {

@@ -6,6 +6,21 @@ export const startSession = async (req: Request, res: Response): Promise<void> =
   res.status(201).json(result);
 };
 
+export const guestStartSession = async (req: Request, res: Response): Promise<void> => {
+  const topicId = req.query.topicId as string;
+  const stepId = req.query.stepId as string | undefined;
+  const testId = req.query.testId as string | undefined;
+  const sessionType = (req.query.sessionType as string) || "lesson";
+
+  if (!topicId) {
+    res.status(400).json({ error: "topicId is required" });
+    return;
+  }
+
+  const result = await QuizService.guestStartSession({ topicId, stepId, testId, sessionType });
+  res.json(result);
+};
+
 export const submitAnswer = async (req: Request, res: Response): Promise<void> => {
   const result = await QuizService.submitAnswer(
     req.user!.userId,

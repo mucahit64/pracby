@@ -101,15 +101,15 @@ const mobileMenuOpen = ref(false);
 const screen = ref({ lt: { md: false } });
 
 onMounted(async () => {
-  const token = localStorage.getItem('pb_token');
-  if (!token) return;
-
   const checkMobile = () => {
     screen.value.lt.md = window.innerWidth < 900;
   };
   checkMobile();
   window.addEventListener('resize', checkMobile);
   onUnmounted(() => window.removeEventListener('resize', checkMobile));
+
+  const token = localStorage.getItem('pb_token');
+  if (!token) return;
 
   // Fetch user stats for header
   try {
@@ -173,12 +173,12 @@ onUnmounted(() => {
   if (heartTimer) clearInterval(heartTimer);
 });
 
-const navItems = [
+const navItems = computed(() => [
   { emoji: '📚', label: 'Öğren', to: '/', exact: true },
   { emoji: '🏆', label: 'Liderlik', to: '/leaderboard', exact: false },
   { emoji: '🌰', label: 'Market', to: '/store', exact: false },
-  { emoji: '👤', label: 'Profil', to: '/profile', exact: false },
-];
+  { emoji: '👤', label: 'Profil', to: localStorage.getItem('pb_token') ? '/profile' : '/auth/register', exact: false },
+]);
 
 interface Enrollment {
   exam_type_id: string;
@@ -257,7 +257,7 @@ a { text-decoration: none; color: inherit; }
   border-right: 2px solid var(--pb-border);
   display: flex;
   flex-direction: column;
-  padding: 24px 16px 32px;
+  padding: 0px 16px 32px;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -272,7 +272,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 8px 20px;
+  padding: 24px;
   text-decoration: none;
 }
 
@@ -385,8 +385,8 @@ a { text-decoration: none; color: inherit; }
 .pb-heart-timer {
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--pb-red);
-  background: rgba(255, 75, 75, 0.12);
+  color: #fff;
+  background: var(--pb-red);
   padding: 1px 6px;
   border-radius: 20px;
   margin-left: 2px;

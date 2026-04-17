@@ -12,12 +12,22 @@
     <!-- Store items (non-heart) -->
     <div class="store-section">
       <div class="store-section-title">Ürünler</div>
+      <!-- Guest banner -->
+      <div v-if="isGuest" class="store-guest-banner">
+        <span class="store-guest-banner-icon">🌰</span>
+        <div class="store-guest-banner-body">
+          <strong>{{ balance }} palamut kazandın!</strong>
+          <span> Mağazada harcamak için bir profil oluştur!</span>
+        </div>
+        <NuxtLink to="/auth/register" class="store-guest-banner-btn">Profil Oluştur</NuxtLink>
+      </div>
       <div v-if="loadingItems" class="store-loading">Yükleniyor…</div>
       <div v-else class="store-grid">
         <div
           v-for="item in regularItems"
           :key="item.id"
           class="store-item-card"
+          :class="{ 'store-item-card--dimmed': isGuest }"
         >
           <div class="store-item-icon">{{ item.icon_url || '📦' }}</div>
           <div class="store-item-info">
@@ -29,7 +39,7 @@
           </div>
           <button
             class="store-item-buy"
-            :disabled="balance < item.price_acorn"
+            :disabled="isGuest || balance < item.price_acorn"
             @click="openPurchaseModal(item)"
           >
             🌰 {{ item.price_acorn }}
@@ -63,8 +73,8 @@
       </div>
     </div>
 
-    <!-- Active effects -->
-    <div v-if="effects.length > 0" class="store-section">
+    <!-- Active effects (logged-in only) -->
+    <div v-if="!isGuest && effects.length > 0" class="store-section">
       <div class="store-section-title">Aktif Etkiler</div>
       <div class="store-effects">
         <div v-for="effect in effects" :key="effect.item_type" class="store-effect-card">
@@ -74,8 +84,8 @@
       </div>
     </div>
 
-    <!-- Inventory -->
-    <div class="store-section">
+    <!-- Inventory (logged-in only) -->
+    <div v-if="!isGuest" class="store-section">
       <div class="store-section-title">Envanter</div>
       <div v-if="loadingInventory" class="store-loading">Yükleniyor…</div>
       <div v-else-if="inventory.length === 0" class="store-empty">Henüz hiç ürün almadınız.</div>
@@ -95,8 +105,8 @@
       </div>
     </div>
 
-    <!-- Acorn packages (stub) -->
-    <div class="store-section">
+    <!-- Acorn packages (logged-in only) -->
+    <div v-if="!isGuest" class="store-section">
       <div class="store-section-title">🌰 Buy Acorn</div>
       <div class="store-packages">
         <div v-for="pkg in packages" :key="pkg.id" class="store-package-card">
@@ -136,6 +146,7 @@ interface StoreItem {
   price_acorn: number;
   item_type: string;
   duration_hours: number | null;
+  metadata?: { heart_count?: number };
 }
 
 interface InventoryItem {
@@ -160,6 +171,8 @@ interface AcornPackage {
 }
 
 const balance = ref(0);
+const isGuest = ref(false);
+const sharedHearts = useState('userHearts', () => 5);
 const items = ref<StoreItem[]>([]);
 const inventory = ref<InventoryItem[]>([]);
 const effects = ref<ActiveEffect[]>([]);
@@ -220,6 +233,24 @@ function openPurchaseModal(item: StoreItem) {
 async function confirmPurchase() {
   if (!purchaseModal.value) return;
   purchasing.value = true;
+
+  // Guest: only heart refills, handled locally
+  if (isGuest.value) {
+    if (purchaseModal.value.item_type === 'heart_refill') {
+      const { spendAcorns, setHearts } = useGuestState();
+      if (spendAcorns(purchaseModal.value.price_acorn)) {
+        balance.value -= purchaseModal.value.price_acorn;
+        const heartsToAdd = purchaseModal.value.metadata?.heart_count ?? 1;
+        const newHearts = Math.min(5, sharedHearts.value + heartsToAdd);
+        sharedHearts.value = newHearts;
+        setHearts(newHearts);
+      }
+    }
+    purchaseModal.value = null;
+    purchasing.value = false;
+    return;
+  }
+
   try {
     const result = await $fetch<{ balance: number; hearts?: number }>('/api/store/purchase', {
       method: 'POST',
@@ -270,6 +301,19 @@ function formatExpiry(expiresAt: string) {
 }
 
 onMounted(() => {
+  const token = getToken();
+  isGuest.value = !token;
+
+  if (!token) {
+    // Guest mode: read from local state
+    const { state: gs } = useGuestState();
+    balance.value = gs.value.acornBalance;
+    sharedHearts.value = gs.value.heartsCount;
+    fetchItems(); // items are public
+    loadingInventory.value = false;
+    return;
+  }
+
   fetchBalance();
   fetchItems();
   fetchInventory();
@@ -471,6 +515,47 @@ onMounted(() => {
 
 .store-package-btn:hover {
   background: rgba(205, 133, 63, 0.25);
+}
+
+/* Guest banner */
+.store-guest-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(205, 133, 63, 0.12);
+  border: 2px solid rgba(205, 133, 63, 0.35);
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+
+.store-guest-banner-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+.store-guest-banner-body {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--pb-text);
+  line-height: 1.4;
+}
+
+.store-guest-banner-btn {
+  background: var(--pb-purple);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.store-item-card--dimmed {
+  opacity: 0.6;
 }
 
 /* Modal */

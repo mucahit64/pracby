@@ -1,5 +1,6 @@
 <template>
   <div class="pb-auth-page">
+    <NuxtLink to="/" class="pb-auth-close">✕</NuxtLink>
     <div class="pb-auth-card">
       <div class="pb-auth-logo">
         <PbMascot :width="64" :height="80" />
@@ -306,11 +307,24 @@ const submit = async () => {
   fieldErrors.password = '';
   loading.value = true;
   try {
+    const { clearGuestState, getRegistrationPayload } = useGuestState();
+    const guestPayload = getRegistrationPayload();
+
+    // Use guest exam_type_id if user hasn't selected one yet
+    const examTypeId = form.exam_type_id || guestPayload.exam_type_id || '';
+
     const data = await $fetch<{ token: string }>('/api/auth/register', {
       method: 'POST',
-      body: { ...form, password: form.password.trim() },
+      body: {
+        ...form,
+        exam_type_id: examTypeId,
+        password: form.password.trim(),
+        acorn_balance: guestPayload.acorn_balance,
+        hearts: guestPayload.hearts,
+      },
     });
     localStorage.setItem('pb_token', data.token);
+    clearGuestState();
     await router.push('/');
   } catch (e: unknown) {
     const err = e as { data?: { errors?: Record<string, { _errors: string[] }>; error?: string } };
@@ -353,6 +367,31 @@ const submit = async () => {
   justify-content: center;
   background: var(--pb-bg);
   padding: 24px;
+  position: relative;
+}
+
+.pb-auth-close {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--pb-bg-card);
+  border: 2px solid var(--pb-border);
+  color: var(--pb-text);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 10;
+  transition: background 0.15s;
+}
+
+.pb-auth-close:hover {
+  background: var(--pb-border);
 }
 
 .pb-auth-card {

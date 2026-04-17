@@ -36,79 +36,71 @@
 
     <!-- Unit sections (topics) -->
     <template v-else-if="courseFull">
-      <div v-for="(topic, tIdx) in courseFull.topics" :key="topic.id" class="learn-unit">
-        <!-- Unit banner -->
-        <div class="unit-banner">
-          <div class="unit-banner-left">
-            <div class="unit-meta">BÖLÜM {{ tIdx + 1 }}</div>
-            <div class="unit-title">{{ topic.name }}</div>
-          </div>
-          <button class="unit-guidebook-btn" @click="openGuidebook(topic)">
-            📖 REHBER
-          </button>
-        </div>
-
-        <!-- Lesson path (zigzag) -->
-        <div class="lesson-path">
-          <div
-            v-for="(node, nIdx) in buildLessonNodes(topic)"
-            :key="node.id"
-            class="lesson-row"
-            :class="`offset-${(nIdx % 5)}`"
-          >
-            <!-- Show mascot next to first active lesson -->
-            <div
-              v-if="node.status === 'active'"
-              class="mascot-bubble"
-            >
-              <div class="speech-bubble">YAP!</div>
-              <PbMascot :width="64" :height="80" />
-            </div>
-
-            <!-- Lesson Node -->
-            <div class="lesson-node-wrapper">
-              <!-- Node button with circular progress ring / tick -->
-              <div class="node-ring-wrap">
-                <button
-                  class="lesson-node"
-                  :class="[`lesson-node--${node.status}`, node.type === 'chest' ? 'lesson-node--chest' : '', node.type === 'boss' ? 'lesson-node--boss' : '', node.isBossNext ? 'lesson-node--step-boss' : '']"
-                  :disabled="node.status === 'locked'"
-                  @click="goToLesson(node)"
-                >
-                  <span v-if="node.status === 'completed' && node.type === 'lesson'" class="lesson-tick">✓</span>
-                  <span v-else class="lesson-icon">
-                    {{ node.status === 'locked' ? '🔒' : node.icon }}
-                  </span>
-                </button>
-                <!-- Progress ring: active nodes only -->
-                <svg
-                  v-if="node.type === 'lesson' && node.testsRequired > 0 && node.status === 'active'"
-                  class="step-ring"
-                  viewBox="0 0 88 88"
-                >
-                  <circle class="step-ring-bg" cx="44" cy="44" r="38" />
-                  <circle
-                    class="step-ring-fill"
-                    cx="44"
-                    cy="44"
-                    r="38"
-                    :style="ringStyle(node)"
-                  />
-                </svg>
-              </div>
-
-              <!-- Lesson name below node -->
-              <div class="lesson-label" :class="{ 'lesson-label--muted': node.status === 'locked' }">
-                {{ node.name }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div v-if="courseFull.topics.length === 0" class="empty-state">
         <p>Bu ders için henüz konu eklenmemiş.</p>
       </div>
+
+        <div v-for="(topic, tIdx) in courseFull.topics" :key="topic.id" class="learn-unit">
+          <!-- Unit banner -->
+          <div class="unit-banner">
+            <div class="unit-meta">BÖLÜM {{ tIdx + 1 }}</div>
+            <div class="unit-title">{{ topic.name }}</div>
+          </div>
+
+          <!-- Lesson path (zigzag) -->
+          <div class="lesson-path">
+            <div
+              v-for="(node, nIdx) in buildLessonNodes(topic)"
+              :key="node.id"
+              class="lesson-row"
+              :class="`offset-${(nIdx % 5)}`"
+            >
+              <!-- Show mascot next to first active lesson -->
+              <div
+                v-if="node.status === 'active'"
+                class="mascot-bubble"
+              >
+                <div class="speech-bubble">YAP!</div>
+                <PbMascot :width="64" :height="80" />
+              </div>
+
+              <!-- Lesson Node -->
+              <div class="lesson-node-wrapper">
+                <div class="node-ring-wrap">
+                  <button
+                    class="lesson-node"
+                    :class="[`lesson-node--${node.status}`, node.type === 'chest' ? 'lesson-node--chest' : '', node.type === 'boss' ? 'lesson-node--boss' : '', node.isBossNext ? 'lesson-node--step-boss' : '']"
+                    :disabled="node.status === 'locked'"
+                    @click="goToLesson(node)"
+                  >
+                    <span v-if="node.status === 'completed' && node.type === 'lesson'" class="lesson-tick">✓</span>
+                    <span v-else class="lesson-icon">
+                      {{ node.status === 'locked' ? '🔒' : node.icon }}
+                    </span>
+                  </button>
+                  <svg
+                    v-if="node.type === 'lesson' && node.testsRequired > 0 && node.status === 'active'"
+                    class="step-ring"
+                    viewBox="0 0 88 88"
+                  >
+                    <circle class="step-ring-bg" cx="44" cy="44" r="38" />
+                    <circle
+                      class="step-ring-fill"
+                      cx="44"
+                      cy="44"
+                      r="38"
+                      :style="ringStyle(node)"
+                    />
+                  </svg>
+                </div>
+
+                <div class="lesson-label" :class="{ 'lesson-label--muted': node.status === 'locked' }">
+                  {{ node.name }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </template>
 
     <!-- No data -->
@@ -163,6 +155,21 @@
           <div class="sd-actions">
             <button class="pb-btn-primary sd-btn-start" @click="startLesson">BAŞLAT</button>
             <button class="pb-btn-outline sd-btn-cancel" @click="stepDialogOpen = false">Kapat</button>
+          </div>
+        </div>
+      </div>
+    </transition>
+
+    <!-- ===== Hearts Empty Dialog ===== -->
+    <transition name="dialog-fade">
+      <div v-if="heartsEmptyOpen" class="sd-overlay" @click.self="heartsEmptyOpen = false">
+        <div class="sd-modal">
+          <div class="hd-icon">💔</div>
+          <div class="hd-title">Canın Bitti!</div>
+          <div class="hd-sub">Kalplerin yenilenmesini bekle veya marketten satın al.</div>
+          <div class="sd-actions">
+            <button class="pb-btn-primary sd-btn-start" @click="navigateTo('/store')">🛒 Markete Git</button>
+            <button class="pb-btn-outline sd-btn-cancel" @click="heartsEmptyOpen = false">Kapat</button>
           </div>
         </div>
       </div>
@@ -260,13 +267,40 @@ const loadingFull = ref(false);
 const selectedNode = ref<LessonNode | null>(null);
 const stepDialogOpen = ref(false);
 
+// Hearts empty dialog
+const heartsEmptyOpen = ref(false);
+
 function getToken() {
   return localStorage.getItem('pb_token') ?? '';
 }
 
 onMounted(async () => {
   const token = getToken();
-  if (!token) return;
+
+  // Guest mode: no token but has guest exam selection
+  if (!token) {
+    const guestExamTypeId = localStorage.getItem('guestExamTypeId');
+    if (!guestExamTypeId) {
+      navigateTo('/welcome');
+      return;
+    }
+    activeExamTypeId.value = guestExamTypeId;
+    // Sync hearts from guest state
+    const { state: guestStateData } = useGuestState();
+    const heartsState = useState('userHearts', () => 5);
+    heartsState.value = guestStateData.value.heartsCount;
+    try {
+      const mods = await $fetch<Module[]>(`/api/modules?exam_type_id=${guestExamTypeId}`);
+      modules.value = mods;
+      if (mods.length > 0) {
+        const savedModuleId = localStorage.getItem('pb_selectedModuleId');
+        const savedCourseId = localStorage.getItem('pb_selectedCourseId');
+        const targetModule = savedModuleId && mods.find((m) => m.id === savedModuleId) ? savedModuleId : mods[0].id;
+        await selectModule(targetModule, savedCourseId ?? undefined);
+      }
+    } catch { /* silently fail */ }
+    return;
+  }
 
   try {
     const profile = await $fetch<{ active_exam_type_id?: string; hearts?: number; next_heart_at?: string | null }>('/api/users/me', {
@@ -308,11 +342,11 @@ async function selectModule(moduleId: string, preferredCourseId?: string) {
   selectedModuleId.value = moduleId;
   localStorage.setItem('pb_selectedModuleId', moduleId);
   const token = getToken();
+  const headers: Record<string, string> = {};
+  if (token) headers.Authorization = `Bearer ${token}`;
 
   try {
-    const data = await $fetch<Course[]>(`/api/courses?module_id=${moduleId}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const data = await $fetch<Course[]>(`/api/courses?module_id=${moduleId}`, { headers });
     courses.value = data;
 
     if (data.length > 0) {
@@ -334,11 +368,11 @@ async function selectCourse(courseId: string) {
   localStorage.setItem('pb_selectedCourseId', courseId);
   loadingFull.value = true;
   const token = getToken();
+  const headers: Record<string, string> = {};
+  if (token) headers.Authorization = `Bearer ${token}`;
 
   try {
-    const data = await $fetch<CourseFull>(`/api/courses/${courseId}/full`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const data = await $fetch<CourseFull>(`/api/courses/${courseId}/full`, { headers });
     courseFull.value = data;
   } catch {
     courseFull.value = null;
@@ -464,6 +498,16 @@ function goToLesson(node: LessonNode) {
   if (node.type === 'chest') return;
   if (node.status === 'completed') return;
 
+  // Check hearts before opening quiz dialog (logged-in users only)
+  const token = getToken();
+  if (token) {
+    const heartsState = useState('userHearts', () => 5);
+    if (heartsState.value <= 0) {
+      heartsEmptyOpen.value = true;
+      return;
+    }
+  }
+
   selectedNode.value = node;
   stepDialogOpen.value = true;
 }
@@ -481,10 +525,6 @@ function startLesson() {
 
   navigateTo({ path: `/quiz/${node.topicId}`, query });
 }
-
-function openGuidebook(topic: Topic) {
-  console.log('Guidebook:', topic.name);
-}
 </script>
 
 <style scoped>
@@ -493,6 +533,27 @@ function openGuidebook(topic: Topic) {
   flex-direction: column;
   gap: 32px;
   padding-bottom: 40px;
+}
+
+/* ===== Hearts Empty Dialog ===== */
+.hd-icon {
+  font-size: 2.6rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.hd-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--pb-text);
+  text-align: center;
+}
+
+.hd-sub {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--pb-text-muted);
+  text-align: center;
 }
 
 /* ===== Module Tabs ===== */
@@ -607,8 +668,8 @@ function openGuidebook(topic: Topic) {
 
 .unit-banner {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 4px;
   background: linear-gradient(135deg, var(--pb-purple-dark) 0%, var(--pb-purple) 100%);
   border-radius: 18px;
   padding: 18px 22px;
@@ -629,24 +690,6 @@ function openGuidebook(topic: Topic) {
   font-size: 1.1rem;
   font-weight: 900;
   color: white;
-}
-
-.unit-guidebook-btn {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  border-radius: 12px;
-  padding: 9px 16px;
-  font-size: 0.8rem;
-  font-weight: 800;
-  cursor: pointer;
-  font-family: inherit;
-  letter-spacing: 0.05em;
-  transition: background 0.15s;
-}
-
-.unit-guidebook-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
 }
 
 /* ===== Lesson Path ===== */

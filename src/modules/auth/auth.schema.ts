@@ -12,6 +12,8 @@ export const RegisterSchema = z.object({
     ),
   password: z.string().min(6, "Password must be at least 6 characters"),
   exam_type_id: z.string().uuid().optional(),
+  acorn_balance: z.number().int().min(0).optional(),
+  hearts: z.number().int().min(0).max(5).optional(),
 });
 
 export const LoginSchema = z.object({
