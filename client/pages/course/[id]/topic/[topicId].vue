@@ -110,6 +110,13 @@ onMounted(async () => {
 
     const data = await $fetch<{ topics: Topic[] }>(`/api/courses/${courseId}/full`, { headers });
     const found = data.topics.find((t) => t.id === topicId);
+
+    // For guest users, overlay step progress from localStorage quiz results
+    if (!token && found) {
+      const { overlayGuestProgress } = useGuestState();
+      overlayGuestProgress([found]);
+    }
+
     topic.value = found ?? null;
   } catch {
     topic.value = null;

@@ -147,6 +147,13 @@ onMounted(async () => {
       progress: 0,
     };
 
+    // For guest users, overlay step and topic progress from localStorage quiz results
+    const token = typeof localStorage !== 'undefined' ? localStorage.getItem('pb_token') : '';
+    if (!token) {
+      const { overlayGuestProgress } = useGuestState();
+      overlayGuestProgress(data.topics);
+    }
+
     const mappedTopics: Topic[] = data.topics.map((t, idx) => {
       const status = deriveTopicStatus(t, idx, data.topics);
       return {

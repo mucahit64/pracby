@@ -14,6 +14,21 @@ export const RegisterSchema = z.object({
   exam_type_id: z.string().uuid().optional(),
   acorn_balance: z.number().int().min(0).optional(),
   hearts: z.number().int().min(0).max(5).optional(),
+  guest_data: z
+    .object({
+      quiz_results: z
+        .array(
+          z.object({
+            topicId: z.string(),
+            stepId: z.string().optional(),
+            testId: z.string().optional(),
+            correctCount: z.number().int().min(0),
+            totalQuestions: z.number().int().min(0),
+          }),
+        )
+        .optional(),
+    })
+    .optional(),
 });
 
 export const LoginSchema = z.object({

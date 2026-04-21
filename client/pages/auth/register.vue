@@ -321,6 +321,7 @@ const submit = async () => {
         password: form.password.trim(),
         acorn_balance: guestPayload.acorn_balance,
         hearts: guestPayload.hearts,
+        guest_data: guestPayload.guest_data,
       },
     });
     localStorage.setItem('pb_token', data.token);

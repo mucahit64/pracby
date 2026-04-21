@@ -42,6 +42,38 @@ export const register = async (input: RegisterInput) => {
     await db("user_exam_enrollments").insert({ user_id: user.id, exam_type_id: examTypeId });
   }
 
+  // Apply guest quiz progress if provided
+  if (input.guest_data?.quiz_results?.length) {
+    const stepIds = [...new Set(input.guest_data.quiz_results.map((r) => r.stepId).filter(Boolean))] as string[];
+    if (stepIds.length > 0) {
+      const steps = await db("steps").whereIn("id", stepIds).select("id", "tests_required");
+      const stepMap = new Map(steps.map((s) => [s.id as string, s.tests_required as number]));
+
+      const totalCorrect = input.guest_data.quiz_results.reduce((sum, r) => sum + r.correctCount, 0);
+      if (totalCorrect > 0) {
+        await db("user_stats").where({ user_id: user.id }).increment({ xp: totalCorrect, total_xp: totalCorrect });
+      }
+
+      const stepProgressRows = stepIds.map((stepId) => {
+        const results = input.guest_data!.quiz_results!.filter((r) => r.stepId === stepId);
+        const completedTests = new Set(results.filter((r) => r.testId).map((r) => r.testId!)).size;
+        const testsRequired = stepMap.get(stepId) ?? 1;
+        const isCompleted = completedTests >= testsRequired;
+        return {
+          user_id: user.id,
+          step_id: stepId,
+          tests_completed: completedTests,
+          is_step_completed: isCompleted,
+          step_final_passed: false,
+          stars: 0,
+          ...(isCompleted && { completed_at: new Date() }),
+        };
+      });
+
+      await db("user_step_progress").insert(stepProgressRows).onConflict(["user_id", "step_id"]).merge();
+    }
+  }
+
   return { user, token: signToken(user.id as string, user.username as string) };
 };
 

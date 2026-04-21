@@ -37,14 +37,14 @@
       <div class="pb-stat-wrap" @mouseenter="openTooltip('acorns')" @mouseleave="closeTooltip">
         <div class="pb-stat-item">
           <span class="pb-stat-icon">🌰</span>
-          <span class="pb-stat-value">{{ stats.acorns }}</span>
+          <span class="pb-stat-value">{{ sharedAcornBalance }}</span>
         </div>
         <div v-if="activeTooltip === 'acorns'" class="pb-tooltip pb-tooltip--center">
             <div class="pb-tt-arrow" />
             <div class="pb-tt-head">Palamutların</div>
             <div class="pb-tt-acorn-bal">
               <span class="pb-tt-acorn-icon">🌰</span>
-              <span class="pb-tt-big">{{ stats.acorns }}</span>
+              <span class="pb-tt-big">{{ sharedAcornBalance }}</span>
             </div>
             <p class="pb-tt-hint">Doğru cevap = 1 🌰</p>
             <p class="pb-tt-hint">Palamutlarınla mağazadan ürün al!</p>
@@ -81,7 +81,7 @@
                   v-for="pkg in heartPackages"
                   :key="pkg.id"
                   class="pb-tt-pkg"
-                  :disabled="stats.acorns < pkg.price_acorn || purchasingId === pkg.id"
+                  :disabled="sharedAcornBalance < pkg.price_acorn || purchasingId === pkg.id"
                   @click="buyHeart(pkg)"
                 >
                   <span class="pb-tt-pkg-name">{{ pkg.name }}</span>
@@ -176,6 +176,7 @@
 const isLoggedIn = ref(false);
 const sharedHearts = useState('userHearts', () => 5);
 const heartCountdown = useState('heartCountdown', () => '');
+const { acornBalance: sharedAcornBalance, setAcornBalance } = useAcornBalance();
 
 interface HeartPackage {
   id: string;
@@ -246,6 +247,7 @@ async function buyHeart(pkg: HeartPackage) {
       return;
     }
     stats.value.acorns -= pkg.price_acorn;
+    setAcornBalance(stats.value.acorns);
     const newHearts = Math.min(5, sharedHearts.value + heartsToAdd);
     sharedHearts.value = newHearts;
     setHearts(newHearts);
@@ -264,6 +266,7 @@ async function buyHeart(pkg: HeartPackage) {
       headers: { Authorization: `Bearer ${token}` },
     });
     stats.value.acorns = user.acorn_balance ?? stats.value.acorns;
+    setAcornBalance(stats.value.acorns);
     sharedHearts.value = user.hearts ?? sharedHearts.value;
     purchaseMsg.value = `${pkg.name} satın alındı! ❤️`;
   } catch {
@@ -278,9 +281,11 @@ onMounted(async () => {
   const token = getToken();
   if (!token) {
     isLoggedIn.value = false;
-    // Load guest state (acorns + hearts)
+    // Load guest state (acorns + hearts) — read directly from localStorage, then sync to shared state
     const { state: gs } = useGuestState();
-    stats.value.acorns = gs.value.acornBalance;
+    const guestBalance = gs.value.acornBalance;
+    setAcornBalance(guestBalance);
+    stats.value.acorns = guestBalance;
     sharedHearts.value = gs.value.heartsCount;
     // Load packages from public endpoint
     try {
@@ -299,6 +304,7 @@ onMounted(async () => {
       $fetch<StreakDay[]>('/api/users/me/streak-history', { headers: h }),
     ]);
     stats.value.acorns = user.acorn_balance ?? 0;
+    setAcornBalance(user.acorn_balance ?? 0);
     sharedHearts.value = user.hearts ?? 5;
     stats.value.dailyGoal = user.daily_goal_xp ?? 50;
     stats.value.streak = userStats.current_streak ?? userStats.streak ?? 0;

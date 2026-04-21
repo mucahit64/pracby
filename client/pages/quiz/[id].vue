@@ -436,6 +436,9 @@ const answeredCount = ref(0);
 const stepCompleted = ref(false);
 const topicCompleted = ref(false);
 const guestMode = ref(false);
+const guestTopicId = ref('');
+const guestStepId = ref('');
+const guestTestId = ref('');
 
 const isBossSession = computed(() => route.query.sessionType === 'step_final');
 
@@ -532,6 +535,9 @@ async function startQuiz() {
 
       const data = await $fetch<{ questions: Question[] }>(`/api/quiz/guest-start?${params.toString()}`);
       guestMode.value = true;
+      guestTopicId.value = topicId;
+      guestStepId.value = (query.stepId as string) || '';
+      guestTestId.value = (query.testId as string) || '';
       // Sync hearts from localStorage
       const { state: gs } = useGuestState();
       hearts.value = gs.value.heartsCount;
@@ -657,7 +663,6 @@ async function submitToBackend(body: Record<string, unknown>) {
     lastAnswerCorrect.value = isCorrect;
     answered.value = true;
     totalAnswered.value++;
-    answeredCount.value++;
     if (isCorrect) {
       correctCount.value++;
       xpEarned.value += 1;
@@ -683,7 +688,6 @@ async function submitToBackend(body: Record<string, unknown>) {
     lastAnswerCorrect.value = result.isCorrect;
     answered.value = true;
     totalAnswered.value++;
-    answeredCount.value++;
     if (result.isCorrect) {
       correctCount.value++;
       xpEarned.value += 1;
@@ -697,7 +701,6 @@ async function submitToBackend(body: Record<string, unknown>) {
     lastAnswerCorrect.value = false;
     answered.value = true;
     totalAnswered.value++;
-    answeredCount.value++;
   }
 }
 
@@ -879,26 +882,38 @@ async function answerFillBlankChip() {
 
 // Navigation
 function nextQuestion() {
+  answeredCount.value++;
+  if (currentIndex.value >= questions.value.length - 1) {
+    heartsDepleted.value = false;
+    finishQuiz();
+    return;
+  }
   if (heartsDepleted.value) {
     openHeartsDialog();
     return;
   }
-  if (currentIndex.value < questions.value.length - 1) {
-    currentIndex.value++;
-    initQuestionState();
-  } else {
-    finishQuiz();
-  }
+  currentIndex.value++;
+  initQuestionState();
 }
 
 async function finishQuiz() {
   if (guestMode.value) {
     acornEarned.value = correctCount.value;
+    const { addQuizResult, gainAcorns } = useGuestState();
+    addQuizResult({
+      topicId: guestTopicId.value,
+      stepId: guestStepId.value || undefined,
+      testId: guestTestId.value || undefined,
+      correctCount: correctCount.value,
+      totalQuestions: questions.value.length,
+    });
+    gainAcorns(correctCount.value);
     finished.value = true;
     return;
   }
 
   const token = getToken();
+  const { incrementAcornBalance } = useAcornBalance();
   try {
     const result = await $fetch<{
       xp_earned: number;
@@ -916,6 +931,7 @@ async function finishQuiz() {
     correctCount.value = result.correct_answers;
     stepCompleted.value = result.step_completed;
     topicCompleted.value = result.topic_completed;
+    if (result.acorn_earned > 0) incrementAcornBalance(result.acorn_earned);
   } catch {
     // finish failed, use local counts
     acornEarned.value = correctCount.value;
@@ -991,6 +1007,8 @@ async function buyHeartInDialog(pkg: HeartPackage) {
     });
     hearts.value = result.hearts;
     acornBalanceForDialog.value = result.balance;
+    const { setAcornBalance } = useAcornBalance();
+    setAcornBalance(result.balance);
     heartsDepleted.value = false;
     heartsEmptyDialog.value = false;
     exitWarningDialog.value = false;

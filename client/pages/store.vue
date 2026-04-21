@@ -2,11 +2,6 @@
   <div class="store-page">
     <div class="store-header">
       <h1 class="store-title">🌰 Market</h1>
-      <div class="store-balance">
-        <span class="store-balance-icon">🌰</span>
-        <span class="store-balance-val">{{ balance }}</span>
-        <span class="store-balance-label">Acorn</span>
-      </div>
     </div>
 
     <!-- Store items (non-heart) -->
@@ -173,6 +168,7 @@ interface AcornPackage {
 const balance = ref(0);
 const isGuest = ref(false);
 const sharedHearts = useState('userHearts', () => 5);
+const { setAcornBalance } = useAcornBalance();
 const items = ref<StoreItem[]>([]);
 const inventory = ref<InventoryItem[]>([]);
 const effects = ref<ActiveEffect[]>([]);
@@ -197,6 +193,7 @@ async function fetchBalance() {
   try {
     const user = await $fetch<{ acorn_balance: number }>('/api/users/me', { headers: headers() });
     balance.value = user.acorn_balance ?? 0;
+    setAcornBalance(balance.value);
   } catch { /* skip */ }
 }
 
@@ -240,6 +237,7 @@ async function confirmPurchase() {
       const { spendAcorns, setHearts } = useGuestState();
       if (spendAcorns(purchaseModal.value.price_acorn)) {
         balance.value -= purchaseModal.value.price_acorn;
+        setAcornBalance(balance.value);
         const heartsToAdd = purchaseModal.value.metadata?.heart_count ?? 1;
         const newHearts = Math.min(5, sharedHearts.value + heartsToAdd);
         sharedHearts.value = newHearts;
@@ -258,6 +256,7 @@ async function confirmPurchase() {
       body: { itemId: purchaseModal.value.id, quantity: 1 },
     });
     balance.value = result.balance;
+    setAcornBalance(result.balance);
     if (result.hearts !== undefined) {
       const heartsState = useState('userHearts', () => 5);
       heartsState.value = result.hearts;

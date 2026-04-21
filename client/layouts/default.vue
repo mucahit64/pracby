@@ -109,7 +109,16 @@ onMounted(async () => {
   onUnmounted(() => window.removeEventListener('resize', checkMobile));
 
   const token = localStorage.getItem('pb_token');
-  if (!token) return;
+  if (!token) {
+    // Guest: load acorns + hearts from localStorage and start regen countdown
+    const { state: gs, getNextHeartAt, refreshHearts } = useGuestState();
+    refreshHearts();
+    setAcornBalance(gs.value.acornBalance);
+    heartsCount.value = gs.value.heartsCount;
+    nextHeartAt.value = getNextHeartAt()?.toISOString() ?? null;
+    startGuestHeartCountdown();
+    return;
+  }
 
   // Fetch user stats for header
   try {
@@ -124,7 +133,7 @@ onMounted(async () => {
         headers: { Authorization: `Bearer ${token}` },
       }),
     ]);
-    acornBalance.value = user.acorn_balance ?? 0;
+    setAcornBalance(user.acorn_balance ?? 0);
     heartsCount.value = user.hearts ?? 5;
     streakCount.value = userStats.streak ?? 0;
     nextHeartAt.value = user.next_heart_at ?? null;
@@ -136,7 +145,7 @@ onMounted(async () => {
 
 const isMobile = computed(() => screen.value.lt.md);
 
-const acornBalance = ref(0);
+const { acornBalance, setAcornBalance } = useAcornBalance();
 const streakCount = ref(0);
 const heartsCount = useState('userHearts', () => 5);
 const heartCountdown = useState('heartCountdown', () => '');
@@ -161,6 +170,28 @@ function startHeartCountdown(token: string) {
         heartsCount.value = user.hearts ?? heartsCount.value;
         nextHeartAt.value = user.next_heart_at ?? null;
       } catch { /* skip */ }
+      return;
+    }
+    const mins = Math.floor(diff / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+    heartCountdown.value = `${mins}:${String(secs).padStart(2, '0')}`;
+  }, 1000);
+}
+
+function startGuestHeartCountdown() {
+  if (heartTimer) clearInterval(heartTimer);
+  heartTimer = setInterval(() => {
+    if (!nextHeartAt.value || heartsCount.value >= 5) {
+      heartCountdown.value = '';
+      return;
+    }
+    const diff = new Date(nextHeartAt.value).getTime() - Date.now();
+    if (diff <= 0) {
+      heartCountdown.value = '';
+      const { state: gs, getNextHeartAt, refreshHearts } = useGuestState();
+      refreshHearts();
+      heartsCount.value = gs.value.heartsCount;
+      nextHeartAt.value = getNextHeartAt()?.toISOString() ?? null;
       return;
     }
     const mins = Math.floor(diff / 60000);

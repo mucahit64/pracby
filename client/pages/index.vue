@@ -373,6 +373,10 @@ async function selectCourse(courseId: string) {
 
   try {
     const data = await $fetch<CourseFull>(`/api/courses/${courseId}/full`, { headers });
+    if (!token) {
+      const { overlayGuestProgress } = useGuestState();
+      overlayGuestProgress(data.topics);
+    }
     courseFull.value = data;
   } catch {
     courseFull.value = null;
@@ -498,14 +502,14 @@ function goToLesson(node: LessonNode) {
   if (node.type === 'chest') return;
   if (node.status === 'completed') return;
 
-  // Check hearts before opening quiz dialog (logged-in users only)
+  // Check hearts before opening quiz dialog (both logged-in and guest users)
   const token = getToken();
-  if (token) {
-    const heartsState = useState('userHearts', () => 5);
-    if (heartsState.value <= 0) {
-      heartsEmptyOpen.value = true;
-      return;
-    }
+  const currentHearts = token
+    ? useState('userHearts', () => 5).value
+    : useGuestState().state.value.heartsCount;
+  if (currentHearts <= 0) {
+    heartsEmptyOpen.value = true;
+    return;
   }
 
   selectedNode.value = node;
