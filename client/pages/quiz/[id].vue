@@ -575,7 +575,13 @@ async function startQuiz() {
     questions.value = data.questions;
     initQuestionState();
   } catch (e: unknown) {
-    const errData = (e as { data?: { error?: string; message?: string } })?.data;
+    const fetchErr = e as { status?: number; data?: { error?: string; message?: string } };
+    if (fetchErr?.status === 403) {
+      loading.value = false;
+      openHeartsDialog();
+      return;
+    }
+    const errData = fetchErr?.data;
     error.value = errData?.error || errData?.message || 'Quiz başlatılamadı';
   } finally {
     loading.value = false;
@@ -1059,6 +1065,15 @@ function handleClose() {
 }
 
 function restartQuiz() {
+  // Check hearts before restarting — show dialog instead of hitting a 403
+  const currentHearts = guestMode.value
+    ? useGuestState().state.value.heartsCount
+    : hearts.value;
+  if (currentHearts <= 0) {
+    openHeartsDialog();
+    return;
+  }
+
   currentIndex.value = 0;
   answered.value = false;
   finished.value = false;
