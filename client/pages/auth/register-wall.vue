@@ -1,16 +1,16 @@
 <template>
-  <div class="rw-page">
-    <div class="rw-card">
+  <div class="flex items-center justify-center min-h-[80vh] px-5">
+    <div class="flex flex-col items-center gap-4 max-w-[420px] w-full bg-white border-2 border-gray-200 rounded-3xl p-10 text-center">
       <PbMascot :width="80" :height="100" />
-      <h1 class="rw-title">Harika gidiyorsun! 🎉</h1>
-      <p class="rw-message">
+      <h1 class="text-xl font-black text-gray-800">Harika gidiyorsun! 🎉</h1>
+      <p class="text-sm font-semibold text-gray-500 leading-relaxed">
         İlerlemeni kaydetmek ve ücretsiz olarak öğrenmeye devam etmek için bir profil oluştur.
       </p>
-      <div class="rw-actions">
-        <NuxtLink to="/auth/register" class="pb-btn-primary rw-btn">Profil Oluştur</NuxtLink>
-        <NuxtLink to="/auth/login" class="pb-btn-outline rw-btn">Giriş Yap</NuxtLink>
+      <div class="flex flex-col gap-3 w-full mt-2">
+        <NuxtLink to="/auth/register" class="w-full bg-primary text-white font-black text-sm py-3.5 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 text-center block">Profil Oluştur</NuxtLink>
+        <NuxtLink to="/auth/login" class="w-full bg-white text-primary font-extrabold text-sm py-3 rounded-xl border-2 border-primary hover:bg-primary/5 transition-all duration-150 text-center block">Giriş Yap</NuxtLink>
       </div>
-      <button class="rw-skip" @click="navigateTo('/')">← Ana sayfaya dön</button>
+      <button class="bg-transparent border-0 text-gray-400 text-sm font-bold cursor-pointer mt-2 hover:text-primary font-[inherit]" @click="navigateTo('/')">← Ana sayfaya dön</button>
     </div>
   </div>
 </template>
@@ -24,68 +24,3 @@ onMounted(() => {
   }
 });
 </script>
-
-<style scoped>
-.rw-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  padding: 20px;
-}
-
-.rw-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  max-width: 420px;
-  width: 100%;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 24px;
-  padding: 40px 32px;
-  text-align: center;
-}
-
-.rw-title {
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: var(--pb-text);
-}
-
-.rw-message {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--pb-text-muted);
-  line-height: 1.5;
-}
-
-.rw-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  margin-top: 8px;
-}
-
-.rw-btn {
-  width: 100%;
-  text-align: center;
-}
-
-.rw-skip {
-  background: none;
-  border: none;
-  color: var(--pb-text-muted);
-  font-size: 0.82rem;
-  font-weight: 700;
-  cursor: pointer;
-  font-family: inherit;
-  margin-top: 8px;
-}
-
-.rw-skip:hover {
-  color: var(--pb-purple-light);
-}
-</style>

@@ -1,58 +1,56 @@
 <template>
-  <div class="quiz-page">
+  <div class="min-h-screen bg-white flex flex-col max-w-[600px] mx-auto px-4 pb-10 text-gray-800 font-sans">
     <!-- Loading -->
-    <div v-if="loading" class="quiz-loading">
-      <div class="quiz-loading-spinner" />
-      <p>Sorular yükleniyor…</p>
+    <div v-if="loading" class="flex flex-col items-center justify-center flex-1 gap-3 py-20">
+      <div class="w-10 h-10 border-4 border-gray-200 border-t-primary rounded-full animate-spin" />
+      <p class="font-bold text-gray-400">Sorular yükleniyor…</p>
     </div>
 
     <!-- Error -->
-    <div v-else-if="error" class="quiz-error">
-      <p>{{ error }}</p>
-      <NuxtLink to="/" class="pb-btn-primary">Ana Sayfaya Dön</NuxtLink>
+    <div v-else-if="error" class="flex flex-col items-center justify-center flex-1 gap-4 py-20">
+      <p class="text-gray-400 font-bold text-center">{{ error }}</p>
+      <NuxtLink to="/" class="bg-primary text-white font-black text-sm py-3 px-6 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all">Ana Sayfaya Dön</NuxtLink>
     </div>
 
-    <!-- === Quiz in progress === -->
+    <!-- Quiz in progress -->
     <template v-else-if="!finished && questions.length > 0">
       <!-- Top bar -->
-      <div class="quiz-topbar">
-        <button class="quiz-close" @click="handleClose">✕</button>
-        <div class="quiz-progress-wrap">
-          <div class="quiz-progress-bar">
-            <div
-              class="quiz-progress-fill"
-              :style="{ width: `${(answeredCount / questions.length) * 100}%` }"
-            />
+      <div class="flex items-center gap-4 py-4 pb-5 sticky top-0 bg-white z-10">
+        <button class="w-9 h-9 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center text-gray-400 font-bold cursor-pointer hover:bg-gray-200 transition-colors shrink-0" @click="handleClose">✕</button>
+        <div class="flex-1">
+          <div class="h-3 bg-gray-100 rounded-full overflow-hidden border-2 border-gray-200">
+            <div class="h-full bg-primary rounded-full transition-all duration-300" :style="{ width: `${(answeredCount / questions.length) * 100}%` }" />
           </div>
         </div>
-        <div class="quiz-hearts">
-          <span class="quiz-heart-display">❤️ {{ hearts }}</span>
-        </div>
+        <span class="text-sm font-extrabold text-negative shrink-0">❤️ {{ hearts }}</span>
       </div>
 
-      <!-- Question card -->
-      <div class="quiz-body">
-        <!-- XP & question count -->
-        <div class="quiz-meta">
-          <span class="quiz-qcount">Soru {{ currentIndex + 1 }} / {{ questions.length }}</span>
-          <span class="quiz-xp-live">⚡ +{{ xpEarned }} XP</span>
+      <!-- Question body -->
+      <div class="flex flex-col gap-5 flex-1">
+        <!-- Meta -->
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-gray-400">Soru {{ currentIndex + 1 }} / {{ questions.length }}</span>
+          <span class="text-xs font-extrabold text-primary">⚡ +{{ xpEarned }} XP</span>
         </div>
 
-        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="quiz-question">{{ currentQuestion.question_text }}</div>
+        <!-- Question text (not for swipe/fill_blank) -->
+        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="text-lg font-black text-gray-800 leading-snug">{{ currentQuestion.question_text }}</div>
 
         <!-- Multiple choice / True-false -->
         <template v-if="currentQuestion.question_type === 'multiple_choice' || currentQuestion.question_type === 'true_false'">
-          <div class="quiz-options">
+          <div class="flex flex-col gap-2.5">
             <button
               v-for="(option, i) in currentAnswers"
               :key="option.id"
-              class="quiz-option"
+              class="flex items-center gap-3.5 bg-white border-2 rounded-2xl px-4 py-3.5 cursor-pointer transition-all duration-150 font-[inherit] text-left"
               :class="getMcOptionClass(option.id)"
               :disabled="answered"
               @click="answerMc(option.id)"
             >
-              <span class="quiz-option-letter">{{ optionLetters[i] }}</span>
-              <span class="quiz-option-text">{{ option.answer_text }}</span>
+              <span class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-extrabold shrink-0"
+                :class="getMcLetterClass(option.id)"
+              >{{ optionLetters[i] }}</span>
+              <span class="text-sm font-bold flex-1">{{ option.answer_text }}</span>
             </button>
           </div>
         </template>
@@ -60,269 +58,237 @@
         <!-- Fill in the blank -->
         <template v-else-if="currentQuestion.question_type === 'fill_blank'">
           <!-- Word chip mode -->
-          <div v-if="currentQuestion.type_data?.word_options?.length" class="quiz-fill-chip">
-            <div class="quiz-fill-sentence">
+          <div v-if="currentQuestion.type_data?.word_options?.length" class="flex flex-col gap-4">
+            <div class="text-lg font-black text-gray-800 leading-snug">
               <template v-for="(part, pi) in fillBlankParts" :key="pi">
                 <span
                   v-if="/^_+$/.test(part)"
-                  class="quiz-fill-slot"
+                  class="inline-block min-w-[80px] px-3 py-1 mx-1 border-b-4 text-center font-black transition-all"
                   :class="{
-                    'quiz-fill-slot--filled': selectedFillWord,
-                    'quiz-fill-slot--correct': answered && lastAnswerCorrect,
-                    'quiz-fill-slot--wrong': answered && !lastAnswerCorrect,
+                    'border-primary text-primary': selectedFillWord && !answered,
+                    'border-positive text-positive': answered && lastAnswerCorrect,
+                    'border-negative text-negative': answered && !lastAnswerCorrect,
+                    'border-gray-300 text-gray-400': !selectedFillWord && !answered,
                   }"
                   @click="!answered && selectedFillWord ? (selectedFillWord = '') : undefined"
-                >
-                  {{ selectedFillWord || '______' }}
-                </span>
+                >{{ selectedFillWord || '______' }}</span>
                 <span v-else>{{ part }}</span>
               </template>
             </div>
-            <div class="quiz-fill-chips">
+            <div class="flex flex-wrap gap-2">
               <button
                 v-for="word in currentQuestion.type_data.word_options"
                 :key="word"
-                class="quiz-fill-chip-btn"
+                class="px-4 py-2.5 rounded-xl border-2 font-bold text-sm cursor-pointer transition-all font-[inherit]"
                 :class="{
-                  'quiz-fill-chip-btn--selected': selectedFillWord === word,
-                  'quiz-fill-chip-btn--disabled': !!selectedFillWord && selectedFillWord !== word,
+                  'border-primary bg-primary/10 text-primary': selectedFillWord === word,
+                  'border-gray-200 text-gray-800 hover:border-primary/40': selectedFillWord !== word && !answered,
+                  'opacity-40': !!selectedFillWord && selectedFillWord !== word,
                 }"
                 :disabled="answered || (!!selectedFillWord && selectedFillWord !== word)"
                 @click="toggleFillWord(word)"
-              >
-                {{ word }}
-              </button>
+              >{{ word }}</button>
             </div>
             <button
               v-if="!answered && selectedFillWord"
-              class="pb-btn-primary quiz-fill-check"
+              class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all cursor-pointer"
               @click="answerFillBlankChip"
-            >
-              KONTROL ET
-            </button>
+            >KONTROL ET</button>
           </div>
-          <!-- Text input mode (fallback) -->
-          <div v-else class="quiz-fill-blank">
+          <!-- Text input mode -->
+          <div v-else class="flex flex-col gap-3">
             <input
               v-model="fillBlankText"
-              class="quiz-fill-input"
+              class="bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none focus:border-primary transition-colors"
               placeholder="Cevabınızı yazın…"
               :disabled="answered"
               @keyup.enter="answerFillBlank"
             />
             <button
               v-if="!answered"
-              class="pb-btn-primary quiz-fill-submit"
+              class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               :disabled="!fillBlankText.trim()"
               @click="answerFillBlank"
-            >
-              GÖNDER
-            </button>
+            >GÖNDER</button>
           </div>
         </template>
 
         <!-- Flashcard -->
         <template v-else-if="currentQuestion.question_type === 'flashcard'">
-          <div class="quiz-flashcard-wrap">
+          <div class="flex flex-col items-center gap-4">
             <div
-              class="quiz-flashcard"
-              :class="{ 'quiz-flashcard--flipped': flashcardFlipped }"
+              class="w-full max-w-[360px] h-[220px] rounded-2xl border-2 border-gray-200 flex items-center justify-center p-6 text-center cursor-pointer select-none transition-all hover:border-primary"
+              :class="flashcardFlipped ? 'bg-primary/5 border-primary' : 'bg-gray-50'"
               @click="flashcardFlipped = !flashcardFlipped"
             >
-              <div class="quiz-flashcard-front">
-                <p>Kartı çevirmek için tıkla</p>
-              </div>
-              <div class="quiz-flashcard-back">
-                <p>{{ currentQuestion.explanation || currentQuestion.type_data?.back || 'Açıklama yok' }}</p>
-              </div>
+              <p v-if="!flashcardFlipped" class="text-gray-400 font-bold">Kartı çevirmek için tıkla</p>
+              <p v-else class="text-sm font-bold text-gray-800 leading-relaxed">{{ currentQuestion.explanation || currentQuestion.type_data?.back || 'Açıklama yok' }}</p>
             </div>
-            <div v-if="!answered" class="quiz-flashcard-actions">
-              <button class="quiz-flashcard-btn quiz-flashcard-btn--wrong" @click="answerFlashcard(false)">
-                ✗ Bilmiyorum
-              </button>
-              <button class="quiz-flashcard-btn quiz-flashcard-btn--correct" @click="answerFlashcard(true)">
-                ✓ Biliyorum
-              </button>
+            <div v-if="!answered" class="flex gap-3 w-full max-w-[360px]">
+              <button class="flex-1 bg-white text-negative font-extrabold text-sm py-3.5 rounded-xl border-2 border-negative hover:bg-negative/5 transition-all cursor-pointer font-[inherit]" @click="answerFlashcard(false)">✗ Bilmiyorum</button>
+              <button class="flex-1 bg-positive text-white font-extrabold text-sm py-3.5 rounded-xl border-b-4 border-green-700 active:border-b-0 active:translate-y-1 transition-all cursor-pointer font-[inherit]" @click="answerFlashcard(true)">✓ Biliyorum</button>
             </div>
           </div>
         </template>
 
         <!-- Matching -->
         <template v-else-if="currentQuestion.question_type === 'matching'">
-          <div class="quiz-matching">
-            <div class="quiz-matching-cols">
-              <div class="quiz-matching-col">
+          <div class="flex flex-col gap-4">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="flex flex-col gap-2">
                 <button
                   v-for="(pair, i) in matchingPairs"
                   :key="'l-' + i"
-                  class="quiz-match-item"
+                  class="px-3 py-3 rounded-xl border-2 text-sm font-bold cursor-pointer transition-all font-[inherit] text-center"
                   :class="{
-                    'quiz-match-item--selected': matchingSelectedLeft === i,
-                    'quiz-match-item--matched': matchingMatched.has(i),
-                    'quiz-match-item--wrong': matchingWrongLeft === i,
+                    'border-primary bg-primary/10 text-primary': matchingSelectedLeft === i,
+                    'border-positive bg-positive/10 text-positive': matchingMatched.has(i),
+                    'border-negative bg-negative/10 text-negative': matchingWrongLeft === i,
+                    'border-gray-200 text-gray-800 hover:border-primary/40': matchingSelectedLeft !== i && !matchingMatched.has(i) && matchingWrongLeft !== i,
                   }"
                   :disabled="answered || matchingMatched.has(i)"
                   @click="selectMatchLeft(i)"
-                >
-                  {{ pair.left }}
-                </button>
+                >{{ pair.left }}</button>
               </div>
-              <div class="quiz-matching-col">
+              <div class="flex flex-col gap-2">
                 <button
                   v-for="(pair, i) in shuffledRightPairs"
                   :key="'r-' + i"
-                  class="quiz-match-item quiz-match-item--right"
+                  class="px-3 py-3 rounded-xl border-2 text-sm font-bold cursor-pointer transition-all font-[inherit] text-center"
                   :class="{
-                    'quiz-match-item--selected': matchingSelectedRight === i,
-                    'quiz-match-item--matched': matchingMatchedRight.has(i),
-                    'quiz-match-item--wrong': matchingWrongRight === i,
+                    'border-primary bg-primary/10 text-primary': matchingSelectedRight === i,
+                    'border-positive bg-positive/10 text-positive': matchingMatchedRight.has(i),
+                    'border-negative bg-negative/10 text-negative': matchingWrongRight === i,
+                    'border-gray-200 text-gray-800 hover:border-primary/40': matchingSelectedRight !== i && !matchingMatchedRight.has(i) && matchingWrongRight !== i,
                   }"
                   :disabled="answered || matchingMatchedRight.has(i)"
                   @click="selectMatchRight(i)"
-                >
-                  {{ pair.right }}
-                </button>
+                >{{ pair.right }}</button>
               </div>
             </div>
             <button
               v-if="!answered && matchingMatched.size === matchingPairs.length"
-              class="pb-btn-primary quiz-matching-submit"
+              class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all cursor-pointer"
               @click="submitMatching"
-            >
-              ONAYLA
-            </button>
+            >ONAYLA</button>
           </div>
         </template>
 
         <!-- Ordering -->
         <template v-else-if="currentQuestion.question_type === 'ordering'">
-          <div class="quiz-ordering">
-            <div class="quiz-ordering-list">
-              <div
-                v-for="(item, i) in orderingItems"
-                :key="item.originalIndex"
-                class="quiz-ordering-item"
-                :class="{ 'quiz-ordering-item--disabled': answered }"
-              >
-                <span class="quiz-ordering-num">{{ i + 1 }}</span>
-                <span class="quiz-ordering-text">{{ item.text }}</span>
-                <div v-if="!answered" class="quiz-ordering-btns">
-                  <button :disabled="i === 0" @click="moveOrderItem(i, -1)">▲</button>
-                  <button :disabled="i === orderingItems.length - 1" @click="moveOrderItem(i, 1)">▼</button>
-                </div>
+          <div class="flex flex-col gap-3">
+            <div
+              v-for="(item, i) in orderingItems"
+              :key="item.originalIndex"
+              class="flex items-center gap-3 bg-white border-2 border-gray-200 rounded-xl px-4 py-3"
+              :class="{ 'opacity-60': answered }"
+            >
+              <span class="w-7 h-7 rounded-full bg-primary text-white text-xs font-extrabold flex items-center justify-center shrink-0">{{ i + 1 }}</span>
+              <span class="flex-1 text-sm font-bold text-gray-800">{{ item.text }}</span>
+              <div v-if="!answered" class="flex flex-col gap-0.5">
+                <button class="text-xs text-gray-400 hover:text-primary disabled:opacity-30 cursor-pointer bg-transparent border-0 font-[inherit]" :disabled="i === 0" @click="moveOrderItem(i, -1)">▲</button>
+                <button class="text-xs text-gray-400 hover:text-primary disabled:opacity-30 cursor-pointer bg-transparent border-0 font-[inherit]" :disabled="i === orderingItems.length - 1" @click="moveOrderItem(i, 1)">▼</button>
               </div>
             </div>
             <button
               v-if="!answered"
-              class="pb-btn-primary quiz-ordering-submit"
+              class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all cursor-pointer"
               @click="submitOrdering"
-            >
-              ONAYLA
-            </button>
+            >ONAYLA</button>
           </div>
         </template>
 
-        <!-- Swipe (Doğru/Yanlış) -->
+        <!-- Swipe -->
         <template v-else-if="currentQuestion.question_type === 'swipe'">
-          <div class="quiz-swipe-wrap">
+          <div class="flex flex-col items-center gap-4">
             <div
-              class="quiz-swipe-card"
+              class="w-full max-w-[340px] min-h-[200px] bg-white border-2 border-gray-200 rounded-2xl p-6 flex items-center justify-center text-center relative select-none cursor-grab active:cursor-grabbing"
               :style="swipeCardStyle"
               @mousedown.prevent="swipeMouseDown"
               @touchstart.prevent="swipeTouchStart"
               @touchmove.prevent="swipeTouchMove"
               @touchend="swipeTouchEnd"
             >
-              <div class="quiz-swipe-overlay quiz-swipe-overlay--right" :style="{ opacity: swipeRightOpacity }">
-                DOĞRU ✓
-              </div>
-              <div class="quiz-swipe-overlay quiz-swipe-overlay--left" :style="{ opacity: swipeLeftOpacity }">
-                YANLIŞ ✗
-              </div>
-              <div class="quiz-swipe-content">
-                {{ currentQuestion.question_text }}
-              </div>
+              <div class="absolute top-3 right-3 text-positive font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeRightOpacity }">DOĞRU ✓</div>
+              <div class="absolute top-3 left-3 text-negative font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeLeftOpacity }">YANLIŞ ✗</div>
+              <p class="text-base font-bold text-gray-800">{{ currentQuestion.question_text }}</p>
             </div>
-            <div v-if="!answered" class="quiz-swipe-hint">
-              <span class="quiz-swipe-hint--left">← YANLIŞ</span>
-              <span class="quiz-swipe-hint--right">DOĞRU →</span>
+            <div v-if="!answered" class="flex justify-between w-full max-w-[340px] text-xs font-extrabold text-gray-400">
+              <span>← YANLIŞ</span>
+              <span>DOĞRU →</span>
             </div>
           </div>
         </template>
 
         <!-- Feedback -->
-        <transition name="fade-up">
-          <div v-if="answered" class="quiz-feedback" :class="lastAnswerCorrect ? 'quiz-feedback--correct' : 'quiz-feedback--wrong'">
-            <div class="quiz-feedback-icon">{{ lastAnswerCorrect ? '✓' : '✗' }}</div>
-            <div class="quiz-feedback-content">
-              <div class="quiz-feedback-title">
-                {{ lastAnswerCorrect ? 'Harika! 🎉' : 'Yanlış! 😔' }}
-              </div>
-              <div v-if="currentQuestion.explanation" class="quiz-feedback-detail">
-                {{ currentQuestion.explanation }}
-              </div>
+        <transition name="fade">
+          <div v-if="answered" class="flex items-center gap-3.5 rounded-2xl px-5 py-4 border-b-4"
+            :class="lastAnswerCorrect ? 'bg-positive/10 border-positive text-positive' : 'bg-negative/10 border-negative text-negative'"
+          >
+            <span class="text-2xl font-black">{{ lastAnswerCorrect ? '✓' : '✗' }}</span>
+            <div class="flex-1 min-w-0">
+              <div class="text-base font-black">{{ lastAnswerCorrect ? 'Harika! 🎉' : 'Yanlış! 😔' }}</div>
+              <div v-if="currentQuestion.explanation" class="text-xs font-semibold opacity-80 mt-0.5">{{ currentQuestion.explanation }}</div>
             </div>
-            <button class="quiz-continue-btn" @click="nextQuestion">DEVAM</button>
+            <button class="shrink-0 bg-white font-extrabold text-sm px-5 py-2.5 rounded-xl border-2 cursor-pointer transition-all font-[inherit]"
+              :class="lastAnswerCorrect ? 'text-positive border-positive hover:bg-positive/5' : 'text-negative border-negative hover:bg-negative/5'"
+              @click="nextQuestion"
+            >DEVAM</button>
           </div>
         </transition>
       </div>
     </template>
 
-    <!-- === Quiz finished === -->
+    <!-- Quiz finished -->
     <template v-else-if="finished">
-      <div class="quiz-result" :class="{ 'quiz-result--boss': isBossSession }">
-        <div class="quiz-result-mascot" :class="{ 'quiz-result-mascot--boss': isBossSession && stepCompleted }">
+      <div class="flex flex-col items-center gap-5 py-10">
+        <div :class="{ 'animate-bounce': isBossSession && stepCompleted }">
           <PbMascot :width="120" :height="150" />
         </div>
 
-        <h1 class="quiz-result-title">{{ heartsDepleted ? 'Canların Bitti! 💔' : (isBossSession && stepCompleted ? '⚔️ Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
-        <p class="quiz-result-sub">{{ heartsDepleted ? 'Kalplerin tükendi, test sonlandırıldı.' : (isBossSession ? 'Adım finali tamamlandı!' : 'Quiz tamamlandı!') }}</p>
+        <h1 class="text-2xl font-black text-gray-800 text-center">{{ heartsDepleted ? 'Canların Bitti! 💔' : (isBossSession && stepCompleted ? '⚔️ Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
+        <p class="text-sm font-semibold text-gray-400 text-center">{{ heartsDepleted ? 'Kalplerin tükendi, test sonlandırıldı.' : (isBossSession ? 'Adım finali tamamlandı!' : 'Quiz tamamlandı!') }}</p>
 
-        <div class="quiz-result-stats">
-          <div class="quiz-result-stat quiz-result-stat--correct">
-            <div class="quiz-result-stat-val">{{ correctCount }}</div>
-            <div class="quiz-result-stat-label">Doğru</div>
+        <!-- Stats grid -->
+        <div class="grid grid-cols-4 gap-3 w-full max-w-[420px]">
+          <div class="bg-positive/10 border-2 border-positive/30 rounded-2xl p-3 text-center">
+            <div class="text-xl font-black text-positive">{{ correctCount }}</div>
+            <div class="text-[0.65rem] font-bold text-positive/70 uppercase">Doğru</div>
           </div>
-          <div class="quiz-result-stat quiz-result-stat--wrong">
-            <div class="quiz-result-stat-val">{{ questions.length - correctCount }}</div>
-            <div class="quiz-result-stat-label">Yanlış</div>
+          <div class="bg-negative/10 border-2 border-negative/30 rounded-2xl p-3 text-center">
+            <div class="text-xl font-black text-negative">{{ questions.length - correctCount }}</div>
+            <div class="text-[0.65rem] font-bold text-negative/70 uppercase">Yanlış</div>
           </div>
-          <div class="quiz-result-stat quiz-result-stat--xp">
-            <div class="quiz-result-stat-val">+{{ xpEarned }}</div>
-            <div class="quiz-result-stat-label">XP</div>
+          <div class="bg-primary/10 border-2 border-primary/30 rounded-2xl p-3 text-center">
+            <div class="text-xl font-black text-primary">+{{ xpEarned }}</div>
+            <div class="text-[0.65rem] font-bold text-primary/70 uppercase">XP</div>
           </div>
-          <div class="quiz-result-stat quiz-result-stat--acorn">
-            <div class="quiz-result-stat-val">+{{ acornEarned }}</div>
-            <div class="quiz-result-stat-label">Acorn</div>
+          <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-3 text-center">
+            <div class="text-xl font-black text-amber-700">+{{ acornEarned }}</div>
+            <div class="text-[0.65rem] font-bold text-amber-400 uppercase">Acorn</div>
           </div>
         </div>
 
-        <div class="quiz-accuracy">
-          <div class="quiz-accuracy-label">Doğruluk Oranı</div>
-          <div class="quiz-accuracy-bar">
-            <div
-              class="quiz-accuracy-fill"
-              :style="{ width: `${questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0}%` }"
-            />
+        <!-- Accuracy bar -->
+        <div class="flex items-center gap-3 w-full max-w-[420px]">
+          <span class="text-xs font-bold text-gray-400 whitespace-nowrap">Doğruluk</span>
+          <div class="flex-1 h-3 bg-gray-100 rounded-full overflow-hidden border-2 border-gray-200">
+            <div class="h-full bg-primary rounded-full transition-all duration-500" :style="{ width: `${questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0}%` }" />
           </div>
-          <div class="quiz-accuracy-pct">%{{ questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0 }}</div>
+          <span class="text-sm font-extrabold text-primary">%{{ questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0 }}</span>
         </div>
 
-        <div v-if="stepCompleted" class="quiz-step-complete">
-          🎉 Adım tamamlandı!
-        </div>
-        <div v-if="topicCompleted" class="quiz-topic-complete">
-          🏆 Konu tamamlandı!
-        </div>
+        <div v-if="stepCompleted" class="bg-positive/10 text-positive font-extrabold text-sm px-5 py-2.5 rounded-full border-2 border-positive/30">🎉 Adım tamamlandı!</div>
+        <div v-if="topicCompleted" class="bg-warning/10 text-warning font-extrabold text-sm px-5 py-2.5 rounded-full border-2 border-warning/30">🏆 Konu tamamlandı!</div>
 
-        <div class="quiz-result-actions">
-          <button class="pb-btn-outline" @click="restartQuiz">🔄 Tekrar Dene</button>
-          <NuxtLink :to="guestMode ? '/auth/register-wall' : '/'" class="pb-btn-primary">Devam Et →</NuxtLink>
+        <div class="flex gap-3 w-full max-w-[420px] mt-2">
+          <button class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="restartQuiz">🔄 Tekrar Dene</button>
+          <NuxtLink :to="guestMode ? '/auth/register-wall' : '/'" class="flex-1 bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all text-center">Devam Et →</NuxtLink>
         </div>
       </div>
     </template>
 
-    <!-- Dialog: Hearts Empty -->
+    <!-- Dialogs -->
     <DialogsHeartsEmptyDialog
       :visible="heartsEmptyDialog"
       :packages="heartPackages"
@@ -334,7 +300,6 @@
       @decline="declineHeartPurchase"
     />
 
-    <!-- Dialog: Exit Warning -->
     <DialogsExitWarningDialog
       :visible="exitWarningDialog"
       @continue="continueFromWarning"
@@ -407,7 +372,6 @@ const guestTestId = ref('');
 
 const isBossSession = computed(() => route.query.sessionType === 'step_final');
 
-// Hearts dialog state
 const heartsEmptyDialog = ref(false);
 const exitWarningDialog = ref(false);
 const heartPackages = ref<HeartPackage[]>([]);
@@ -416,16 +380,10 @@ const purchasingHeart = ref<string | null>(null);
 const loadingPackages = ref(false);
 const purchaseError = ref('');
 
-// Multiple choice state
 const selectedAnswerId = ref('');
-
-// Fill blank state
 const fillBlankText = ref('');
-
-// Flashcard state
 const flashcardFlipped = ref(false);
 
-// Matching state
 const matchingPairs = ref<{ left: string; right: string }[]>([]);
 const shuffledRightPairs = ref<{ right: string; originalIndex: number }[]>([]);
 const matchingSelectedLeft = ref(-1);
@@ -436,10 +394,8 @@ const matchingWrongLeft = ref(-1);
 const matchingWrongRight = ref(-1);
 const matchingUserPairs = ref<{ leftIndex: number; rightIndex: number }[]>([]);
 
-// Ordering state
 const orderingItems = ref<{ text: string; originalIndex: number }[]>([]);
 
-// Swipe state
 const swipeDragX = ref(0);
 const swipeStartX = ref(0);
 const swipeDragging = ref(false);
@@ -447,10 +403,7 @@ const swipeExiting = ref(false);
 const swipeExitDirection = ref<'left' | 'right' | null>(null);
 const SWIPE_THRESHOLD = 100;
 
-// Fill-blank chip state
 const selectedFillWord = ref('');
-
-// Answer tracking for exit dialog
 const totalAnswered = ref(0);
 
 const currentQuestion = computed(() => questions.value[currentIndex.value]);
@@ -480,6 +433,26 @@ const fillBlankParts = computed(() => {
   return parts.filter(p => p.length > 0);
 });
 
+function getMcOptionClass(answerId: string) {
+  if (!answered.value) {
+    return answerId === selectedAnswerId.value ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary/40';
+  }
+  const correct = currentAnswers.value.find((a) => a.is_correct);
+  if (answerId === correct?.id) return 'border-positive bg-positive/10';
+  if (answerId === selectedAnswerId.value) return 'border-negative bg-negative/10';
+  return 'border-gray-200 opacity-50';
+}
+
+function getMcLetterClass(answerId: string) {
+  if (!answered.value) {
+    return answerId === selectedAnswerId.value ? 'border-primary text-primary bg-primary/10' : 'border-gray-300 text-gray-400';
+  }
+  const correct = currentAnswers.value.find((a) => a.is_correct);
+  if (answerId === correct?.id) return 'border-positive text-positive bg-positive/10';
+  if (answerId === selectedAnswerId.value) return 'border-negative text-negative bg-negative/10';
+  return 'border-gray-200 text-gray-300';
+}
+
 function getToken() {
   return localStorage.getItem('pb_token') ?? '';
 }
@@ -490,7 +463,6 @@ async function startQuiz() {
   const isGuest = !token;
 
   if (isGuest) {
-    // Guest mode: use public endpoint, no session creation
     try {
       const query = route.query;
       const params = new URLSearchParams({ topicId });
@@ -503,7 +475,6 @@ async function startQuiz() {
       guestTopicId.value = topicId;
       guestStepId.value = (query.stepId as string) || '';
       guestTestId.value = (query.testId as string) || '';
-      // Sync hearts from localStorage
       const { state: gs } = useGuestState();
       hearts.value = gs.value.heartsCount;
       questions.value = data.questions;
@@ -586,7 +557,6 @@ function initQuestionState() {
 
   if (q.question_type === 'ordering' && q.type_data?.items) {
     const items = q.type_data.items.map((it, i) => ({ text: it.text, originalIndex: i }));
-    // Shuffle
     for (let i = items.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [items[i], items[j]] = [items[j], items[i]];
@@ -596,7 +566,6 @@ function initQuestionState() {
 }
 
 async function submitToBackend(body: Record<string, unknown>) {
-  // Guest mode: client-side validation
   if (guestMode.value) {
     const q = currentQuestion.value;
     let isCorrect = false;
@@ -642,7 +611,6 @@ async function submitToBackend(body: Record<string, unknown>) {
       if (hearts.value === 0) {
         heartsDepleted.value = true;
       }
-      // Persist hearts to localStorage
       const { setHearts: persistHearts } = useGuestState();
       persistHearts(hearts.value);
     }
@@ -675,43 +643,20 @@ async function submitToBackend(body: Record<string, unknown>) {
   }
 }
 
-// Multiple choice
-function getMcOptionClass(answerId: string) {
-  if (!answered.value) {
-    return answerId === selectedAnswerId.value ? 'quiz-option--selected' : '';
-  }
-  const correct = currentAnswers.value.find((a) => a.is_correct);
-  if (answerId === correct?.id) return 'quiz-option--correct';
-  if (answerId === selectedAnswerId.value) return 'quiz-option--wrong';
-  return 'quiz-option--dim';
-}
-
 async function answerMc(answerId: string) {
   selectedAnswerId.value = answerId;
-  await submitToBackend({
-    questionId: currentQuestion.value.id,
-    answerId,
-  });
+  await submitToBackend({ questionId: currentQuestion.value.id, answerId });
 }
 
-// Fill blank
 async function answerFillBlank() {
   if (!fillBlankText.value.trim()) return;
-  await submitToBackend({
-    questionId: currentQuestion.value.id,
-    textAnswer: fillBlankText.value.trim(),
-  });
+  await submitToBackend({ questionId: currentQuestion.value.id, textAnswer: fillBlankText.value.trim() });
 }
 
-// Flashcard
 async function answerFlashcard(knows: boolean) {
-  await submitToBackend({
-    questionId: currentQuestion.value.id,
-    isCorrect: knows,
-  });
+  await submitToBackend({ questionId: currentQuestion.value.id, isCorrect: knows });
 }
 
-// Matching
 function selectMatchLeft(index: number) {
   matchingWrongLeft.value = -1;
   matchingWrongRight.value = -1;
@@ -733,7 +678,6 @@ function tryMatch() {
   const rightOriginalIdx = shuffledRightPairs.value[rightShuffledIdx].originalIndex;
 
   if (leftIdx === rightOriginalIdx) {
-    // Correct match
     matchingMatched.value = new Set([...matchingMatched.value, leftIdx]);
     matchingMatchedRight.value = new Set([...matchingMatchedRight.value, rightShuffledIdx]);
     matchingUserPairs.value.push({ leftIndex: leftIdx, rightIndex: leftIdx });
@@ -748,13 +692,9 @@ function tryMatch() {
 }
 
 async function submitMatching() {
-  await submitToBackend({
-    questionId: currentQuestion.value.id,
-    matchingAnswer: matchingUserPairs.value,
-  });
+  await submitToBackend({ questionId: currentQuestion.value.id, matchingAnswer: matchingUserPairs.value });
 }
 
-// Ordering
 function moveOrderItem(index: number, direction: number) {
   const newIdx = index + direction;
   if (newIdx < 0 || newIdx >= orderingItems.value.length) return;
@@ -765,13 +705,9 @@ function moveOrderItem(index: number, direction: number) {
 
 async function submitOrdering() {
   const indices = orderingItems.value.map((it) => it.originalIndex);
-  await submitToBackend({
-    questionId: currentQuestion.value.id,
-    orderedIndices: indices,
-  });
+  await submitToBackend({ questionId: currentQuestion.value.id, orderedIndices: indices });
 }
 
-// Swipe
 function onSwipeStart(clientX: number) {
   if (answered.value || swipeExiting.value) return;
   swipeDragging.value = true;
@@ -803,41 +739,21 @@ function swipeMouseDown(e: MouseEvent) {
   document.addEventListener('mouseup', swipeMouseUp);
 }
 
-function swipeMouseMove(e: MouseEvent) {
-  onSwipeMove(e.clientX);
-}
-
-function swipeMouseUp() {
-  onSwipeEnd();
-  document.removeEventListener('mousemove', swipeMouseMove);
-  document.removeEventListener('mouseup', swipeMouseUp);
-}
-
-function swipeTouchStart(e: TouchEvent) {
-  onSwipeStart(e.touches[0].clientX);
-}
-
-function swipeTouchMove(e: TouchEvent) {
-  onSwipeMove(e.touches[0].clientX);
-}
-
-function swipeTouchEnd() {
-  onSwipeEnd();
-}
+function swipeMouseMove(e: MouseEvent) { onSwipeMove(e.clientX); }
+function swipeMouseUp() { onSwipeEnd(); document.removeEventListener('mousemove', swipeMouseMove); document.removeEventListener('mouseup', swipeMouseUp); }
+function swipeTouchStart(e: TouchEvent) { onSwipeStart(e.touches[0].clientX); }
+function swipeTouchMove(e: TouchEvent) { onSwipeMove(e.touches[0].clientX); }
+function swipeTouchEnd() { onSwipeEnd(); }
 
 async function answerSwipe(isTrue: boolean) {
   const answers = currentAnswers.value;
   const targetText = isTrue ? 'Doğru' : 'Yanlış';
   const answer = answers.find(a => a.answer_text === targetText) || answers[isTrue ? 0 : 1];
   if (answer) {
-    await submitToBackend({
-      questionId: currentQuestion.value.id,
-      answerId: answer.id,
-    });
+    await submitToBackend({ questionId: currentQuestion.value.id, answerId: answer.id });
   }
 }
 
-// Fill-blank chip
 function toggleFillWord(word: string) {
   if (answered.value) return;
   selectedFillWord.value = selectedFillWord.value === word ? '' : word;
@@ -845,13 +761,9 @@ function toggleFillWord(word: string) {
 
 async function answerFillBlankChip() {
   if (!selectedFillWord.value) return;
-  await submitToBackend({
-    questionId: currentQuestion.value.id,
-    textAnswer: selectedFillWord.value,
-  });
+  await submitToBackend({ questionId: currentQuestion.value.id, textAnswer: selectedFillWord.value });
 }
 
-// Navigation
 function nextQuestion() {
   answeredCount.value++;
   if (currentIndex.value >= questions.value.length - 1) {
@@ -904,7 +816,6 @@ async function finishQuiz() {
     topicCompleted.value = result.topic_completed;
     if (result.acorn_earned > 0) incrementAcornBalance(result.acorn_earned);
   } catch {
-    // finish failed, use local counts
     acornEarned.value = correctCount.value;
   }
   finished.value = true;
@@ -916,7 +827,6 @@ async function openHeartsDialog() {
   loadingPackages.value = true;
 
   if (guestMode.value) {
-    // Load packages from public endpoint, balance from localStorage
     const { state: gs } = useGuestState();
     acornBalanceForDialog.value = gs.value.acornBalance;
     try {
@@ -943,7 +853,6 @@ async function buyHeartInDialog(pkg: HeartPackage) {
   purchasingHeart.value = pkg.id;
   purchaseError.value = '';
 
-  // Guest: local purchase
   if (guestMode.value) {
     const { spendAcorns, setHearts } = useGuestState();
     const heartsToAdd = (pkg as HeartPackage & { metadata?: { heart_count?: number } }).metadata?.heart_count ?? 1;
@@ -998,24 +907,16 @@ async function buyHeartInDialog(pkg: HeartPackage) {
 function declineHeartPurchase() {
   heartsEmptyDialog.value = false;
 
-  // On results screen (e.g., tried to restart with 0 hearts) → stay on results
-  if (finished.value) {
-    return;
-  }
-
-  // Quiz never started (e.g., 403 at start) → go home
+  if (finished.value) return;
   if (questions.value.length === 0) {
     router.replace('/');
     return;
   }
-
-  // Mid-quiz: hearts ran out, user doesn't want to buy → show exit warning
   exitWarningDialog.value = true;
 }
 
 function continueFromWarning() {
   exitWarningDialog.value = false;
-  // If hearts are depleted, re-open hearts dialog so user must buy or exit
   if (hearts.value === 0) {
     openHeartsDialog();
   }
@@ -1044,7 +945,6 @@ function handleClose() {
 }
 
 function restartQuiz() {
-  // Check hearts before restarting — show dialog instead of hitting a 403
   const currentHearts = guestMode.value
     ? useGuestState().state.value.heartsCount
     : hearts.value;
@@ -1076,943 +976,3 @@ onUnmounted(() => {
   document.removeEventListener('mouseup', swipeMouseUp);
 });
 </script>
-
-<style scoped>
-.quiz-page {
-  min-height: 100vh;
-  background: var(--pb-bg);
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 16px 40px;
-  color: var(--pb-text);
-  font-family: 'Nunito', 'Segoe UI', sans-serif;
-}
-
-/* Top bar */
-.quiz-topbar {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 0 20px;
-  position: sticky;
-  top: 0;
-  background: var(--pb-bg);
-  z-index: 10;
-}
-
-.quiz-close {
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: var(--pb-text-muted);
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: background 0.12s, color 0.12s;
-  flex-shrink: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.quiz-close:hover {
-  background: var(--pb-bg-card);
-  color: var(--pb-text);
-}
-
-.quiz-progress-wrap {
-  flex: 1;
-}
-
-.quiz-progress-bar {
-  height: 14px;
-  background: var(--pb-bg-card);
-  border-radius: 99px;
-  overflow: hidden;
-  border: 2px solid var(--pb-border);
-}
-
-.quiz-progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--pb-purple), var(--pb-purple-light));
-  border-radius: 99px;
-  transition: width 0.4s ease;
-}
-
-.quiz-hearts {
-  flex-shrink: 0;
-}
-
-.quiz-heart-display {
-  font-size: 1rem;
-  font-weight: 900;
-  color: var(--pb-text);
-}
-
-/* Question body */
-.quiz-body {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  flex: 1;
-}
-
-.quiz-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.quiz-qcount {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.quiz-xp-live {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--pb-gold);
-  background: rgba(255, 215, 0, 0.1);
-  padding: 4px 12px;
-  border-radius: 99px;
-}
-
-.quiz-question {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--pb-text);
-  line-height: 1.4;
-}
-
-/* Options */
-.quiz-options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.quiz-option {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 14px;
-  padding: 16px 18px;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--pb-text);
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.12s;
-}
-
-.quiz-option:hover:not(:disabled) {
-  background: var(--pb-bg-card-hover);
-  border-color: var(--pb-purple-light);
-  transform: translateY(-1px);
-}
-
-.quiz-option:disabled {
-  cursor: not-allowed;
-}
-
-.quiz-option-letter {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: var(--pb-bg);
-  border: 2px solid var(--pb-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 900;
-  flex-shrink: 0;
-  color: var(--pb-text-muted);
-}
-
-.quiz-option-text {
-  flex: 1;
-}
-
-/* Option states */
-.quiz-option--correct {
-  background: rgba(88, 204, 2, 0.12);
-  border-color: var(--pb-green);
-  color: var(--pb-green);
-}
-
-.quiz-option--correct .quiz-option-letter {
-  background: var(--pb-green);
-  border-color: var(--pb-green);
-  color: white;
-}
-
-.quiz-option--selected {
-  background: rgba(124, 58, 237, 0.12);
-  border-color: var(--pb-purple-light);
-  color: var(--pb-text);
-}
-
-.quiz-option--selected .quiz-option-letter {
-  background: var(--pb-purple);
-  border-color: var(--pb-purple);
-  color: white;
-}
-
-.quiz-option--wrong {
-  background: rgba(255, 150, 0, 0.12);
-  border-color: var(--pb-orange);
-  color: var(--pb-orange);
-}
-
-.quiz-option--wrong .quiz-option-letter {
-  background: var(--pb-orange);
-  border-color: var(--pb-orange);
-  color: white;
-}
-
-.quiz-option--dim {
-  opacity: 0.45;
-}
-
-/* Feedback bar */
-.quiz-feedback {
-  position: sticky;
-  bottom: 0;
-  border-radius: 18px 18px 0 0;
-  padding: 22px 20px;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  margin: 0 -16px -24px;
-}
-
-.quiz-feedback--correct {
-  background: rgba(88, 204, 2, 0.15);
-  border-top: 3px solid var(--pb-green);
-}
-
-.quiz-feedback--wrong {
-  background: rgba(255, 75, 75, 0.12);
-  border-top: 3px solid var(--pb-red);
-}
-
-.quiz-feedback-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  font-weight: 900;
-  flex-shrink: 0;
-  color: white;
-}
-
-.quiz-feedback--correct .quiz-feedback-icon { background: var(--pb-green); }
-.quiz-feedback--wrong .quiz-feedback-icon { background: var(--pb-red); }
-
-.quiz-feedback-content {
-  flex: 1;
-}
-
-.quiz-feedback-title {
-  font-size: 1rem;
-  font-weight: 900;
-}
-
-.quiz-feedback--correct .quiz-feedback-title { color: var(--pb-green); }
-.quiz-feedback--wrong .quiz-feedback-title { color: var(--pb-red); }
-
-.quiz-feedback-explanation {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--pb-text);
-  margin-top: 4px;
-}
-
-.quiz-feedback-detail {
-  font-size: 0.78rem;
-  color: var(--pb-text-muted);
-  margin-top: 4px;
-  font-weight: 600;
-}
-
-.quiz-continue-btn {
-  background: var(--pb-purple);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  padding: 12px 20px;
-  font-size: 0.88rem;
-  font-weight: 900;
-  cursor: pointer;
-  font-family: inherit;
-  letter-spacing: 0.06em;
-  border-bottom: 3px solid var(--pb-purple-dark);
-  flex-shrink: 0;
-  align-self: center;
-  transition: transform 0.12s;
-}
-
-.quiz-continue-btn:hover {
-  transform: translateY(-1px);
-}
-
-/* Fade up transition */
-.fade-up-enter-active { transition: all 0.25s ease; }
-.fade-up-enter-from { opacity: 0; transform: translateY(20px); }
-
-/* ===== Result Screen ===== */
-.quiz-result {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  padding-top: 20px;
-  text-align: center;
-}
-
-.quiz-result-mascot {
-  animation: bounce 1s ease infinite alternate;
-}
-
-@keyframes bounce {
-  from { transform: translateY(0); }
-  to { transform: translateY(-12px); }
-}
-
-.quiz-result-title {
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--pb-text);
-}
-
-.quiz-result-sub {
-  font-size: 1rem;
-  color: var(--pb-text-muted);
-  font-weight: 600;
-  margin-top: -16px;
-}
-
-.quiz-result-stats {
-  display: flex;
-  gap: 16px;
-}
-
-.quiz-result-stat {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 18px;
-  padding: 20px 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  min-width: 90px;
-}
-
-.quiz-result-stat-val {
-  font-size: 1.8rem;
-  font-weight: 900;
-}
-
-.quiz-result-stat-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.quiz-result-stat--correct .quiz-result-stat-val { color: var(--pb-green); }
-.quiz-result-stat--wrong .quiz-result-stat-val { color: var(--pb-red); }
-.quiz-result-stat--xp .quiz-result-stat-val { color: var(--pb-gold); }
-
-.quiz-accuracy {
-  width: 100%;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 16px;
-  padding: 16px 20px;
-}
-
-.quiz-accuracy-label {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-  margin-bottom: 8px;
-  text-align: left;
-}
-
-.quiz-accuracy-bar {
-  height: 14px;
-  background: var(--pb-bg);
-  border-radius: 99px;
-  overflow: hidden;
-  margin-bottom: 6px;
-}
-
-.quiz-accuracy-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--pb-purple), var(--pb-purple-light));
-  border-radius: 99px;
-  transition: width 0.8s ease;
-}
-
-.quiz-accuracy-pct {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--pb-purple-light);
-  text-align: right;
-}
-
-.quiz-result-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  max-width: 340px;
-}
-
-.quiz-result-actions--row {
-  flex-direction: row;
-}
-
-.quiz-result-actions--row .pb-btn-primary,
-.quiz-result-actions--row .pb-btn-outline {
-  flex: 1;
-}
-
-.quiz-result-actions .pb-btn-primary {
-  width: 100%;
-  font-size: 1rem;
-}
-
-.quiz-result-actions .pb-btn-outline {
-  width: 100%;
-  font-size: 1rem;
-}
-
-/* Acorn stat */
-.quiz-result-stat--acorn .quiz-result-stat-val { color: #cd853f; }
-
-/* Step/Topic complete banners */
-.quiz-step-complete, .quiz-topic-complete {
-  background: rgba(88, 204, 2, 0.12);
-  border: 2px solid var(--pb-green);
-  border-radius: 14px;
-  padding: 14px 20px;
-  font-weight: 800;
-  font-size: 1rem;
-  color: var(--pb-green);
-  width: 100%;
-  text-align: center;
-}
-
-.quiz-topic-complete {
-  background: rgba(255, 215, 0, 0.12);
-  border-color: var(--pb-gold);
-  color: var(--pb-gold);
-}
-
-/* Boss result screen */
-.quiz-result--boss {
-  position: relative;
-}
-
-.quiz-result--boss::before {
-  content: '';
-  position: absolute;
-  inset: -20px;
-  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
-  pointer-events: none;
-  border-radius: 24px;
-}
-
-.quiz-result-mascot--boss {
-  animation: boss-bounce 0.8s ease infinite alternate;
-  filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.5));
-}
-
-@keyframes boss-bounce {
-  from { transform: translateY(0) scale(1); }
-  to { transform: translateY(-16px) scale(1.05); }
-}
-
-/* Loading */
-.quiz-loading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 60vh;
-  gap: 16px;
-  color: var(--pb-text-muted);
-  font-weight: 700;
-}
-
-.quiz-loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid var(--pb-border);
-  border-top-color: var(--pb-purple);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.quiz-error {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 60vh;
-  gap: 16px;
-  color: var(--pb-red);
-  font-weight: 700;
-}
-
-/* Fill blank */
-.quiz-fill-blank {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.quiz-fill-input {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 14px;
-  padding: 16px 18px;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--pb-text);
-  outline: none;
-  transition: border-color 0.15s;
-}
-
-.quiz-fill-input:focus {
-  border-color: var(--pb-purple-light);
-}
-
-.quiz-fill-submit {
-  align-self: flex-end;
-}
-
-/* Flashcard */
-.quiz-flashcard-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-
-.quiz-flashcard {
-  width: 100%;
-  min-height: 200px;
-  perspective: 800px;
-  cursor: pointer;
-  position: relative;
-}
-
-.quiz-flashcard-front, .quiz-flashcard-back {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 18px;
-  padding: 32px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--pb-text);
-  min-height: 200px;
-  transition: all 0.4s;
-}
-
-.quiz-flashcard-front {
-  color: var(--pb-text-muted);
-}
-
-.quiz-flashcard-back {
-  display: none;
-}
-
-.quiz-flashcard--flipped .quiz-flashcard-front {
-  display: none;
-}
-
-.quiz-flashcard--flipped .quiz-flashcard-back {
-  display: flex;
-  background: rgba(124, 58, 237, 0.1);
-  border-color: var(--pb-purple-light);
-}
-
-.quiz-flashcard-actions {
-  display: flex;
-  gap: 12px;
-  width: 100%;
-}
-
-.quiz-flashcard-btn {
-  flex: 1;
-  padding: 14px;
-  border: 2px solid;
-  border-radius: 14px;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 800;
-  cursor: pointer;
-  transition: all 0.15s;
-  background: transparent;
-}
-
-.quiz-flashcard-btn--wrong {
-  color: var(--pb-red);
-  border-color: var(--pb-red);
-}
-
-.quiz-flashcard-btn--wrong:hover {
-  background: rgba(255, 75, 75, 0.12);
-}
-
-.quiz-flashcard-btn--correct {
-  color: var(--pb-green);
-  border-color: var(--pb-green);
-}
-
-.quiz-flashcard-btn--correct:hover {
-  background: rgba(88, 204, 2, 0.12);
-}
-
-/* Matching */
-.quiz-matching {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.quiz-matching-cols {
-  display: flex;
-  gap: 12px;
-}
-
-.quiz-matching-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.quiz-match-item {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 12px;
-  padding: 14px 16px;
-  font-family: inherit;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--pb-text);
-  cursor: pointer;
-  transition: all 0.15s;
-  text-align: center;
-}
-
-.quiz-match-item:hover:not(:disabled) {
-  border-color: var(--pb-purple-light);
-}
-
-.quiz-match-item--selected {
-  border-color: var(--pb-purple-light);
-  background: rgba(124, 58, 237, 0.15);
-}
-
-.quiz-match-item--matched {
-  border-color: var(--pb-green);
-  background: rgba(88, 204, 2, 0.12);
-  color: var(--pb-green);
-  cursor: default;
-}
-
-.quiz-match-item--wrong {
-  border-color: var(--pb-red);
-  background: rgba(255, 75, 75, 0.12);
-  animation: shake 0.4s ease;
-}
-
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-6px); }
-  75% { transform: translateX(6px); }
-}
-
-.quiz-matching-submit {
-  align-self: center;
-}
-
-/* Ordering */
-.quiz-ordering {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.quiz-ordering-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.quiz-ordering-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 12px;
-  padding: 14px 16px;
-  transition: all 0.15s;
-}
-
-.quiz-ordering-item--disabled {
-  opacity: 0.7;
-}
-
-.quiz-ordering-num {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: var(--pb-bg);
-  border: 2px solid var(--pb-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 900;
-  color: var(--pb-text-muted);
-  flex-shrink: 0;
-}
-
-.quiz-ordering-text {
-  flex: 1;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-.quiz-ordering-btns {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.quiz-ordering-btns button {
-  background: var(--pb-bg);
-  border: 1px solid var(--pb-border);
-  border-radius: 6px;
-  color: var(--pb-text-muted);
-  cursor: pointer;
-  padding: 2px 8px;
-  font-size: 0.7rem;
-  transition: all 0.12s;
-}
-
-.quiz-ordering-btns button:hover:not(:disabled) {
-  background: var(--pb-bg-card-hover);
-  color: var(--pb-text);
-}
-
-.quiz-ordering-btns button:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.quiz-ordering-submit {
-  align-self: center;
-}
-
-/* ===== Swipe (D/Y) ===== */
-.quiz-swipe-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.quiz-swipe-card {
-  position: relative;
-  width: 100%;
-  min-height: 240px;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: grab;
-  overflow: hidden;
-  will-change: transform, opacity;
-}
-
-.quiz-swipe-card:active {
-  cursor: grabbing;
-}
-
-.quiz-swipe-content {
-  padding: 32px 24px;
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--pb-text);
-  text-align: center;
-  line-height: 1.5;
-  z-index: 1;
-}
-
-.quiz-swipe-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  border-radius: 18px;
-  pointer-events: none;
-  z-index: 2;
-  transition: opacity 0.05s;
-}
-
-.quiz-swipe-overlay--right {
-  background: rgba(88, 204, 2, 0.15);
-  color: var(--pb-green);
-  border: 3px solid var(--pb-green);
-}
-
-.quiz-swipe-overlay--left {
-  background: rgba(255, 75, 75, 0.15);
-  color: var(--pb-red);
-  border: 3px solid var(--pb-red);
-}
-
-.quiz-swipe-hint {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 8px;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.quiz-swipe-hint--left { color: var(--pb-red); }
-.quiz-swipe-hint--right { color: var(--pb-green); }
-
-/* ===== Fill-blank Chip Mode ===== */
-.quiz-fill-chip {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.quiz-fill-sentence {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--pb-text);
-  line-height: 2.2;
-  text-align: center;
-}
-
-.quiz-fill-slot {
-  display: inline-block;
-  min-width: 80px;
-  padding: 4px 16px;
-  margin: 0 4px;
-  border-bottom: 3px solid var(--pb-purple);
-  color: var(--pb-text-muted);
-  font-weight: 800;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  border-radius: 8px 8px 0 0;
-  background: rgba(124, 58, 237, 0.06);
-}
-
-.quiz-fill-slot--filled {
-  background: rgba(124, 58, 237, 0.15);
-  color: var(--pb-text);
-  border-color: var(--pb-purple-light);
-}
-
-.quiz-fill-slot--correct {
-  background: rgba(88, 204, 2, 0.15);
-  border-color: var(--pb-green);
-  color: var(--pb-green);
-}
-
-.quiz-fill-slot--wrong {
-  background: rgba(255, 75, 75, 0.15);
-  border-color: var(--pb-red);
-  color: var(--pb-red);
-}
-
-.quiz-fill-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.quiz-fill-chip-btn {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 12px;
-  padding: 12px 20px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--pb-text);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.quiz-fill-chip-btn:hover:not(:disabled) {
-  border-color: var(--pb-purple-light);
-  background: rgba(124, 58, 237, 0.1);
-}
-
-.quiz-fill-chip-btn--selected {
-  border-color: var(--pb-purple);
-  background: rgba(124, 58, 237, 0.2);
-  color: var(--pb-purple-light);
-  transform: scale(0.95);
-  opacity: 0.7;
-}
-
-.quiz-fill-chip-btn--disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.quiz-fill-check {
-  align-self: center;
-}
-</style>

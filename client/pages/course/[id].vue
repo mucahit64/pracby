@@ -1,71 +1,73 @@
 <template>
-  <div class="course-page">
-    <!-- Back button -->
-    <NuxtLink to="/" class="course-back-btn">
-      ← Geri
-    </NuxtLink>
+  <div class="flex flex-col gap-6 max-w-[480px] mx-auto pb-10">
+    <NuxtLink to="/" class="text-sm font-bold text-gray-400 hover:text-gray-800 transition-colors">← Geri</NuxtLink>
 
-    <div v-if="loading" class="course-loading">Yükleniyor…</div>
+    <div v-if="loading" class="text-center text-gray-400 font-bold py-10">Yükleniyor…</div>
 
     <template v-else>
-    <div class="course-header">
-      <div class="course-emoji">{{ course.emoji }}</div>
-      <div class="course-header-info">
-        <h1 class="course-name">{{ course.name }}</h1>
-        <p class="course-desc">{{ course.description }}</p>
-        <div class="course-progress-row">
-          <div class="course-progress-bar">
-            <div class="course-progress-fill" :style="{ width: `${course.progress}%` }" />
+      <!-- Course header -->
+      <div class="flex gap-4 items-start bg-white border-2 border-gray-200 rounded-2xl p-5">
+        <span class="text-4xl shrink-0">{{ course.emoji }}</span>
+        <div class="flex-1">
+          <h1 class="text-xl font-black text-gray-800 mb-1">{{ course.name }}</h1>
+          <p class="text-xs font-semibold text-gray-400 mb-3">{{ course.description }}</p>
+          <div class="flex items-center gap-2.5">
+            <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
+              <div class="h-full bg-primary rounded-full transition-all duration-500" :style="{ width: `${course.progress}%` }" />
+            </div>
+            <span class="text-xs font-extrabold text-primary whitespace-nowrap">%{{ course.progress }}</span>
           </div>
-          <span class="course-progress-pct">%{{ course.progress }}</span>
         </div>
       </div>
-    </div>
 
-    <!-- Topics skill tree -->
-    <div class="skill-tree">
-      <div
-        v-for="(topic, idx) in topics"
-        :key="topic.id"
-        class="skill-node-row"
-        :class="`skill-offset-${idx % 5}`"
-      >
-        <!-- Connector line from previous node -->
-        <div v-if="idx > 0" class="skill-connector" />
+      <!-- Skill tree -->
+      <div class="flex flex-col items-center">
+        <div
+          v-for="(topic, idx) in topics"
+          :key="topic.id"
+          class="flex flex-col items-center"
+          :class="{
+            'self-center': idx % 5 === 0 || idx % 5 === 4,
+            'self-end mr-10': idx % 5 === 1 || idx % 5 === 3,
+            'self-end mr-20': idx % 5 === 2,
+          }"
+        >
+          <!-- Connector -->
+          <div v-if="idx > 0" class="w-1 h-6 bg-gray-200 rounded-full" />
 
-        <div class="skill-node-wrap">
-          <!-- Crown dots above completed -->
-          <div v-if="topic.status === 'completed'" class="skill-crowns">
-            <span
-              v-for="i in 5"
-              :key="i"
-              class="skill-crown"
-              :class="{ 'skill-crown--filled': i <= topic.crownLevel }"
-            />
-          </div>
+          <div class="flex flex-col items-center gap-1.5 py-2">
+            <!-- Crown dots -->
+            <div v-if="topic.status === 'completed'" class="flex gap-1">
+              <span
+                v-for="i in 5"
+                :key="i"
+                class="w-2.5 h-2.5 rounded-full"
+                :class="i <= topic.crownLevel ? 'bg-warning' : 'bg-gray-200'"
+              />
+            </div>
 
-          <!-- Node button -->
-          <button
-            class="skill-node"
-            :class="[`skill-node--${topic.status}`]"
-            :disabled="topic.status === 'locked'"
-            @click="startQuiz(topic)"
-          >
-            <span class="skill-node-icon">
+            <!-- Node button -->
+            <button
+              class="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[1.7rem] border-0 cursor-pointer transition-transform hover:scale-105 disabled:cursor-not-allowed"
+              :class="{
+                'bg-primary border-b-[6px] border-primary-dark text-white': topic.status === 'completed',
+                'bg-primary border-b-[6px] border-primary-dark text-white animate-pulse': topic.status === 'active',
+                'bg-gray-100 border-2 border-gray-200 text-gray-400': topic.status === 'locked',
+              }"
+              :disabled="topic.status === 'locked'"
+              @click="startQuiz(topic)"
+            >
               {{ topic.status === 'locked' ? '🔒' : topic.icon }}
-            </span>
-          </button>
+            </button>
 
-          <!-- Topic name -->
-          <div class="skill-node-label" :class="{ 'skill-node-label--muted': topic.status === 'locked' }">
-            {{ topic.name }}
+            <!-- Topic name -->
+            <span class="text-xs font-bold text-center max-w-[100px]" :class="topic.status === 'locked' ? 'text-gray-400' : 'text-gray-800'">{{ topic.name }}</span>
+
+            <!-- XP badge -->
+            <span v-if="topic.status === 'active'" class="text-[0.7rem] font-extrabold text-positive bg-positive/10 px-2.5 py-0.5 rounded-full border border-positive/30">+{{ topic.xpReward }} XP</span>
           </div>
-
-          <!-- XP badge for active -->
-          <div v-if="topic.status === 'active'" class="skill-xp-badge">+{{ topic.xpReward }} XP</div>
         </div>
       </div>
-    </div>
     </template>
   </div>
 </template>
@@ -124,7 +126,6 @@ function deriveTopicStatus(topic: ApiTopic, idx: number, allTopics: ApiTopic[]):
   const allDone = lessonSteps.length > 0 && lessonSteps.every((s) => s.progress?.is_step_completed);
   if (allDone) return 'completed';
 
-  // If previous topic is completed or this is the first, it's active
   if (idx === 0) return 'active';
   const prevTopic = allTopics[idx - 1];
   const prevProgress = prevTopic?.progress;
@@ -147,7 +148,6 @@ onMounted(async () => {
       progress: 0,
     };
 
-    // For guest users, overlay step and topic progress from localStorage quiz results
     const token = typeof localStorage !== 'undefined' ? localStorage.getItem('pb_token') : '';
     if (!token) {
       const { overlayGuestProgress } = useGuestState();
@@ -168,14 +168,10 @@ onMounted(async () => {
 
     topics.value = mappedTopics;
 
-    // Calculate progress
     const completed = mappedTopics.filter((t) => t.status === 'completed').length;
     course.value.progress = mappedTopics.length > 0 ? Math.round((completed / mappedTopics.length) * 100) : 0;
-  } catch {
-    // Silently handle — empty state shown
-  } finally {
-    loading.value = false;
-  }
+  } catch { /* silently fail */ }
+  finally { loading.value = false; }
 });
 
 function startQuiz(topic: Topic) {
@@ -183,204 +179,3 @@ function startQuiz(topic: Topic) {
   navigateTo(`/quiz/${topic.id}`);
 }
 </script>
-
-<style scoped>
-.course-page {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-width: 480px;
-  margin: 0 auto;
-  padding-bottom: 40px;
-}
-
-.course-back-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--pb-text-muted);
-  font-size: 0.88rem;
-  font-weight: 700;
-  transition: color 0.12s;
-}
-
-.course-back-btn:hover { color: var(--pb-text); }
-
-.course-loading {
-  text-align: center;
-  color: var(--pb-text-muted);
-  padding: 40px 0;
-  font-weight: 700;
-}
-
-/* Course header */
-.course-header {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 20px;
-  padding: 22px;
-}
-
-.course-emoji {
-  font-size: 2.4rem;
-  flex-shrink: 0;
-}
-
-.course-header-info { flex: 1; }
-
-.course-name {
-  font-size: 1.3rem;
-  font-weight: 900;
-  color: var(--pb-text);
-  margin-bottom: 4px;
-}
-
-.course-desc {
-  font-size: 0.82rem;
-  color: var(--pb-text-muted);
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.course-progress-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.course-progress-bar {
-  flex: 1;
-  height: 10px;
-  background: var(--pb-bg);
-  border-radius: 99px;
-  overflow: hidden;
-}
-
-.course-progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--pb-purple), var(--pb-purple-light));
-  border-radius: 99px;
-  transition: width 0.5s;
-}
-
-.course-progress-pct {
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: var(--pb-purple-light);
-  white-space: nowrap;
-}
-
-/* Skill tree */
-.skill-tree {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-}
-
-.skill-node-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-}
-
-.skill-offset-0 { align-self: center; }
-.skill-offset-1 { align-self: flex-end; margin-right: 40px; }
-.skill-offset-2 { align-self: flex-end; margin-right: 80px; }
-.skill-offset-3 { align-self: flex-end; margin-right: 40px; }
-.skill-offset-4 { align-self: center; }
-
-.skill-connector {
-  width: 4px;
-  height: 24px;
-  background: var(--pb-border);
-  border-radius: 2px;
-  margin-bottom: 0;
-}
-
-.skill-node-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 0;
-}
-
-.skill-crowns {
-  display: flex;
-  gap: 4px;
-}
-
-.skill-crown {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--pb-border);
-}
-
-.skill-crown--filled {
-  background: var(--pb-gold);
-}
-
-.skill-node {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.7rem;
-  transition: transform 0.12s;
-}
-
-.skill-node:hover:not(:disabled) { transform: scale(1.08); }
-
-.skill-node--completed {
-  background: var(--pb-purple);
-  box-shadow: 0 6px 0 var(--pb-purple-dark);
-}
-
-.skill-node--active {
-  background: var(--pb-purple);
-  box-shadow: 0 6px 0 var(--pb-purple-dark);
-  animation: skillpulse 2s infinite;
-}
-
-.skill-node--locked {
-  background: var(--pb-bg-card);
-  box-shadow: 0 5px 0 rgba(0,0,0,0.35);
-  cursor: not-allowed;
-  border: 3px solid var(--pb-border);
-}
-
-@keyframes skillpulse {
-  0%, 100% { box-shadow: 0 6px 0 var(--pb-purple-dark); }
-  50% { box-shadow: 0 6px 24px rgba(124, 58, 237, 0.55); }
-}
-
-.skill-node-label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--pb-text);
-  text-align: center;
-  max-width: 100px;
-}
-
-.skill-node-label--muted { color: var(--pb-text-muted); }
-
-.skill-xp-badge {
-  background: rgba(88, 204, 2, 0.15);
-  color: var(--pb-green);
-  font-size: 0.7rem;
-  font-weight: 800;
-  padding: 3px 10px;
-  border-radius: 99px;
-  border: 1px solid rgba(88, 204, 2, 0.35);
-}
-</style>

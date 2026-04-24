@@ -53,7 +53,7 @@ Sınav Grubu (exam_group)
 
 ## Teknoloji
 
-* **Frontend:** Nuxt 3 + Vue 3 + Quasar UI
+* **Frontend:** Nuxt 3 + Vue 3
 * **Backend:** Node.js + Express + TypeScript
 * **Veritabanı:** PostgreSQL + Knex.js
 * **Auth:** JWT (7 günlük token)

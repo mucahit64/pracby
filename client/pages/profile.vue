@@ -1,181 +1,170 @@
 <template>
-  <div class="prof-page">
+  <div class="flex flex-col gap-7 max-w-[560px] mx-auto pb-10">
     <!-- Profile Header -->
-    <div class="prof-header">
-      <div class="prof-avatar-wrap">
-        <div class="prof-avatar">{{ profile.username?.[0]?.toUpperCase() ?? '?' }}</div>
-        <div class="prof-level-badge">Seviye {{ profile.level }}</div>
+    <div class="flex gap-5 items-start bg-white border-2 border-gray-200 rounded-2xl p-6">
+      <div class="flex flex-col items-center gap-2 shrink-0">
+        <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-3xl font-black text-white border-b-4 border-primary-dark">
+          {{ profile.username?.[0]?.toUpperCase() ?? '?' }}
+        </div>
+        <span class="bg-primary text-white text-[0.72rem] font-extrabold px-2.5 py-1 rounded-full tracking-wide whitespace-nowrap">Seviye {{ profile.level }}</span>
       </div>
-      <div class="prof-info">
-        <h1 class="prof-username">{{ profile.username }}</h1>
-        <p class="prof-email">{{ profile.email }}</p>
-        <div class="prof-xp-bar-wrap">
-          <div class="prof-xp-label">
-            <span>Seviye {{ profile.level }}</span>
-            <span>{{ profile.xpInLevel }} / {{ profile.xpNextLevel }} XP</span>
-          </div>
-          <div class="prof-xp-bar">
-            <div class="prof-xp-fill" :style="{ width: `${(profile.xpInLevel / profile.xpNextLevel) * 100}%` }" />
-          </div>
+      <div class="flex-1 min-w-0">
+        <h1 class="text-xl font-black text-gray-800 mb-1">{{ profile.username }}</h1>
+        <p class="text-sm font-semibold text-gray-400 mb-3.5">{{ profile.email }}</p>
+        <div class="flex justify-between text-xs font-bold text-gray-400 mb-1.5">
+          <span>Seviye {{ profile.level }}</span>
+          <span>{{ profile.xpInLevel }} / {{ profile.xpNextLevel }} XP</span>
+        </div>
+        <div class="h-3 bg-gray-100 rounded-full overflow-hidden">
+          <div class="h-full bg-primary rounded-full transition-all duration-500" :style="{ width: `${(profile.xpInLevel / profile.xpNextLevel) * 100}%` }" />
         </div>
       </div>
     </div>
 
     <!-- Stats Grid -->
-    <div class="prof-stats-grid">
-      <div class="prof-stat-card">
-        <div class="prof-stat-icon">⚡</div>
-        <div class="prof-stat-value">{{ profile.totalXp.toLocaleString('tr') }}</div>
-        <div class="prof-stat-label">Toplam XP</div>
-      </div>
-      <div class="prof-stat-card">
-        <div class="prof-stat-icon">🔥</div>
-        <div class="prof-stat-value">{{ profile.currentStreak }}</div>
-        <div class="prof-stat-label">Güncel Seri</div>
-      </div>
-      <div class="prof-stat-card">
-        <div class="prof-stat-icon">🏆</div>
-        <div class="prof-stat-value">{{ profile.maxStreak }}</div>
-        <div class="prof-stat-label">En Uzun Seri</div>
-      </div>
-      <div class="prof-stat-card">
-        <div class="prof-stat-icon">🎯</div>
-        <div class="prof-stat-value">{{ profile.quizzesCompleted }}</div>
-        <div class="prof-stat-label">Quiz</div>
-      </div>
-      <div class="prof-stat-card">
-        <div class="prof-stat-icon">🌰</div>
-        <div class="prof-stat-value">{{ profile.acornBalance.toLocaleString('tr') }}</div>
-        <div class="prof-stat-label">Acorn</div>
+    <div class="grid grid-cols-2 gap-3">
+      <div v-for="stat in statCards" :key="stat.label" class="bg-white border-2 border-gray-200 rounded-2xl p-4 flex flex-col items-center gap-1 text-center hover:bg-gray-50 transition-colors">
+        <span class="text-2xl">{{ stat.icon }}</span>
+        <span class="text-xl font-black text-gray-800">{{ stat.value }}</span>
+        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">{{ stat.label }}</span>
       </div>
     </div>
 
     <!-- Streak Calendar -->
-    <div class="prof-section">
-      <div class="prof-section-title">📅 Bu Haftaki Seri</div>
-      <div class="streak-calendar">
+    <div class="flex flex-col gap-3.5">
+      <h2 class="text-base font-extrabold text-gray-800">📅 Bu Haftaki Seri</h2>
+      <div class="flex justify-between bg-white border-2 border-gray-200 rounded-2xl p-4 gap-2">
         <div
           v-for="day in weekDays"
           :key="day.label"
-          class="streak-day"
-          :class="{ 'streak-day--done': day.done, 'streak-day--today': day.isToday }"
+          class="flex flex-col items-center gap-1.5 flex-1 min-w-[36px]"
         >
-          <div class="streak-day-icon">{{ day.done ? '🔥' : '·' }}</div>
-          <div class="streak-day-label">{{ day.label }}</div>
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-lg"
+            :class="{
+              'bg-warning/15': day.done,
+              'border-2 border-primary border-dashed': day.isToday && !day.done,
+              'bg-gray-100': !day.done && !day.isToday,
+            }"
+          >{{ day.done ? '🔥' : '·' }}</div>
+          <span class="text-[0.68rem] font-bold uppercase tracking-wide"
+            :class="day.isToday ? 'text-primary' : 'text-gray-400'"
+          >{{ day.label }}</span>
         </div>
       </div>
     </div>
 
     <!-- Achievements -->
-    <div class="prof-section">
-      <div class="prof-section-title">🏅 Başarımlar</div>
-      <div class="achievements-grid">
+    <div class="flex flex-col gap-3.5">
+      <h2 class="text-base font-extrabold text-gray-800">🏅 Başarımlar</h2>
+      <div v-if="achievements.length === 0" class="text-sm font-semibold text-gray-400 text-center py-4">Henüz başarım kazanılmadı.</div>
+      <div v-else class="grid grid-cols-3 sm:grid-cols-4 gap-3">
         <div
           v-for="badge in achievements"
           :key="badge.name"
-          class="achievement-card"
-          :class="{ 'achievement-card--locked': !badge.earned }"
+          class="flex flex-col items-center gap-1.5 bg-white border-2 border-gray-200 rounded-2xl p-3 text-center relative"
+          :class="{ 'opacity-40 grayscale': !badge.earned }"
           :title="badge.description"
         >
-          <div class="achievement-icon">{{ badge.icon }}</div>
-          <div class="achievement-name">{{ badge.name }}</div>
-          <div v-if="badge.earned" class="achievement-earned-dot" />
+          <span class="text-2xl">{{ badge.icon }}</span>
+          <span class="text-[0.68rem] font-bold text-gray-800 leading-tight">{{ badge.name }}</span>
+          <div v-if="badge.earned" class="absolute -top-1 -right-1 w-4 h-4 bg-positive rounded-full border-2 border-white" />
         </div>
       </div>
     </div>
 
     <!-- Enrollments -->
-    <div class="prof-section">
-      <div class="prof-section-title">🎓 Kayıtlı Sınavlarım</div>
-      <div v-if="loadingEnrollments" class="enrollments-loading">Yükleniyor…</div>
-      <div v-else class="enrollments-list">
+    <div class="flex flex-col gap-3.5">
+      <h2 class="text-base font-extrabold text-gray-800">🎓 Kayıtlı Sınavlarım</h2>
+      <div v-if="loadingEnrollments" class="text-sm font-semibold text-gray-400 text-center py-4">Yükleniyor…</div>
+      <div v-else class="flex flex-col gap-2.5">
         <div
           v-for="enrollment in enrollments"
           :key="enrollment.exam_type_id"
-          class="enrollment-card"
-          :class="{ 'enrollment-card--active': enrollment.exam_type_id === activeExamTypeId }"
+          class="flex items-center justify-between bg-white border-2 rounded-2xl px-4 py-3 transition-colors"
+          :class="enrollment.exam_type_id === activeExamTypeId ? 'border-primary bg-primary/5' : 'border-gray-200'"
         >
-          <div class="enrollment-info">
-            <span class="enrollment-group">{{ enrollment.exam_group_name }}</span>
-            <span class="enrollment-type">{{ enrollment.exam_type_name }}</span>
+          <div class="flex flex-col">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-wide">{{ enrollment.exam_group_name }}</span>
+            <span class="text-sm font-extrabold text-gray-800">{{ enrollment.exam_type_name }}</span>
           </div>
           <button
             v-if="enrollment.exam_type_id !== activeExamTypeId"
-            class="enrollment-switch-btn"
+            class="bg-white text-primary font-bold text-xs px-3 py-1.5 rounded-xl border-2 border-primary hover:bg-primary/5 transition-all cursor-pointer font-[inherit]"
             @click="switchExam(enrollment.exam_type_id)"
-          >
-            Geç
-          </button>
-          <span v-else class="enrollment-active-badge">Aktif</span>
+          >Geç</button>
+          <span v-else class="text-xs font-bold text-positive bg-positive/10 px-3 py-1.5 rounded-full">Aktif</span>
         </div>
-        <button class="enrollment-add-btn" @click="openEnrollModal">+ Sınav Ekle</button>
+        <button class="w-full bg-gray-50 border-2 border-dashed border-gray-300 text-gray-400 font-bold text-sm py-3 rounded-2xl cursor-pointer hover:border-primary hover:text-primary transition-all font-[inherit]" @click="openEnrollModal">+ Sınav Ekle</button>
       </div>
     </div>
 
     <!-- Actions -->
-    <div class="prof-actions">
-      <button class="pb-btn-outline">✏️ Profili Düzenle</button>
-      <button class="pb-btn-outline prof-signout-btn" @click="signOut">🚪 Çıkış</button>
+    <div class="flex gap-3">
+      <button class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]">✏️ Profili Düzenle</button>
+      <button class="flex-1 bg-white text-negative font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-negative hover:bg-negative/5 transition-all cursor-pointer font-[inherit]" @click="signOut">🚪 Çıkış</button>
     </div>
   </div>
 
   <!-- Enroll Modal -->
-  <transition name="dialog-fade">
-    <div v-if="showEnrollModal" class="enroll-overlay" @click.self="closeEnrollModal">
-      <div class="enroll-modal">
-        <button class="enroll-close" @click="closeEnrollModal">✕</button>
+  <Teleport to="body">
+    <transition name="fade">
+      <div v-if="showEnrollModal" class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-5" @click.self="closeEnrollModal">
+        <div class="bg-white border-2 border-gray-200 rounded-3xl max-w-[440px] w-full p-8 relative flex flex-col gap-5">
+          <button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center text-gray-400 font-bold cursor-pointer hover:bg-gray-200 transition-colors" @click="closeEnrollModal">✕</button>
 
-        <!-- Step 1: Group selection -->
-        <template v-if="enrollStep === 1">
-          <h2 class="enroll-title">Sınav Grubu Seç</h2>
-          <div v-if="loadingExamGroups" class="enroll-loading">Yükleniyor…</div>
-          <div v-else class="enroll-grid">
-            <button
-              v-for="group in examGroups"
-              :key="group.id"
-              class="enroll-card"
-              :class="{
-                'enroll-card--selected': selectedGroupId === group.id,
-                'enroll-card--disabled': !group.is_active,
-              }"
-              :disabled="!group.is_active"
-              @click="selectGroup(group)"
-            >
-              <span class="enroll-card-name">{{ group.name }}</span>
-              <span class="enroll-card-desc">{{ group.description }}</span>
-              <span v-if="!group.is_active" class="enroll-card-soon">Yakında</span>
-            </button>
-          </div>
-          <button class="pb-btn-primary enroll-next" :disabled="!selectedGroupId" @click="enrollStep = 2">Devam →</button>
-        </template>
+          <!-- Step 1 -->
+          <template v-if="enrollStep === 1">
+            <h2 class="text-lg font-black text-gray-800 text-center">Sınav Grubu Seç</h2>
+            <div v-if="loadingExamGroups" class="text-center text-gray-400 py-4">Yükleniyor…</div>
+            <div v-else class="flex flex-col gap-2.5">
+              <button
+                v-for="group in examGroups"
+                :key="group.id"
+                class="flex flex-col gap-1 px-4 py-3 rounded-2xl border-2 bg-gray-50 text-left cursor-pointer transition-all duration-150 relative font-[inherit]"
+                :class="{
+                  '!border-primary !bg-primary/10': selectedGroupId === group.id,
+                  'border-gray-200 hover:border-primary/40': selectedGroupId !== group.id && group.is_active,
+                  'opacity-40 cursor-not-allowed': !group.is_active,
+                }"
+                :disabled="!group.is_active"
+                @click="selectGroup(group)"
+              >
+                <span class="text-sm font-extrabold text-gray-800">{{ group.name }}</span>
+                <span class="text-xs text-gray-400 font-semibold">{{ group.description }}</span>
+                <span v-if="!group.is_active" class="absolute top-3 right-3 text-[0.65rem] font-bold text-warning bg-warning/10 px-2 py-0.5 rounded-full">Yakında</span>
+              </button>
+            </div>
+            <button class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="!selectedGroupId" @click="enrollStep = 2">Devam →</button>
+          </template>
 
-        <!-- Step 2: Type selection -->
-        <template v-else-if="enrollStep === 2">
-          <h2 class="enroll-title">Sınav Türü Seç</h2>
-          <div class="enroll-grid">
-            <button
-              v-for="type in availableTypes"
-              :key="type.id"
-              class="enroll-card"
-              :class="{ 'enroll-card--selected': selectedTypeId === type.id }"
-              @click="selectedTypeId = type.id"
-            >
-              <span class="enroll-card-name">{{ type.name }}</span>
-              <span class="enroll-card-desc">{{ type.description }}</span>
-            </button>
-          </div>
-          <div v-if="availableTypes.length === 0" class="enroll-empty">Bu gruptaki tüm sınavlara zaten kayıtlısın.</div>
-          <p v-if="enrollError" class="enroll-error">{{ enrollError }}</p>
-          <div class="enroll-actions">
-            <button class="pb-btn-outline" @click="enrollStep = 1">← Geri</button>
-            <button class="pb-btn-primary" :disabled="!selectedTypeId || enrolling" @click="submitEnrollment">
-              {{ enrolling ? 'Ekleniyor…' : 'Sınav Ekle' }}
-            </button>
-          </div>
-        </template>
+          <!-- Step 2 -->
+          <template v-else-if="enrollStep === 2">
+            <h2 class="text-lg font-black text-gray-800 text-center">Sınav Türü Seç</h2>
+            <div class="flex flex-col gap-2.5">
+              <button
+                v-for="type in availableTypes"
+                :key="type.id"
+                class="flex flex-col gap-1 px-4 py-3 rounded-2xl border-2 bg-gray-50 text-left cursor-pointer transition-all duration-150 font-[inherit]"
+                :class="selectedTypeId === type.id ? '!border-primary !bg-primary/10' : 'border-gray-200 hover:border-primary/40'"
+                @click="selectedTypeId = type.id"
+              >
+                <span class="text-sm font-extrabold text-gray-800">{{ type.name }}</span>
+                <span class="text-xs text-gray-400 font-semibold">{{ type.description }}</span>
+              </button>
+            </div>
+            <div v-if="availableTypes.length === 0" class="text-center text-gray-400 text-sm py-3">Bu gruptaki tüm sınavlara zaten kayıtlısın.</div>
+            <p v-if="enrollError" class="text-negative text-sm font-semibold text-center">{{ enrollError }}</p>
+            <div class="flex gap-2.5">
+              <button class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="enrollStep = 1">← Geri</button>
+              <button class="flex-1 bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="!selectedTypeId || enrolling" @click="submitEnrollment">
+                {{ enrolling ? 'Ekleniyor…' : 'Sınav Ekle' }}
+              </button>
+            </div>
+          </template>
+        </div>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
@@ -196,7 +185,6 @@ const enrollments = ref<Enrollment[]>([]);
 const loadingEnrollments = ref(false);
 const showEnrollModal = ref(false);
 
-// Enroll modal state
 interface ExamGroup {
   id: string;
   name: string;
@@ -283,9 +271,7 @@ const switchExam = async (examTypeId: string) => {
       body: { exam_type_id: examTypeId },
     });
     activeExamTypeId.value = examTypeId;
-  } catch {
-    // silently fail
-  }
+  } catch { /* silently fail */ }
 };
 
 const signOut = () => {
@@ -305,6 +291,14 @@ const profile = ref({
   quizzesCompleted: 0,
   acornBalance: 0,
 });
+
+const statCards = computed(() => [
+  { icon: '⚡', value: profile.value.totalXp.toLocaleString('tr'), label: 'Toplam XP' },
+  { icon: '🔥', value: profile.value.currentStreak, label: 'Güncel Seri' },
+  { icon: '🏆', value: profile.value.maxStreak, label: 'En Uzun Seri' },
+  { icon: '🎯', value: profile.value.quizzesCompleted, label: 'Quiz' },
+  { icon: '🌰', value: profile.value.acornBalance.toLocaleString('tr'), label: 'Acorn' },
+]);
 
 const weekDays = ref([
   { label: 'Pzt', done: false, isToday: false },
@@ -352,7 +346,6 @@ const fetchProfile = async () => {
         description: string;
         earned_at: string;
       }[]>('/api/users/me/achievements', { headers: h }),
-      // We don't have a GET /achievements yet, so we skip fetching all
       Promise.resolve([] as { id: string; name: string; icon_url: string; description: string }[]),
       $fetch<{ label: string; date: string; done: boolean; isToday: boolean }[]>('/api/users/me/streak-history', { headers: h }),
     ]);
@@ -375,7 +368,6 @@ const fetchProfile = async () => {
 
     activeExamTypeId.value = user.active_exam_type_id ?? '';
 
-    // Update week days from streak history
     if (streakHistory && streakHistory.length === 7) {
       weekDays.value = streakHistory;
     }
@@ -387,7 +379,6 @@ const fetchProfile = async () => {
       description: a.description,
       earned: true,
     }));
-    // Add unearned from all achievements if available
     for (const a of allAchievements) {
       if (!earnedIds.has(a.name)) {
         achievements.value.push({
@@ -398,9 +389,7 @@ const fetchProfile = async () => {
         });
       }
     }
-  } catch {
-    // silently fail
-  }
+  } catch { /* silently fail */ }
 };
 
 const fetchEnrollments = async () => {
@@ -412,11 +401,8 @@ const fetchEnrollments = async () => {
       headers: { Authorization: `Bearer ${token}` },
     });
     enrollments.value = list;
-  } catch {
-    // silently fail
-  } finally {
-    loadingEnrollments.value = false;
-  }
+  } catch { /* silently fail */ }
+  finally { loadingEnrollments.value = false; }
 };
 
 onMounted(() => {
@@ -424,520 +410,3 @@ onMounted(() => {
   fetchEnrollments();
 });
 </script>
-
-<style scoped>
-.prof-page {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  max-width: 560px;
-  margin: 0 auto;
-  padding-bottom: 40px;
-}
-
-/* Profile Header */
-.prof-header {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 20px;
-  padding: 24px;
-}
-
-.prof-avatar-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-
-.prof-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--pb-purple), var(--pb-purple-light));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-weight: 900;
-  color: white;
-  border: 3px solid rgba(255,255,255,0.15);
-}
-
-.prof-level-badge {
-  background: var(--pb-purple);
-  color: white;
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 4px 10px;
-  border-radius: 99px;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-
-.prof-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.prof-username {
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: var(--pb-text);
-  margin-bottom: 4px;
-}
-
-.prof-email {
-  font-size: 0.82rem;
-  color: var(--pb-text-muted);
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-
-.prof-xp-label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.76rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-  margin-bottom: 6px;
-}
-
-.prof-xp-bar {
-  height: 12px;
-  background: var(--pb-bg);
-  border-radius: 99px;
-  overflow: hidden;
-}
-
-.prof-xp-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--pb-purple), var(--pb-purple-light));
-  border-radius: 99px;
-  transition: width 0.6s ease;
-}
-
-/* Stats Grid */
-.prof-stats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.prof-stat-card {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 16px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  text-align: center;
-  transition: background 0.15s;
-}
-
-.prof-stat-card:hover {
-  background: var(--pb-bg-card-hover);
-}
-
-.prof-stat-icon {
-  font-size: 1.6rem;
-}
-
-.prof-stat-value {
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: var(--pb-text);
-}
-
-.prof-stat-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-/* Section */
-.prof-section {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.prof-section-title {
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--pb-text);
-}
-
-/* Streak Calendar */
-.streak-calendar {
-  display: flex;
-  justify-content: space-between;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 16px;
-  padding: 16px;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.streak-day {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  flex: 1;
-  min-width: 36px;
-}
-
-.streak-day-icon {
-  font-size: 1.3rem;
-  line-height: 1;
-}
-
-.streak-day-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-}
-
-.streak-day--today .streak-day-label {
-  color: var(--pb-purple-light);
-}
-
-.streak-day--today .streak-day-icon {
-  background: rgba(124,58,237,0.15);
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Achievements */
-.achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.achievement-card {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 14px;
-  padding: 14px 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  position: relative;
-  cursor: default;
-  transition: background 0.15s;
-}
-
-.achievement-card:hover {
-  background: var(--pb-bg-card-hover);
-}
-
-.achievement-card--locked {
-  opacity: 0.4;
-}
-
-.achievement-icon {
-  font-size: 1.8rem;
-}
-
-.achievement-name {
-  font-size: 0.7rem;
-  font-weight: 800;
-  color: var(--pb-text);
-  text-align: center;
-}
-
-.achievement-earned-dot {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 8px;
-  height: 8px;
-  background: var(--pb-green);
-  border-radius: 50%;
-}
-
-/* Enrollments */
-.enrollments-loading {
-  color: var(--pb-text-muted);
-  font-size: 0.9rem;
-  padding: 10px 0;
-}
-
-.enrollments-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.enrollment-card {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 14px;
-  padding: 14px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.enrollment-card--active {
-  border-color: rgba(124, 58, 237, 0.5);
-  background: rgba(124, 58, 237, 0.08);
-}
-
-.enrollment-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.enrollment-group {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.enrollment-type {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--pb-text);
-}
-
-.enrollment-switch-btn {
-  background: var(--pb-bg);
-  border: 2px solid var(--pb-border);
-  border-radius: 10px;
-  padding: 6px 14px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  font-family: inherit;
-  color: var(--pb-text-muted);
-  cursor: pointer;
-  transition: border-color 0.15s, color 0.15s;
-  white-space: nowrap;
-}
-
-.enrollment-switch-btn:hover {
-  border-color: var(--pb-purple-light);
-  color: var(--pb-purple-light);
-}
-
-.enrollment-active-badge {
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: var(--pb-purple-light);
-  background: rgba(124, 58, 237, 0.15);
-  padding: 4px 12px;
-  border-radius: 99px;
-  white-space: nowrap;
-}
-
-.enrollment-add-btn {
-  background: transparent;
-  border: 2px dashed var(--pb-border);
-  border-radius: 14px;
-  padding: 12px 18px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  font-family: inherit;
-  color: var(--pb-text-muted);
-  cursor: pointer;
-  text-align: left;
-  transition: border-color 0.15s, color 0.15s;
-}
-
-.enrollment-add-btn:hover {
-  border-color: var(--pb-purple-light);
-  color: var(--pb-purple-light);
-}
-
-/* Actions */
-.prof-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.prof-signout-btn {
-  color: var(--pb-red);
-  border-color: var(--pb-red);
-}
-
-.prof-signout-btn:hover {
-  background: rgba(255, 75, 75, 0.08);
-}
-
-/* ===== Enroll Modal ===== */
-.enroll-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 500;
-  padding: 20px;
-}
-
-.enroll-modal {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 20px;
-  padding: 28px 24px;
-  max-width: 480px;
-  width: 100%;
-  max-height: 80vh;
-  overflow-y: auto;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.enroll-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: none;
-  background: var(--pb-bg);
-  color: var(--pb-text-muted);
-  font-size: 0.9rem;
-  font-weight: 900;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: inherit;
-  transition: background 0.12s, color 0.12s;
-}
-
-.enroll-close:hover {
-  background: var(--pb-bg-card-hover);
-  color: var(--pb-text);
-}
-
-.enroll-title {
-  font-size: 1.15rem;
-  font-weight: 900;
-  color: var(--pb-text);
-}
-
-.enroll-loading {
-  color: var(--pb-text-muted);
-  font-size: 0.9rem;
-  padding: 16px 0;
-}
-
-.enroll-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.enroll-card {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 14px 18px;
-  border-radius: 14px;
-  border: 2px solid var(--pb-border);
-  background: var(--pb-bg);
-  color: var(--pb-text);
-  cursor: pointer;
-  font-family: inherit;
-  text-align: left;
-  transition: border-color 0.15s, background 0.15s;
-  position: relative;
-}
-
-.enroll-card:hover {
-  background: var(--pb-bg-card-hover);
-}
-
-.enroll-card--selected {
-  border-color: var(--pb-purple-light);
-  background: rgba(124, 58, 237, 0.1);
-}
-
-.enroll-card--disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.enroll-card-name {
-  font-size: 0.95rem;
-  font-weight: 800;
-}
-
-.enroll-card-desc {
-  font-size: 0.78rem;
-  color: var(--pb-text-muted);
-  font-weight: 600;
-}
-
-.enroll-card-soon {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--pb-orange);
-  background: rgba(255, 150, 0, 0.12);
-  padding: 2px 8px;
-  border-radius: 99px;
-}
-
-.enroll-empty {
-  color: var(--pb-text-muted);
-  font-size: 0.85rem;
-  padding: 12px 0;
-  text-align: center;
-}
-
-.enroll-error {
-  color: var(--pb-red);
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
-.enroll-actions {
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
-}
-
-.enroll-next {
-  align-self: stretch;
-}
-
-/* Dialog fade transition */
-.dialog-fade-enter-active,
-.dialog-fade-leave-active {
-  transition: opacity 0.2s ease;
-}
-.dialog-fade-enter-from,
-.dialog-fade-leave-to {
-  opacity: 0;
-}
-</style>

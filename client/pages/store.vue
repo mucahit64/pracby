@@ -1,135 +1,130 @@
 <template>
-  <div class="store-page">
-    <div class="store-header">
-      <h1 class="store-title">🌰 Market</h1>
+  <div class="flex flex-col gap-7 max-w-[600px] mx-auto pb-10">
+    <div class="flex items-center justify-between py-2">
+      <h1 class="text-2xl font-black text-gray-800">🌰 Market</h1>
     </div>
 
-    <!-- Store items (non-heart) -->
-    <div class="store-section">
-      <div class="store-section-title">Ürünler</div>
+    <!-- Store Items -->
+    <div class="flex flex-col gap-3">
+      <h2 class="text-base font-extrabold text-gray-800">Ürünler</h2>
+
       <!-- Guest banner -->
-      <div v-if="isGuest" class="store-guest-banner">
-        <span class="store-guest-banner-icon">🌰</span>
-        <div class="store-guest-banner-body">
-          <strong>{{ balance }} palamut kazandın!</strong>
-          <span> Mağazada harcamak için bir profil oluştur!</span>
+      <div v-if="isGuest" class="flex items-center gap-3 bg-amber-50 border-2 border-amber-200 rounded-2xl px-4 py-3">
+        <span class="text-2xl shrink-0">🌰</span>
+        <div class="flex-1 text-sm font-semibold text-gray-800 leading-snug">
+          <strong>{{ balance }} palamut kazandın!</strong> Mağazada harcamak için bir profil oluştur!
         </div>
-        <NuxtLink to="/auth/register" class="store-guest-banner-btn">Profil Oluştur</NuxtLink>
+        <NuxtLink to="/auth/register" class="shrink-0 bg-primary text-white font-bold text-xs px-3 py-2 rounded-xl border-b-3 border-primary-dark active:border-b-0 active:translate-y-0.5 transition-all">Profil Oluştur</NuxtLink>
       </div>
-      <div v-if="loadingItems" class="store-loading">Yükleniyor…</div>
-      <div v-else class="store-grid">
+
+      <div v-if="loadingItems" class="text-sm font-semibold text-gray-400 py-3">Yükleniyor…</div>
+      <div v-else class="flex flex-col gap-2.5">
         <div
           v-for="item in regularItems"
           :key="item.id"
-          class="store-item-card"
-          :class="{ 'store-item-card--dimmed': isGuest }"
+          class="flex items-center gap-3.5 bg-white border-2 border-gray-200 rounded-2xl px-4 py-3.5 hover:bg-gray-50 transition-colors"
+          :class="{ 'opacity-50': isGuest }"
         >
-          <div class="store-item-icon">{{ item.icon_url || '📦' }}</div>
-          <div class="store-item-info">
-            <div class="store-item-name">{{ item.name }}</div>
-            <div class="store-item-desc">{{ item.description }}</div>
-            <div v-if="item.duration_hours" class="store-item-duration">
-              ⏱️ {{ item.duration_hours }}s süre
-            </div>
+          <span class="text-3xl shrink-0">{{ item.icon_url || '📦' }}</span>
+          <div class="flex-1 min-w-0">
+            <div class="text-sm font-extrabold text-gray-800">{{ item.name }}</div>
+            <div class="text-xs font-semibold text-gray-400 mt-0.5">{{ item.description }}</div>
+            <div v-if="item.duration_hours" class="text-[0.7rem] font-semibold text-gray-400 mt-1">⏱️ {{ item.duration_hours }}s süre</div>
           </div>
           <button
-            class="store-item-buy"
+            class="shrink-0 bg-amber-50 border-2 border-amber-600 text-amber-700 font-extrabold text-sm px-4 py-2.5 rounded-xl cursor-pointer hover:bg-amber-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed font-[inherit]"
             :disabled="isGuest || balance < item.price_acorn"
             @click="openPurchaseModal(item)"
-          >
-            🌰 {{ item.price_acorn }}
-          </button>
+          >🌰 {{ item.price_acorn }}</button>
         </div>
       </div>
     </div>
 
-    <!-- Heart refill packages -->
-    <div v-if="heartItems.length > 0" class="store-section">
-      <div class="store-section-title">❤️ Can Doldur</div>
-      <div class="store-grid">
+    <!-- Heart refill -->
+    <div v-if="heartItems.length > 0" class="flex flex-col gap-3">
+      <h2 class="text-base font-extrabold text-gray-800">❤️ Can Doldur</h2>
+      <div class="flex flex-col gap-2.5">
         <div
           v-for="item in heartItems"
           :key="item.id"
-          class="store-item-card store-item-card--heart"
+          class="flex items-center gap-3.5 bg-white border-2 border-gray-200 rounded-2xl px-4 py-3.5 hover:bg-gray-50 transition-colors"
         >
-          <div class="store-item-icon">{{ item.icon_url || '❤️' }}</div>
-          <div class="store-item-info">
-            <div class="store-item-name">{{ item.name }}</div>
-            <div class="store-item-desc">{{ item.description }}</div>
+          <span class="text-3xl shrink-0">{{ item.icon_url || '❤️' }}</span>
+          <div class="flex-1 min-w-0">
+            <div class="text-sm font-extrabold text-gray-800">{{ item.name }}</div>
+            <div class="text-xs font-semibold text-gray-400 mt-0.5">{{ item.description }}</div>
           </div>
           <button
-            class="store-item-buy"
+            class="shrink-0 bg-amber-50 border-2 border-amber-600 text-amber-700 font-extrabold text-sm px-4 py-2.5 rounded-xl cursor-pointer hover:bg-amber-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed font-[inherit]"
             :disabled="balance < item.price_acorn"
             @click="openPurchaseModal(item)"
-          >
-            🌰 {{ item.price_acorn }}
-          </button>
+          >🌰 {{ item.price_acorn }}</button>
         </div>
       </div>
     </div>
 
-    <!-- Active effects (logged-in only) -->
-    <div v-if="!isGuest && effects.length > 0" class="store-section">
-      <div class="store-section-title">Aktif Etkiler</div>
-      <div class="store-effects">
-        <div v-for="effect in effects" :key="effect.item_type" class="store-effect-card">
-          <span class="store-effect-type">{{ effectLabel(effect.item_type) }}</span>
-          <span class="store-effect-expires">{{ formatExpiry(effect.expires_at) }} kaldı</span>
+    <!-- Active Effects -->
+    <div v-if="!isGuest && effects.length > 0" class="flex flex-col gap-3">
+      <h2 class="text-base font-extrabold text-gray-800">Aktif Etkiler</h2>
+      <div class="flex flex-col gap-2">
+        <div v-for="effect in effects" :key="effect.item_type" class="flex items-center justify-between bg-primary/5 border-2 border-primary rounded-2xl px-4 py-3">
+          <span class="text-sm font-extrabold text-gray-800">{{ effectLabel(effect.item_type) }}</span>
+          <span class="text-xs font-bold text-gray-400">{{ formatExpiry(effect.expires_at) }} kaldı</span>
         </div>
       </div>
     </div>
 
-    <!-- Inventory (logged-in only) -->
-    <div v-if="!isGuest" class="store-section">
-      <div class="store-section-title">Envanter</div>
-      <div v-if="loadingInventory" class="store-loading">Yükleniyor…</div>
-      <div v-else-if="inventory.length === 0" class="store-empty">Henüz hiç ürün almadınız.</div>
-      <div v-else class="store-inventory">
-        <div v-for="item in inventory" :key="item.id" class="store-inv-card">
-          <span class="store-inv-icon">{{ item.icon_url || '📦' }}</span>
-          <span class="store-inv-name">{{ item.name }}</span>
-          <span class="store-inv-qty">x{{ item.quantity }}</span>
+    <!-- Inventory -->
+    <div v-if="!isGuest" class="flex flex-col gap-3">
+      <h2 class="text-base font-extrabold text-gray-800">Envanter</h2>
+      <div v-if="loadingInventory" class="text-sm font-semibold text-gray-400 py-3">Yükleniyor…</div>
+      <div v-else-if="inventory.length === 0" class="text-sm font-semibold text-gray-400 py-3">Henüz hiç ürün almadınız.</div>
+      <div v-else class="flex flex-col gap-2">
+        <div v-for="item in inventory" :key="item.id" class="flex items-center gap-3 bg-white border-2 border-gray-200 rounded-xl px-4 py-3">
+          <span class="text-xl">{{ item.icon_url || '📦' }}</span>
+          <span class="flex-1 text-sm font-bold text-gray-800">{{ item.name }}</span>
+          <span class="text-sm font-extrabold text-gray-400">x{{ item.quantity }}</span>
           <button
             v-if="item.duration_hours"
-            class="store-inv-use"
+            class="bg-primary text-white font-bold text-xs px-3 py-1.5 rounded-lg border-b-2 border-primary-dark active:border-b-0 active:translate-y-0.5 transition-all cursor-pointer font-[inherit]"
             @click="activateItem(item)"
-          >
-            Kullan
-          </button>
+          >Kullan</button>
         </div>
       </div>
     </div>
 
-    <!-- Acorn packages (logged-in only) -->
-    <div v-if="!isGuest" class="store-section">
-      <div class="store-section-title">🌰 Buy Acorn</div>
-      <div class="store-packages">
-        <div v-for="pkg in packages" :key="pkg.id" class="store-package-card">
-          <div class="store-package-amount">🌰 {{ pkg.amount }}</div>
-          <div class="store-package-label">{{ pkg.label }}</div>
-          <button class="store-package-btn" @click="buyAcorn(pkg)">
-            Satın Al
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Purchase modal -->
-    <div v-if="purchaseModal" class="store-modal-overlay" @click.self="purchaseModal = null">
-      <div class="store-modal">
-        <div class="store-modal-icon">{{ purchaseModal.icon_url || '📦' }}</div>
-        <h2>{{ purchaseModal.name }}</h2>
-        <p>{{ purchaseModal.description }}</p>
-        <div class="store-modal-price">🌰 {{ purchaseModal.price_acorn }}</div>
-        <div class="store-modal-actions">
-          <button class="pb-btn-primary" :disabled="purchasing" @click="confirmPurchase">
-            {{ purchasing ? 'İşleniyor…' : 'Satın Al' }}
-          </button>
-          <button class="pb-btn-outline" @click="purchaseModal = null">İptal</button>
+    <!-- Acorn packages -->
+    <div v-if="!isGuest" class="flex flex-col gap-3">
+      <h2 class="text-base font-extrabold text-gray-800">🌰 Buy Acorn</h2>
+      <div class="flex gap-3">
+        <div v-for="pkg in packages" :key="pkg.id" class="flex-1 bg-white border-2 border-gray-200 rounded-2xl p-5 flex flex-col items-center gap-2 text-center">
+          <div class="text-xl font-black text-amber-700">🌰 {{ pkg.amount }}</div>
+          <div class="text-xs font-bold text-gray-400">{{ pkg.label }}</div>
+          <button class="w-full bg-amber-50 border-2 border-amber-600 text-amber-700 font-extrabold text-xs py-2 rounded-xl cursor-pointer hover:bg-amber-100 transition-colors font-[inherit]" @click="buyAcorn(pkg)">Satın Al</button>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Purchase Modal -->
+  <Teleport to="body">
+    <transition name="fade">
+      <div v-if="purchaseModal" class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-5" @click.self="purchaseModal = null">
+        <div class="bg-white border-2 border-gray-200 rounded-3xl max-w-[360px] w-full p-8 text-center flex flex-col items-center gap-3">
+          <span class="text-5xl">{{ purchaseModal.icon_url || '📦' }}</span>
+          <h2 class="text-lg font-black text-gray-800">{{ purchaseModal.name }}</h2>
+          <p class="text-sm font-semibold text-gray-400">{{ purchaseModal.description }}</p>
+          <div class="text-xl font-black text-amber-700">🌰 {{ purchaseModal.price_acorn }}</div>
+          <div class="flex flex-col gap-2 w-full mt-2">
+            <button class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="purchasing" @click="confirmPurchase">
+              {{ purchasing ? 'İşleniyor…' : 'Satın Al' }}
+            </button>
+            <button class="w-full bg-white text-gray-400 font-bold text-sm py-2.5 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="purchaseModal = null">İptal</button>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
@@ -231,7 +226,6 @@ async function confirmPurchase() {
   if (!purchaseModal.value) return;
   purchasing.value = true;
 
-  // Guest: only heart refills, handled locally
   if (isGuest.value) {
     if (purchaseModal.value.item_type === 'heart_refill') {
       const { spendAcorns, setHearts } = useGuestState();
@@ -304,11 +298,10 @@ onMounted(() => {
   isGuest.value = !token;
 
   if (!token) {
-    // Guest mode: read from local state
     const { state: gs } = useGuestState();
     balance.value = gs.value.acornBalance;
     sharedHearts.value = gs.value.heartsCount;
-    fetchItems(); // items are public
+    fetchItems();
     loadingInventory.value = false;
     return;
   }
@@ -320,283 +313,3 @@ onMounted(() => {
   fetchPackages();
 });
 </script>
-
-<style scoped>
-.store-page {
-  max-width: 600px;
-  margin: 0 auto;
-  padding-bottom: 40px;
-}
-
-.store-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 0 24px;
-}
-
-.store-title {
-  font-size: 1.5rem;
-  font-weight: 900;
-}
-
-.store-balance {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 99px;
-  padding: 8px 16px;
-}
-
-.store-balance-icon { font-size: 1.2rem; }
-.store-balance-val { font-weight: 900; font-size: 1.1rem; color: #cd853f; }
-.store-balance-label { font-size: 0.75rem; font-weight: 700; color: var(--pb-text-muted); }
-
-.store-section {
-  margin-bottom: 28px;
-}
-
-.store-section-title {
-  font-size: 1rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-  color: var(--pb-text);
-}
-
-.store-loading, .store-empty {
-  color: var(--pb-text-muted);
-  font-weight: 600;
-  padding: 12px 0;
-}
-
-/* Item grid */
-.store-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.store-item-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 16px;
-  padding: 16px;
-  transition: background 0.12s;
-}
-
-.store-item-card:hover {
-  background: var(--pb-bg-card-hover);
-}
-
-.store-item-icon { font-size: 2rem; flex-shrink: 0; }
-
-.store-item-info { flex: 1; }
-.store-item-name { font-weight: 800; font-size: 0.95rem; }
-.store-item-desc { font-size: 0.78rem; color: var(--pb-text-muted); font-weight: 600; margin-top: 2px; }
-.store-item-duration { font-size: 0.72rem; color: var(--pb-text-muted); margin-top: 4px; }
-
-.store-item-buy {
-  background: rgba(205, 133, 63, 0.15);
-  border: 2px solid #cd853f;
-  border-radius: 12px;
-  padding: 10px 16px;
-  font-family: inherit;
-  font-weight: 800;
-  font-size: 0.85rem;
-  color: #cd853f;
-  cursor: pointer;
-  transition: all 0.12s;
-  flex-shrink: 0;
-}
-
-.store-item-buy:hover:not(:disabled) {
-  background: rgba(205, 133, 63, 0.25);
-}
-
-.store-item-buy:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-/* Effects */
-.store-effects {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.store-effect-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(124, 58, 237, 0.1);
-  border: 2px solid var(--pb-purple);
-  border-radius: 14px;
-  padding: 12px 16px;
-}
-
-.store-effect-type { font-weight: 800; font-size: 0.9rem; }
-.store-effect-expires { font-size: 0.8rem; color: var(--pb-text-muted); font-weight: 600; }
-
-/* Inventory */
-.store-inventory {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.store-inv-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 12px;
-  padding: 12px 16px;
-}
-
-.store-inv-icon { font-size: 1.3rem; }
-.store-inv-name { flex: 1; font-weight: 700; font-size: 0.9rem; }
-.store-inv-qty { font-weight: 800; font-size: 0.85rem; color: var(--pb-text-muted); }
-
-.store-inv-use {
-  background: var(--pb-purple);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 8px 14px;
-  font-family: inherit;
-  font-weight: 800;
-  font-size: 0.78rem;
-  cursor: pointer;
-  border-bottom: 2px solid var(--pb-purple-dark);
-}
-
-/* Packages */
-.store-packages {
-  display: flex;
-  gap: 10px;
-}
-
-.store-package-card {
-  flex: 1;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 16px;
-  padding: 20px 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
-}
-
-.store-package-amount { font-size: 1.3rem; font-weight: 900; color: #cd853f; }
-.store-package-label { font-size: 0.75rem; font-weight: 700; color: var(--pb-text-muted); }
-
-.store-package-btn {
-  background: rgba(205, 133, 63, 0.15);
-  border: 2px solid #cd853f;
-  border-radius: 10px;
-  padding: 8px 16px;
-  font-family: inherit;
-  font-weight: 800;
-  font-size: 0.78rem;
-  color: #cd853f;
-  cursor: pointer;
-  transition: all 0.12s;
-}
-
-.store-package-btn:hover {
-  background: rgba(205, 133, 63, 0.25);
-}
-
-/* Guest banner */
-.store-guest-banner {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(205, 133, 63, 0.12);
-  border: 2px solid rgba(205, 133, 63, 0.35);
-  border-radius: 14px;
-  padding: 12px 16px;
-  margin-bottom: 12px;
-}
-
-.store-guest-banner-icon { font-size: 1.4rem; flex-shrink: 0; }
-
-.store-guest-banner-body {
-  flex: 1;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--pb-text);
-  line-height: 1.4;
-}
-
-.store-guest-banner-btn {
-  background: var(--pb-purple);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 8px 14px;
-  font-size: 0.78rem;
-  font-weight: 800;
-  font-family: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.store-item-card--dimmed {
-  opacity: 0.6;
-}
-
-/* Modal */
-.store-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.store-modal {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 20px;
-  padding: 32px 28px;
-  max-width: 360px;
-  width: 90%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.store-modal-icon { font-size: 3rem; }
-.store-modal h2 { font-size: 1.1rem; font-weight: 900; }
-.store-modal p { font-size: 0.85rem; color: var(--pb-text-muted); font-weight: 600; }
-.store-modal-price { font-size: 1.2rem; font-weight: 900; color: #cd853f; }
-
-.store-modal-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-  margin-top: 8px;
-}
-
-.store-modal-actions .pb-btn-primary,
-.store-modal-actions .pb-btn-outline {
-  width: 100%;
-}
-</style>

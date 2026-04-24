@@ -1,50 +1,50 @@
 <template>
-  <div class="pb-auth-page">
-    <NuxtLink to="/" class="pb-auth-close">✕</NuxtLink>
-    <div class="pb-auth-card">
-      <div class="pb-auth-logo">
+  <div class="min-h-screen flex items-center justify-center bg-white px-6 relative">
+    <NuxtLink to="/" class="fixed top-5 left-5 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 border-2 border-gray-200 text-gray-800 font-bold z-10 hover:bg-gray-200 transition-colors">✕</NuxtLink>
+    <div class="w-full max-w-[420px] bg-white border-2 border-gray-200 rounded-3xl p-10 flex flex-col gap-6">
+      <div class="flex items-center justify-center gap-3">
         <PbMascot :width="64" :height="80" />
-        <h1 class="pb-auth-logo-text">pracby</h1>
+        <h1 class="text-3xl font-black text-primary">pracby</h1>
       </div>
 
-      <h2 class="pb-auth-title">Tekrar hoş geldin!</h2>
+      <h2 class="text-xl font-extrabold text-gray-800 text-center -mt-2">Tekrar hoş geldin!</h2>
 
-      <form class="pb-auth-form" @submit.prevent="submit">
-        <div class="pb-field">
-          <label class="pb-label">E-posta veya Kullanıcı Adı</label>
+      <form class="flex flex-col gap-4" @submit.prevent="submit">
+        <div class="flex flex-col gap-1.5">
+          <label class="text-sm font-bold text-gray-400 uppercase tracking-wide">E-posta veya Kullanıcı Adı</label>
           <input
             v-model="form.identifier"
             type="text"
-            class="pb-input"
+            class="bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors focus:border-primary"
             placeholder="E-posta veya kullanıcı adı"
             autocomplete="username"
             required
           />
         </div>
 
-        <div class="pb-field">
-          <label class="pb-label">Şifre</label>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-sm font-bold text-gray-400 uppercase tracking-wide">Şifre</label>
           <input
             v-model="form.password"
             type="password"
-            class="pb-input"
+            class="bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors focus:border-primary"
             placeholder="••••••"
             autocomplete="current-password"
             required
           />
         </div>
 
-        <p v-if="error" class="pb-auth-error">{{ error }}</p>
+        <p v-if="error" class="text-negative text-sm font-semibold text-center">{{ error }}</p>
 
-        <button type="submit" class="pb-btn-primary" :disabled="loading">
+        <button type="submit" class="w-full bg-primary text-white font-black text-base py-3.5 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-1" :disabled="loading">
           <span v-if="loading">Giriş yapılıyor…</span>
           <span v-else>Giriş Yap</span>
         </button>
       </form>
 
-      <p class="pb-auth-switch">
+      <p class="text-center text-sm text-gray-400">
         Hesabın yok mu?
-        <NuxtLink to="/auth/register" class="pb-auth-link">Kayıt Ol</NuxtLink>
+        <NuxtLink to="/auth/register" class="text-primary font-bold underline">Kayıt Ol</NuxtLink>
       </p>
     </div>
   </div>
@@ -76,154 +76,3 @@ const submit = async () => {
   }
 };
 </script>
-
-<style scoped>
-.pb-auth-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--pb-bg);
-  padding: 24px;
-  position: relative;
-}
-
-.pb-auth-close {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  color: var(--pb-text);
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  z-index: 10;
-  transition: background 0.15s;
-}
-
-.pb-auth-close:hover {
-  background: var(--pb-border);
-}
-
-.pb-auth-card {
-  width: 100%;
-  max-width: 420px;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 20px;
-  padding: 40px 36px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.pb-auth-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.pb-auth-logo-text {
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--pb-purple-light);
-}
-
-.pb-auth-title {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--pb-text);
-  text-align: center;
-  margin-top: -8px;
-}
-
-.pb-auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.pb-field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.pb-label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.pb-input {
-  background: var(--pb-bg);
-  border: 2px solid var(--pb-border);
-  border-radius: 12px;
-  padding: 12px 16px;
-  color: var(--pb-text);
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.15s;
-  outline: none;
-}
-
-.pb-input:focus {
-  border-color: var(--pb-purple-light);
-}
-
-.pb-auth-error {
-  color: var(--pb-red);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.pb-btn-primary {
-  background: var(--pb-purple);
-  color: #fff;
-  border: none;
-  border-radius: 14px;
-  padding: 14px;
-  font-size: 1rem;
-  font-weight: 800;
-  font-family: inherit;
-  cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
-  margin-top: 4px;
-}
-
-.pb-btn-primary:hover:not(:disabled) {
-  background: var(--pb-purple-light);
-}
-
-.pb-btn-primary:active:not(:disabled) {
-  transform: scale(0.98);
-}
-
-.pb-btn-primary:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.pb-auth-switch {
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--pb-text-muted);
-}
-
-.pb-auth-link {
-  color: var(--pb-purple-light);
-  font-weight: 700;
-  text-decoration: underline;
-}
-</style>

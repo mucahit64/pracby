@@ -1,16 +1,19 @@
 <template>
-  <div v-if="visible" class="hd-overlay">
-    <div class="hd-modal">
-      <div class="hd-icon">⚠️</div>
-      <div class="hd-title">Bekle!</div>
-      <div class="hd-sub">Şimdi çıkarsan tüm ilerlemeni kaybedeceksin!</div>
-
-      <div class="hd-warn-actions">
-        <button class="hd-btn-continue" @click="$emit('continue')">💪 Öğrenmeye Devam</button>
-        <button class="hd-btn-exit" @click="$emit('exit')">🚪 Testten Çık</button>
+  <Teleport to="body">
+    <transition name="fade">
+      <div v-if="visible" class="fixed inset-0 bg-black/60 z-[1000] flex items-end justify-center" @click.self="$emit('continue')">
+        <div class="bg-white border-2 border-gray-200 rounded-t-3xl p-7 pb-11 w-full max-w-[480px] flex flex-col items-center gap-3.5 animate-slide-up">
+          <span class="text-5xl">⚠️</span>
+          <h2 class="text-2xl font-black text-gray-800">Bekle!</h2>
+          <p class="text-sm font-semibold text-gray-400 text-center">Şimdi çıkarsan tüm ilerlemeni kaybedeceksin!</p>
+          <div class="flex flex-col gap-3 w-full pt-1">
+            <button class="w-full bg-primary text-white font-black text-base py-4 rounded-2xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer font-[inherit]" @click="$emit('continue')">💪 Öğrenmeye Devam</button>
+            <button class="w-full bg-white text-gray-400 font-extrabold text-sm py-3.5 rounded-2xl border-2 border-gray-200 hover:border-negative hover:text-negative transition-all cursor-pointer font-[inherit]" @click="$emit('exit')">🚪 Testten Çık</button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </transition>
+  </Teleport>
 </template>
 
 <script setup lang="ts">
@@ -23,104 +26,3 @@ defineEmits<{
   exit: []
 }>()
 </script>
-
-<style scoped>
-.hd-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 0;
-  animation: hdFadeIn 0.2s ease;
-}
-
-@keyframes hdFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.hd-modal {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 24px 24px 0 0;
-  padding: 28px 24px 44px;
-  width: 100%;
-  max-width: 480px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  animation: hdSlideUp 0.3s ease;
-}
-
-@keyframes hdSlideUp {
-  from { transform: translateY(100%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.hd-icon {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.hd-title {
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--pb-text);
-}
-
-.hd-sub {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--pb-text-muted);
-  text-align: center;
-}
-
-.hd-warn-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  padding-top: 4px;
-}
-
-.hd-btn-continue {
-  background: var(--pb-purple);
-  color: white;
-  border: none;
-  border-bottom: 3px solid var(--pb-purple-dark);
-  border-radius: 14px;
-  padding: 16px;
-  font-size: 1rem;
-  font-weight: 900;
-  cursor: pointer;
-  font-family: inherit;
-  width: 100%;
-  letter-spacing: 0.02em;
-  transition: transform 0.12s;
-}
-
-.hd-btn-continue:hover { transform: translateY(-1px); }
-
-.hd-btn-exit {
-  background: none;
-  border: 2px solid var(--pb-border);
-  border-radius: 14px;
-  padding: 14px;
-  font-size: 0.95rem;
-  font-weight: 800;
-  cursor: pointer;
-  font-family: inherit;
-  color: var(--pb-text-muted);
-  width: 100%;
-  transition: all 0.12s;
-}
-
-.hd-btn-exit:hover {
-  border-color: var(--pb-red);
-  color: var(--pb-red);
-}
-</style>

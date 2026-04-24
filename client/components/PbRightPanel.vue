@@ -1,173 +1,172 @@
 <template>
-  <div class="pb-right-panel">
-    <!-- Logged in content -->
+  <div class="w-[280px] min-w-[280px] flex flex-col gap-4 py-6 overflow-y-auto">
     <!-- Stats Row -->
-    <div class="pb-stats-row">
+    <div class="flex border-2 border-gray-200 rounded-2xl p-2.5 justify-between relative">
       <!-- 🔥 Streak -->
-      <div class="pb-stat-wrap" @mouseenter="openTooltip('streak')" @mouseleave="closeTooltip">
-        <div class="pb-stat-item">
-          <span class="pb-stat-icon">🔥</span>
-          <span class="pb-stat-value">{{ stats.streak }}</span>
+      <div class="relative flex flex-col items-center flex-1 group" @mouseenter="openTooltip('streak')" @mouseleave="closeTooltip">
+        <div class="flex items-center gap-1.5 px-2 py-1.5 rounded-xl cursor-default transition-colors group-hover:bg-gray-100">
+          <span class="text-xl">🔥</span>
+          <span class="text-base font-extrabold text-gray-800">{{ stats.streak }}</span>
         </div>
-        <div v-if="activeTooltip === 'streak'" class="pb-tooltip pb-tooltip--left">
-            <div class="pb-tt-arrow" />
-            <div class="pb-tt-head">Bu Haftaki Serin</div>
-            <div class="pb-streak-days">
-              <div v-for="day in streakHistory" :key="day.date" class="pb-streak-day">
-                <div
-                  class="pb-streak-dot"
-                  :class="{
-                    'pb-streak-dot--done': day.done,
-                    'pb-streak-dot--today': day.isToday,
-                  }"
-                />
-                <span class="pb-streak-lbl">{{ day.label }}</span>
-              </div>
+        <!-- Streak Tooltip -->
+        <div v-if="activeTooltip === 'streak'" class="absolute top-full mt-2.5 left-0 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5">
+          <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest">Bu Haftaki Serin</div>
+          <div class="flex justify-between gap-0.5">
+            <div v-for="day in streakHistory" :key="day.date" class="flex flex-col items-center gap-1 flex-1">
+              <div
+                class="w-5 h-5 rounded-full"
+                :class="{
+                  'bg-positive': day.done && !day.isToday,
+                  'bg-primary ring-2 ring-primary/40': day.isToday,
+                  'bg-gray-200': !day.done && !day.isToday,
+                }"
+              />
+              <span class="text-[0.6rem] font-bold text-gray-400">{{ day.label }}</span>
             </div>
-            <div class="pb-tt-row">
-              <span>🔥</span>
-              <span class="pb-tt-big">{{ stats.streak }}</span>
-              <span class="pb-tt-muted">günlük seri</span>
-            </div>
-            <button class="pb-tt-link" @click="navigateTo('/leaderboard')">Tüm Serilerimi Gör →</button>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span>🔥</span>
+            <span class="text-xl font-black text-gray-800">{{ stats.streak }}</span>
+            <span class="text-sm font-semibold text-gray-400">günlük seri</span>
+          </div>
+          <button class="bg-transparent border-0 text-primary text-sm font-extrabold cursor-pointer p-0 text-left hover:text-primary-dark" @click="navigateTo('/leaderboard')">Tüm Serilerimi Gör →</button>
         </div>
       </div>
 
       <!-- 🌰 Palamut -->
-      <div class="pb-stat-wrap" @mouseenter="openTooltip('acorns')" @mouseleave="closeTooltip">
-        <div class="pb-stat-item">
-          <span class="pb-stat-icon">🌰</span>
-          <span class="pb-stat-value">{{ sharedAcornBalance }}</span>
+      <div class="relative flex flex-col items-center flex-1 group" @mouseenter="openTooltip('acorns')" @mouseleave="closeTooltip">
+        <div class="flex items-center gap-1.5 px-2 py-1.5 rounded-xl cursor-default transition-colors group-hover:bg-gray-100">
+          <span class="text-xl">🌰</span>
+          <span class="text-base font-extrabold text-gray-800">{{ sharedAcornBalance }}</span>
         </div>
-        <div v-if="activeTooltip === 'acorns'" class="pb-tooltip pb-tooltip--center">
-            <div class="pb-tt-arrow" />
-            <div class="pb-tt-head">Palamutların</div>
-            <div class="pb-tt-acorn-bal">
-              <span class="pb-tt-acorn-icon">🌰</span>
-              <span class="pb-tt-big">{{ sharedAcornBalance }}</span>
-            </div>
-            <p class="pb-tt-hint">Doğru cevap = 1 🌰</p>
-            <p class="pb-tt-hint">Palamutlarınla mağazadan ürün al!</p>
-            <button class="pb-tt-primary-btn" @click="navigateTo('/store')">Mağazaya Git →</button>
+        <!-- Acorn Tooltip -->
+        <div v-if="activeTooltip === 'acorns'" class="absolute top-full mt-2.5 left-1/2 -translate-x-1/2 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5">
+          <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest">Palamutların</div>
+          <div class="flex items-center gap-2">
+            <span class="text-3xl">🌰</span>
+            <span class="text-xl font-black text-gray-800">{{ sharedAcornBalance }}</span>
+          </div>
+          <p class="text-xs text-gray-400 font-semibold leading-relaxed">Doğru cevap = 1 🌰</p>
+          <p class="text-xs text-gray-400 font-semibold leading-relaxed">Palamutlarınla mağazadan ürün al!</p>
+          <button class="w-full bg-primary text-white font-extrabold text-sm py-2.5 rounded-xl border-b-[3px] border-primary-dark active:translate-y-0.5 active:border-b-[2px] transition-all duration-100 cursor-pointer" @click="navigateTo('/store')">Mağazaya Git →</button>
         </div>
       </div>
 
       <!-- ❤️ Hearts -->
-      <div class="pb-stat-wrap" @mouseenter="openTooltip('hearts')" @mouseleave="closeTooltip">
-        <div class="pb-stat-item">
-          <span class="pb-stat-icon">❤️</span>
-          <span class="pb-stat-value">{{ sharedHearts }}</span>
+      <div class="relative flex flex-col items-center flex-1 group" @mouseenter="openTooltip('hearts')" @mouseleave="closeTooltip">
+        <div class="flex items-center gap-1.5 px-2 py-1.5 rounded-xl cursor-default transition-colors group-hover:bg-gray-100">
+          <span class="text-xl">❤️</span>
+          <span class="text-base font-extrabold text-gray-800">{{ sharedHearts }}</span>
         </div>
-        <div v-if="activeTooltip === 'hearts'" class="pb-tooltip pb-tooltip--right">
-            <div class="pb-tt-arrow" />
-            <div class="pb-tt-head">Canların</div>
-            <div class="pb-tt-hearts-row">
-              <span
-                v-for="i in 5"
-                :key="i"
-                class="pb-tt-heart"
-                :class="{ 'pb-tt-heart--lost': i > sharedHearts }"
-              >❤️</span>
+        <!-- Hearts Tooltip -->
+        <div v-if="activeTooltip === 'hearts'" class="absolute top-full mt-2.5 right-0 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5">
+          <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest">Canların</div>
+          <div class="flex gap-1 text-xl">
+            <span
+              v-for="i in 5"
+              :key="i"
+              class="transition-all"
+              :class="{ 'grayscale opacity-30': i > sharedHearts }"
+            >❤️</span>
+          </div>
+          <div v-if="heartCountdown" class="flex items-center gap-2 bg-negative/10 rounded-xl px-2.5 py-2">
+            <span class="text-xs font-bold text-gray-400">Sonraki can</span>
+            <span class="text-xs font-extrabold text-negative tabular-nums tracking-wide">⏱ {{ heartCountdown }}</span>
+          </div>
+          <div v-else-if="sharedHearts >= 5" class="text-sm font-bold text-positive text-center">Canların dolu! 🎉</div>
+          <template v-if="sharedHearts < 5 && heartPackages.length > 0">
+            <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-wide">Can Satın Al</div>
+            <div class="flex flex-col gap-1.5">
+              <button
+                v-for="pkg in heartPackages"
+                :key="pkg.id"
+                class="flex justify-between items-center bg-gray-50 border-2 border-gray-200 rounded-xl px-2.5 py-2 cursor-pointer transition-colors hover:border-primary disabled:opacity-40 disabled:cursor-not-allowed font-[inherit]"
+                :disabled="sharedAcornBalance < pkg.price_acorn || purchasingId === pkg.id"
+                @click="buyHeart(pkg)"
+              >
+                <span class="text-sm font-bold text-gray-800">{{ pkg.name }}</span>
+                <span class="text-sm font-extrabold text-warning">
+                  <span v-if="purchasingId === pkg.id" class="inline-block w-3 h-3 border-2 border-gray-200 border-t-primary rounded-full animate-spin" />
+                  <template v-else>🌰 {{ pkg.price_acorn }}</template>
+                </span>
+              </button>
             </div>
-            <div v-if="heartCountdown" class="pb-tt-timer">
-              <span class="pb-tt-timer-lbl">Sonraki can</span>
-              <span class="pb-tt-timer-val">⏱ {{ heartCountdown }}</span>
-            </div>
-            <div v-else-if="sharedHearts >= 5" class="pb-tt-full-msg">Canların dolu! 🎉</div>
-            <template v-if="sharedHearts < 5 && heartPackages.length > 0">
-              <div class="pb-tt-pkgs-title">Can Satın Al</div>
-              <div class="pb-tt-pkgs">
-                <button
-                  v-for="pkg in heartPackages"
-                  :key="pkg.id"
-                  class="pb-tt-pkg"
-                  :disabled="sharedAcornBalance < pkg.price_acorn || purchasingId === pkg.id"
-                  @click="buyHeart(pkg)"
-                >
-                  <span class="pb-tt-pkg-name">{{ pkg.name }}</span>
-                  <span class="pb-tt-pkg-price">
-                    <span v-if="purchasingId === pkg.id" class="pb-tt-spin" />
-                    <template v-else>🌰 {{ pkg.price_acorn }}</template>
-                  </span>
-                </button>
-              </div>
-            </template>
-            <div
-              v-if="purchaseMsg"
-              class="pb-tt-purchase-msg"
-              :class="{ 'pb-tt-purchase-msg--err': purchaseFailed }"
-            >
-              {{ purchaseMsg }}
-            </div>
+          </template>
+          <div
+            v-if="purchaseMsg"
+            class="text-xs font-bold text-center"
+            :class="purchaseFailed ? 'text-negative' : 'text-positive'"
+          >
+            {{ purchaseMsg }}
+          </div>
         </div>
       </div>
-
     </div>
 
     <!-- Unlock Leaderboard Card -->
-    <div class="pb-panel-card pb-unlock-card">
-      <div class="pb-unlock-icon">🏆</div>
-      <div class="pb-unlock-body">
-        <div class="pb-unlock-title">Liderliği Aç!</div>
-        <div class="pb-unlock-desc">Rekabet etmeye başlamak için 10 ders daha tamamla.</div>
+    <div class="bg-white border-2 border-gray-200 rounded-2xl p-4 flex flex-col gap-2.5">
+      <div class="text-3xl">🏆</div>
+      <div>
+        <div class="text-base font-extrabold text-gray-800">Liderliği Aç!</div>
+        <div class="text-sm text-gray-400 leading-snug mt-0.5">Rekabet etmeye başlamak için 10 ders daha tamamla.</div>
       </div>
-      <div class="pb-unlock-progress">
-        <div class="pb-mini-progress-bar">
-          <div class="pb-mini-progress-fill" :style="{ width: `${(stats.lessonsToLeaderboard / 10) * 100}%` }" />
+      <div class="flex items-center gap-2.5 mt-1">
+        <div class="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+          <div class="h-full bg-primary rounded-full transition-all duration-400" :style="{ width: `${(stats.lessonsToLeaderboard / 10) * 100}%` }" />
         </div>
-        <span class="pb-progress-text">{{ stats.lessonsToLeaderboard }} / 10</span>
+        <span class="text-xs font-bold text-gray-400 whitespace-nowrap">{{ stats.lessonsToLeaderboard }} / 10</span>
       </div>
     </div>
 
     <!-- Daily Quests -->
-    <div class="pb-panel-card">
-      <div class="pb-panel-card-header">
-        <span class="pb-panel-card-title">Günlük Görevler</span>
-        <button class="pb-view-all-btn" @click="navigateTo('/quests')">TÜMÜNÜ GÖR</button>
+    <div class="bg-white border-2 border-gray-200 rounded-2xl p-4">
+      <div class="flex justify-between items-center mb-3.5">
+        <span class="text-base font-extrabold text-gray-800">Günlük Görevler</span>
+        <button class="bg-transparent border-0 text-primary text-[0.72rem] font-extrabold cursor-pointer tracking-wide font-[inherit] hover:text-primary-dark" @click="navigateTo('/quests')">TÜMÜNÜ GÖR</button>
       </div>
-      <div v-for="quest in dailyQuests" :key="quest.id" class="pb-quest-item">
-        <div class="pb-quest-icon">{{ quest.icon }}</div>
-        <div class="pb-quest-info">
-          <div class="pb-quest-name">{{ quest.name }}</div>
-          <div class="pb-quest-progress-bar">
+      <div v-for="quest in dailyQuests" :key="quest.id" class="flex items-center gap-2.5 py-2 border-b border-gray-100 last:border-b-0 last:pb-0 relative">
+        <div class="text-xl w-8 text-center">{{ quest.icon }}</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold text-gray-800 mb-1">{{ quest.name }}</div>
+          <div class="h-[7px] bg-gray-100 rounded-full overflow-hidden mb-0.5">
             <div
-              class="pb-quest-progress-fill"
+              class="h-full bg-positive rounded-full transition-all duration-500"
               :style="{ width: `${Math.min((quest.current / quest.target) * 100, 100)}%` }"
             />
           </div>
-          <div class="pb-quest-counts">{{ quest.current }} / {{ quest.target }}</div>
+          <div class="text-[0.72rem] text-gray-400 font-semibold">{{ quest.current }} / {{ quest.target }}</div>
         </div>
-        <div class="pb-quest-reward">
-          <span class="pb-quest-xp">+{{ quest.xp }}</span>
-          <span class="pb-quest-xp-label">XP</span>
+        <div class="flex flex-col items-center min-w-[36px]">
+          <span class="text-sm font-extrabold text-warning">+{{ quest.xp }}</span>
+          <span class="text-[0.65rem] font-bold text-gray-400">XP</span>
         </div>
-        <div v-if="quest.current >= quest.target" class="pb-quest-complete">✓</div>
+        <div v-if="quest.current >= quest.target" class="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 bg-positive text-white rounded-full flex items-center justify-center text-xs font-extrabold">✓</div>
       </div>
     </div>
 
     <!-- XP Goal -->
-    <div class="pb-panel-card">
-      <div class="pb-panel-card-header">
-        <span class="pb-panel-card-title">Günlük Hedef</span>
-        <span class="pb-xp-chip">⚡ {{ stats.dailyXp }} / {{ stats.dailyGoal }} XP</span>
+    <div class="bg-white border-2 border-gray-200 rounded-2xl p-4">
+      <div class="flex justify-between items-center mb-3.5">
+        <span class="text-base font-extrabold text-gray-800">Günlük Hedef</span>
+        <span class="text-sm font-bold text-warning bg-warning/10 px-2.5 py-1 rounded-full">⚡ {{ stats.dailyXp }} / {{ stats.dailyGoal }} XP</span>
       </div>
-      <div class="pb-xp-progress-bar">
+      <div class="h-3.5 bg-gray-100 rounded-full overflow-hidden mb-1.5">
         <div
-          class="pb-xp-progress-fill"
+          class="h-full bg-gradient-to-r from-primary to-primary-light rounded-full transition-all duration-500"
           :style="{ width: `${Math.min((stats.dailyXp / stats.dailyGoal) * 100, 100)}%` }"
         />
       </div>
-      <div class="pb-xp-bar-labels">
+      <div class="flex justify-between text-[0.72rem] text-gray-400 font-semibold">
         <span>0</span>
         <span>{{ stats.dailyGoal }} XP</span>
       </div>
     </div>
-    
+
     <!-- Guest CTA -->
-    <div v-if="!isLoggedIn" class="pb-panel-card pb-guest-cta">
-      <p class="pb-guest-cta-text">İlerlemeni kaydetmek için bir profil oluştur!</p>
-      <NuxtLink to="/auth/register" class="pb-btn-primary pb-guest-cta-btn">Bir profil oluştur</NuxtLink>
-      <NuxtLink to="/auth/login" class="pb-btn-outline pb-guest-cta-btn">Giriş yap</NuxtLink>
+    <div v-if="!isLoggedIn" class="bg-white border-2 border-gray-200 rounded-2xl p-6 flex flex-col items-center gap-3 text-center">
+      <p class="text-sm font-bold text-gray-800 leading-snug">İlerlemeni kaydetmek için bir profil oluştur!</p>
+      <NuxtLink to="/auth/register" class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 text-center block">PROFİL OLUŞTUR</NuxtLink>
+      <NuxtLink to="/auth/login" class="w-full bg-white text-primary font-extrabold text-sm py-3 rounded-xl border-2 border-primary hover:bg-primary/5 transition-all duration-150 text-center block">GİRİŞ YAP</NuxtLink>
     </div>
   </div>
 </template>
@@ -235,7 +234,6 @@ async function buyHeart(pkg: HeartPackage) {
   purchaseMsg.value = '';
   purchaseFailed.value = false;
 
-  // Guest: local purchase
   const token = getToken();
   if (!token) {
     const { spendAcorns, setHearts } = useGuestState();
@@ -281,13 +279,11 @@ onMounted(async () => {
   const token = getToken();
   if (!token) {
     isLoggedIn.value = false;
-    // Load guest state (acorns + hearts) — read directly from localStorage, then sync to shared state
     const { state: gs } = useGuestState();
     const guestBalance = gs.value.acornBalance;
     setAcornBalance(guestBalance);
     stats.value.acorns = guestBalance;
     sharedHearts.value = gs.value.heartsCount;
-    // Load packages from public endpoint
     try {
       const items = await $fetch<HeartPackage[]>('/api/store/items');
       heartPackages.value = items.filter(i => i.item_type === 'heart_refill');
@@ -314,586 +310,3 @@ onMounted(async () => {
   } catch { /* skip */ }
 });
 </script>
-
-<style scoped>
-.pb-right-panel {
-  width: 280px;
-  min-width: 280px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 24px 0 24px 16px;
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.pb-right-panel::-webkit-scrollbar {
-  display: none;
-}
-/* Guest CTA */
-.pb-guest-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 24px 16px;
-  text-align: center;
-}
-
-.pb-guest-cta-icon {
-  font-size: 2rem;
-}
-
-.pb-guest-cta-text {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--pb-text);
-  line-height: 1.4;
-}
-
-.pb-guest-cta-btn {
-  width: 100%;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.pb-stats-row {
-  display: flex;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 16px;
-  padding: 10px 12px;
-  justify-content: space-between;
-  overflow: visible;
-  position: relative;
-}
-
-.pb-stat-wrap {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-}
-
-/* Bridge the 10px gap between stat item and tooltip so hover doesn't drop */
-.pb-stat-wrap::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 12px;
-}
-
-.pb-stat-item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 6px 8px;
-  border-radius: 10px;
-  cursor: default;
-  transition: background 0.15s;
-}
-
-.pb-stat-wrap:hover .pb-stat-item {
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.pb-stat-icon {
-  font-size: 1.2rem;
-}
-
-.pb-stat-value {
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--pb-text);
-}
-
-/* ── Tooltips ── */
-.pb-tooltip {
-  position: absolute;
-  top: calc(100% + 10px);
-  z-index: 500;
-  width: 242px;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 16px;
-  padding: 14px;
-  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.pb-tooltip--left   { left: -8px; }
-.pb-tooltip--center { left: 50%; transform: translateX(-50%); }
-.pb-tooltip--right  { right: -8px; }
-
-.pb-tt-arrow {
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 14px;
-  height: 8px;
-  background: var(--pb-border);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
-
-/* Point arrow toward the triggering icon, not always center */
-.pb-tooltip--left .pb-tt-arrow {
-  left: 26px;
-  transform: none;
-}
-
-.pb-tooltip--right .pb-tt-arrow {
-  left: auto;
-  right: 26px;
-  transform: none;
-}
-
-.pb-tt-head {
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: var(--pb-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-/* Streak */
-.pb-streak-days {
-  display: flex;
-  justify-content: space-between;
-  gap: 2px;
-}
-
-.pb-streak-day {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  flex: 1;
-}
-
-.pb-streak-dot {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--pb-border);
-}
-
-.pb-streak-dot--done {
-  background: var(--pb-green);
-}
-
-.pb-streak-dot--today {
-  background: var(--pb-purple);
-  box-shadow: 0 0 8px rgba(124, 58, 237, 0.6);
-  animation: tt-pulse 1.8s infinite;
-}
-
-@keyframes tt-pulse {
-  0%, 100% { box-shadow: 0 0 8px rgba(124, 58, 237, 0.5); }
-  50%       { box-shadow: 0 0 16px rgba(124, 58, 237, 0.9); }
-}
-
-.pb-streak-lbl {
-  font-size: 0.6rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-}
-
-.pb-tt-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.pb-tt-big {
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: var(--pb-text);
-}
-
-.pb-tt-muted {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--pb-text-muted);
-}
-
-.pb-tt-link {
-  background: none;
-  border: none;
-  color: var(--pb-purple-light);
-  font-size: 0.8rem;
-  font-weight: 800;
-  cursor: pointer;
-  font-family: inherit;
-  padding: 0;
-  text-align: left;
-}
-
-.pb-tt-link:hover { color: var(--pb-purple); }
-
-/* Acorn */
-.pb-tt-acorn-bal {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.pb-tt-acorn-icon {
-  font-size: 1.8rem;
-}
-
-.pb-tt-hint {
-  font-size: 0.78rem;
-  color: var(--pb-text-muted);
-  font-weight: 600;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.pb-tt-primary-btn {
-  background: var(--pb-purple);
-  color: white;
-  border: none;
-  border-bottom: 3px solid var(--pb-purple-dark);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  cursor: pointer;
-  font-family: inherit;
-  width: 100%;
-  transition: opacity 0.15s;
-}
-
-.pb-tt-primary-btn:hover   { opacity: 0.9; }
-.pb-tt-primary-btn:active  { transform: translateY(1px); border-bottom-width: 2px; }
-
-/* Hearts */
-.pb-tt-hearts-row {
-  display: flex;
-  gap: 4px;
-  font-size: 1.4rem;
-}
-
-.pb-tt-heart { transition: filter 0.15s; }
-
-.pb-tt-heart--lost {
-  filter: grayscale(1) opacity(0.3);
-}
-
-.pb-tt-timer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 75, 75, 0.1);
-  border-radius: 10px;
-  padding: 8px 10px;
-}
-
-.pb-tt-timer-lbl {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-}
-
-.pb-tt-timer-val {
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: var(--pb-red);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
-}
-
-.pb-tt-full-msg {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--pb-green);
-  text-align: center;
-}
-
-.pb-tt-pkgs-title {
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: var(--pb-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.pb-tt-pkgs {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.pb-tt-pkg {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--pb-bg);
-  border: 2px solid var(--pb-border);
-  border-radius: 10px;
-  padding: 8px 10px;
-  cursor: pointer;
-  font-family: inherit;
-  transition: border-color 0.15s;
-}
-
-.pb-tt-pkg:hover:not(:disabled) { border-color: var(--pb-purple); }
-
-.pb-tt-pkg:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.pb-tt-pkg-name {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--pb-text);
-}
-
-.pb-tt-pkg-price {
-  font-size: 0.82rem;
-  font-weight: 800;
-  color: var(--pb-gold);
-}
-
-.pb-tt-spin {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border: 2px solid var(--pb-border);
-  border-top-color: var(--pb-purple);
-  border-radius: 50%;
-  animation: tt-spin 0.6s linear infinite;
-}
-
-@keyframes tt-spin { to { transform: rotate(360deg); } }
-
-.pb-tt-purchase-msg {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--pb-green);
-  text-align: center;
-}
-
-.pb-tt-purchase-msg--err { color: var(--pb-red); }
-
-
-
-.pb-panel-card {
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 16px;
-  padding: 16px;
-}
-
-.pb-panel-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 14px;
-}
-
-.pb-panel-card-title {
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--pb-text);
-}
-
-.pb-view-all-btn {
-  background: none;
-  border: none;
-  color: var(--pb-purple-light);
-  font-size: 0.72rem;
-  font-weight: 800;
-  cursor: pointer;
-  letter-spacing: 0.05em;
-  font-family: inherit;
-}
-
-.pb-view-all-btn:hover {
-  color: var(--pb-purple);
-}
-
-/* Unlock Card */
-.pb-unlock-card {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.pb-unlock-icon {
-  font-size: 2rem;
-}
-
-.pb-unlock-title {
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--pb-text);
-}
-
-.pb-unlock-desc {
-  font-size: 0.82rem;
-  color: var(--pb-text-muted);
-  line-height: 1.4;
-  margin-top: 2px;
-}
-
-.pb-unlock-progress {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 4px;
-}
-
-.pb-mini-progress-bar {
-  flex: 1;
-  height: 8px;
-  background: var(--pb-bg);
-  border-radius: 99px;
-  overflow: hidden;
-}
-
-.pb-mini-progress-fill {
-  height: 100%;
-  background: var(--pb-purple);
-  border-radius: 99px;
-  transition: width 0.4s ease;
-}
-
-.pb-progress-text {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-  white-space: nowrap;
-}
-
-/* Quest Items */
-.pb-quest-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--pb-border);
-  position: relative;
-}
-
-.pb-quest-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.pb-quest-icon {
-  font-size: 1.4rem;
-  width: 32px;
-  text-align: center;
-}
-
-.pb-quest-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.pb-quest-name {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--pb-text);
-  margin-bottom: 4px;
-}
-
-.pb-quest-progress-bar {
-  height: 7px;
-  background: var(--pb-bg);
-  border-radius: 99px;
-  overflow: hidden;
-  margin-bottom: 2px;
-}
-
-.pb-quest-progress-fill {
-  height: 100%;
-  background: var(--pb-green);
-  border-radius: 99px;
-  transition: width 0.5s ease;
-}
-
-.pb-quest-counts {
-  font-size: 0.72rem;
-  color: var(--pb-text-muted);
-  font-weight: 600;
-}
-
-.pb-quest-reward {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 36px;
-}
-
-.pb-quest-xp {
-  font-size: 0.9rem;
-  font-weight: 800;
-  color: var(--pb-gold);
-}
-
-.pb-quest-xp-label {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-}
-
-.pb-quest-complete {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background: var(--pb-green);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 800;
-}
-
-/* XP Goal */
-.pb-xp-chip {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--pb-gold);
-  background: rgba(255, 215, 0, 0.12);
-  padding: 4px 10px;
-  border-radius: 99px;
-}
-
-.pb-xp-progress-bar {
-  height: 14px;
-  background: var(--pb-bg);
-  border-radius: 99px;
-  overflow: hidden;
-  margin-bottom: 6px;
-}
-
-.pb-xp-progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--pb-purple), var(--pb-purple-light));
-  border-radius: 99px;
-  transition: width 0.5s ease;
-}
-
-.pb-xp-bar-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.72rem;
-  color: var(--pb-text-muted);
-  font-weight: 600;
-}
-</style>

@@ -1,19 +1,23 @@
 <template>
-  <div class="pb-auth-page">
-    <NuxtLink to="/" class="pb-auth-close">✕</NuxtLink>
-    <div class="pb-auth-card">
-      <div class="pb-auth-logo">
+  <div class="min-h-screen flex items-center justify-center bg-white px-6 relative">
+    <NuxtLink to="/" class="fixed top-5 left-5 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 border-2 border-gray-200 text-gray-800 font-bold z-10 hover:bg-gray-200 transition-colors">✕</NuxtLink>
+    <div class="w-full max-w-[480px] bg-white border-2 border-gray-200 rounded-3xl p-10 flex flex-col gap-6">
+      <div class="flex items-center justify-center gap-3">
         <PbMascot :width="64" :height="80" />
-        <h1 class="pb-auth-logo-text">pracby</h1>
+        <h1 class="text-3xl font-black text-primary">pracby</h1>
       </div>
 
       <!-- Step indicator -->
-      <div class="pb-steps">
+      <div class="flex justify-center gap-3">
         <div
           v-for="n in 3"
           :key="n"
-          class="pb-step"
-          :class="{ 'pb-step--active': step === n, 'pb-step--done': step > n }"
+          class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-bold"
+          :class="{
+            'border-primary text-primary': step === n,
+            'bg-primary border-primary text-white': step > n,
+            'border-gray-200 text-gray-400': step < n,
+          }"
         >
           <span v-if="step > n">✓</span>
           <span v-else>{{ n }}</span>
@@ -21,136 +25,146 @@
       </div>
 
       <!-- Step 1: Account info -->
-      <form v-if="step === 1" class="pb-auth-form" @submit.prevent="nextStep">
-        <h2 class="pb-auth-title">Hesap Oluştur</h2>
+      <form v-if="step === 1" class="flex flex-col gap-4" @submit.prevent="nextStep">
+        <h2 class="text-xl font-extrabold text-gray-800 text-center">Hesap Oluştur</h2>
 
-        <div class="pb-field">
-          <label class="pb-label">E-posta</label>
-          <div class="pb-input-wrap">
+        <div class="flex flex-col gap-1.5">
+          <label class="text-sm font-bold text-gray-400 uppercase tracking-wide">E-posta</label>
+          <div class="relative flex items-center">
             <input
               v-model="form.email"
               type="email"
-              class="pb-input"
-              :class="{ 'pb-input--error': fieldErrors.email, 'pb-input--ok': emailStatus === 'ok' }"
+              class="w-full bg-gray-50 border-2 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors"
+              :class="{
+                'border-negative': fieldErrors.email,
+                'border-positive': emailStatus === 'ok',
+                'border-gray-200 focus:border-primary': !fieldErrors.email && emailStatus !== 'ok',
+              }"
               placeholder="you@example.com"
               autocomplete="email"
               @blur="checkEmailAvailability"
             />
-            <span v-if="emailStatus === 'checking'" class="pb-input-addon">⏳</span>
-            <span v-else-if="emailStatus === 'ok'" class="pb-input-addon">✅</span>
+            <span v-if="emailStatus === 'checking'" class="absolute right-3 pointer-events-none">⏳</span>
+            <span v-else-if="emailStatus === 'ok'" class="absolute right-3 pointer-events-none">✅</span>
           </div>
-          <span v-if="fieldErrors.email" class="pb-field-error">
+          <span v-if="fieldErrors.email" class="text-xs font-semibold text-negative -mt-0.5">
             {{ fieldErrors.email }}
-            <NuxtLink v-if="fieldErrors.email.includes('kayıtlı')" to="/auth/login" class="pb-auth-link"> Giriş yapmak ister misiniz?</NuxtLink>
+            <NuxtLink v-if="fieldErrors.email.includes('kayıtlı')" to="/auth/login" class="text-primary underline"> Giriş yapmak ister misiniz?</NuxtLink>
           </span>
         </div>
 
-        <div class="pb-field">
-          <label class="pb-label">Kullanıcı Adı</label>
-          <div class="pb-input-wrap">
+        <div class="flex flex-col gap-1.5">
+          <label class="text-sm font-bold text-gray-400 uppercase tracking-wide">Kullanıcı Adı</label>
+          <div class="relative flex items-center">
             <input
               v-model="form.username"
               type="text"
-              class="pb-input"
-              :class="{ 'pb-input--error': fieldErrors.username, 'pb-input--ok': usernameStatus === 'ok' }"
+              class="w-full bg-gray-50 border-2 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors"
+              :class="{
+                'border-negative': fieldErrors.username,
+                'border-positive': usernameStatus === 'ok',
+                'border-gray-200 focus:border-primary': !fieldErrors.username && usernameStatus !== 'ok',
+              }"
               placeholder="kullanici_adi"
               maxlength="20"
               autocomplete="username"
               @input="onUsernameInput"
               @blur="checkUsernameAvailability"
             />
-            <span v-if="usernameStatus === 'checking'" class="pb-input-addon">⏳</span>
-            <span v-else-if="usernameStatus === 'ok'" class="pb-input-addon">✅</span>
+            <span v-if="usernameStatus === 'checking'" class="absolute right-3 pointer-events-none">⏳</span>
+            <span v-else-if="usernameStatus === 'ok'" class="absolute right-3 pointer-events-none">✅</span>
           </div>
-          <span v-if="fieldErrors.username" class="pb-field-error">{{ fieldErrors.username }}</span>
+          <span v-if="fieldErrors.username" class="text-xs font-semibold text-negative -mt-0.5">{{ fieldErrors.username }}</span>
         </div>
 
-        <div class="pb-field">
-          <label class="pb-label">Şifre</label>
-          <div class="pb-input-wrap">
+        <div class="flex flex-col gap-1.5">
+          <label class="text-sm font-bold text-gray-400 uppercase tracking-wide">Şifre</label>
+          <div class="relative flex items-center">
             <input
               v-model="form.password"
               :type="showPassword ? 'text' : 'password'"
-              class="pb-input pb-input-password"
-              :class="{ 'pb-input--ok': passwordOk }"
+              class="w-full bg-gray-50 border-2 rounded-xl px-4 py-3 pr-11 text-gray-800 text-base font-[inherit] outline-none transition-colors"
+              :class="passwordOk ? 'border-positive' : 'border-gray-200 focus:border-primary'"
               placeholder="En az 6 karakter"
               autocomplete="new-password"
               maxlength="64"
               @blur="onPasswordBlur"
             />
-            <button type="button" class="pb-eye-btn" tabindex="-1" @click="showPassword = !showPassword">
+            <button type="button" class="absolute right-2.5 bg-transparent border-0 cursor-pointer text-lg p-1 text-gray-400" tabindex="-1" @click="showPassword = !showPassword">
               {{ showPassword ? '🙈' : '👁️' }}
             </button>
           </div>
-          <span class="pb-password-hint" :class="{ 'pb-password-hint--ok': passwordOk }">
+          <span class="text-xs font-semibold -mt-0.5" :class="passwordOk ? 'text-positive' : 'text-gray-400'">
             <template v-if="form.password.length > 0">
               En az 6 karakter (Şu an: {{ form.password.length }}) <span v-if="passwordOk">✅</span>
             </template>
           </span>
         </div>
 
-        <p v-if="error" class="pb-auth-error">{{ error }}</p>
-        <button type="submit" class="pb-btn-primary" :disabled="!step1Valid">Devam →</button>
+        <p v-if="error" class="text-negative text-sm font-semibold text-center">{{ error }}</p>
+        <button type="submit" class="w-full bg-primary text-white font-black text-base py-3.5 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="!step1Valid">Devam →</button>
       </form>
 
       <!-- Step 2: Exam group -->
-      <div v-else-if="step === 2" class="pb-auth-form">
-        <h2 class="pb-auth-title">Hangi sınava çalışıyorsun?</h2>
-        <p class="pb-auth-subtitle">İleride birden fazla sınav ekleyebilirsin.</p>
+      <div v-else-if="step === 2" class="flex flex-col gap-4">
+        <h2 class="text-xl font-extrabold text-gray-800 text-center">Hangi sınava çalışıyorsun?</h2>
+        <p class="text-center text-sm text-gray-400 -mt-3">İleride birden fazla sınav ekleyebilirsin.</p>
 
-        <div v-if="loadingExams" class="pb-auth-loading">Yükleniyor…</div>
-        <div v-else-if="error" class="pb-auth-error">{{ error }}</div>
-        <div v-else class="pb-exam-grid">
+        <div v-if="loadingExams" class="text-center text-gray-400 py-5">Yükleniyor…</div>
+        <div v-else-if="error" class="text-center text-negative text-sm font-semibold">{{ error }}</div>
+        <div v-else class="flex flex-col gap-2.5">
           <button
             v-for="group in examGroups"
             :key="group.id"
             type="button"
-            class="pb-exam-card"
+            class="flex flex-col gap-1 px-4 py-3.5 rounded-2xl border-2 bg-gray-50 text-left cursor-pointer transition-all duration-150 relative font-[inherit]"
             :class="{
-              'pb-exam-card--selected': selectedGroupId === group.id,
-              'pb-exam-card--disabled': !group.is_active,
+              '!border-primary !bg-primary/10': selectedGroupId === group.id,
+              'border-gray-200 hover:border-primary/40': selectedGroupId !== group.id && group.is_active,
+              'opacity-40 cursor-not-allowed': !group.is_active,
             }"
             :disabled="!group.is_active"
             @click="selectGroup(group)"
           >
-            <span class="pb-exam-name">{{ group.name }}</span>
-            <span class="pb-exam-desc">{{ group.description }}</span>
-            <span v-if="!group.is_active" class="pb-exam-soon">Yakında</span>
+            <span class="text-base font-extrabold text-gray-800">{{ group.name }}</span>
+            <span class="text-xs text-gray-400 font-semibold">{{ group.description }}</span>
+            <span v-if="!group.is_active" class="absolute top-3 right-3 text-[0.68rem] font-bold text-warning bg-warning/10 px-2 py-0.5 rounded-full">Yakında</span>
           </button>
         </div>
-
-        <button class="pb-btn-primary" :disabled="!selectedGroupId" @click="step = 3">Devam →</button>
+        <button class="w-full bg-primary text-white font-black text-base py-3.5 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="!selectedGroupId" @click="step = 3">Devam →</button>
       </div>
 
       <!-- Step 3: Exam type -->
-      <div v-else-if="step === 3" class="pb-auth-form">
-        <h2 class="pb-auth-title">Hangi düzey?</h2>
+      <div v-else-if="step === 3" class="flex flex-col gap-4">
+        <h2 class="text-xl font-extrabold text-gray-800 text-center">Hangi düzey?</h2>
 
-        <div class="pb-exam-grid">
+        <div class="flex flex-col gap-2.5">
           <button
             v-for="type in selectedGroupTypes"
             :key="type.id"
             type="button"
-            class="pb-exam-card"
-            :class="{ 'pb-exam-card--selected': form.exam_type_id === type.id }"
+            class="flex flex-col gap-1 px-4 py-3.5 rounded-2xl border-2 bg-gray-50 text-left cursor-pointer transition-all duration-150 font-[inherit]"
+            :class="form.exam_type_id === type.id ? '!border-primary !bg-primary/10' : 'border-gray-200 hover:border-primary/40'"
             @click="form.exam_type_id = type.id"
           >
-            <span class="pb-exam-name">{{ type.name }}</span>
-            <span class="pb-exam-desc">{{ type.description }}</span>
+            <span class="text-base font-extrabold text-gray-800">{{ type.name }}</span>
+            <span class="text-xs text-gray-400 font-semibold">{{ type.description }}</span>
           </button>
         </div>
-
-        <p v-if="error" class="pb-auth-error">{{ error }}</p>
-        <button class="pb-btn-primary" :disabled="!form.exam_type_id || loading" @click="submit">
-          <span v-if="loading">Kayıt yapılıyor…</span>
-          <span v-else>Kayıt Ol</span>
-        </button>
-        <button type="button" class="pb-btn-ghost" @click="step = 2">← Geri</button>
+        <div v-if="availableTypes.length === 0" class="text-center text-gray-400 text-sm py-3">Bu gruptaki tüm sınavlara zaten kayıtlısın.</div>
+        <p v-if="error" class="text-negative text-sm font-semibold text-center">{{ error }}</p>
+        <div class="flex gap-2.5">
+          <button class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="step = 2">← Geri</button>
+          <button class="flex-1 bg-primary text-white font-black text-base py-3.5 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="!form.exam_type_id || loading" @click="submit">
+            <span v-if="loading">Kayıt yapılıyor…</span>
+            <span v-else>Kayıt Ol</span>
+          </button>
+        </div>
       </div>
 
-      <p class="pb-auth-switch">
+      <p class="text-center text-sm text-gray-400">
         Zaten hesabın var mı?
-        <NuxtLink to="/auth/login" class="pb-auth-link">Giriş Yap</NuxtLink>
+        <NuxtLink to="/auth/login" class="text-primary font-bold underline">Giriş Yap</NuxtLink>
       </p>
     </div>
   </div>
@@ -200,6 +214,8 @@ const selectedGroupTypes = computed(() => {
   const group = examGroups.value.find((g) => g.id === selectedGroupId.value);
   return group?.exam_types ?? [];
 });
+
+const availableTypes = computed(() => selectedGroupTypes.value);
 
 const passwordOk = computed(() => form.password.trim().length >= 6);
 const step1Valid = computed(
@@ -309,8 +325,6 @@ const submit = async () => {
   try {
     const { clearGuestState, getRegistrationPayload } = useGuestState();
     const guestPayload = getRegistrationPayload();
-
-    // Use guest exam_type_id if user hasn't selected one yet
     const examTypeId = form.exam_type_id || guestPayload.exam_type_id || '';
 
     const data = await $fetch<{ token: string }>('/api/auth/register', {
@@ -359,333 +373,3 @@ const submit = async () => {
   }
 };
 </script>
-
-<style scoped>
-.pb-auth-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--pb-bg);
-  padding: 24px;
-  position: relative;
-}
-
-.pb-auth-close {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  color: var(--pb-text);
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  z-index: 10;
-  transition: background 0.15s;
-}
-
-.pb-auth-close:hover {
-  background: var(--pb-border);
-}
-
-.pb-auth-card {
-  width: 100%;
-  max-width: 480px;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 20px;
-  padding: 40px 36px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.pb-auth-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.pb-auth-logo-text {
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--pb-purple-light);
-}
-
-.pb-steps {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.pb-step {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 2px solid var(--pb-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-}
-
-.pb-step--active {
-  border-color: var(--pb-purple-light);
-  color: var(--pb-purple-light);
-}
-
-.pb-step--done {
-  background: var(--pb-purple);
-  border-color: var(--pb-purple);
-  color: #fff;
-}
-
-.pb-auth-title {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--pb-text);
-  text-align: center;
-}
-
-.pb-auth-subtitle {
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--pb-text-muted);
-  margin-top: -12px;
-}
-
-.pb-auth-loading {
-  text-align: center;
-  color: var(--pb-text-muted);
-  padding: 20px 0;
-}
-
-.pb-auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.pb-field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.pb-label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.pb-input {
-  background: var(--pb-bg);
-  border: 2px solid var(--pb-border);
-  border-radius: 12px;
-  padding: 12px 16px;
-  color: var(--pb-text);
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.15s;
-  outline: none;
-}
-
-.pb-input:focus {
-  border-color: var(--pb-purple-light);
-}
-
-.pb-input--error {
-  border-color: var(--pb-red) !important;
-}
-
-.pb-input--ok {
-  border-color: var(--pb-green) !important;
-}
-
-.pb-input-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.pb-input-wrap .pb-input {
-  width: 100%;
-}
-
-.pb-input-addon {
-  position: absolute;
-  right: 12px;
-  font-size: 1rem;
-  pointer-events: none;
-  line-height: 1;
-}
-
-.pb-input-password {
-  padding-right: 44px;
-}
-
-.pb-eye-btn {
-  position: absolute;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  padding: 4px;
-  line-height: 1;
-  color: var(--pb-text-muted);
-}
-
-.pb-password-hint {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--pb-text-muted);
-  margin-top: -2px;
-}
-
-.pb-password-hint--ok {
-  color: var(--pb-green);
-}
-
-.pb-field-error {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--pb-red);
-  margin-top: -2px;
-}
-
-.pb-auth-error {
-  color: var(--pb-red);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.pb-exam-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.pb-exam-card {
-  background: var(--pb-bg);
-  border: 2px solid var(--pb-border);
-  border-radius: 14px;
-  padding: 16px 18px;
-  text-align: left;
-  cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  position: relative;
-}
-
-.pb-exam-card:hover:not(:disabled) {
-  border-color: var(--pb-purple-light);
-  background: var(--pb-bg-card-hover);
-}
-
-.pb-exam-card--selected {
-  border-color: var(--pb-purple) !important;
-  background: rgba(124, 58, 237, 0.12) !important;
-}
-
-.pb-exam-card--disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.pb-exam-name {
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--pb-text);
-}
-
-.pb-exam-desc {
-  font-size: 0.85rem;
-  color: var(--pb-text-muted);
-}
-
-.pb-exam-soon {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--pb-orange);
-  background: rgba(255, 150, 0, 0.15);
-  padding: 2px 8px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.pb-btn-primary {
-  background: var(--pb-purple);
-  color: #fff;
-  border: none;
-  border-radius: 14px;
-  padding: 14px;
-  font-size: 1rem;
-  font-weight: 800;
-  font-family: inherit;
-  cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
-}
-
-.pb-btn-primary:hover:not(:disabled) {
-  background: var(--pb-purple-light);
-}
-
-.pb-btn-primary:active:not(:disabled) {
-  transform: scale(0.98);
-}
-
-.pb-btn-primary:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.pb-btn-ghost {
-  background: transparent;
-  color: var(--pb-text-muted);
-  border: 2px solid var(--pb-border);
-  border-radius: 14px;
-  padding: 12px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  font-family: inherit;
-  cursor: pointer;
-  transition: border-color 0.15s, color 0.15s;
-}
-
-.pb-btn-ghost:hover {
-  border-color: var(--pb-text-muted);
-  color: var(--pb-text);
-}
-
-.pb-auth-switch {
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--pb-text-muted);
-}
-
-.pb-auth-link {
-  color: var(--pb-purple-light);
-  font-weight: 700;
-  text-decoration: underline;
-}
-</style>

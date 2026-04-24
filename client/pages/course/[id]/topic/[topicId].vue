@@ -1,60 +1,61 @@
 <template>
-  <div class="topic-summary">
-    <div v-if="loading" class="ts-loading">
-      <div class="ts-spinner" />
-      <p>Yükleniyor…</p>
+  <div class="flex flex-col gap-6 pb-10">
+    <div v-if="loading" class="flex flex-col items-center gap-3 py-16 text-gray-400">
+      <div class="w-8 h-8 border-3 border-gray-200 border-t-primary rounded-full animate-spin" />
+      <p class="font-bold">Yükleniyor…</p>
     </div>
 
     <template v-else-if="topic">
       <!-- Header -->
-      <div class="ts-header">
-        <button class="ts-back" @click="navigateTo('/')">← Geri</button>
-        <h1 class="ts-title">{{ topic.name }}</h1>
-        <div class="ts-progress-summary">
-          <span class="ts-progress-pct">%{{ overallPercent }}</span>
-          <div class="ts-progress-bar">
-            <div class="ts-progress-fill" :style="{ width: `${overallPercent}%` }" />
+      <div class="flex flex-col gap-3">
+        <button class="self-start bg-transparent border-0 text-primary text-sm font-bold cursor-pointer p-1 font-[inherit]" @click="navigateTo('/')">← Geri</button>
+        <h1 class="text-xl font-black text-gray-800">{{ topic.name }}</h1>
+        <div class="flex items-center gap-3">
+          <span class="text-lg font-black text-primary">%{{ overallPercent }}</span>
+          <div class="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden border-2 border-gray-200">
+            <div class="h-full bg-primary rounded-full transition-all duration-300" :style="{ width: `${overallPercent}%` }" />
           </div>
         </div>
       </div>
 
-      <!-- Steps list -->
-      <div class="ts-steps">
+      <!-- Steps -->
+      <div class="flex flex-col gap-3">
         <div
           v-for="(step, idx) in topic.steps.filter(s => s.step_type !== 'reward')"
           :key="step.id"
-          class="ts-step-card"
-          :class="{ 'ts-step-card--completed': step.progress?.is_step_completed }"
+          class="flex items-center gap-3.5 bg-white border-2 rounded-2xl px-4 py-4 transition-colors"
+          :class="step.progress?.is_step_completed ? 'border-positive' : 'border-gray-200'"
         >
-          <div class="ts-step-num">{{ idx + 1 }}</div>
-          <div class="ts-step-body">
-            <div class="ts-step-name">{{ step.name }}</div>
-            <div class="ts-step-meta">
-              <span>{{ step.tests.length }} test</span>
-              <span v-if="step.progress" class="ts-step-tests">
-                · {{ step.progress.tests_completed }} / {{ step.tests_required }} tamamlandı
-              </span>
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-extrabold shrink-0"
+            :class="step.progress?.is_step_completed ? 'bg-positive text-white' : 'bg-gray-200 text-gray-800'"
+          >{{ idx + 1 }}</div>
+          <div class="flex-1 min-w-0 flex flex-col gap-1">
+            <div class="text-sm font-extrabold text-gray-800">{{ step.name }}</div>
+            <div class="text-xs font-semibold text-gray-400">
+              {{ step.tests.length }} test
+              <span v-if="step.progress">· {{ step.progress.tests_completed }} / {{ step.tests_required }} tamamlandı</span>
             </div>
-            <div class="ts-step-bar">
+            <div class="h-1.5 bg-gray-100 rounded-full overflow-hidden mt-1">
               <div
-                class="ts-step-bar-fill"
+                class="h-full rounded-full transition-all duration-300"
+                :class="step.progress?.is_step_completed ? 'bg-positive' : 'bg-primary'"
                 :style="{ width: `${stepPercent(step)}%` }"
               />
             </div>
           </div>
-          <div class="ts-step-status">
-            <span v-if="step.progress?.is_step_completed" class="ts-check">✓</span>
-            <span v-else class="ts-step-pct">%{{ stepPercent(step) }}</span>
+          <div class="shrink-0">
+            <span v-if="step.progress?.is_step_completed" class="text-lg font-black text-positive">✓</span>
+            <span v-else class="text-sm font-extrabold text-gray-400">%{{ stepPercent(step) }}</span>
           </div>
         </div>
       </div>
 
-      <div v-if="topic.steps.length === 0" class="ts-empty">
+      <div v-if="topic.steps.length === 0" class="text-center py-16 text-gray-400 font-bold">
         Bu bölüm için henüz adım eklenmemiş.
       </div>
     </template>
 
-    <div v-else class="ts-empty">
+    <div v-else class="text-center py-16 text-gray-400 font-bold">
       Bölüm bulunamadı.
     </div>
   </div>
@@ -111,7 +112,6 @@ onMounted(async () => {
     const data = await $fetch<{ topics: Topic[] }>(`/api/courses/${courseId}/full`, { headers });
     const found = data.topics.find((t) => t.id === topicId);
 
-    // For guest users, overlay step progress from localStorage quiz results
     if (!token && found) {
       const { overlayGuestProgress } = useGuestState();
       overlayGuestProgress([found]);
@@ -127,7 +127,7 @@ onMounted(async () => {
 
 function stepPercent(step: Step): number {
   if (step.progress?.is_step_completed) return 100;
-  const total = step.tests_required + 1; // +1 for step final
+  const total = step.tests_required + 1;
   const done = step.progress?.tests_completed ?? 0;
   return total > 0 ? Math.round((done / total) * 100) : 0;
 }
@@ -140,195 +140,3 @@ const overallPercent = computed(() => {
   return Math.round((completed / steps.length) * 100);
 });
 </script>
-
-<style scoped>
-.topic-summary {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding-bottom: 40px;
-}
-
-.ts-loading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 60px 0;
-  color: var(--pb-text-muted);
-}
-
-.ts-spinner {
-  width: 32px;
-  height: 32px;
-  border: 3px solid var(--pb-border);
-  border-top-color: var(--pb-purple);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.ts-header {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.ts-back {
-  align-self: flex-start;
-  background: none;
-  border: none;
-  color: var(--pb-purple-light);
-  font-size: 0.9rem;
-  font-weight: 700;
-  cursor: pointer;
-  font-family: inherit;
-  padding: 6px 0;
-}
-
-.ts-back:hover {
-  color: var(--pb-purple);
-}
-
-.ts-title {
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: var(--pb-text);
-}
-
-.ts-progress-summary {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.ts-progress-pct {
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: var(--pb-purple-light);
-  min-width: 40px;
-}
-
-.ts-progress-bar {
-  flex: 1;
-  height: 10px;
-  background: var(--pb-bg-card);
-  border-radius: 99px;
-  border: 2px solid var(--pb-border);
-  overflow: hidden;
-}
-
-.ts-progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--pb-purple), var(--pb-purple-light));
-  border-radius: 99px;
-  transition: width 0.4s ease;
-}
-
-.ts-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.ts-step-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 16px;
-  padding: 16px 18px;
-  transition: border-color 0.15s;
-}
-
-.ts-step-card--completed {
-  border-color: var(--pb-green);
-}
-
-.ts-step-num {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--pb-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--pb-text);
-  flex-shrink: 0;
-}
-
-.ts-step-card--completed .ts-step-num {
-  background: var(--pb-green);
-  color: white;
-}
-
-.ts-step-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 0;
-}
-
-.ts-step-name {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--pb-text);
-}
-
-.ts-step-meta {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--pb-text-muted);
-  display: flex;
-  gap: 4px;
-}
-
-.ts-step-bar {
-  height: 6px;
-  background: var(--pb-border);
-  border-radius: 99px;
-  overflow: hidden;
-  margin-top: 4px;
-}
-
-.ts-step-bar-fill {
-  height: 100%;
-  background: var(--pb-purple);
-  border-radius: 99px;
-  transition: width 0.3s ease;
-}
-
-.ts-step-card--completed .ts-step-bar-fill {
-  background: var(--pb-green);
-}
-
-.ts-step-status {
-  flex-shrink: 0;
-}
-
-.ts-check {
-  font-size: 1.2rem;
-  font-weight: 900;
-  color: var(--pb-green);
-}
-
-.ts-step-pct {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--pb-text-muted);
-}
-
-.ts-empty {
-  text-align: center;
-  padding: 60px 0;
-  color: var(--pb-text-muted);
-  font-weight: 600;
-}
-</style>

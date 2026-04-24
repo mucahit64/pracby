@@ -1,44 +1,44 @@
 <template>
-  <div class="welcome-page">
-    <div class="welcome-card">
+  <div class="flex items-center justify-center min-h-[80vh] px-5">
+    <div class="flex flex-col items-center gap-4 max-w-[400px] w-full">
       <PbMascot :width="80" :height="100" />
-      <h1 class="welcome-title">pracby</h1>
-      <p class="welcome-sub">Hangi sınava hazırlanıyorsun?</p>
+      <h1 class="text-3xl font-black text-primary tracking-tight">pracby</h1>
+      <p class="text-lg font-bold text-gray-800 text-center">Hangi sınava hazırlanıyorsun?</p>
 
       <!-- Step 1: Select exam group -->
       <template v-if="!selectedGroupId">
-        <div class="welcome-options">
+        <div class="flex flex-col gap-3 w-full">
           <button
             v-for="group in examGroups"
             :key="group.id"
-            class="welcome-option"
+            class="flex flex-col items-center gap-1 px-5 py-4 bg-white border-2 border-gray-200 rounded-2xl cursor-pointer transition-all duration-150 hover:border-primary hover:bg-primary/5 font-[inherit]"
             @click="selectGroup(group.id)"
           >
-            <span class="welcome-option-name">{{ group.name }}</span>
-            <span v-if="group.description" class="welcome-option-desc">{{ group.description }}</span>
+            <span class="text-base font-extrabold text-gray-800">{{ group.name }}</span>
+            <span v-if="group.description" class="text-xs font-semibold text-gray-400">{{ group.description }}</span>
           </button>
         </div>
       </template>
 
       <!-- Step 2: Select exam type -->
       <template v-else>
-        <button class="welcome-back" @click="selectedGroupId = null">← Geri</button>
-        <p class="welcome-step-label">Alt kategori seç:</p>
-        <div class="welcome-options">
+        <button class="self-start bg-transparent border-0 text-primary text-sm font-bold cursor-pointer p-1 font-[inherit]" @click="selectedGroupId = null">← Geri</button>
+        <p class="text-sm font-bold text-gray-400">Alt kategori seç:</p>
+        <div class="flex flex-col gap-3 w-full">
           <button
             v-for="et in selectedGroupTypes"
             :key="et.id"
-            class="welcome-option"
+            class="flex flex-col items-center gap-1 px-5 py-4 bg-white border-2 border-gray-200 rounded-2xl cursor-pointer transition-all duration-150 hover:border-primary hover:bg-primary/5 font-[inherit]"
             @click="selectExamType(et.id)"
           >
-            <span class="welcome-option-name">{{ et.name }}</span>
+            <span class="text-base font-extrabold text-gray-800">{{ et.name }}</span>
           </button>
         </div>
       </template>
 
-      <div class="welcome-footer">
-        <span class="welcome-footer-text">Zaten hesabın var mı?</span>
-        <NuxtLink to="/auth/login" class="welcome-link">Giriş Yap</NuxtLink>
+      <div class="flex items-center gap-2 mt-4">
+        <span class="text-sm font-semibold text-gray-400">Zaten hesabın var mı?</span>
+        <NuxtLink to="/auth/login" class="text-sm font-extrabold text-primary hover:underline">Giriş Yap</NuxtLink>
       </div>
     </div>
   </div>
@@ -68,24 +68,19 @@ const selectedGroupTypes = computed(() => {
 });
 
 onMounted(async () => {
-  // If user is logged in, redirect to home
   if (localStorage.getItem('pb_token')) {
     navigateTo('/');
     return;
   }
-
   try {
     const data = await $fetch<ExamGroup[]>('/api/exam-groups');
     examGroups.value = data;
-  } catch {
-    // silently fail
-  }
+  } catch { /* silently fail */ }
 });
 
 function selectGroup(groupId: string) {
   const group = examGroups.value.find((g) => g.id === groupId);
   if (group && group.exam_types.length === 1) {
-    // Auto-select if only one type
     selectExamType(group.exam_types[0].id);
     return;
   }
@@ -98,115 +93,3 @@ function selectExamType(examTypeId: string) {
   navigateTo('/');
 }
 </script>
-
-<style scoped>
-.welcome-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  padding: 20px;
-}
-
-.welcome-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  max-width: 400px;
-  width: 100%;
-}
-
-.welcome-title {
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--pb-purple-light);
-  letter-spacing: -0.5px;
-}
-
-.welcome-sub {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--pb-text);
-  text-align: center;
-}
-
-.welcome-step-label {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--pb-text-muted);
-}
-
-.welcome-back {
-  align-self: flex-start;
-  background: none;
-  border: none;
-  color: var(--pb-purple-light);
-  font-size: 0.85rem;
-  font-weight: 700;
-  cursor: pointer;
-  font-family: inherit;
-  padding: 4px 0;
-}
-
-.welcome-options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-}
-
-.welcome-option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 18px 20px;
-  background: var(--pb-bg-card);
-  border: 2px solid var(--pb-border);
-  border-radius: 16px;
-  cursor: pointer;
-  font-family: inherit;
-  transition: border-color 0.15s, background 0.15s;
-  color: var(--pb-text);
-}
-
-.welcome-option:hover {
-  border-color: var(--pb-purple);
-  background: rgba(124, 58, 237, 0.1);
-}
-
-.welcome-option-name {
-  font-size: 1rem;
-  font-weight: 800;
-}
-
-.welcome-option-desc {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--pb-text-muted);
-}
-
-.welcome-footer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.welcome-footer-text {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--pb-text-muted);
-}
-
-.welcome-link {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--pb-purple-light);
-}
-
-.welcome-link:hover {
-  text-decoration: underline;
-}
-</style>
