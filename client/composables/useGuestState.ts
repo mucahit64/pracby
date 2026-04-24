@@ -11,24 +11,24 @@ interface GuestState {
   examGroupId: string | null;
   quizResults: GuestQuizResult[];
   acornBalance: number;
-  heartsCount: number;
-  heartsRefreshedAt: number | null;
+  energyCount: number;
+  energyRefreshedAt: number | null;
 }
 
 const STORAGE_KEY = 'guestState';
-const MAX_HEARTS = 5;
-const REGEN_INTERVAL_MS = 10 * 60 * 1000; // 10 minutes per heart
+const MAX_ENERGY = 25;
+const REGEN_INTERVAL_MS = 10 * 60 * 1000; // 10 minutes per energy
 
-function applyHeartRegen(state: GuestState): GuestState {
-  if (state.heartsCount >= MAX_HEARTS || !state.heartsRefreshedAt) return state;
-  const elapsed = Date.now() - state.heartsRefreshedAt;
-  const heartsToAdd = Math.floor(elapsed / REGEN_INTERVAL_MS);
-  if (heartsToAdd <= 0) return state;
-  const newHearts = Math.min(MAX_HEARTS, state.heartsCount + heartsToAdd);
-  const newRefreshedAt = newHearts >= MAX_HEARTS
+function applyEnergyRegen(state: GuestState): GuestState {
+  if (state.energyCount >= MAX_ENERGY || !state.energyRefreshedAt) return state;
+  const elapsed = Date.now() - state.energyRefreshedAt;
+  const energyToAdd = Math.floor(elapsed / REGEN_INTERVAL_MS);
+  if (energyToAdd <= 0) return state;
+  const newEnergy = Math.min(MAX_ENERGY, state.energyCount + energyToAdd);
+  const newRefreshedAt = newEnergy >= MAX_ENERGY
     ? null
-    : state.heartsRefreshedAt + heartsToAdd * REGEN_INTERVAL_MS;
-  return { ...state, heartsCount: newHearts, heartsRefreshedAt: newRefreshedAt };
+    : state.energyRefreshedAt + energyToAdd * REGEN_INTERVAL_MS;
+  return { ...state, energyCount: newEnergy, energyRefreshedAt: newRefreshedAt };
 }
 
 function loadState(): GuestState {
@@ -39,10 +39,10 @@ function loadState(): GuestState {
       const state: GuestState = {
         ...parsed,
         acornBalance: parsed.acornBalance ?? 500,
-        heartsCount: parsed.heartsCount ?? 5,
-        heartsRefreshedAt: parsed.heartsRefreshedAt ?? null,
+        energyCount: parsed.energyCount ?? 25,
+        energyRefreshedAt: parsed.energyRefreshedAt ?? null,
       };
-      return applyHeartRegen(state);
+      return applyEnergyRegen(state);
     }
   } catch { /* ignore */ }
   return {
@@ -50,8 +50,8 @@ function loadState(): GuestState {
     examGroupId: localStorage.getItem('guestExamGroupId'),
     quizResults: [],
     acornBalance: 500,
-    heartsCount: 5,
-    heartsRefreshedAt: null,
+    energyCount: 25,
+    energyRefreshedAt: null,
   };
 }
 
@@ -79,34 +79,34 @@ export function useGuestState() {
     saveState(state.value);
   }
 
-  function setHearts(count: number) {
-    const clamped = Math.max(0, Math.min(MAX_HEARTS, count));
-    const wasAtMax = state.value.heartsCount >= MAX_HEARTS;
-    const nowAtMax = clamped >= MAX_HEARTS;
+  function setEnergy(count: number) {
+    const clamped = Math.max(0, Math.min(MAX_ENERGY, count));
+    const wasAtMax = state.value.energyCount >= MAX_ENERGY;
+    const nowAtMax = clamped >= MAX_ENERGY;
 
     if (nowAtMax) {
-      state.value.heartsRefreshedAt = null;
+      state.value.energyRefreshedAt = null;
     } else if (wasAtMax && !nowAtMax) {
-      // Hearts just dropped below max — start the regen timer
-      state.value.heartsRefreshedAt = Date.now();
-    } else if (!state.value.heartsRefreshedAt) {
-      // Hearts were already below max but no timer set (e.g. first load after losing hearts)
-      state.value.heartsRefreshedAt = Date.now();
+      // Energy just dropped below max — start the regen timer
+      state.value.energyRefreshedAt = Date.now();
+    } else if (!state.value.energyRefreshedAt) {
+      // Energy was already below max but no timer set
+      state.value.energyRefreshedAt = Date.now();
     }
 
-    state.value.heartsCount = clamped;
+    state.value.energyCount = clamped;
     saveState(state.value);
   }
 
-  function getNextHeartAt(): Date | null {
-    if (state.value.heartsCount >= MAX_HEARTS || !state.value.heartsRefreshedAt) return null;
-    return new Date(state.value.heartsRefreshedAt + REGEN_INTERVAL_MS);
+  function getNextEnergyAt(): Date | null {
+    if (state.value.energyCount >= MAX_ENERGY || !state.value.energyRefreshedAt) return null;
+    return new Date(state.value.energyRefreshedAt + REGEN_INTERVAL_MS);
   }
 
-  function refreshHearts() {
-    const updated = applyHeartRegen(state.value);
-    state.value.heartsCount = updated.heartsCount;
-    state.value.heartsRefreshedAt = updated.heartsRefreshedAt;
+  function refreshEnergy() {
+    const updated = applyEnergyRegen(state.value);
+    state.value.energyCount = updated.energyCount;
+    state.value.energyRefreshedAt = updated.energyRefreshedAt;
     saveState(state.value);
   }
 
@@ -148,7 +148,7 @@ export function useGuestState() {
     return {
       exam_type_id: state.value.examTypeId,
       acorn_balance: state.value.acornBalance,
-      hearts: state.value.heartsCount,
+      energy: state.value.energyCount,
       guest_data: {
         quiz_results: state.value.quizResults,
       },
@@ -159,7 +159,7 @@ export function useGuestState() {
     localStorage.removeItem(STORAGE_KEY);
     localStorage.removeItem('guestExamTypeId');
     localStorage.removeItem('guestExamGroupId');
-    state.value = { examTypeId: null, examGroupId: null, quizResults: [], acornBalance: 500, heartsCount: 5, heartsRefreshedAt: null };
+    state.value = { examTypeId: null, examGroupId: null, quizResults: [], acornBalance: 500, energyCount: 25, energyRefreshedAt: null };
   }
 
   const isGuest = computed(() => !localStorage.getItem('pb_token'));
@@ -171,9 +171,9 @@ export function useGuestState() {
     overlayGuestProgress,
     spendAcorns,
     gainAcorns,
-    setHearts,
-    getNextHeartAt,
-    refreshHearts,
+    setEnergy,
+    getNextEnergyAt,
+    refreshEnergy,
     getRegistrationPayload,
     clearGuestState,
   };

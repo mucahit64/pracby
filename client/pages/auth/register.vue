@@ -3,7 +3,6 @@
     <NuxtLink to="/" class="fixed top-5 left-5 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 border-2 border-gray-200 text-gray-800 font-bold z-10 hover:bg-gray-200 transition-colors">✕</NuxtLink>
     <div class="w-full max-w-[480px] bg-white border-2 border-gray-200 rounded-3xl p-10 flex flex-col gap-6">
       <div class="flex items-center justify-center gap-3">
-        <PbMascot :width="64" :height="80" />
         <h1 class="text-3xl font-black text-primary">pracby</h1>
       </div>
 
@@ -334,7 +333,7 @@ const submit = async () => {
         exam_type_id: examTypeId,
         password: form.password.trim(),
         acorn_balance: guestPayload.acorn_balance,
-        hearts: guestPayload.hearts,
+        energy: guestPayload.energy,
         guest_data: guestPayload.guest_data,
       },
     });

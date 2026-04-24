@@ -1,7 +1,7 @@
 import db from "../../db/knex";
 import { AppError } from "../../middleware/error";
 import type { PurchaseInput } from "./store.schema";
-import { regenerateHearts } from "../user/user.service";
+import { regenerateEnergy } from "../user/user.service";
 
 export const getItems = async () => {
   return db("store_items").where({ is_active: true }).orderBy("price_acorn", "asc");
@@ -27,26 +27,26 @@ export const purchase = async (userId: string, input: PurchaseInput) => {
 
   const totalCost = item.price_acorn * input.quantity;
 
-  const user = await db("users").where({ id: userId }).select("acorn_balance", "hearts").first();
+  const user = await db("users").where({ id: userId }).select("acorn_balance", "energy").first();
   if (!user) throw new AppError(404, "User not found");
   if (user.acorn_balance < totalCost) {
     throw new AppError(400, "Insufficient acorn balance");
   }
 
-  // Heart refill: instant apply, no inventory
-  if (item.item_type === "heart_refill") {
-    await regenerateHearts(userId);
-    const freshUser = await db("users").where({ id: userId }).select("hearts").first();
-    const currentHearts = freshUser?.hearts ?? 0;
+  // Energy refill: instant apply, no inventory
+  if (item.item_type === "energy_refill") {
+    await regenerateEnergy(userId);
+    const freshUser = await db("users").where({ id: userId }).select("energy").first();
+    const currentEnergy = freshUser?.energy ?? 0;
     const metadata = typeof item.metadata === "string" ? JSON.parse(item.metadata) : (item.metadata ?? {});
-    const heartCount = (metadata.heart_count ?? 1) * input.quantity;
-    const newHearts = Math.min(5, currentHearts + heartCount);
+    const energyCount = (metadata.energy_count ?? 1) * input.quantity;
+    const newEnergy = Math.min(25, currentEnergy + energyCount);
 
     return db.transaction(async (trx) => {
       await trx("users").where({ id: userId }).update({
         acorn_balance: db.raw("acorn_balance - ?", [totalCost]),
-        hearts: newHearts,
-        ...(newHearts >= 5 ? { hearts_refreshed_at: new Date() } : {}),
+        energy: newEnergy,
+        ...(newEnergy >= 25 ? { energy_refreshed_at: new Date() } : {}),
       });
 
       await trx("acorn_transactions").insert({
@@ -56,7 +56,7 @@ export const purchase = async (userId: string, input: PurchaseInput) => {
         reference_id: item.id,
       });
 
-      return { balance: user.acorn_balance - totalCost, spent: totalCost, item: item.name, hearts: newHearts };
+      return { balance: user.acorn_balance - totalCost, spent: totalCost, item: item.name, energy: newEnergy };
     });
   }
 

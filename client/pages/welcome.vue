@@ -1,7 +1,6 @@
 <template>
   <div class="flex items-center justify-center min-h-[80vh] px-5">
     <div class="flex flex-col items-center gap-4 max-w-[400px] w-full">
-      <PbMascot :width="80" :height="100" />
       <h1 class="text-3xl font-black text-primary tracking-tight">pracby</h1>
       <p class="text-lg font-bold text-gray-800 text-center">Hangi sınava hazırlanıyorsun?</p>
 

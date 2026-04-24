@@ -1,15 +1,87 @@
 <template>
   <!-- Mobile top bar -->
-  <header v-if="isMobile" class="sticky top-0 z-50 flex justify-end bg-white border-b-2 border-gray-200 px-5 py-3">
-    <div class="flex items-center gap-5">
-      <span class="text-base font-extrabold text-gray-800">🔥 {{ streakCount }}</span>
-      <span class="text-base font-extrabold text-gray-800">🌰 {{ acornBalance }}</span>
-      <span class="text-base font-extrabold text-gray-800">
-        ❤️ {{ heartsCount }}
-        <span v-if="heartCountdown" class="ml-1 text-xs font-bold text-white bg-negative px-1.5 py-0.5 rounded-full tabular-nums tracking-wide">{{ heartCountdown }}</span>
-      </span>
+<header v-if="isMobile" class="sticky top-0 z-50 bg-white border-b-2 border-gray-200 px-5 py-3">
+  <div v-if="activeMobileTooltip" class="fixed inset-0 z-[499]" @click="closeMobileTooltip" />
+
+  <div class="flex items-center justify-center gap-6">
+    <!-- Streak -->
+    <div class="relative">
+      <button class="flex items-center gap-1 text-base font-extrabold text-gray-800 cursor-pointer bg-transparent border-0 font-[inherit] p-1" @click="toggleMobileTooltip('streak')">
+        🔥 {{ streakCount }}
+      </button>
+      <div v-if="activeMobileTooltip === 'streak'" class="absolute top-full mt-2 left-0 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5 shadow-lg">
+        <div class="absolute -top-[8px] left-8 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]" />
+        <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest">Bu Haftaki Serin</div>
+        <div v-if="mobileStreakHistory.length" class="flex justify-between gap-0.5">
+          <div v-for="day in mobileStreakHistory" :key="day.date" class="flex flex-col items-center gap-1 flex-1">
+            <div class="w-5 h-5 rounded-full" :class="{ 'bg-positive': day.done && !day.isToday, 'bg-primary ring-2 ring-primary/40': day.isToday, 'bg-gray-200': !day.done && !day.isToday }" />
+            <span class="text-[0.6rem] font-bold text-gray-400">{{ day.label }}</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span>🔥</span>
+          <span class="text-xl font-black text-gray-800">{{ streakCount }}</span>
+          <span class="text-sm font-semibold text-gray-400">günlük seri</span>
+        </div>
+      </div>
     </div>
-  </header>
+
+    <!-- Acorns -->
+    <div class="relative">
+      <button class="flex items-center gap-1 text-base font-extrabold text-gray-800 cursor-pointer bg-transparent border-0 font-[inherit] p-1" @click="toggleMobileTooltip('acorns')">
+        🌰 {{ acornBalance }}
+      </button>
+      <div v-if="activeMobileTooltip === 'acorns'" class="absolute top-full mt-2 left-1/2 -translate-x-1/2 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5 shadow-lg">
+        <div class="absolute -top-[8px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]" />
+        <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest">Palamutların</div>
+        <div class="flex items-center gap-2">
+          <span class="text-3xl">🌰</span>
+          <span class="text-xl font-black text-gray-800">{{ acornBalance }}</span>
+        </div>
+        <p class="text-xs text-gray-400 font-semibold leading-relaxed">Doğru cevap = 1 🌰</p>
+        <p class="text-xs text-gray-400 font-semibold leading-relaxed">Palamutlarınla mağazadan ürün al!</p>
+        <NuxtLink to="/store" class="w-full bg-primary text-white font-extrabold text-sm py-2.5 rounded-xl border-b-[3px] border-primary-dark text-center block" @click="closeMobileTooltip">Mağazaya Git →</NuxtLink>
+      </div>
+    </div>
+
+    <!-- Energy -->
+    <div class="relative">
+      <button class="flex items-center gap-1 text-base font-extrabold text-gray-800 cursor-pointer bg-transparent border-0 font-[inherit] p-1" @click="toggleMobileTooltip('energy')">
+        <template v-if="unlimitedEnergy">♾️🔋</template>
+        <template v-else>
+          🔋 {{ energyCount }}
+          <span v-if="energyCountdown" class="ml-1 text-xs font-bold text-white bg-negative px-1.5 py-0.5 rounded-full tabular-nums tracking-wide">{{ energyCountdown }}</span>
+        </template>
+      </button>
+      <div v-if="activeMobileTooltip === 'energy'" class="absolute top-full mt-2 right-0 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5 shadow-lg">
+        <div class="absolute -top-[8px] right-8 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]" />
+        <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest">Enerjin</div>
+        <template v-if="unlimitedEnergy">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">♾️🔋</span>
+          </div>
+          <div class="text-sm font-bold text-positive text-center">Sınırsız enerji aktif!</div>
+        </template>
+        <template v-else>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🔋</span>
+            <span class="text-2xl font-black text-gray-800">{{ energyCount }}</span>
+            <span class="text-sm font-semibold text-gray-400">/ 25</span>
+          </div>
+          <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div class="h-full bg-primary rounded-full transition-all duration-300" :style="{ width: `${(energyCount / 25) * 100}%` }" />
+          </div>
+          <div v-if="energyCountdown" class="flex items-center gap-2 bg-negative/10 rounded-xl px-2.5 py-2">
+            <span class="text-xs font-bold text-gray-400">Sonraki enerji</span>
+            <span class="text-xs font-extrabold text-negative tabular-nums tracking-wide">⏱ {{ energyCountdown }}</span>
+          </div>
+          <div v-else-if="energyCount >= 25" class="text-sm font-bold text-positive text-center">Enerjin dolu! 🎉</div>
+          <NuxtLink to="/store" class="w-full bg-primary text-white font-extrabold text-sm py-2.5 rounded-xl border-b-[3px] border-primary-dark text-center block" @click="closeMobileTooltip">Enerji Satın Al →</NuxtLink>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
 
   <div class="max-w-7xl mx-auto flex min-h-screen bg-white">
     <!-- Left Sidebar -->
@@ -25,11 +97,11 @@
           v-for="item in navItems"
           :key="item.to"
           :to="item.to"
-          class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-bold text-gray-400 uppercase tracking-wide border-2 border-transparent transition-all duration-150 hover:bg-gray-100 hover:text-gray-800"
+          class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-bold text-gray-600 uppercase tracking-wide border-2 border-transparent transition-all duration-150 hover:bg-gray-100 hover:text-gray-800"
           :class="{ '!bg-primary/10 !text-primary !border-primary/30': isActiveRoute(item) }"
         >
           <span class="text-xl w-7 text-center">{{ item.emoji }}</span>
-          <span class="text-xs tracking-widest">{{ item.label }}</span>
+          <span class="text-sm tracking-widest">{{ item.label }}</span>
         </NuxtLink>
       </nav>
 
@@ -56,7 +128,7 @@
       </main>
 
       <!-- Right panel (hidden on quiz pages and mobile) -->
-      <aside v-if="showRightPanel && !isMobile" class="w-80 min-w-[320px] shrink-0 overflow-y-auto sticky top-0 h-screen pl-6 py-6">
+      <aside v-if="showRightPanel && !isMobile" class="w-80 min-w-[320px] shrink-0 overflow-y-auto sticky top-0 h-screen pl-6">
         <PbRightPanel />
       </aside>
     </div>
@@ -81,7 +153,7 @@
         v-for="item in navItems"
         :key="item.to"
         :to="item.to"
-        class="flex flex-col items-center gap-0.5 px-5 py-1.5 text-[0.72rem] font-bold text-gray-400 uppercase tracking-wide"
+        class="flex flex-col items-center gap-0.5 px-5 py-1.5 text-[0.72rem] font-bold text-gray-600 uppercase tracking-wide"
         :class="{ '!text-primary': isActiveRoute(item) }"
       >
         <span class="text-xl">{{ item.emoji }}</span>
@@ -116,18 +188,18 @@ onMounted(async () => {
 
   const token = localStorage.getItem('pb_token');
   if (!token) {
-    const { state: gs, getNextHeartAt, refreshHearts } = useGuestState();
-    refreshHearts();
+    const { state: gs, getNextEnergyAt, refreshEnergy } = useGuestState();
+    refreshEnergy();
     setAcornBalance(gs.value.acornBalance);
-    heartsCount.value = gs.value.heartsCount;
-    nextHeartAt.value = getNextHeartAt()?.toISOString() ?? null;
-    startGuestHeartCountdown();
+    energyCount.value = gs.value.energyCount;
+    nextEnergyAt.value = getNextEnergyAt()?.toISOString() ?? null;
+    startGuestEnergyCountdown();
     return;
   }
 
   try {
-    const [user, userStats, enrollmentList] = await Promise.all([
-      $fetch<{ acorn_balance?: number; hearts?: number; next_heart_at?: string | null; active_exam_type_id?: string }>('/api/users/me', {
+    const [user, userStats, enrollmentList, streakHist, effects] = await Promise.all([
+      $fetch<{ acorn_balance?: number; energy?: number; next_energy_at?: string | null; active_exam_type_id?: string }>('/api/users/me', {
         headers: { Authorization: `Bearer ${token}` },
       }),
       $fetch<{ streak?: number }>('/api/users/me/stats', {
@@ -136,14 +208,22 @@ onMounted(async () => {
       $fetch<{ exam_type_id: string; exam_type_name: string; exam_group_name: string }[]>('/api/users/me/enrollments', {
         headers: { Authorization: `Bearer ${token}` },
       }),
+      $fetch<StreakDay[]>('/api/users/me/streak-history', {
+        headers: { Authorization: `Bearer ${token}` },
+      }).catch(() => [] as StreakDay[]),
+      $fetch<{ item_type: string; expires_at: string }[]>('/api/store/effects', {
+        headers: { Authorization: `Bearer ${token}` },
+      }).catch(() => [] as { item_type: string; expires_at: string }[]),
     ]);
     setAcornBalance(user.acorn_balance ?? 0);
-    heartsCount.value = user.hearts ?? 5;
+    energyCount.value = user.energy ?? 25;
     streakCount.value = userStats.streak ?? 0;
-    nextHeartAt.value = user.next_heart_at ?? null;
+    nextEnergyAt.value = user.next_energy_at ?? null;
     activeExamTypeId.value = user.active_exam_type_id ?? '';
     enrollments.value = enrollmentList;
-    startHeartCountdown(token);
+    mobileStreakHistory.value = streakHist;
+    unlimitedEnergy.value = effects.some(e => e.item_type === 'unlimited_energy');
+    startEnergyCountdown(token);
   } catch { /* skip */ }
 });
 
@@ -151,60 +231,61 @@ const isMobile = computed(() => screen.value.lt.md);
 
 const { acornBalance, setAcornBalance } = useAcornBalance();
 const streakCount = ref(0);
-const heartsCount = useState('userHearts', () => 5);
-const heartCountdown = useState('heartCountdown', () => '');
-const nextHeartAt = ref<string | null>(null);
-let heartTimer: ReturnType<typeof setInterval> | null = null;
+const energyCount = useState('userEnergy', () => 25);
+const energyCountdown = useState('energyCountdown', () => '');
+const unlimitedEnergy = useState('unlimitedEnergy', () => false);
+const nextEnergyAt = ref<string | null>(null);
+let energyTimer: ReturnType<typeof setInterval> | null = null;
 
-function startHeartCountdown(token: string) {
-  if (heartTimer) clearInterval(heartTimer);
-  heartTimer = setInterval(async () => {
-    if (!nextHeartAt.value || heartsCount.value >= 5) {
-      heartCountdown.value = '';
+function startEnergyCountdown(token: string) {
+  if (energyTimer) clearInterval(energyTimer);
+  energyTimer = setInterval(async () => {
+    if (!nextEnergyAt.value || energyCount.value >= 25) {
+      energyCountdown.value = '';
       return;
     }
-    const diff = new Date(nextHeartAt.value).getTime() - Date.now();
+    const diff = new Date(nextEnergyAt.value).getTime() - Date.now();
     if (diff <= 0) {
-      heartCountdown.value = '';
+      energyCountdown.value = '';
       try {
-        const user = await $fetch<{ hearts?: number; next_heart_at?: string | null }>('/api/users/me', {
+        const user = await $fetch<{ energy?: number; next_energy_at?: string | null }>('/api/users/me', {
           headers: { Authorization: `Bearer ${token}` },
         });
-        heartsCount.value = user.hearts ?? heartsCount.value;
-        nextHeartAt.value = user.next_heart_at ?? null;
+        energyCount.value = user.energy ?? energyCount.value;
+        nextEnergyAt.value = user.next_energy_at ?? null;
       } catch { /* skip */ }
       return;
     }
     const mins = Math.floor(diff / 60000);
     const secs = Math.floor((diff % 60000) / 1000);
-    heartCountdown.value = `${mins}:${String(secs).padStart(2, '0')}`;
+    energyCountdown.value = `${mins}:${String(secs).padStart(2, '0')}`;
   }, 1000);
 }
 
-function startGuestHeartCountdown() {
-  if (heartTimer) clearInterval(heartTimer);
-  heartTimer = setInterval(() => {
-    if (!nextHeartAt.value || heartsCount.value >= 5) {
-      heartCountdown.value = '';
+function startGuestEnergyCountdown() {
+  if (energyTimer) clearInterval(energyTimer);
+  energyTimer = setInterval(() => {
+    if (!nextEnergyAt.value || energyCount.value >= 25) {
+      energyCountdown.value = '';
       return;
     }
-    const diff = new Date(nextHeartAt.value).getTime() - Date.now();
+    const diff = new Date(nextEnergyAt.value).getTime() - Date.now();
     if (diff <= 0) {
-      heartCountdown.value = '';
-      const { state: gs, getNextHeartAt, refreshHearts } = useGuestState();
-      refreshHearts();
-      heartsCount.value = gs.value.heartsCount;
-      nextHeartAt.value = getNextHeartAt()?.toISOString() ?? null;
+      energyCountdown.value = '';
+      const { state: gs, getNextEnergyAt, refreshEnergy } = useGuestState();
+      refreshEnergy();
+      energyCount.value = gs.value.energyCount;
+      nextEnergyAt.value = getNextEnergyAt()?.toISOString() ?? null;
       return;
     }
     const mins = Math.floor(diff / 60000);
     const secs = Math.floor((diff % 60000) / 1000);
-    heartCountdown.value = `${mins}:${String(secs).padStart(2, '0')}`;
+    energyCountdown.value = `${mins}:${String(secs).padStart(2, '0')}`;
   }, 1000);
 }
 
 onUnmounted(() => {
-  if (heartTimer) clearInterval(heartTimer);
+  if (energyTimer) clearInterval(energyTimer);
 });
 
 const navItems = computed(() => [
@@ -222,6 +303,18 @@ interface Enrollment {
 
 const enrollments = ref<Enrollment[]>([]);
 const activeExamTypeId = ref('');
+
+type MobileTooltip = 'streak' | 'acorns' | 'energy';
+const activeMobileTooltip = ref<MobileTooltip | null>(null);
+interface StreakDay { label: string; date: string; done: boolean; isToday: boolean }
+const mobileStreakHistory = ref<StreakDay[]>([]);
+
+function toggleMobileTooltip(name: MobileTooltip) {
+  activeMobileTooltip.value = activeMobileTooltip.value === name ? null : name;
+}
+function closeMobileTooltip() {
+  activeMobileTooltip.value = null;
+}
 
 async function switchExam(examTypeId: string) {
   if (examTypeId === activeExamTypeId.value) return;

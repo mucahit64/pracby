@@ -22,7 +22,10 @@
             <div class="h-full bg-primary rounded-full transition-all duration-300" :style="{ width: `${(answeredCount / questions.length) * 100}%` }" />
           </div>
         </div>
-        <span class="text-sm font-extrabold text-negative shrink-0">❤️ {{ hearts }}</span>
+        <template v-if="unlimitedEnergy">
+          <span class="text-sm font-extrabold text-positive shrink-0">♾️🔋</span>
+        </template>
+        <span v-else class="text-sm font-extrabold text-negative shrink-0">🔋 {{ energy }}</span>
       </div>
 
       <!-- Question body -->
@@ -89,11 +92,17 @@
                 @click="toggleFillWord(word)"
               >{{ word }}</button>
             </div>
-            <button
-              v-if="!answered && selectedFillWord"
-              class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all cursor-pointer"
-              @click="answerFillBlankChip"
-            >KONTROL ET</button>
+<button
+  v-if="!answered"
+  :disabled="!selectedFillWord"
+  class="w-full font-black text-sm py-3 rounded-xl border-b-4 transition-all duration-150"
+  :class="selectedFillWord
+    ? 'bg-primary text-white border-primary-dark cursor-pointer active:border-b-0 active:translate-y-1 hover:brightness-110'
+    : 'bg-gray-200 text-gray-400 border-gray-300 cursor-not-allowed'"
+  @click="answerFillBlankChip"
+>
+  KONTROL ET
+</button>
           </div>
           <!-- Text input mode -->
           <div v-else class="flex flex-col gap-3">
@@ -242,12 +251,12 @@
     <!-- Quiz finished -->
     <template v-else-if="finished">
       <div class="flex flex-col items-center gap-5 py-10">
-        <div :class="{ 'animate-bounce': isBossSession && stepCompleted }">
-          <PbMascot :width="120" :height="150" />
+        <div :class="{ 'animate-bounce': isBossSession && stepCompleted }" class="text-[80px] leading-none">
+          {{ energyDepleted ? '🔋' : (isBossSession && stepCompleted ? '⚔️' : '🎊') }}
         </div>
 
-        <h1 class="text-2xl font-black text-gray-800 text-center">{{ heartsDepleted ? 'Canların Bitti! 💔' : (isBossSession && stepCompleted ? '⚔️ Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
-        <p class="text-sm font-semibold text-gray-400 text-center">{{ heartsDepleted ? 'Kalplerin tükendi, test sonlandırıldı.' : (isBossSession ? 'Adım finali tamamlandı!' : 'Quiz tamamlandı!') }}</p>
+        <h1 class="text-2xl font-black text-gray-800 text-center">{{ energyDepleted ? 'Enerjin Bitti! 🔋' : (isBossSession && stepCompleted ? '⚔️ Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
+        <p class="text-sm font-semibold text-gray-400 text-center">{{ energyDepleted ? 'Enerjin tükendi, test sonlandırıldı.' : (isBossSession ? 'Adım finali tamamlandı!' : 'Quiz tamamlandı!') }}</p>
 
         <!-- Stats grid -->
         <div class="grid grid-cols-4 gap-3 w-full max-w-[420px]">
@@ -289,15 +298,15 @@
     </template>
 
     <!-- Dialogs -->
-    <DialogsHeartsEmptyDialog
-      :visible="heartsEmptyDialog"
-      :packages="heartPackages"
+    <DialogsEnergyEmptyDialog
+      :visible="energyEmptyDialog"
+      :packages="energyPackages"
       :acorn-balance="acornBalanceForDialog"
-      :purchasing-id="purchasingHeart"
+      :purchasing-id="purchasingEnergy"
       :loading="loadingPackages"
       :error="purchaseError"
-      @buy="buyHeartInDialog"
-      @decline="declineHeartPurchase"
+      @buy="buyEnergyInDialog"
+      @decline="declineEnergyPurchase"
     />
 
     <DialogsExitWarningDialog
@@ -314,14 +323,14 @@ definePageMeta({ layout: false });
 const route = useRoute();
 const router = useRouter();
 
-interface HeartPackage {
+interface EnergyPackage {
   id: string;
   name: string;
   description: string;
   icon_url: string;
   price_acorn: number;
   item_type: string;
-  metadata?: { heart_count?: number };
+  metadata?: { energy_count?: number };
 }
 
 interface Answer {
@@ -357,8 +366,9 @@ const currentIndex = ref(0);
 const answered = ref(false);
 const finished = ref(false);
 const correctCount = ref(0);
-const hearts = useState('userHearts', () => 5);
-const heartsDepleted = ref(false);
+const energy = useState('userEnergy', () => 25);
+const unlimitedEnergy = useState('unlimitedEnergy', () => false);
+const energyDepleted = ref(false);
 const xpEarned = ref(0);
 const acornEarned = ref(0);
 const lastAnswerCorrect = ref(false);
@@ -372,11 +382,11 @@ const guestTestId = ref('');
 
 const isBossSession = computed(() => route.query.sessionType === 'step_final');
 
-const heartsEmptyDialog = ref(false);
+const energyEmptyDialog = ref(false);
 const exitWarningDialog = ref(false);
-const heartPackages = ref<HeartPackage[]>([]);
+const energyPackages = ref<EnergyPackage[]>([]);
 const acornBalanceForDialog = ref(0);
-const purchasingHeart = ref<string | null>(null);
+const purchasingEnergy = ref<string | null>(null);
 const loadingPackages = ref(false);
 const purchaseError = ref('');
 
@@ -437,9 +447,13 @@ function getMcOptionClass(answerId: string) {
   if (!answered.value) {
     return answerId === selectedAnswerId.value ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-primary/40';
   }
+  // Selected answer: green if correct, red if wrong (works in both auth and guest mode)
+  if (answerId === selectedAnswerId.value) {
+    return lastAnswerCorrect.value ? 'border-positive bg-positive/10' : 'border-negative bg-negative/10';
+  }
+  // Guest mode: also highlight the correct answer that wasn't selected
   const correct = currentAnswers.value.find((a) => a.is_correct);
-  if (answerId === correct?.id) return 'border-positive bg-positive/10';
-  if (answerId === selectedAnswerId.value) return 'border-negative bg-negative/10';
+  if (correct && answerId === correct.id) return 'border-positive bg-positive/10';
   return 'border-gray-200 opacity-50';
 }
 
@@ -447,9 +461,13 @@ function getMcLetterClass(answerId: string) {
   if (!answered.value) {
     return answerId === selectedAnswerId.value ? 'border-primary text-primary bg-primary/10' : 'border-gray-300 text-gray-400';
   }
+  // Selected answer: green if correct, red if wrong
+  if (answerId === selectedAnswerId.value) {
+    return lastAnswerCorrect.value ? 'border-positive text-positive bg-positive/10' : 'border-negative text-negative bg-negative/10';
+  }
+  // Guest mode: also highlight the correct answer letter
   const correct = currentAnswers.value.find((a) => a.is_correct);
-  if (answerId === correct?.id) return 'border-positive text-positive bg-positive/10';
-  if (answerId === selectedAnswerId.value) return 'border-negative text-negative bg-negative/10';
+  if (correct && answerId === correct.id) return 'border-positive text-positive bg-positive/10';
   return 'border-gray-200 text-gray-300';
 }
 
@@ -476,7 +494,7 @@ async function startQuiz() {
       guestStepId.value = (query.stepId as string) || '';
       guestTestId.value = (query.testId as string) || '';
       const { state: gs } = useGuestState();
-      hearts.value = gs.value.heartsCount;
+      energy.value = gs.value.energyCount;
       questions.value = data.questions;
       initQuestionState();
     } catch (e: unknown) {
@@ -501,12 +519,12 @@ async function startQuiz() {
         headers: { Authorization: `Bearer ${token}` },
         body,
       }),
-      $fetch<{ hearts?: number }>('/api/users/me', {
+      $fetch<{ energy?: number }>('/api/users/me', {
         headers: { Authorization: `Bearer ${token}` },
       }),
     ]);
 
-    hearts.value = user.hearts ?? 5;
+    energy.value = user.energy ?? 25;
     sessionId.value = data.session.id;
     questions.value = data.questions;
     initQuestionState();
@@ -514,7 +532,7 @@ async function startQuiz() {
     const fetchErr = e as { status?: number; data?: { error?: string; message?: string } };
     if (fetchErr?.status === 403) {
       loading.value = false;
-      openHeartsDialog();
+      openEnergyDialog();
       return;
     }
     const errData = fetchErr?.data;
@@ -607,19 +625,19 @@ async function submitToBackend(body: Record<string, unknown>) {
       correctCount.value++;
       xpEarned.value += 1;
     } else {
-      hearts.value = Math.max(0, hearts.value - 1);
-      if (hearts.value === 0) {
-        heartsDepleted.value = true;
+      energy.value = Math.max(0, energy.value - 1);
+      if (energy.value === 0) {
+        energyDepleted.value = true;
       }
-      const { setHearts: persistHearts } = useGuestState();
-      persistHearts(hearts.value);
+      const { setEnergy: persistEnergy } = useGuestState();
+      persistEnergy(energy.value);
     }
     return;
   }
 
   const token = getToken();
   try {
-    const result = await $fetch<{ isCorrect: boolean; hearts_remaining: number }>(`/api/quiz/${sessionId.value}/answer`, {
+    const result = await $fetch<{ isCorrect: boolean; energy_remaining: number }>(`/api/quiz/${sessionId.value}/answer`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
       body,
@@ -631,15 +649,23 @@ async function submitToBackend(body: Record<string, unknown>) {
       correctCount.value++;
       xpEarned.value += 1;
     } else {
-      hearts.value = result.hearts_remaining;
-      if (result.hearts_remaining === 0) {
-        heartsDepleted.value = true;
+      energy.value = result.energy_remaining;
+      if (result.energy_remaining === 0) {
+        energyDepleted.value = true;
       }
     }
-  } catch {
+  } catch (err) {
+    console.error('[quiz] answer submission error:', err);
     lastAnswerCorrect.value = false;
     answered.value = true;
     totalAnswered.value++;
+    // Re-sync energy from server since we don't know the real result
+    const token2 = getToken();
+    if (token2) {
+      $fetch<{ energy?: number }>('/api/users/me', { headers: { Authorization: `Bearer ${token2}` } })
+        .then((u) => { if (u.energy !== undefined) energy.value = u.energy; })
+        .catch(() => {});
+    }
   }
 }
 
@@ -767,12 +793,12 @@ async function answerFillBlankChip() {
 function nextQuestion() {
   answeredCount.value++;
   if (currentIndex.value >= questions.value.length - 1) {
-    heartsDepleted.value = false;
+    energyDepleted.value = false;
     finishQuiz();
     return;
   }
-  if (heartsDepleted.value) {
-    openHeartsDialog();
+  if (energyDepleted.value) {
+    openEnergyDialog();
     return;
   }
   currentIndex.value++;
@@ -807,7 +833,7 @@ async function finishQuiz() {
     }>(`/api/quiz/${sessionId.value}/finish`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
-      body: heartsDepleted.value ? { skip_rewards: true } : {},
+      body: energyDepleted.value ? { skip_rewards: true } : {},
     });
     xpEarned.value = result.xp_earned;
     acornEarned.value = result.acorn_earned;
@@ -821,8 +847,8 @@ async function finishQuiz() {
   finished.value = true;
 }
 
-async function openHeartsDialog() {
-  heartsEmptyDialog.value = true;
+async function openEnergyDialog() {
+  energyEmptyDialog.value = true;
   purchaseError.value = '';
   loadingPackages.value = true;
 
@@ -830,9 +856,9 @@ async function openHeartsDialog() {
     const { state: gs } = useGuestState();
     acornBalanceForDialog.value = gs.value.acornBalance;
     try {
-      const items = await $fetch<HeartPackage[]>('/api/store/items');
-      heartPackages.value = items.filter((i) => i.item_type === 'heart_refill');
-    } catch { heartPackages.value = []; }
+      const items = await $fetch<EnergyPackage[]>('/api/store/items');
+      energyPackages.value = items.filter((i) => i.item_type === 'energy_refill');
+    } catch { energyPackages.value = []; }
     loadingPackages.value = false;
     return;
   }
@@ -840,35 +866,35 @@ async function openHeartsDialog() {
   const token = getToken();
   try {
     const [items, user] = await Promise.all([
-      $fetch<HeartPackage[]>('/api/store/items', { headers: { Authorization: `Bearer ${token}` } }),
+      $fetch<EnergyPackage[]>('/api/store/items', { headers: { Authorization: `Bearer ${token}` } }),
       $fetch<{ acorn_balance?: number }>('/api/users/me', { headers: { Authorization: `Bearer ${token}` } }),
     ]);
-    heartPackages.value = items.filter((i) => i.item_type === 'heart_refill');
+    energyPackages.value = items.filter((i) => i.item_type === 'energy_refill');
     acornBalanceForDialog.value = user.acorn_balance ?? 0;
   } catch { /* skip */ }
   loadingPackages.value = false;
 }
 
-async function buyHeartInDialog(pkg: HeartPackage) {
-  purchasingHeart.value = pkg.id;
+async function buyEnergyInDialog(pkg: EnergyPackage) {
+  purchasingEnergy.value = pkg.id;
   purchaseError.value = '';
 
   if (guestMode.value) {
-    const { spendAcorns, setHearts } = useGuestState();
-    const heartsToAdd = (pkg as HeartPackage & { metadata?: { heart_count?: number } }).metadata?.heart_count ?? 1;
+    const { spendAcorns, setEnergy } = useGuestState();
+    const energyToAdd = (pkg as EnergyPackage & { metadata?: { energy_count?: number } }).metadata?.energy_count ?? 1;
     if (!spendAcorns(pkg.price_acorn)) {
       purchaseError.value = 'Yetersiz palamut.';
-      purchasingHeart.value = null;
+      purchasingEnergy.value = null;
       return;
     }
     acornBalanceForDialog.value -= pkg.price_acorn;
-    const newHearts = Math.min(5, hearts.value + heartsToAdd);
-    hearts.value = newHearts;
-    setHearts(newHearts);
-    heartsDepleted.value = false;
-    heartsEmptyDialog.value = false;
+    const newEnergy = Math.min(25, energy.value + energyToAdd);
+    energy.value = newEnergy;
+    setEnergy(newEnergy);
+    energyDepleted.value = false;
+    energyEmptyDialog.value = false;
     exitWarningDialog.value = false;
-    purchasingHeart.value = null;
+    purchasingEnergy.value = null;
     if (currentIndex.value < questions.value.length - 1) {
       currentIndex.value++;
       initQuestionState();
@@ -880,17 +906,17 @@ async function buyHeartInDialog(pkg: HeartPackage) {
 
   const token = getToken();
   try {
-    const result = await $fetch<{ balance: number; hearts: number }>('/api/store/purchase', {
+    const result = await $fetch<{ balance: number; energy: number }>('/api/store/purchase', {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
       body: { itemId: pkg.id, quantity: 1 },
     });
-    hearts.value = result.hearts;
+    energy.value = result.energy;
     acornBalanceForDialog.value = result.balance;
     const { setAcornBalance } = useAcornBalance();
     setAcornBalance(result.balance);
-    heartsDepleted.value = false;
-    heartsEmptyDialog.value = false;
+    energyDepleted.value = false;
+    energyEmptyDialog.value = false;
     exitWarningDialog.value = false;
     if (currentIndex.value < questions.value.length - 1) {
       currentIndex.value++;
@@ -901,11 +927,11 @@ async function buyHeartInDialog(pkg: HeartPackage) {
   } catch {
     purchaseError.value = 'Satın alma başarısız. Tekrar dene.';
   }
-  purchasingHeart.value = null;
+  purchasingEnergy.value = null;
 }
 
-function declineHeartPurchase() {
-  heartsEmptyDialog.value = false;
+function declineEnergyPurchase() {
+  energyEmptyDialog.value = false;
 
   if (finished.value) return;
   if (questions.value.length === 0) {
@@ -917,8 +943,8 @@ function declineHeartPurchase() {
 
 function continueFromWarning() {
   exitWarningDialog.value = false;
-  if (hearts.value === 0) {
-    openHeartsDialog();
+  if (energy.value === 0) {
+    openEnergyDialog();
   }
 }
 
@@ -945,18 +971,18 @@ function handleClose() {
 }
 
 function restartQuiz() {
-  const currentHearts = guestMode.value
-    ? useGuestState().state.value.heartsCount
-    : hearts.value;
-  if (currentHearts <= 0) {
-    openHeartsDialog();
+  const currentEnergy = guestMode.value
+    ? useGuestState().state.value.energyCount
+    : energy.value;
+  if (currentEnergy <= 0) {
+    openEnergyDialog();
     return;
   }
 
   currentIndex.value = 0;
   answered.value = false;
   finished.value = false;
-  heartsDepleted.value = false;
+  energyDepleted.value = false;
   correctCount.value = 0;
   answeredCount.value = 0;
   xpEarned.value = 0;

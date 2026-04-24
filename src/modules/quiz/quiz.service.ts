@@ -1,7 +1,7 @@
 import db from "../../db/knex";
 import { AppError } from "../../middleware/error";
 import type { StartQuizInput, AnswerInput } from "./quiz.schema";
-import { regenerateHearts } from "../user/user.service";
+import { regenerateEnergy } from "../user/user.service";
 
 // Normal test: fixed 10 questions from a specific test record
 // Step final: 15 questions from all tests in the step (2×d1, 7×d2, 6×d3)
@@ -35,15 +35,15 @@ export const startSession = async (userId: string, input: StartQuizInput) => {
   const topic = await db("topics").where({ id: input.topicId }).first();
   if (!topic) throw new AppError(404, "Topic not found");
 
-  // Regenerate hearts and check if user can start
-  await regenerateHearts(userId);
-  const user = await db("users").where({ id: userId }).select("hearts").first();
-  const unlimitedLives = await db("user_active_effects")
-    .where({ user_id: userId, item_type: "unlimited_lives" })
+  // Regenerate energy and check if user can start
+  await regenerateEnergy(userId);
+  const user = await db("users").where({ id: userId }).select("energy").first();
+  const unlimitedEnergy = await db("user_active_effects")
+    .where({ user_id: userId, item_type: "unlimited_energy" })
     .where("expires_at", ">", db.fn.now())
     .first();
-  if (!unlimitedLives && (user?.hearts ?? 0) <= 0) {
-    throw new AppError(403, "Canın kalmadı! Kalplerin yenilenmesini bekle veya marketten satın al.");
+  if (!unlimitedEnergy && (user?.energy ?? 0) <= 0) {
+    throw new AppError(403, "Enerjin kalmadı! Enerjinin yenilenmesini bekle veya marketten satın al.");
   }
 
   const isFinal = input.sessionType === "step_final" || input.sessionType === "topic_final";
@@ -257,23 +257,23 @@ export const submitAnswer = async (
     is_skipped: input.isSkipped,
   });
 
-  // Deduct a heart on wrong answer (unless user has unlimited_lives active effect)
+  // Deduct energy on wrong answer (unless user has unlimited_energy active effect)
   if (!isCorrect && !input.isSkipped) {
-    await regenerateHearts(userId);
-    const unlimitedLives = await db("user_active_effects")
-      .where({ user_id: userId, item_type: "unlimited_lives" })
+    await regenerateEnergy(userId);
+    const unlimitedEnergy = await db("user_active_effects")
+      .where({ user_id: userId, item_type: "unlimited_energy" })
       .where("expires_at", ">", db.fn.now())
       .first();
 
-    if (!unlimitedLives) {
-      await db("users").where({ id: userId }).where("hearts", ">", 0).decrement("hearts", 1);
-      await db("quiz_sessions").where({ id: sessionId }).increment("hearts_lost", 1);
+    if (!unlimitedEnergy) {
+      await db("users").where({ id: userId }).where("energy", ">", 0).decrement("energy", 1);
+      await db("quiz_sessions").where({ id: sessionId }).increment("energy_lost", 1);
     }
   }
 
-  const user = await db("users").where({ id: userId }).select("hearts").first();
+  const user = await db("users").where({ id: userId }).select("energy").first();
 
-  return { isCorrect, hearts_remaining: user?.hearts ?? 0 };
+  return { isCorrect, energy_remaining: user?.energy ?? 0 };
 };
 
 export const finishSession = async (userId: string, sessionId: string, skipRewards = false) => {
@@ -312,7 +312,7 @@ export const finishSession = async (userId: string, sessionId: string, skipRewar
     })
     .returning("*");
 
-  // Update XP, streak, acorn — skipped if hearts depleted
+  // Update XP, streak, acorn — skipped if energy depleted
   if (!skipRewards) {
     await db("user_stats").where({ user_id: userId }).increment("xp", xpEarned);
     await db("user_stats").where({ user_id: userId }).increment("total_xp", xpEarned);

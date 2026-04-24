@@ -55,8 +55,8 @@ export async function up(knex: Knex): Promise<void> {
     table.text("password_hash").notNullable();
     table.text("avatar_url");
     table.integer("daily_goal_xp").defaultTo(50);
-    table.integer("hearts").defaultTo(5);
-    table.timestamp("hearts_refreshed_at").defaultTo(knex.fn.now());
+    table.integer("energy").defaultTo(25);
+    table.timestamp("energy_refreshed_at").defaultTo(knex.fn.now());
     table.uuid("active_exam_type_id").references("id").inTable("exam_types").onDelete("SET NULL").nullable();
     table.integer("acorn_balance").defaultTo(0).notNullable();
     table.text("role").notNullable().defaultTo("user");
@@ -65,7 +65,7 @@ export async function up(knex: Knex): Promise<void> {
 
   await knex.raw("CREATE INDEX idx_users_email ON users(email)");
   await knex.raw("CREATE INDEX idx_users_username ON users(username)");
-  await knex.raw("ALTER TABLE users ADD CONSTRAINT chk_hearts_non_negative CHECK (hearts >= 0)");
+  await knex.raw("ALTER TABLE users ADD CONSTRAINT chk_energy_non_negative CHECK (energy >= 0)");
   await knex.raw("ALTER TABLE users ADD CONSTRAINT chk_acorn_balance_non_negative CHECK (acorn_balance >= 0)");
   await knex.raw("ALTER TABLE users ADD CONSTRAINT chk_users_role CHECK (role IN ('user', 'admin'))");
 
@@ -120,7 +120,7 @@ export async function up(knex: Knex): Promise<void> {
     table.text("description");
     table.text("icon_url");
     table.integer("price_acorn").notNullable();
-    table.text("item_type").notNullable(); // streak_freeze | unlimited_lives | xp_boost | heart_refill
+    table.text("item_type").notNullable(); // streak_freeze | unlimited_energy | xp_boost | energy_refill
     table.integer("duration_hours"); // null = permanent/one-time use
     table.boolean("is_active").defaultTo(true).notNullable();
     table.jsonb("metadata").defaultTo("{}").notNullable();
@@ -279,7 +279,7 @@ export async function up(knex: Knex): Promise<void> {
     table.integer("duration");
     table.integer("total_questions").defaultTo(0);
     table.integer("correct_answers").defaultTo(0);
-    table.integer("hearts_lost").defaultTo(0);
+    table.integer("energy_lost").defaultTo(0);
   });
 
   await knex.raw("CREATE INDEX idx_quiz_sessions_user ON quiz_sessions(user_id)");
@@ -393,7 +393,7 @@ export async function up(knex: Knex): Promise<void> {
   await knex.schema.createTable("user_active_effects", (table) => {
     table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
     table.uuid("user_id").references("id").inTable("users").onDelete("CASCADE").notNullable();
-    table.text("item_type").notNullable(); // streak_freeze | unlimited_lives | xp_boost
+    table.text("item_type").notNullable(); // streak_freeze | unlimited_energy | xp_boost
     table.timestamp("expires_at").notNullable();
     table.timestamp("created_at").defaultTo(knex.fn.now());
     table.unique(["user_id", "item_type"]);

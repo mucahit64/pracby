@@ -40,12 +40,16 @@
       </div>
     </div>
 
-    <!-- Heart refill -->
-    <div v-if="heartItems.length > 0" class="flex flex-col gap-3">
-      <h2 class="text-base font-extrabold text-gray-800">❤️ Can Doldur</h2>
-      <div class="flex flex-col gap-2.5">
+    <!-- Energy refill -->
+    <div v-if="energyItems.length > 0" class="flex flex-col gap-3">
+      <h2 class="text-base font-extrabold text-gray-800">🔋 Enerji Doldur</h2>
+      <div v-if="unlimitedEnergy" class="flex items-center gap-2.5 bg-positive/10 border-2 border-positive/30 rounded-2xl px-4 py-3">
+        <span class="text-xl">♾️🔋</span>
+        <span class="text-sm font-bold text-positive">Sınırsız enerji aktif — enerji doldurmanıza gerek yok!</span>
+      </div>
+      <div v-else class="flex flex-col gap-2.5">
         <div
-          v-for="item in heartItems"
+          v-for="item in energyItems"
           :key="item.id"
           class="flex items-center gap-3.5 bg-white border-2 border-gray-200 rounded-2xl px-4 py-3.5 hover:bg-gray-50 transition-colors"
         >
@@ -136,7 +140,7 @@ interface StoreItem {
   price_acorn: number;
   item_type: string;
   duration_hours: number | null;
-  metadata?: { heart_count?: number };
+  metadata?: { energy_count?: number };
 }
 
 interface InventoryItem {
@@ -162,7 +166,8 @@ interface AcornPackage {
 
 const balance = ref(0);
 const isGuest = ref(false);
-const sharedHearts = useState('userHearts', () => 5);
+const sharedEnergy = useState('userEnergy', () => 25);
+const unlimitedEnergy = useState('unlimitedEnergy', () => false);
 const { setAcornBalance } = useAcornBalance();
 const items = ref<StoreItem[]>([]);
 const inventory = ref<InventoryItem[]>([]);
@@ -173,8 +178,8 @@ const loadingInventory = ref(true);
 const purchaseModal = ref<StoreItem | null>(null);
 const purchasing = ref(false);
 
-const regularItems = computed(() => items.value.filter((i) => i.item_type !== 'heart_refill'));
-const heartItems = computed(() => items.value.filter((i) => i.item_type === 'heart_refill'));
+const regularItems = computed(() => items.value.filter((i) => i.item_type !== 'energy_refill'));
+const energyItems = computed(() => items.value.filter((i) => i.item_type === 'energy_refill'));
 
 function getToken() {
   return localStorage.getItem('pb_token') ?? '';
@@ -209,6 +214,7 @@ async function fetchInventory() {
 async function fetchEffects() {
   try {
     effects.value = await $fetch<ActiveEffect[]>('/api/store/effects', { headers: headers() });
+    unlimitedEnergy.value = effects.value.some(e => e.item_type === 'unlimited_energy');
   } catch { /* skip */ }
 }
 
@@ -227,15 +233,15 @@ async function confirmPurchase() {
   purchasing.value = true;
 
   if (isGuest.value) {
-    if (purchaseModal.value.item_type === 'heart_refill') {
-      const { spendAcorns, setHearts } = useGuestState();
+    if (purchaseModal.value.item_type === 'energy_refill') {
+      const { spendAcorns, setEnergy } = useGuestState();
       if (spendAcorns(purchaseModal.value.price_acorn)) {
         balance.value -= purchaseModal.value.price_acorn;
         setAcornBalance(balance.value);
-        const heartsToAdd = purchaseModal.value.metadata?.heart_count ?? 1;
-        const newHearts = Math.min(5, sharedHearts.value + heartsToAdd);
-        sharedHearts.value = newHearts;
-        setHearts(newHearts);
+        const energyToAdd = purchaseModal.value.metadata?.energy_count ?? 1;
+        const newEnergy = Math.min(25, sharedEnergy.value + energyToAdd);
+        sharedEnergy.value = newEnergy;
+        setEnergy(newEnergy);
       }
     }
     purchaseModal.value = null;
@@ -244,16 +250,16 @@ async function confirmPurchase() {
   }
 
   try {
-    const result = await $fetch<{ balance: number; hearts?: number }>('/api/store/purchase', {
+    const result = await $fetch<{ balance: number; energy?: number }>('/api/store/purchase', {
       method: 'POST',
       headers: headers(),
       body: { itemId: purchaseModal.value.id, quantity: 1 },
     });
     balance.value = result.balance;
     setAcornBalance(result.balance);
-    if (result.hearts !== undefined) {
-      const heartsState = useState('userHearts', () => 5);
-      heartsState.value = result.hearts;
+    if (result.energy !== undefined) {
+      const energyState = useState('userEnergy', () => 25);
+      energyState.value = result.energy;
     }
     purchaseModal.value = null;
     await fetchInventory();
@@ -268,6 +274,7 @@ async function activateItem(item: InventoryItem) {
       headers: headers(),
     });
     await Promise.all([fetchInventory(), fetchEffects()]);
+    unlimitedEnergy.value = effects.value.some(e => e.item_type === 'unlimited_energy');
   } catch { /* skip */ }
 }
 
@@ -278,7 +285,7 @@ function buyAcorn(_pkg: AcornPackage) {
 function effectLabel(type: string) {
   const labels: Record<string, string> = {
     streak_freeze: '🧊 Seri Dondurma',
-    unlimited_lives: '❤️‍🔥 Sınırsız Can',
+    unlimited_energy: '🔋 Sınırsız Enerji',
     xp_boost: '⚡ XP Boost',
   };
   return labels[type] || type;
@@ -300,7 +307,7 @@ onMounted(() => {
   if (!token) {
     const { state: gs } = useGuestState();
     balance.value = gs.value.acornBalance;
-    sharedHearts.value = gs.value.heartsCount;
+    sharedEnergy.value = gs.value.energyCount;
     fetchItems();
     loadingInventory.value = false;
     return;

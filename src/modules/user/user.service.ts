@@ -2,52 +2,52 @@ import db from "../../db/knex";
 import { AppError } from "../../middleware/error";
 import type { UpdateProfileInput } from "./user.schema";
 
-const MAX_HEARTS = 5;
+const MAX_ENERGY = 25;
 const REGEN_INTERVAL_MS = 10 * 60 * 1000; // 10 minutes
 
-export const regenerateHearts = async (userId: string) => {
+export const regenerateEnergy = async (userId: string) => {
   const user = await db("users")
     .where({ id: userId })
-    .select("hearts", "hearts_refreshed_at")
+    .select("energy", "energy_refreshed_at")
     .first();
   if (!user) return;
 
-  if (user.hearts >= MAX_HEARTS) {
+  if (user.energy >= MAX_ENERGY) {
     return;
   }
 
-  const refreshedAt = new Date(user.hearts_refreshed_at).getTime();
+  const refreshedAt = new Date(user.energy_refreshed_at).getTime();
   const now = Date.now();
   const elapsed = now - refreshedAt;
-  const heartsToAdd = Math.floor(elapsed / REGEN_INTERVAL_MS);
+  const energyToAdd = Math.floor(elapsed / REGEN_INTERVAL_MS);
 
-  if (heartsToAdd <= 0) return;
+  if (energyToAdd <= 0) return;
 
-  const newHearts = Math.min(MAX_HEARTS, user.hearts + heartsToAdd);
-  const advanceMs = heartsToAdd * REGEN_INTERVAL_MS;
+  const newEnergy = Math.min(MAX_ENERGY, user.energy + energyToAdd);
+  const advanceMs = energyToAdd * REGEN_INTERVAL_MS;
 
   await db("users").where({ id: userId }).update({
-    hearts: newHearts,
-    hearts_refreshed_at: newHearts >= MAX_HEARTS
+    energy: newEnergy,
+    energy_refreshed_at: newEnergy >= MAX_ENERGY
       ? new Date(now)
       : new Date(refreshedAt + advanceMs),
   });
 };
 
 export const getProfile = async (userId: string) => {
-  await regenerateHearts(userId);
+  await regenerateEnergy(userId);
 
   const user = await db("users")
     .where({ id: userId })
-    .select("id", "email", "username", "avatar_url", "daily_goal_xp", "hearts", "hearts_refreshed_at", "acorn_balance", "active_exam_type_id", "created_at")
+    .select("id", "email", "username", "avatar_url", "daily_goal_xp", "energy", "energy_refreshed_at", "acorn_balance", "active_exam_type_id", "created_at")
     .first();
   if (!user) throw new AppError(404, "User not found");
 
-  const nextHeartAt = user.hearts < MAX_HEARTS
-    ? new Date(new Date(user.hearts_refreshed_at).getTime() + REGEN_INTERVAL_MS).toISOString()
+  const nextEnergyAt = user.energy < MAX_ENERGY
+    ? new Date(new Date(user.energy_refreshed_at).getTime() + REGEN_INTERVAL_MS).toISOString()
     : null;
 
-  return { ...user, next_heart_at: nextHeartAt };
+  return { ...user, next_energy_at: nextEnergyAt };
 };
 
 export const getStats = async (userId: string) => {
