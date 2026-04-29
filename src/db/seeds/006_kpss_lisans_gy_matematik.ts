@@ -13,7 +13,7 @@ import { createTopic } from "../content/helpers";
 export async function seed(knex: Knex): Promise<void> {
   // Idempotent guard
   const existing = await knex("topics")
-    .where("name", "Temel Kavramlar (GY Matematik)")
+    .where("name", "Temel Kavramlar")
     .first();
   if (existing) {
     console.log("008: KPSS Lisans GY Matematik içeriği zaten mevcut, atlanıyor.");

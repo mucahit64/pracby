@@ -18,7 +18,7 @@ import { MAT_KATI_CISIMLER_T2, MAT_ANALITIK_GEOMETRI_T1, MAT_ANALITIK_GEOMETRI_T
 
 export const KPSS_GY_MATEMATIK_TOPICS: TopicDef[] = [
   {
-    name: "Temel Kavramlar (GY Matematik)",
+    name: "Temel Kavramlar",
     description: "Sayı sistemleri, ardışık sayılar, basamaklar, asal sayılar ve faktöriyel",
     icon: "🔢",
     steps: [
