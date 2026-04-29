@@ -100,7 +100,7 @@
 
     <!-- Actions -->
     <div class="flex gap-3">
-      <button class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]">✏️ Profili Düzenle</button>
+      <button class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="router.push('/profile/edit')">✏️ Profili Düzenle</button>
       <button class="flex-1 bg-white text-negative font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-negative hover:bg-negative/5 transition-all cursor-pointer font-[inherit]" @click="signOut">🚪 Çıkış</button>
     </div>
   </div>

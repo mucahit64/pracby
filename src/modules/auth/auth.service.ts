@@ -93,6 +93,73 @@ export const login = async (input: LoginInput) => {
   };
 };
 
+export const mergeGuestProgress = async (
+  userId: string,
+  quizResults: { topicId: string; stepId?: string; testId?: string; correctCount: number; totalQuestions: number }[],
+) => {
+  if (!quizResults.length) return { merged: false };
+
+  const stepIds = [...new Set(quizResults.map((r) => r.stepId).filter(Boolean))] as string[];
+  if (stepIds.length === 0) return { merged: false };
+
+  const steps = await db("steps").whereIn("id", stepIds).select("id", "tests_required");
+  const stepMap = new Map(steps.map((s) => [s.id as string, s.tests_required as number]));
+
+  const existingProgress = await db("user_step_progress")
+    .where({ user_id: userId })
+    .whereIn("step_id", stepIds);
+  const existingMap = new Map(existingProgress.map((p) => [p.step_id as string, p]));
+
+  let newXp = 0;
+
+  for (const stepId of stepIds) {
+    const results = quizResults.filter((r) => r.stepId === stepId);
+    const completedTestIds = new Set(results.filter((r) => r.testId).map((r) => r.testId!));
+    const guestTestsCompleted = completedTestIds.size;
+    const testsRequired = stepMap.get(stepId) ?? 1;
+    const guestIsCompleted = guestTestsCompleted >= testsRequired;
+
+    const existing = existingMap.get(stepId);
+
+    if (!existing) {
+      // No server progress — insert guest progress
+      await db("user_step_progress").insert({
+        user_id: userId,
+        step_id: stepId,
+        tests_completed: guestTestsCompleted,
+        is_step_completed: guestIsCompleted,
+        step_final_passed: false,
+        stars: 0,
+        ...(guestIsCompleted && { completed_at: new Date() }),
+      });
+      // Award XP for these results
+      const stepXp = results.reduce((sum, r) => sum + r.correctCount, 0);
+      newXp += stepXp;
+    } else if (guestTestsCompleted > (existing.tests_completed as number)) {
+      // Guest is ahead — update to guest progress
+      await db("user_step_progress")
+        .where({ id: existing.id })
+        .update({
+          tests_completed: guestTestsCompleted,
+          is_step_completed: guestIsCompleted,
+          ...(guestIsCompleted && !existing.is_step_completed && { completed_at: new Date() }),
+        });
+      // Award XP only for the delta
+      const deltaTests = guestTestsCompleted - (existing.tests_completed as number);
+      const sortedResults = [...results].sort((a, b) => b.correctCount - a.correctCount);
+      const deltaXp = sortedResults.slice(0, deltaTests).reduce((sum, r) => sum + r.correctCount, 0);
+      newXp += deltaXp;
+    }
+    // else: server progress >= guest progress — skip (no downgrade)
+  }
+
+  if (newXp > 0) {
+    await db("user_stats").where({ user_id: userId }).increment({ xp: newXp, total_xp: newXp });
+  }
+
+  return { merged: true, xp_awarded: newXp };
+};
+
 export const checkEmail = async (email: string) => {
   const exists = await db("users").where({ email }).first();
   return { available: !exists };

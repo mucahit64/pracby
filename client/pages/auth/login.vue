@@ -50,6 +50,8 @@
 </template>
 
 <script setup lang="ts">
+import { useGuestState } from '~/composables/useGuestState';
+
 definePageMeta({ layout: false });
 
 const router = useRouter();
@@ -66,6 +68,22 @@ const submit = async () => {
       body: form,
     });
     localStorage.setItem('pb_token', data.token);
+
+    // Merge guest progress if any
+    const { state, clearGuestState } = useGuestState();
+    if (state.value.quizResults.length > 0) {
+      try {
+        await $fetch('/api/auth/merge-guest-progress', {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${data.token}` },
+          body: { quiz_results: state.value.quizResults },
+        });
+      } catch {
+        // Best-effort: login still succeeds even if merge fails
+      }
+    }
+    clearGuestState();
+
     await router.push('/');
   } catch (e: unknown) {
     const err = e as { data?: { message?: string } };

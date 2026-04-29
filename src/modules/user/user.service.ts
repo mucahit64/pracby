@@ -1,4 +1,5 @@
 import db from "../../db/knex";
+import bcrypt from "bcrypt";
 import { AppError } from "../../middleware/error";
 import type { UpdateProfileInput } from "./user.schema";
 
@@ -149,21 +150,47 @@ export const switchActiveExam = async (userId: string, examTypeId: string) => {
 };
 
 export const updateProfile = async (userId: string, input: UpdateProfileInput) => {
+  const user = await db("users").where({ id: userId }).first();
+  if (!user) throw new AppError(404, "User not found");
+
+  // Verify current password if changing email or password
+  if (input.currentPassword) {
+    const valid = await bcrypt.compare(input.currentPassword, user.password_hash as string);
+    if (!valid) throw new AppError(401, "Mevcut şifre hatalı");
+  }
+
   if (input.username) {
     const exists = await db("users")
       .where({ username: input.username })
       .whereNot({ id: userId })
       .first();
-    if (exists) throw new AppError(409, "Username already taken");
+    if (exists) throw new AppError(409, "Bu kullanıcı adı zaten kullanılıyor");
+  }
+
+  if (input.email) {
+    const exists = await db("users")
+      .where({ email: input.email })
+      .whereNot({ id: userId })
+      .first();
+    if (exists) throw new AppError(409, "Bu e-posta zaten kullanılıyor");
+  }
+
+  const updateData: Record<string, unknown> = {};
+  if (input.username) updateData.username = input.username;
+  if (input.email) updateData.email = input.email;
+  if (input.avatarUrl) updateData.avatar_url = input.avatarUrl;
+  if (input.dailyGoalXp) updateData.daily_goal_xp = Number(input.dailyGoalXp);
+  if (input.newPassword) {
+    updateData.password_hash = await bcrypt.hash(input.newPassword, 12);
+  }
+
+  if (Object.keys(updateData).length === 0) {
+    return { id: user.id, email: user.email, username: user.username, avatar_url: user.avatar_url, daily_goal_xp: user.daily_goal_xp };
   }
 
   const [updated] = await db("users")
     .where({ id: userId })
-    .update({
-      ...(input.username && { username: input.username }),
-      ...(input.avatarUrl && { avatar_url: input.avatarUrl }),
-      ...(input.dailyGoalXp && { daily_goal_xp: Number(input.dailyGoalXp) }),
-    })
+    .update(updateData)
     .returning(["id", "email", "username", "avatar_url", "daily_goal_xp"]);
 
   return updated;

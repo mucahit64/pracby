@@ -24,3 +24,8 @@ export const checkUsername = async (req: Request, res: Response): Promise<void> 
   const result = await AuthService.checkUsername(username);
   res.json(result);
 };
+
+export const mergeGuestProgress = async (req: Request, res: Response): Promise<void> => {
+  const result = await AuthService.mergeGuestProgress(req.user!.userId, req.body.quiz_results);
+  res.json(result);
+};

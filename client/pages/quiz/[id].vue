@@ -39,6 +39,9 @@
         <!-- Question text (not for swipe/fill_blank) -->
         <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="text-lg font-black text-gray-800 leading-snug">{{ currentQuestion.question_text }}</div>
 
+        <!-- Question image -->
+        <img v-if="currentQuestion.image_url" :src="`/${currentQuestion.image_url}`" :alt="currentQuestion.question_text" class="w-full max-h-72 object-contain rounded-lg" />
+
         <!-- Multiple choice / True-false -->
         <template v-if="currentQuestion.question_type === 'multiple_choice' || currentQuestion.question_type === 'true_false'">
           <div class="flex flex-col gap-2.5">
@@ -344,6 +347,7 @@ interface Question {
   id: string;
   question_text: string;
   question_type: string;
+  image_url?: string;
   explanation?: string;
   hint?: string;
   type_data?: {

@@ -36,5 +36,18 @@ export const LoginSchema = z.object({
   password: z.string().min(1),
 });
 
+export const MergeGuestProgressSchema = z.object({
+  quiz_results: z.array(
+    z.object({
+      topicId: z.string(),
+      stepId: z.string().optional(),
+      testId: z.string().optional(),
+      correctCount: z.number().int().min(0),
+      totalQuestions: z.number().int().min(0),
+    }),
+  ),
+});
+
 export type RegisterInput = z.infer<typeof RegisterSchema>;
 export type LoginInput = z.infer<typeof LoginSchema>;
+export type MergeGuestProgressInput = z.infer<typeof MergeGuestProgressSchema>;

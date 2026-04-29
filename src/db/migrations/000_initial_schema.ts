@@ -229,6 +229,7 @@ export async function up(knex: Knex): Promise<void> {
     table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
     table.uuid("topic_id").references("id").inTable("topics").onDelete("CASCADE");
     table.text("question_text").notNullable();
+    table.text("image_url");
     table.text("question_type").defaultTo("multiple_choice");
     table.integer("difficulty").defaultTo(1);
     table.text("status").defaultTo("pending");
