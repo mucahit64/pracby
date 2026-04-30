@@ -37,7 +37,7 @@
         </div>
 
         <!-- Question text (not for swipe/fill_blank) -->
-        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="text-lg font-black text-gray-800 leading-snug">{{ currentQuestion.question_text }}</div>
+        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="text-lg text-gray-800 leading-snug space-y-2" v-html="currentQuestion.question_text" />
 
         <!-- Question image -->
         <img v-if="currentQuestion.image_url" :src="`/${currentQuestion.image_url}`" :alt="currentQuestion.question_text" class="w-full max-h-72 object-contain rounded-lg" />
@@ -78,7 +78,7 @@
                   }"
                   @click="!answered && selectedFillWord ? (selectedFillWord = '') : undefined"
                 >{{ selectedFillWord || '______' }}</span>
-                <span v-else>{{ part }}</span>
+                <span v-else v-html="part" />
               </template>
             </div>
             <div class="flex flex-wrap gap-2">
@@ -95,17 +95,17 @@
                 @click="toggleFillWord(word)"
               >{{ word }}</button>
             </div>
-<button
-  v-if="!answered"
-  :disabled="!selectedFillWord"
-  class="w-full font-black text-sm py-3 rounded-xl border-b-4 transition-all duration-150"
-  :class="selectedFillWord
-    ? 'bg-primary text-white border-primary-dark cursor-pointer active:border-b-0 active:translate-y-1 hover:brightness-110'
-    : 'bg-gray-200 text-gray-400 border-gray-300 cursor-not-allowed'"
-  @click="answerFillBlankChip"
->
-  KONTROL ET
-</button>
+            <button
+              v-if="!answered"
+              :disabled="!selectedFillWord"
+              class="w-full font-black text-sm py-3 rounded-xl border-b-4 transition-all duration-150"
+              :class="selectedFillWord
+                ? 'bg-primary text-white border-primary-dark cursor-pointer active:border-b-0 active:translate-y-1 hover:brightness-110'
+                : 'bg-gray-200 text-gray-400 border-gray-300 cursor-not-allowed'"
+              @click="answerFillBlankChip"
+            >
+              KONTROL ET
+            </button>
           </div>
           <!-- Text input mode -->
           <div v-else class="flex flex-col gap-3">
@@ -223,7 +223,7 @@
             >
               <div class="absolute top-3 right-3 text-positive font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeRightOpacity }">DOĞRU ✓</div>
               <div class="absolute top-3 left-3 text-negative font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeLeftOpacity }">YANLIŞ ✗</div>
-              <p class="text-base font-bold text-gray-800">{{ currentQuestion.question_text }}</p>
+              <p class="text-base font-bold text-gray-800" v-html="currentQuestion.question_text" />
             </div>
             <div v-if="!answered" class="flex justify-between w-full max-w-[340px] text-xs font-extrabold text-gray-400">
               <span>← YANLIŞ</span>
