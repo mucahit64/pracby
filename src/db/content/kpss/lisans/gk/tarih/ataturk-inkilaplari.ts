@@ -1,6 +1,6 @@
 import type { McQ } from "../../../../types";
 
-export const TAR_ATATURK_DONEMI_INKILAPLAR: McQ[] = [
+export const TAR_ATATURK_DONEMI_INKILAPLAR_TEST_1: McQ[] = [
   // ---------------- ATATÜRK DÖNEMİ İNKILAPLAR - TEST 1 ----------------
   {
     text: "Yeni Türk Devleti'nde gerçekleştirilen;\nI. medreselerin kapatılması,\nII. harf inkılabı,\nIII. Tevhid-i Tedrisat Kanunu\ngibi yenilik hareketlerinden hangilerinin eğitim-öğretimdeki ikilikleri gidermeye yönelik olduğu söylenebilir?",
@@ -113,8 +113,10 @@ export const TAR_ATATURK_DONEMI_INKILAPLAR: McQ[] = [
     answers: [
       { text: "Halk Bankası", ok: false }, { text: "Sümerbank", ok: true }, { text: "Ziraat Bankası", ok: false }, { text: "Sanayi Maadin Bankası", ok: false }, { text: "Emlak Eytam Bankası", ok: false }
     ] // Cevap anahtarı 14.B.
-  },
+  }
+];
 
+export const TAR_ATATURK_DONEMI_INKILAPLAR_TEST_2: McQ[] = [
   // ---------------- ATATÜRK DÖNEMİ İNKILAPLAR - TEST 2 ----------------
   {
     text: "Türkiye Cumhuriyeti'nde,\nI. miras işlemlerinin yeniden düzenlenmesi,\nII. tanık olmada kadın - erkek eşitliğinin sağlanması,\nIII. modern aile yapısının oluşturulması\ngelişmeleri aşağıdakilerden hangisinin sonucunda ortaya çıkmıştır?",
@@ -228,8 +230,10 @@ export const TAR_ATATURK_DONEMI_INKILAPLAR: McQ[] = [
     answers: [
       { text: "Yalnız I", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve II", ok: false }, { text: "II ve III", ok: false }, { text: "I, II ve III", ok: true }
     ] // Cevap anahtarı 14.E.
-  },
+  }
+];
 
+export const TAR_ATATURK_DONEMI_INKILAPLAR_TEST_3: McQ[] = [
   // ---------------- ATATÜRK DÖNEMİ İNKILAPLAR - TEST 3 ----------------
   {
     text: "I. John Dewey\nII. Heinrich Krippel\nIII. Albert Malche\nIV. Omar Buyse\nYukarıda verilen kişilerden hangileri Atatürk Dönemi'nde eğitim alanında faydalanılan Avrupalı uzmanlar arasında yer alır?",
@@ -342,8 +346,10 @@ export const TAR_ATATURK_DONEMI_INKILAPLAR: McQ[] = [
     answers: [
       { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve II", ok: true }, { text: "I, II ve III", ok: false }
     ] // Cevap anahtarı 14.D. (D şıkkı I ve II).
-  },
+  }
+];
 
+export const TAR_ATATURK_DONEMI_INKILAPLAR_TEST_4: McQ[] = [
   // ---------------- ATATÜRK DÖNEMİ İNKILAPLAR - TEST 4 ----------------
   {
     text: "- Her Türk, adından başka soyadını da taşımaya mecburdur.\n- Soyadı öz Türkçe olmalıdır.\n- Umumi edeplere uygun olmayan iğrenç veya gülünç soyadları kullanılamaz.\n21 Haziran 1934'te kabul edilen Soyadı Kanunu'nun yukarıdaki maddelerinden hareketle;\nI. laiklik,\nII. milliyetçilik,\nIII. halkçılık\nilkelerinden hangileri ile bağlantılı olduğu söylenebilir?",

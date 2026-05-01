@@ -1,24 +1,34 @@
 import type { TopicDef } from "../../../../types";
-import { TAR_ILK_TURK_DEVLETLERI } from "./ilk-turk-devletleri";
-import { TAR_TURK_ISLAM_VE_TURKIYE, TAR_TURKIYE_VE_KULTUR_MEDENIYET } from "./turk-islam-devletleri";
-import { TAR_KULTUR_MEDENIYET_VE_ORTACAG_AVRUPA } from "./turk-islam-kultur";
-import { TAR_OSMANLI_KURULUS_YUKSELME } from "./osmanli-kurulus";
-import { TAR_DUNYA_GUCU_VE_KULTUR_MEDENIYET, TAR_OSMANLI_KULTUR_MEDENIYET_3_4_5, TAR_KULTUR_MEDENIYET_VE_17_YUZYIL } from "./dunya-gucu-osmanli";
-import { TAR_18_YUZYIL_VE_AVRUPA_GELISMELERI } from "./18-yuzyil";
-import { TAR_EN_UZUN_YUZYIL_1_2_3, TAR_EN_UZUN_YUZYIL_4_5_6 } from "./en-uzun-yuzyil";
-import { TAR_EN_UZUN_YUZYIL_7_VE_XX_YUZYIL, TAR_XX_YUZYIL_3_VE_4 } from "./xx-yuzyil";
-import { TAR_BIRINCI_DUNYA_SAVASI } from "./birinci-dunya-savasi";
-import { TAR_MONDROS_ISGALLER_CEMIYETLER } from "./mondros-isgaller";
-import { TAR_EN_UZUN_YUZYIL_VE_MONDROS, TAR_MILLI_MUCADELE_HAZIRLIK_2_3_4, TAR_MILLI_MUCADELE_HAZIRLIK_5_VE_6 } from "./milli-mucadele-hazirlik";
-import { TAR_BASIN_YAYIN_VE_TBMM } from "./basin-yayin-tbmm";
-import { TAR_KURTULUS_SAVASI_TEST_1, TAR_KURTULUS_SAVASI_TEST_4 } from "./kurtulus-savasi";
-import { TAR_CUMHURIYET_DONEMI_IC_POLITIKA } from "./cumhuriyet-ic-politika";
-import { TAR_ATATURK_DONEMI_INKILAPLAR } from "./ataturk-inkilaplari";
-import { TAR_ATATURK_ILKELERI_VE_SAHSIYETLER } from "./ataturk-ilkeleri";
-import { TAR_DIS_POLITIKA_VE_CAGDAS_DUNYA } from "./dis-politika";
-import { TAR_CAGDAS_DUNYA_VE_2_DUNYA_SAVASI } from "./ikinci-dunya-savasi";
-import { TAR_YUMUSAMA_DONEMI } from "./soguk-savas";
-import { TAR_CAGDAS_DUNYA_TEKRAR_VE_KURESELLESME } from "./kuresellesme";
+import { TAR_XVII_YUZYILDA_OSMANLI_DEVLETI_TEST_1, TAR_XVII_YUZYILDA_OSMANLI_DEVLETI_TEST_2, TAR_XVII_YUZYILDA_OSMANLI_DEVLETI_TEST_3 } from "./17-yuzyilda-osmanli-devleti";
+import { TAR_XVIII_YUZYILDA_OSMANLI_DEVLETI_TEST_1, TAR_XVIII_YUZYILDA_OSMANLI_DEVLETI_TEST_2, TAR_XVIII_YUZYILDA_OSMANLI_DEVLETI_TEST_3 } from "./18-yuzyilda-osmanli-devleti";
+import { TAR_ATATURK_ILKELERI_TEST_1, TAR_ATATURK_ILKELERI_TEST_2, TAR_ATATURK_ILKELERI_TEST_3 } from "./ataturk-ilkeleri";
+import { TAR_ATATURK_DONEMI_INKILAPLAR_TEST_1, TAR_ATATURK_DONEMI_INKILAPLAR_TEST_2, TAR_ATATURK_DONEMI_INKILAPLAR_TEST_3, TAR_ATATURK_DONEMI_INKILAPLAR_TEST_4 } from "./ataturk-inkilaplari";
+import { TAR_BEYLIKTEN_DEVLETE_GECIS_TEST_1 } from "./beylikten-devlete-gecis";
+import { TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1, TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2, TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3, TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_4 } from "./birinci-dunya-savasi-donemi";
+import { TAR_CAGDAS_TURK_VE_DUNYA_TARIHI_TEKRAR_TEST_1, TAR_CAGDAS_TURK_VE_DUNYA_TARIHI_TEKRAR_TEST_2 } from "./cagdas-turk-ve-dunya-tarihi-tekrar";
+import { TAR_CUMHURIYET_DONEMI_IC_POLITIKA_TEST_1, TAR_CUMHURIYET_DONEMI_IC_POLITIKA_TEST_2 } from "./cumhuriyet-ic-politika";
+import { TAR_DUNYA_GUCU_OSMANLI_TEST_1, TAR_DUNYA_GUCU_OSMANLI_TEST_2 } from "./dunya-gucu-osmanli";
+import { TAR_EN_UZUN_YUZYIL_TEST_1, TAR_EN_UZUN_YUZYIL_TEST_2, TAR_EN_UZUN_YUZYIL_TEST_3, TAR_EN_UZUN_YUZYIL_TEST_4, TAR_EN_UZUN_YUZYIL_TEST_5, TAR_EN_UZUN_YUZYIL_TEST_6, TAR_EN_UZUN_YUZYIL_TEST_7 } from "./en-uzun-yuzyil";
+import { TAR_IKINCI_DUNYA_SAVASI_TEST_1, TAR_IKINCI_DUNYA_SAVASI_TEST_2 } from "./ikinci-dunya-savasi";
+import { TAR_ILK_TURK_DEVLETLERI_TEST_1, TAR_ILK_TURK_DEVLETLERI_TEST_2, TAR_ILK_TURK_DEVLETLERI_TEST_3, TAR_ILK_TURK_DEVLETLERI_TEST_4 } from "./ilk-turk-devletleri";
+import { TAR_KURESELLESEN_DUNYA_TEST_1, TAR_KURESELLESEN_DUNYA_TEST_2 } from "./kuresellesen-dunya";
+import { TAR_KURTULUS_SAVASI_TEST_1, TAR_KURTULUS_SAVASI_TEST_2, TAR_KURTULUS_SAVASI_TEST_3, TAR_KURTULUS_SAVASI_TEST_4, TAR_KURTULUS_SAVASI_TEST_5 } from "./kurtulus-savasi";
+import { TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1, TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2, TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3, TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4, TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5, TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6 } from "./milli-mucadele-hazirlik-donemi";
+import { TAR_MILLI_MUCADELEDE_BASIN_YAYIN_TEST_1, TAR_MILLI_MUCADELEDE_BASIN_YAYIN_TEST_2 } from "./milli-mucadelede-basin-yayin";
+import { TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_1, TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_2, TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_3, TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_4 } from "./mondros-ateskesi-isgaller-cemiyetler";
+import { TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1, TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_2 } from "./mustafa-kemal-ve-cumhuriyetin-onemli-sahsiyetleri";
+import { TAR_ORTA_CAG_AVRUPA_TARIHI_TEST_1 } from "./orta-cag-avrupa-tarihi";
+import { TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_1, TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_2, TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_3, TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_4, TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_5, TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_6, TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_7 } from "./osmanlı-kultur-ve-medeniyeti";
+import { TAR_SOGUK_SAVAS_DONEMI_TEST_1, TAR_SOGUK_SAVAS_DONEMI_TEST_2, TAR_SOGUK_SAVAS_DONEMI_TEST_3 } from "./soguk-savas-donemi";
+import { TAR_TBMM_DONEMI_TEST_1, TAR_TBMM_DONEMI_TEST_2, TAR_TBMM_DONEMI_TEST_3 } from "./tbmm-donemi";
+import { TAR_TURK_ISLAM_DEVLETLERI_TEST_1, TAR_TURK_ISLAM_DEVLETLERI_TEST_2 } from "./turk-islam-devletleri";
+import { TAR_TURK_ISLAM_KULTUR_VE_MEDENIYET_TEST_1, TAR_TURK_ISLAM_KULTUR_VE_MEDENIYET_TEST_2, TAR_TURK_ISLAM_KULTUR_VE_MEDENIYET_TEST_3, TAR_TURK_ISLAM_KULTUR_VE_MEDENIYET_TEST_4 } from "./turk-islam-kultur-ve-medeniyeti";
+import { TAR_TURK_DIS_POLITIKASI_TEST_1, TAR_TURK_DIS_POLITIKASI_TEST_2 } from "./turk_dis-politikasi";
+import { TAR_TURKIYE_TARIHI_TEST_1, TAR_TURKIYE_TARIHI_TEST_2 } from "./turkiye-tarihi";
+import { TAR_XX_YUZYIL_BASLARINDA_OSMANLI_DEVLETI_TEST_1, TAR_XX_YUZYIL_BASLARINDA_OSMANLI_DEVLETI_TEST_2, TAR_XX_YUZYIL_BASLARINDA_OSMANLI_DEVLETI_TEST_3, TAR_XX_YUZYIL_BASLARINDA_OSMANLI_DEVLETI_TEST_4 } from "./xx-yuzyil-baslarinda-osmanli-devleti.ts";
+import { TAR_YENI_VE_YAKIN_CAGDA_AVRUPADAKI_GELISMELER_TEST_1 } from "./yeni-ve-yakin-cagda-avrupadaki-gelismeler";
+import { TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1, TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_2 } from "./yirminci-yuzyil-baslarinda-dunya";
+import { TAR_YUMUSAMA_DONEMI_TEST_1, TAR_YUMUSAMA_DONEMI_TEST_2 } from "./yumusama-donemi";
 
 export const KPSS_GK_TARIH_TOPICS: TopicDef[] = [
   {
@@ -27,28 +37,40 @@ export const KPSS_GK_TARIH_TOPICS: TopicDef[] = [
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "Türk Devletleri",
         tests: [
-          { name: "Test 1", questions: TAR_ILK_TURK_DEVLETLERI },
+          { name: "Test 1", questions: TAR_ILK_TURK_DEVLETLERI_TEST_1 },
+          { name: "Test 2", questions: TAR_ILK_TURK_DEVLETLERI_TEST_2 },
+          { name: "Test 3", questions: TAR_ILK_TURK_DEVLETLERI_TEST_3 },
+          { name: "Test 4", questions: TAR_ILK_TURK_DEVLETLERI_TEST_4 },
         ],
       },
     ],
   },
   {
-    name: "Türk-İslam Devletleri ve Türkiye Tarihi",
+    name: "Türk-İslam Devletleri",
     description: "İslam'ı kabul eden Türk devletleri ve Anadolu'ya yerleşme süreci",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti 1",
+        name: "Türk-İslam Devletleri",
         tests: [
-          { name: "Test 1", questions: TAR_TURK_ISLAM_VE_TURKIYE },
+          { name: "Test 1", questions: TAR_TURK_ISLAM_DEVLETLERI_TEST_1 },
+          { name: "Test 2", questions: TAR_TURK_ISLAM_DEVLETLERI_TEST_2 },
         ],
       },
+    ],
+  },
+  {
+    name: "Türkiye Tarihi",
+    description: "Anadolu'nun Türk yurdu haline gelmesi ve Türkiye tarihinin genel çerçevesi",
+    icon: "🏛️",
+    steps: [
       {
-        name: "Test Seti 2",
+        name: "Türkiye Tarihi",
         tests: [
-          { name: "Test 1", questions: TAR_TURKIYE_VE_KULTUR_MEDENIYET },
+          { name: "Test 1", questions: TAR_TURKIYE_TARIHI_TEST_1 },
+          { name: "Test 2", questions: TAR_TURKIYE_TARIHI_TEST_2 },
         ],
       },
     ],
@@ -59,79 +81,133 @@ export const KPSS_GK_TARIH_TOPICS: TopicDef[] = [
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "Türk-İslam Kültür ve Medeniyeti",
         tests: [
-          { name: "Test 1", questions: TAR_KULTUR_MEDENIYET_VE_ORTACAG_AVRUPA },
+          { name: "Test 1", questions: TAR_TURK_ISLAM_KULTUR_VE_MEDENIYET_TEST_1 },
+          { name: "Test 2", questions: TAR_TURK_ISLAM_KULTUR_VE_MEDENIYET_TEST_2 },
+          { name: "Test 3", questions: TAR_TURK_ISLAM_KULTUR_VE_MEDENIYET_TEST_3 },
+          { name: "Test 4", questions: TAR_TURK_ISLAM_KULTUR_VE_MEDENIYET_TEST_4 },
         ],
       },
     ],
   },
   {
-    name: "Osmanlı Devleti: Kuruluş ve Yükselme",
+    name: "Orta Çağ Avrupa Tarihi",
+    description: "Orta Çağ boyunca Avrupa'da yaşanan siyasi, sosyal ve kültürel gelişmeler",
+    icon: "🏛️",
+    steps: [
+      {
+        name: "Orta Çağ Avrupa Tarihi",
+        tests: [
+          { name: "Test 1", questions: TAR_ORTA_CAG_AVRUPA_TARIHI_TEST_1 },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Beylikten Devlete Geçiş",
     description: "Osmanlı'nın beylikten imparatorluğa dönüşüm süreci",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "Beylikten Devlete Geçiş",
         tests: [
-          { name: "Test 1", questions: TAR_OSMANLI_KURULUS_YUKSELME },
+          { name: "Test 1", questions: TAR_BEYLIKTEN_DEVLETE_GECIS_TEST_1 },
         ],
       },
     ],
   },
   {
-    name: "Dünya Gücü Osmanlı ve Osmanlı Kültür Medeniyeti",
+    name: "Dünya Gücü Osmanlı",
     description: "Osmanlı'nın dünya gücü olduğu dönem ve zengin kültür mirası",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti 1",
+        name: "Dünya Gücü Osmanlı",
         tests: [
-          { name: "Test 1", questions: TAR_DUNYA_GUCU_VE_KULTUR_MEDENIYET },
+          { name: "Test 1", questions: TAR_DUNYA_GUCU_OSMANLI_TEST_1 },
+          { name: "Test 2", questions: TAR_DUNYA_GUCU_OSMANLI_TEST_2 },
         ],
-      },
+      }
+    ],
+  },
+  {
+    name: "Osmanlı Kültür ve Medeniyeti",
+    description: "Osmanlı'nın kültürel zenginliği, sanat, mimari ve bilim alanındaki gelişmeler",
+    icon: "🏛️",
+    steps: [
       {
-        name: "Test Seti 2",
+        name: "Osmanlı Kültür ve Medeniyeti",
         tests: [
-          { name: "Test 1", questions: TAR_OSMANLI_KULTUR_MEDENIYET_3_4_5 },
-        ],
-      },
-      {
-        name: "Test Seti 3",
-        tests: [
-          { name: "Test 1", questions: TAR_KULTUR_MEDENIYET_VE_17_YUZYIL },
+          { name: "Test 1", questions: TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_1 },
+          { name: "Test 2", questions: TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_2 },
+          { name: "Test 3", questions: TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_3 },
+          { name: "Test 4", questions: TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_4 },
+          { name: "Test 5", questions: TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_5 },
+          { name: "Test 6", questions: TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_6 },
+          { name: "Test 7", questions: TAR_OSMANLI_KULTUR_VE_MEDENIYETI_TEST_7 },
         ],
       },
     ],
   },
   {
-    name: "XVIII. Yüzyılda Osmanlı ve Avrupa'daki Gelişmeler",
-    description: "Osmanlı'nın gerileme dönemi ve Avrupa'da siyasi değişimler",
+    name: "XVII. Yüzyılda Osmanlı Devleti",
+    description: "Osmanlı'nın XVII. yüzyıldaki siyasi, sosyal ve ekonomik durumu",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "XVII. Yüzyılda Osmanlı Devleti",
         tests: [
-          { name: "Test 1", questions: TAR_18_YUZYIL_VE_AVRUPA_GELISMELERI },
+          { name: "Test 1", questions: TAR_XVII_YUZYILDA_OSMANLI_DEVLETI_TEST_1 },
+          { name: "Test 2", questions: TAR_XVII_YUZYILDA_OSMANLI_DEVLETI_TEST_2 },
+          { name: "Test 3", questions: TAR_XVII_YUZYILDA_OSMANLI_DEVLETI_TEST_3 },
+        ],
+      },
+    ],
+  },
+  {
+    name: "XVIII. Yüzyılda Osmanlı Devleti",
+    description: "Osmanlı'nın gerileme dönemi",
+    icon: "🏛️",
+    steps: [
+      {
+        name: "XVIII. Yüzyılda Osmanlı Devleti ",
+        tests: [
+          { name: "Test 1", questions: TAR_XVIII_YUZYILDA_OSMANLI_DEVLETI_TEST_1 },
+          { name: "Test 2", questions: TAR_XVIII_YUZYILDA_OSMANLI_DEVLETI_TEST_2 },
+          { name: "Test 3", questions: TAR_XVIII_YUZYILDA_OSMANLI_DEVLETI_TEST_3 },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Yeni ve Yakın Çağ'da Avrupa'daki Gelişmeler",
+    description: "Coğrafi keşifler, Rönesans, Reform ve Aydınlanma gibi Avrupa'daki önemli gelişmeler",
+    icon: "🏛️",
+    steps: [
+      {
+        name: "Yeni ve Yakın Çağ'da Avrupa'daki Gelişmeler",
+        tests: [
+          { name: "Test 1", questions: TAR_YENI_VE_YAKIN_CAGDA_AVRUPADAKI_GELISMELER_TEST_1 },
         ],
       },
     ],
   },
   {
     name: "En Uzun Yüzyıl",
-    description: "XIX. yüzyılda Osmanlı'nın çöküş sürecindeki iç ve dış gelişmeler",
+    description: "Osmanlı'nın gerileme sürecinin başladığı dönem ve önemli gelişmeler",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti 1",
+        name: "En Uzun Yüzyıl",
         tests: [
-          { name: "Test 1", questions: TAR_EN_UZUN_YUZYIL_1_2_3 },
-        ],
-      },
-      {
-        name: "Test Seti 2",
-        tests: [
-          { name: "Test 1", questions: TAR_EN_UZUN_YUZYIL_4_5_6 },
+          { name: "Test 1", questions: TAR_EN_UZUN_YUZYIL_TEST_1 },
+          { name: "Test 2", questions: TAR_EN_UZUN_YUZYIL_TEST_2 },
+          { name: "Test 3", questions: TAR_EN_UZUN_YUZYIL_TEST_3 },
+          { name: "Test 4", questions: TAR_EN_UZUN_YUZYIL_TEST_4 },
+          { name: "Test 5", questions: TAR_EN_UZUN_YUZYIL_TEST_5 },
+          { name: "Test 6", questions: TAR_EN_UZUN_YUZYIL_TEST_6 },
+          { name: "Test 7", questions: TAR_EN_UZUN_YUZYIL_TEST_7 },
         ],
       },
     ],
@@ -142,15 +218,12 @@ export const KPSS_GK_TARIH_TOPICS: TopicDef[] = [
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti 1",
+        name: "XX. Yüzyıl Başlarında Osmanlı Devleti",
         tests: [
-          { name: "Test 1", questions: TAR_EN_UZUN_YUZYIL_7_VE_XX_YUZYIL },
-        ],
-      },
-      {
-        name: "Test Seti 2",
-        tests: [
-          { name: "Test 1", questions: TAR_XX_YUZYIL_3_VE_4 },
+          { name: "Test 1", questions: TAR_XX_YUZYIL_BASLARINDA_OSMANLI_DEVLETI_TEST_1 },
+          { name: "Test 2", questions: TAR_XX_YUZYIL_BASLARINDA_OSMANLI_DEVLETI_TEST_2 },
+          { name: "Test 3", questions: TAR_XX_YUZYIL_BASLARINDA_OSMANLI_DEVLETI_TEST_3 },
+          { name: "Test 4", questions: TAR_XX_YUZYIL_BASLARINDA_OSMANLI_DEVLETI_TEST_4 },
         ],
       },
     ],
@@ -161,9 +234,12 @@ export const KPSS_GK_TARIH_TOPICS: TopicDef[] = [
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "I. Dünya Savaşı Dönemi",
         tests: [
-          { name: "Test 1", questions: TAR_BIRINCI_DUNYA_SAVASI },
+          { name: "Test 1", questions: TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1 },
+          { name: "Test 2", questions: TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2 },
+          { name: "Test 3", questions: TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3 },
+          { name: "Test 4", questions: TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_4 },
         ],
       },
     ],
@@ -174,9 +250,12 @@ export const KPSS_GK_TARIH_TOPICS: TopicDef[] = [
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "Mondros Ateşkesi, İşgaller ve Cemiyetler",
         tests: [
-          { name: "Test 1", questions: TAR_MONDROS_ISGALLER_CEMIYETLER },
+          { name: "Test 1", questions: TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_1 },
+          { name: "Test 2", questions: TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_2 },
+          { name: "Test 3", questions: TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_3 },
+          { name: "Test 4", questions: TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_4 },
         ],
       },
     ],
@@ -187,53 +266,61 @@ export const KPSS_GK_TARIH_TOPICS: TopicDef[] = [
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti 1",
+        name: "Milli Mücadele'ye Hazırlık Dönemi",
         tests: [
-          { name: "Test 1", questions: TAR_EN_UZUN_YUZYIL_VE_MONDROS },
-        ],
-      },
-      {
-        name: "Test Seti 2",
-        tests: [
-          { name: "Test 1", questions: TAR_MILLI_MUCADELE_HAZIRLIK_2_3_4 },
-        ],
-      },
-      {
-        name: "Test Seti 3",
-        tests: [
-          { name: "Test 1", questions: TAR_MILLI_MUCADELE_HAZIRLIK_5_VE_6 },
+          { name: "Test 1", questions: TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1 },
+          { name: "Test 2", questions: TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2 },
+          { name: "Test 3", questions: TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3 },
+          { name: "Test 4", questions: TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4 },
+          { name: "Test 5", questions: TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5 },
+          { name: "Test 6", questions: TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6 },
         ],
       },
     ],
   },
   {
-    name: "Milli Mücadele'de Basın-Yayın ve TBMM Dönemi",
-    description: "Kurtuluş Savaşı'nda basının rolü ve TBMM dönemi siyasi gelişmeleri",
+    name: "Milli Mücadele'de Basın-Yayın",
+    description: "Kurtuluş Savaşı'nda basının rolü",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "Milli Mücadele'de Basın-Yayın",
         tests: [
-          { name: "Test 1", questions: TAR_BASIN_YAYIN_VE_TBMM },
+          { name: "Test 1", questions: TAR_MILLI_MUCADELEDE_BASIN_YAYIN_TEST_1 },
+          { name: "Test 2", questions: TAR_MILLI_MUCADELEDE_BASIN_YAYIN_TEST_2 },
         ],
       },
     ],
   },
+  {
+    name: "TBMM Dönemi",
+    description: "TBMM'nin kuruluşu, iç ve dış politikası, önemli gelişmeler",
+    icon: "🏛️",
+    steps: [
+      {
+        name: "TBMM Dönemi",
+        tests: [
+          { name: "Test 1", questions: TAR_TBMM_DONEMI_TEST_1 },
+          { name: "Test 2", questions: TAR_TBMM_DONEMI_TEST_2 },
+          { name: "Test 3", questions: TAR_TBMM_DONEMI_TEST_3 },
+        ],
+      },
+    ],
+  },
+  
   {
     name: "Kurtuluş Savaşı",
     description: "Milli Mücadele'nin askeri cepheleri ve zafer süreci",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti 1",
+        name: "Kurtuluş Savaşı",
         tests: [
           { name: "Test 1", questions: TAR_KURTULUS_SAVASI_TEST_1 },
-        ],
-      },
-      {
-        name: "Test Seti 2",
-        tests: [
-          { name: "Test 1", questions: TAR_KURTULUS_SAVASI_TEST_4 },
+          { name: "Test 2", questions: TAR_KURTULUS_SAVASI_TEST_2 },
+          { name: "Test 3", questions: TAR_KURTULUS_SAVASI_TEST_3 },
+          { name: "Test 4", questions: TAR_KURTULUS_SAVASI_TEST_4 },
+          { name: "Test 5", questions: TAR_KURTULUS_SAVASI_TEST_5 },
         ],
       },
     ],
@@ -244,9 +331,10 @@ export const KPSS_GK_TARIH_TOPICS: TopicDef[] = [
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "Cumhuriyet Dönemi İç Politika",
         tests: [
-          { name: "Test 1", questions: TAR_CUMHURIYET_DONEMI_IC_POLITIKA },
+          { name: "Test 1", questions: TAR_CUMHURIYET_DONEMI_IC_POLITIKA_TEST_1 },
+          { name: "Test 2", questions: TAR_CUMHURIYET_DONEMI_IC_POLITIKA_TEST_2 },
         ],
       },
     ],
@@ -257,76 +345,142 @@ export const KPSS_GK_TARIH_TOPICS: TopicDef[] = [
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "Atatürk Dönemi İnkılaplar",
         tests: [
-          { name: "Test 1", questions: TAR_ATATURK_DONEMI_INKILAPLAR },
+          { name: "Test 1", questions: TAR_ATATURK_DONEMI_INKILAPLAR_TEST_1 },
+          { name: "Test 2", questions: TAR_ATATURK_DONEMI_INKILAPLAR_TEST_2 },
+          { name: "Test 3", questions: TAR_ATATURK_DONEMI_INKILAPLAR_TEST_3 },
+          { name: "Test 4", questions: TAR_ATATURK_DONEMI_INKILAPLAR_TEST_4 },
         ],
       },
     ],
   },
   {
-    name: "Atatürk İlkeleri ve Cumhuriyetin Önemli Şahsiyetleri",
-    description: "Atatürk ilkeleri ve Türk modernleşmesinde önemli isimler",
+    name: "Atatürk İlkeleri",
+    description: "Atatürk'ün devlet yönetimi ve toplumsal gelişme konusundaki temel ilkeleri",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "Atatürk İlkeleri",
         tests: [
-          { name: "Test 1", questions: TAR_ATATURK_ILKELERI_VE_SAHSIYETLER },
+          { name: "Test 1", questions: TAR_ATATURK_ILKELERI_TEST_1 },
+          { name: "Test 2", questions: TAR_ATATURK_ILKELERI_TEST_2 },
+          { name: "Test 3", questions: TAR_ATATURK_ILKELERI_TEST_3 },
         ],
       },
     ],
   },
   {
-    name: "Türk Dış Politikası ve Çağdaş Dünya",
+    name: "Mustafa Kemal ve Cumhuriyetin Önemli Şahsiyetleri",
+    description: "Mustafa Kemal Atatürk'ün hayatı, kişiliği ve Cumhuriyet'in diğer önemli liderleri",
+    icon: "🏛️",
+    steps: [
+      {
+        name: "Mustafa Kemal ve Cumhuriyetin Önemli Şahsiyetleri",
+        tests: [
+          { name: "Test 1", questions: TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1 },
+          { name: "Test 2", questions: TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_2 },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Türk Dış Politikası",
     description: "Cumhuriyet döneminde Türkiye'nin dış politika ilkeleri ve gelişmeleri",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "Türk Dış Politikası",
         tests: [
-          { name: "Test 1", questions: TAR_DIS_POLITIKA_VE_CAGDAS_DUNYA },
+          { name: "Test 1", questions: TAR_TURK_DIS_POLITIKASI_TEST_1 },
+          { name: "Test 2", questions: TAR_TURK_DIS_POLITIKASI_TEST_2 },
         ],
       },
     ],
   },
   {
-    name: "II. Dünya Savaşı ve Sonrası",
+    name: "XX. Yüzyıl Başlarında Dünya",
+    description: "20. yüzyılın başlarında dünya genelindeki siyasi ve ekonomik gelişmeler",
+    icon: "🏛️",
+    steps: [
+      {
+        name: "XX. Yüzyıl Başlarında Dünya",
+        tests: [
+          { name: "Test 1", questions: TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1 },
+          { name: "Test 2", questions: TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_2 },
+        ],
+      },
+    ],
+  },
+  {
+    name: "II. Dünya Savaşı",
     description: "İkinci Dünya Savaşı süreci ve dünya düzeninin yeniden şekillenmesi",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "II. Dünya Savaşı",
         tests: [
-          { name: "Test 1", questions: TAR_CAGDAS_DUNYA_VE_2_DUNYA_SAVASI },
+          { name: "Test 1", questions: TAR_IKINCI_DUNYA_SAVASI_TEST_1 },
+          { name: "Test 2", questions: TAR_IKINCI_DUNYA_SAVASI_TEST_2 },
         ],
       },
     ],
   },
   {
-    name: "Soğuk Savaş ve Yumuşama Dönemi",
+    name: "Soğuk Savaş Dönemi",
     description: "ABD-SSCB rekabeti, Soğuk Savaş'ın gelişimi ve bitiş süreci",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "Soğuk Savaş Dönemi",
         tests: [
-          { name: "Test 1", questions: TAR_YUMUSAMA_DONEMI },
+          { name: "Test 1", questions: TAR_SOGUK_SAVAS_DONEMI_TEST_1 },
+          { name: "Test 2", questions: TAR_SOGUK_SAVAS_DONEMI_TEST_2 },
+          { name: "Test 3", questions: TAR_SOGUK_SAVAS_DONEMI_TEST_3 },
         ],
       },
     ],
   },
   {
-    name: "Küreselleşen Dünya ve Çağdaş Türk ve Dünya Tarihi",
-    description: "Küreselleşme süreci ve günümüz dünya düzeni tekrar testi",
+    name: "Yumuşama Dönemi",
+    description: "Soğuk Savaş'ın yumuşama süreci ve dünya düzenindeki etkileri",
     icon: "🏛️",
     steps: [
       {
-        name: "Test Seti",
+        name: "Yumuşama Dönemi",
         tests: [
-          { name: "Test 1", questions: TAR_CAGDAS_DUNYA_TEKRAR_VE_KURESELLESME },
+          { name: "Test 1", questions: TAR_YUMUSAMA_DONEMI_TEST_1 },
+          { name: "Test 2", questions: TAR_YUMUSAMA_DONEMI_TEST_2 },
         ],
       },
     ],
   },
+  {
+    name: "Küreselleşen Dünya",
+    description: "Küreselleşme süreci, ekonomik entegrasyon ve kültürel etkileşimler",
+    icon: "🏛️",
+    steps: [
+      {
+        name: "Küreselleşen Dünya",
+        tests: [
+          { name: "Test 1", questions: TAR_KURESELLESEN_DUNYA_TEST_1 },
+          { name: "Test 2", questions: TAR_KURESELLESEN_DUNYA_TEST_2 },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Çağdaş Türk ve Dünya Tarihi Tekrar Testi",
+    description: "Tarih konularının genel tekrar testi",
+    icon: "🏛️",
+    steps: [
+      {
+        name: "Çağdaş Türk ve Dünya Tarihi Tekrar Testi",
+        tests: [
+          { name: "Test 1", questions: TAR_CAGDAS_TURK_VE_DUNYA_TARIHI_TEKRAR_TEST_1 },
+          { name: "Test 2", questions: TAR_CAGDAS_TURK_VE_DUNYA_TARIHI_TEKRAR_TEST_2 },
+        ],
+      },
+    ],
+  }
 ];

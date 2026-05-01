@@ -1,6 +1,6 @@
 import type { McQ } from "../../../../types";
 
-export const TAR_ILK_TURK_DEVLETLERI: McQ[] = [
+export const TAR_ILK_TURK_DEVLETLERI_TEST_1: McQ[] = [
   // ---------------- TEST 1 ----------------
   {
     text: "<p><b>İlk Türk devletlerine ait bilgilere;</b></p><p>I. Çin,<br>II. Arap,<br>III. İran,<br>IV. Mısır</p><p><b>kaynaklarının hangilerinden ulaşılabilir?</b></p>",    diff: 1,
@@ -192,7 +192,10 @@ export const TAR_ILK_TURK_DEVLETLERI: McQ[] = [
       { text: "En parlak dönemlerini Attila zamanında yaşamışlardır.", ok: false },
       { text: "Türk topluluklarını ilk kez tek çatı altında toplamışlardır.", ok: true } // Cevap E
     ]
-  },
+  }
+];
+
+export const TAR_ILK_TURK_DEVLETLERI_TEST_2: McQ[] = [
   // ---------------- TEST 2 ----------------
   {
     text: "Aşağıdakilerden hangisi Mani dininin etkisiyle Uygurlar tarafından yapılan tapınaklara verilen isimdir?",
@@ -361,8 +364,10 @@ export const TAR_ILK_TURK_DEVLETLERI: McQ[] = [
       { text: "Yalvaç", ok: false },
       { text: "Bitigci", ok: false }
     ]
-  },
+  }
+];
 
+export const TAR_ILK_TURK_DEVLETLERI_TEST_3: McQ[] = [
   // ---------------- TEST 3 ----------------
   {
     text: "Asya Hunları, Çinlilere genellikle hayvansal ürünler satarken onlardan tahıl ve ipekli kumaşlar almışlardır.\nBuna göre Asya Hun Devleti ile ilgili olarak;\nI. yarı göçebe yaşam tarzını benimsedikleri,\nII. askerî bakımdan güçlü oldukları,\nIII. komşuları ile ticari ilişkiler kurdukları\nyargılarından hangilerine ulaşılabilir?",
@@ -543,8 +548,10 @@ export const TAR_ILK_TURK_DEVLETLERI: McQ[] = [
       { text: "Uygur", ok: false },
       { text: "Hun", ok: false }
     ]
-  },
+  }
+];
 
+export const TAR_ILK_TURK_DEVLETLERI_TEST_4: McQ[] = [
   // ---------------- TEST 4 ----------------
   {
     text: "İslam öncesi Türk devletlerinde görülen;\n- Boylar federasyonu şeklinde örgütlenilmesi\n- İkili yönetim anlayışının hâkim olması\n- Göçebe yaşam tarzının benimsenmesi\ngibi özellikler aşağıdakilerden hangisi ile ilişkilendirilemez?",

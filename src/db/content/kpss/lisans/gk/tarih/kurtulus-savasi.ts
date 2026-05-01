@@ -140,42 +140,193 @@ export const TAR_KURTULUS_SAVASI_TEST_1: McQ[] = [
   }
 ];
 
-export const TAR_KURTULUS_SAVASI_TEST_4: McQ[] = [
-  // ---------------- KURTULUŞ SAVAŞI - TEST 4 ----------------
+// ============================================================================
+// KURTULUŞ SAVAŞI - TEST 2
+// ============================================================================
+export const TAR_KURTULUS_SAVASI_TEST_2: McQ[] = [
   {
-    text: "8 Kasım 1920'de düzenli ordu birliklerinin kurulmasında aşağıda verilen savaşlardan hangisinin kaybedilmesi etkili olmuştur?",
-    diff: 1,
-    expl: "Batı Cephesi Komutanı Ali Fuat Paşa'nın Kuvayımilliye birlikleriyle Yunanlılara karşı giriştiği ve başarısızlıkla sonuçlanan Gediz Taarruzu, düzensiz milis güçlerle düşmanın atılamayacağını kanıtlamış ve Düzenli Ordu'nun kurulmasını hızlandırmıştır.",
+    text: "<p><b>Lozan Görüşmelerine katılan Türk heyetinin üyeleri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
+    diff: 2,
+    expl: "Kâzım Karabekir, Doğu Cephesi'nin muzaffer komutanıdır ve Gümrü/Kars antlaşmalarını imzalamıştır ancak Lozan heyetinde yer almamıştır. Lozan heyetinin baş delegeleri İsmet İnönü, Dr. Rıza Nur ve Hasan Saka'dır.",
     answers: [
-      { text: "Eskişehir - Kütahya", ok: false }, { text: "Gediz", ok: true }, { text: "Aslıhanlar - Dumlupınar", ok: false }, { text: "Oltu", ok: false }, { text: "II. İnönü", ok: false }
-    ] // Cevap anahtarı 1.B diyor. (Wait, let's check Test 4 Key on page 203. Test 4 Key: 1.C, 2.B, 3.E, 4.D, 5.B, 6.E, 7.B, 8.E, 9.E, 10.A, 11.C, 12.C, 13.D, 14.D, 15.E, 16.B. Wait! 1.C diyor! C is Aslıhanlar-Dumlupınar. But Aslıhanlar-Dumlupınar is 1921! Regular army was founded in 1920. Let me check the page 200 image. Ah, page 200 is TEST 3! The title says TEST 3. So the key I should look at is for TEST 3. Let's look at the key on page 194 (for Test 1). No. Where is Test 3 key? Test 3 ends on page 201 (file 203). Wait, let's check the images. 
-    // Image 200 (file 202) is TEST 3. (Q1-Q6)
-    // Image 201 (file 203) is TEST 3. (Q7-Q12).
-    // Oh, so there are two Test 3 pages! And no Test 4 pages except the last one? 
-    // Let me trace the images carefully. 
-    // 194-287595a436.jpg (Page 192): TEST 1. (Q1-Q6).
-    // 195-7119ae473b.jpg (Page 193): TEST 1. (Q7-Q12).
-    // 196-de6f4eedaa.jpg (Page 194): TEST 1. (Q13-Q16). Key for Test 1.
-    // 197-4168c0049b.jpg (Page 195): TEST 2. (Q1-Q5).
-    // 198-6f9fda9018.jpg (Page 196): TEST 2. (Q6-Q11).
-    // 199-bb42dd1fac.jpg (Page 197): TEST 2. (Q12-Q15). Key for Test 2.
-    // 200-e958128937.jpg (Page 198): TEST 3. (Q1-Q6).
-    // 201-1617e0d2d6.jpg (Page 199): TEST 3. (Q7-Q12).
-    // 202-0804798f33.jpg (Page 200): TEST 3. (Q13-Q16). Key for Test 3.
-    // 203-a70fae7a15.jpg (Page 201): TEST 4. (Q1-Q6).
-    // 204-0e3970a65b.jpg (Page 202): TEST 4. (Q7-Q12).
-    // 205-708fa46313.jpg (Page 203): TEST 4. (Q13-Q16). Key for Test 4.
-    // Aha! So there are actually 6 images for Test 3 and Test 4!
-    // The user provided: 
-    // 1) 200-e958128937.jpg (Page 198, Test 3)
-    // 2) 201-1617e0d2d6.jpg (Page 199, Test 3)
-    // 3) 202-0804798f33.jpg (Page 200, Test 3 + Key)
-    // 4) 203-a70fae7a15.jpg (Page 201, Test 4)
-    // 5) 204-0e3970a65b.jpg (Page 202, Test 4)
-    // 6) 205-708fa46313.jpg (Page 203, Test 4 + Key)
-    // Okay, I will process ALL 32 QUESTIONS from Test 3 and Test 4.
+      { text: "Rıza Nur", ok: false },
+      { text: "Şükrü Kaya", ok: false },
+      { text: "Kâzım Karabekir", ok: true },
+      { text: "Tevfik Bıyıklıoğlu", ok: false },
+      { text: "Celâl Bayar", ok: false }
+    ]
   },
+  {
+    text: "<p><b>Aşağıdakilerden hangisi Mudanya Ateşkes Antlaşması'nın maddeleri arasında <u>yer almaz</u>?</b></p>",
+    diff: 2,
+    expl: "Yunanistan'ın savaş tazminatı olarak Bosnaköy ve Karaağaç'ı Türkiye'ye vermesi, Mudanya Ateşkesi'nin değil Lozan Barış Antlaşması'nın bir maddesidir.",
+    answers: [
+      { text: "İstanbul ve Boğazların yönetimi TBMM'ye bırakılacaktır.", ok: false },
+      { text: "Doğu Trakya on beş gün içinde boşaltılacaktır.", ok: false },
+      { text: "Barış antlaşması yapılıncaya kadar Trakya'da 8000 jandarma bulundurulacaktır.", ok: false },
+      { text: "Türk - Yunan kuvvetleri arasındaki çatışmalara son verilecektir.", ok: false },
+      { text: "Yunan devleti savaş tazminatı olarak Bosnaköy ve Karaağaç'ı verecektir.", ok: true }
+    ]
+  },
+  {
+    text: "<p><b>Millî Mücadele'nin kazanılmasına katkı sağlayan yerel kahramanlar arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
+    diff: 1,
+    expl: "Nene Hatun, 1877-1878 (93 Harbi) Osmanlı-Rus Savaşı'nda Erzurum Aziziye Tabyalarında gösterdiği kahramanlıkla bilinen efsanevi bir isimdir. Millî Mücadele (Kurtuluş Savaşı) dönemi kahramanlarından değildir.",
+    answers: [
+      { text: "Şerife Bacı", ok: false },
+      { text: "Yörük Ali", ok: false },
+      { text: "Fatma Seher", ok: false },
+      { text: "Gördesli Makbule Hanım", ok: false },
+      { text: "Nene Hatun", ok: true }
+    ]
+  },
+  {
+    text: "<p>Saltanatın kaldırılmasından sonra Türk milletinin tek temsilcisi olan TBMM hükûmeti Lozan hazırlıklarına başlamış: Dr. Rıza Nur, Şükrü Kaya, Hasan Saka, Tevfik Bıyıklıoğlu, Celâl Bayar ve Yahya Kemal Beyatlı'dan oluşan heyetin başkanlığına da Dışişleri Bakanı İsmet İnönü getirilmiştir.</p><p><b>Bu heyete TBMM hükûmeti tarafından verilen 14 maddelik talimatnamede;</b></p><p>I. dış borçlar,<br>II. kapitülasyonlar,<br>III. azınlıklar</p><p><b>konularının hangilerinden kesinlikle taviz verilmemesi istenmiştir?</b></p>",
+    diff: 2,
+    expl: "TBMM, Lozan'a giden heyetten özellikle iki konuda kesinlikle taviz verilmemesini ve gerekirse masadan kalkılmasını istemiştir: 1- Ermeni Yurdu meselesi (Azınlıklar/Toprak), 2- Kapitülasyonların kesin olarak kaldırılması.",
+    answers: [
+      { text: "Yalnız II", ok: false },
+      { text: "Yalnız III", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "II ve III", ok: true },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "<p>Kurtuluş Savaşı sürecinde Yunan güçleri sadece İzmir ile yetinmemiş ve işgallerini Doğu Trakya'ya kadar genişletmişlerdir. TBMM'ye bağlı birlikler direniş gösterirken Doğu Trakya'ya maalesef gereken askerî katkı yapılamamıştır.</p><p><b>Bu durum aşağıdakilerden hangisi ile daha iyi açıklanabilir?</b></p>",
+    diff: 3,
+    expl: "Anadolu'daki TBMM güçlerinin Marmara Denizi'ni geçip Doğu Trakya'ya asker sevk edememesinin temel nedeni, İstanbul ve Boğazlar çevresinin o dönemde İngilizler başta olmak üzere İtilaf Devletlerinin sıkı donanma ve asker kontrolünde olmasıdır.",
+    answers: [
+      { text: "Güney Cephesi'nin devam ediyor olması", ok: false },
+      { text: "Boğazlar ve çevresinin İtilafların kontrolünde olması", ok: true },
+      { text: "Doğu Cephesi'nde kayıpların fazla olması", ok: false },
+      { text: "Londra Konferansı kararlarının meclis tarafından onaylanması", ok: false },
+      { text: "Koçgiri İsyanı'nın başlaması", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Lozan Konferansı'nda yer alan aşağıdaki konulardan hangisi üzerinde uzlaşma sağlanamaması üzerine karar konferans sonrasına bırakılmıştır?</b></p>",
+    diff: 1,
+    expl: "Lozan'da çözülemeyen ve Türkiye ile İngiltere arasında sonraya bırakılan tek konu Musul (Irak sınırı) meselesidir. Görüşmeler sonuçsuz kalınca Milletler Cemiyetine gitmiş, 1926 Ankara Antlaşması ile çözülmüştür.",
+    answers: [
+      { text: "Musul", ok: true },
+      { text: "Boğazlar", ok: false },
+      { text: "Dış borçlar", ok: false },
+      { text: "Hatay", ok: false },
+      { text: "Kapitülasyonlar", ok: false }
+    ]
+  },
+  {
+    text: "<p>Millî Mücadele'yi anlatan Tarih Öğretmeni Ahmet, öğrencilerine Kocatepe'nin öneminden bahsetmektedir.</p><p><b>Buna göre tarih dersinde aşağıdaki savaşlardan hangisi anlatılmaktadır?</b></p>",
+    diff: 1,
+    expl: "Başkomutan Mustafa Kemal Paşa, 26 Ağustos 1922 sabahı Büyük Taarruz emrini Afyon Kocatepe'den vermiştir.",
+    answers: [
+      { text: "Çanakkale", ok: false },
+      { text: "I. İnönü", ok: false },
+      { text: "Sakarya", ok: false },
+      { text: "Büyük Taarruz", ok: true },
+      { text: "II. İnönü", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Kâzım Karabekir Paşa;</b></p><p>I. Moskova,<br>II. Gümrü,<br>III. Kars</p><p><b>antlaşmalarının hangilerinde diplomatik anlamda etkin rol oynamıştır?</b></p>",
+    diff: 3,
+    expl: "Kâzım Karabekir Paşa, Doğu Cephesi Komutanı sıfatıyla Ermenistan ile Gümrü (1920) ve Kafkas cumhuriyetleri ile Kars (1921) antlaşmalarını TBMM adına bizzat imzalamıştır. Moskova Antlaşması'nı imzalayan heyette yer almamıştır.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız II", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: true }
+    ]
+  },
+  {
+    text: "<p>Yeni Türkiye Devleti uzun uğraşlar sonucunda Lozan'da kapitülasyonların kaldırılmasını dünya kamuoyuna kabul ettirmiştir.</p><p><b>Lozan'dan önce kapitülasyonların kaldırılmasını kabul eden Avrupalı devlet aşağıdakilerden hangisidir?</b></p>",
+    diff: 2,
+    expl: "I. İnönü Savaşı sonrasında (1921) TBMM ile Sovyet Rusya arasında imzalanan Moskova Antlaşması ile Çarlık dönemine ait kapitülasyonlar kaldırılmış ve Rusya kapitülasyonlardan vazgeçen ilk Avrupalı devlet olmuştur.",
+    answers: [
+      { text: "İngiltere", ok: false },
+      { text: "Rusya", ok: true },
+      { text: "Fransa", ok: false },
+      { text: "Almanya", ok: false },
+      { text: "İtalya", ok: false }
+    ]
+  },
+  {
+    text: "<p>Millî Mücadele Dönemi'nde 13 Ekim 1921 tarihinde Ermenistan, Gürcistan ve Azerbaycan ile Kars Antlaşması imzalanmıştır.</p><p><b>Bu antlaşmanın yapılmasında aşağıdakilerden hangisinin etkili olduğu söylenebilir?</b></p>",
+    diff: 2,
+    expl: "Sakarya Meydan Muharebesi'nin (1921) büyük bir zaferle sonuçlanması üzerine Sovyet Rusya güdümündeki Kafkas cumhuriyetleri ile Kars Antlaşması yapılmış ve Türkiye'nin doğu sınırı kesinleşmiştir.",
+    answers: [
+      { text: "Mudanya Ateşkesi'nin imzalanması", ok: false },
+      { text: "Sakarya Savaşı'nın kazanılması", ok: true },
+      { text: "İtalya'nın işgal ettiği bölgelerden çekilmeye başlaması", ok: false },
+      { text: "Londra Konferansı'nın toplanması", ok: false },
+      { text: "Çerkez Ethem ve Koçgiri isyanlarının bastırılması", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Sakarya Zaferi'nin kazanılmasının ardından İtilaf Devletleri ile barış müzakerelerini yapmak için TBMM adına Paris'e gönderilen dışişleri bakanı aşağıdakilerden hangisidir?</b></p>",
+    diff: 3,
+    expl: "Sakarya Zaferi sonrası askeri bir taarruz yapmadan önce diplomatik yolları denemek ve İtilaf Devletleri'nin niyetini ölçmek için dönemin Dışişleri Bakanı Yusuf Kemal Tengirşenk, Avrupa'ya (Paris ve Londra) gönderilmiştir.",
+    answers: [
+      { text: "Bekir Bami Kunduh", ok: false },
+      { text: "Yusuf Kemal Tengirşenk", ok: true },
+      { text: "Şükrü Saraçoğlu", ok: false },
+      { text: "Fatin Rüştü Zorlu", ok: false },
+      { text: "İsmet İnönü", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>23 Şubat 1921 tarihli Londra Konferansı'nın toplanmasında aşağıdakilerden hangisi etkili <u>olmamıştır</u>?</b></p>",
+    diff: 2,
+    expl: "TBMM'nin SSCB ile Moskova Antlaşması'nı imzalaması Londra Konferansı'nın toplanma sebebi değildir. Aksine, Londra Konferansı'ndan sonuç çıkmaması üzerine Sovyetlerle ilişkiler hızlanmış ve antlaşma (16 Mart 1921) konferans sonrasında imzalanmıştır.",
+    answers: [
+      { text: "İtilaf Devletlerinin Yunan ordularına zaman kazandırma düşüncesi", ok: false },
+      { text: "Fransızların güneydoğuda direnişle karşılaşması", ok: false },
+      { text: "İtalyanların paylaşım durumlarından memnun olmaması", ok: false },
+      { text: "Türk ordusunun I. İnönü Muhaberesi'ni kazanması", ok: false },
+      { text: "TBMM'nin SSCB ile Moskova Dostluk Antlaşması'nı imzalaması", ok: true }
+    ]
+  },
+  {
+    text: "<p><b>Güney Cephesi'nin oluşumuna katkı sağlayan bölgesel kongre aşağıdakilerden hangisidir?</b></p>",
+    diff: 3,
+    expl: "Kilikya (Adana ve çevresi) bölgesinde Fransız ve Ermenilere karşı direnişi organize etmek için Ağustos 1920'de Mustafa Kemal Paşa'nın da bizzat katılımıyla Pozantı Kongresi düzenlenmiştir.",
+    answers: [
+      { text: "Kars - İslam", ok: false },
+      { text: "Nazilli", ok: false },
+      { text: "Pozantı", ok: true },
+      { text: "Oltu", ok: false },
+      { text: "Erzurum", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>I. İnönü Savaşı'nın ardından TBMM'nin doğrudan diplomatik ilişki kurduğu devletler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
+    diff: 3,
+    expl: "I. İnönü Savaşı sonrası Rusya (Moskova Ant.), Afganistan (Dostluk Ant.), İtalya (Londra Konferansı) ve Gürcistan (Batum Ant.) ile doğrudan diplomatik ilişki kurulmuştur. Ukrayna ile Dostluk Antlaşması ise çok daha sonra, 2 Ocak 1922'de imzalanmıştır.",
+    answers: [
+      { text: "Ukrayna", ok: true },
+      { text: "Gürcistan", ok: false },
+      { text: "Afganistan", ok: false },
+      { text: "Rusya", ok: false },
+      { text: "İtalya", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Aşağıda verilen şehirlerimizden hangisinin düşman işgalinden kurtarılması diğerlerinden sonra gerçekleşmiştir?</b></p>",
+    diff: 2,
+    expl: "İzmir, Adana ve Bursa gibi şehirler savaşarak (Büyük Taarruz ve Güney Cephesi ile) kurtarılmıştır. Ancak İstanbul, silahlı bir çatışma olmadan Mudanya Ateşkesi kararıyla kademeli olarak teslim alınmış ve en son 6 Ekim 1923'te Türk ordusunun girmesiyle tam olarak kurtulmuştur.",
+    answers: [
+      { text: "İstanbul", ok: true },
+      { text: "Bursa", ok: false },
+      { text: "Antep", ok: false },
+      { text: "Adana", ok: false },
+      { text: "İzmir", ok: false }
+    ]
+  }
+];
 
+export const TAR_KURTULUS_SAVASI_TEST_3: McQ[] = [
   // ---------------- KURTULUŞ SAVAŞI - TEST 3 ----------------
   {
     text: "8 Kasım 1920'de düzenli ordu birliklerinin kurulmasında aşağıda verilen savaşlardan hangisinin kaybedilmesi etkili olmuştur?",
@@ -305,8 +456,10 @@ export const TAR_KURTULUS_SAVASI_TEST_4: McQ[] = [
     answers: [
       { text: "Rıza Nur", ok: false }, { text: "Vasıf Çınar", ok: false }, { text: "Vasıf Temel", ok: true }, { text: "Refet Bele", ok: false }, { text: "Mahmut Şevket Esendal", ok: false }
     ] // Cevap anahtarı 16.C.
-  },
+  }
+];
 
+export const TAR_KURTULUS_SAVASI_TEST_4: McQ[] = [
   // ---------------- KURTULUŞ SAVAŞI - TEST 4 ----------------
   {
     text: "3 Aralık 1920 tarihinde Ermenistan ile imzalanan Gümrü Antlaşması ile ilgili;\nI. TBMM'nin ilk askerî ve siyasi başarısı olması,\nII. TBMM'nin ilk kez bir İtilaf devleti tarafından tanınması,\nIII. Tehcir Kanunu ile ilgili yeni düzenlemeleri içermesi\nyargılarından hangilerine ulaşılabilir?",
@@ -438,5 +591,203 @@ export const TAR_KURTULUS_SAVASI_TEST_4: McQ[] = [
     answers: [
       { text: "Moskova", ok: false }, { text: "Sevr", ok: true }, { text: "Kars", ok: false }, { text: "Batum", ok: false }, { text: "Ankara", ok: false }
     ] // Cevap anahtarı 16.B.
+  }
+];
+
+// ============================================================================
+// KURTULUŞ SAVAŞI - TEST 5
+// ============================================================================
+export const TAR_KURTULUS_SAVASI_TEST_5: McQ[] = [
+  {
+    text: "<p><b>Kurtuluş Savaşı sürecinde imzalanan;</b></p><p>I. Moskova,<br>II. Batum,<br>III. Gümrü,<br>IV. Ankara</p><p><b>antlaşmalarının kronolojik sırası aşağıdakilerden hangisinde doğru olarak verilmiştir?</b></p>",
+    diff: 2,
+    expl: "Antlaşmaların kronolojik sıralaması: Doğu cephesini kapatan Gümrü (3 Aralık 1920), Gürcistan ile Batum (23 Şubat 1921), Sovyet Rusya ile Moskova (16 Mart 1921) ve Fransızlarla imzalanan Ankara (20 Ekim 1921) şeklindedir.",
+    answers: [
+      { text: "III - IV - I - II", ok: false },
+      { text: "IV - III - II - I", ok: false },
+      { text: "II - IV - I - III", ok: false },
+      { text: "III - II - I - IV", ok: true },
+      { text: "I - II - III - IV", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Aşağıda verilen gelişmelerden hangisinin Batı Cephesi'nin oluşumuna katkı yaptığı <u>söylenemez</u>?</b></p>",
+    diff: 2,
+    expl: "XV. Kolordu, Mondros'tan sonra terhis edilmemiş ve Doğu Cephesi'nde Kâzım Karabekir komutasında Ermenilere karşı savaşmış olan birliktir. Batı Cephesi ile bir ilgisi yoktur.",
+    answers: [
+      { text: "Ali Fuat Paşa'nın Temsil Heyeti tarafından Kuvayımilliye birliklerinin başına atanması", ok: false },
+      { text: "Balıkesir Kongresi'nin düzenlenmesi", ok: false },
+      { text: "Yunan işgalinin hız kazanması", ok: false },
+      { text: "XV. Kolordu'nun terhis edilmemesi", ok: true },
+      { text: "Büyük Millet Meclisi tarafından düzenli birliklerin kurulması", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Lozan Konferansı'nda ele alınan;</b></p><p>I. Hatay,<br>II. Musul,<br>III. Boğazlar</p><p><b>konularından hangileri yeni Türk devletinin bağımsızlığını zedeleyecek şekilde çözümlenmiştir?</b></p>",
+    diff: 3,
+    expl: "Lozan'da Boğazların yönetiminin, başkanı Türk olsa da uluslararası bir komisyona bırakılması ve her iki yakasının silahsızlandırılması Türkiye'nin doğrudan egemenlik ve bağımsızlık haklarını zedeleyen bir durumdur (Bu durum 1936 Montrö ile düzeltilecektir).",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız II", ok: false },
+      { text: "Yalnız III", ok: true },
+      { text: "I ve II", ok: false },
+      { text: "II ve III", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Londra Konferansı'nda yaşanan;</b></p><p>I. TBMM'nin İtalya aracılığı ile doğrudan davet edilmesi,<br>II. Sevr Barışı'nın maddelerinin yumuşatılması,<br>III. İstanbul Hükûmeti temsilcisinin söz hakkını meclis yetkilisine bırakması</p><p><b>gelişmelerinden hangileri, İtilaf Devletleri arasında görüş ayrılığı olduğunun kanıtı niteliğindedir?</b></p>",
+    diff: 2,
+    expl: "İngiltere TBMM'nin doğrudan konferansa katılmasını istemezken, İtalya'nın İngiltere'den bağımsız hareket ederek TBMM'yi doğrudan davet etmesi İtilaf Devletleri arasındaki diplomatik çatlağın ve görüş ayrılığının kesin kanıtıdır.",
+    answers: [
+      { text: "Yalnız I", ok: true },
+      { text: "Yalnız II", ok: false },
+      { text: "Yalnız III", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>13 Ekim 1921 tarihinde imzalanan Kars Antlaşması ile ilgili olarak aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
+    diff: 3,
+    expl: "Kars Antlaşması, Sovyet Rusya ile imzalanan Moskova Antlaşması'nın devamı niteliğindedir. 1918'de imzalanan Brest-Litovsk Antlaşması I. Dünya Savaşı'nı ilgilendiren ayrı bir antlaşmadır.",
+    answers: [
+      { text: "TBMM Hükûmeti ve Kafkas ülkeleri arasında imzalandığı", ok: false },
+      { text: "Türkiye'nin bugünkü doğu sınırının çizildiği", ok: false },
+      { text: "Sakarya Zaferi'nin ardından gündeme geldiği", ok: false },
+      { text: "Batum bölgesinin Gürcistan'a bırakıldığı", ok: false },
+      { text: "1918'de imzalanan Brest-Litovsk Antlaşması'nın devamı niteliğinde olduğu", ok: true }
+    ]
+  },
+  {
+    text: "<p>Sevr Antlaşması Saltanat Şûrası tarafından onaylanmasına rağmen yasal bir statü kazanamamıştır.</p><p><b>Bu durumun oluşmasında etkili olan temel neden aşağıdakilerden hangisidir?</b></p>",
+    diff: 2,
+    expl: "Osmanlı Anayasası olan Kanun-i Esasi'ye göre, uluslararası antlaşmaların yürürlüğe girebilmesi için meclis (Mebusan Meclisi) tarafından onaylanması şarttı. Mebusan Meclisi dağıtılmış olduğu için Sevr hukuken ölü doğmuş bir antlaşmadır.",
+    answers: [
+      { text: "Antlaşmanın yürürlüğe girmemiş olması", ok: false },
+      { text: "İmzalayan kişilerin vatan haini olarak nitelendirilmesi", ok: false },
+      { text: "Kanunuesasi'ye göre uluslararası antlaşmaların meclisin onayından geçmesinin gerekmesi", ok: true },
+      { text: "Türk halkının söz konusu antlaşmaya sert tepki göstermesi", ok: false },
+      { text: "I. TBMM tarafından imzalanmamış olması", ok: false }
+    ]
+  },
+  {
+    text: "<p>Sovyet Rusya'nın TBMM'yi destekleme nedenlerinden biri de kendi rejimine yayılma alanı bulmaktır.</p><p><b>TBMM'nin Rusya ile imzaladığı Moskova Antlaşması'nda yer alan aşağıdaki maddelerden hangisi bu duruma önlem niteliğindedir?</b></p>",
+    diff: 3,
+    expl: "'Her iki ülke birbirinin geleceğine (ve rejimine) saygı duyacaktır' maddesi, Sovyet Rusya'nın Anadolu'da komünizm propagandası yapmasını önlemek ve Türkiye'nin iç işlerine karışmasını engellemek amacıyla konulmuştur.",
+    answers: [
+      { text: "Birinin tanımadığı antlaşmayı diğeri de tanımayacaktır.", ok: false },
+      { text: "Her iki ülke birbirinin geleceğine saygı duyacaktır.", ok: true },
+      { text: "Boğazlar konusu Karadeniz'de kıyısı olan ülkelerin bir araya geleceği konferansta ele alınacaktır.", ok: false },
+      { text: "Rusya elindeki esirleri teslim edecektir.", ok: false },
+      { text: "Batum bölgesi Gürcistan'a bırakılmak şartı ile Misakımillî sınırları tanınacaktır.", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Aşağıdakilerden hangisinin 1 Mart 1921 tarihinde Afganistan ile imzalanan Dostluk Antlaşması ile ilgili olduğu <u>söylenemez</u>?</b></p>",
+    diff: 1,
+    expl: "TBMM, İtilaf Devletleri'ne karşı tam bağımsızlık savaşı verirken yaptığı antlaşmalar için İngiltere veya Fransa'nın onayını bekleyemez veya alamaz. Bu, bağımsızlık ilkesiyle tamamen çelişen bir durumdur.",
+    answers: [
+      { text: "Öğretmen ve subay gönderilmesi karşılıklı karara bağlanmıştır.", ok: false },
+      { text: "TBMM'nin Orta Doğu'daki etkinliğini arttırmıştır.", ok: false },
+      { text: "I. İnönü Zaferi'nin ardından imzalanmıştır.", ok: false },
+      { text: "İngiltere ve Fransa'nın onayı alınarak imzalanmıştır.", ok: true },
+      { text: "TBMM ilk kez bir İslam devleti tarafından tanınmıştır.", ok: false }
+    ]
+  },
+  {
+    text: "<p>I. Güney<br>II. Doğu<br>III. Batı</p><p><b>cephelerinin kapanış sırası aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    diff: 2,
+    expl: "Kurtuluş Savaşı'nda cephelerin kapanış sırası: Önce Doğu (Gümrü), sonra Güney (Ankara), en son Batı (Mudanya) şeklindedir.",
+    answers: [
+      { text: "II - I - III", ok: true },
+      { text: "III - II - I", ok: false },
+      { text: "I - III - II", ok: false },
+      { text: "III - I - II", ok: false },
+      { text: "I - II - III", ok: false }
+    ]
+  },
+  {
+    text: "<p>I. Yunanistan'da kral değişikliğinin yaşanması<br>II. Sovyet Rusya'da Stalin'in iktidara gelmesi<br>III. İngiltere'de Lyod George hükûmetinin istifa etmesi</p><p><b>gelişmelerinden hangilerinin Mudanya Ateşkesi'nin imzalanmasına bağlı olarak ortaya çıktığı söylenebilir?</b></p>",
+    diff: 3,
+    expl: "Kurtuluş Savaşı'ndaki kesin zaferimiz (Büyük Taarruz ve Mudanya Ateşkesi), İngiltere'de Türk düşmanı Başbakan Lloyd George'un hükûmetinin düşmesine ve Yunanistan'da Kral Konstantin'in tahtını bırakmasına sebep olmuştur.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız III", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: true },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Mudanya Ateşkesi'nde yer alan;</b></p><p>I. Doğu Trakya 15 gün içinde boşaltılacaktır.<br>II. Barış yapılıncaya kadar İtilaflar İstanbul'da kalacaktır.<br>III. İstanbul ve Boğazların yönetimi TBMM'ye bırakılacaktır.</p><p><b>maddelerinden hangileri ile Osmanlı Devleti hukuken sona ermiştir?</b></p>",
+    diff: 2,
+    expl: "Osmanlı Devleti'nin başkenti ve merkezî otoritesi olan İstanbul'un, padişaha değil de TBMM hükûmetine teslim edilmesi, Osmanlı Devleti'nin artık hukuken yok sayıldığının en açık kanıtıdır.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız II", ok: false },
+      { text: "Yalnız III", ok: true },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>I. TBMM tarafından düzenli ordunun kurulmasında;</b></p><p>I. bazı Kuvayımilliye şeflerinin disiplinsiz hareketleri,<br>II. Gediz Taarruzu'nun kaybedilmesi,<br>III. Gümrü Antlaşması'nın imzalanması</p><p><b>gelişmelerinden hangilerinin etkili olduğu söylenebilir?</b></p>",
+    diff: 2,
+    expl: "Halktan zorla para toplayan disiplinsiz Kuvayımilliye hareketleri ve düzenli Yunan ordusuna karşı Gediz Taarruzu'nda alınan ağır yenilgi, düzenli ordunun kurulmasını zorunlu hale getirmiştir. Gümrü Antlaşması ise Doğu Cephesi'nin sonucudur.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "I ve II", ok: true },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "<p>I. Maraş<br>II. İzmir<br>III. İstanbul<br>IV. Antep</p><p><b>Yukarıda verilen bölgelerin düşman işgalinden kurtarılış sırası aşağıdakilerden hangisinde doğru olarak verilmiştir?</b></p>",
+    diff: 3,
+    expl: "Kurtuluş sırası: Maraş (Şubat 1920), Antep (her ne kadar işgal edilse de direnişi), İzmir (Büyük Taarruz - 9 Eylül 1922) ve Mudanya/Lozan sonrası teslim alınan İstanbul (Ekim 1923).",
+    answers: [
+      { text: "I - II - III - IV", ok: false },
+      { text: "III - IV - I - II", ok: false },
+      { text: "I - IV - II - III", ok: true },
+      { text: "IV - I - II - III", ok: false },
+      { text: "III - II - I - IV", ok: false }
+    ]
+  },
+  {
+    text: "<p>I. Maraş<br>II. Antep<br>III. Urfa<br>IV. Kazan</p><p><b>bölgelerinin unvan alış sırası aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    diff: 2,
+    expl: "Unvanların verilme tarihleri sırasıyla: Gazi-Antep (1921), Kahraman-Maraş (1973), Şanlı-Urfa (1984) ve Kahraman-Kazan (2016) şeklindedir.",
+    answers: [
+      { text: "II - I - III - IV", ok: true },
+      { text: "I - II - III - IV", ok: false },
+      { text: "IV - II - III - I", ok: false },
+      { text: "III - IV - I - II", ok: false },
+      { text: "I - III - II - IV", ok: false }
+    ]
+  },
+  {
+    text: "<p>- Edirne - Kırklareli topraklarının savaşılmadan alınması<br>- Millî Mücadele'nin askerî safhasının sona ermesi<br>- Osmanlı Devleti'nin hukuken geçerliliğini kaybetmesi</p><p><b>Yukarıda verilen gelişmeler aşağıdaki hangi antlaşmanın sonucunda ortaya çıkmıştır?</b></p>",
+    diff: 1,
+    expl: "Kurtuluş Savaşı'nın askeri aşamasını bitirip diplomatik aşamasını başlatan, Doğu Trakya'yı (Edirne, Kırklareli) kurşun atmadan kurtaran ve İstanbul'un TBMM'ye devri ile Osmanlı'yı hukuken bitiren belge Mudanya Ateşkes Antlaşması'dır.",
+    answers: [
+      { text: "Mudanya", ok: true },
+      { text: "Moskova", ok: false },
+      { text: "Lozan", ok: false },
+      { text: "Kars", ok: false },
+      { text: "Ankara", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Lozan Konferansı'nda Türk devletinin istekleri doğrultusunda çözülen konular arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
+    diff: 3,
+    expl: "Türk heyeti Fener Rum Patrikhanesi'ni tamamen sınır dışı etmek istemiştir. Ancak İngilizlerin direnişi sonucu patrikhanenin siyasi yetkilerinden arındırılarak İstanbul'da kalması kabul edilmiştir. Yani patrikhane sorunu Türkiye'nin tam istediği gibi (sınır dışı edilerek) çözülememiştir.",
+    answers: [
+      { text: "Yabancı okullar", ok: false },
+      { text: "Ermeni meselesi", ok: false },
+      { text: "Kapitülasyonlar", ok: false },
+      { text: "Duyun-u Umumiye", ok: false },
+      { text: "Patrikhane", ok: true }
+    ]
   }
 ];

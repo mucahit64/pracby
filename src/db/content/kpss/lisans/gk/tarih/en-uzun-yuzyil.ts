@@ -1,6 +1,7 @@
+import e from "express";
 import type { McQ } from "../../../../types";
 
-export const TAR_EN_UZUN_YUZYIL_1_2_3: McQ[] = [
+export const TAR_EN_UZUN_YUZYIL_TEST_1: McQ[] = [
   // ---------------- EN UZUN YÜZYIL - TEST 1 ----------------
   {
     text: "1806-1812 Osmanlı-Rus Harbi sırasında Osmanlı Devleti Rusya ile yapılan Tatariçe Meydan Savaşı'nı kazanmasına rağmen ilerleyen süreçte zor durumda kalmıştır.\nBu durumun yaşanmasında;\nI. Kale-i Sultaniye,\nII. Erfurt,\nIII. Tilsit\nantlaşmalarından hangilerinin etkili olduğu söylenebilir?",
@@ -113,8 +114,10 @@ export const TAR_EN_UZUN_YUZYIL_1_2_3: McQ[] = [
     answers: [
       { text: "Kumkapı Gösterisi", ok: false }, { text: "Kuleli Olayı", ok: true }, { text: "Osmanlı Bankası Baskını", ok: false }, { text: "Adana Olayları", ok: false }, { text: "Erzurum İsyanı", ok: false }
     ] // Cevap anahtarı B.
-  },
+  }
+];
 
+export const TAR_EN_UZUN_YUZYIL_TEST_2: McQ[] = [
   // ---------------- EN UZUN YÜZYIL - TEST 2 ----------------
   {
     text: "Sanayi İnkılabı'nın gerçekleşmesi ile Avrupalı devletler Osmanlı Devleti'nin Yakın Doğu topraklarına ilgi duymaya başlamışlardır.\nAvrupalı devletlerin Osmanlı topraklarına ilgi duymasının nedenleri arasında aşağıdakilerden hangisi yer almaz?",
@@ -237,8 +240,10 @@ export const TAR_EN_UZUN_YUZYIL_1_2_3: McQ[] = [
     answers: [
       { text: "Tarımsal üretimin artması", ok: true }, { text: "Kapitülasyonların kapsamının genişlemesi", ok: false }, { text: "Yedi Vahit anlayışının son bulması", ok: false }, { text: "Osmanlı Devleti'nin açık pazar hâline gelmesi", ok: false }, { text: "Avrupalı malların Osmanlı Devleti'ne girişinin kolaylaşması", ok: false }
     ] // Cevap A.
-  },
+  }
+];
 
+export const TAR_EN_UZUN_YUZYIL_TEST_3: McQ[] = [
   // ---------------- EN UZUN YÜZYIL - TEST 3 ----------------
   {
     text: "III. Selim Dönemi'nde 1792 yılında Batı tarzında Nizam-ı Cedid ordusu kurulmuştur. İlk başta 2.500 kişilik bir güce sahip olan bu birliğin kadrosu 1.806 yılına gelindiğinde 22.685 asker ve 1.590 subaya yükseltilmiştir. Bunların yarısı İstanbul'da kalmış, yarısı Anadolu vilayetlerine dağıtılmıştır.\nBu bilgilerden hareketle aşağıdaki yargılardan hangisine ulaşılamaz?",
@@ -370,7 +375,7 @@ export const TAR_EN_UZUN_YUZYIL_1_2_3: McQ[] = [
   }
 ];
 
-export const TAR_EN_UZUN_YUZYIL_4_5_6: McQ[] = [
+export const TAR_EN_UZUN_YUZYIL_TEST_4: McQ[] = [
   // ---------------- EN UZUN YÜZYIL - TEST 4 ----------------
   {
     text: "1838 Balta Limanı Antlaşması'nın Osmanlı ekonomisi üzerindeki etkileri arasında aşağıdakilerden hangisi yer almaz?",
@@ -499,8 +504,10 @@ export const TAR_EN_UZUN_YUZYIL_4_5_6: McQ[] = [
     answers: [
       { text: "Yalnız I", ok: false }, { text: "I ve II", ok: false }, { text: "I ve III", ok: true }, { text: "II ve III", ok: false }, { text: "I, II ve III", ok: false }
     ]
-  },
+  }
+];
 
+export const TAR_EN_UZUN_YUZYIL_TEST_5: McQ[] = [
   // ---------------- EN UZUN YÜZYIL - TEST 5 ----------------
   {
     text: "\"Sarıklı İhtilalci\" olarak bilinen ve II. Abdülhamit'i tahttan indirme amaçlı gerçekleştirilen 1878 Çırağan Baskını olayının yaşanmasında etkin rol oynayan fikir insanı aşağıdakilerden hangisidir?",
@@ -621,8 +628,10 @@ export const TAR_EN_UZUN_YUZYIL_4_5_6: McQ[] = [
     answers: [
       { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "I ve II", ok: true }, { text: "II ve III", ok: false }, { text: "I, II ve III", ok: false }
     ]
-  },
+  }
+];
 
+export const TAR_EN_UZUN_YUZYIL_TEST_6: McQ[] = [
   // ---------------- EN UZUN YÜZYIL - TEST 6 ----------------
   {
     text: "Osmanlı Devleti'nin XIX. yüzyılda varlığını korumak adına Avrupalı devletlerin çıkar çatışmalarından faydalanma ve ittifaklara yönelme siyasetine denge politikası adı verilir.\nBuna göre aşağıdakilerin hangisinde Osmanlı Devleti'nin denge politikası izlediği söylenemez?",
@@ -742,6 +751,138 @@ export const TAR_EN_UZUN_YUZYIL_4_5_6: McQ[] = [
     expl: "Yunanistan (1829), Sırbistan, Karadağ ve Romanya (1878) 19. yüzyılda Osmanlı'dan ayrılarak bağımsız olmuştur. Bulgaristan ise II. Meşrutiyet'in yarattığı kargaşadan yararlanarak 1908 yılında (Yani 20. Yüzyılda) bağımsız olmuştur.",
     answers: [
       { text: "Romanya", ok: false }, { text: "Bulgaristan", ok: true }, { text: "Karadağ", ok: false }, { text: "Yunanistan", ok: false }, { text: "Sırbistan", ok: false }
+    ]
+  }
+];
+
+export const TAR_EN_UZUN_YUZYIL_TEST_7: McQ[] = [
+  // ---------------- EN UZUN YÜZYIL - TEST 7 ----------------
+  {
+    text: "1856 Islahat Fermanı'nın ilanı ile azınlıklar;\nI. askerlik,\nII. devlet memurluğu,\nIII. yerel yönetim\nkonularının hangilerinde Müslümanlar ile eşit haklara sahip olmuştur?",
+    diff: 2,
+    expl: "Islahat Fermanı ile gayrimüslimlere devlet memuru olma (II) ve il genel meclislerine üye olarak yerel yönetime katılma (III) hakkı verilmiştir. Askerlik ise Tanzimat Fermanı ile herkes için 'vatan hizmeti' sayılmış, Islahat ile gayrimüslimlere bedelli askerlik hakkı tanınarak bir nevi onlara ayrıcalık yaratılmıştır.",
+    answers: [
+      { text: "Yalnız II", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve II", ok: false }, { text: "I ve III", ok: false }, { text: "II ve III", ok: true }
+    ]
+  },
+  {
+    text: "Tanzimat Dönemi yenilikleri arasında aşağıdakilerden hangisi yer almaz?",
+    diff: 2,
+    expl: "Avrupa'ya ilk kez eğitim için öğrenci gönderilmesi Sultan II. Mahmut dönemindedir. Tanzimat Dönemi (Sultan Abdülmecit, Abdülaziz) yeniliklerinden biri değildir.",
+    answers: [
+      { text: "Azınlıklara bedelli askerlik hakkının tanınması", ok: false }, { text: "Mekteb-i Mülkiyenin açılması", ok: false }, { text: "İltizam usulünün kaldırılması", ok: false }, { text: "Avrupa'ya ilk kez öğrenci gönderilmesi", ok: true }, { text: "Padişahın yurt dışı gezisi düzenlemesi", ok: false }
+    ]
+  },
+  {
+    text: "Osmanlı Devleti'nde Kanunuesasi'nin kabulü ile;\nI. parlamenter sisteme geçilmesi,\nII. egemenlik anlayışının değişmesi,\nIII. teokratik yönetimin son bulması\ngelişmelerinden hangileri yaşanmıştır?",
+    diff: 2,
+    expl: "Kanunuesasi (1876) ile halkın temsilcilerinden oluşan meclis açılmış ve anayasal/parlamenter sisteme geçilmiştir (I). Padişah mutlak egemenliğini meclis ile paylaştığı için egemenlik anlayışı değişmiştir (II). Ancak Halifelik makamı ve Şeriat yasaları korunduğu için devletin teokratik (dini) yapısı son bulmamıştır.",
+    answers: [
+      { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "I ve II", ok: true }, { text: "I ve III", ok: false }, { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "Osmanlı Devleti'nde;\nI. Nizam-ı Cedid,\nII. Sekban-ı Cedid,\nIII. Asakir-i Mansure-i Muhammediye\ngibi askerî birimlerden hangilerinin kurulması yeniçeriler tarafından tepki ile karşılanmıştır?",
+    diff: 2,
+    expl: "Batı tarzı kurulan Nizam-ı Cedid (III. Selim) ve Sekban-ı Cedid (II. Mahmut) orduları çıkarları zedelenen Yeniçerilerin isyanlarıyla kapatılmıştır. Asakir-i Mansure ordusu ise Yeniçeri Ocağı bizzat padişah tarafından kanlı bir şekilde kaldırıldıktan (Vaka-i Hayriye) sonra kurulmuştur; dolayısıyla tepki gösterecek bir Yeniçeri kalmamıştı.",
+    answers: [
+      { text: "Yalnız I", ok: false }, { text: "I ve II", ok: true }, { text: "I ve III", ok: false }, { text: "II ve III", ok: false }, { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "1876'da ilan edilen Kanunuesasi'de yer alan;\nI. padişahın veto hakkının sınırsız olması,\nII. Mebusan Meclisi üyelerini dört yılda bir halkın seçmesi,\nIII. yasa teklifinin padişahın onayına bağlı olması\nhükümlerinden hangileri, monarşik yapının otoritesini devam ettirdiğini göstermektedir?",
+    diff: 2,
+    expl: "Padişahın meclisin çıkardığı yasaları sınırsızca veto edebilmesi (I) ve yasa yapmak için bile padişahtan izin alma zorunluluğu (III), halkın (meclisin) üzerinde padişahın mutlak monarşik gücünün üstünlüğünü devam ettirdiğini gösterir.",
+    answers: [
+      { text: "Yalnız II", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve II", ok: false }, { text: "I ve III", ok: true }, { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "Osmanlı Devleti'nde 1909 yılında anayasa değişikliği ile Heyet-i Vükela'nın meclise karşı sorumlu hâle getirilmesi;\nI. milletvekili seçim sisteminin değiştirilmesi,\nII. padişahın yetkilerinin kısıtlanması,\nIII. yürütmenin yasama birimi tarafından denetlenmesi\ndurumlarından hangilerine neden olmuştur?",
+    diff: 3,
+    expl: "Hükümetin (Heyet-i Vükela = Yürütme), Padişaha değil de Meclise (Yasama) karşı sorumlu olması demek; meclisin hükümeti denetleyip düşürebilmesi (III) ve padişahın istediği hükümeti kurup yönetme gücünün elinden alınması (II) demektir.",
+    answers: [
+      { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "I ve II", ok: false }, { text: "I ve III", ok: false }, { text: "II ve III", ok: true }
+    ]
+  },
+  {
+    text: "II. Mahmut Dönemi'nde yapılan merkez teşkilatındaki dönüşümlerden hangisi aşağıda yanlış eşleştirilmiştir?",
+    diff: 3,
+    expl: "II. Mahmut döneminde Divan-ı Hümayun kaldırılarak Bakanlıklar (Nezaretler) kurulmuştur. Dışişlerinden sorumlu olan 'Reisülküttap' makamı 'Hariciye Nezaretine' dönüştürülmüştür. (Sadaret Kethüdası ise Dahiliye Nezaretine dönüşmüştür).",
+    answers: [
+      { text: "Reisülküttap - Sadaret Kethüdası", ok: true }, { text: "Şeyhülislam - Bab-ı Meşihat", ok: false }, { text: "Sadrazam - Başvekâlet", ok: false }, { text: "Vakıflar - Evkaf-ı Hümayun", ok: false }, { text: "Darphane - Maliye Nezareti", ok: false }
+    ]
+  },
+  {
+    text: "Sömürge arayışında olan Fransa 1881 yılında Osmanlı toprağı olan Tunus'u işgal etmiştir. Fransa'nın Tunus'u işgaline o dönem çatışma hâlinde olduğu Almanya'nın destek vermesinin nedeni aşağıdakilerden hangisi ile açıklanabilir?",
+    diff: 3,
+    expl: "Almanya (Bismarck), 1871 Sedan Savaşı'nda Fransa'dan aldığı kömür zengini 'Alsas-Loren' bölgesinin acısını unutturmak ve Fransa'nın intikam hissini başka yöne (sömürgeciliğe) çekmek için onun Tunus'u işgal etmesine destek vermiştir.",
+    answers: [
+      { text: "Süveyş Kanalı'nı Fransa ile birlikte açmak", ok: false }, { text: "Alsas-Loren konusunda Fransa'nın tepkisini azaltmak", ok: true }, { text: "İngiltere'nin Kıbrıs'ı geçici olarak yönetimine almasını önlemek", ok: false }, { text: "Fransa'nın Cezayir'i işgalini engellemek", ok: false }, { text: "İtalyan lider Mussolini'nin İngiliz sömürge bölgelerine saldırmasını sağlamak", ok: false }
+    ]
+  },
+  {
+    text: "İttihat ve Terakki Cemiyetini meşrutiyetin yeniden ilanı konusunda harekete geçiren dış gelişme aşağıdakilerden hangisidir?",
+    diff: 2,
+    expl: "1908'deki Reval Görüşmeleri'nde İngiltere'nin, Rusya'yı Makedonya ve Boğazlar konusunda serbest bıraktığını öğrenen İttihatçılar, 'Devlet elden gidiyor' korkusuyla Makedonya'da isyan edip II. Abdülhamit'e meşrutiyeti ilan ettirmişlerdir.",
+    answers: [
+      { text: "Tersane Konferansı'nın toplanması", ok: false }, { text: "Viyana Kongresi'nin düzenlenmesi", ok: false }, { text: "İngiltere kralının Reval'de Rus çarı ile bir araya gelmesi", ok: true }, { text: "İtalya'nın Trablusgarp bölgesine saldırması", ok: false }, { text: "Sultan Abdülaziz'in yurt dışı gezisine çıkması", ok: false }
+    ]
+  },
+  {
+    text: "1854 yılında hukukçu yetiştirme amaçlı açılan Osmanlı eğitim kurumu aşağıdakilerden hangisidir?",
+    diff: 3,
+    expl: "Tanzimat döneminde laik Batı hukukuyla Şer'i hukukun birlikte uygulandığı yeni 'Nizamiye Mahkemeleri' kurulmuş, bu mahkemelere modern kadı (naib/hukukçu) yetiştirmek için de 'Mekteb-i Nüvvab' açılmıştır.",
+    answers: [
+      { text: "Mekteb-i Nüvvab", ok: true }, { text: "Rüştiye", ok: false }, { text: "Darüşşafaka", ok: false }, { text: "Darülmuallimin", ok: false }, { text: "Mekteb-i Mülkiye", ok: false }
+    ]
+  },
+  {
+    text: "- Yapılması düşünülen reformlar hakkında görüş bildirir, gerekli yasa ve tüzük çalışmalarını ortaya koyar.\n- II. Mahmut Dönemi'nde açılmış olup \"Reformların Dinamosu\" olarak tanımlanmıştır.\nÖzellikleri verilen idari kurul aşağıdakilerden hangisidir?",
+    diff: 3,
+    expl: "Sultan II. Mahmut, planlı ıslahatlar (reformlar) yapmak ve bu işleri kurumsallaştırmak için bir nevi 'Danıştay' görevi gören Meclis-i Vâlâ-yı Ahkâm-ı Adliye'yi (Yüce Adalet Meclisi) kurmuştur.",
+    answers: [
+      { text: "Heyet-i Vükela", ok: false }, { text: "Darüşşura-i Askerî", ok: false }, { text: "Tekaüd Sandığı", ok: false }, { text: "Meclis-i Valay-ı Ahkâm-ı Adliye", ok: true }, { text: "Âyan Meclisi", ok: false }
+    ]
+  },
+  {
+    text: "II. Abdülhamit Dönemi'nde hasta, engelli ve yaşlıların barınması için \"Şefkat Kapısı\" olarak da bilinen aşağıdaki birimlerden hangisi kurulmuştur?",
+    diff: 1,
+    expl: "Sultan II. Abdülhamit tarafından 1895 yılında kimsesiz, yaşlı, engelli çocuk ve kadınların barınması, bakımı için kurulan ve günümüzde de varlığını sürdüren efsanevi hayır kurumu 'Darülaceze'dir (Acizler Evi).",
+    answers: [
+      { text: "Darüşşafaka", ok: false }, { text: "Darülbedayi", ok: false }, { text: "Darülaceze", ok: true }, { text: "Darülelhan", ok: false }, { text: "Darülfünun", ok: false }
+    ]
+  },
+  {
+    text: "Osmanlı Devleti'nde padişah yetkilerinin ilk kez kanun tarafından kısıtlanmasına neden olan gelişme aşağıdakilerden hangisidir?",
+    diff: 2,
+    expl: "Padişahın yetkileri ilk kez 'Sened-i İttifak' (bir sözleşme) ile sınırlanmış olsa da, gücünü resmi bir 'Kanun' (Anayasa) ile meclisle paylaşarak kısıtlanması ilk defa 1876 Kanunuesasi'nin ilanıyladır.",
+    answers: [
+      { text: "Sened-i İttifak", ok: false }, { text: "Tanzimat Fermanı", ok: false }, { text: "Islahat Fermanı", ok: false }, { text: "Kanunuesasi", ok: true }, { text: "1909 Anayasa değişiklikleri", ok: false }
+    ]
+  },
+  {
+    text: "Tanzimat Fermanı'nda;\n- Herkesin mal-mülk sahibi olabilmesi ve miras bırakabilmesi\n- Kimsenin yargılanmadan idam edilmemesi\ngibi hükümlerin yer alması Osmanlı Devleti'nde;\nI. kulluk,\nII. müsadere,\nIII. gedik\nuygulamalarından hangilerinin sona erdiğinin göstergesidir?",
+    diff: 2,
+    expl: "Kimsenin yargısız idam edilememesi (can güvenliği), padişahın herkesi 'kulu' sayıp kayıtsız şartsız ölüm emri verebildiği 'Kulluk' (I) usulünü bitirmiştir. Mal-mülk edinebilme ise devletin şahıs mallarına el koyduğu 'Müsadere' (II) usulünü resmen kaldırmıştır.",
+    answers: [
+      { text: "Yalnız II", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve II", ok: true }, { text: "I ve III", ok: false }, { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "II. Mahmut Dönemi'nde yapılan;\nI. Yeniçeri Ocağının kaldırılması,\nII. pasaport uygulamasının getirilmesi,\nIII. âyanlık anlayışına son verilmesi\ngibi ıslahat hareketlerinden hangileri merkezî otoriteyi güçlendirmeye yöneliktir?",
+    diff: 1,
+    expl: "İsyan edip devlete kafa tutan Yeniçerilerin ve Eyaletlerdeki Ayanların yok edilmesi doğrudan padişahın (merkezin) gücünü artırır. İstanbul'a giriş-çıkışları kontrol eden Mürur Tezkeresi (Pasaport) de asayişi ve merkezi otoriteyi sağlamaya yöneliktir.",
+    answers: [
+      { text: "Yalnız I", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve III", ok: false }, { text: "II ve III", ok: false }, { text: "I, II ve III", ok: true }
+    ]
+  },
+  {
+    text: "- Önce askerî özellikte olup daha sonra tüm devlet memurları için kurulmuştur.\n- Emekli sandığı özelliği göstermekte olup günümüzde Sosyal Güvenlik Kurumu olarak çalışmalarına devam etmektedir.\nÖzellikleri verilen Osmanlı idari birimi aşağıdakilerden hangisidir?",
+    diff: 3,
+    expl: "Sultan Abdülaziz ve II. Abdülhamit dönemlerinde şekillenen, askerlerin ve memurların emeklilik fonlarını yöneterek onlara maaş bağlayan ve günümüzdeki SGK'nın temeli olan kurum 'Tekaüt Sandığı'dır.",
+    answers: [
+      { text: "Memleket Sandıkları", ok: false }, { text: "Cemiyet-i Mahsusa", ok: false }, { text: "İhtisab Nezareti", ok: false }, { text: "Tekaüt Sandığı", ok: true }, { text: "Evkaf Nezareti", ok: false }
     ]
   }
 ];

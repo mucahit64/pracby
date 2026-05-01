@@ -1,6 +1,6 @@
 import type { McQ } from "../../../../types";
 
-export const TAR_ATATURK_ILKELERI_VE_SAHSIYETLER: McQ[] = [
+export const TAR_ATATURK_ILKELERI_TEST_1: McQ[] = [
   // ---------------- ATATÜRK İLKELERİ - TEST 1 ----------------
   {
     text: "Bir ülkede seçim sonuçlarını seçmenlerin eğitim düzeyine bakarak yorumlamak ve eğitim düzeyi daha yüksek olanların yönetimde daha etkili olması gerektiğini savunmak aşağıda verilen Atatürk ilkelerinden hangisine doğrudan aykırıdır?",
@@ -114,8 +114,10 @@ export const TAR_ATATURK_ILKELERI_VE_SAHSIYETLER: McQ[] = [
     answers: [
       { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "I ve II", ok: true }, { text: "I ve III", ok: false }, { text: "I, II ve III", ok: false }
     ] // Cevap anahtarı 14.C.
-  },
+  }
+];
 
+export const TAR_ATATURK_ILKELERI_TEST_2: McQ[] = [
   // ---------------- ATATÜRK İLKELERİ - TEST 2 ----------------
   {
     text: "I. Aşar vergisinin kaldırılması\nII. İlköğretimin ücretsiz olması\nIII. Tekke, zaviye ve türbelerin kapatılması\nYukarıdaki yenilik hareketlerinden hangileri Atatürk'ün halkçılık ilkesi ile ilişkilendirilebilir?",
@@ -216,119 +218,155 @@ export const TAR_ATATURK_ILKELERI_VE_SAHSIYETLER: McQ[] = [
     answers: [
       { text: "Kabotaj Yasası'nın kabulü", ok: false }, { text: "Türkçe soyadı zorunluluğunun getirilmesi", ok: false }, { text: "Miladi takvimin kabulü", ok: true }, { text: "Türk Tarih Kurumunun oluşturulması", ok: false }, { text: "Koruyucu Gümrük Kanunu'nun çıkarılması", ok: false }
     ]
-  },
+  }
+];
 
-  // ---------------- MUSTAFA KEMAL VE CUMHURİYETİN ÖNEMLİ ŞAHSİYETLERİ - TEST 1 ----------------
+// ============================================================================
+// ATATÜRK İLKELERİ - TEST 3
+// ============================================================================
+export const TAR_ATATURK_ILKELERI_TEST_3: McQ[] = [
   {
-    text: "Mustafa Kemal'in ilk görev yeri aşağıdakilerden hangisidir?",
-    diff: 1,
-    expl: "Mustafa Kemal, 1905 yılında Harp Akademisi'nden Kurmay Yüzbaşı rütbesiyle mezun olduktan sonra, staj ve ilk görev yeri olarak Şam'daki 5. Ordu'ya (Suriye) atanmıştır.",
-    answers: [
-      { text: "Libya", ok: false }, { text: "Şam", ok: true }, { text: "Karlsbad", ok: false }, { text: "Bolayır", ok: false }, { text: "Sofya", ok: false }
-    ] // Cevap anahtarı 1.B. (Page 234 Test 1 Key: 1.B 2.C 3.E 4.E 5.A 6.C 7.B 8.E 9.A 10.B 11.D 12.E 13.A 14.B)
-  },
-  {
-    text: "Mustafa Kemal'in tarih sahnesine ilk çıkışı aşağıdakilerden hangisi ile başlamıştır?",
-    diff: 1,
-    expl: "Mustafa Kemal'in askeri ve siyasi becerilerini göstererek Osmanlı kamuoyu tarafından tanınmasını sağlayan (tarih sahnesine ilk çıkışı) olay, İstanbul'da meşrutiyet karşıtı çıkan '31 Mart Ayaklanması'nı bastıran Hareket Ordusu'nda Kurmay Başkanı olarak görev almasıdır.",
-    answers: [
-      { text: "Balkan Savaşları", ok: false }, { text: "Trablusgarp Savaşları", ok: false }, { text: "31 Mart Ayaklanması'nın bastırılması", ok: true }, { text: "Çanakkale Savaşı", ok: false }, { text: "Sofya Ataşemiliterliği", ok: false }
-    ] // Cevap anahtarı 2.C.
-  },
-  {
-    text: "Mustafa Kemal'in ilk \"yurt dışı\" görevi aşağıdakilerden hangisidir?",
-    diff: 3,
-    expl: "Mustafa Kemal'in ilk resmi yurt dışı görevlendirmesi, 1910 yılında Fransa'da düzenlenen ve uçakların da kullanıldığı büyük askeri tatbikat olan 'Picardie (Pikardi) Manevraları'na Osmanlı ordusunu temsilen gözlemci olarak katılmasıdır.",
-    answers: [
-      { text: "31 Mart İsyanı'nın bastırılması", ok: false }, { text: "Sofya Ataşemiliterliği", ok: false }, { text: "Şehzade Vahdettin ile Almanya gezisi", ok: false }, { text: "Balkan Savaşları", ok: false }, { text: "Picardie Manevraları", ok: true }
-    ] // Cevap anahtarı 3.E.
-  },
-  {
-    text: "Mustafa Kemal'in Afet İnan tarafından yayımlanmış, okullarda da okutulan yurttaşlık bilgisi kitabı aşağıdakilerden hangisidir?",
+    text: "<p>Mustafa Kemal ekonomi politikamızı \"Toplumun genel çıkarlarını doğrudan doğruya ilgilendirecek kuruluşlarla ekonomik alandaki teşebbüsleri mali teknik gücümüzün ölçülerine uygun olarak devletleştirmektir.\" şeklinde özetlemiştir.</p><p><b>Bu durum Türk ekonomisinin;</b></p><p>I. milliyetçilik,<br>II. devletçilik,<br>III. halkçılık</p><p><b>ilkelerinden hangileri doğrultusunda yapılandırılacağının göstergesidir?</b></p>",
     diff: 2,
-    expl: "Atatürk'ün vatandaşlık hak ve ödevlerini, cumhuriyet erdemlerini bizzat dikte ettirerek manevi kızı Afet İnan'a yazdırdığı (ve liselerde okutulan) önemli eseri 'Vatandaş İçin Medeni Bilgiler' kitabıdır.",
+    expl: "\"Devletleştirmek\" ifadesi doğrudan Devletçilik ilkesini, \"toplumun genel çıkarları\" ifadesi Halkçılık ilkesini ve Türk devletinin kendi mali gücüyle ekonomik teşebbüslere girmesi Milliyetçilik ilkesini gösterir.",
     answers: [
-      { text: "Cumalı Ordugâhı", ok: false }, { text: "Karlsbad Anıları", ok: false }, { text: "Geometri Kitabı", ok: false }, { text: "Zabit ve Kumandan ile Hasbihal", ok: false }, { text: "Medeni Bilgiler", ok: true }
-    ] // Cevap anahtarı 4.E.
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız II", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "I, II ve III", ok: true }
+    ]
   },
   {
-    text: "Atatürk Dönemi'nde en uzun süre meclis başkanlığı görevini yürüten devlet adamı aşağıdakilerden hangisidir?",
-    diff: 3,
-    expl: "Mustafa Kemal Atatürk döneminde (1924'ten 1935'e kadar) aralıksız 11 yıl boyunca TBMM Başkanlığı görevini yürüten ve Cumhuriyet tarihinin en uzun süre görev yapan meclis başkanlarından biri olan devlet adamı Kâzım Özalp'tir.",
-    answers: [
-      { text: "Kâzım Özalp", ok: true }, { text: "Tevfik Rüştü Aras", ok: false }, { text: "Recep Peker", ok: false }, { text: "Numan Menemencioğlu", ok: false }, { text: "İsmet İnönü", ok: false }
-    ] // Cevap anahtarı 5.A.
-  },
-  {
-    text: "Mustafa Kemal'in ölümü ile cumhurbaşkanlığı görevine bir günlük vekâleten bakan, aynı zamanda Atatürk Dönemi'nden sonra en uzun süre meclis başkanlığı görevini üstlenen devlet adamı aşağıdakilerden hangisidir?",
-    diff: 3,
-    expl: "Atatürk 10 Kasım 1938'de vefat edince, anayasa gereği İsmet İnönü seçilene kadar 1 günlüğüne Cumhurbaşkanlığına vekalet eden dönemin TBMM Başkanı Abdülhalik Renda'dır (Kendisi 1935'ten 1946'ya kadar TBMM başkanlığı yapmıştır).",
-    answers: [
-      { text: "İsmet İnönü", ok: false }, { text: "Abdurrahman Melek", ok: false }, { text: "Abdülhalik Renda", ok: true }, { text: "Rıza Nur", ok: false }, { text: "Kâzım Özalp", ok: false }
-    ] // Cevap anahtarı 6.C.
-  },
-  {
-    text: "I. Emin Onat\nII. Orhan Arda\nIII. Heinrich Krippel\nAnıtkabir'in mimarları arasında yukarıdakilerden hangileri yer alır?",
-    diff: 1,
-    expl: "Atatürk'ün ebedi istirahatgâhı olan Anıtkabir'in projesi uluslararası bir yarışmayla belirlenmiş ve yarışmayı kazanan Türk mimarlar Prof. Dr. Emin Onat (I) ve Doç. Dr. Orhan Arda (II) tarafından tasarlanmıştır. Krippel bir heykeltıraştır.",
-    answers: [
-      { text: "Yalnız I", ok: false }, { text: "I ve II", ok: true }, { text: "I ve III", ok: false }, { text: "II ve III", ok: false }, { text: "I, II ve III", ok: false }
-    ] // Cevap anahtarı 7.B.
-  },
-  {
-    text: "Mustafa Kemal;\nI. Selanik,\nII. Şam,\nIII. İstanbul,\nIV. Manastır\ngibi şehirlerin hangilerinde eğitim hayatını sürdürmüştür?",
+    text: "<p>Mustafa Kemal'in Söylev ve Demeçler adlı eserinde yer alan \"Yurdumuzu dünyanın en mamur, en medeni memleketleri seviyesine çıkaracağız.\" sözleri;</p><p>I. inkılapçılık,<br>II. milliyetçilik,<br>III. devletçilik</p><p><b>ilkelerinden hangileri ile ilişkilendirilebilir?</b></p>",
     diff: 2,
-    expl: "Atatürk; Selanik'te (Mektebi, Rüştiyesi), Manastır'da (Askeri İdadisi) ve İstanbul'da (Harp Okulu ve Harp Akademisi) okumuştur. Şam (Suriye) ise eğitim aldığı yer değil, mezun olduktan sonra atandığı 'ilk görev' yeridir.",
+    expl: "\"En medeni memleketler seviyesine çıkarma\" (çağdaşlaşma/muasır medeniyet) hedefi İnkılapçılık ile ilgilidir. Bu gelişimi \"Yurdumuz\" (kendi vatanımız/milletimiz) için yapma vurgusu ise Milliyetçilik ilkesini barındırır.",
     answers: [
-      { text: "Yalnız I", ok: false }, { text: "I ve II", ok: false }, { text: "II ve III", ok: false }, { text: "I, II ve III", ok: false }, { text: "I, III ve IV", ok: true }
-    ] // Cevap anahtarı 8.E.
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız II", ok: false },
+      { text: "I ve II", ok: true },
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: false }
+    ]
   },
   {
-    text: "Türkiye Cumhuriyeti'nin asker kökenli olmayan ilk \"sivil\" kökenli cumhurbaşkanı aşağıdakilerden hangisidir?",
+    text: "<p><b>Aşağıdakilerden hangisi halkçılık ilkesinin uygulanması ile ilgili bir gelişme <u>değildir</u>?</b></p>",
     diff: 1,
-    expl: "Atatürk ve İnönü Paşa (asker) kökenliydi. 1950'de Demokrat Parti'nin iktidara gelmesiyle Türkiye'nin 3. Cumhurbaşkanı olan Celal Bayar, cumhuriyet tarihinin İLK SİVİL (asker kökenli olmayan) cumhurbaşkanıdır.",
+    expl: "Kabotaj Kanunu, Türk karasularında yolcu ve yük taşıma hakkını yabancılardan alarak yalnızca Türk gemilerine ve vatandaşlarına verdiği için doğrudan Milliyetçilik ilkesinin bir sonucudur. Diğer seçenekler eşitliği sağladığı için halkçılıktır.",
     answers: [
-      { text: "Celâl Bayar", ok: true }, { text: "Fahri Korutürk", ok: false }, { text: "Turgut Özal", ok: false }, { text: "Süleyman Demirel", ok: false }, { text: "Adnan Menderes", ok: false }
-    ] // Cevap anahtarı 9.A.
+      { text: "Medeni Kanun'un hazırlanması", ok: false },
+      { text: "Ayrıcalıklı unvanların kaldırılması", ok: false },
+      { text: "Kadınlara seçme - seçilme haklarının tanınması", ok: false },
+      { text: "Aşar vergisinin kaldırılması", ok: false },
+      { text: "Kabotaj Kanunu'nun kabulü", ok: true }
+    ]
   },
   {
-    text: "- Çanakkale Cephesi'ndeki başarılarından dolayı \"Alçıtepe Kahramanı\" olarak bilinmektedir.\n- Yaptığı hayır işlerinden dolayı \"Yetimler Babası\" olarak ifade edilmiştir.\n- Millî Mücadele Dönemi'nde Doğu Cephesi'ndeki başarılardan dolayı \"Şark Fatihi\" olarak adlandırılmıştır.\nÖzellikleri verilen devlet adamı aşağıdakilerden hangisidir?",
+    text: "<p><b>Mustafa Kemal'in devletçilik anlayışı;</b></p><p>I. halkçılık,<br>II. laiklik,<br>III. cumhuriyetçilik</p><p><b>ilkelerinden hangileri ile doğrudan bağlantılıdır?</b></p>",
+    diff: 2,
+    expl: "Devletçilik ilkesi; halkın refahını artırmak, temel ihtiyaçlarını karşılamak ve bölgeler arası ekonomik eşitsizliği gidermek amacıyla uygulandığı için doğrudan Halkçılık ilkesinin zorunlu bir sonucudur.",
+    answers: [
+      { text: "Yalnız I", ok: true },
+      { text: "Yalnız II", ok: false },
+      { text: "Yalnız III", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: false }
+    ]
+  },
+  {
+    text: "<p>Atatürk'ün milliyetçilik anlayışında ırk, mezhep ve sınıf ayrılıklarına karşı bir tutum vardır.</p><p><b>Buna göre Atatürk milliyetçiliğinin;</b></p><p>I. halkçılık,<br>II. laiklik,<br>III. devletçilik</p><p><b>ilkelerinden hangileri ile ilişkili olduğu söylenebilir?</b></p>",
+    diff: 2,
+    expl: "Irk ve sınıf ayrılığına karşı olması, kanun önünde herkesin eşit olmasını savunduğu için Halkçılık ile; mezhep ayrılığına karşı olması ise din ve vicdan hürriyetini güvence altına aldığı için Laiklik ilkesi ile ilgilidir.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "I ve II", ok: true },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Halkçılık ilkesinin sonucu olarak uygulamaya konulan Atatürk ilkesi aşağıdakilerden hangisidir?</b></p>",
+    diff: 2,
+    expl: "Özel sektörün sermaye yetersizliği nedeniyle yapamadığı büyük yatırımları halkın ihtiyaçlarını karşılamak adına devletin üstlenmesi durumu (Devletçilik), halkın yararı gözetildiği için Halkçılık ilkesinin doğal bir sonucudur.",
+    answers: [
+      { text: "Devletçilik", ok: true },
+      { text: "Halkçılık", ok: false },
+      { text: "Laiklik", ok: false },
+      { text: "Cumhuriyetçilik", ok: false },
+      { text: "Milliyetçilik", ok: false }
+    ]
+  },
+  {
+    text: "<p>Osmanlı Devleti'nde kültür birliğinin olmaması ve yönetimde teokratik özelliklerin görülmesi Atatürkçü düşünce yapısına aykırıdır.</p><p><b>Bu durumun çeliştiği Atatürk ilkeleri aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    diff: 2,
+    expl: "Kültür birliğinin olmaması, ümmetçi ve çok uluslu yapıdan kaynaklandığı için Milliyetçilik ilkesine aykırıdır. Yönetimde teokratik (dini kurallara dayalı) özelliklerin görülmesi ise Laiklik ilkesine aykırıdır.",
+    answers: [
+      { text: "Cumhuriyetçilik - Milliyetçilik", ok: false },
+      { text: "Milliyetçilik - Laiklik", ok: true },
+      { text: "Devletçilik - İnkılapçılık", ok: false },
+      { text: "Laiklik - Devletçilik", ok: false },
+      { text: "İnkılapçılık - Cumhuriyetçilik", ok: false }
+    ]
+  },
+  {
+    text: "<p>1934 yılında kadınlara seçme - seçilme hakkı tanınmış ve ilk kez 1935 yılında kadınlar 17 vekillik elde ederek Mecliste yer almışlardır.</p><p><b>Yapılan bu yenilikler, Atatürk'ün;</b></p><p>I. devletçilik,<br>II. cumhuriyetçilik,<br>III. halkçılık</p><p><b>ilkelerinden hangileri ile bağlantılıdır?</b></p>",
     diff: 1,
-    expl: "Doğu Cephesi'nde Ermenileri yenerek Gümrü Antlaşmasını imzalayan (Şark Fatihi) ve bölgedeki savaş yetimlerini toplayıp onlara askeri/mesleki eğitim veren (Yetimler Babası) efsanevi komutanımız Kâzım Karabekir Paşa'dır.",
+    expl: "Seçme ve seçilme hakkının verilmesi, yönetime katılmayı sağladığı için Cumhuriyetçilik ilkesi ile ilgilidir. Bu siyasi hakkın erkeklerden sonra kadınlara da verilerek cinsiyet eşitliğinin sağlanması ise Halkçılık ilkesi ile ilgilidir.",
     answers: [
-      { text: "Rauf Orbay", ok: false }, { text: "Kâzım Karabekir", ok: true }, { text: "Refet Bele", ok: false }, { text: "Ali Fuat Cebesoy", ok: false }, { text: "Nuri Conker", ok: false }
-    ] // Cevap anahtarı 10.B.
+      { text: "Yalnız II", ok: false },
+      { text: "Yalnız III", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "II ve III", ok: true },
+      { text: "I, II ve III", ok: false }
+    ]
   },
   {
-    text: "Mustafa Kemal'i anlatan;\nI. Gazi Paşa,\nII. Hangi Atatürk,\nIII. Tek Adam\neserlerinden hangileri Attilâ İlhan tarafından kaleme alınmıştır?",
+    text: "<p>I. Medeni Kanun'un kabulü<br>II. Saltanatın kaldırılması<br>III. TBMM'nin açılması</p><p><b>Yukarıda verilen gelişmelerden hangileri Atatürk'ün hem cumhuriyetçilik hem de laiklik ilkeleri ile ilgilidir?</b></p>",
     diff: 3,
-    expl: "Attilâ İlhan'ın Kemalizmi ve Atatürk'ü sosyolojik bir aydın gözüyle irdelediği önemli eserlerinden biri 'Hangi Atatürk' kitabıdır (II). Ayrıca Attilâ İlhan'ın 'Gazi Paşa' adlı eseri de bulunmaktadır (I). 'Tek Adam' ise Şevket Süreyya Aydemir'e aittir (III yanlış). Bu nedenle doğru cevap I ve II'dir.",
+    expl: "Saltanatın kaldırılması ile monarşi yıkılmış (Cumhuriyetçilik adımı atılmış) ve siyasi makam olan saltanat, dini makam olan halifelikten ayrılarak Laiklik yolunda ilk ve en büyük adım atılmıştır.",
     answers: [
-      { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve II", ok: true }, { text: "II ve III", ok: false }
-    ] // Cevap anahtarı 11.D. (I ve II).
+      { text: "Yalnız II", ok: true },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: false }
+    ]
   },
   {
-    text: "Mustafa Kemal'in biyografisini anlatan eserler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Millî Mücadele Hazırlık Dönemi'nde;</b></p><p>I. Millî iradeyi egemen kılmak esastır.<br>II. Millî sınırlar içinde vatan bütündür, bölünemez.<br>III. Azınlıklara bütünlüğümüzü bozucu haklar verilemez.</p><p><b>kararlarından hangilerinin \"cumhuriyetçilik\" ilkesi doğrultusunda alındığı söylenebilir?</b></p>",
     diff: 2,
-    expl: "Lord Kinross'un 'Atatürk', H.C. Armstrong'un (Atatürk yaşarken yazılan ve onu eleştiren) 'Bozkurt', Klaus Kreiser ve Hıfzı Topuz'un eserleri doğrudan Atatürk biyografisidir. Ancak Falih Rıfkı Atay'ın 'Batış Yılları', Atatürk'ün hayatından ziyade Osmanlı'nın 1905-1914 arasındaki çöküş sürecini anlattığı bir anı kitabıdır (Atatürk'ü anlattığı asıl eseri Çankaya'dır).",
+    expl: "\"Milli iradeyi (halkın kararını) egemen kılmak\" kararı doğrudan halk yönetimi olan Cumhuriyetçilik ilkesini vurgular. Sınırların bölünmezliği ve azınlık haklarına karşı çıkılması ise tam bağımsızlık ve Milliyetçilik ilkesiyle ilgilidir.",
     answers: [
-      { text: "Lord Kinross - Atatürk", ok: false }, { text: "Klaus Kreiser - Atatürk", ok: false }, { text: "H.C. Armstrong - Bozkurt", ok: false }, { text: "Hıfzı Topuz - Gazi ve Fikriye", ok: false }, { text: "Falih Rıfkı Atay - Batış Yılları", ok: true }
-    ] // Cevap anahtarı 12.E.
+      { text: "Yalnız I", ok: true },
+      { text: "Yalnız II", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "I, II ve III", ok: false }
+    ]
   },
   {
-    text: "Mustafa Kemal'in \"Kendisine minnet borcum vardır, bana yeni ufuklar açtı.\" diyerek bahsettiği Manastır Askerî İdadisindeki tarih öğretmeni aşağıdakilerden hangisidir?",
+    text: "<p><b>Atatürk'ün devletçilik ilkesi ile ilgili aşağıdaki yargılardan hangisine <u>ulaşılamaz</u>?</b></p>",
     diff: 2,
-    expl: "Mustafa Kemal'in lise (Manastır Askeri İdadisi) yıllarında, ona tarih bilincini, vatan sevgisini ve Fransız İhtilali'nin özgürlükçü fikirlerini aşılayarak 'yeni ufuklar açan' hocası Kolağası Mehmet Tevfik Bilge'dir.",
+    expl: "Devletçilik ilkesi, 1929 Dünya Ekonomik Krizi'nin etkileri ve özel sektörün sermaye yetersizliği üzerine Türkiye'nin kendi ihtiyaçlarından doğmuş pratik bir uygulamadır. Fransız İhtilali ile ortaya çıkan evrensel akım Milliyetçiliktir.",
     answers: [
-      { text: "Mehmet Tevfik Bilge", ok: true }, { text: "Fuad Köprülü", ok: false }, { text: "Halil İnalcık", ok: false }, { text: "Tevfik Bıyıklıoğlu", ok: false }, { text: "Sâmih Rifat", ok: false }
-    ] // Cevap anahtarı 13.A.
+      { text: "Halkçılık ilkesinin tamamlayıcısı niteliğindedir.", ok: false },
+      { text: "1929 Krizi'nin etkisi ile ön plana çıkmıştır.", ok: false },
+      { text: "Fransız İhtilali ile evrensel boyut kazanmıştır.", ok: true },
+      { text: "Yabancı sermayeye karşı değildir.", ok: false },
+      { text: "Devletin ekonomik alanda etkin olmasını esas alır.", ok: false }
+    ]
   },
   {
-    text: "Mustafa Kemal'in Hatay meselesi sürecinde \"Asım Us\" takma adıyla yazılarını yayımlandığı gazete aşağıdakilerden hangisidir?",
-    diff: 3,
-    expl: "Atatürk, Hatay'ın anavatana katılması (bağımsızlık) mücadelesi verirken, İnönü hükümetinin bu konudaki pasif politikalarını eleştirmek için 1937 yılında 'Kurun' gazetesinde 'Asım Us' takma adıyla başyazılar kaleme almıştır.",
+    text: "<p>Mustafa Kemal yeni Türk devletinin eğitim sistemi ile ilgili: \"Dünyanın her türlü ilminden, ilerlemelerinden yararlanılacaktır; ancak temel kendi içimizden çıkarılmalıdır.\" şeklinde görüşlerini belirtmiştir.</p><p><b>Mustafa Kemal'in bu sözleri;</b></p><p>I. laiklik,<br>II. milliyetçilik,<br>III. inkılapçılık</p><p><b>ilkelerinden hangileri ile ilişkilendirilebilir?</b></p>",
+    diff: 2,
+    expl: "Dünyanın ilmini (bilimini) rehber almak aklın ve bilimin öncülüğü olan Laiklik; ilerlemelerden yararlanmak çağdaşlaşma olan İnkılapçılık; temelin kendi içimizden (milli kültüre dayalı) çıkarılması ise Milliyetçilik ilkesiyle örtüşür.",
     answers: [
-      { text: "İleri", ok: false }, { text: "Kurun", ok: true }, { text: "İrade-i Milliye", ok: false }, { text: "Belleten", ok: false }, { text: "Hâkimiyet-i Milliye", ok: false }
-    ] // Cevap anahtarı 14.B.
+      { text: "Yalnız I", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: true }
+    ]
   }
 ];

@@ -1,6 +1,6 @@
 import type { McQ } from "../../../../types";
 
-export const TAR_CUMHURIYET_DONEMI_IC_POLITIKA: McQ[] = [
+export const TAR_CUMHURIYET_DONEMI_IC_POLITIKA_TEST_1: McQ[] = [
   // ---------------- CUMHURİYET DÖNEMİ İÇ POLİTİKA - TEST 1 ----------------
   {
     text: "29 Ekim 1923'te ilan edilen Cumhuriyet'in bayram olarak kutlanmaya başlanması kararı aşağıda verilen tarihlerden hangisinde alınmıştır?",
@@ -121,8 +121,10 @@ export const TAR_CUMHURIYET_DONEMI_IC_POLITIKA: McQ[] = [
     answers: [
       { text: "Rejim karşıtı isyanların görülmesi", ok: false }, { text: "Laikliğin tam olarak yerleşmemesi", ok: false }, { text: "Tek dereceli seçim sistemine geçilmesi", ok: false }, { text: "Bazı kesimlerin yeterli siyasi olgunluğa erişememesi", ok: false }, { text: "II. Dünya Savaşı'nın çıkması", ok: true }
     ]
-  },
+  }
+];
 
+export const TAR_CUMHURIYET_DONEMI_IC_POLITIKA_TEST_2: McQ[] = [
   // ---------------- CUMHURİYET DÖNEMİ İÇ POLİTİKA - TEST 2 ----------------
   {
     text: "I. Tek dereceli seçim sistemini savunması\nII. Ekonomide devletçiliği esas alması\nIII. Laiklik ilkesini benimsemesi\nIV. Menemen İsyanı sonucunda siyasi faaliyetlerine son verilmesi\nYukarıda verilen durumların hangilerinin Serbest Cumhuriyet Fırkası ile ilgili olduğu söylenebilir?",

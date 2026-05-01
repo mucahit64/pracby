@@ -1,6 +1,6 @@
 import type { McQ } from "../../../../types";
 
-export const TAR_BASIN_YAYIN_VE_TBMM: McQ[] = [
+export const TAR_MILLI_MUCADELEDE_BASIN_YAYIN_TEST_1: McQ[] = [
   // ---------------- MİLLÎ MÜCADELE'DE BASIN - YAYIN - TEST 1 ----------------
   {
     text: "Doğu Anadolu Müdafaa-i Hukuk Cemiyeti;\nI. Mardin,\nII. Albayrak,\nIII. Hadisat\ngazetelerinden hangilerini kullanmıştır?",
@@ -113,8 +113,10 @@ export const TAR_BASIN_YAYIN_VE_TBMM: McQ[] = [
     answers: [
       { text: "İleri", ok: true }, { text: "Yeni Adam", ok: false }, { text: "Albayrak", ok: false }, { text: "Açıksöz", ok: false }, { text: "Tanin", ok: false }
     ] // Cevap anahtarı A.
-  },
+  }
+];
 
+export const TAR_MILLI_MUCADELEDE_BASIN_YAYIN_TEST_2: McQ[] = [
   // ---------------- MİLLÎ MÜCADELE'DE BASIN - YAYIN - TEST 2 ----------------
   {
     text: "7 Ekim 1920'de kurulan, TBMM'nin resmi yayın organı aşağıdakilerden hangisidir?",
@@ -259,135 +261,5 @@ export const TAR_BASIN_YAYIN_VE_TBMM: McQ[] = [
     answers: [
       { text: "Yalnız I", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve II", ok: false }, { text: "II ve III", ok: false }, { text: "I, II ve III", ok: true }
     ] // Cevap anahtarı 17.E.
-  },
-
-  // ---------------- TBMM DÖNEMİ - TEST 1 ----------------
-  {
-    text: "Yeni Türk devletinin kuruluşu aşağıdaki gelişmelerden hangisinin sonucunda gerçekleşmiştir?",
-    diff: 1,
-    expl: "23 Nisan 1920'de Ankara'da 'Büyük Millet Meclisinin Açılması' (TBMM), hukuken ve fiilen İstanbul'daki Osmanlı idaresinden bağımsız 'Yeni Türk Devleti'nin (Türkiye'nin) kurulduğunun dünyaya ilanıdır.",
-    answers: [
-      { text: "Cumhuriyet'in İlanı", ok: false }, { text: "Saltanatın Kaldırılması", ok: false }, { text: "Büyük Millet Meclisinin Açılması", ok: true }, { text: "Halifeliğin Kaldırılması", ok: false }, { text: "Teşkilat-ı Esasiye'nin kabulü", ok: false }
-    ] // Cevap anahtarı 1.C. (Page 184 has the key: 1.C, 2.C, 3.C, 4.E, 5.A, 6.B, 7.D, 8.C, 9.B, 10.C, 11.D, 12.E, 13.D, 14.C, 15.A, 16.B)
-  },
-  {
-    text: "I. TBMM'nin açılması ile;\nI. İstanbul Hükûmeti,\nII. Saltanat Makamı,\nIII. Temsil Heyeti\nbirimlerinden hangilerinin görevi sona ermiştir?",
-    diff: 1,
-    expl: "Milli Mücadele'yi örgütlemek için Sivas Kongresi'nde oluşturulan ve geçici bir yürütme organı olan 'Temsil Heyeti'nin (III) görevi, 23 Nisan 1920'de TBMM'nin açılmasıyla resmen ve hukuken sona ermiştir. (Saltanat ve İstanbul Hükümeti 1922'de sona erecektir).",
-    answers: [
-      { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "Yalnız III", ok: true }, { text: "I ve II", ok: false }, { text: "I, II ve III", ok: false }
-    ] // Cevap anahtarı 2.C (Yalnız III)
-  },
-  {
-    text: "Büyük Millet Meclisinin açılmasında;\nI. İstanbul'un resmen işgali,\nII. Mebusan Meclisinin dağıtılması,\nIII. Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyetinin kurulması\ngelişmelerinden hangilerinin etkili olduğu söylenebilir?",
-    diff: 1,
-    expl: "Misak-ı Milli'yi kabul eden Mebusan Meclisinin İtilaf devletlerince dağıtılması (II) ve İstanbul'un işgal edilerek padişahın esir alınması (I), Mustafa Kemal'e Anadolu'da (Ankara'da) milli iradeyi temsil edecek olağanüstü yetkilere sahip yeni bir meclis (BMM) açma fırsatı vermiştir.",
-    answers: [
-      { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "I ve II", ok: true }, { text: "I ve III", ok: false }, { text: "II ve III", ok: false }
-    ] // Cevap anahtarı 3.C (I ve II). 
-  },
-  {
-    text: "Mustafa Kemal'in 24 Nisan 1920'de TBMM'ye sunduğu önergede;\nI. rejimin adı,\nII. hükûmetin oluşturulma biçimi,\nIII. güçler birliği\nkonularının hangilerinden bahsedilmiştir?",
-    diff: 2,
-    expl: "Meclisin açılmasından 1 gün sonra verilen (ve ilk Anayasa olan Teşkilat-ı Esasiye'nin taslağı sayılan) 24 Nisan Önergesinde; 'Geçici bir hükümet başkanı tanımak doğru değildir' diyerek Meclis Hükümeti sistemi (II) ve 'Yasama, yürütme yetkisi mecliste toplanır' diyerek Güçler Birliği (III) benimsenmiştir. Cumhuriyet (Rejimin adı - I) o aşamada zikredilmemiştir.",
-    answers: [
-      { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "I ve II", ok: false }, { text: "I ve III", ok: false }, { text: "II ve III", ok: true }
-    ] // Cevap anahtarı 4.E (II ve III)
-  },
-  {
-    text: "I. TBMM'ye karşı çıkartılan ayaklanmalar arasında aşağıdakilerden hangisi yer almaz?",
-    diff: 2,
-    expl: "Cemil Çeto, Anzavur, Çapanoğlu (Yozgat) ve Nasturi isyanları Milli Mücadele yıllarında çıkmıştır. Ancak Vali Cemal Bey, I. TBMM'ye (Ankara'ya) değil, geçmişte veya farklı bir dönemde isyan etmiş olabilir. Aslında Nasturi isyanı (A) Cumhuriyet döneminde (1924) Şeyh Sait isyanından hemen önce İngiliz kışkırtmasıyla Hakkari'de çıkmıştır. I. TBMM (1920-1923) dönemi isyanı DEĞİLDİR. (Cevap anahtarı Nasturi A diyor).",
-    answers: [
-      { text: "Nasturi", ok: true }, { text: "Vali Cemal Bey", ok: false }, { text: "Cemil Çeto", ok: false }, { text: "Anzavur", ok: false }, { text: "Çapanoğlu", ok: false }
-    ] // Cevap anahtarı 5.A. Vali Cemal Bey isyanı Ali Galip olayı gibi bir şey mi? There was a Vali Cemal. But Nasturi is strictly 1924 (II. TBMM). So Nasturi is definitely not against I. TBMM.
-  },
-  {
-    text: "Büyük Millet Meclisinin ilk savunma bakanlığı görevini yürüten devlet adamı aşağıdakilerden hangisidir?",
-    diff: 3,
-    expl: "23 Nisan 1920'de TBMM açıldıktan sonra kurulan Birinci İcra Vekilleri Heyeti'nde (Bakanlar Kurulu), Milli Savunma Bakanı (Müdafaa-i Milliye Vekili) görevine Genelkurmay Başkanı da olan Mareşal Fevzi (Çakmak) Paşa getirilmiştir.",
-    answers: [
-      { text: "İsmet İnönü", ok: false }, { text: "Fevzi Çakmak", ok: true }, { text: "Rauf Orbay", ok: false }, { text: "Celalettin Arif", ok: false }, { text: "Rıza Nur", ok: false }
-    ] // Cevap anahtarı 6.B.
-  },
-  {
-    text: "I. TBMM'nin çıkardığı kanunlar arasında aşağıdakilerden hangisi yer almaz?",
-    diff: 2,
-    expl: "I. TBMM (1920-1923); Hıyanet-i Vataniye (B), Firariler (A), Ağnam Vergisinin artırılması (C) ve Nisab-ı Müzakere (İç tüzük) (E) kanunlarını çıkarmıştır. Ancak 'Tekalif-i Milliye' emirleri (D) TBMM tarafından DEĞİL, Başkomutanlık yetkisine dayanarak bizzat Mustafa Kemal Paşa tarafından çıkarılmıştır (Kanun değildir, Başkomutan Emridir).",
-    answers: [
-      { text: "Firariler", ok: false }, { text: "Hıyanet-i Vataniye", ok: false }, { text: "Ağnam vergisinin arttırılması", ok: false }, { text: "Tekâlif-i Milliye", ok: true }, { text: "Nisab-ı Müzakere", ok: false }
-    ] // Cevap anahtarı 7.D.
-  },
-  {
-    text: "Büyük Millet Meclisine ve Millî Mücadele'ye karşı çıkan isyanlarda;\nI. Millî Mücadele'nin saltanat ve hilafet karşıtı olduğuna dair propaganda yürütülmesi,\nII. Cumhuriyet rejiminin değiştirilmek istenmesi,\nIII. İngilizlerin Boğazlara yakın yerlerde tampon bölge oluşturma düşüncesi\ndurumlarından hangileri etkili olmuştur?",
-    diff: 2,
-    expl: "TBMM'ye (1920) karşı çıkarılan isyanların asıl nedeni; İstanbul hükümetinin (Şeyhülislam fetvasıyla) 'Bunlar padişaha düşmandır' yalanını yayması (I) ve İngilizlerin Boğazları korumak için (Ahmet Anzavur, Kuva-yi İnzibatiye vb.) tampon isyanlar çıkartmasıdır (III). 'Cumhuriyet rejiminin değiştirilmek istenmesi' olamaz çünkü henüz Cumhuriyet ilan edilmemişti (1923).",
-    answers: [
-      { text: "Yalnız I", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve II", ok: false }, { text: "I ve III", ok: true }, { text: "I, II ve III", ok: false }
-    ] // Cevap anahtarı 8.C. (C şıkkı I ve III'tür, sorudaki resimde "C) I ve II" yazıyor gibi ama resme dikkatli bakalım: A) Yalnız I, B) Yalnız III, C) I ve III. Wait, image says A) Yalnız I, B) Yalnız III, C) I ve II. Wait. I ve III is NOT in the options? Ah, D) II ve III, E) I, II ve III. But C) is I ve III in standard tests. Wait, the image says C) I ve III. Let's zoom: A) Yalnız I  B) Yalnız III  C) I ve III.  OK, C is I ve III. Yes).
-  },
-  {
-    text: "İtilaf Devletleri tarafından İstanbul'un resmen işgal edilip, Mebusan Meclisinin dağıtılmasının;\nI. Salih Paşa Hükûmeti'nin istifası,\nII. Büyük Millet Meclisinin açılması,\nIII. Temsil Heyeti'nin Ankara'yı merkez seçmesi\ngelişmelerinden hangilerine neden olduğu söylenebilir?",
-    diff: 2,
-    expl: "Meclisin dağıtılmasıyla oluşan otorite boşluğunda Salih Paşa Hükümeti istifa etmiş (I) ve Ankara'da Milli İradeyi (halkı) temsil eden bağımsız Büyük Millet Meclisi açılmıştır (II). Ancak Temsil Heyeti'nin Ankara'yı merkez seçmesi İstanbul'un işgalinden ÇOK ÖNCE (27 Aralık 1919) gerçekleşmiştir.",
-    answers: [
-      { text: "Yalnız II", ok: false }, { text: "I ve II", ok: true }, { text: "I ve III", ok: false }, { text: "II ve III", ok: false }, { text: "I, II ve III", ok: false }
-    ] // Cevap anahtarı 9.B.
-  },
-  {
-    text: "11 kişiden oluşan Büyük Millet Meclisi hükûmeti aşağıdakilerden hangisi ile tanımlanmıştır?",
-    diff: 2,
-    expl: "I. TBMM döneminde uygulanan 'Meclis Hükümeti' sisteminde, meclis üyeleri arasından tek tek oylanarak seçilen bakanların (vekillerin) oluşturduğu kurula 'İcra Vekilleri Heyeti' (Bakanlar Kurulu) denilirdi.",
-    answers: [
-      { text: "Heyet-i Vükela", ok: false }, { text: "Layiha Encümenliği", ok: false }, { text: "İcra Vekilleri Heyeti", ok: true }, { text: "Âyan Meclisi", ok: false }, { text: "Saltanat Şûrası", ok: false }
-    ] // Cevap anahtarı 10.C.
-  },
-  {
-    text: "- Büyük Millet Meclisine karşı Erzincan bölgesinde çıkarılmıştır.\n- II. İnönü Savaşı sürecinde Yunan ordularının saldırısına zemin hazırlamıştır.\nÖzellikleri verilen isyan hareketi aşağıdakilerden hangisidir?",
-    diff: 3,
-    expl: "Milli Mücadele'nin en kritik günlerinde (II. İnönü savaşı öncesi) Erzincan/Tunceli dolaylarında aşiretlerin çıkardığı ve Merkez ordusu tarafından zar zor bastırılan 'Koçgiri İsyanı', Türk ordusunu iki cephede birden savaşmak zorunda bırakmıştır.",
-    answers: [
-      { text: "Demirci Mehmet", ok: false }, { text: "Cemal Bey", ok: false }, { text: "Ali Batı", ok: false }, { text: "Koçgiri", ok: true }, { text: "Çerkez Ethem", ok: false }
-    ] // Cevap anahtarı 11.D.
-  },
-  {
-    text: "Mardin dolaylarında Kürt devleti kurma amaçlı İngiliz destekli çıkartılan ayaklanma aşağıdakilerden hangisidir?",
-    diff: 3,
-    expl: "İngilizlerin kışkırtmasıyla Mardin, Siirt, Batman civarında Bağımsız bir Kürt devleti kurmak amacıyla (Sevr'in ilgili maddesi uyarınca) çıkan ve TBMM tarafından bastırılan isyan 'Ali Batı' (veya Cemil Çeto) isyanıdır. (Şıklarda Ali Batı var).",
-    answers: [
-      { text: "Koçgiri", ok: false }, { text: "Şeyh Said", ok: false }, { text: "Nasturi", ok: false }, { text: "Çapanoğlu", ok: false }, { text: "Ali Batı", ok: true }
-    ] // Cevap anahtarı 12.E.
-  },
-  {
-    text: "Kürt Teali Cemiyeti;\nI. Çapanoğlu,\nII. Koçgiri,\nIII. Cemil Çeto\nisyanlarından hangilerini desteklemiştir?",
-    diff: 3,
-    expl: "İngiliz destekli Kürt Teali Cemiyeti, Doğu'da devlet kurmak için hem Erzincan/Sivas havalisindeki Koçgiri isyanını (II) hem de Batman civarındaki Cemil Çeto isyanını (III) kışkırtmış ve desteklemiştir. Çapanoğlu (I) isyanı ise Yozgat'ta padişah/hilafet yanlısı bir isyandır.",
-    answers: [
-      { text: "Yalnız I", ok: false }, { text: "I ve II", ok: false }, { text: "I ve III", ok: false }, { text: "II ve III", ok: true }, { text: "I, II ve III", ok: false }
-    ] // Cevap anahtarı 13.D.
-  },
-  {
-    text: "I. TBMM'nin ayaklanmalara karşı aldığı önlemler arasında aşağıdakilerden hangisi yer almaz?",
-    diff: 2,
-    expl: "TBMM isyanlara karşı İstiklal Mahkemelerini kurmuş (D), Hıyanet-i Vataniye kanununu çıkarmış, Ankara Müftüsü (Rıfat Börekçi) vasıtasıyla karşı fetva yayımlatmış (E) ve İstanbul Hükümeti ile haberleşmeyi kesmiştir (B). 'Takrir-i Sükûn Kanunu' (C) ise 1925 yılında (II. TBMM döneminde) Şeyh Sait isyanı için çıkarılmıştır. Ayrıca A şıkkı Subay Okulu (Ankara'da Talimgah) açılmıştır.",
-    answers: [
-      { text: "Ankara'da subay okulunun açılması", ok: false }, { text: "İstanbul Hükûmeti ile haberleşmenin kesilmesi", ok: false }, { text: "Takrir-i Sükûn Kanunu'nun çıkarılması", ok: true }, { text: "İstiklal Mahkemelerinin kurulması", ok: false }, { text: "Ankara müftüsü tarafından fetva yayımlanması", ok: false }
-    ] // Cevap anahtarı 14.C.
-  },
-  {
-    text: "I. TBMM'de bulunan aşağıdaki gruplardan hangisi çoğunlukla eski İttihatçılardan oluşmuştur?",
-    diff: 3,
-    expl: "Birinci mecliste siyasi parti yoktu ancak meclis grupları vardı. Bunlardan 'Tesanüt' (Dayanışma) grubu, çoğunlukla Milli Mücadele saflarına katılan eski İttihat ve Terakki Cemiyeti mensuplarından oluşmaktaydı.",
-    answers: [
-      { text: "Tesanüt", ok: true }, { text: "Yeşil Ordu", ok: false }, { text: "Müdafaa-i Hukuk", ok: false }, { text: "Islahat-ı Esasi", ok: false }, { text: "Halk Zümresi", ok: false }
-    ] // Cevap anahtarı 15.A.
-  },
-  {
-    text: "Mustafa Kemal 1920 yılının Nisan ayı seçimlerinde aşağıdaki illerin hangisinin temsilcisi olarak Büyük Millet Meclisine katılmıştır?",
-    diff: 2,
-    expl: "Mustafa Kemal Paşa, Son Osmanlı Mebusan Meclisi'ne Erzurum mebusu olarak seçilmişti; ancak bu meclis dağıtılıp Ankara'da Birinci TBMM (Büyük Millet Meclisi) açıldığında (23 Nisan 1920) 'Ankara' milletvekili olarak meclise girmiştir.",
-    answers: [
-      { text: "Erzurum", ok: false }, { text: "Ankara", ok: true }, { text: "İzmir", ok: false }, { text: "Trabzon", ok: false }, { text: "Selanik", ok: false }
-    ] // Cevap anahtarı 16.B.
   }
 ];

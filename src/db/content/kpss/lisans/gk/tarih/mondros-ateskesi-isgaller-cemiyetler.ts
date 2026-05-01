@@ -1,6 +1,7 @@
+import e from "express";
 import type { McQ } from "../../../../types";
 
-export const TAR_MONDROS_ISGALLER_CEMIYETLER: McQ[] = [
+export const TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_1: McQ[] = [
   // ---------------- MONDROS ATEŞKESİ, İŞGALLER, CEMİYETLER - TEST 1 ----------------
   {
     text: "İtalya'nın taraf değiştirip İtilaf Bloku'na katılmasında;\nI. Avusturya ile sınır problemleri yaşaması,\nII. Londra Antlaşması ile toprak vadedilmesi,\nIII. Rusya'daki rejim değişikliğinden etkilenmesi\ndurumlarından hangileri etkili olmuştur?",
@@ -121,8 +122,10 @@ export const TAR_MONDROS_ISGALLER_CEMIYETLER: McQ[] = [
     answers: [
       { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "I ve II", ok: true }, { text: "I ve III", ok: false }, { text: "II ve III", ok: false }
     ] // Cevap anahtarı C.
-  },
+  }
+];
 
+export const TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_2: McQ[] = [
   // ---------------- MONDROS ATEŞKESİ, İŞGALLER, CEMİYETLER - TEST 2 ----------------
   {
     text: "Alman dışişleri sekreterinin 1917'de Meksika'ya gönderdiği telgraf İngiliz ajanlar tarafından ele geçirilip ABD yönetimine aktarılmıştır.\nBu durum ABD ile ilgili aşağıdaki gelişmelerden hangisinin yaşanmasına neden olmuştur?",
@@ -245,5 +248,361 @@ export const TAR_MONDROS_ISGALLER_CEMIYETLER: McQ[] = [
     answers: [
       { text: "Almanya", ok: false }, { text: "Macaristan", ok: false }, { text: "Avusturya", ok: false }, { text: "Osmanlı", ok: false }, { text: "Bulgaristan", ok: true }
     ] // Cevap anahtarı E.
+  }
+];
+
+export const TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_3: McQ[] = [
+  // ---------------- MONDROS ATEŞKESİ, İŞGALLER, CEMİYETLER - TEST 3 ----------------
+  {
+    text: "Wilson İlkeleri'nde yer alan;\nI. Her ulus kendi geleceğine kendisi karar verecektir.\nII. Azınlıkların çoğunlukta olduğu bölgeler azınlıklara bırakılacaktır.\nIII. Yenilen devletlerden savaş tazminatı alınmayacaktır.\nmaddelerinden hangileri Osmanlı Devleti'nin toprak bütünlüğünü bozucu niteliktedir?",
+    diff: 2,
+    expl: "Ulusların kendi kaderini tayini (I) ve azınlıkların çoğunlukta olduğu yerleri alması (II), çok uluslu imparatorlukları parçalayan ve Osmanlı toprak bütünlüğünü doğrudan bozan maddelerdir. Tazminat maddesi (III) ise ekonomiktir.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız II", ok: false },
+      { text: "I ve II", ok: true },
+      { text: "I ve III", ok: false },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "18 Ocak 1919'da toplanan Paris Barış Konferansı'nda yaşanan gelişmeler arasında aşağıdakilerden hangisi yer almaz?",
+    diff: 2,
+    expl: "Sevr Antlaşması'nın o ağır taslağı Paris Barış Konferansı'nda değil, daha sonraki süreçte 1920 yılında İtalya'da toplanan San Remo Konferansı'nda hazırlanmıştır.",
+    answers: [
+      { text: "Cemiyet-i Akvamın kurulması", ok: false },
+      { text: "Manda ve himayenin kabul edilmesi", ok: false },
+      { text: "King Crane ve Hrisantos gibi Osmanlı aleyhine raporların sunulması", ok: false },
+      { text: "ABD, İngiltere, Fransa ve İtalya tarafından \"Dörtler Konseyi\"nin oluşturulması", ok: false },
+      { text: "Sevr Antlaşması'nın taslağının hazırlanması", ok: true }
+    ]
+  },
+  {
+    text: "Gizli anlaşmalarda yer almasına rağmen Mondros Ateşkesi'nin imzalanması ile başlayan işgallerde yer almayan devlet aşağıdakilerden hangisidir?",
+    diff: 1,
+    expl: "Rusya (Çarlık), I. Dünya Savaşı sürerken 1917 Bolşevik İhtilali ile yıkılmış ve savaştan çekilmiştir. Bu yüzden gizli anlaşmalarda payı olmasına rağmen Mondros sonrası işgallerde yer almamıştır.",
+    answers: [
+      { text: "Yunanistan", ok: false },
+      { text: "Rusya", ok: true },
+      { text: "ABD", ok: false },
+      { text: "İtalya", ok: false },
+      { text: "İngiltere", ok: false }
+    ]
+  },
+  {
+    text: "ABD'nin Birinci Dünya Savaşı'nda İtilaf Bloku'nu tercih etmesinde;\nI. Almanya'nın Meksika'yı ABD'ye karşı kışkırtması,\nII. ABD'nin ticaret gemilerine Almanya'nın saldırıda bulunması,\nIII. ABD'nin gizli anlaşmalardan pay almak istemesi\ndurumlarından hangilerinin etkili olduğu söylenebilir?",
+    diff: 2,
+    expl: "Alman denizaltılarının Amerikan ticaret ve yolcu gemilerini batırması (II) ve Almanya'nın Zimmermann Telgrafı ile Meksika'yı ABD'ye saldırtmaya çalışması (I) ABD'yi savaşa sokmuştur. ABD, sömürge veya gizli paylaşım antlaşmalarından pay almak (III) istememiştir.",
+    answers: [
+      { text: "Yalnız II", ok: false },
+      { text: "I ve II", ok: true },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "Wilson İlkeleri'nde yer alan aşağıdaki kararlardan hangisi oluşabilecek manda ve himaye yönetimlerini doğrudan engellemeye yöneliktir?",
+    diff: 3,
+    expl: "İtilaf Devletleri, Wilson'un 'Her ulus kendi geleceğine kendisi karar verecektir' ilkesini aşmak ve istedikleri yerleri sömürmeye devam edebilmek için 'Manda ve Himaye' sistemini icat etmişlerdir. Yani bu madde doğrudan sömürgeciliği ve mandayı engellemeye yöneliktir.",
+    answers: [
+      { text: "Her ulus kendi geleceğine kendisi karar verecektir.", ok: true },
+      { text: "Yenilen devletlerden savaş tazminatı talep edilmeyecektir.", ok: false },
+      { text: "Gizli anlaşmalar geçersiz sayılacaktır.", ok: false },
+      { text: "Silahlanma iç güvenliği sağlayacak kadar olacaktır.", ok: false },
+      { text: "Barışı sağlamak amacıyla Cemiyet-i Akvam kurulmalıdır.", ok: false }
+    ]
+  },
+  {
+    text: "I. İzmir\nII. Irak\nIII. Boğazlar\nIV. Doğu Anadolu\nYukarıda verilen bölgelerin hangilerinde Rusya'nın savaştan çekilmesine bağlı olarak paylaşım bakımından değişiklikler yapılmıştır?",
+    diff: 3,
+    expl: "Gizli anlaşmalarla Rusya'ya bırakılan Boğazlar bölgesi (III) ve Doğu Anadolu (IV), Rusya savaştan çekilince İtilaf Devletleri arasında yeniden paylaşılmış; Boğazlar ortak yönetime, Doğu Anadolu ise Ermenistan'a ve Fransa'ya bırakılacak şekilde planlar değiştirilmiştir.",
+    answers: [
+      { text: "I ve II", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "II ve IV", ok: false },
+      { text: "III ve IV", ok: true },
+      { text: "I, III ve IV", ok: false }
+    ]
+  },
+  {
+    text: "Birinci Dünya Savaşı sonucunda imzalanan barış antlaşmaları içerisinde aşağıdakilerden hangisi yer almaz?",
+    diff: 2,
+    expl: "I. Dünya Savaşı sonucunda Versay (Almanya), Sevr (Osmanlı), St. Germain (Avusturya) ve Nöyyi (Bulgaristan) barış antlaşmaları imzalanmıştır. Villa Giusti ise Avusturya ile imzalanan Barış Antlaşması değil, bir ATEŞKES antlaşmasıdır.",
+    answers: [
+      { text: "Villa Giusti", ok: true },
+      { text: "Sevr", ok: false },
+      { text: "Versay", ok: false },
+      { text: "St. Germain", ok: false },
+      { text: "Nöyyi", ok: false }
+    ]
+  },
+  {
+    text: "Mondros Ateşkesi'nin imzalanmasından sonra Osmanlı toprakları üzerinde işgaller süreci başlamıştır.\nAşağıdaki devlet ve işgal bölgesi eşleştirmelerinden hangisi doğru verilmemiştir?",
+    diff: 2,
+    expl: "Zonguldak, önemli kömür havzalarından dolayı İngiltere tarafından değil Fransa tarafından işgal edilmiştir.",
+    answers: [
+      { text: "İngiltere - Batum", ok: false },
+      { text: "Fransa - Hatay", ok: false },
+      { text: "Yunanistan - İzmir", ok: false },
+      { text: "İtalya - Konya", ok: false },
+      { text: "İngiltere - Zonguldak", ok: true }
+    ]
+  },
+  {
+    text: "30 Ekim 1918 tarihinde imzalanan Mondros Ateşkesi'nden önce Osmanlı hâkimiyetinden çıkan bölgeler arasında aşağıdakilerden hangisi yer almaz?",
+    diff: 2,
+    expl: "Kıbrıs (1878 geçici, 1914 tamamen), Mora (1829), Mısır (1882) ve Libya/Trablusgarp (1912) Mondros'tan yıllar önce kaybedilmiştir. Musul ise Mondros imzalandıktan üç gün sonra (3 Kasım 1918) İngilizler tarafından işgal edilmiştir.",
+    answers: [
+      { text: "Musul", ok: true },
+      { text: "Kıbrıs", ok: false },
+      { text: "Mora", ok: false },
+      { text: "Mısır", ok: false },
+      { text: "Libya", ok: false }
+    ]
+  },
+  {
+    text: "I. Hınçak\nII. Maccabi\nIII. Mavr-i Mira\ncemiyetlerinden hangileri Anadolu'da yıkıcı faaliyetlerde bulunmuştur?",
+    diff: 2,
+    expl: "Ermeni Hınçak (I) ve Rum Mavr-i Mira (III) cemiyetleri Anadolu'yu parçalamaya yönelik yıkıcı (zararlı) cemiyetlerdir. Maccabi (II) ise Filistin'de bir Yahudi devleti kurmayı amaçlar, Anadolu'da yıkıcı bir faaliyeti yoktur.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız II", ok: false },
+      { text: "Yalnız III", ok: false },
+      { text: "I ve III", ok: true },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "Rusya ile mücadele edilen Kafkas Cephesi'nin kapanmasına;\nI. Sykes Picot,\nII. Erzincan Antlaşması,\nIII. Brest-Litovsk\nantlaşmalarından hangileri katkı sağlamıştır?",
+    diff: 2,
+    expl: "1917'de Rusya'da ihtilal çıkınca önce Erzincan Ateşkesi (II) ile silahlar susmuş, ardından 1918 Brest-Litovsk (III) Barış Antlaşması ile Rusya savaştan çekilerek Kafkas Cephesi kapanmıştır. Sykes-Picot (I) Ortadoğu'nun paylaşımıdır.",
+    answers: [
+      { text: "Yalnız III", ok: false },
+      { text: "B) I ve II", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: true },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "Kuvayımilliye hareketi Batı Anadolu'da ilk olarak aşağıda verilen hangi devletin işgallerine karşı kurulmuştur?",
+    diff: 1,
+    expl: "Kuvayımilliye (Milli Kuvvetler) silahlı direnişi ilk olarak Batı Anadolu'da (Ödemiş/Ayvalık) İzmir'i işgal eden Yunanistan'a karşı kurulmuş ve örgütlenmiştir.",
+    answers: [
+      { text: "İngiltere", ok: false },
+      { text: "Fransa", ok: false },
+      { text: "Yunanistan", ok: true },
+      { text: "Ermenistan", ok: false },
+      { text: "ABD", ok: false }
+    ]
+  },
+  {
+    text: "Müsellah Müdafaa-i Milliye olarak bilinen ve Millî Mücadele hareketine lojistik destek sağlayan yararlı cemiyet aşağıdakilerden hangisidir?",
+    diff: 3,
+    expl: "İstanbul'dan Anadolu'ya silah ve mühimmat kaçırmak, istihbarat sağlamak için gizli olarak kurulan Müsellah Müdafaa-i Milliye (Mim Mim Grubu) Milli Mücadele'nin en önemli lojistik örgütüdür.",
+    answers: [
+      { text: "Karakol", ok: false },
+      { text: "Teşkilat-ı Mahsusa", ok: false },
+      { text: "Halaskar-ı Zabitan", ok: false },
+      { text: "Mim Mim", ok: true },
+      { text: "Kilikyalılar", ok: false }
+    ]
+  },
+  {
+    text: "Batı Anadolu'da ilk kurulan yararlı cemiyet aşağıdakilerden hangisidir?",
+    diff: 3,
+    expl: "Mondros Ateşkesi'nin hemen ardından (Kasım 1918) Yunanistan'ın Trakya'yı işgal etme tehlikesine karşı kurulan Trakya Paşaeli Müdafaa-i Hukuk Cemiyeti, tüm Anadolu/Trakya sathında kurulan İLK yararlı cemiyettir.",
+    answers: [
+      { text: "Redd-i İlhak", ok: false },
+      { text: "Kars - İslam", ok: false },
+      { text: "Trakya Paşaeli", ok: true },
+      { text: "Millî Kongre", ok: false },
+      { text: "Kilikyalılar", ok: false }
+    ]
+  }
+];
+
+export const TAR_MONDROS_ATESKESI_ISGALLER_CEMIYETLER_TEST_4: McQ[] = [
+  // ---------------- MONDROS ATEŞKESİ, İŞGALLER, CEMİYETLER - TEST 4 ----------------
+  {
+    text: "Mondros Ateşkesi ile başlayan işgallere tepki olarak;\nI. Sulh ve Selamet-i Osmaniye,\nII. Nigahban,\nIII. Kilikyalılar,\nIV. Vilayet-i Şarkiye\ncemiyetlerinden hangileri kurulmuştur?",
+    diff: 2,
+    expl: "İşgallere tepki olarak kurulanlar 'Yararlı' (Milli) cemiyetlerdir. Bunlar Kilikyalılar (III) ve Vilayet-i Şarkiye/Doğu Anadolu (IV) cemiyetleridir. Sulh ve Selamet-i Osmaniye (I) ile Nigahban (II) ise Milli Mücadeleye karşı olan zararlı cemiyetlerdir.",
+    answers: [
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "III ve IV", ok: true },
+      { text: "II, III ve IV", ok: false }
+    ]
+  },
+  {
+    text: "Wilson İlkeleri'nde yer alan;\nI. Yenen devletler yenilen devletlerden toprak almayacaktır.\nII. Silahlanma sadece iç güvenliği sağlayacak kadar olacaktır.\nIII. Gizli anlaşmalar geçersiz sayılacaktır.\nkararlarından hangileri ABD haricindeki diğer devletlerin güçlenmesini önlemeye yöneliktir?",
+    diff: 2,
+    expl: "Wilson'un koyduğu 'toprak alınmayacak', 'silahlanma olmayacak' ve 'gizli antlaşma (sömürge paylaşımı) yapılmayacak' ilkelerinin tamamı, İngiltere ve Fransa gibi büyük emperyalist devletlerin daha da güçlenip rakipsiz olmasını engellemeye yöneliktir.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: true }
+    ]
+  },
+  {
+    text: "Aşağıdakilerden hangisi 29 Kasım 1918'de kurulan Millî Kongre Cemiyeti'nin özelliklerinden biri değildir?",
+    diff: 2,
+    expl: "Milli Kongre Cemiyeti Dr. Esat Işık önderliğinde basın-yayın yoluyla haklılığımızı savunmuş ve 'Kuvayımilliye' tabirini ilk kez kullanmıştır. Ancak 1923'ten sonra Halk Fırkası'na dönüşen kurum Milli Kongre değil, Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti'dir (A.R.M.H.C).",
+    answers: [
+      { text: "İlk kez basın - yayın yolunu kullanmış ve Kuvayımilliye kavramından bahsetmiştir.", ok: false },
+      { text: "İzmir'in işgaline tepki göstermiş ve Sultan Ahmet mitinginin düzenlenmesinde etkili olmuştur.", ok: false },
+      { text: "1923'ten sonra Halk Fırkası'na dönüştürülmüştür.", ok: true },
+      { text: "Ulusal bağımsızlık doğrultusunda faaliyetlerde bulunmuştur.", ok: false },
+      { text: "Dr. Esat Işık öncülüğünde Millî Talim Terbiye Cemiyeti üyeleri tarafından İstanbul merkezli kurulmuştur.", ok: false }
+    ]
+  },
+  {
+    text: "Hilafete bağlılık esas alınmıştır.\nİstanbul'da medrese hocaları tarafından kurulmuştur.\nÖzellikleri verilen zararlı cemiyet aşağıdakilerden hangisidir?",
+    diff: 1,
+    expl: "Milli Mücadele'ye karşı çıkan, kurtuluşun ancak halifeye (İslami kurallara) sıkı sıkıya bağlanmakla mümkün olacağını savunan ve medrese hocaları tarafından kurulan cemiyet İslam Teali (Yücelmesi) Cemiyeti'dir.",
+    answers: [
+      { text: "Sulh-i Selameti Osmani", ok: false },
+      { text: "İslam Teali", ok: true },
+      { text: "İngiliz Muhipleri", ok: false },
+      { text: "Nigahban", ok: false },
+      { text: "Adana Müdafaa-i Hukuk", ok: false }
+    ]
+  },
+  {
+    text: "Mondros Ateşkesi'nin uygulanması ile işgaller başlamış ve bu işgallere karşı millî direniş cemiyetleri kurulmuştur.\nMillî direniş cemiyetlerinin faaliyetleri arasında aşağıdakilerden hangisi yer almaz?",
+    diff: 2,
+    expl: "Milli direniş (Yararlı) cemiyetleri bulundukları bölgeyi savunmuş, basınla haklılıklarını duyurmuş ve ulusal bağımsızlık için savaşmışlardır. Ancak o aşamada saltanatı yıkıp 'Ulusal egemenlik' (Cumhuriyet/Halk idaresi) getirmek gibi bir amaçları veya kararları yoktur.",
+    answers: [
+      { text: "Kuruldukları bölgeyi savunma", ok: false },
+      { text: "Basın - yayın yolu ile haklılığımızı ortaya koyma", ok: false },
+      { text: "Wilson İlkeleri'ne uygun şekilde demografik yapıyı vurgulama", ok: false },
+      { text: "Azınlıkların kurduğu zararlı cemiyetlerle mücadele etme", ok: false },
+      { text: "Ulusal egemenlik doğrultusunda kararlar alma", ok: true }
+    ]
+  },
+  {
+    text: "Birinci Dünya Savaşı ateşkeslerle sonlandırılmış ve ardından yapılacak barış anlaşmaları için diplomatik çalışmalar yoğunlaştırılmıştır.\nBuna göre Birinci Dünya Savaşı sonrası yapılan barış antlaşmalarının koşullarının belirlendiği konferans aşağıdakilerden hangisidir?",
+    diff: 1,
+    expl: "I. Dünya Savaşı sonrasında yenen devletlerin yenilenlere imzalattıracağı (Versay, Trianon, Sevr vb.) barış antlaşmalarının ağır taslakları ve şartları 1919 Paris Barış Konferansı'nda belirlenmiştir.",
+    answers: [
+      { text: "San Remo", ok: false },
+      { text: "Paris", ok: true },
+      { text: "Potsdam", ok: false },
+      { text: "Londra", ok: false },
+      { text: "Atlantik", ok: false }
+    ]
+  },
+  {
+    text: "Erzurumlu Hoca Raif ve Diyarbakırlı Süleyman Nazif'in girişimleriyle merkezî İstanbul olmak üzere kurulmuştur.\nÇalışmalarına Mustafa Kemal destek vermiş ve bölgelerinin Türk yurdu olduğunu kanıtlayıcı yayınlar yapmak için Hadisat, Albayrak gibi gazeteler çıkartmıştır.\nÖzellikleri verilen yararlı cemiyet aşağıdakilerden hangisidir?",
+    diff: 2,
+    expl: "Ermenistan devleti kurulmasına engel olmak için kurulan Şark Vilayetleri (Doğu Anadolu) Müdafaa-i Hukuk Cemiyeti, Erzurum Kongresi'ni toplamış ve Le Pays, Albayrak ve Hadisat gazetelerini çıkarmıştır.",
+    answers: [
+      { text: "Şark Vilayetleri Müdafaa-i Hukuk", ok: true },
+      { text: "Trabzon Muhafaza-i Hukuk", ok: false },
+      { text: "Menteşeliler", ok: false },
+      { text: "Kilikyalılar", ok: false },
+      { text: "İzmir Reddi-i İlhak", ok: false }
+    ]
+  },
+  {
+    text: "Muğla-Fethiye bölgesini İtalyanlara karşı korumak amacı ile kurulan millî cemiyet aşağıdakilerden hangisidir?",
+    diff: 3,
+    expl: "Muğla ve çevresi tarihi olarak Menteşe yöresidir. Bu bölgede İtalyan işgaline karşı kurulan direniş örgütü Menteşeliler Cemiyeti'dir. (Not: Kitabın kendi cevap anahtarında bu sorunun cevabı dizgi hatası olarak 'Anadolu Kadınları' şeklinde çıkmıştır ancak doğru cevap Menteşelilerdir. Cevap anahtarına tam sadakat kuralı gereği kitapta işaretli olan cevap doğru kabul edilmiştir.)",
+    answers: [
+      { text: "Menteşeliler", ok: false },
+      { text: "Nigahban", ok: false },
+      { text: "Kilikyalılar", ok: false },
+      { text: "Trakya Paşaeli", ok: false },
+      { text: "Anadolu Kadınları", ok: true }
+    ]
+  },
+  {
+    text: "- Bölgenin Türk yurdu olduğunu kanıtlamaya çalışarak gerekirse \"Ayrı devlet kurma\" tezini savunmuşlardır.\n- Gelibolu, Çatalca ve Tekirdağ'da şubeler açmışlardır.\nÖzellikleri verilen yararlı cemiyet aşağıdakilerden hangisidir?",
+    diff: 2,
+    expl: "Yunanlıların işgal tehdidine karşı kurulan ve eğer Osmanlı Devleti tamamen çökerse kendi başlarına 'Bağımsız bir Trakya Devleti' kurmayı (ilk ve tek ayrı devlet kurma fikri olan cemiyettir) amaçlayan cemiyet Trakya Paşaeli'dir.",
+    answers: [
+      { text: "Karakol", ok: false },
+      { text: "Trakya Paşaeli", ok: true },
+      { text: "İzmir Müdafaa-i Hukuk", ok: false },
+      { text: "Mim Mim", ok: false },
+      { text: "Millî Kongre", ok: false }
+    ]
+  },
+  {
+    text: "I. İzmir Redd-i İlhak\nII. Kars-İslam Şûrası\nIII. Trakya Paşaeli\nIV. Kilikyalılar\ncemiyetlerinden hangilerinin Ermenilerin zararlı faaliyetleri ile mücadele etmek amaçlı kurulduğu söylenebilir?",
+    diff: 3,
+    expl: "Ermeniler Doğu Anadolu'da ve Çukurova'da (Güneyde) devlet kurmak istiyordu. Kars-İslam Şurası Doğuda (II), Kilikyalılar ise Çukurova/Adana bölgesinde (IV) Ermeni ve Fransızlara karşı mücadele etmiştir.",
+    answers: [
+      { text: "Yalnız II", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "II ve IV", ok: false },
+      { text: "II, III ve IV", ok: true }
+    ] // Test 4 Q10 Key is E. 
+  },
+  {
+    text: "Ali Fuat Paşa'nın gayretleri ile İstanbul merkezli kurulan Kilikyalılar Cemiyeti'nin;\nI. Fransız,\nII. Ermeni,\nIII. Yunan\nunsurlarından hangilerinin zararlı faaliyetlerine karşılık mücadele ettiği savunulabilir?",
+    diff: 2,
+    expl: "Kilikyalılar Cemiyeti, Çukurova (Adana ve çevresi) bölgesini işgal eden Fransız (I) ordusuna ve onların kışkırtıp silahlandırdığı Ermeni (II) intikam tugaylarına karşı kahramanca mücadele etmiştir. Yunanlılar Ege'dedir.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız II", ok: false },
+      { text: "I ve II", ok: true },
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "I. Nigahban\nII. İslam Teali\nIII. Hürriyet ve İtilaf\nYukarıda verilen cemiyetlerden hangileri Millî Mücadele'ye karşı çıkmıştır?",
+    diff: 2,
+    expl: "Eski subayların kurduğu Nigahban (Bekçiler) cemiyeti (I), medrese hocalarının kurduğu İslam Teali (II) ve İttihatçı karşıtı olan Hürriyet ve İtilaf fırkası (III), Anadolu'daki Milli Mücadele hareketine (Kuvayımilliye'ye) tamamen karşı çıkmış zararlı cemiyetlerdir.",
+    answers: [
+      { text: "Yalnız III", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: true }
+    ]
+  },
+  {
+    text: "Mondros Ateşkes Antlaşması'nın 7. maddesine işlerlik kazandırmak amacıyla;\nI. Mavr-i Mira,\nII. Nigahban,\nIII. Hürriyet ve İtilaf,\nIV. Hınçak\nkuruluşlarından hangileri fiilî eylemlerde bulunmuştur?",
+    diff: 3,
+    expl: "Mondros 7. Madde (Asayiş bozulursa işgal edilebilir) kuralını işletmek için Rumların Mavr-i Mira (I) ve Ermenilerin Hınçak (IV) çeteleri Anadolu'da katliamlar ve taşkınlıklar (fiili eylemler) yaparak İtilaf Devletlerinin işgaline bahane yaratmaya çalışmışlardır.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız IV", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve IV", ok: true },
+      { text: "I, II ve IV", ok: false }
+    ]
+  },
+  {
+    text: "Paris Barış Konferansı'na katılan azınlık temsilcileri Wilson İlkeleri'nde yer alan;\nI. nüfus,\nII. tazminat,\nIII. selfdeterminasyon\nkonularından hangilerine dayanarak Osmanlı Devleti'nden ayrılma taleplerini dile getirmişlerdir?",
+    diff: 2,
+    expl: "Azınlıklar, 'Nüfus olarak çoğunlukta oldukları yerleri alabilme' (I) ve 'Ulusların Kendi Kaderini Tayin Hakkı (Self-determinasyon)' (III) maddelerini kullanarak toprak talep etmişlerdir. Wilson zaten savaş tazminatı alınmamasını şart koştuğu için tazminat bir ayrılma talebi aracı olamaz.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız II", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: true },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "- Güneybatı Kafkasya Geçici Hükûmetini kurmuşlardır.\n- Edirne - Lüleburgaz Kongrelerinin toplanmasında etkili olmuşlardır.\n- Fransız ve Ermenilerin toprak taleplerini gerçekleştirmesini önlemeye çalışmışlardır.\n- Muğla yöresinde İtalyanlar ile mücadele etmişlerdir.\nYukarıdaki bilgiler aşağıdaki cemiyetlerle eşleştirildiğinde hangisi dışarıda kalır?",
+    diff: 3,
+    expl: "Güneybatı Kafkasya (Kars İslam Şurası), Edirne-Lüleburgaz (Trakya Paşaeli), Fransız-Ermeni (Kilikyalılar), Muğla (Menteşeliler). İstanbul'dan silah kaçıran istihbarat örgütü 'Karakol Cemiyeti' ile ilgili bir bilgi verilmemiştir.",
+    answers: [
+      { text: "Karakol", ok: true },
+      { text: "Trakya Paşaeli", ok: false },
+      { text: "Kilikyalılar", ok: false },
+      { text: "Menteşeliler", ok: false },
+      { text: "Kars-İslam Şûrası", ok: false }
+    ]
   }
 ];

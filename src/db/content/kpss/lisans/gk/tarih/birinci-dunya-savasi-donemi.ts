@@ -1,6 +1,6 @@
 import type { McQ } from "../../../../types";
 
-export const TAR_BIRINCI_DUNYA_SAVASI: McQ[] = [
+export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
   // ---------------- I. DÜNYA SAVAŞI DÖNEMİ - TEST 1 ----------------
   {
     text: "XX. yüzyıl başlarında Osmanlı Devleti'ni destekleme ve kalkındırma imajı çizerek Osmanlıların üzerindeki etkinliğini giderek arttıran devlet aşağıdakilerden hangisidir?",
@@ -121,8 +121,10 @@ export const TAR_BIRINCI_DUNYA_SAVASI: McQ[] = [
     answers: [
       { text: "Çanakkale", ok: false }, { text: "Kafkas", ok: true }, { text: "Derne", ok: false }, { text: "Bolayır", ok: false }, { text: "Suriye", ok: false }
     ]
-  },
+  }
+];
 
+export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
   // ---------------- I. DÜNYA SAVAŞI DÖNEMİ - TEST 2 ----------------
   {
     text: "I. Sykes Picot\nII. Atina\nIII. Mac Mahon\nIV. Rethondes\nYukarıdaki antlaşmalardan hangileri, Osmanlı Devleti'ni paylaşım tasarıları arasında yer almaktadır?",
@@ -235,8 +237,10 @@ export const TAR_BIRINCI_DUNYA_SAVASI: McQ[] = [
     answers: [
       { text: "Rauf Orbay", ok: false }, { text: "Kâzım Karabekir", ok: false }, { text: "Cevat Çobanlı", ok: true }, { text: "Mustafa Kemal", ok: false }, { text: "Fethi Okyar", ok: false }
     ]
-  },
+  }
+];
 
+export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
   // ---------------- I. DÜNYA SAVAŞI DÖNEMİ - TEST 3 ----------------
   {
     text: "Mustafa Kemal;\nI. Conkbayırı,\nII. Derne,\nIII. Arıburnu\ncephelerinin hangilerinde İstanbul'un işgalini önlemeye çalışmıştır?",
@@ -356,6 +360,177 @@ export const TAR_BIRINCI_DUNYA_SAVASI: McQ[] = [
     expl: "Enver Paşa komutasındaki Osmanlı ordusunun şiddetli kış şartlarında on binlerce şehit verdiği Sarıkamış Faciası sonucunda Doğu Anadolu savunmasız kalmış; Rus orduları hızla ilerleyerek Erzurum, Erzincan, Muş, Bitlis, Trabzon ve Van'ı işgal etmiştir.",
     answers: [
       { text: "Rusların ateşkes isteğinde bulunması", ok: false }, { text: "Muş, Bitlis, Erzincan ve Van bölgelerinin Rus işgaline uğraması", ok: true }, { text: "Kars-Ardahan ve Batum'un tekrar Osmanlı topraklarına katılması", ok: false }, { text: "Savaşın süresinin uzaması", ok: false }, { text: "Çarlık Rusya'ya İngiliz yardımının engellenmesi", ok: false }
+    ]
+  }
+];
+
+export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_4: McQ[] = [
+  {
+    text: "<p><b>Birinci Dünya Savaşı'nın başladığı sırada;</b></p><p>I. Mısır,<br>II. Hicaz,<br>III. Batum,<br>IV. Musul</p><p><b>bölgelerinden hangilerinin Osmanlı Devleti'nin sınırları içerisinde yer aldığı söylenebilir?</b></p>",
+    diff: 2,
+    expl: "1. Dünya Savaşı başladığında (1914) Hicaz ve Musul Osmanlı egemenliğindeydi. Mısır 1882'de İngilizler tarafından işgal edilmiş, Batum ise 1878 Berlin Antlaşması'yla Rusya'ya bırakılmıştı (Batum daha sonra Brest-Litovsk ile geri alınacaktır).",
+    answers: [
+      { text: "I ve II", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "II ve IV", ok: true },
+      { text: "Yalnız IV", ok: false },
+      { text: "II, III ve IV", ok: false }
+    ]
+  },
+  {
+    text: "<p>Birinci Dünya Savaşı'nın başlaması ile Osmanlı Devleti güvenliğini ve bağımsızlığını koruyucu birtakım önlemler almıştır.</p><p><b>Buna göre,</b></p><p>I. Boğazların kapatılması,<br>II. genel seferberlik ilan edilmesi,<br>III. kapitülasyonların tek taraflı kaldırılması,<br>IV. halifenin cihat çağrısında bulunması</p><p><b>gelişmelerinden hangilerinin bu önlemler arasında olduğu söylenebilir?</b></p>",
+    diff: 2,
+    expl: "Savaş başladığında Osmanlı tarafsızlığını ilan etmiş, boğazları kapatmış, genel seferberlik ilan etmiş ve kapitülasyonları tek taraflı kaldırmıştır (I, II, III). Halifenin cihat çağrısı, tarafsızlık bozulup savaşa girildikten sonra yapılan bir eylemdir.",
+    answers: [
+      { text: "Yalnız II", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: true },
+      { text: "II, III ve IV", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Almanya'nın Osmanlı Devleti'ni kendi yanında savaşa sokmak istemesinin nedenleri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
+    diff: 2,
+    expl: "Almanya; Halifenin gücünden (İslamcılık), Osmanlı'nın jeopolitik konumundan, Boğazlardan ve Berlin-Bağdat demiryolundan faydalanıp savaşın yükünü hafifletmek istiyordu. Ancak 'Hayat Sahası' politikası, 1. Dünya Savaşı'nda değil, 2. Dünya Savaşı'nda Hitler Almanyası'nın politikasıdır.",
+    answers: [
+      { text: "İslamcılık düşüncesinden yararlanma", ok: false },
+      { text: "Hayat Sahası politikasını gerçekleştirme", ok: true },
+      { text: "Osmanlı Devleti'nin jeopolitik konumundan faydalanma", ok: false },
+      { text: "İngiliz sömürgelerinde ayaklanmalar çıkartma", ok: false },
+      { text: "Berlin - Bağdat - Bakü hattını oluşturma", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Osmanlı Devleti'nin Birinci Dünya Savaşı'na girmesinde;</b></p><p>I. Musul'u topraklarına katmak,<br>II. Duyun-u Umumiye'nin yaptırımlarından kurtulmak,<br>III. Turancılık düşüncesini gerçekleştirmek</p><p><b>düşüncelerinden hangilerinin etkili olduğu <u>söylenemez</u>?</b></p>",
+    diff: 2,
+    expl: "Osmanlı Devleti 1. Dünya Savaşı'na girerken Musul zaten kendi toprağıydı, bu yüzden 'topraklarına katmak' gibi bir amacı olamazdı. Düyun-u Umumiye'den kurtulmak ve Turancılık ideali ise savaşa giriş nedenleri arasındadır.",
+    answers: [
+      { text: "Yalnız I", ok: true },
+      { text: "Yalnız II", ok: false },
+      { text: "Yalnız III", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "II ve III", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Birinci Dünya Savaşı'nda \"tarafsız kalan ülkelere\" aşağıdakilerden hangisi örnek gösterilebilir?</b></p>",
+    diff: 1,
+    expl: "1. Dünya Savaşı boyunca İsviçre, İspanya, Hollanda ve İskandinav ülkeleri (İsveç, Norveç) tarafsız kalmıştır. ABD, İtalya, Romanya ve Japonya savaşta yer alan ülkelerdir.",
+    answers: [
+      { text: "ABD", ok: false },
+      { text: "İtalya", ok: false },
+      { text: "İsviçre", ok: true },
+      { text: "Romanya", ok: false },
+      { text: "Japonya", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Osmanlı Devleti'ne ait gemilerin Sivastopol ve Odessa Limanlarını bombalaması ile ilk olarak aşağıdaki devletlerden hangisine savaş ilan edilmiştir?</b></p>",
+    diff: 1,
+    expl: "Osmanlı bayrağı çeken Alman gemileri (Yavuz ve Midilli), Karadeniz'e açılarak Rusya'nın Sivastopol ve Odessa limanlarını bombalamış ve Osmanlı fiilen savaşa Rusya'ya saldırarak girmiştir.",
+    answers: [
+      { text: "İngiltere", ok: false },
+      { text: "Fransa", ok: false },
+      { text: "Yunanistan", ok: false },
+      { text: "İtalya", ok: false },
+      { text: "Rusya", ok: true }
+    ]
+  },
+  {
+    text: "<p>I. Balkan Savaşları<br>II. Trablusgarp Savaşı<br>III. Birinci Dünya Savaşı</p><p><b>Yukarıda verilen savaşların hangilerinin yaşanmasında sömürge rekabeti etkili <u>olmamıştır</u>?</b></p>",
+    diff: 2,
+    expl: "Trablusgarp Savaşı (İtalya'nın hammadde arayışı) ve 1. Dünya Savaşı sömürgecilik rekabetinden çıkmıştır. Ancak Balkan Savaşları'nın temel nedeni sömürgecilik değil, milliyetçilik akımı ve Osmanlı'yı Balkanlardan atma düşüncesidir.",
+    answers: [
+      { text: "Yalnız I", ok: true },
+      { text: "Yalnız II", ok: false },
+      { text: "Yalnız III", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "I, II ve III", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Birinci Dünya Savaşı başladığı dönemde Mustafa Kemal aşağıda verilen görevlerden hangisini yürütmektedir?</b></p>",
+    diff: 2,
+    expl: "1. Dünya Savaşı patlak verdiğinde (1914), Mustafa Kemal Bulgaristan'da Sofya Askeri Ataşesi (Ataşemiliteri) olarak görev yapmaktaydı.",
+    answers: [
+      { text: "IX. Ordu Müfettişliği", ok: false },
+      { text: "Bolayır Cephe Komutanlığı", ok: false },
+      { text: "Sofya Ataşemiliterliği", ok: true },
+      { text: "Yıldırım Orduları Grubu Komutanlığı", ok: false },
+      { text: "Üçüncü Kolordu Komutanlığı", ok: false }
+    ]
+  },
+  {
+    text: "<p>I. Nurettin Paşa<br>II. Halil Kut<br>III. Kâzım Karabekir</p><p><b>Yukarıda verilen komutanlardan hangileri Irak Cephesi'nde görev almıştır?</b></p>",
+    diff: 3,
+    expl: "Irak Cephesi'nde özellikle Kut'ül Amare kuşatmasında Nurettin Paşa, Halil (Kut) Paşa ve Kazım Karabekir Paşa görev yapmış ve İngilizlere karşı büyük bir zafer kazanmışlardır.",
+    answers: [
+      { text: "Yalnız I", ok: false },
+      { text: "Yalnız II", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "I, II ve III", ok: true }
+    ]
+  },
+  {
+    text: "<p><b>Osmanlı Devleti'ni paylaşım tasarılarına ait aşağıda verilen bilgilerden hangisi doğru nitelikte <u>değildir</u>?</b></p>",
+    diff: 3,
+    expl: "Savaş sırasındaki gizli antlaşmalar İtilaf Devletleri arasında yapılmıştır ve bu antlaşmaların hiçbirinde ABD'nin onayı yoktur, çünkü ABD bu gizli paylaşımlara karşı çıkmış (Wilson İlkeleri) ve onaylamamıştır.",
+    answers: [
+      { text: "Rusya'nın yayımlandığı \"Sarı Kitap\" adlı eser ile dünya kamuoyuna duyurulmuştur.", ok: false },
+      { text: "Mac Mahon Antlaşması'nın imzalanması ile İslamcılık akımının geçersizliği ortaya çıkmıştır.", ok: false },
+      { text: "Söz konusu antlaşmalarda Boğazlar ve Karadeniz kıyıları Çarlık Rusya'ya bırakılmıştır.", ok: false },
+      { text: "Savaştan sonra İtilaflar arasında çıkarılabilecek tartışmaları önleme amaçlı imzalanmıştır.", ok: false },
+      { text: "ABD senatosu tarafından tüm antlaşmalar onaylanmıştır.", ok: true }
+    ]
+  },
+  {
+    text: "<p>- Kars - Ardahan - Batum'un tekrar Osmanlı hâkimiyetine girmesi<br>- Kafkas Cephesi'nin kapanması<br>- Rusya'dan ayrılan bazı devletlerin bağımsızlıklarını kazanması</p><p><b>gelişmeleri aşağıda verilen hangi antlaşmanın sonucunda ortaya çıkmıştır?</b></p>",
+    diff: 1,
+    expl: "Rusya'da çıkan Bolşevik İhtilali sonrası Rusya 1. Dünya Savaşı'ndan çekilmiş ve 1918'de Brest-Litovsk Antlaşması'nı imzalayarak Kars, Ardahan ve Batum'u (Elviye-i Selase) Osmanlı'ya geri vermiştir.",
+    answers: [
+      { text: "Sykes Picot", ok: false },
+      { text: "Brest-Litovsk", ok: true },
+      { text: "Petrograd Protokolü", ok: false },
+      { text: "St. Jean de Maurienne", ok: false },
+      { text: "Londra", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Çanakkale Savaşlarının sonuçları arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
+    diff: 2,
+    expl: "Yunanistan'ın İzmir'i işgal etmesi Çanakkale Savaşlarının değil, 1. Dünya Savaşı sonrasında toplanan Paris Barış Konferansı'nın (1919) bir sonucudur.",
+    answers: [
+      { text: "Mustafa Kemal'in Harp Mecmuası'nda \"Payitahtı Kurtaran Adam\" olarak lanse edilmesi", ok: false },
+      { text: "Cevat Paşa'nın \"18 Mart Kahramanı\" olarak kabul edilmesi", ok: false },
+      { text: "Dünya Savaşı'nın süresinin uzaması", ok: false },
+      { text: "İtilaf Devletlerinin Çarlık Rusya'ya yardım götürme düşüncesinin gerçekleşmemesi", ok: false },
+      { text: "Yunanistan'ın İzmir bölgesini işgal etmesi", ok: true }
+    ]
+  },
+  {
+    text: "<p><b>Mustafa Kemal'in;</b></p><p>I. Arıburnu'nda direniş göstermesi,<br>II. Halep önlerinde İtilaf Devletlerini durdurması,<br>III. Muş ve Bitlis bölgelerini Ruslardan tekrar alması</p><p><b>faaliyetlerinin oluş sırası aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    diff: 3,
+    expl: "Mustafa Kemal 1. Dünya Savaşı'nda sırasıyla; Çanakkale'de (Arıburnu - 1915), Kafkasya'da (Muş ve Bitlis - 1916) ve Suriye-Filistin Cephesinde (Halep önleri - 1918) görev yapmıştır.",
+    answers: [
+      { text: "I - II - III", ok: false },
+      { text: "II - I - III", ok: false },
+      { text: "III - II - I", ok: false },
+      { text: "I - III - II", ok: true },
+      { text: "II - III - I", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Birinci Dünya Savaşı'na son katılan İtilaf Devleti aşağıdakilerden hangisidir?</b></p>",
+    diff: 1,
+    expl: "Savaşa en son katılan İtilaf devleti Yunanistan'dır (1917 sonları/1918). Savaşa İtilaf bloğunda en son katılan büyük güç ise ABD'dir ancak genel olarak en son katılan devlet Yunanistan kabul edilir.",
+    answers: [
+      { text: "ABD", ok: false },
+      { text: "Rusya", ok: false },
+      { text: "İtalya", ok: false },
+      { text: "Sırbistan", ok: false },
+      { text: "Yunanistan", ok: true }
     ]
   }
 ];
