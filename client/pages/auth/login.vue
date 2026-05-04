@@ -71,18 +71,29 @@ const submit = async () => {
 
     // Merge guest progress if any
     const { state, clearGuestState } = useGuestState();
-    if (state.value.quizResults.length > 0) {
+    const earnedAcorns = Math.max(0, state.value.acornBalance - 500);
+    const hasGuestProgress =
+      state.value.quizResults.length > 0 ||
+      state.value.claimedRewardStepIds.length > 0 ||
+      earnedAcorns > 0;
+    if (hasGuestProgress) {
       try {
         await $fetch('/api/auth/merge-guest-progress', {
           method: 'POST',
           headers: { Authorization: `Bearer ${data.token}` },
-          body: { quiz_results: state.value.quizResults },
+          body: {
+            quiz_results: state.value.quizResults,
+            claimed_rewards: state.value.claimedRewardStepIds,
+            earned_acorns: earnedAcorns,
+          },
         });
+        clearGuestState();
       } catch {
-        // Best-effort: login still succeeds even if merge fails
+        // Merge failed — keep guest data for retry on next login
       }
+    } else {
+      clearGuestState();
     }
-    clearGuestState();
 
     await router.push('/');
   } catch (e: unknown) {

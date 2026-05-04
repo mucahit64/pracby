@@ -10,6 +10,7 @@ interface GuestState {
   examTypeId: string | null;
   examGroupId: string | null;
   quizResults: GuestQuizResult[];
+  claimedRewardStepIds: string[];
   acornBalance: number;
   energyCount: number;
   energyRefreshedAt: number | null;
@@ -38,6 +39,7 @@ function loadState(): GuestState {
       const parsed = JSON.parse(raw);
       const state: GuestState = {
         ...parsed,
+        claimedRewardStepIds: parsed.claimedRewardStepIds ?? [],
         acornBalance: parsed.acornBalance ?? 500,
         energyCount: parsed.energyCount ?? 25,
         energyRefreshedAt: parsed.energyRefreshedAt ?? null,
@@ -49,6 +51,7 @@ function loadState(): GuestState {
     examTypeId: localStorage.getItem('guestExamTypeId'),
     examGroupId: localStorage.getItem('guestExamGroupId'),
     quizResults: [],
+    claimedRewardStepIds: [],
     acornBalance: 500,
     energyCount: 25,
     energyRefreshedAt: null,
@@ -113,7 +116,7 @@ export function useGuestState() {
   /**
    * Overlay guest quiz results onto an array of topics fetched from the API.
    * Called after any course/topic fetch when the user has no auth token.
-   * Mutates `topics` in-place so that `step.progress` reflects completed tests.
+   * Mutates `topics` in-place so that `step.progress` reflects completed steps.
    */
   function overlayGuestProgress(topics: Array<{
     progress?: object | null;
@@ -125,23 +128,35 @@ export function useGuestState() {
     }>;
   }>) {
     const results = state.value.quizResults;
+    const claimedRewards = state.value.claimedRewardStepIds;
     for (const topic of topics) {
       if (!topic.progress) topic.progress = { is_unlocked: true };
       for (const step of topic.steps ?? []) {
-        if (step.step_type === 'reward' || step.progress) continue;
-        const completedTestIds = new Set(
-          results.filter((r) => r.stepId === step.id && r.testId).map((r) => r.testId!),
-        );
-        const testsCompleted = completedTestIds.size;
-        const isCompleted = testsCompleted >= (step.tests_required ?? 1);
-        step.progress = {
-          tests_completed: testsCompleted,
-          is_step_completed: isCompleted,
-          step_final_passed: false,
-          stars: 0,
-        };
+        if (step.progress) continue;
+        if (step.step_type === 'reward') {
+          const isClaimed = claimedRewards.includes(step.id);
+          step.progress = {
+            tests_completed: 0,
+            is_step_completed: isClaimed,
+            step_final_passed: false,
+          };
+        } else {
+          const hasResult = results.some((r) => r.stepId === step.id);
+          step.progress = {
+            tests_completed: hasResult ? 1 : 0,
+            is_step_completed: hasResult,
+            step_final_passed: hasResult,
+          };
+        }
       }
     }
+  }
+
+  function claimReward(stepId: string, amount: number) {
+    if (state.value.claimedRewardStepIds.includes(stepId)) return;
+    state.value.claimedRewardStepIds.push(stepId);
+    state.value.acornBalance += amount;
+    saveState(state.value);
   }
 
   function getRegistrationPayload() {
@@ -151,6 +166,7 @@ export function useGuestState() {
       energy: state.value.energyCount,
       guest_data: {
         quiz_results: state.value.quizResults,
+        claimed_reward_step_ids: state.value.claimedRewardStepIds,
       },
     };
   }
@@ -159,7 +175,7 @@ export function useGuestState() {
     localStorage.removeItem(STORAGE_KEY);
     localStorage.removeItem('guestExamTypeId');
     localStorage.removeItem('guestExamGroupId');
-    state.value = { examTypeId: null, examGroupId: null, quizResults: [], acornBalance: 500, energyCount: 25, energyRefreshedAt: null };
+    state.value = { examTypeId: null, examGroupId: null, quizResults: [], claimedRewardStepIds: [], acornBalance: 500, energyCount: 25, energyRefreshedAt: null };
   }
 
   const isGuest = computed(() => !localStorage.getItem('pb_token'));
@@ -169,6 +185,7 @@ export function useGuestState() {
     isGuest,
     addQuizResult,
     overlayGuestProgress,
+    claimReward,
     spendAcorns,
     gainAcorns,
     setEnergy,

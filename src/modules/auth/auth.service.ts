@@ -74,6 +74,31 @@ export const register = async (input: RegisterInput) => {
     }
   }
 
+  // Apply guest claimed rewards if provided
+  if (input.guest_data?.claimed_reward_step_ids?.length) {
+    const rewardStepIds = input.guest_data.claimed_reward_step_ids;
+
+    const claimInserts = rewardStepIds.map((stepId) => ({
+      user_id: user.id,
+      step_id: stepId,
+    }));
+    await db("user_reward_claims")
+      .insert(claimInserts)
+      .onConflict(["user_id", "step_id"])
+      .ignore();
+
+    const rewardProgressInserts = rewardStepIds.map((stepId) => ({
+      user_id: user.id,
+      step_id: stepId,
+      is_step_completed: true,
+      tests_completed: 0,
+    }));
+    await db("user_step_progress")
+      .insert(rewardProgressInserts)
+      .onConflict(["user_id", "step_id"])
+      .merge({ is_step_completed: true });
+  }
+
   return { user, token: signToken(user.id as string, user.username as string) };
 };
 
@@ -96,68 +121,121 @@ export const login = async (input: LoginInput) => {
 export const mergeGuestProgress = async (
   userId: string,
   quizResults: { topicId: string; stepId?: string; testId?: string; correctCount: number; totalQuestions: number }[],
+  claimedRewards: string[] = [], // YENİ: Misafirin açtığı sandıkların ID'leri
+  earnedAcorns: number = 0       // YENİ: Misafirin kazandığı palamutlar
 ) => {
-  if (!quizResults.length) return { merged: false };
+  // Eğer aktarılacak hiçbir şey yoksa direkt çık
+  if (!quizResults.length && !claimedRewards.length && earnedAcorns === 0) {
+    return { merged: false };
+  }
 
-  const stepIds = [...new Set(quizResults.map((r) => r.stepId).filter(Boolean))] as string[];
-  if (stepIds.length === 0) return { merged: false };
+  // Tüm süreci Transaction içine alıyoruz ki hata olursa yarım kalmasın
+  return db.transaction(async (trx) => {
+    let newXp = 0;
 
-  const steps = await db("steps").whereIn("id", stepIds).select("id", "tests_required");
-  const stepMap = new Map(steps.map((s) => [s.id as string, s.tests_required as number]));
+    // ==========================================
+    // 1. NORMAL TESTLERİN AKTARILMASI (Mevcut mantığın)
+    // ==========================================
+    const stepIds = [...new Set(quizResults.map((r) => r.stepId).filter(Boolean))] as string[];
+    
+    if (stepIds.length > 0) {
+      const steps = await trx("steps").whereIn("id", stepIds).select("id", "tests_required");
+      const stepMap = new Map(steps.map((s) => [s.id as string, s.tests_required as number]));
 
-  const existingProgress = await db("user_step_progress")
-    .where({ user_id: userId })
-    .whereIn("step_id", stepIds);
-  const existingMap = new Map(existingProgress.map((p) => [p.step_id as string, p]));
+      const existingProgress = await trx("user_step_progress")
+        .where({ user_id: userId })
+        .whereIn("step_id", stepIds);
+      const existingMap = new Map(existingProgress.map((p) => [p.step_id as string, p]));
 
-  let newXp = 0;
+      for (const stepId of stepIds) {
+        const results = quizResults.filter((r) => r.stepId === stepId);
+        const completedTestIds = new Set(results.filter((r) => r.testId).map((r) => r.testId!));
+        const guestTestsCompleted = completedTestIds.size;
+        const testsRequired = stepMap.get(stepId) ?? 1;
+        const guestIsCompleted = guestTestsCompleted >= testsRequired;
 
-  for (const stepId of stepIds) {
-    const results = quizResults.filter((r) => r.stepId === stepId);
-    const completedTestIds = new Set(results.filter((r) => r.testId).map((r) => r.testId!));
-    const guestTestsCompleted = completedTestIds.size;
-    const testsRequired = stepMap.get(stepId) ?? 1;
-    const guestIsCompleted = guestTestsCompleted >= testsRequired;
+        const existing = existingMap.get(stepId);
 
-    const existing = existingMap.get(stepId);
+        if (!existing) {
+          await trx("user_step_progress").insert({
+            user_id: userId,
+            step_id: stepId,
+            tests_completed: guestTestsCompleted,
+            is_step_completed: guestIsCompleted,
+            step_final_passed: false,
+            stars: 0,
+            ...(guestIsCompleted && { completed_at: new Date() }),
+          });
+          const stepXp = results.reduce((sum, r) => sum + r.correctCount, 0);
+          newXp += stepXp;
+        } else if (guestTestsCompleted > (existing.tests_completed as number)) {
+          await trx("user_step_progress")
+            .where({ id: existing.id })
+            .update({
+              tests_completed: guestTestsCompleted,
+              is_step_completed: guestIsCompleted,
+              ...(guestIsCompleted && !existing.is_step_completed && { completed_at: new Date() }),
+            });
+          const deltaTests = guestTestsCompleted - (existing.tests_completed as number);
+          const sortedResults = [...results].sort((a, b) => b.correctCount - a.correctCount);
+          const deltaXp = sortedResults.slice(0, deltaTests).reduce((sum, r) => sum + r.correctCount, 0);
+          newXp += deltaXp;
+        }
+      }
+    }
 
-    if (!existing) {
-      // No server progress — insert guest progress
-      await db("user_step_progress").insert({
+    // ==========================================
+    // 2. ÖDÜL SANDIKLARININ (REWARDS) AKTARILMASI
+    // ==========================================
+    if (claimedRewards.length > 0) {
+      // a. user_reward_claims tablosuna ekle (Aynı sandığı tekrar açmasın diye)
+      const claimInserts = claimedRewards.map((stepId) => ({
         user_id: userId,
         step_id: stepId,
-        tests_completed: guestTestsCompleted,
-        is_step_completed: guestIsCompleted,
-        step_final_passed: false,
-        stars: 0,
-        ...(guestIsCompleted && { completed_at: new Date() }),
-      });
-      // Award XP for these results
-      const stepXp = results.reduce((sum, r) => sum + r.correctCount, 0);
-      newXp += stepXp;
-    } else if (guestTestsCompleted > (existing.tests_completed as number)) {
-      // Guest is ahead — update to guest progress
-      await db("user_step_progress")
-        .where({ id: existing.id })
-        .update({
-          tests_completed: guestTestsCompleted,
-          is_step_completed: guestIsCompleted,
-          ...(guestIsCompleted && !existing.is_step_completed && { completed_at: new Date() }),
-        });
-      // Award XP only for the delta
-      const deltaTests = guestTestsCompleted - (existing.tests_completed as number);
-      const sortedResults = [...results].sort((a, b) => b.correctCount - a.correctCount);
-      const deltaXp = sortedResults.slice(0, deltaTests).reduce((sum, r) => sum + r.correctCount, 0);
-      newXp += deltaXp;
+      }));
+      await trx("user_reward_claims")
+        .insert(claimInserts)
+        .onConflict(["user_id", "step_id"])
+        .ignore(); // Zaten varsa hata verme, atla
+
+      // b. user_step_progress tablosuna "Tamamlandı" olarak ekle (Frontend mavi tik yapsın diye)
+      const rewardProgressInserts = claimedRewards.map((stepId) => ({
+        user_id: userId,
+        step_id: stepId,
+        is_step_completed: true,
+        tests_completed: 0,
+      }));
+      await trx("user_step_progress")
+        .insert(rewardProgressInserts)
+        .onConflict(["user_id", "step_id"])
+        .merge({ is_step_completed: true });
     }
-    // else: server progress >= guest progress — skip (no downgrade)
-  }
 
-  if (newXp > 0) {
-    await db("user_stats").where({ user_id: userId }).increment({ xp: newXp, total_xp: newXp });
-  }
+    // ==========================================
+    // 3. XP VE PALAMUT (ACORN) GÜNCELLEMESİ
+    // ==========================================
+    if (newXp > 0) {
+      await trx("user_stats")
+        .where({ user_id: userId })
+        .increment({ xp: newXp, total_xp: newXp });
+    }
 
-  return { merged: true, xp_awarded: newXp };
+    if (earnedAcorns > 0) {
+      // Users tablosundaki bakiyeyi artır
+      await trx("users")
+        .where({ id: userId })
+        .increment("acorn_balance", earnedAcorns);
+      
+      // İşlemi geçmiş (log) tablosuna kaydet
+      await trx("acorn_transactions").insert({
+        user_id: userId,
+        amount: earnedAcorns,
+        type: "guest_sync",
+      });
+    }
+
+    return { merged: true, xp_awarded: newXp, acorns_awarded: earnedAcorns };
+  });
 };
 
 export const checkEmail = async (email: string) => {

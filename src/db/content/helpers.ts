@@ -1,5 +1,5 @@
 import type { Knex } from "knex";
-import type { McQ, TopicDef } from "./types";
+import type { McQ, TopicDef, StepDef } from "./types";
 
 /**
  * Shared seed helper functions.
@@ -49,7 +49,12 @@ export async function seedMC(
   }
 }
 
-/** Create a full topic with steps → tests → questions hierarchy */
+/** Type guard for reward steps */
+function isRewardStep(step: StepDef): step is { reward: true; amount?: number } {
+  return "reward" in step;
+}
+
+/** Create a full topic with steps → questions hierarchy */
 export async function createTopic(
   knex: Knex,
   courseId: string,
@@ -60,29 +65,40 @@ export async function createTopic(
     course_id: courseId,
     name: topic.name,
     description: topic.description,
-    icon_url: topic.icon,
+    icon_url: "",
     sort_order: sortOrder,
   });
 
   for (let si = 0; si < topic.steps.length; si++) {
     const sd = topic.steps[si];
-    const step = await ins(knex, "steps", {
-      topic_id: topicRow.id,
-      name: sd.name,
-      description: sd.name,
-      sort_order: si + 1,
-      tests_required: sd.tests.length,
-      step_type: "lesson",
-    });
 
-    for (let ti = 0; ti < sd.tests.length; ti++) {
-      const td = sd.tests[ti];
+    if (isRewardStep(sd)) {
+      await ins(knex, "steps", {
+        topic_id: topicRow.id,
+        name: "",
+        description: "",
+        sort_order: si + 1,
+        tests_required: 0,
+        step_type: "reward",
+        reward_type: "acorn",
+        reward_amount: sd.amount ?? 10,
+      });
+    } else {
+      const step = await ins(knex, "steps", {
+        topic_id: topicRow.id,
+        name: "",
+        description: "",
+        sort_order: si + 1,
+        tests_required: 1,
+        step_type: "lesson",
+      });
+
       const test = await ins(knex, "tests", {
         step_id: step.id,
-        sort_order: ti + 1,
-        name: td.name,
+        sort_order: 1,
+        name: "",
       });
-      await seedMC(knex, td.questions, topicRow.id, step.id, test.id);
+      await seedMC(knex, sd.questions, topicRow.id, step.id, test.id);
     }
   }
 }

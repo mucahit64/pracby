@@ -38,10 +38,6 @@ export const getCourseFull = async (courseId: string, userId?: string) => {
 
   const stepIds = steps.map((s) => s.id);
 
-  const tests = stepIds.length > 0
-    ? await db("tests").whereIn("step_id", stepIds).orderBy("sort_order")
-    : [];
-
   // User progress
   let userTopicProgress: Record<string, unknown>[] = [];
   let userStepProgress: Record<string, unknown>[] = [];
@@ -69,7 +65,6 @@ export const getCourseFull = async (courseId: string, userId?: string) => {
     const topicSteps = steps.filter((s) => s.topic_id === topic.id);
     const enrichedSteps = topicSteps.map((step) => ({
       ...step,
-      tests: tests.filter((t) => t.step_id === step.id),
       progress: stepProgressMap.get(step.id) ?? null,
     }));
 

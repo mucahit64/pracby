@@ -27,6 +27,7 @@ export const RegisterSchema = z.object({
           }),
         )
         .optional(),
+      claimed_reward_step_ids: z.array(z.string()).optional(),
     })
     .optional(),
 });
@@ -45,7 +46,9 @@ export const MergeGuestProgressSchema = z.object({
       correctCount: z.number().int().min(0),
       totalQuestions: z.number().int().min(0),
     }),
-  ),
+  ).default([]),
+  claimed_rewards: z.array(z.string()).default([]),
+  earned_acorns: z.number().int().min(0).default(0),
 });
 
 export type RegisterInput = z.infer<typeof RegisterSchema>;

@@ -45,7 +45,7 @@
       </div>
 
       <div v-for="(topic, tIdx) in courseFull.topics" :key="topic.id" class="flex flex-col">
-        <div class="bg-primary rounded-2xl p-5 mb-6 border-b-4 border-primary-dark">
+        <div class="rounded-2xl p-5 mb-6 border-b-4" :class="[TOPIC_COLORS[tIdx % TOPIC_COLORS.length].bg, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].border]">
           <div class="text-[0.72rem] font-bold text-white/70 tracking-widest uppercase mb-1">BÖLÜM {{ tIdx + 1 }}</div>
           <div class="text-lg font-black text-white">{{ topic.name }}</div>
         </div>
@@ -64,25 +64,22 @@
             <div class="flex flex-col items-center gap-2 relative">
               <div class="relative flex items-center justify-center">
                 <button
-                  class="rounded-full flex flex-col items-center justify-center text-2xl transition-all duration-150 font-[inherit] border-2 select-none w-[60px] h-[60px] z-10"
+                  class="rounded-full flex flex-col items-center justify-center text-2xl transition-all duration-150 font-[inherit] border-2 select-none w-[80px] h-[80px] z-10"
                   :class="[
                     node.status === 'completed' && node.type === 'lesson'
                       ? 'bg-primary border-primary-dark border-b-[8px] text-white hover:translate-y-[2px] hover:border-b-[6px] active:translate-y-[8px] active:border-b-0 cursor-pointer'
                       : '',
-                    node.status === 'active' && node.type === 'lesson' && !node.isBossNext
+                    node.status === 'active' && node.type === 'lesson'
                       ? 'bg-primary border-primary-dark border-b-[8px] text-white hover:translate-y-[2px] hover:border-b-[6px] active:translate-y-[8px] active:border-b-0 cursor-pointer'
                       : '',
-                    node.status === 'active' && node.isBossNext
-                      ? 'bg-gradient-to-br from-primary to-negative border-primary-dark border-b-[8px] text-white hover:translate-y-[2px] hover:border-b-[6px] active:translate-y-[8px] active:border-b-0 cursor-pointer'
-                      : '',
-                    node.status === 'locked' && node.type !== 'boss'
+                    node.status === 'locked' && node.type === 'lesson'
                       ? 'bg-gray-200 border-gray-300 border-b-[8px] text-gray-400 cursor-not-allowed'
                       : '',
                     node.type === 'chest' && node.status !== 'locked'
                       ? '!bg-warning !border-amber-700 border-b-[8px] text-white hover:translate-y-[2px] hover:border-b-[6px] active:translate-y-[8px] active:border-b-0 cursor-pointer'
                       : '',
                     node.type === 'chest' && node.status === 'locked'
-                      ? '!bg-gray-200 !border-gray-300 border-b-[8px] text-gray-400 cursor-not-allowed'
+                      ? '!bg-amber-100 !border-amber-300 border-b-[8px] opacity-60 cursor-pointer'
                       : '',
                     node.type === 'boss' && node.status === 'active'
                       ? '!bg-negative !border-red-800 border-b-[8px] text-white hover:translate-y-[2px] hover:border-b-[6px] active:translate-y-[8px] active:border-b-0 cursor-pointer'
@@ -91,43 +88,15 @@
                       ? '!bg-gray-200 !border-gray-300 border-b-[8px] text-gray-400 cursor-not-allowed'
                       : '',
                   ]"
-                  :disabled="node.status === 'locked'"
+                  :disabled="node.status === 'locked' && node.type !== 'chest'"
                   @click="goToLesson(node)"
                 >
                   <span v-if="node.status === 'completed' && node.type === 'lesson'" class="text-3xl font-black text-white/95">✓</span>
+                  <span v-else-if="node.type === 'chest'" class="drop-shadow-sm">🎁</span>
                   <span v-else class="drop-shadow-sm">
                     {{ node.status === 'locked' ? '🔒' : node.icon }}
                   </span>
                 </button>
-                
-                <svg
-                  v-if="node.type === 'lesson' && node.testsRequired > 0 && node.status === 'active'"
-                  class="absolute w-[96px] h-[96px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 pointer-events-none z-0"
-                  viewBox="0 0 96 96"
-                >
-                  <circle cx="48" cy="48" r="40" fill="none" stroke="#e5e7eb" stroke-width="10" />
-                  <circle
-                    cx="48"
-                    cy="48"
-                    r="40"
-                    fill="none"
-                    stroke="#7c3aed"
-                    stroke-width="8"
-                    stroke-linecap="round"
-                    class="transition-all duration-500"
-                    :style="ringStyle(node)"
-                  />
-                </svg>
-              </div>
-
-              <div
-                class="text-xs font-extrabold text-center max-w-[90px]"
-                :class="[
-                  node.status === 'active' ? 'mt-3' : 'mt-1',
-                  node.status === 'locked' ? 'text-gray-400' : 'text-gray-800'
-                ]"
-              >
-                {{ node.name }}
               </div>
             </div>
           </div>
@@ -146,6 +115,15 @@
       :node="selectedNode"
       @close="stepDialogOpen = false"
       @start="startLesson"
+    />
+
+    <!-- ===== Reward Dialog ===== -->
+    <DialogsRewardStepDialog
+      :open="rewardDialogOpen"
+      :locked="rewardDialogNode?.status === 'locked'"
+      :reward-amount="rewardDialogNode?.rewardAmount"
+      @close="rewardDialogOpen = false; rewardDialogNode = null"
+      @claim="claimReward"
     />
 
     <!-- ===== Energy Out Dialog ===== -->
@@ -177,22 +155,14 @@ interface StepProgress {
   tests_completed: number;
   is_step_completed: boolean;
   step_final_passed: boolean;
-  stars: number;
-}
-
-interface Test {
-  id: string;
-  name: string;
-  sort_order: number;
 }
 
 interface Step {
   id: string;
-  name: string;
   sort_order: number;
   step_type: string;
   tests_required: number;
-  tests: Test[];
+  reward_amount?: number;
   progress: StepProgress | null;
 }
 
@@ -216,22 +186,27 @@ interface CourseFull extends Course {
 
 interface LessonNode {
   id: string;
-  name: string;
   icon: string;
   type: 'lesson' | 'chest' | 'boss';
   status: 'completed' | 'active' | 'locked';
-  crowns: number;
   topicId: string;
   stepId?: string;
-  testId?: string;
   sessionType: string;
-  testsCompleted: number;
-  testsRequired: number;
-  isFinalAvailable: boolean;
-  isBossNext: boolean;
-  nextTestId?: string;
-  tests: Test[];
+  rewardAmount?: number;
 }
+
+const TOPIC_COLORS = [
+  { bg: 'bg-blue-500', border: 'border-blue-700' },
+  { bg: 'bg-emerald-500', border: 'border-emerald-700' },
+  { bg: 'bg-amber-500', border: 'border-amber-700' },
+  { bg: 'bg-rose-500', border: 'border-rose-700' },
+  { bg: 'bg-violet-500', border: 'border-violet-700' },
+  { bg: 'bg-cyan-500', border: 'border-cyan-700' },
+  { bg: 'bg-orange-500', border: 'border-orange-700' },
+  { bg: 'bg-fuchsia-500', border: 'border-fuchsia-700' },
+  { bg: 'bg-teal-500', border: 'border-teal-700' },
+  { bg: 'bg-red-500', border: 'border-red-700' },
+];
 
 const activeExamName = ref('');
 const activeExamTypeId = ref('');
@@ -246,6 +221,9 @@ const selectedNode = ref<LessonNode | null>(null);
 const stepDialogOpen = ref(false);
 
 const energyEmptyOpen = ref(false);
+
+const rewardDialogOpen = ref(false);
+const rewardDialogNode = ref<LessonNode | null>(null);
 
 function getToken() {
   return localStorage.getItem('pb_token') ?? '';
@@ -362,41 +340,7 @@ function buildLessonNodes(topic: Topic): LessonNode[] {
   let foundActive = false;
 
   for (const step of topic.steps) {
-    if (step.step_type === 'reward') {
-      const prevCompleted = nodes.length > 0 && nodes[nodes.length - 1].status === 'completed';
-      nodes.push({
-        id: `reward-${step.id}`,
-        name: '',
-        icon: '🎁',
-        type: 'chest',
-        status: prevCompleted ? 'active' : 'locked',
-        crowns: 0,
-        topicId: topic.id,
-        stepId: step.id,
-        sessionType: 'lesson',
-        testsCompleted: 0,
-        testsRequired: 0,
-        isFinalAvailable: false,
-        isBossNext: false,
-        tests: [],
-      });
-      continue;
-    }
-
     const isCompleted = step.progress?.is_step_completed ?? false;
-    const crowns = step.progress?.stars ?? 0;
-    const testsCompleted = step.progress?.tests_completed ?? 0;
-    const testsRequired = step.tests_required ?? 1;
-    const stepFinalPassed = step.progress?.step_final_passed ?? false;
-    const isFinalAvailable = testsCompleted >= testsRequired && !stepFinalPassed && !isCompleted;
-
-    const sortedTests = [...step.tests].sort((a, b) => a.sort_order - b.sort_order);
-    const nextTestIndex = Math.min(testsCompleted, sortedTests.length - 1);
-    const nextTest = sortedTests[nextTestIndex];
-    const isBossNext = sortedTests.length > 1
-      && nextTestIndex === sortedTests.length - 1
-      && !stepFinalPassed
-      && !isCompleted;
 
     let status: 'completed' | 'active' | 'locked';
     if (isCompleted) {
@@ -408,66 +352,55 @@ function buildLessonNodes(topic: Topic): LessonNode[] {
       status = 'locked';
     }
 
-    nodes.push({
-      id: step.id,
-      name: step.name,
-      icon: isBossNext ? '⚔️' : '📝',
-      type: 'lesson',
-      status,
-      crowns,
-      topicId: topic.id,
-      stepId: step.id,
-      testId: nextTest?.id,
-      sessionType: (isFinalAvailable || isBossNext) ? 'step_final' : 'lesson',
-      testsCompleted,
-      testsRequired,
-      isFinalAvailable: isFinalAvailable || isBossNext,
-      isBossNext,
-      nextTestId: nextTest?.id,
-      tests: sortedTests,
-    });
+    if (step.step_type === 'reward') {
+      nodes.push({
+        id: `reward-${step.id}`,
+        icon: isCompleted ? '✅' : '🎁',
+        type: 'chest',
+        status,
+        topicId: topic.id,
+        stepId: step.id,
+        sessionType: 'lesson',
+        rewardAmount: step.reward_amount,
+      });
+    } else {
+      nodes.push({
+        id: step.id,
+        icon: '📝',
+        type: 'lesson',
+        status,
+        topicId: topic.id,
+        stepId: step.id,
+        sessionType: 'lesson',
+      });
+    }
   }
 
   if (topic.steps.length > 0) {
-    const allCompleted = topic.steps
-      .filter((s) => s.step_type !== 'reward')
-      .every((s) => s.progress?.is_step_completed);
+    const allCompleted = topic.steps.every((s) => s.progress?.is_step_completed);
 
     nodes.push({
       id: `boss-${topic.id}`,
-      name: 'Final',
       icon: '⚔️',
       type: 'boss',
       status: allCompleted ? 'active' : 'locked',
-      crowns: 0,
       topicId: topic.id,
       sessionType: 'topic_final',
-      testsCompleted: 0,
-      testsRequired: 0,
-      isFinalAvailable: false,
-      isBossNext: false,
-      tests: [],
     });
   }
 
   return nodes;
 }
 
-const RING_CIRCUMFERENCE = 2 * Math.PI * 43;
-
-function ringStyle(node: LessonNode) {
-  const total = node.testsRequired + 1;
-  const done = node.status === 'completed' ? total : node.testsCompleted;
-  const progress = total > 0 ? done / total : 0;
-  return {
-    strokeDasharray: RING_CIRCUMFERENCE,
-    strokeDashoffset: RING_CIRCUMFERENCE * (1 - progress),
-  };
-}
-
 function goToLesson(node: LessonNode) {
+  if (node.type === 'chest') {
+    if (node.status === 'completed') return;
+    if (node.status === 'locked') return;
+    rewardDialogNode.value = node;
+    rewardDialogOpen.value = true;
+    return;
+  }
   if (node.status === 'locked') return;
-  if (node.type === 'chest') return;
   if (node.status === 'completed') return;
 
   const token = getToken();
@@ -483,6 +416,39 @@ function goToLesson(node: LessonNode) {
   stepDialogOpen.value = true;
 }
 
+async function claimReward() {
+  const node = rewardDialogNode.value;
+  if (!node?.stepId) return;
+
+  const rewardAmount = node.rewardAmount ?? 10;
+  const token = getToken();
+
+  if (!token) {
+    const { claimReward: guestClaim } = useGuestState();
+    guestClaim(node.stepId, rewardAmount);
+    const { incrementAcornBalance } = useAcornBalance();
+    incrementAcornBalance(rewardAmount);
+    rewardDialogOpen.value = false;
+    rewardDialogNode.value = null;
+    await selectCourse(selectedCourseId.value);
+    return;
+  }
+
+  try {
+    const headers: Record<string, string> = { Authorization: `Bearer ${token}` };
+    await $fetch(`/api/quiz/reward/${node.stepId}/claim`, { method: 'POST', headers });
+
+    const { incrementAcornBalance } = useAcornBalance();
+    incrementAcornBalance(rewardAmount);
+
+    rewardDialogOpen.value = false;
+    rewardDialogNode.value = null;
+    await selectCourse(selectedCourseId.value);
+  } catch {
+    // silently fail
+  }
+}
+
 function startLesson() {
   const node = selectedNode.value;
   if (!node) return;
@@ -491,7 +457,6 @@ function startLesson() {
   const query: Record<string, string> = {};
   if (node.stepId) query.stepId = node.stepId;
   if (node.sessionType) query.sessionType = node.sessionType;
-  if ((node.sessionType === 'lesson' || node.sessionType === 'step_final') && node.nextTestId) query.testId = node.nextTestId;
 
   navigateTo({ path: `/quiz/${node.topicId}`, query });
 }

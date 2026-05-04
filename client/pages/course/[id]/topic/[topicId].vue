@@ -19,35 +19,37 @@
       </div>
 
       <!-- Steps -->
-      <div class="flex flex-col gap-3">
-        <div
-          v-for="(step, idx) in topic.steps.filter(s => s.step_type !== 'reward')"
-          :key="step.id"
-          class="flex items-center gap-3.5 bg-white border-2 rounded-2xl px-4 py-4 transition-colors"
-          :class="step.progress?.is_step_completed ? 'border-positive' : 'border-gray-200'"
-        >
-          <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-extrabold shrink-0"
-            :class="step.progress?.is_step_completed ? 'bg-positive text-white' : 'bg-gray-200 text-gray-800'"
-          >{{ idx + 1 }}</div>
-          <div class="flex-1 min-w-0 flex flex-col gap-1">
-            <div class="text-sm font-extrabold text-gray-800">{{ step.name }}</div>
-            <div class="text-xs font-semibold text-gray-400">
-              {{ step.tests.length }} test
-              <span v-if="step.progress">· {{ step.progress.tests_completed }} / {{ step.tests_required }} tamamlandı</span>
-            </div>
-            <div class="h-1.5 bg-gray-100 rounded-full overflow-hidden mt-1">
-              <div
-                class="h-full rounded-full transition-all duration-300"
-                :class="step.progress?.is_step_completed ? 'bg-positive' : 'bg-primary'"
-                :style="{ width: `${stepPercent(step)}%` }"
-              />
-            </div>
+      <div class="flex flex-col items-center gap-0">
+        <template v-for="(step, idx) in topic.steps" :key="step.id">
+          <!-- Connector line -->
+          <div v-if="idx > 0" class="w-0.5 h-5 bg-gray-200" />
+
+          <!-- Reward step -->
+          <div v-if="step.step_type === 'reward'" class="flex flex-col items-center">
+            <button
+              class="w-14 h-14 rounded-full flex items-center justify-center text-2xl border-2 cursor-pointer transition-transform hover:scale-110"
+              :class="isRewardUnlocked(step, idx) ? 'bg-warning/10 border-warning' : 'bg-amber-50 border-amber-200 opacity-60'"
+              @click="openRewardDialog(step, idx)"
+            >
+              🎁
+            </button>
           </div>
-          <div class="shrink-0">
-            <span v-if="step.progress?.is_step_completed" class="text-lg font-black text-positive">✓</span>
-            <span v-else class="text-sm font-extrabold text-gray-400">%{{ stepPercent(step) }}</span>
+
+          <!-- Lesson step -->
+          <div v-else class="flex flex-col items-center">
+            <button
+              class="w-14 h-14 rounded-full flex items-center justify-center text-lg font-extrabold border-b-4 cursor-pointer transition-transform hover:scale-105"
+              :class="step.progress?.is_step_completed
+                ? 'bg-positive border-green-700 text-white'
+                : isStepActive(idx) ? 'bg-primary border-blue-700 text-white' : 'bg-gray-100 border-gray-300 text-gray-400 cursor-not-allowed'"
+              :disabled="!isStepActive(idx) && !step.progress?.is_step_completed"
+              @click="startStep(step)"
+            >
+              <span v-if="step.progress?.is_step_completed">✓</span>
+              <span v-else>{{ getLessonNumber(idx) }}</span>
+            </button>
           </div>
-        </div>
+        </template>
       </div>
 
       <div v-if="topic.steps.length === 0" class="text-center py-16 text-gray-400 font-bold">
@@ -59,6 +61,15 @@
       Bölüm bulunamadı.
     </div>
   </div>
+
+  <!-- Reward Dialog -->
+  <DialogsRewardStepDialog
+    :open="rewardDialogOpen"
+    :locked="!rewardDialogUnlocked"
+    :reward-amount="rewardDialogStep?.reward_amount"
+    @close="rewardDialogOpen = false; rewardDialogStep = null"
+    @claim="claimSelectedReward"
+  />
 </template>
 
 <script setup lang="ts">
@@ -66,22 +77,14 @@ interface StepProgress {
   tests_completed: number;
   is_step_completed: boolean;
   step_final_passed: boolean;
-  stars: number;
-}
-
-interface Test {
-  id: string;
-  name: string;
-  sort_order: number;
 }
 
 interface Step {
   id: string;
-  name: string;
   sort_order: number;
   step_type: string;
   tests_required: number;
-  tests: Test[];
+  reward_amount?: number;
   progress: StepProgress | null;
 }
 
@@ -93,8 +96,13 @@ interface Topic {
 }
 
 const route = useRoute();
+const { api } = useApi();
 const loading = ref(true);
 const topic = ref<Topic | null>(null);
+
+const rewardDialogOpen = ref(false);
+const rewardDialogStep = ref<Step | null>(null);
+const rewardDialogUnlocked = ref(false);
 
 function getToken() {
   return localStorage.getItem('pb_token') ?? '';
@@ -125,16 +133,70 @@ onMounted(async () => {
   }
 });
 
-function stepPercent(step: Step): number {
-  if (step.progress?.is_step_completed) return 100;
-  const total = step.tests_required + 1;
-  const done = step.progress?.tests_completed ?? 0;
-  return total > 0 ? Math.round((done / total) * 100) : 0;
+function getLessonNumber(stepIndex: number): number {
+  if (!topic.value) return 1;
+  let count = 0;
+  for (let i = 0; i <= stepIndex; i++) {
+    if (topic.value.steps[i].step_type === 'lesson') count++;
+  }
+  return count;
+}
+
+function isStepActive(idx: number): boolean {
+  if (!topic.value) return false;
+  const steps = topic.value.steps;
+  // First lesson step is always active
+  if (idx === 0) return true;
+  // Active if previous non-reward step is completed
+  for (let i = idx - 1; i >= 0; i--) {
+    if (steps[i].step_type === 'lesson') {
+      return Boolean(steps[i].progress?.is_step_completed);
+    }
+  }
+  return true;
+}
+
+function isRewardUnlocked(step: Step, idx: number): boolean {
+  if (!topic.value) return false;
+  const steps = topic.value.steps;
+  // Reward is unlocked if previous lesson step is completed
+  for (let i = idx - 1; i >= 0; i--) {
+    if (steps[i].step_type === 'lesson') {
+      return Boolean(steps[i].progress?.is_step_completed);
+    }
+  }
+  return true;
+}
+
+async function claimReward(step: Step) {
+  const token = getToken();
+  if (!token) return;
+  try {
+    await api(`/api/quiz/reward/${step.id}/claim`, { method: 'POST' });
+    // Refresh page to show updated state
+    window.location.reload();
+  } catch { /* silently fail */ }
+}
+
+function openRewardDialog(step: Step, idx: number) {
+  rewardDialogStep.value = step;
+  rewardDialogUnlocked.value = isRewardUnlocked(step, idx);
+  rewardDialogOpen.value = true;
+}
+
+async function claimSelectedReward() {
+  if (!rewardDialogStep.value) return;
+  await claimReward(rewardDialogStep.value);
+}
+
+function startStep(step: Step) {
+  if (!topic.value) return;
+  navigateTo(`/quiz/${topic.value.id}?stepId=${step.id}`);
 }
 
 const overallPercent = computed(() => {
   if (!topic.value) return 0;
-  const steps = topic.value.steps.filter((s) => s.step_type !== 'reward');
+  const steps = topic.value.steps.filter((s) => s.step_type === 'lesson');
   if (steps.length === 0) return 0;
   const completed = steps.filter((s) => s.progress?.is_step_completed).length;
   return Math.round((completed / steps.length) * 100);

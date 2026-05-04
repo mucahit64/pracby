@@ -69,11 +69,18 @@ export const startSession = async (userId: string, input: StartQuizInput) => {
       .where({ test_id: input.testId, status: "approved" })
       .orderBy("sort_order", "asc");
   } else if (input.stepId) {
-    // Fallback: all questions from step (shouldn't normally happen if testId is provided)
-    questions = await db("questions")
-      .where({ step_id: input.stepId, status: "approved" })
-      .orderByRaw("RANDOM()")
-      .limit(10);
+    // Find the single test for this step and return its questions in order
+    const test = await db("tests").where({ step_id: input.stepId }).orderBy("sort_order").first();
+    if (test) {
+      questions = await db("questions")
+        .where({ test_id: test.id, status: "approved" })
+        .orderBy("sort_order", "asc");
+    } else {
+      questions = await db("questions")
+        .where({ step_id: input.stepId, status: "approved" })
+        .orderByRaw("RANDOM()")
+        .limit(10);
+    }
   } else {
     // Fallback: topic-level questions (backwards compatible)
     questions = await db("questions")
@@ -136,10 +143,17 @@ export const guestStartSession = async (input: {
       .where({ test_id: input.testId, status: "approved" })
       .orderBy("sort_order", "asc");
   } else if (input.stepId) {
-    questions = await db("questions")
-      .where({ step_id: input.stepId, status: "approved" })
-      .orderByRaw("RANDOM()")
-      .limit(10);
+    const test = await db("tests").where({ step_id: input.stepId }).orderBy("sort_order").first();
+    if (test) {
+      questions = await db("questions")
+        .where({ test_id: test.id, status: "approved" })
+        .orderBy("sort_order", "asc");
+    } else {
+      questions = await db("questions")
+        .where({ step_id: input.stepId, status: "approved" })
+        .orderByRaw("RANDOM()")
+        .limit(10);
+    }
   } else {
     questions = await db("questions")
       .where({ topic_id: input.topicId, status: "approved" })
@@ -382,38 +396,38 @@ export const finishSession = async (userId: string, sessionId: string, skipRewar
       .first();
 
     if (existing) {
-      const newTestsCompleted = existing.tests_completed + 1;
-      const isCompleted = newTestsCompleted >= (step?.tests_required ?? 5);
-      const isFinalPassed = session.is_final_test ? true : existing.step_final_passed;
-
-      await db("user_step_progress")
-        .where({ id: existing.id })
-        .update({
-          tests_completed: newTestsCompleted,
-          is_step_completed: isCompleted && isFinalPassed,
-          step_final_passed: isFinalPassed,
-          ...(isCompleted && isFinalPassed ? { completed_at: db.fn.now() } : {}),
-        });
-
-      stepCompleted = isCompleted && isFinalPassed;
+      if (!existing.is_step_completed) {
+        await db("user_step_progress")
+          .where({ id: existing.id })
+          .update({
+            tests_completed: 1,
+            is_step_completed: true,
+            step_final_passed: true,
+            completed_at: db.fn.now(),
+          });
+        stepCompleted = true;
+      }
     } else {
       await db("user_step_progress").insert({
         user_id: userId,
         step_id: session.step_id,
         tests_completed: 1,
-        is_step_completed: false,
-        step_final_passed: Boolean(session.is_final_test),
+        is_step_completed: true,
+        step_final_passed: true,
+        completed_at: db.fn.now(),
       });
+      stepCompleted = true;
     }
 
-    // Check if all steps in topic are completed
+    // Check if all lesson steps in topic are completed
     if (stepCompleted && step) {
-      const allSteps = await db("steps").where({ topic_id: step.topic_id });
+      const lessonSteps = await db("steps")
+        .where({ topic_id: step.topic_id, step_type: "lesson" });
       const completedSteps = await db("user_step_progress")
         .where({ user_id: userId, is_step_completed: true })
-        .whereIn("step_id", allSteps.map((s) => s.id));
+        .whereIn("step_id", lessonSteps.map((s) => s.id));
 
-      topicCompleted = completedSteps.length === allSteps.length;
+      topicCompleted = completedSteps.length === lessonSteps.length;
     }
   }
 
@@ -544,6 +558,19 @@ export const claimReward = async (userId: string, stepId: string) => {
   return db.transaction(async (trx) => {
     // Record claim
     await trx("user_reward_claims").insert({ user_id: userId, step_id: stepId });
+
+    await trx("user_step_progress")
+      .insert({
+        user_id: userId,
+        step_id: stepId,
+        is_step_completed: true, // Frontend'in tik ✓ koyması için kritik yer
+        tests_completed: 0,
+        step_final_passed: false
+      })
+      .onConflict(["user_id", "step_id"])
+      .merge({
+        is_step_completed: true
+      });
 
     let reward: { type: string; amount?: number; itemName?: string } = { type: "none" };
 

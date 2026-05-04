@@ -339,6 +339,7 @@ const submit = async () => {
     });
     localStorage.setItem('pb_token', data.token);
     clearGuestState();
+
     await router.push('/');
   } catch (e: unknown) {
     const err = e as { data?: { errors?: Record<string, { _errors: string[] }>; error?: string } };

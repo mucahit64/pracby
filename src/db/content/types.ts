@@ -12,22 +12,23 @@ export type McQ = {
   answers: { text: string; ok: boolean }[];
 };
 
-/** A single test within a step */
-export interface TestDef {
-  name: string;
+/** A lesson step containing questions */
+export interface LessonStep {
   questions: McQ[];
 }
 
-/** A step (alt konu) within a topic */
-export interface StepDef {
-  name: string;
-  tests: TestDef[];
+/** A reward step granting acorns */
+export interface RewardStep {
+  reward: true;
+  amount?: number; // default 10
 }
+
+/** A step within a topic — either a lesson or a reward */
+export type StepDef = LessonStep | RewardStep;
 
 /** A topic (konu) within a course */
 export interface TopicDef {
   name: string;
   description: string;
-  icon: string;
   steps: StepDef[];
 }

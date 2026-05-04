@@ -48,16 +48,17 @@
 
             <!-- Node button -->
             <button
-              class="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[1.7rem] border-0 cursor-pointer transition-transform hover:scale-105 disabled:cursor-not-allowed"
-              :class="{
-                'bg-primary border-b-[6px] border-primary-dark text-white': topic.status === 'completed',
-                'bg-primary border-b-[6px] border-primary-dark text-white animate-pulse': topic.status === 'active',
-                'bg-gray-100 border-2 border-gray-200 text-gray-400': topic.status === 'locked',
-              }"
+              class="w-[72px] h-[72px] rounded-full flex items-center justify-center text-[1.7rem] border-0 cursor-pointer transition-transform hover:scale-105 disabled:cursor-not-allowed border-b-[6px]"
+              :class="[
+                topic.status === 'locked'
+                  ? 'bg-gray-100 !border-gray-200 text-gray-400'
+                  : [topic.color.bg, topic.color.border, 'text-white'],
+                topic.status === 'active' ? 'animate-pulse' : '',
+              ]"
               :disabled="topic.status === 'locked'"
               @click="startQuiz(topic)"
             >
-              {{ topic.status === 'locked' ? '🔒' : topic.icon }}
+              {{ topic.status === 'locked' ? '🔒' : '⭐' }}
             </button>
 
             <!-- Topic name -->
@@ -79,6 +80,19 @@ const { api } = useApi();
 
 const loading = ref(true);
 
+const TOPIC_COLORS = [
+  { bg: 'bg-blue-500', border: 'border-blue-700', ring: 'ring-blue-300' },
+  { bg: 'bg-emerald-500', border: 'border-emerald-700', ring: 'ring-emerald-300' },
+  { bg: 'bg-amber-500', border: 'border-amber-700', ring: 'ring-amber-300' },
+  { bg: 'bg-rose-500', border: 'border-rose-700', ring: 'ring-rose-300' },
+  { bg: 'bg-violet-500', border: 'border-violet-700', ring: 'ring-violet-300' },
+  { bg: 'bg-cyan-500', border: 'border-cyan-700', ring: 'ring-cyan-300' },
+  { bg: 'bg-orange-500', border: 'border-orange-700', ring: 'ring-orange-300' },
+  { bg: 'bg-fuchsia-500', border: 'border-fuchsia-700', ring: 'ring-fuchsia-300' },
+  { bg: 'bg-teal-500', border: 'border-teal-700', ring: 'ring-teal-300' },
+  { bg: 'bg-red-500', border: 'border-red-700', ring: 'ring-red-300' },
+];
+
 const course = ref({
   name: '',
   emoji: '📚',
@@ -89,10 +103,10 @@ const course = ref({
 interface Topic {
   id: string;
   name: string;
-  icon: string;
   status: 'completed' | 'active' | 'locked';
   crownLevel: number;
   xpReward: number;
+  color: typeof TOPIC_COLORS[number];
 }
 
 const topics = ref<Topic[]>([]);
@@ -159,10 +173,10 @@ onMounted(async () => {
       return {
         id: t.id,
         name: t.name,
-        icon: t.icon_url ?? '📖',
         status,
         crownLevel: t.progress?.crown_level ?? 0,
         xpReward: 20,
+        color: TOPIC_COLORS[idx % TOPIC_COLORS.length],
       };
     });
 
