@@ -9,26 +9,20 @@ export default defineNuxtConfig({
     head: {
       title: "Pracby",
       link: [
-        { 
-          rel: "icon",
-          type: "image/svg+xml",
-          href: "/favicon.svg"
-        },
-        {
-          rel: "preconnect",
-          href: "https://fonts.googleapis.com",
-        },
-        {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossorigin: "",
-        },
-        // Nunito fontu Duolingo/Oyunlaştırma teması için harika bir seçim!
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap",
-        },
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "alternate icon",type: "image/png",href: "/p-icon.png" },
+        { rel: "apple-touch-icon",href: "/p-icon.png" },
+        { rel: "manifest",href: "/manifest.json" },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" },
       ],
+      meta: [
+        // Mobil tarayıcıların adres çubuğunu mor yapar
+        { name: "theme-color", content: "#7c3aed" },
+        { name: "apple-mobile-web-app-capable", content: "yes" },
+        { name: "apple-mobile-web-app-status-bar-style", content: "default" }
+      ]
     },
   },
   
