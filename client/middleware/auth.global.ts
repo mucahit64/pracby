@@ -1,7 +1,7 @@
 export default defineNuxtRouteMiddleware((to) => {
   if (import.meta.server) return;
 
-  const publicPaths = ["/auth/login", "/auth/register", "/auth/register-wall", "/welcome"];
+  const publicPaths = ["/auth/login", "/auth/register", "/auth/register-wall", "/auth/forgot-password", "/auth/reset-password", "/welcome"];
   if (publicPaths.some((p) => to.path.startsWith(p))) return;
 
   // Allow guest access to main app pages and quiz

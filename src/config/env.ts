@@ -13,10 +13,14 @@ function requireEnv(name: string): string {
   return value;
 }
 
-// In production, JWT_SECRET and DB_PASSWORD are mandatory
+// In production, JWT_SECRET, DB_PASSWORD and RESEND_API_KEY are mandatory
 const jwtSecret = isProduction
   ? requireEnv("JWT_SECRET")
   : process.env.JWT_SECRET || "dev-only-secret";
+
+const resendApiKey = isProduction
+  ? requireEnv("RESEND_API_KEY")
+  : process.env.RESEND_API_KEY || "";
 
 if (isProduction && jwtSecret === "change-me-in-production") {
   throw new Error("JWT_SECRET must be changed from default value in production");
@@ -27,6 +31,8 @@ export const env = {
   isProduction,
   port: Number(process.env.PORT) || 3000,
   jwtSecret,
+  resendApiKey,
+  appUrl: process.env.APP_URL || "http://localhost:3001",
   allowedOrigins: process.env.ALLOWED_ORIGINS || (isProduction ? "" : "*"),
   db: {
     host: process.env.DB_HOST || "localhost",

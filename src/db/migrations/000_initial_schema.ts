@@ -69,7 +69,20 @@ export async function up(knex: Knex): Promise<void> {
   await knex.raw("ALTER TABLE users ADD CONSTRAINT chk_acorn_balance_non_negative CHECK (acorn_balance >= 0)");
   await knex.raw("ALTER TABLE users ADD CONSTRAINT chk_users_role CHECK (role IN ('user', 'admin'))");
 
-  // ── 4. user_stats ────────────────────────────────────────────────────────
+  // ── 4. password_reset_tokens ─────────────────────────────────────────────
+  await knex.schema.createTable("password_reset_tokens", (table) => {
+    table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
+    table.uuid("user_id").references("id").inTable("users").onDelete("CASCADE").notNullable();
+    table.text("token_hash").notNullable();
+    table.timestamp("expires_at").notNullable();
+    table.timestamp("used_at").nullable();
+    table.timestamp("created_at").defaultTo(knex.fn.now());
+  });
+
+  await knex.raw("CREATE INDEX idx_prt_token_hash ON password_reset_tokens(token_hash)");
+  await knex.raw("CREATE INDEX idx_prt_user_id ON password_reset_tokens(user_id)");
+
+  // ── 5. user_stats ────────────────────────────────────────────────────────
   // Includes: current_streak, quizzes_completed (036)
   await knex.schema.createTable("user_stats", (table) => {
     table.uuid("user_id").primary().references("id").inTable("users").onDelete("CASCADE");

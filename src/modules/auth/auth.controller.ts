@@ -34,3 +34,13 @@ export const mergeGuestProgress = async (req: Request, res: Response): Promise<v
   );
   res.json(result);
 };
+
+export const forgotPassword = async (req: Request, res: Response): Promise<void> => {
+  await AuthService.forgotPassword(req.body);
+  res.json({ message: "Eğer bu e-posta kayıtlıysa, şifre sıfırlama bağlantısı gönderildi." });
+};
+
+export const resetPassword = async (req: Request, res: Response): Promise<void> => {
+  await AuthService.resetPassword(req.body);
+  res.json({ message: "Şifren başarıyla güncellendi." });
+};

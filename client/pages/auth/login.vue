@@ -31,6 +31,9 @@
             autocomplete="current-password"
             required
           />
+          <div class="flex justify-end -mt-0.5">
+            <NuxtLink to="/auth/forgot-password" class="text-xs text-gray-400 hover:text-primary font-semibold transition-colors">Şifremi unuttum</NuxtLink>
+          </div>
         </div>
 
         <p v-if="error" class="text-negative text-sm font-semibold text-center">{{ error }}</p>

@@ -1,9 +1,13 @@
 import bcrypt from "bcrypt";
+import crypto from "crypto";
 import jwt from "jsonwebtoken";
+import { Resend } from "resend";
 import db from "../../db/knex";
 import { env } from "../../config/env";
 import { AppError } from "../../middleware/error";
-import type { RegisterInput, LoginInput } from "./auth.schema";
+import type { RegisterInput, LoginInput, ForgotPasswordInput, ResetPasswordInput } from "./auth.schema";
+
+const resend = new Resend(env.resendApiKey);
 
 const BCRYPT_ROUNDS = 12;
 
@@ -247,4 +251,74 @@ export const checkEmail = async (email: string) => {
 export const checkUsername = async (username: string) => {
   const exists = await db("users").where({ username }).first();
   return { available: !exists };
+};
+
+const PASSWORD_RESET_EXPIRY_MS = 60 * 60 * 1000; // 1 saat
+
+export const forgotPassword = async (input: ForgotPasswordInput): Promise<void> => {
+  const SUCCESS_MESSAGE = "Eğer bu e-posta kayıtlıysa, şifre sıfırlama bağlantısı gönderildi.";
+
+  const user = await db("users").where({ email: input.email }).first();
+
+  // Kullanıcı bulunsun ya da bulunmasın aynı yanıtı döndür (enumeration koruması)
+  if (!user) return;
+
+  // Önceki tüm kullanılmamış tokenları geçersiz kıl
+  await db("password_reset_tokens")
+    .where({ user_id: user.id, used_at: null })
+    .update({ used_at: db.fn.now() });
+
+  // Yeni token oluştur
+  const rawToken = crypto.randomBytes(32).toString("hex"); // 64 char hex
+  const tokenHash = crypto.createHash("sha256").update(rawToken).digest("hex");
+  const expiresAt = new Date(Date.now() + PASSWORD_RESET_EXPIRY_MS);
+
+  await db("password_reset_tokens").insert({
+    user_id: user.id,
+    token_hash: tokenHash,
+    expires_at: expiresAt,
+  });
+
+  const resetUrl = `${env.appUrl}/auth/reset-password?token=${rawToken}`;
+
+  await resend.emails.send({
+    from: "pracby <noreply@pracby.com>",
+    to: user.email as string,
+    subject: "Şifre Sıfırlama",
+    html: `
+      <div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:32px 24px;">
+        <h2 style="color:#7C3AED;margin-bottom:8px;">pracby</h2>
+        <p style="color:#374151;font-size:16px;">Merhaba <strong>${user.username}</strong>,</p>
+        <p style="color:#374151;font-size:15px;">Şifre sıfırlama talebinde bulundun. Aşağıdaki butona tıklayarak yeni şifreni belirleyebilirsin.</p>
+        <a href="${resetUrl}" style="display:inline-block;margin:24px 0;padding:14px 28px;background:#7C3AED;color:#fff;text-decoration:none;border-radius:12px;font-weight:700;font-size:15px;">Şifremi Sıfırla</a>
+        <p style="color:#6B7280;font-size:13px;">Bu bağlantı <strong>1 saat</strong> geçerlidir.</p>
+        <p style="color:#6B7280;font-size:13px;">Bu talebi sen yapmadıysan bu e-postayı dikkate alma.</p>
+      </div>
+    `,
+  });
+};
+
+export const resetPassword = async (input: ResetPasswordInput): Promise<void> => {
+  const tokenHash = crypto.createHash("sha256").update(input.token).digest("hex");
+
+  const record = await db("password_reset_tokens")
+    .where({ token_hash: tokenHash, used_at: null })
+    .where("expires_at", ">", db.fn.now())
+    .first();
+
+  if (!record) {
+    throw new AppError(400, "Geçersiz veya süresi dolmuş bağlantı");
+  }
+
+  const newPasswordHash = await bcrypt.hash(input.password, BCRYPT_ROUNDS);
+
+  await db.transaction(async (trx) => {
+    await trx("users")
+      .where({ id: record.user_id })
+      .update({ password_hash: newPasswordHash });
+
+    await trx("password_reset_tokens")
+      .where({ id: record.id })
+      .update({ used_at: trx.fn.now() });
+  });
 };

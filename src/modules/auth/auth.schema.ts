@@ -51,6 +51,17 @@ export const MergeGuestProgressSchema = z.object({
   earned_acorns: z.number().int().min(0).default(0),
 });
 
+export const ForgotPasswordSchema = z.object({
+  email: z.string().email(),
+});
+
+export const ResetPasswordSchema = z.object({
+  token: z.string().length(64, "Geçersiz token"),
+  password: z.string().min(6, "Şifre en az 6 karakter olmalıdır"),
+});
+
 export type RegisterInput = z.infer<typeof RegisterSchema>;
 export type LoginInput = z.infer<typeof LoginSchema>;
 export type MergeGuestProgressInput = z.infer<typeof MergeGuestProgressSchema>;
+export type ForgotPasswordInput = z.infer<typeof ForgotPasswordSchema>;
+export type ResetPasswordInput = z.infer<typeof ResetPasswordSchema>;
