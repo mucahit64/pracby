@@ -3,7 +3,7 @@ import { KPSS_GY_MATEMATIK_TOPICS } from "../content/kpss/lisans/gy/matematik";
 import { createTopic } from "../content/helpers";
 
 // ============================================================
-// SEED 008 — KPSS Lisans Genel Yetenek: Matematik (Detaylı İçerik)
+// SEED 006 — KPSS Lisans Genel Yetenek: Matematik (Detaylı İçerik)
 // ============================================================
 // Kaynak: KPSS Lisans GY Matematik Test Kitabı
 // Modüler veri dosyaları: src/db/content/kpss/lisans/gy/matematik/
@@ -16,7 +16,7 @@ export async function seed(knex: Knex): Promise<void> {
     .where("name", "Temel Kavramlar")
     .first();
   if (existing) {
-    console.log("008: KPSS Lisans GY Matematik içeriği zaten mevcut, atlanıyor.");
+    console.log("006: KPSS Lisans GY Matematik içeriği zaten mevcut, atlanıyor.");
     return;
   }
 
@@ -30,7 +30,7 @@ export async function seed(knex: Knex): Promise<void> {
     .select("modules.id as module_id");
 
   if (gyModules.length === 0) {
-    throw new Error("008: KPSS Lisans Genel Yetenek modülü bulunamadı — 003_exam_structure seed çalıştırıldı mı?");
+    throw new Error("006: KPSS Lisans Genel Yetenek modülü bulunamadı — 003_exam_structure seed çalıştırıldı mı?");
   }
 
   for (const mod of gyModules) {
@@ -44,5 +44,5 @@ export async function seed(knex: Knex): Promise<void> {
     }
   }
 
-  console.log("008: KPSS Lisans GY Matematik içeriği eklendi.");
+  console.log("006: KPSS Lisans GY Matematik içeriği eklendi.");
 }

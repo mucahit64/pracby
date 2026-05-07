@@ -56,7 +56,8 @@ export const register = async (input: RegisterInput) => {
 
       const stepProgressRows = stepIds.map((stepId) => {
         const results = input.guest_data!.quiz_results!.filter((r) => r.stepId === stepId);
-        const completedTests = new Set(results.filter((r) => r.testId).map((r) => r.testId!)).size;
+        const completedTestIds = new Set(results.filter((r) => r.testId).map((r) => r.testId!));
+        const completedTests = completedTestIds.size > 0 ? completedTestIds.size : (results.length > 0 ? 1 : 0);
         const testsRequired = stepMap.get(stepId) ?? 1;
         const isCompleted = completedTests >= testsRequired;
         return {
@@ -150,7 +151,7 @@ export const mergeGuestProgress = async (
       for (const stepId of stepIds) {
         const results = quizResults.filter((r) => r.stepId === stepId);
         const completedTestIds = new Set(results.filter((r) => r.testId).map((r) => r.testId!));
-        const guestTestsCompleted = completedTestIds.size;
+        const guestTestsCompleted = completedTestIds.size > 0 ? completedTestIds.size : (results.length > 0 ? 1 : 0);
         const testsRequired = stepMap.get(stepId) ?? 1;
         const guestIsCompleted = guestTestsCompleted >= testsRequired;
 
