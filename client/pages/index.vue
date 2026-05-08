@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-8 pb-10">
+  <div class="flex flex-col gap-8 pb-10 flex-1 overflow-y-auto scrollbar-hide">
     <!-- Module tabs -->
     <div v-if="modules.length > 0" class="flex gap-2">
       <button
@@ -469,3 +469,24 @@ function startLesson() {
   navigateTo({ path: `/quiz/${node.topicId}`, query });
 }
 </script>
+
+<style>
+/* Chrome, Safari ve Opera için */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#__nuxt::-webkit-scrollbar,
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* IE, Edge ve Firefox için */
+html, 
+body, 
+#__nuxt,
+.scrollbar-hide {
+  -ms-overflow-style: none !important;  /* IE ve Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
+</style>
