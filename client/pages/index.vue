@@ -283,8 +283,16 @@ onMounted(async () => {
         await selectModule(targetModule, savedCourseId ?? undefined);
       }
     }
-  } catch {
-    // silently fail
+  } catch (e: unknown) {
+    // Token is stale or invalid (server returned 404/401). Clear it and
+    // redirect to login so the user can start fresh instead of seeing an
+    // empty screen.
+    const err = e as { status?: number; statusCode?: number };
+    const status = err?.status ?? err?.statusCode;
+    if (status === 404 || status === 401) {
+      localStorage.removeItem('pb_token');
+      navigateTo('/auth/login');
+    }
   }
 });
 
