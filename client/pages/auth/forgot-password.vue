@@ -1,10 +1,10 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-white px-6 relative">
-    <NuxtLink to="/auth/login" class="fixed top-5 left-5 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 border-2 border-gray-200 text-gray-800 font-bold z-10 hover:bg-gray-200 transition-colors">✕</NuxtLink>
-
     <div class="w-full max-w-[420px] bg-white border-2 border-gray-200 rounded-3xl p-10 flex flex-col gap-6">
-      <div class="flex items-center justify-center">
+      <div class="flex items-center justify-between">
+        <div class="w-10" />
         <h1 class="text-3xl font-black text-primary">pracby</h1>
+        <NuxtLink to="/auth/login" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 border-2 border-gray-200 text-gray-800 font-bold hover:bg-gray-200 transition-colors">✕</NuxtLink>
       </div>
 
       <!-- Başarı ekranı -->

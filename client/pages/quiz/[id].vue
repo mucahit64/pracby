@@ -19,7 +19,7 @@
         <button class="w-9 h-9 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center text-gray-400 font-bold cursor-pointer hover:bg-gray-200 transition-colors shrink-0" @click="handleClose">✕</button>
         <div class="flex-1">
           <div class="h-3 bg-gray-100 rounded-full overflow-hidden border-2 border-gray-200">
-            <div class="h-full bg-primary rounded-full transition-all duration-300" :style="{ width: `${(answeredCount / questions.length) * 100}%` }" />
+            <div class="h-full bg-primary rounded-full transition-all duration-300" :style="{ width: `${((answeredCount + (answered && currentIndex >= questions.length - 1 ? 1 : 0)) / questions.length) * 100}%` }" />
           </div>
         </div>
         <template v-if="unlimitedEnergy">
@@ -37,7 +37,7 @@
         </div>
 
         <!-- Question text (not for swipe/fill_blank) -->
-        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="text-lg text-gray-800 leading-snug space-y-2" v-html="currentQuestion.question_text" />
+        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="text-base sm:text-lg text-gray-800 leading-snug space-y-2" v-html="currentQuestion.question_text" />
 
         <!-- Question image -->
         <img v-if="currentQuestion.image_url" :src="`/${currentQuestion.image_url}`" :alt="currentQuestion.question_text" class="w-full max-h-72 object-contain rounded-lg" />
