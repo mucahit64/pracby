@@ -1,8 +1,11 @@
 export default defineNuxtRouteMiddleware((to) => {
   if (import.meta.server) return;
 
-  const publicPaths = ["/auth/login", "/auth/register", "/auth/register-wall", "/auth/forgot-password", "/auth/reset-password", "/welcome"];
+  const publicPaths = ["/auth/login", "/auth/register", "/auth/register-wall", "/auth/forgot-password", "/auth/reset-password", "/welcome", "/admin/login"];
   if (publicPaths.some((p) => to.path.startsWith(p))) return;
+
+  // Admin pages are handled by their own middleware
+  if (to.path.startsWith("/admin")) return;
 
   // Allow guest access to main app pages and quiz
   const guestAllowedPaths = ["/", "/quiz/", "/course/", "/leaderboard", "/store"];

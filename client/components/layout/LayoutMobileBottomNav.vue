@@ -1,13 +1,14 @@
 <template>
   <nav class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 z-[200] flex flex-col pb-[env(safe-area-inset-bottom)]">
     <!-- Exam switcher row (multiple enrollments) -->
-    <div v-if="enrollments.length > 1" class="flex gap-1.5 px-3 pt-2 overflow-x-auto border-b border-gray-200">
+    <div v-if="enrollments.length > 1" class="flex gap-1.5 px-3 py-2 overflow-x-auto border-b border-gray-200 scrollbar-hide">
       <button
         v-for="enr in enrollments"
         :key="enr.exam_type_id"
         class="shrink-0 px-3.5 py-1.5 rounded-full border-2 border-gray-200 bg-transparent text-[0.72rem] font-bold text-gray-400 cursor-pointer transition-all duration-150 whitespace-nowrap font-[inherit]"
         :class="{ '!bg-primary/10 !text-primary !border-primary/40': enr.exam_type_id === activeExamTypeId }"
         @click="handleSwitchExam(enr.exam_type_id)"
+        :disabled="switchingExam"
       >
         {{ enr.exam_type_name }}
       </button>
@@ -32,7 +33,7 @@
 
 <script setup lang="ts">
 const route = useRoute()
-const { enrollments, activeExamTypeId, isLoggedIn, switchExam } = useUserSession()
+const { enrollments, activeExamTypeId, isLoggedIn, switchExam, switchingExam } = useUserSession()
 
 const activeTooltip = useState('pbMobileTooltip', () => null)
 
@@ -56,3 +57,8 @@ async function handleSwitchExam(examTypeId: string) {
   await switchExam(examTypeId)
 }
 </script>
+
+<style scoped>
+.scrollbar-hide { scrollbar-width: none; -ms-overflow-style: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+</style>

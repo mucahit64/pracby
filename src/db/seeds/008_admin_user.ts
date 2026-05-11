@@ -1,0 +1,63 @@
+import type { Knex } from "knex";
+import bcrypt from "bcrypt";
+
+export async function seed(knex: Knex): Promise<void> {
+  const email = process.env.ADMIN_EMAIL || "admin@pracby.com";
+  const username = process.env.ADMIN_USERNAME || "admin";
+  const password = process.env.ADMIN_PASSWORD;
+
+  if (!password) {
+    console.warn("⚠️  ADMIN_PASSWORD not set in .env — skipping admin user seed");
+    return;
+  }
+
+  const activeExamTypes = await knex("exam_types").where({ is_active: true }).orderBy("sort_order");
+  const defaultExamType = activeExamTypes[0];
+
+  const existing = await knex("users").where({ email }).first();
+  if (existing) {
+    // Ensure role is admin
+    if (existing.role !== "admin") {
+      await knex("users").where({ id: existing.id }).update({ role: "admin" });
+      console.log(`✅ Updated existing user "${email}" role to admin`);
+    } else {
+      console.log(`ℹ️  Admin user "${email}" already exists`);
+    }
+    // Ensure enrolled in all active exam types
+    for (const examType of activeExamTypes) {
+      await knex("user_exam_enrollments")
+        .insert({ user_id: existing.id, exam_type_id: examType.id, is_active: true })
+        .onConflict(["user_id", "exam_type_id"])
+        .merge({ is_active: true });
+    }
+    if (defaultExamType && !existing.active_exam_type_id) {
+      await knex("users").where({ id: existing.id }).update({ active_exam_type_id: defaultExamType.id });
+    }
+    return;
+  }
+
+  const passwordHash = await bcrypt.hash(password, 12);
+
+  const [user] = await knex("users")
+    .insert({
+      email,
+      username,
+      password_hash: passwordHash,
+      role: "admin",
+      acorn_balance: 0,
+      energy: 25,
+      ...(defaultExamType && { active_exam_type_id: defaultExamType.id }),
+    })
+    .returning(["id"]);
+
+  await knex("user_stats").insert({ user_id: user.id });
+
+  // Enroll admin in all active exam types
+  if (activeExamTypes.length > 0) {
+    await knex("user_exam_enrollments").insert(
+      activeExamTypes.map((et) => ({ user_id: user.id, exam_type_id: et.id, is_active: true }))
+    );
+  }
+
+  console.log(`✅ Admin user created: ${email} (enrolled in ${activeExamTypes.length} exam type(s))`);
+}

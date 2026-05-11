@@ -181,7 +181,8 @@ interface Enrollment {
 }
 
 const activeExamTypeId = ref('');
-const enrollments = ref<Enrollment[]>([]);
+const { activeExamTypeId: globalActiveExamTypeId, switchExam: globalSwitchExam, switchingExam } = useUserSession()
+const { enrollments } = useUserSession()
 const loadingEnrollments = ref(false);
 const showEnrollModal = ref(false);
 
@@ -252,7 +253,12 @@ async function submitEnrollment() {
       body: { exam_type_id: selectedTypeId.value },
     });
     closeEnrollModal();
-    await fetchEnrollments();
+    try {
+      const list = await $fetch<Enrollment[]>('/api/users/me/enrollments', {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      enrollments.value = list;
+    } catch { /* skip */ }
   } catch (e: unknown) {
     const data = (e as { data?: { error?: string } })?.data;
     enrollError.value = data?.error || 'Kayıt başarısız. Tekrar dene.';
@@ -262,17 +268,13 @@ async function submitEnrollment() {
 }
 
 const switchExam = async (examTypeId: string) => {
-  const token = localStorage.getItem('pb_token');
-  if (!token) return;
-  try {
-    await $fetch('/api/users/me/active-exam', {
-      method: 'PATCH',
-      headers: { Authorization: `Bearer ${token}` },
-      body: { exam_type_id: examTypeId },
-    });
-    activeExamTypeId.value = examTypeId;
-  } catch { /* silently fail */ }
-};
+  await globalSwitchExam(examTypeId)
+}
+
+// Keep local view in sync with global active exam
+watch(globalActiveExamTypeId, (v) => {
+  if (v) activeExamTypeId.value = v
+})
 
 const signOut = () => {
   localStorage.removeItem('pb_token');
@@ -392,21 +394,9 @@ const fetchProfile = async () => {
   } catch { /* silently fail */ }
 };
 
-const fetchEnrollments = async () => {
-  const token = localStorage.getItem('pb_token');
-  if (!token) return;
-  loadingEnrollments.value = true;
-  try {
-    const list = await $fetch<Enrollment[]>('/api/users/me/enrollments', {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-    enrollments.value = list;
-  } catch { /* silently fail */ }
-  finally { loadingEnrollments.value = false; }
-};
 
 onMounted(() => {
   fetchProfile();
-  fetchEnrollments();
+  loadingEnrollments.value = false; // Ensure loadingEnrollments is set to false since we are no longer fetching enrollments
 });
 </script>

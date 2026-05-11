@@ -208,15 +208,6 @@ const TOPIC_COLORS = [
   { bg: 'bg-red-500', border: 'border-red-700' },
 ];
 
-const activeExamName = ref('');
-const activeExamTypeId = ref('');
-const modules = ref<Module[]>([]);
-const selectedModuleId = ref('');
-const courses = ref<Course[]>([]);
-const selectedCourseId = ref('');
-const courseFull = ref<CourseFull | null>(null);
-const loadingFull = ref(false);
-
 const selectedNode = ref<LessonNode | null>(null);
 const stepDialogOpen = ref(false);
 
@@ -229,119 +220,15 @@ function getToken() {
   return localStorage.getItem('pb_token') ?? '';
 }
 
-onMounted(async () => {
-  const token = getToken();
+const { activeExamName, activeExamTypeId, modules, selectedModuleId, courses, selectedCourseId, courseFull, loadingFull, selectModule, selectCourse } = useExamContent()
 
-  if (!token) {
-    const guestExamTypeId = localStorage.getItem('guestExamTypeId');
-    if (!guestExamTypeId) {
-      navigateTo('/welcome');
-      return;
-    }
-    activeExamTypeId.value = guestExamTypeId;
-    const { state: guestStateData } = useGuestState();
-    const energyState = useState('userEnergy', () => 25);
-    energyState.value = guestStateData.value.energyCount;
-    try {
-      const mods = await $fetch<Module[]>(`/api/modules?exam_type_id=${guestExamTypeId}`);
-      modules.value = mods;
-      if (mods.length > 0) {
-        const savedModuleId = localStorage.getItem('pb_selectedModuleId');
-        const savedCourseId = localStorage.getItem('pb_selectedCourseId');
-        const targetModule = savedModuleId && mods.find((m) => m.id === savedModuleId) ? savedModuleId : mods[0].id;
-        await selectModule(targetModule, savedCourseId ?? undefined);
-      }
-    } catch { /* silently fail */ }
-    return;
+// Redirect guests who haven't selected an exam yet
+onMounted(() => {
+  const token = localStorage.getItem('pb_token')
+  if (!token && !localStorage.getItem('guestExamTypeId')) {
+    navigateTo('/welcome')
   }
-
-  try {
-    const profile = await $fetch<{ active_exam_type_id?: string; energy?: number; next_energy_at?: string | null }>('/api/users/me', {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    const energyState = useState('userEnergy', () => 25);
-    energyState.value = profile.energy ?? 25;
-
-    if (profile.active_exam_type_id) {
-      activeExamTypeId.value = profile.active_exam_type_id;
-
-      const examGroups = await $fetch<Array<{ exam_types: Array<{ id: string; name: string }> }>>('/api/exam-groups');
-      const allTypes = examGroups.flatMap((g) => g.exam_types);
-      const match = allTypes.find((t) => t.id === profile.active_exam_type_id);
-      if (match) activeExamName.value = match.name;
-
-      const mods = await $fetch<Module[]>(`/api/modules?exam_type_id=${profile.active_exam_type_id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      modules.value = mods;
-
-      if (mods.length > 0) {
-        const savedModuleId = localStorage.getItem('pb_selectedModuleId');
-        const savedCourseId = localStorage.getItem('pb_selectedCourseId');
-        const targetModule = savedModuleId && mods.find((m) => m.id === savedModuleId) ? savedModuleId : mods[0].id;
-        await selectModule(targetModule, savedCourseId ?? undefined);
-      }
-    }
-  } catch (e: unknown) {
-    // Token is stale or invalid (server returned 404/401). Clear it and
-    // redirect to login so the user can start fresh instead of seeing an
-    // empty screen.
-    const err = e as { status?: number; statusCode?: number };
-    const status = err?.status ?? err?.statusCode;
-    if (status === 404 || status === 401) {
-      localStorage.removeItem('pb_token');
-      navigateTo('/auth/login');
-    }
-  }
-});
-
-async function selectModule(moduleId: string, preferredCourseId?: string) {
-  selectedModuleId.value = moduleId;
-  localStorage.setItem('pb_selectedModuleId', moduleId);
-  const token = getToken();
-  const headers: Record<string, string> = {};
-  if (token) headers.Authorization = `Bearer ${token}`;
-
-  try {
-    const data = await $fetch<Course[]>(`/api/courses?module_id=${moduleId}`, { headers });
-    courses.value = data;
-
-    if (data.length > 0) {
-      const target = preferredCourseId && data.find((c) => c.id === preferredCourseId)
-        ? preferredCourseId
-        : data[0].id;
-      await selectCourse(target);
-    } else {
-      selectedCourseId.value = '';
-      courseFull.value = null;
-    }
-  } catch {
-    courses.value = [];
-  }
-}
-
-async function selectCourse(courseId: string) {
-  selectedCourseId.value = courseId;
-  localStorage.setItem('pb_selectedCourseId', courseId);
-  loadingFull.value = true;
-  const token = getToken();
-  const headers: Record<string, string> = {};
-  if (token) headers.Authorization = `Bearer ${token}`;
-
-  try {
-    const data = await $fetch<CourseFull>(`/api/courses/${courseId}/full`, { headers });
-    if (!token) {
-      const { overlayGuestProgress } = useGuestState();
-      overlayGuestProgress(data.topics);
-    }
-    courseFull.value = data;
-  } catch {
-    courseFull.value = null;
-  } finally {
-    loadingFull.value = false;
-  }
-}
+})
 
 function buildLessonNodes(topic: Topic): LessonNode[] {
   const nodes: LessonNode[] = [];

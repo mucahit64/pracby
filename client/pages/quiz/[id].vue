@@ -33,14 +33,36 @@
         <!-- Meta -->
         <div class="flex items-center justify-between">
           <span class="text-xs font-bold text-gray-400">Soru {{ currentIndex + 1 }} / {{ questions.length }}</span>
-          <span class="text-xs font-extrabold text-primary">⚡ +{{ xpEarned }} XP</span>
+          <div class="flex items-center gap-3">
+            <button
+              v-if="!guestMode"
+              @click="openReportModal"
+              class="text-gray-300 hover:text-red-400 transition-colors"
+              title="Soruyu Raporla"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
+            </button>
+            <span class="text-xs font-extrabold text-primary">⚡ +{{ xpEarned }} XP</span>
+          </div>
         </div>
 
         <!-- Question text (not for swipe/fill_blank) -->
-        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="text-base sm:text-lg text-gray-800 leading-snug space-y-2" v-html="currentQuestion.question_text" />
+        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="question-html text-base sm:text-lg text-gray-800 leading-snug space-y-2" v-html="currentQuestion.question_text" />
 
         <!-- Question image -->
-        <img v-if="currentQuestion.image_url" :src="`/${currentQuestion.image_url}`" :alt="currentQuestion.question_text" class="w-full max-h-72 object-contain rounded-lg" />
+        <div v-if="currentQuestion.image_url" class="w-full">
+          <img
+            :src="`/${currentQuestion.image_url}`"
+            :alt="'Soru görseli'"
+            class="block w-full max-h-72 object-contain rounded-lg"
+            @error="imageLoadError = true"
+            @load="imageLoadError = false"
+          />
+          <div v-if="imageLoadError" class="mt-2 flex items-center gap-2 text-amber-600 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 text-xs font-semibold">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" /></svg>
+            Bu sorunun görseli yüklenemedi veya eksik.
+          </div>
+        </div>
 
         <!-- Multiple choice / True-false -->
         <template v-if="currentQuestion.question_type === 'multiple_choice' || currentQuestion.question_type === 'true_false'">
@@ -317,6 +339,43 @@
       @continue="continueFromWarning"
       @exit="exitQuiz"
     />
+
+    <!-- Report Question Modal -->
+    <div v-if="reportModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50" @click.self="reportModalOpen = false">
+      <div class="bg-white rounded-2xl p-6 w-full max-w-sm mx-4 space-y-4">
+        <h3 class="text-lg font-black text-gray-800">Soruyu Raporla</h3>
+
+        <div class="flex flex-col gap-2">
+          <label v-for="opt in reportReasons" :key="opt.value" class="flex items-center gap-3 cursor-pointer">
+            <input type="radio" v-model="reportReason" :value="opt.value" class="w-4 h-4 text-primary" />
+            <span class="text-sm font-semibold text-gray-700">{{ opt.label }}</span>
+          </label>
+        </div>
+
+        <textarea
+          v-model="reportDescription"
+          rows="2"
+          class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm text-gray-800 focus:border-primary focus:outline-none resize-none"
+          placeholder="Ek açıklama (isteğe bağlı)..."
+        />
+
+        <div class="flex gap-3">
+          <button
+            @click="submitReport"
+            :disabled="!reportReason || reportSubmitting"
+            class="flex-1 bg-primary text-white font-bold text-sm py-2.5 rounded-xl disabled:opacity-50 transition-colors"
+          >
+            {{ reportSubmitting ? 'Gönderiliyor...' : 'Gönder' }}
+          </button>
+          <button @click="reportModalOpen = false" class="flex-1 bg-gray-100 text-gray-500 font-bold text-sm py-2.5 rounded-xl hover:bg-gray-200 transition-colors">
+            İptal
+          </button>
+        </div>
+
+        <p v-if="reportError" class="text-red-500 text-xs font-semibold">{{ reportError }}</p>
+        <p v-if="reportSuccess" class="text-green-600 text-xs font-semibold">{{ reportSuccess }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -419,6 +478,25 @@ const SWIPE_THRESHOLD = 100;
 
 const selectedFillWord = ref('');
 const totalAnswered = ref(0);
+
+// Image error tracking — reset per question
+const imageLoadError = ref(false);
+
+// Report modal state
+const reportModalOpen = ref(false);
+const reportReason = ref('');
+const reportDescription = ref('');
+const reportSubmitting = ref(false);
+const reportError = ref('');
+const reportSuccess = ref('');
+const reportReasons = [
+  { value: 'wrong_answer', label: 'Yanlış cevap işaretlenmiş' },
+  { value: 'unclear_question', label: 'Soru belirsiz / anlaşılmıyor' },
+  { value: 'wrong_explanation', label: 'Açıklama hatalı' },
+  { value: 'typo', label: 'Yazım hatası var' },
+  { value: 'missing_image', label: 'Görsel eksik veya yanlış' },
+  { value: 'other', label: 'Diğer' },
+];
 
 const currentQuestion = computed(() => questions.value[currentIndex.value]);
 const currentAnswers = computed(() => currentQuestion.value?.answers ?? []);
@@ -805,6 +883,7 @@ function nextQuestion() {
     openEnergyDialog();
     return;
   }
+  imageLoadError.value = false;
   currentIndex.value++;
   initQuestionState();
 }
@@ -1005,4 +1084,49 @@ onUnmounted(() => {
   document.removeEventListener('mousemove', swipeMouseMove);
   document.removeEventListener('mouseup', swipeMouseUp);
 });
+
+function openReportModal() {
+  reportReason.value = '';
+  reportDescription.value = '';
+  reportError.value = '';
+  reportSuccess.value = '';
+  reportModalOpen.value = true;
+}
+
+async function submitReport() {
+  if (!reportReason.value || !currentQuestion.value) return;
+  reportSubmitting.value = true;
+  reportError.value = '';
+  reportSuccess.value = '';
+
+  try {
+    const token = getToken();
+    await $fetch('/api/quiz/report-question', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+      body: {
+        questionId: currentQuestion.value.id,
+        reason: reportReason.value,
+        description: reportDescription.value || undefined,
+      },
+    });
+    reportSuccess.value = 'Rapor gönderildi, teşekkürler!';
+    setTimeout(() => { reportModalOpen.value = false; }, 1500);
+  } catch (e: unknown) {
+    const err = e as { data?: { error?: string; message?: string } };
+    reportError.value = err?.data?.error ?? err?.data?.message ?? 'Rapor gönderilemedi.';
+  } finally {
+    reportSubmitting.value = false;
+  }
+}
 </script>
+
+<style scoped>
+/* Make images inside question HTML render as block so text flows below, not beside */
+.question-html :deep(img) {
+  display: block;
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
+  max-width: 100%;
+}
+</style>

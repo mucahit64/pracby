@@ -8,6 +8,8 @@ import type {
   UpdateTopicInput,
   CreateStepInput,
   CreateTestInput,
+  UpdateReportInput,
+  UpdateUserAdminInput,
 } from "./admin.schema";
 
 // ── Questions ──────────────────────────────────────────
@@ -137,6 +139,14 @@ export const deleteQuestion = async (id: string) => {
   return { message: "Question archived" };
 };
 
+export const getQuestion = async (id: string) => {
+  const question = await db("questions").where({ id }).first();
+  if (!question) throw new AppError(404, "Question not found");
+
+  const answers = await db("answers").where({ question_id: id });
+  return { ...question, answers };
+};
+
 export const bulkCreateQuestions = async (input: BulkCreateQuestionsInput, createdBy: string) => {
   const results = [];
   for (const q of input.questions) {
@@ -215,11 +225,177 @@ export const getDashboardStats = async () => {
   const [topics] = await db("topics").count("id as count");
   const [courses] = await db("courses").count("id as count");
 
+  const today = new Date().toISOString().slice(0, 10);
+  const [activeToday] = await db("streak_history").where("date", today).countDistinct("user_id as count");
+
+  const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString();
+  const [newUsersWeek] = await db("users").where("created_at", ">=", weekAgo).count("id as count");
+
+  const [pendingReports] = await db("question_reports").where("status", "pending").count("id as count");
+
   return {
     users: Number(users?.count ?? 0),
     questions: Number(questions?.count ?? 0),
     quizzes_completed: Number(quizzes?.count ?? 0),
     topics: Number(topics?.count ?? 0),
     courses: Number(courses?.count ?? 0),
+    active_today: Number(activeToday?.count ?? 0),
+    new_users_week: Number(newUsersWeek?.count ?? 0),
+    pending_reports: Number(pendingReports?.count ?? 0),
   };
+};
+
+// ── Reports ────────────────────────────────────────────
+
+export const listReports = async (filters: {
+  status?: string;
+  reason?: string;
+  page?: number;
+  limit?: number;
+}) => {
+  const page = filters.page ?? 1;
+  const limit = Math.min(filters.limit ?? 50, 100);
+  const offset = (page - 1) * limit;
+
+  const query = db("question_reports as r")
+    .leftJoin("users as u", "r.user_id", "u.id")
+    .leftJoin("questions as q", "r.question_id", "q.id");
+
+  if (filters.status) query.where("r.status", filters.status);
+  if (filters.reason) query.where("r.reason", filters.reason);
+
+  const [countResult] = await query.clone().count("r.id as total");
+  const total = Number(countResult?.total ?? 0);
+
+  const reports = await query
+    .select(
+      "r.*",
+      "u.username as reporter_username",
+      "u.email as reporter_email",
+      "q.question_text",
+      "q.question_type",
+    )
+    .orderByRaw("CASE WHEN r.status = 'pending' THEN 0 ELSE 1 END")
+    .orderBy("r.created_at", "desc")
+    .offset(offset)
+    .limit(limit);
+
+  return { reports, total, page, limit };
+};
+
+export const updateReport = async (id: string, input: UpdateReportInput, adminId: string) => {
+  const report = await db("question_reports").where({ id }).first();
+  if (!report) throw new AppError(404, "Report not found");
+
+  const updateData: Record<string, unknown> = { status: input.status };
+  if (input.admin_note !== undefined) updateData.admin_note = input.admin_note;
+  if (input.status !== "pending") {
+    updateData.resolved_by = adminId;
+    updateData.resolved_at = new Date();
+  }
+
+  const [updated] = await db("question_reports").where({ id }).update(updateData).returning("*");
+  return updated;
+};
+
+export const getReportStats = async () => {
+  const rows = await db("question_reports").select("status").count("id as count").groupBy("status");
+  const stats: Record<string, number> = { pending: 0, reviewed: 0, fixed: 0, dismissed: 0 };
+  for (const row of rows) {
+    stats[row.status as string] = Number(row.count);
+  }
+  stats.total = Object.values(stats).reduce((a, b) => a + b, 0);
+  return stats;
+};
+
+// ── Users ──────────────────────────────────────────────
+
+export const listUsers = async (filters: {
+  search?: string;
+  role?: string;
+  page?: number;
+  limit?: number;
+}) => {
+  const page = filters.page ?? 1;
+  const limit = Math.min(filters.limit ?? 50, 100);
+  const offset = (page - 1) * limit;
+
+  const query = db("users as u")
+    .leftJoin("user_stats as s", "u.id", "s.user_id")
+    .select(
+      "u.id", "u.email", "u.username", "u.role", "u.acorn_balance",
+      "u.energy", "u.created_at",
+      "s.xp", "s.level", "s.quizzes_completed",
+    );
+
+  if (filters.search) {
+    const term = `%${filters.search}%`;
+    query.where(function () {
+      this.whereILike("u.username", term).orWhereILike("u.email", term);
+    });
+  }
+  if (filters.role) query.where("u.role", filters.role);
+
+  const [countResult] = await query.clone().clearSelect().count("u.id as total");
+  const total = Number(countResult?.total ?? 0);
+
+  const users = await query.orderBy("u.created_at", "desc").offset(offset).limit(limit);
+
+  return { users, total, page, limit };
+};
+
+export const getUserDetail = async (id: string) => {
+  const user = await db("users as u")
+    .leftJoin("user_stats as s", "u.id", "s.user_id")
+    .select(
+      "u.id", "u.email", "u.username", "u.role", "u.avatar_url",
+      "u.acorn_balance", "u.energy", "u.daily_goal_xp", "u.created_at",
+      "s.xp", "s.level", "s.total_xp", "s.streak", "s.max_streak",
+      "s.quizzes_completed", "s.last_active_date",
+    )
+    .where("u.id", id)
+    .first();
+
+  if (!user) throw new AppError(404, "User not found");
+
+  const recentQuizzes = await db("quiz_sessions")
+    .where("user_id", id)
+    .whereNotNull("finished_at")
+    .orderBy("finished_at", "desc")
+    .limit(10);
+
+  const enrollments = await db("user_exam_enrollments as e")
+    .join("exam_types as et", "e.exam_type_id", "et.id")
+    .where("e.user_id", id)
+    .select("et.id", "et.name", "e.is_active");
+
+  return { ...user, recent_quizzes: recentQuizzes, enrollments };
+};
+
+export const updateUser = async (id: string, input: UpdateUserAdminInput) => {
+  const user = await db("users").where({ id }).first();
+  if (!user) throw new AppError(404, "User not found");
+
+  const updateData: Record<string, unknown> = {};
+  if (input.role !== undefined) updateData.role = input.role;
+  if (input.energy !== undefined) updateData.energy = input.energy;
+  if (input.acorn_balance !== undefined) updateData.acorn_balance = input.acorn_balance;
+
+  if (Object.keys(updateData).length === 0) throw new AppError(400, "No fields to update");
+
+  const [updated] = await db("users")
+    .where({ id })
+    .update(updateData)
+    .returning(["id", "email", "username", "role", "energy", "acorn_balance"]);
+
+  return updated;
+};
+
+export const deleteUser = async (id: string) => {
+  const user = await db("users").where({ id }).first();
+  if (!user) throw new AppError(404, "User not found");
+  if (user.role === "admin") throw new AppError(403, "Cannot delete admin user");
+
+  await db("users").where({ id }).delete();
+  return { message: "User deleted" };
 };

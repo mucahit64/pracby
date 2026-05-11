@@ -87,3 +87,22 @@ export type CreateTopicInput = z.infer<typeof CreateTopicSchema>;
 export type UpdateTopicInput = z.infer<typeof UpdateTopicSchema>;
 export type CreateStepInput = z.infer<typeof CreateStepSchema>;
 export type CreateTestInput = z.infer<typeof CreateTestSchema>;
+
+// ── Reports ────────────────────────────────────────────
+
+export const UpdateReportSchema = z.object({
+  status: z.enum(["pending", "reviewed", "fixed", "dismissed"]),
+  admin_note: z.string().max(1000).optional(),
+});
+
+export type UpdateReportInput = z.infer<typeof UpdateReportSchema>;
+
+// ── Users ──────────────────────────────────────────────
+
+export const UpdateUserAdminSchema = z.object({
+  role: z.enum(["user", "admin"]).optional(),
+  energy: z.number().int().min(0).max(25).optional(),
+  acorn_balance: z.number().int().min(0).optional(),
+});
+
+export type UpdateUserAdminInput = z.infer<typeof UpdateUserAdminSchema>;

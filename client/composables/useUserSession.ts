@@ -22,6 +22,7 @@ export function useUserSession() {
   const streakCount = useState('pbStreakCount', () => 0)
   const enrollments = useState<Enrollment[]>('pbEnrollments', () => [])
   const activeExamTypeId = useState('pbActiveExamTypeId', () => '')
+  const switchingExam = useState('pbSwitchingExam', () => false)
   const streakHistory = useState<StreakDay[]>('pbStreakHistory', () => [])
   const isLoggedIn = useState('pbIsLoggedIn', () => false)
 
@@ -118,15 +119,22 @@ export function useUserSession() {
     if (examTypeId === activeExamTypeId.value) return
     const token = localStorage.getItem('pb_token')
     if (!token) return
+    switchingExam.value = true
     try {
       await $fetch('/api/users/me/active-exam', {
         method: 'PATCH',
         headers: { Authorization: `Bearer ${token}` },
         body: { exam_type_id: examTypeId },
       })
+      // Optimistically set active exam so UI can respond immediately.
       activeExamTypeId.value = examTypeId
-      await navigateTo('/')
-    } catch { /* skip */ }
+      // Refresh full session state (enrollments, stats, etc.) while showing loader.
+      await init()
+    } catch {
+      /* skip */
+    } finally {
+      switchingExam.value = false
+    }
   }
 
   return {
@@ -137,6 +145,7 @@ export function useUserSession() {
     isLoggedIn,
     init,
     switchExam,
+    switchingExam,
     stopEnergyCountdown,
   }
 }

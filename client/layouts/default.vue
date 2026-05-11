@@ -5,7 +5,7 @@
     <LayoutDesktopSidebar v-if="!isMobile" />
 
     <div class="flex-1 flex justify-center min-w-0">
-      <main class="w-full max-w-[700px] min-w-0 px-4 py-6" :class="{ 'max-w-full !px-3 !pb-20 !pt-4': isMobile }">
+      <main class="w-full max-w-[700px] min-w-0 px-4 py-6" :class="{ 'max-w-full !px-3 !pb-32 !pt-4': isMobile }">
         <slot />
       </main>
 

@@ -1,6 +1,6 @@
 import db from "../../db/knex";
 import { AppError } from "../../middleware/error";
-import type { StartQuizInput, AnswerInput } from "./quiz.schema";
+import type { StartQuizInput, AnswerInput, ReportQuestionInput } from "./quiz.schema";
 import { regenerateEnergy } from "../user/user.service";
 
 // Normal test: fixed 10 questions from a specific test record
@@ -604,4 +604,25 @@ export const claimReward = async (userId: string, stepId: string) => {
 
     return reward;
   });
+};
+
+export const reportQuestion = async (userId: string, input: ReportQuestionInput) => {
+  const question = await db("questions").where({ id: input.questionId }).first();
+  if (!question) throw new AppError(404, "Question not found");
+
+  const existing = await db("question_reports")
+    .where({ question_id: input.questionId, user_id: userId })
+    .first();
+  if (existing) throw new AppError(409, "You have already reported this question");
+
+  const [report] = await db("question_reports")
+    .insert({
+      question_id: input.questionId,
+      user_id: userId,
+      reason: input.reason,
+      description: input.description ?? null,
+    })
+    .returning("*");
+
+  return report;
 };

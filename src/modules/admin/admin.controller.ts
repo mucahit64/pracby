@@ -31,6 +31,11 @@ export const deleteQuestion = async (req: Request, res: Response): Promise<void>
   res.json(result);
 };
 
+export const getQuestion = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.getQuestion(req.params.id as string);
+  res.json(result);
+};
+
 export const bulkCreateQuestions = async (req: Request, res: Response): Promise<void> => {
   const result = await AdminService.bulkCreateQuestions(req.body, req.user!.userId);
   res.status(201).json(result);
@@ -81,5 +86,54 @@ export const createTest = async (req: Request, res: Response): Promise<void> => 
 
 export const getDashboardStats = async (_req: Request, res: Response): Promise<void> => {
   const result = await AdminService.getDashboardStats();
+  res.json(result);
+};
+
+// ── Reports ────────────────────────────────────────────
+
+export const listReports = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.listReports({
+    status: req.query.status as string | undefined,
+    reason: req.query.reason as string | undefined,
+    page: req.query.page ? Number(req.query.page) : undefined,
+    limit: req.query.limit ? Number(req.query.limit) : undefined,
+  });
+  res.json(result);
+};
+
+export const updateReport = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.updateReport(req.params.id as string, req.body, req.user!.userId);
+  res.json(result);
+};
+
+export const getReportStats = async (_req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.getReportStats();
+  res.json(result);
+};
+
+// ── Users ──────────────────────────────────────────────
+
+export const listUsers = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.listUsers({
+    search: req.query.search as string | undefined,
+    role: req.query.role as string | undefined,
+    page: req.query.page ? Number(req.query.page) : undefined,
+    limit: req.query.limit ? Number(req.query.limit) : undefined,
+  });
+  res.json(result);
+};
+
+export const getUserDetail = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.getUserDetail(req.params.id as string);
+  res.json(result);
+};
+
+export const updateUser = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.updateUser(req.params.id as string, req.body);
+  res.json(result);
+};
+
+export const deleteUser = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.deleteUser(req.params.id as string);
   res.json(result);
 };

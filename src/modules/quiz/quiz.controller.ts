@@ -43,3 +43,8 @@ export const claimReward = async (req: Request, res: Response): Promise<void> =>
   const result = await QuizService.claimReward(req.user!.userId, req.params.stepId as string);
   res.json(result);
 };
+
+export const reportQuestion = async (req: Request, res: Response): Promise<void> => {
+  const result = await QuizService.reportQuestion(req.user!.userId, req.body);
+  res.status(201).json(result);
+};

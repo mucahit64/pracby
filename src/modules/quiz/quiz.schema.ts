@@ -24,3 +24,11 @@ export const AnswerSchema = z.object({
 
 export type StartQuizInput = z.infer<typeof StartQuizSchema>;
 export type AnswerInput = z.infer<typeof AnswerSchema>;
+
+export const ReportQuestionSchema = z.object({
+  questionId: z.uuid(),
+  reason: z.enum(["wrong_answer", "unclear_question", "wrong_explanation", "typo", "missing_image", "other"]),
+  description: z.string().max(500).optional(),
+});
+
+export type ReportQuestionInput = z.infer<typeof ReportQuestionSchema>;

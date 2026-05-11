@@ -40,7 +40,7 @@ export const getProfile = async (userId: string) => {
 
   const user = await db("users")
     .where({ id: userId })
-    .select("id", "email", "username", "avatar_url", "daily_goal_xp", "energy", "energy_refreshed_at", "acorn_balance", "active_exam_type_id", "created_at")
+    .select("id", "email", "username", "avatar_url", "daily_goal_xp", "energy", "energy_refreshed_at", "acorn_balance", "active_exam_type_id", "role", "created_at")
     .first();
   if (!user) throw new AppError(404, "User not found");
 
