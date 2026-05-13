@@ -136,6 +136,54 @@ export const addEnrollment = async (userId: string, examTypeId: string) => {
   return enrollment;
 };
 
+export const deleteEnrollment = async (userId: string, examTypeId: string): Promise<{ newActiveExamTypeId: string | null }> => {
+  // Guard: must have at least 2 active enrollments before deleting
+  const [{ count }] = await db("user_exam_enrollments")
+    .where({ user_id: userId, is_active: true })
+    .count<{ count: string }[]>("id as count");
+
+  if (Number(count) <= 1) {
+    throw new AppError(400, "Son kayıtlı sınavınızı silemezsiniz");
+  }
+
+  // Read current active exam to determine if a switch is needed
+  const user = await db("users").where({ id: userId }).select("active_exam_type_id").first();
+  if (!user) throw new AppError(404, "User not found");
+
+  const needsSwitch = user.active_exam_type_id === examTypeId;
+  let newActiveExamTypeId: string | null = null;
+
+  await db.transaction(async (trx) => {
+    // 1. Soft-delete the enrollment
+    const affected = await trx("user_exam_enrollments")
+      .where({ user_id: userId, exam_type_id: examTypeId, is_active: true })
+      .update({ is_active: false, deleted_at: trx.fn.now() });
+
+    if (affected === 0) {
+      throw new AppError(404, "Enrollment not found");
+    }
+
+    // 2. If the deleted exam was the active one, switch to the oldest remaining enrollment
+    if (needsSwitch) {
+      const next = await trx("user_exam_enrollments")
+        .where({ user_id: userId, is_active: true })
+        .whereNot({ exam_type_id: examTypeId })
+        .orderBy("enrolled_at", "asc")
+        .select("exam_type_id")
+        .first();
+
+      if (next) {
+        await trx("users")
+          .where({ id: userId })
+          .update({ active_exam_type_id: next.exam_type_id });
+        newActiveExamTypeId = next.exam_type_id;
+      }
+    }
+  });
+
+  return { newActiveExamTypeId };
+};
+
 export const switchActiveExam = async (userId: string, examTypeId: string) => {
   const enrollment = await db("user_exam_enrollments")
     .where({ user_id: userId, exam_type_id: examTypeId, is_active: true })

@@ -15,6 +15,7 @@ router.get("/me/streak-history", UserController.getStreakHistory);
 router.patch("/me", validate(UpdateProfileSchema), UserController.updateProfile);
 router.get("/me/enrollments", UserController.getEnrollments);
 router.post("/me/enrollments", UserController.addEnrollment);
+router.delete("/me/enrollments/:examTypeId", UserController.deleteEnrollment);
 router.patch("/me/active-exam", UserController.switchActiveExam);
 
 export default router;

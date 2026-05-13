@@ -40,3 +40,8 @@ export const switchActiveExam = async (req: Request, res: Response): Promise<voi
   const updated = await UserService.switchActiveExam(req.user!.userId, req.body.exam_type_id);
   res.json(updated);
 };
+
+export const deleteEnrollment = async (req: Request, res: Response): Promise<void> => {
+  const result = await UserService.deleteEnrollment(req.user!.userId, req.params.examTypeId as string);
+  res.json(result);
+};

@@ -87,12 +87,21 @@
             <span class="text-xs font-bold text-gray-400 uppercase tracking-wide">{{ enrollment.exam_group_name }}</span>
             <span class="text-sm font-extrabold text-gray-800">{{ enrollment.exam_type_name }}</span>
           </div>
-          <button
-            v-if="enrollment.exam_type_id !== activeExamTypeId"
-            class="bg-white text-primary font-bold text-xs px-3 py-1.5 rounded-xl border-2 border-primary hover:bg-primary/5 transition-all cursor-pointer font-[inherit]"
-            @click="switchExam(enrollment.exam_type_id)"
-          >Geç</button>
-          <span v-else class="text-xs font-bold text-positive bg-positive/10 px-3 py-1.5 rounded-full">Aktif</span>
+          <div class="flex items-center gap-2">
+            <button
+              v-if="enrollment.exam_type_id !== activeExamTypeId"
+              class="bg-white text-primary font-bold text-xs px-3 py-1.5 rounded-xl border-2 border-primary hover:bg-primary/5 transition-all cursor-pointer font-[inherit]"
+              @click="switchExam(enrollment.exam_type_id)"
+            >Geç</button>
+            <span v-else class="text-xs font-bold text-positive bg-positive/10 px-3 py-1.5 rounded-full">Aktif</span>
+            <button
+              class="w-7 h-7 flex items-center justify-center rounded-lg border-2 transition-all font-[inherit]"
+              :class="enrollments.length === 1 ? 'border-gray-100 text-gray-300 cursor-not-allowed' : 'border-gray-200 text-gray-400 hover:border-negative hover:text-negative hover:bg-negative/5 cursor-pointer'"
+              :disabled="enrollments.length === 1"
+              :title="enrollments.length === 1 ? 'Son kayıtlı sınavınızı silemezsiniz' : 'Sınavı kaldır'"
+              @click="enrollments.length > 1 && openDeleteConfirm(enrollment.exam_type_id)"
+            >✕</button>
+          </div>
         </div>
         <button class="w-full bg-gray-50 border-2 border-dashed border-gray-300 text-gray-400 font-bold text-sm py-3 rounded-2xl cursor-pointer hover:border-primary hover:text-primary transition-all font-[inherit]" @click="openEnrollModal">+ Sınav Ekle</button>
       </div>
@@ -104,6 +113,29 @@
       <button class="flex-1 bg-white text-negative font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-negative hover:bg-negative/5 transition-all cursor-pointer font-[inherit]" @click="signOut">🚪 Çıkış</button>
     </div>
   </div>
+
+  <!-- Delete Confirm Modal -->
+  <Teleport to="body">
+    <transition name="fade">
+      <div v-if="showDeleteConfirm" class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-5" @click.self="closeDeleteConfirm">
+        <div class="bg-white border-2 border-gray-200 rounded-3xl max-w-[380px] w-full p-8 relative flex flex-col gap-5">
+          <button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center text-gray-400 font-bold cursor-pointer hover:bg-gray-200 transition-colors" @click="closeDeleteConfirm">✕</button>
+          <div class="flex flex-col items-center gap-3 text-center">
+            <div class="w-14 h-14 rounded-full bg-negative/10 flex items-center justify-center text-2xl">🗑️</div>
+            <h2 class="text-lg font-black text-gray-800">Sınavı Kaldır</h2>
+            <p class="text-sm font-semibold text-gray-500 leading-relaxed">İlerlemeniz korunur ve istediğiniz zaman yeniden katılabilirsiniz.</p>
+          </div>
+          <p v-if="deleteError" class="text-negative text-sm font-semibold text-center">{{ deleteError }}</p>
+          <div class="flex gap-2.5">
+            <button class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" :disabled="deleting" @click="closeDeleteConfirm">Vazgeç</button>
+            <button class="flex-1 bg-negative text-white font-black text-sm py-3 rounded-xl border-b-4 border-negative/70 active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="deleting" @click="confirmDelete">
+              {{ deleting ? 'Kaldırılıyor…' : 'Kaldır' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </Teleport>
 
   <!-- Enroll Modal -->
   <Teleport to="body">
@@ -185,6 +217,48 @@ const { activeExamTypeId: globalActiveExamTypeId, switchExam: globalSwitchExam, 
 const { enrollments } = useUserSession()
 const loadingEnrollments = ref(false);
 const showEnrollModal = ref(false);
+
+const showDeleteConfirm = ref(false);
+const confirmDeleteId = ref('');
+const deleting = ref(false);
+const deleteError = ref('');
+
+function openDeleteConfirm(examTypeId: string) {
+  confirmDeleteId.value = examTypeId;
+  deleteError.value = '';
+  showDeleteConfirm.value = true;
+}
+
+function closeDeleteConfirm() {
+  showDeleteConfirm.value = false;
+  confirmDeleteId.value = '';
+  deleteError.value = '';
+}
+
+async function confirmDelete() {
+  if (!confirmDeleteId.value) return;
+  deleting.value = true;
+  deleteError.value = '';
+  const token = localStorage.getItem('pb_token');
+  if (!token) return;
+  try {
+    const result = await $fetch<{ newActiveExamTypeId: string | null }>(
+      `/api/users/me/enrollments/${confirmDeleteId.value}`,
+      { method: 'DELETE', headers: { Authorization: `Bearer ${token}` } },
+    );
+    enrollments.value = enrollments.value.filter(e => e.exam_type_id !== confirmDeleteId.value);
+    if (result.newActiveExamTypeId) {
+      activeExamTypeId.value = result.newActiveExamTypeId;
+      globalActiveExamTypeId.value = result.newActiveExamTypeId;
+    }
+    closeDeleteConfirm();
+  } catch (e: unknown) {
+    const data = (e as { data?: { error?: string } })?.data;
+    deleteError.value = data?.error || 'Kaldırma başarısız. Tekrar dene.';
+  } finally {
+    deleting.value = false;
+  }
+}
 
 interface ExamGroup {
   id: string;
