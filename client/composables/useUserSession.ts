@@ -112,7 +112,14 @@ export function useUserSession() {
         energyCount.value = fresh.energy ?? energyCount.value
         nextEnergyAt.value = fresh.next_energy_at ?? null
       })
-    } catch { /* skip */ }
+    } catch (err: any) {
+      // If the token is rejected by the server (user deleted or token revoked),
+      // remove the stale token so the app treats the visitor as a guest.
+      if (err && typeof err === 'object' && 'statusCode' in err &&
+          (err.statusCode === 401 || err.statusCode === 403)) {
+        localStorage.removeItem('pb_token')
+      }
+    }
   }
 
   async function switchExam(examTypeId: string) {

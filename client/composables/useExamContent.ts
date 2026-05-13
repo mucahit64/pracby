@@ -119,6 +119,20 @@ export function useExamContent() {
       const examGroups = await $fetch<Array<{ exam_types: Array<{ id: string; name: string }> }>>('/api/exam-groups')
       const allTypes = examGroups.flatMap((g) => g.exam_types)
       const match = allTypes.find((t) => t.id === examTypeId)
+      if (!match) {
+        // This exam type no longer exists — stale localStorage ID (e.g. after a DB rebuild).
+        // Clear the stale value and send the user to the welcome/exam-selection page.
+        if (!getToken()) {
+          localStorage.removeItem('guestExamTypeId')
+        }
+        activeExamTypeId.value = ''
+        modules.value = []
+        const router = useRouter()
+        if (router.currentRoute.value.path !== '/welcome') {
+          navigateTo('/welcome')
+        }
+        return
+      }
       if (match) activeExamName.value = match.name
 
       const token = getToken()

@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 const route = useRoute()
-const { init, stopEnergyCountdown } = useUserSession()
+const { init, stopEnergyCountdown, isLoggedIn } = useUserSession()
 
 const showRightPanel = computed(() => !route.path.startsWith('/quiz/'))
 
@@ -34,6 +34,18 @@ onMounted(async () => {
   onResize()
   window.addEventListener('resize', onResize)
   await init()
+
+  // After init, if the user has no active exam (not logged in, no guest exam chosen),
+  // redirect to /welcome so they can pick one. Handles the case where a stale
+  // pb_token was cleared above (account deleted after a DB rebuild).
+  if (
+    route.path === '/' &&
+    !isLoggedIn.value &&
+    !localStorage.getItem('pb_token') &&
+    !localStorage.getItem('guestExamTypeId')
+  ) {
+    navigateTo('/welcome')
+  }
 })
 
 onUnmounted(() => {
