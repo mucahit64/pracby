@@ -120,11 +120,8 @@ export function useExamContent() {
       const allTypes = examGroups.flatMap((g) => g.exam_types)
       const match = allTypes.find((t) => t.id === examTypeId)
       if (!match) {
-        // This exam type no longer exists — stale localStorage ID (e.g. after a DB rebuild).
-        // Clear the stale value and send the user to the welcome/exam-selection page.
-        if (!getToken()) {
-          localStorage.removeItem('guestExamTypeId')
-        }
+        localStorage.removeItem('guestExamTypeId')
+        
         activeExamTypeId.value = ''
         modules.value = []
         const router = useRouter()

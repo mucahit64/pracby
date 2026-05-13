@@ -21,6 +21,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const { init, stopEnergyCountdown, isLoggedIn } = useUserSession()
+const { activeExamTypeId } = useExamContent()
 
 const showRightPanel = computed(() => !route.path.startsWith('/quiz/'))
 
@@ -35,15 +36,13 @@ onMounted(async () => {
   window.addEventListener('resize', onResize)
   await init()
 
-  // After init, if the user has no active exam (not logged in, no guest exam chosen),
-  // redirect to /welcome so they can pick one. Handles the case where a stale
-  // pb_token was cleared above (account deleted after a DB rebuild).
-  if (
-    route.path === '/' &&
-    !isLoggedIn.value &&
-    !localStorage.getItem('pb_token') &&
-    !localStorage.getItem('guestExamTypeId')
-  ) {
+  // 1. Durum: Misafir kullanıcı ve henüz bir sınav seçmemiş
+  const isGuestWithoutExam = !isLoggedIn.value && !localStorage.getItem('pb_token') && !localStorage.getItem('guestExamTypeId')
+  
+  // 2. Durum: Giriş yapmış üye, ama veritabanında aktif bir sınavı yok (Belki sildi, belki db sıfırlandı)
+  const isUserWithoutExam = isLoggedIn.value && !activeExamTypeId.value
+
+  if (route.path === '/' && (isGuestWithoutExam || isUserWithoutExam)) {
     navigateTo('/welcome')
   }
 })
