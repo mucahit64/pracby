@@ -24,14 +24,19 @@
 
         <div class="flex flex-col gap-1.5">
           <label class="text-sm font-bold text-gray-400 uppercase tracking-wide">Şifre</label>
-          <input
-            v-model="form.password"
-            type="password"
-            class="bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors focus:border-primary"
-            placeholder="••••••"
-            autocomplete="current-password"
-            required
-          />
+          <div class="relative flex items-center">
+            <input
+              v-model="form.password"
+              :type="showPassword ? 'text' : 'password'"
+              class="w-full bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors focus:border-primary"
+              placeholder="••••••"
+              autocomplete="current-password"
+              required
+            />
+            <button type="button" class="absolute right-2.5 bg-transparent border-0 cursor-pointer text-lg p-1 text-gray-400" tabindex="-1" @click="showPassword = !showPassword">
+              {{ showPassword ? '🙈' : '🐵' }}
+            </button>
+          </div>
           <div class="flex justify-end -mt-0.5">
             <NuxtLink to="/auth/forgot-password" class="text-xs text-gray-400 hover:text-primary font-semibold transition-colors">Şifremi unuttum</NuxtLink>
           </div>
@@ -62,6 +67,8 @@ const router = useRouter();
 const form = reactive({ identifier: '', password: '' });
 const error = ref('');
 const loading = ref(false);
+
+const showPassword = ref(false);
 
 const submit = async () => {
   error.value = '';

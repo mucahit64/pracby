@@ -20,13 +20,18 @@
 
         <div>
           <label class="block text-sm font-medium text-gray-300 mb-1">Şifre</label>
-          <input
-            v-model="password"
-            type="password"
-            required
-            class="w-full px-3 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-            placeholder="••••••••"
-          />
+          <div class="relative flex items-center">
+            <input
+              v-model="password"
+              :type="showPassword ? 'text' : 'password'"
+              required
+              class="w-full px-3 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              placeholder="••••••••"
+            />
+            <button type="button" class="absolute right-2.5 bg-transparent border-0 cursor-pointer text-lg p-1 text-gray-400" tabindex="-1" @click="showPassword = !showPassword">
+              {{ showPassword ? '🙈' : '🐵' }}
+            </button>
+          </div>
         </div>
 
         <p v-if="error" class="text-red-400 text-sm">{{ error }}</p>
@@ -48,6 +53,9 @@ definePageMeta({ layout: false })
 
 const identifier = ref('')
 const password = ref('')
+
+const showPassword = ref(false)
+
 const error = ref('')
 const loading = ref(false)
 
