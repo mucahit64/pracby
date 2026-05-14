@@ -44,7 +44,7 @@ export async function seed(knex: Knex): Promise<void> {
       username,
       password_hash: passwordHash,
       role: "admin",
-      acorn_balance: 0,
+      acorn_balance: 500,
       energy: 25,
       ...(defaultExamType && { active_exam_type_id: defaultExamType.id }),
     })

@@ -12,6 +12,8 @@ export const AnswerSchema = z.object({
   answerId: z.uuid().optional(),
   isSkipped: z.boolean().default(false),
   timeSpent: z.number().int().min(0).optional(),
+  // timestamp captured on the client at the moment of answering
+  answeredAt: z.string().datetime().optional(),
   // fill_blank
   textAnswer: z.string().max(500).optional(),
   // matching: array of {leftIndex, rightIndex}
@@ -22,8 +24,14 @@ export const AnswerSchema = z.object({
   isCorrect: z.boolean().optional(),
 });
 
+export const BulkFinishSchema = z.object({
+  answers: z.array(AnswerSchema),
+  skip_rewards: z.boolean().default(false),
+});
+
 export type StartQuizInput = z.infer<typeof StartQuizSchema>;
 export type AnswerInput = z.infer<typeof AnswerSchema>;
+export type BulkFinishInput = z.infer<typeof BulkFinishSchema>;
 
 export const ReportQuestionSchema = z.object({
   questionId: z.uuid(),

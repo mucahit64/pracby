@@ -315,6 +315,12 @@
         <div v-if="stepCompleted" class="bg-positive/10 text-positive font-extrabold text-sm px-5 py-2.5 rounded-full border-2 border-positive/30">🎉 Adım tamamlandı!</div>
         <div v-if="topicCompleted" class="bg-warning/10 text-warning font-extrabold text-sm px-5 py-2.5 rounded-full border-2 border-warning/30">🏆 Konu tamamlandı!</div>
 
+        <!-- Pending sync notice -->
+        <div v-if="pendingSync" class="flex items-center gap-2 bg-amber-50 border-2 border-amber-200 text-amber-700 font-semibold text-sm px-4 py-3 rounded-2xl w-full max-w-[420px]">
+          <svg class="w-4 h-4 shrink-0 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>
+          Sonuçlar internete bağlanınca otomatik kaydedilecek.
+        </div>
+
         <div class="flex gap-3 w-full max-w-[420px] mt-2">
           <button class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="restartQuiz">🔄 Tekrar Dene</button>
           <NuxtLink :to="guestMode ? '/auth/register-wall' : '/'" class="flex-1 bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all text-center">Devam Et →</NuxtLink>
@@ -385,6 +391,8 @@ definePageMeta({ layout: false });
 const route = useRoute();
 const router = useRouter();
 
+const { localAnswers, addAnswer, resetAnswers, savePending, syncPendingSessions } = useOfflineQuiz();
+
 interface EnergyPackage {
   id: string;
   name: string;
@@ -422,6 +430,8 @@ interface Question {
 const optionLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
 
 const loading = ref(true);
+// true while the session result is buffered in localStorage waiting for connectivity
+const pendingSync = ref(false);
 const error = ref('');
 const sessionId = ref('');
 const questions = ref<Question[]>([]);
@@ -666,88 +676,71 @@ function initQuestionState() {
 }
 
 async function submitToBackend(body: Record<string, unknown>) {
-  if (guestMode.value) {
-    const q = currentQuestion.value;
-    let isCorrect = false;
+  const q = currentQuestion.value;
+  // Client-side evaluation — works for both guest and auth users
+  // (auth users now receive is_correct from startSession, same as guests)
+  let isCorrect = false;
 
-    switch (q.question_type) {
-      case 'multiple_choice':
-      case 'true_false':
-      case 'swipe': {
-        const answer = q.answers?.find((a) => a.id === body.answerId);
-        isCorrect = Boolean(answer?.is_correct);
-        break;
-      }
-      case 'fill_blank': {
-        const acceptable: string[] = q.type_data?.acceptable_answers ?? [];
-        const userAnswer = String(body.textAnswer ?? '').trim().toLowerCase();
-        isCorrect = acceptable.some((a) => a.toLowerCase() === userAnswer);
-        break;
-      }
-      case 'matching': {
-        const pairs = body.matchingAnswer as { leftIndex: number; rightIndex: number }[];
-        isCorrect = pairs.every((p) => p.leftIndex === p.rightIndex);
-        break;
-      }
-      case 'ordering': {
-        const indices = body.orderedIndices as number[];
-        isCorrect = indices.every((val, idx) => val === idx);
-        break;
-      }
-      case 'flashcard': {
-        isCorrect = Boolean(body.isCorrect);
-        break;
-      }
+  switch (q.question_type) {
+    case 'multiple_choice':
+    case 'true_false':
+    case 'swipe': {
+      const answer = q.answers?.find((a) => a.id === body.answerId);
+      isCorrect = Boolean(answer?.is_correct);
+      break;
     }
+    case 'fill_blank': {
+      const acceptable: string[] = q.type_data?.acceptable_answers ?? [];
+      const userAnswer = String(body.textAnswer ?? '').trim().toLowerCase();
+      isCorrect = acceptable.some((a) => a.toLowerCase() === userAnswer);
+      break;
+    }
+    case 'matching': {
+      const pairs = body.matchingAnswer as { leftIndex: number; rightIndex: number }[];
+      isCorrect = pairs.every((p) => p.leftIndex === p.rightIndex);
+      break;
+    }
+    case 'ordering': {
+      const indices = body.orderedIndices as number[];
+      isCorrect = indices.every((val, idx) => val === idx);
+      break;
+    }
+    case 'flashcard': {
+      isCorrect = Boolean(body.isCorrect);
+      break;
+    }
+  }
 
-    lastAnswerCorrect.value = isCorrect;
-    answered.value = true;
-    totalAnswered.value++;
-    if (isCorrect) {
-      correctCount.value++;
-      xpEarned.value += 1;
-    } else {
-      energy.value = Math.max(0, energy.value - 1);
-      if (energy.value === 0) {
-        energyDepleted.value = true;
-      }
+  lastAnswerCorrect.value = isCorrect;
+  answered.value = true;
+  totalAnswered.value++;
+
+  if (isCorrect) {
+    correctCount.value++;
+    xpEarned.value += 1;
+  } else {
+    energy.value = Math.max(0, energy.value - 1);
+    if (energy.value === 0) energyDepleted.value = true;
+
+    if (guestMode.value) {
       const { setEnergy: persistEnergy } = useGuestState();
       persistEnergy(energy.value);
     }
-    return;
   }
 
-  const token = getToken();
-  try {
-    const result = await $fetch<{ isCorrect: boolean; energy_remaining: number }>(`/api/quiz/${sessionId.value}/answer`, {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${token}` },
-      body,
+  // Buffer the answer for auth users (will be sent in bulk on finish)
+  if (!guestMode.value) {
+    addAnswer({
+      questionId: String(body.questionId),
+      answerId: body.answerId ? String(body.answerId) : undefined,
+      isSkipped: Boolean(body.isSkipped ?? false),
+      timeSpent: body.timeSpent != null ? Number(body.timeSpent) : undefined,
+      answeredAt: new Date().toISOString(),
+      textAnswer: body.textAnswer ? String(body.textAnswer) : undefined,
+      matchingAnswer: body.matchingAnswer as { leftIndex: number; rightIndex: number }[] | undefined,
+      orderedIndices: body.orderedIndices as number[] | undefined,
+      isCorrect: body.isCorrect != null ? Boolean(body.isCorrect) : undefined,
     });
-    lastAnswerCorrect.value = result.isCorrect;
-    answered.value = true;
-    totalAnswered.value++;
-    if (result.isCorrect) {
-      correctCount.value++;
-      xpEarned.value += 1;
-    } else {
-      energy.value = result.energy_remaining;
-      if (result.energy_remaining === 0) {
-        energyDepleted.value = true;
-      }
-    }
-  } catch (err) {
-    console.error('[quiz] answer submission error:', err);
-    lastAnswerCorrect.value = false;
-    answered.value = true;
-    totalAnswered.value++;
-    // Re-sync energy from server since we don't know the real result
-    const token2 = getToken();
-    if (token2) {
-      $fetch<{ energy?: number }>('/api/users/me', { headers: { Authorization: `Bearer ${token2}` } })
-        .then((u) => { if (u.energy !== undefined) energy.value = u.energy; })
-        .catch(() => {});
-    }
   }
 }
 
@@ -906,6 +899,8 @@ async function finishQuiz() {
 
   const token = getToken();
   const { incrementAcornBalance } = useAcornBalance();
+  const answersToSend = [...localAnswers.value];
+
   try {
     const result = await $fetch<{
       xp_earned: number;
@@ -913,10 +908,10 @@ async function finishQuiz() {
       correct_answers: number;
       step_completed: boolean;
       topic_completed: boolean;
-    }>(`/api/quiz/${sessionId.value}/finish`, {
+    }>(`/api/quiz/${sessionId.value}/finish-bulk`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
-      body: energyDepleted.value ? { skip_rewards: true } : {},
+      body: { answers: answersToSend, skip_rewards: energyDepleted.value },
     });
     xpEarned.value = result.xp_earned;
     acornEarned.value = result.acorn_earned;
@@ -924,8 +919,11 @@ async function finishQuiz() {
     stepCompleted.value = result.step_completed;
     topicCompleted.value = result.topic_completed;
     if (result.acorn_earned > 0) incrementAcornBalance(result.acorn_earned);
+    resetAnswers();
   } catch {
-    acornEarned.value = correctCount.value;
+    // Network failure — persist to localStorage and sync when online
+    savePending(sessionId.value, answersToSend, energyDepleted.value);
+    pendingSync.value = true;
   }
   finished.value = true;
 }
@@ -1037,10 +1035,12 @@ function exitQuiz() {
     return;
   }
   const token = getToken();
-  $fetch(`/api/quiz/${sessionId.value}/finish`, {
+  // Discard buffered answers — session abandoned without rewards
+  resetAnswers();
+  $fetch(`/api/quiz/${sessionId.value}/finish-bulk`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}` },
-    body: { skip_rewards: true },
+    body: { answers: [], skip_rewards: true },
   }).catch(() => {});
   router.replace('/');
 }
@@ -1066,6 +1066,7 @@ function restartQuiz() {
   answered.value = false;
   finished.value = false;
   energyDepleted.value = false;
+  pendingSync.value = false;
   correctCount.value = 0;
   answeredCount.value = 0;
   xpEarned.value = 0;
@@ -1075,14 +1076,21 @@ function restartQuiz() {
   totalAnswered.value = 0;
   loading.value = true;
   error.value = '';
+  resetAnswers();
   startQuiz();
 }
 
-onMounted(startQuiz);
+onMounted(() => {
+  startQuiz();
+  // Sync any sessions that failed to submit in a previous visit
+  syncPendingSessions();
+  window.addEventListener('online', syncPendingSessions);
+});
 
 onUnmounted(() => {
   document.removeEventListener('mousemove', swipeMouseMove);
   document.removeEventListener('mouseup', swipeMouseUp);
+  window.removeEventListener('online', syncPendingSessions);
 });
 
 function openReportModal() {
