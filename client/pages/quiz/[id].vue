@@ -945,14 +945,18 @@ async function openEnergyDialog() {
   }
 
   const token = getToken();
+  // Use the in-memory cached balance immediately so the dialog shows a correct value
+  // even if the network request below fails (offline scenario)
+  const { acornBalance: cachedAcorn } = useAcornBalance();
+  acornBalanceForDialog.value = cachedAcorn.value;
   try {
     const [items, user] = await Promise.all([
       $fetch<EnergyPackage[]>('/api/store/items', { headers: { Authorization: `Bearer ${token}` } }),
       $fetch<{ acorn_balance?: number }>('/api/users/me', { headers: { Authorization: `Bearer ${token}` } }),
     ]);
     energyPackages.value = items.filter((i) => i.item_type === 'energy_refill');
-    acornBalanceForDialog.value = user.acorn_balance ?? 0;
-  } catch { /* skip */ }
+    acornBalanceForDialog.value = user.acorn_balance ?? cachedAcorn.value;
+  } catch { /* network offline — keep cached balance, packages will be empty */ }
   loadingPackages.value = false;
 }
 

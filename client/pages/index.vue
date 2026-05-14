@@ -1,5 +1,16 @@
 <template>
   <div class="flex flex-col gap-8 pb-10 flex-1 overflow-y-auto scrollbar-hide">
+    <!-- Offline banner -->
+    <div v-if="!isOnline" class="flex items-center gap-2 bg-gray-800 text-white text-sm font-semibold px-4 py-3 rounded-2xl">
+      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728M15.536 8.464a5 5 0 010 7.072M12 12h.01M6.343 6.343a9 9 0 000 12.728M9.172 9.172a5 5 0 000 7.071" /></svg>
+      İnternet bağlantısı yok. Bazı özellikler kullanılamayabilir.
+    </div>
+
+    <!-- Sync loading banner -->
+    <div v-if="syncing" class="flex items-center gap-2 bg-primary/10 border-2 border-primary/20 text-primary text-sm font-semibold px-4 py-3 rounded-2xl">
+      <svg class="w-4 h-4 shrink-0 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>
+      Önceki test sonuçları senkronize ediliyor…
+    </div>
     <!-- Module tabs -->
     <div v-if="modules.length > 0" class="flex gap-2">
       <button
@@ -222,13 +233,43 @@ function getToken() {
 
 const { activeExamName, activeExamTypeId, modules, selectedModuleId, courses, selectedCourseId, courseFull, loadingFull, selectModule, selectCourse } = useExamContent()
 
-// Redirect guests who haven't selected an exam yet
+const { syncPendingSessions, loadPending } = useOfflineQuiz();
+const isOnline = ref(true);
+const syncing = ref(false);
+
+async function runSync() {
+  if (loadPending().length === 0) return;
+  
+  syncing.value = true;
+  try {
+    await syncPendingSessions();
+  } catch (error) {
+    console.warn('[OfflineQuiz] Senkronizasyon başarısız, sonra tekrar denenecek.', error);
+  } finally {
+    syncing.value = false; 
+  }
+}
+
+function setOnline() { isOnline.value = true; runSync(); }
+function setOffline() { isOnline.value = false; }
+
 onMounted(() => {
+  isOnline.value = navigator.onLine;
+  window.addEventListener('online', setOnline);
+  window.addEventListener('offline', setOffline);
+
+  runSync();
+
   const token = localStorage.getItem('pb_token')
   if (!token && !localStorage.getItem('guestExamTypeId')) {
     navigateTo('/welcome')
   }
-})
+});
+
+onUnmounted(() => {
+  window.removeEventListener('online', setOnline);
+  window.removeEventListener('offline', setOffline);
+});
 
 function buildLessonNodes(topic: Topic): LessonNode[] {
   const nodes: LessonNode[] = [];
