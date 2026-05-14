@@ -42,7 +42,13 @@ onMounted(async () => {
   // 2. Durum: Giriş yapmış üye, ama veritabanında aktif bir sınavı yok (Belki sildi, belki db sıfırlandı)
   const isUserWithoutExam = isLoggedIn.value && !activeExamTypeId.value
 
-  if (route.path === '/' && (isGuestWithoutExam || isUserWithoutExam)) {
+  // 3. Durum: Token var ama init() oturum açamadı (kullanıcı DB'den silindi, token geçersiz)
+  const hasStaleToken = !isLoggedIn.value && !!localStorage.getItem('pb_token')
+  if (hasStaleToken) {
+    localStorage.removeItem('pb_token')
+  }
+
+  if (route.path === '/' && (isGuestWithoutExam || isUserWithoutExam || hasStaleToken)) {
     navigateTo('/welcome')
   }
 })
