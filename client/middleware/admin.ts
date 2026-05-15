@@ -7,10 +7,10 @@ export default defineNuxtRouteMiddleware(async (to) => {
   }
 
   try {
-    const user = await $fetch<{ role?: string }>('/api/users/me', {
+    const user = await $fetch<{ permissions?: string[] }>('/api/users/me', {
       headers: { Authorization: `Bearer ${token}` },
     })
-    if (user.role !== 'admin') {
+    if (!user.permissions?.includes('view_admin_panel')) {
       return navigateTo('/')
     }
   } catch {

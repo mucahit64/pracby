@@ -23,12 +23,12 @@
         <thead>
           <tr class="border-b border-gray-700 text-gray-400 text-left">
             <th class="px-4 py-3 font-medium">Kullanıcı</th>
-            <th class="px-4 py-3 font-medium w-24">Rol</th>
+            <th class="px-4 py-3 font-medium w-28">Rol</th>
             <th class="px-4 py-3 font-medium w-20 text-center">XP</th>
             <th class="px-4 py-3 font-medium w-20 text-center">Seviye</th>
             <th class="px-4 py-3 font-medium w-20 text-center">Quiz</th>
             <th class="px-4 py-3 font-medium w-28">Kayıt</th>
-            <th class="px-4 py-3 font-medium w-20 text-center">İşlem</th>
+            <th class="px-4 py-3 font-medium w-36 text-center">İşlem</th>
           </tr>
         </thead>
         <tbody>
@@ -48,8 +48,8 @@
               <div class="text-gray-500 text-xs">{{ u.email }}</div>
             </td>
             <td class="px-4 py-3">
-              <span :class="u.role === 'admin' ? 'bg-purple-600/20 text-purple-400' : 'bg-gray-600/20 text-gray-400'" class="text-xs px-2 py-1 rounded font-medium">
-                {{ u.role === 'admin' ? 'Admin' : 'Kullanıcı' }}
+              <span :class="roleBadgeClass(u.role_name)" class="text-xs px-2 py-1 rounded-full font-medium">
+                {{ u.role_name ?? '—' }}
               </span>
             </td>
             <td class="px-4 py-3 text-center text-gray-300">{{ u.xp ?? 0 }}</td>
@@ -57,7 +57,20 @@
             <td class="px-4 py-3 text-center text-gray-300">{{ u.quizzes_completed ?? 0 }}</td>
             <td class="px-4 py-3 text-gray-400 text-xs">{{ formatDate(u.created_at) }}</td>
             <td class="px-4 py-3 text-center">
-              <NuxtLink :to="`/admin/users/${u.id}`" class="text-purple-400 hover:text-purple-300 text-sm">Detay</NuxtLink>
+              <div class="flex gap-2 justify-center">
+                <button
+                  @click="openRoleModal(u)"
+                  class="text-xs px-2 py-1 rounded-lg bg-purple-600/20 text-purple-400 hover:bg-purple-600/40 transition-colors"
+                >
+                  Rol Değiştir
+                </button>
+                <NuxtLink
+                  :to="`/admin/users/${u.id}`"
+                  class="text-xs px-2 py-1 rounded-lg bg-gray-700 text-gray-300 hover:bg-gray-600 transition-colors"
+                >
+                  Detay
+                </NuxtLink>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -73,22 +86,112 @@
         :class="['px-3 py-1.5 rounded text-sm font-medium transition-colors', p === page ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600']"
       >{{ p }}</button>
     </div>
+
+    <!-- Role Edit Modal -->
+    <Teleport to="body">
+      <div
+        v-if="modal.open"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+        @click.self="modal.open = false"
+      >
+        <div class="bg-gray-800 border border-gray-700 rounded-2xl p-6 w-full max-w-sm shadow-xl">
+          <h2 class="text-lg font-bold text-white mb-1">Rol Değiştir</h2>
+          <p class="text-gray-400 text-sm mb-5">
+            <span class="text-gray-200 font-medium">{{ modal.username }}</span> kullanıcısının rolünü güncelle
+          </p>
+
+          <label class="block text-xs text-gray-400 mb-1.5 font-medium uppercase tracking-wide">Yeni Rol</label>
+          <select v-model="modal.selectedRoleId" class="admin-input mb-5">
+            <option v-for="r in roles" :key="r.id" :value="r.id">{{ r.name }}</option>
+          </select>
+
+          <div class="flex gap-3">
+            <button
+              @click="saveRole"
+              :disabled="modal.saving"
+              class="flex-1 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium transition-colors disabled:opacity-50"
+            >
+              {{ modal.saving ? 'Kaydediliyor...' : 'Kaydet' }}
+            </button>
+            <button
+              @click="modal.open = false"
+              class="flex-1 py-2 rounded-xl bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium transition-colors"
+            >
+              İptal
+            </button>
+          </div>
+        </div>
+      </div>
+    </Teleport>
+
+    <!-- Toast -->
+    <Teleport to="body">
+      <Transition name="toast">
+        <div
+          v-if="toast.visible"
+          :class="[
+            'fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg text-sm font-medium',
+            toast.error
+              ? 'bg-red-900/90 text-red-200 border border-red-700'
+              : 'bg-green-900/90 text-green-200 border border-green-700'
+          ]"
+        >
+          {{ toast.message }}
+        </div>
+      </Transition>
+    </Teleport>
   </div>
 </template>
 
 <script setup lang="ts">
-definePageMeta({ layout: 'admin', middleware: ['admin'] })
+definePageMeta({ layout: 'admin', middleware: ['admin', 'manage-users'] })
 
 const { api } = useApi()
 
+interface UserRow {
+  id: string
+  username: string
+  email: string
+  role_id: string
+  role_name: string
+  xp: number
+  level: number
+  quizzes_completed: number
+  acorn_balance: number
+  energy: number
+  created_at: string
+}
+
+interface Role {
+  id: string
+  name: string
+  description: string | null
+}
+
 const loading = ref(true)
-const users = ref<any[]>([])
+const users = ref<UserRow[]>([])
+const roles = ref<Role[]>([])
 const total = ref(0)
 const page = ref(1)
 const limit = 20
 const searchQuery = ref('')
 
+const modal = reactive({
+  open: false,
+  userId: '',
+  username: '',
+  selectedRoleId: '',
+  saving: false,
+})
+
+const toast = reactive({
+  visible: false,
+  message: '',
+  error: false,
+})
+
 let searchTimeout: ReturnType<typeof setTimeout> | null = null
+let toastTimeout: ReturnType<typeof setTimeout> | null = null
 
 const totalPages = computed(() => Math.ceil(total.value / limit))
 const paginationRange = computed(() => {
@@ -99,13 +202,61 @@ const paginationRange = computed(() => {
   return pages
 })
 
+function roleBadgeClass(roleName: string) {
+  const map: Record<string, string> = {
+    admin: 'bg-purple-600/20 text-purple-400',
+    teacher: 'bg-blue-600/20 text-blue-400',
+    student: 'bg-green-600/20 text-green-400',
+  }
+  return map[roleName] ?? 'bg-gray-600/20 text-gray-400'
+}
+
 function formatDate(d: string) {
   return new Date(d).toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric' })
+}
+
+function showToast(message: string, error = false) {
+  if (toastTimeout) clearTimeout(toastTimeout)
+  toast.message = message
+  toast.error = error
+  toast.visible = true
+  toastTimeout = setTimeout(() => { toast.visible = false }, 3000)
 }
 
 function debouncedSearch() {
   if (searchTimeout) clearTimeout(searchTimeout)
   searchTimeout = setTimeout(() => loadUsers(1), 300)
+}
+
+function openRoleModal(u: UserRow) {
+  modal.userId = u.id
+  modal.username = u.username
+  modal.selectedRoleId = u.role_id
+  modal.saving = false
+  modal.open = true
+}
+
+async function saveRole() {
+  if (!modal.selectedRoleId) return
+  modal.saving = true
+  try {
+    const updated = await api<UserRow & { role_name: string }>(`/api/admin/users/${modal.userId}/role`, {
+      method: 'PATCH',
+      body: { role_id: modal.selectedRoleId },
+    })
+    const idx = users.value.findIndex(u => u.id === modal.userId)
+    if (idx !== -1) {
+      users.value[idx].role_id = updated.role_id
+      users.value[idx].role_name = updated.role_name
+    }
+    modal.open = false
+    showToast('Rol başarıyla güncellendi.')
+  } catch (e) {
+    const err = e as { data?: { error?: string } }
+    showToast(err?.data?.error ?? 'Bir hata oluştu.', true)
+  } finally {
+    modal.saving = false
+  }
 }
 
 async function loadUsers(p: number = 1) {
@@ -114,8 +265,7 @@ async function loadUsers(p: number = 1) {
   try {
     const params = new URLSearchParams({ page: String(p), limit: String(limit) })
     if (searchQuery.value.trim()) params.set('search', searchQuery.value.trim())
-
-    const res = await api<{ users: any[]; total: number }>(`/api/admin/users?${params}`)
+    const res = await api<{ users: UserRow[]; total: number }>(`/api/admin/users?${params}`)
     users.value = res.users
     total.value = res.total
   } catch {
@@ -125,11 +275,27 @@ async function loadUsers(p: number = 1) {
   }
 }
 
-onMounted(() => loadUsers())
+onMounted(async () => {
+  const [, rolesResult] = await Promise.allSettled([
+    loadUsers(),
+    api<Role[]>('/api/admin/roles'),
+  ])
+  if (rolesResult.status === 'fulfilled') roles.value = rolesResult.value
+})
 </script>
 
 <style scoped>
 .admin-input {
   @apply w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder-gray-500;
+}
+
+.toast-enter-active,
+.toast-leave-active {
+  transition: all 0.25s ease;
+}
+.toast-enter-from,
+.toast-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
 }
 </style>

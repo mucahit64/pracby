@@ -38,9 +38,38 @@ export const regenerateEnergy = async (userId: string) => {
 export const getProfile = async (userId: string) => {
   await regenerateEnergy(userId);
 
-  const user = await db("users")
-    .where({ id: userId })
-    .select("id", "email", "username", "avatar_url", "daily_goal_xp", "energy", "energy_refreshed_at", "acorn_balance", "active_exam_type_id", "role", "created_at")
+  const user = await db("users as u")
+    .join("roles as r", "u.role_id", "r.id")
+    .leftJoin("role_permissions as rp", "r.id", "rp.role_id")
+    .leftJoin("permissions as p", "rp.permission_id", "p.id")
+    .where("u.id", userId)
+    .select(
+      "u.id",
+      "u.email",
+      "u.username",
+      "u.avatar_url",
+      "u.daily_goal_xp",
+      "u.energy",
+      "u.energy_refreshed_at",
+      "u.acorn_balance",
+      "u.active_exam_type_id",
+      "u.created_at",
+      "r.name as role",
+      db.raw("COALESCE(ARRAY_AGG(p.name) FILTER (WHERE p.name IS NOT NULL), ARRAY[]::text[]) as permissions")
+    )
+    .groupBy(
+      "u.id",
+      "u.email",
+      "u.username",
+      "u.avatar_url",
+      "u.daily_goal_xp",
+      "u.energy",
+      "u.energy_refreshed_at",
+      "u.acorn_balance",
+      "u.active_exam_type_id",
+      "u.created_at",
+      "r.name"
+    )
     .first();
   if (!user) throw new AppError(404, "User not found");
 

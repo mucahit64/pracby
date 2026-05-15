@@ -10,12 +10,15 @@ import type {
   CreateTestInput,
   UpdateReportInput,
   UpdateUserAdminInput,
+  UpdateUserRoleInput,
 } from "./admin.schema";
 
 // ── Questions ──────────────────────────────────────────
 
 export const listQuestions = async (filters: {
   topic_id?: string;
+  course_id?: string;
+  exam_type_id?: string;
   step_id?: string;
   test_id?: string;
   question_type?: string;
@@ -27,18 +30,29 @@ export const listQuestions = async (filters: {
   const limit = Math.min(filters.limit ?? 50, 100);
   const offset = (page - 1) * limit;
 
-  const query = db("questions").whereNot("status", "archived");
+  const query = db("questions as q").whereNot("q.status", "archived");
 
-  if (filters.topic_id) query.where("topic_id", filters.topic_id);
-  if (filters.step_id) query.where("step_id", filters.step_id);
-  if (filters.test_id) query.where("test_id", filters.test_id);
-  if (filters.question_type) query.where("question_type", filters.question_type);
-  if (filters.status) query.where("status", filters.status);
+  if (filters.topic_id) query.where("q.topic_id", filters.topic_id);
+  if (filters.course_id) {
+    query.whereIn("q.topic_id", db("topics").select("id").where("course_id", filters.course_id));
+  }
+  if (filters.exam_type_id) {
+    query.whereIn(
+      "q.topic_id",
+      db("topics")
+        .select("id")
+        .whereIn("course_id", db("courses").select("id").where("exam_type_id", filters.exam_type_id))
+    );
+  }
+  if (filters.step_id) query.where("q.step_id", filters.step_id);
+  if (filters.test_id) query.where("q.test_id", filters.test_id);
+  if (filters.question_type) query.where("q.question_type", filters.question_type);
+  if (filters.status) query.where("q.status", filters.status);
 
-  const [countResult] = await query.clone().count("id as total");
+  const [countResult] = await query.clone().count("q.id as total");
   const total = Number(countResult?.total ?? 0);
 
-  const questions = await query.orderBy("created_at", "desc").offset(offset).limit(limit);
+  const questions = await query.orderBy("q.created_at", "desc").offset(offset).limit(limit);
 
   // Fetch answers for these questions
   const questionIds = questions.map((q) => q.id);
@@ -154,6 +168,20 @@ export const bulkCreateQuestions = async (input: BulkCreateQuestionsInput, creat
     results.push(result);
   }
   return results;
+};
+
+// ── Exam Types ─────────────────────────────────────────
+
+export const listExamTypes = async () => {
+  return db("exam_types").select("id", "name", "slug").where({ is_active: true }).orderBy("sort_order");
+};
+
+// ── Courses ────────────────────────────────────────────
+
+export const listCourses = async (examTypeId?: string) => {
+  const query = db("courses").select("id", "name", "exam_type_id").orderBy("sort_order");
+  if (examTypeId) query.where("exam_type_id", examTypeId);
+  return query;
 };
 
 // ── Topics ─────────────────────────────────────────────
@@ -321,10 +349,12 @@ export const listUsers = async (filters: {
   const offset = (page - 1) * limit;
 
   const query = db("users as u")
+    .join("roles as r", "u.role_id", "r.id")
     .leftJoin("user_stats as s", "u.id", "s.user_id")
     .select(
-      "u.id", "u.email", "u.username", "u.role", "u.acorn_balance",
-      "u.energy", "u.created_at",
+      "u.id", "u.email", "u.username", "u.role_id",
+      "r.name as role_name",
+      "u.acorn_balance", "u.energy", "u.created_at",
       "s.xp", "s.level", "s.quizzes_completed",
     );
 
@@ -334,7 +364,7 @@ export const listUsers = async (filters: {
       this.whereILike("u.username", term).orWhereILike("u.email", term);
     });
   }
-  if (filters.role) query.where("u.role", filters.role);
+  if (filters.role) query.where("r.name", filters.role);
 
   const [countResult] = await query.clone().clearSelect().count("u.id as total");
   const total = Number(countResult?.total ?? 0);
@@ -346,10 +376,13 @@ export const listUsers = async (filters: {
 
 export const getUserDetail = async (id: string) => {
   const user = await db("users as u")
+    .join("roles as r", "u.role_id", "r.id")
     .leftJoin("user_stats as s", "u.id", "s.user_id")
     .select(
-      "u.id", "u.email", "u.username", "u.role", "u.avatar_url",
-      "u.acorn_balance", "u.energy", "u.daily_goal_xp", "u.created_at",
+      "u.id", "u.email", "u.username", "u.role_id",
+      "r.name as role_name",
+      "u.avatar_url", "u.acorn_balance", "u.energy",
+      "u.daily_goal_xp", "u.created_at",
       "s.xp", "s.level", "s.total_xp", "s.streak", "s.max_streak",
       "s.quizzes_completed", "s.last_active_date",
     )
@@ -377,7 +410,6 @@ export const updateUser = async (id: string, input: UpdateUserAdminInput) => {
   if (!user) throw new AppError(404, "User not found");
 
   const updateData: Record<string, unknown> = {};
-  if (input.role !== undefined) updateData.role = input.role;
   if (input.energy !== undefined) updateData.energy = input.energy;
   if (input.acorn_balance !== undefined) updateData.acorn_balance = input.acorn_balance;
 
@@ -386,16 +418,39 @@ export const updateUser = async (id: string, input: UpdateUserAdminInput) => {
   const [updated] = await db("users")
     .where({ id })
     .update(updateData)
-    .returning(["id", "email", "username", "role", "energy", "acorn_balance"]);
+    .returning(["id", "email", "username", "energy", "acorn_balance"]);
 
   return updated;
 };
 
 export const deleteUser = async (id: string) => {
-  const user = await db("users").where({ id }).first();
+  const user = await db("users as u")
+    .join("roles as r", "u.role_id", "r.id")
+    .where("u.id", id)
+    .select("u.id", "r.name as role_name")
+    .first();
   if (!user) throw new AppError(404, "User not found");
-  if (user.role === "admin") throw new AppError(403, "Cannot delete admin user");
+  if (user.role_name === "admin") throw new AppError(403, "Cannot delete admin user");
 
   await db("users").where({ id }).delete();
   return { message: "User deleted" };
+};
+
+export const listRoles = async () => {
+  return db("roles").select("id", "name", "description").orderBy("name");
+};
+
+export const updateUserRole = async (userId: string, roleId: string) => {
+  const user = await db("users").where({ id: userId }).first();
+  if (!user) throw new AppError(404, "User not found");
+
+  const role = await db("roles").where({ id: roleId }).first();
+  if (!role) throw new AppError(404, "Role not found");
+
+  const [updated] = await db("users")
+    .where({ id: userId })
+    .update({ role_id: roleId })
+    .returning(["id", "email", "username", "role_id"]);
+
+  return { ...updated, role_name: role.name as string };
 };

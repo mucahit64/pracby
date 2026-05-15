@@ -24,11 +24,27 @@
       <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 space-y-4">
         <h2 class="text-lg font-semibold text-gray-200 mb-2">Soru Bilgileri</h2>
 
-        <!-- Topic / Step / Test cascading selects -->
+        <!-- Sınav / Ders / Konu / Adım / Test cascading selects -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="admin-label">Sınav *</label>
+            <select v-model="form.exam_type_id" @change="onExamChange" required class="admin-select">
+              <option value="">Seçin</option>
+              <option v-for="e in examTypes" :key="e.id" :value="e.id">{{ e.name }}</option>
+            </select>
+          </div>
+          <div>
+            <label class="admin-label">Ders *</label>
+            <select v-model="form.course_id" @change="onCourseChange" :disabled="!courses.length" required class="admin-select">
+              <option value="">Seçin</option>
+              <option v-for="c in courses" :key="c.id" :value="c.id">{{ c.name }}</option>
+            </select>
+          </div>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
             <label class="admin-label">Konu *</label>
-            <select v-model="form.topic_id" @change="onTopicChange" required class="admin-select">
+            <select v-model="form.topic_id" @change="onTopicChange" :disabled="!topics.length" required class="admin-select">
               <option value="">Seçin</option>
               <option v-for="t in topics" :key="t.id" :value="t.id">{{ t.name }}</option>
             </select>
@@ -177,8 +193,12 @@ const success = ref('')
 const topics = ref<any[]>([])
 const steps = ref<any[]>([])
 const tests = ref<any[]>([])
+const examTypes = ref<any[]>([])
+const courses = ref<any[]>([])
 
 const form = reactive({
+  exam_type_id: '',
+  course_id: '',
   topic_id: '',
   step_id: '',
   test_id: '',
@@ -190,6 +210,7 @@ const form = reactive({
   hint: '',
   answers: [
     { answer_text: '', is_correct: true },
+    { answer_text: '', is_correct: false },
     { answer_text: '', is_correct: false },
     { answer_text: '', is_correct: false },
     { answer_text: '', is_correct: false },
@@ -218,6 +239,30 @@ function addAnswer() {
 
 function setCorrect(idx: number) {
   form.answers.forEach((a, i) => (a.is_correct = i === idx))
+}
+
+async function onExamChange() {
+  form.course_id = ''
+  form.topic_id = ''
+  form.step_id = ''
+  form.test_id = ''
+  courses.value = []
+  topics.value = []
+  steps.value = []
+  tests.value = []
+  if (!form.exam_type_id) return
+  courses.value = await api<any[]>(`/api/admin/courses?exam_type_id=${form.exam_type_id}`).catch(() => [])
+}
+
+async function onCourseChange() {
+  form.topic_id = ''
+  form.step_id = ''
+  form.test_id = ''
+  topics.value = []
+  steps.value = []
+  tests.value = []
+  if (!form.course_id) return
+  topics.value = await api<any[]>(`/api/admin/topics?course_id=${form.course_id}`).catch(() => [])
 }
 
 async function onTopicChange() {
@@ -260,11 +305,18 @@ async function submitSingle() {
     await api('/api/admin/questions', { method: 'POST', body })
     success.value = 'Soru başarıyla oluşturuldu!'
     // Reset form
+    form.topic_id = ''
+    form.step_id = ''
+    form.test_id = ''
+    topics.value = []
+    steps.value = []
+    tests.value = []
     form.question_text = ''
     form.explanation = ''
     form.hint = ''
     form.answers = [
       { answer_text: '', is_correct: true },
+      { answer_text: '', is_correct: false },
       { answer_text: '', is_correct: false },
       { answer_text: '', is_correct: false },
       { answer_text: '', is_correct: false },
@@ -298,7 +350,7 @@ async function submitBulk() {
 }
 
 onMounted(async () => {
-  topics.value = await api<any[]>('/api/admin/topics').catch(() => [])
+  examTypes.value = await api<any[]>('/api/admin/exam-types').catch(() => [])
 })
 </script>
 

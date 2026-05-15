@@ -11,14 +11,27 @@ export async function seed(knex: Knex): Promise<void> {
     return;
   }
 
+  // Ensure the admin role exists.
+  // 010_rbac_seed runs AFTER this file, so we upsert here; 010 will skip it idempotently.
+  const existingAdminRole = await knex("roles").where({ name: "admin" }).first();
+  let adminRoleId: string;
+  if (existingAdminRole) {
+    adminRoleId = existingAdminRole.id as string;
+  } else {
+    const [inserted] = await knex("roles")
+      .insert({ name: "admin", description: "Tam yetkili sistem yöneticisi" })
+      .returning(["id"]);
+    adminRoleId = inserted.id as string;
+  }
+
   const activeExamTypes = await knex("exam_types").where({ is_active: true }).orderBy("sort_order");
   const defaultExamType = activeExamTypes[0];
 
   const existing = await knex("users").where({ email }).first();
   if (existing) {
-    // Ensure role is admin
-    if (existing.role !== "admin") {
-      await knex("users").where({ id: existing.id }).update({ role: "admin" });
+    // Ensure role_id points to admin role
+    if (existing.role_id !== adminRoleId) {
+      await knex("users").where({ id: existing.id }).update({ role_id: adminRoleId });
       console.log(`✅ Updated existing user "${email}" role to admin`);
     } else {
       console.log(`ℹ️  Admin user "${email}" already exists`);
@@ -43,7 +56,7 @@ export async function seed(knex: Knex): Promise<void> {
       email,
       username,
       password_hash: passwordHash,
-      role: "admin",
+      role_id: adminRoleId,
       acorn_balance: 500,
       energy: 25,
       ...(defaultExamType && { active_exam_type_id: defaultExamType.id }),

@@ -18,8 +18,8 @@
             <p class="text-gray-400 text-sm">{{ user.email }}</p>
             <p class="text-gray-500 text-xs mt-1">Kayıt: {{ formatDate(user.created_at) }}</p>
           </div>
-          <span :class="user.role === 'admin' ? 'bg-purple-600/20 text-purple-400' : 'bg-gray-600/20 text-gray-400'" class="text-sm px-3 py-1 rounded-lg font-medium">
-            {{ user.role === 'admin' ? 'Admin' : 'Kullanıcı' }}
+          <span :class="roleBadgeClass(user.role_name)" class="text-sm px-3 py-1 rounded-lg font-medium">
+            {{ user.role_name ?? '—' }}
           </span>
         </div>
       </div>
@@ -49,11 +49,11 @@
         <h3 class="text-lg font-semibold text-gray-200">Düzenle</h3>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- Role selector — uses /users/:id/role endpoint -->
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-1">Rol</label>
-            <select v-model="editForm.role" class="admin-select">
-              <option value="user">Kullanıcı</option>
-              <option value="admin">Admin</option>
+            <select v-model="editForm.role_id" class="admin-select">
+              <option v-for="r in roles" :key="r.id" :value="r.id">{{ r.name }}</option>
             </select>
           </div>
           <div>
@@ -75,7 +75,7 @@
             {{ submitting ? 'Kaydediliyor...' : 'Güncelle' }}
           </button>
           <button
-            v-if="user.role !== 'admin'"
+            v-if="user.role_name !== 'admin'"
             @click="handleDelete"
             :disabled="submitting"
             class="px-4 py-2 bg-red-600/20 hover:bg-red-600/30 text-red-400 text-sm font-medium rounded-lg transition-colors"
@@ -134,22 +134,38 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ layout: 'admin', middleware: ['admin'] })
+definePageMeta({ layout: 'admin', middleware: ['admin', 'manage-users'] })
 
 const route = useRoute()
 const { api, extractError } = useApi()
+
+interface Role {
+  id: string
+  name: string
+  description: string | null
+}
 
 const loading = ref(true)
 const submitting = ref(false)
 const error = ref('')
 const success = ref('')
 const user = ref<any>(null)
+const roles = ref<Role[]>([])
 
 const editForm = reactive({
-  role: 'user',
+  role_id: '',
   energy: 25,
   acorn_balance: 0,
 })
+
+function roleBadgeClass(roleName: string) {
+  const map: Record<string, string> = {
+    admin: 'bg-purple-600/20 text-purple-400',
+    teacher: 'bg-blue-600/20 text-blue-400',
+    student: 'bg-green-600/20 text-green-400',
+  }
+  return map[roleName] ?? 'bg-gray-600/20 text-gray-400'
+}
 
 function formatDate(d: string) {
   if (!d) return '-'
@@ -161,18 +177,30 @@ async function handleUpdate() {
   success.value = ''
   submitting.value = true
   try {
-    await api(`/api/admin/users/${route.params.id}`, {
+    const userId = route.params.id as string
+
+    // Update role separately via dedicated endpoint
+    if (editForm.role_id !== user.value.role_id) {
+      const roleResult = await api<{ role_name: string; role_id: string }>(`/api/admin/users/${userId}/role`, {
+        method: 'PATCH',
+        body: { role_id: editForm.role_id },
+      })
+      user.value.role_id = roleResult.role_id
+      user.value.role_name = roleResult.role_name
+    }
+
+    // Update energy/acorn via general endpoint
+    await api(`/api/admin/users/${userId}`, {
       method: 'PATCH',
       body: {
-        role: editForm.role,
         energy: editForm.energy,
         acorn_balance: editForm.acorn_balance,
       },
     })
-    success.value = 'Kullanıcı güncellendi!'
-    user.value.role = editForm.role
+
     user.value.energy = editForm.energy
     user.value.acorn_balance = editForm.acorn_balance
+    success.value = 'Kullanıcı güncellendi!'
   } catch (e) {
     error.value = extractError(e)
   } finally {
@@ -195,10 +223,15 @@ async function handleDelete() {
 
 onMounted(async () => {
   try {
-    user.value = await api(`/api/admin/users/${route.params.id}`)
-    editForm.role = user.value.role
-    editForm.energy = user.value.energy
-    editForm.acorn_balance = user.value.acorn_balance
+    const [userData, rolesData] = await Promise.all([
+      api<any>(`/api/admin/users/${route.params.id}`),
+      api<Role[]>('/api/admin/roles'),
+    ])
+    user.value = userData
+    roles.value = rolesData
+    editForm.role_id = userData.role_id
+    editForm.energy = userData.energy
+    editForm.acorn_balance = userData.acorn_balance
   } catch {
     error.value = 'Kullanıcı yüklenemedi'
   } finally {

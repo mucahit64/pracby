@@ -6,6 +6,8 @@ import * as AdminService from "./admin.service";
 export const listQuestions = async (req: Request, res: Response): Promise<void> => {
   const result = await AdminService.listQuestions({
     topic_id: req.query.topic_id as string | undefined,
+    course_id: req.query.course_id as string | undefined,
+    exam_type_id: req.query.exam_type_id as string | undefined,
     step_id: req.query.step_id as string | undefined,
     test_id: req.query.test_id as string | undefined,
     question_type: req.query.question_type as string | undefined,
@@ -39,6 +41,20 @@ export const getQuestion = async (req: Request, res: Response): Promise<void> =>
 export const bulkCreateQuestions = async (req: Request, res: Response): Promise<void> => {
   const result = await AdminService.bulkCreateQuestions(req.body, req.user!.userId);
   res.status(201).json(result);
+};
+
+// ── Exam Types ─────────────────────────────────────────
+
+export const listExamTypes = async (_req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.listExamTypes();
+  res.json(result);
+};
+
+// ── Courses ────────────────────────────────────────────
+
+export const listCourses = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.listCourses(req.query.exam_type_id as string | undefined);
+  res.json(result);
 };
 
 // ── Topics ─────────────────────────────────────────────
@@ -135,5 +151,15 @@ export const updateUser = async (req: Request, res: Response): Promise<void> => 
 
 export const deleteUser = async (req: Request, res: Response): Promise<void> => {
   const result = await AdminService.deleteUser(req.params.id as string);
+  res.json(result);
+};
+
+export const listRoles = async (_req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.listRoles();
+  res.json(result);
+};
+
+export const updateUserRole = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.updateUserRole(req.params.id as string, req.body.role_id as string);
   res.json(result);
 };

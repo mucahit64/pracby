@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 z-50 bg-white border-b-2 border-gray-200 px-5 py-3">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b-2 border-gray-200 px-5 py-3">
 
     <div v-if="activeTooltip" class="fixed inset-0 z-[40]" @click="close" />
 

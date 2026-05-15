@@ -15,12 +15,12 @@
     </div>
 
     <!-- Nav items -->
-    <div class="flex justify-around py-2">
+    <div class="flex justify-around py-1">
       <NuxtLink
         v-for="item in navItems"
         :key="item.to"
         :to="item.to"
-        class="flex flex-col items-center gap-0.5 px-5 py-1.5 text-[0.72rem] font-bold text-gray-600 uppercase tracking-wide"
+        class="flex flex-col items-center gap-0.5 py-0.5 text-[0.60rem] font-bold text-gray-600 uppercase tracking-wide"
         :class="{ '!text-primary': isActive(item) }"
         @click="closeTooltip"
       >
@@ -34,15 +34,22 @@
 <script setup lang="ts">
 const route = useRoute()
 const { enrollments, activeExamTypeId, isLoggedIn, switchExam, switchingExam } = useUserSession()
+const { hasPermission } = useRBAC()
 
 const activeTooltip = useState('pbMobileTooltip', () => null)
 
-const navItems = computed(() => [
-  { emoji: '📚', label: 'ÖĞREN', to: '/', exact: true },
-  { emoji: '🏆', label: 'LİDERLİK', to: '/leaderboard', exact: false },
-  { emoji: '🌰', label: 'MARKET', to: '/store', exact: false },
-  { emoji: '👤', label: 'PROFİL', to: isLoggedIn.value ? '/profile' : '/auth/register', exact: false },
-])
+const navItems = computed(() => {
+  const items: Array<{ emoji: string; label: string; to: string; exact: boolean }> = [
+    { emoji: '📚', label: 'ÖĞREN', to: '/', exact: true },
+    { emoji: '🏆', label: 'LİDERLİK', to: '/leaderboard', exact: false },
+    { emoji: '🌰', label: 'MARKET', to: '/store', exact: false },
+    { emoji: '👤', label: 'PROFİL', to: isLoggedIn.value ? '/profile' : '/auth/register', exact: false },
+  ]
+  if (hasPermission('view_admin_panel')) {
+    items.push({ emoji: '⚙️', label: 'PANEL', to: '/admin', exact: false })
+  }
+  return items
+})
 
 function isActive(item: { to: string; exact?: boolean }) {
   return item.exact ? route.path === item.to : route.path.startsWith(item.to)

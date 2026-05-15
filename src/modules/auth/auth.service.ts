@@ -23,6 +23,9 @@ export const register = async (input: RegisterInput) => {
 
   const passwordHash = await bcrypt.hash(input.password, BCRYPT_ROUNDS);
 
+  const studentRole = await db("roles").where({ name: "student" }).first();
+  if (!studentRole) throw new AppError(500, "Default role not found. Run RBAC seed first.");
+
   let examTypeId = input.exam_type_id;
   if (!examTypeId) {
     const defaultType = await db("exam_types").where({ slug: "lisans" }).first();
@@ -34,6 +37,7 @@ export const register = async (input: RegisterInput) => {
       email: input.email,
       username: input.username,
       password_hash: passwordHash,
+      role_id: studentRole.id,
       acorn_balance: input.acorn_balance ?? 500,
       energy: input.energy ?? 25,
       ...(examTypeId && { active_exam_type_id: examTypeId }),
@@ -117,8 +121,25 @@ export const login = async (input: LoginInput) => {
   const valid = await bcrypt.compare(input.password, user.password_hash as string);
   if (!valid) throw new AppError(401, "Invalid credentials");
 
+  const roleData = await db("roles as r")
+    .leftJoin("role_permissions as rp", "r.id", "rp.role_id")
+    .leftJoin("permissions as p", "rp.permission_id", "p.id")
+    .where("r.id", user.role_id)
+    .select(
+      "r.name as role",
+      db.raw("COALESCE(ARRAY_AGG(p.name) FILTER (WHERE p.name IS NOT NULL), ARRAY[]::text[]) as permissions")
+    )
+    .groupBy("r.id", "r.name")
+    .first();
+
   return {
-    user: { id: user.id, email: user.email, username: user.username },
+    user: {
+      id: user.id,
+      email: user.email,
+      username: user.username,
+      role: (roleData?.role as string) ?? null,
+      permissions: (roleData?.permissions as string[]) ?? [],
+    },
     token: signToken(user.id as string, user.username as string),
   };
 };

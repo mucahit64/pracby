@@ -100,9 +100,13 @@ export type UpdateReportInput = z.infer<typeof UpdateReportSchema>;
 // ── Users ──────────────────────────────────────────────
 
 export const UpdateUserAdminSchema = z.object({
-  role: z.enum(["user", "admin"]).optional(),
   energy: z.number().int().min(0).max(25).optional(),
   acorn_balance: z.number().int().min(0).optional(),
 });
 
+export const UpdateUserRoleSchema = z.object({
+  role_id: z.string().uuid(),
+});
+
 export type UpdateUserAdminInput = z.infer<typeof UpdateUserAdminSchema>;
+export type UpdateUserRoleInput = z.infer<typeof UpdateUserRoleSchema>;

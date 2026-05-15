@@ -10,6 +10,8 @@ import db from "./db/knex";
 
 const app = express();
 
+app.set("trust proxy", 'loopback');
+
 // ── Security middleware ──────────────────────────────────────
 app.use(helmet());
 

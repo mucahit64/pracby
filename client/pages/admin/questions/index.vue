@@ -8,27 +8,42 @@
     </div>
 
     <!-- Filters -->
-    <div class="bg-gray-800 rounded-xl p-4 border border-gray-700 mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-      <select v-model="filters.status" @change="loadQuestions(1)" class="admin-select">
-        <option value="">Tüm Durumlar</option>
-        <option value="approved">Onaylı</option>
-        <option value="pending">Beklemede</option>
-        <option value="draft">Taslak</option>
-      </select>
-      <select v-model="filters.question_type" @change="loadQuestions(1)" class="admin-select">
-        <option value="">Tüm Tipler</option>
-        <option value="multiple_choice">Çoktan Seçmeli</option>
-        <option value="true_false">Doğru/Yanlış</option>
-        <option value="fill_blank">Boşluk Doldurma</option>
-        <option value="matching">Eşleştirme</option>
-        <option value="ordering">Sıralama</option>
-      </select>
-      <select v-model="filters.topic_id" @change="loadQuestions(1)" class="admin-select">
-        <option value="">Tüm Konular</option>
-        <option v-for="t in topics" :key="t.id" :value="t.id">{{ t.name }}</option>
-      </select>
-      <div class="text-sm text-gray-400 flex items-center">
-        Toplam: {{ total }} soru
+    <div class="bg-gray-800 rounded-xl p-4 border border-gray-700 mb-4 space-y-3">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <!-- Sınav -->
+        <select v-model="filters.exam_type_id" @change="onFilterExamChange" class="admin-select">
+          <option value="">Tüm Sınavlar</option>
+          <option v-for="e in examTypes" :key="e.id" :value="e.id">{{ e.name }}</option>
+        </select>
+        <!-- Ders -->
+        <select v-model="filters.course_id" @change="onFilterCourseChange" :disabled="!filterCourses.length" class="admin-select">
+          <option value="">Tüm Dersler</option>
+          <option v-for="c in filterCourses" :key="c.id" :value="c.id">{{ c.name }}</option>
+        </select>
+        <!-- Konu -->
+        <select v-model="filters.topic_id" @change="loadQuestions(1)" :disabled="!filterTopics.length" class="admin-select">
+          <option value="">Tüm Konular</option>
+          <option v-for="t in filterTopics" :key="t.id" :value="t.id">{{ t.name }}</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <select v-model="filters.status" @change="loadQuestions(1)" class="admin-select">
+          <option value="">Tüm Durumlar</option>
+          <option value="approved">Onaylı</option>
+          <option value="pending">Beklemede</option>
+          <option value="draft">Taslak</option>
+        </select>
+        <select v-model="filters.question_type" @change="loadQuestions(1)" class="admin-select">
+          <option value="">Tüm Tipler</option>
+          <option value="multiple_choice">Çoktan Seçmeli</option>
+          <option value="true_false">Doğru/Yanlış</option>
+          <option value="fill_blank">Boşluk Doldurma</option>
+          <option value="matching">Eşleştirme</option>
+          <option value="ordering">Sıralama</option>
+        </select>
+        <div class="text-sm text-gray-400 flex items-center">
+          Toplam: {{ total }} soru
+        </div>
       </div>
     </div>
 
@@ -105,13 +120,38 @@ const questions = ref<any[]>([])
 const total = ref(0)
 const page = ref(1)
 const limit = 20
-const topics = ref<{ id: string; name: string }[]>([])
+
+const examTypes = ref<{ id: string; name: string; slug: string }[]>([])
+const filterCourses = ref<{ id: string; name: string }[]>([])
+const filterTopics = ref<{ id: string; name: string }[]>([])
 
 const filters = reactive({
+  exam_type_id: '',
+  course_id: '',
   status: '',
   question_type: '',
   topic_id: '',
 })
+
+async function onFilterExamChange() {
+  filters.course_id = ''
+  filters.topic_id = ''
+  filterCourses.value = []
+  filterTopics.value = []
+  if (filters.exam_type_id) {
+    filterCourses.value = await api<any[]>(`/api/admin/courses?exam_type_id=${filters.exam_type_id}`).catch(() => [])
+  }
+  loadQuestions(1)
+}
+
+async function onFilterCourseChange() {
+  filters.topic_id = ''
+  filterTopics.value = []
+  if (filters.course_id) {
+    filterTopics.value = await api<any[]>(`/api/admin/topics?course_id=${filters.course_id}`).catch(() => [])
+  }
+  loadQuestions(1)
+}
 
 const totalPages = computed(() => Math.ceil(total.value / limit))
 const paginationRange = computed(() => {
@@ -164,6 +204,8 @@ async function loadQuestions(p: number = 1) {
     const params = new URLSearchParams({ page: String(p), limit: String(limit) })
     if (filters.status) params.set('status', filters.status)
     if (filters.question_type) params.set('question_type', filters.question_type)
+    if (filters.exam_type_id) params.set('exam_type_id', filters.exam_type_id)
+    if (filters.course_id) params.set('course_id', filters.course_id)
     if (filters.topic_id) params.set('topic_id', filters.topic_id)
 
     const res = await api<{ questions: any[]; total: number }>(`/api/admin/questions?${params}`)
@@ -177,11 +219,11 @@ async function loadQuestions(p: number = 1) {
 }
 
 onMounted(async () => {
-  const [, topicsRes] = await Promise.all([
+  const [, examTypesRes] = await Promise.all([
     loadQuestions(),
-    api<{ id: string; name: string }[]>('/api/admin/topics').catch(() => []),
+    api<{ id: string; name: string; slug: string }[]>('/api/admin/exam-types').catch(() => []),
   ])
-  topics.value = topicsRes as any
+  examTypes.value = examTypesRes as any
 })
 </script>
 

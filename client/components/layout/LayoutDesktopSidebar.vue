@@ -19,6 +19,16 @@
       </NuxtLink>
     </nav>
 
+    <!-- Admin panel link for users with view_admin_panel permission -->
+    <NuxtLink
+      v-if="hasPermission('view_admin_panel')"
+      to="/admin"
+      class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-bold text-gray-600 uppercase tracking-wide border-2 border-transparent transition-all duration-150 hover:bg-primary/10 hover:text-primary"
+    >
+      <span class="text-xl w-7 text-center">⚙️</span>
+      <span class="text-sm tracking-widest">PANEL</span>
+    </NuxtLink>
+
     <!-- Exam switcher (only when multiple enrollments) -->
     <div v-if="enrollments.length > 1" class="border-t-2 border-gray-200 pt-4 flex flex-col gap-1.5">
       <div class="text-[0.7rem] font-bold text-gray-400 uppercase tracking-widest px-2 pb-1">Sınav</div>
@@ -39,6 +49,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const { enrollments, activeExamTypeId, isLoggedIn, switchExam } = useUserSession()
+const { hasPermission } = useRBAC()
 
 const navItems = computed(() => [
   { emoji: '📚', label: 'ÖĞREN', to: '/', exact: true },

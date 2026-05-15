@@ -25,6 +25,8 @@ export function useUserSession() {
   const switchingExam = useState('pbSwitchingExam', () => false)
   const streakHistory = useState<StreakDay[]>('pbStreakHistory', () => [])
   const isLoggedIn = useState('pbIsLoggedIn', () => false)
+  const userRole = useState<string>('pbUserRole', () => '')
+  const userPermissions = useState<string[]>('pbUserPermissions', () => [])
 
   function formatCountdown(diff: number) {
     const mins = Math.floor(diff / 60000)
@@ -80,6 +82,8 @@ export function useUserSession() {
           energy?: number
           next_energy_at?: string | null
           active_exam_type_id?: string
+          role?: string
+          permissions?: string[]
         }>('/api/users/me', { headers: { Authorization: `Bearer ${token}` } }),
         $fetch<{ streak?: number }>('/api/users/me/stats', {
           headers: { Authorization: `Bearer ${token}` },
@@ -104,6 +108,8 @@ export function useUserSession() {
       streakHistory.value = streakHist
       unlimitedEnergy.value = effects.some(e => e.item_type === 'unlimited_energy')
       isLoggedIn.value = true
+      userRole.value = user.role ?? ''
+      userPermissions.value = user.permissions ?? []
 
       startEnergyCountdown(async () => {
         const fresh = await $fetch<{ energy?: number; next_energy_at?: string | null }>('/api/users/me', {
@@ -150,6 +156,8 @@ export function useUserSession() {
     activeExamTypeId,
     streakHistory,
     isLoggedIn,
+    userRole,
+    userPermissions,
     init,
     switchExam,
     switchingExam,
