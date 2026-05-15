@@ -98,6 +98,26 @@ const ALL_NAV_ITEMS = [
     icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
   },
   {
+    to: '/admin/topics',
+    label: 'Konular',
+    permission: null,
+    icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>',
+  },
+  {
+    to: '/admin/structure',
+    label: 'Yapı Yönetimi',
+    permission: null,
+    adminOnly: true,
+    icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>',
+  },
+  {
+    to: '/admin/approvals',
+    label: 'Onaylar',
+    permission: null,
+    adminOnly: true,
+    icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
+  },
+  {
     to: '/admin/reports',
     label: 'Raporlar',
     permission: null,
@@ -112,7 +132,11 @@ const ALL_NAV_ITEMS = [
 ]
 
 const navItems = computed(() =>
-  ALL_NAV_ITEMS.filter(item => !item.permission || userPermissions.value.includes(item.permission))
+  ALL_NAV_ITEMS.filter(item => {
+    if (item.permission && !userPermissions.value.includes(item.permission)) return false
+    if ((item as any).adminOnly && userRole.value !== 'admin') return false
+    return true
+  })
 )
 
 function isActive(to: string) {
@@ -125,6 +149,10 @@ function onResize() {
 }
 
 async function logout() {
+  const { reset: resetSession } = useUserSession()
+  const { reset: resetExamContent } = useExamContent()
+  resetSession()
+  resetExamContent()
   localStorage.removeItem('pb_token')
   await navigateTo('/admin/login')
 }

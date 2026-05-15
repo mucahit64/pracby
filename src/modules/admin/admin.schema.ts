@@ -15,6 +15,7 @@ export const CreateQuestionSchema = z.object({
   question_type: z.enum(["multiple_choice", "true_false", "fill_blank", "matching", "ordering", "flashcard", "swipe"]),
   difficulty: z.number().int().min(1).max(3).default(1),
   point_value: z.number().int().min(1).default(1),
+  sort_order: z.number().int().min(0).optional(),
   explanation: z.string().optional(),
   hint: z.string().optional(),
   type_data: z.record(z.string(), z.unknown()).optional(),
@@ -29,7 +30,7 @@ export const UpdateQuestionSchema = z.object({
   explanation: z.string().optional(),
   hint: z.string().optional(),
   type_data: z.record(z.string(), z.unknown()).optional(),
-  status: z.enum(["draft", "approved", "archived"]).optional(),
+  status: z.enum(["draft", "pending", "approved", "archived"]).optional(),
 });
 
 export const BulkCreateQuestionsSchema = z.object({
@@ -57,6 +58,7 @@ export const UpdateTopicSchema = z.object({
   total_lessons: z.number().int().optional(),
   max_crown_level: z.number().int().optional(),
   unlock_after: z.string().uuid().nullable().optional(),
+  status: z.enum(["pending", "approved"]).optional(),
 });
 
 // ── Steps ──────────────────────────────────────────────
@@ -88,6 +90,51 @@ export type UpdateTopicInput = z.infer<typeof UpdateTopicSchema>;
 export type CreateStepInput = z.infer<typeof CreateStepSchema>;
 export type CreateTestInput = z.infer<typeof CreateTestSchema>;
 
+// ── Courses ────────────────────────────────────────────
+
+export const CreateCourseSchema = z.object({
+  name: z.string().min(1),
+  description: z.string().optional(),
+  icon_url: z.string().optional(),
+  color: z.string().optional(),
+  sort_order: z.number().int().default(0),
+  exam_type_id: z.string().uuid(),
+  module_id: z.string().uuid().optional(),
+});
+
+export const UpdateCourseSchema = z.object({
+  name: z.string().min(1).optional(),
+  description: z.string().optional(),
+  icon_url: z.string().optional(),
+  color: z.string().optional(),
+  sort_order: z.number().int().optional(),
+  module_id: z.string().uuid().nullable().optional(),
+});
+
+export type CreateCourseInput = z.infer<typeof CreateCourseSchema>;
+export type UpdateCourseInput = z.infer<typeof UpdateCourseSchema>;
+
+// ── Modules ────────────────────────────────────────────
+
+export const CreateModuleSchema = z.object({
+  exam_type_id: z.string().uuid(),
+  name: z.string().min(1),
+  description: z.string().optional(),
+  icon_url: z.string().optional(),
+  sort_order: z.number().int().default(0),
+});
+
+export const UpdateModuleSchema = z.object({
+  name: z.string().min(1).optional(),
+  description: z.string().optional(),
+  icon_url: z.string().optional(),
+  sort_order: z.number().int().optional(),
+  is_active: z.boolean().optional(),
+});
+
+export type CreateModuleInput = z.infer<typeof CreateModuleSchema>;
+export type UpdateModuleInput = z.infer<typeof UpdateModuleSchema>;
+
 // ── Reports ────────────────────────────────────────────
 
 export const UpdateReportSchema = z.object({
@@ -108,5 +155,13 @@ export const UpdateUserRoleSchema = z.object({
   role_id: z.string().uuid(),
 });
 
+export const CreateUserAdminSchema = z.object({
+  email: z.string().email("Geçerli bir email girin"),
+  username: z.string().min(3, "Kullanıcı adı en az 3 karakter olmalı").max(30),
+  password: z.string().min(6, "Şifre en az 6 karakter olmalı"),
+  role_id: z.string().uuid("Geçerli bir rol seçin"),
+});
+
 export type UpdateUserAdminInput = z.infer<typeof UpdateUserAdminSchema>;
 export type UpdateUserRoleInput = z.infer<typeof UpdateUserRoleSchema>;
+export type CreateUserAdminInput = z.infer<typeof CreateUserAdminSchema>;

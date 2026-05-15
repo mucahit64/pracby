@@ -163,6 +163,21 @@ export function useExamContent() {
     if (newId && newId !== oldId) loadForExam(newId, true)
   })
 
+  function reset() {
+    activeExamName.value = ''
+    activeExamTypeId.value = ''
+    modules.value = []
+    selectedModuleId.value = ''
+    courses.value = []
+    selectedCourseId.value = ''
+    courseFull.value = null
+    loadingFull.value = false
+    if (process.client) {
+      localStorage.removeItem('pb_selectedModuleId')
+      localStorage.removeItem('pb_selectedCourseId')
+    }
+  }
+
   return {
     activeExamName,
     activeExamTypeId,
@@ -175,5 +190,6 @@ export function useExamContent() {
     selectModule,
     selectCourse,
     loadForExam,
+    reset,
   }
 }

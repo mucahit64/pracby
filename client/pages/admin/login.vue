@@ -71,14 +71,14 @@ async function handleLogin() {
 
     localStorage.setItem('pb_token', res.token)
 
-    // Check if user is admin
-    const profile = await $fetch<{ role?: string }>('/api/users/me', {
+    // Check if user has admin panel access (admin or teacher role)
+    const profile = await $fetch<{ permissions?: string[] }>('/api/users/me', {
       headers: { Authorization: `Bearer ${res.token}` },
     })
 
-    if (profile.role !== 'admin') {
+    if (!profile.permissions?.includes('view_admin_panel')) {
       localStorage.removeItem('pb_token')
-      error.value = 'Bu hesap admin yetkisine sahip değil.'
+      error.value = 'Bu hesap admin paneline erişim yetkisine sahip değil.'
       return
     }
 

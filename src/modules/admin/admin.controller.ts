@@ -50,6 +50,41 @@ export const listExamTypes = async (_req: Request, res: Response): Promise<void>
   res.json(result);
 };
 
+export const listExamGroups = async (_req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.listExamGroups();
+  res.json(result);
+};
+
+export const createExamGroup = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.createExamGroup(req.body);
+  res.status(201).json(result);
+};
+
+export const updateExamGroup = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.updateExamGroup(req.params.id as string, req.body);
+  res.json(result);
+};
+
+export const deleteExamGroup = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.deleteExamGroup(req.params.id as string);
+  res.json(result);
+};
+
+export const createExamType = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.createExamType(req.body);
+  res.status(201).json(result);
+};
+
+export const updateExamType = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.updateExamType(req.params.id as string, req.body);
+  res.json(result);
+};
+
+export const deleteExamType = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.deleteExamType(req.params.id as string);
+  res.json(result);
+};
+
 // ── Courses ────────────────────────────────────────────
 
 export const listCourses = async (req: Request, res: Response): Promise<void> => {
@@ -65,7 +100,7 @@ export const listTopics = async (req: Request, res: Response): Promise<void> => 
 };
 
 export const createTopic = async (req: Request, res: Response): Promise<void> => {
-  const result = await AdminService.createTopic(req.body);
+  const result = await AdminService.createTopic(req.body, req.user!.userId);
   res.status(201).json(result);
 };
 
@@ -139,6 +174,11 @@ export const listUsers = async (req: Request, res: Response): Promise<void> => {
   res.json(result);
 };
 
+export const createUser = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.createUser(req.body);
+  res.status(201).json(result);
+};
+
 export const getUserDetail = async (req: Request, res: Response): Promise<void> => {
   const result = await AdminService.getUserDetail(req.params.id as string);
   res.json(result);
@@ -161,5 +201,88 @@ export const listRoles = async (_req: Request, res: Response): Promise<void> => 
 
 export const updateUserRole = async (req: Request, res: Response): Promise<void> => {
   const result = await AdminService.updateUserRole(req.params.id as string, req.body.role_id as string);
+  res.json(result);
+};
+
+// ── Courses (Admin CRUD) ───────────────────────────────
+
+export const createCourse = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.createCourse(req.body);
+  res.status(201).json(result);
+};
+
+export const updateCourse = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.updateCourse(req.params.id as string, req.body);
+  res.json(result);
+};
+
+export const deleteCourse = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.deleteCourse(req.params.id as string);
+  res.json(result);
+};
+
+// ── Modules (Admin CRUD) ───────────────────────────────
+
+export const listModules = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.listModules(req.query.exam_type_id as string | undefined);
+  res.json(result);
+};
+
+export const createModule = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.createModule(req.body);
+  res.status(201).json(result);
+};
+
+export const updateModule = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.updateModule(req.params.id as string, req.body);
+  res.json(result);
+};
+
+export const deleteModule = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.deleteModule(req.params.id as string);
+  res.json(result);
+};
+
+// ── Delete operations ──────────────────────────────────
+
+export const deleteTopic = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.deleteTopic(req.params.id as string);
+  res.json(result);
+};
+
+export const deleteStep = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.deleteStep(req.params.id as string);
+  res.json(result);
+};
+
+export const deleteTest = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.deleteTest(req.params.id as string);
+  res.json(result);
+};
+
+// ── Pending Content (Approval Workflow) ────────────────
+
+export const getPendingContent = async (_req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.getPendingContent();
+  res.json(result);
+};
+
+export const approveQuestion = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.approveQuestion(req.params.id as string);
+  res.json(result);
+};
+
+export const rejectQuestion = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.rejectQuestion(req.params.id as string);
+  res.json(result);
+};
+
+export const approveTopic = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.approveTopic(req.params.id as string);
+  res.json(result);
+};
+
+export const rejectTopic = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.rejectTopic(req.params.id as string);
   res.json(result);
 };

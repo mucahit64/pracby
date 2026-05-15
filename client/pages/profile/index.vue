@@ -351,8 +351,12 @@ watch(globalActiveExamTypeId, (v) => {
 })
 
 const signOut = () => {
-  localStorage.removeItem('pb_token');
-  router.replace('/auth/login');
+  const { reset: resetSession } = useUserSession()
+  const { reset: resetExamContent } = useExamContent()
+  resetSession()
+  resetExamContent()
+  localStorage.removeItem('pb_token')
+  router.replace('/auth/login')
 };
 
 const profile = ref({

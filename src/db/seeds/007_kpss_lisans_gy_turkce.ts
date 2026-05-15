@@ -20,11 +20,12 @@ export async function seed(knex: Knex): Promise<void> {
     return;
   }
 
-  // KPSS Lisans Genel Yetenek modüllerindeki Türkçe derslerini bul
+  // KPSS Lisans Genel Yetenek modülündeki Türkçe dersini bul
   const gyModules = await knex("modules")
     .join("exam_types", "modules.exam_type_id", "exam_types.id")
     .join("exam_groups", "exam_types.exam_group_id", "exam_groups.id")
     .where("exam_groups.slug", "kpss")
+    .where("exam_types.slug", "lisans")
     .where("modules.name", "Genel Yetenek")
     .where("modules.is_active", true)
     .select("modules.id as module_id");

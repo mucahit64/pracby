@@ -58,10 +58,19 @@
           </div>
           <div>
             <label class="admin-label">Test</label>
-            <select v-model="form.test_id" class="admin-select">
+            <select v-model="form.test_id" @change="onTestChange" class="admin-select">
               <option value="">Seçin (opsiyonel)</option>
               <option v-for="t in tests" :key="t.id" :value="t.id">{{ t.name || `Test ${t.sort_order}` }}</option>
             </select>
+          </div>
+        </div>
+
+        <!-- Sort Order -->
+        <div v-if="form.test_id" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label class="admin-label">Sıra (sort_order)</label>
+            <input v-model.number="form.sort_order" type="number" min="0" class="admin-input" :placeholder="`Varsayılan: ${suggestedSortOrder}`" />
+            <p class="text-xs text-gray-500 mt-1">Bu testte {{ existingQuestionCount }} soru var. Önerilen sıra: {{ suggestedSortOrder }}</p>
           </div>
         </div>
 
@@ -202,6 +211,7 @@ const form = reactive({
   topic_id: '',
   step_id: '',
   test_id: '',
+  sort_order: null as number | null,
   question_text: '',
   question_type: 'multiple_choice',
   difficulty: 1,
@@ -216,6 +226,9 @@ const form = reactive({
     { answer_text: '', is_correct: false },
   ],
 })
+
+const existingQuestionCount = ref(0)
+const suggestedSortOrder = computed(() => existingQuestionCount.value + 1)
 
 const bulkJson = ref('')
 const bulkExample = `{
@@ -276,9 +289,25 @@ async function onTopicChange() {
 
 async function onStepChange() {
   form.test_id = ''
+  form.sort_order = null
+  existingQuestionCount.value = 0
   tests.value = []
   if (!form.step_id) return
   tests.value = await api<any[]>(`/api/admin/tests?step_id=${form.step_id}`).catch(() => [])
+}
+
+async function onTestChange() {
+  form.sort_order = null
+  existingQuestionCount.value = 0
+  if (!form.test_id) return
+  try {
+    const result = await api<{ total: number }>(`/api/admin/questions?test_id=${form.test_id}&limit=1`)
+    existingQuestionCount.value = result.total ?? 0
+    form.sort_order = existingQuestionCount.value + 1
+  } catch {
+    existingQuestionCount.value = 0
+    form.sort_order = 1
+  }
 }
 
 async function submitSingle() {
@@ -296,6 +325,7 @@ async function submitSingle() {
     }
     if (form.step_id) body.step_id = form.step_id
     if (form.test_id) body.test_id = form.test_id
+    if (form.sort_order != null) body.sort_order = form.sort_order
     if (form.explanation) body.explanation = form.explanation
     if (form.hint) body.hint = form.hint
     if (form.question_type === 'multiple_choice' || form.question_type === 'true_false') {
@@ -308,6 +338,8 @@ async function submitSingle() {
     form.topic_id = ''
     form.step_id = ''
     form.test_id = ''
+    form.sort_order = null
+    existingQuestionCount.value = 0
     topics.value = []
     steps.value = []
     tests.value = []

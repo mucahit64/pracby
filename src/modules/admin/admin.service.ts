@@ -1,3 +1,4 @@
+import bcrypt from "bcrypt";
 import db from "../../db/knex";
 import { AppError } from "../../middleware/error";
 import type {
@@ -11,6 +12,10 @@ import type {
   UpdateReportInput,
   UpdateUserAdminInput,
   UpdateUserRoleInput,
+  CreateCourseInput,
+  UpdateCourseInput,
+  CreateModuleInput,
+  UpdateModuleInput,
 } from "./admin.schema";
 
 // ── Questions ──────────────────────────────────────────
@@ -92,6 +97,14 @@ export const createQuestion = async (input: CreateQuestionInput, createdBy: stri
     if (!test) throw new AppError(404, "Test not found");
   }
 
+  // Determine status based on user role
+  const user = await db("users as u")
+    .join("roles as r", "u.role_id", "r.id")
+    .where("u.id", createdBy)
+    .select("r.name as role_name")
+    .first();
+  const status = user?.role_name === "admin" ? "approved" : "pending";
+
   return db.transaction(async (trx) => {
     const [question] = await trx("questions")
       .insert({
@@ -102,10 +115,11 @@ export const createQuestion = async (input: CreateQuestionInput, createdBy: stri
         question_type: input.question_type,
         difficulty: input.difficulty,
         point_value: input.point_value,
+        sort_order: input.sort_order ?? 0,
         explanation: input.explanation ?? null,
         hint: input.hint ?? null,
         type_data: input.type_data ? JSON.stringify(input.type_data) : null,
-        status: "approved",
+        status,
         created_by: createdBy,
       })
       .returning("*");
@@ -176,11 +190,64 @@ export const listExamTypes = async () => {
   return db("exam_types").select("id", "name", "slug").where({ is_active: true }).orderBy("sort_order");
 };
 
+export const listExamGroups = async () => {
+  const groups = await db("exam_groups").orderBy("sort_order");
+  const types = await db("exam_types").orderBy("sort_order");
+  return groups.map((g) => ({
+    ...g,
+    exam_types: types.filter((t) => t.exam_group_id === g.id),
+  }));
+};
+
+export const createExamGroup = async (input: { name: string; slug: string; description?: string; sort_order?: number }) => {
+  const [group] = await db("exam_groups").insert(input).returning("*");
+  return group;
+};
+
+export const updateExamGroup = async (id: string, input: { name?: string; description?: string; sort_order?: number; is_active?: boolean }) => {
+  const group = await db("exam_groups").where({ id }).first();
+  if (!group) throw new AppError(404, "Exam group not found");
+  const [updated] = await db("exam_groups").where({ id }).update(input).returning("*");
+  return updated;
+};
+
+export const deleteExamGroup = async (id: string) => {
+  const group = await db("exam_groups").where({ id }).first();
+  if (!group) throw new AppError(404, "Exam group not found");
+  await db("exam_groups").where({ id }).delete();
+  return { message: "Exam group deleted" };
+};
+
+export const createExamType = async (input: { exam_group_id: string; name: string; slug: string; description?: string; sort_order?: number }) => {
+  const group = await db("exam_groups").where({ id: input.exam_group_id }).first();
+  if (!group) throw new AppError(404, "Exam group not found");
+  const [examType] = await db("exam_types").insert(input).returning("*");
+  return examType;
+};
+
+export const updateExamType = async (id: string, input: { name?: string; description?: string; sort_order?: number; is_active?: boolean }) => {
+  const examType = await db("exam_types").where({ id }).first();
+  if (!examType) throw new AppError(404, "Exam type not found");
+  const [updated] = await db("exam_types").where({ id }).update(input).returning("*");
+  return updated;
+};
+
+export const deleteExamType = async (id: string) => {
+  const examType = await db("exam_types").where({ id }).first();
+  if (!examType) throw new AppError(404, "Exam type not found");
+  await db("exam_types").where({ id }).delete();
+  return { message: "Exam type deleted" };
+};
+
 // ── Courses ────────────────────────────────────────────
 
 export const listCourses = async (examTypeId?: string) => {
-  const query = db("courses").select("id", "name", "exam_type_id").orderBy("sort_order");
-  if (examTypeId) query.where("exam_type_id", examTypeId);
+  const query = db("courses as c")
+    .leftJoin("exam_types as et", "c.exam_type_id", "et.id")
+    .leftJoin("modules as m", "c.module_id", "m.id")
+    .select("c.*", "et.name as exam_type_name", "m.name as module_name")
+    .orderBy("c.sort_order");
+  if (examTypeId) query.where("c.exam_type_id", examTypeId);
   return query;
 };
 
@@ -196,11 +263,24 @@ export const listTopics = async (courseId?: string) => {
   return query;
 };
 
-export const createTopic = async (input: CreateTopicInput) => {
+export const createTopic = async (input: CreateTopicInput, createdBy?: string) => {
   const course = await db("courses").where({ id: input.course_id }).first();
   if (!course) throw new AppError(404, "Course not found");
 
-  const [topic] = await db("topics").insert(input).returning("*");
+  // Determine status based on user role
+  let status = "approved";
+  if (createdBy) {
+    const user = await db("users as u")
+      .join("roles as r", "u.role_id", "r.id")
+      .where("u.id", createdBy)
+      .select("r.name as role_name")
+      .first();
+    if (user?.role_name !== "admin") status = "pending";
+  }
+
+  const [topic] = await db("topics")
+    .insert({ ...input, status, created_by: createdBy ?? null })
+    .returning("*");
   return topic;
 };
 
@@ -374,6 +454,37 @@ export const listUsers = async (filters: {
   return { users, total, page, limit };
 };
 
+export const createUser = async (input: {
+  email: string;
+  username: string;
+  password: string;
+  role_id: string;
+}) => {
+  const emailExists = await db("users").where({ email: input.email }).first();
+  if (emailExists) throw new AppError(409, "Bu email zaten kullanımda");
+
+  const usernameExists = await db("users").where({ username: input.username }).first();
+  if (usernameExists) throw new AppError(409, "Bu kullanıcı adı zaten alınmış");
+
+  const role = await db("roles").where({ id: input.role_id }).first();
+  if (!role) throw new AppError(404, "Rol bulunamadı");
+
+  const passwordHash = await bcrypt.hash(input.password, 12);
+
+  const [user] = await db("users")
+    .insert({
+      email: input.email,
+      username: input.username,
+      password_hash: passwordHash,
+      role_id: input.role_id,
+    })
+    .returning(["id", "email", "username", "role_id", "created_at"]);
+
+  await db("user_stats").insert({ user_id: user.id });
+
+  return { ...user, role_name: role.name };
+};
+
 export const getUserDetail = async (id: string) => {
   const user = await db("users as u")
     .join("roles as r", "u.role_id", "r.id")
@@ -453,4 +564,183 @@ export const updateUserRole = async (userId: string, roleId: string) => {
     .returning(["id", "email", "username", "role_id"]);
 
   return { ...updated, role_name: role.name as string };
+};
+
+// ── Courses (Admin CRUD) ───────────────────────────────
+
+export const createCourse = async (input: CreateCourseInput) => {
+  const examType = await db("exam_types").where({ id: input.exam_type_id }).first();
+  if (!examType) throw new AppError(404, "Exam type not found");
+
+  if (input.module_id) {
+    const mod = await db("modules").where({ id: input.module_id }).first();
+    if (!mod) throw new AppError(404, "Module not found");
+  }
+
+  const [course] = await db("courses").insert(input).returning("*");
+  return course;
+};
+
+export const updateCourse = async (id: string, input: UpdateCourseInput) => {
+  const course = await db("courses").where({ id }).first();
+  if (!course) throw new AppError(404, "Course not found");
+
+  const [updated] = await db("courses").where({ id }).update(input).returning("*");
+  return updated;
+};
+
+export const deleteCourse = async (id: string) => {
+  const course = await db("courses").where({ id }).first();
+  if (!course) throw new AppError(404, "Course not found");
+
+  await db("courses").where({ id }).delete();
+  return { message: "Course deleted" };
+};
+
+// ── Modules (Admin CRUD) ───────────────────────────────
+
+export const listModules = async (examTypeId?: string) => {
+  const query = db("modules as m")
+    .leftJoin("exam_types as et", "m.exam_type_id", "et.id")
+    .select("m.*", "et.name as exam_type_name")
+    .orderBy("m.sort_order");
+  if (examTypeId) query.where("m.exam_type_id", examTypeId);
+  return query;
+};
+
+export const createModule = async (input: CreateModuleInput) => {
+  const examType = await db("exam_types").where({ id: input.exam_type_id }).first();
+  if (!examType) throw new AppError(404, "Exam type not found");
+
+  const [mod] = await db("modules").insert(input).returning("*");
+  return mod;
+};
+
+export const updateModule = async (id: string, input: UpdateModuleInput) => {
+  const mod = await db("modules").where({ id }).first();
+  if (!mod) throw new AppError(404, "Module not found");
+
+  const [updated] = await db("modules").where({ id }).update(input).returning("*");
+  return updated;
+};
+
+export const deleteModule = async (id: string) => {
+  const mod = await db("modules").where({ id }).first();
+  if (!mod) throw new AppError(404, "Module not found");
+
+  await db("modules").where({ id }).delete();
+  return { message: "Module deleted" };
+};
+
+// ── Delete operations for Topics, Steps, Tests ─────────
+
+export const deleteTopic = async (id: string) => {
+  const topic = await db("topics").where({ id }).first();
+  if (!topic) throw new AppError(404, "Topic not found");
+
+  await db("topics").where({ id }).delete();
+  return { message: "Topic deleted" };
+};
+
+export const deleteStep = async (id: string) => {
+  const step = await db("steps").where({ id }).first();
+  if (!step) throw new AppError(404, "Step not found");
+
+  await db("steps").where({ id }).delete();
+  return { message: "Step deleted" };
+};
+
+export const deleteTest = async (id: string) => {
+  const test = await db("tests").where({ id }).first();
+  if (!test) throw new AppError(404, "Test not found");
+
+  await db("tests").where({ id }).delete();
+  return { message: "Test deleted" };
+};
+
+// ── Pending Content (Approval Workflow) ────────────────
+
+export const getPendingContent = async () => {
+  const pendingQuestions = await db("questions as q")
+    .leftJoin("users as u", "q.created_by", "u.id")
+    .leftJoin("topics as t", "q.topic_id", "t.id")
+    .leftJoin("courses as c", "t.course_id", "c.id")
+    .where("q.status", "pending")
+    .select(
+      "q.id",
+      "q.question_text",
+      "q.question_type",
+      "q.difficulty",
+      "q.created_at",
+      "u.username as created_by_username",
+      "t.name as topic_name",
+      "c.name as course_name",
+    )
+    .orderBy("q.created_at", "desc");
+
+  const pendingTopics = await db("topics as t")
+    .leftJoin("users as u", "t.created_by", "u.id")
+    .leftJoin("courses as c", "t.course_id", "c.id")
+    .where("t.status", "pending")
+    .select(
+      "t.id",
+      "t.name",
+      "t.description",
+      "t.sort_order",
+      "t.created_by",
+      "u.username as created_by_username",
+      "c.name as course_name",
+    )
+    .orderBy("t.sort_order");
+
+  return {
+    questions: pendingQuestions,
+    topics: pendingTopics,
+    counts: {
+      questions: pendingQuestions.length,
+      topics: pendingTopics.length,
+      total: pendingQuestions.length + pendingTopics.length,
+    },
+  };
+};
+
+export const approveQuestion = async (id: string) => {
+  const question = await db("questions").where({ id }).first();
+  if (!question) throw new AppError(404, "Question not found");
+
+  const [updated] = await db("questions")
+    .where({ id })
+    .update({ status: "approved" })
+    .returning("*");
+  return updated;
+};
+
+export const rejectQuestion = async (id: string) => {
+  const question = await db("questions").where({ id }).first();
+  if (!question) throw new AppError(404, "Question not found");
+
+  const [updated] = await db("questions")
+    .where({ id })
+    .update({ status: "archived" })
+    .returning("*");
+  return updated;
+};
+
+export const approveTopic = async (id: string) => {
+  const topic = await db("topics").where({ id }).first();
+  if (!topic) throw new AppError(404, "Topic not found");
+
+  const [updated] = await db("topics")
+    .where({ id })
+    .update({ status: "approved" })
+    .returning("*");
+  return updated;
+};
+
+export const rejectTopic = async (id: string) => {
+  const topic = await db("topics").where({ id }).first();
+  if (!topic) throw new AppError(404, "Topic not found");
+
+  await db("topics").where({ id }).delete();
+  return { message: "Topic rejected and deleted" };
 };

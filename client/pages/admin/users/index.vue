@@ -1,6 +1,11 @@
 <template>
   <div>
-    <h1 class="text-2xl font-bold text-white mb-6">Kullanıcılar</h1>
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-bold text-white">Kullanıcılar</h1>
+      <button @click="openCreateModal" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-lg transition-colors">
+        + Yeni Kullanıcı
+      </button>
+    </div>
 
     <!-- Search & Filters -->
     <div class="bg-gray-800 rounded-xl p-4 border border-gray-700 mb-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -124,6 +129,59 @@
       </div>
     </Teleport>
 
+    <!-- Create User Modal -->
+    <Teleport to="body">
+      <div
+        v-if="createModal.open"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+        @click.self="createModal.open = false"
+      >
+        <div class="bg-gray-800 border border-gray-700 rounded-2xl p-6 w-full max-w-sm shadow-xl">
+          <h2 class="text-lg font-bold text-white mb-5">Yeni Kullanıcı Oluştur</h2>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs text-gray-400 mb-1.5 font-medium uppercase tracking-wide">Email</label>
+              <input v-model="createModal.email" type="email" class="admin-input" placeholder="ornek@mail.com" />
+            </div>
+            <div>
+              <label class="block text-xs text-gray-400 mb-1.5 font-medium uppercase tracking-wide">Kullanıcı Adı</label>
+              <input v-model="createModal.username" type="text" class="admin-input" placeholder="kullanici_adi" />
+            </div>
+            <div>
+              <label class="block text-xs text-gray-400 mb-1.5 font-medium uppercase tracking-wide">Şifre</label>
+              <input v-model="createModal.password" type="password" class="admin-input" placeholder="En az 6 karakter" />
+            </div>
+            <div>
+              <label class="block text-xs text-gray-400 mb-1.5 font-medium uppercase tracking-wide">Rol</label>
+              <select v-model="createModal.roleId" class="admin-input">
+                <option value="">Rol seçin...</option>
+                <option v-for="r in roles" :key="r.id" :value="r.id">{{ r.name }}</option>
+              </select>
+            </div>
+          </div>
+
+          <p v-if="createModal.error" class="mt-3 text-red-400 text-sm">{{ createModal.error }}</p>
+
+          <div class="flex gap-3 mt-6">
+            <button
+              @click="saveCreateUser"
+              :disabled="createModal.saving"
+              class="flex-1 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium transition-colors disabled:opacity-50"
+            >
+              {{ createModal.saving ? 'Oluşturuluyor...' : 'Oluştur' }}
+            </button>
+            <button
+              @click="createModal.open = false"
+              class="flex-1 py-2 rounded-xl bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium transition-colors"
+            >
+              İptal
+            </button>
+          </div>
+        </div>
+      </div>
+    </Teleport>
+
     <!-- Toast -->
     <Teleport to="body">
       <Transition name="toast">
@@ -184,6 +242,16 @@ const modal = reactive({
   saving: false,
 })
 
+const createModal = reactive({
+  open: false,
+  email: '',
+  username: '',
+  password: '',
+  roleId: '',
+  saving: false,
+  error: '',
+})
+
 const toast = reactive({
   visible: false,
   message: '',
@@ -228,8 +296,45 @@ function debouncedSearch() {
   searchTimeout = setTimeout(() => loadUsers(1), 300)
 }
 
-function openRoleModal(u: UserRow) {
-  modal.userId = u.id
+function openCreateModal() {
+  createModal.email = ''
+  createModal.username = ''
+  createModal.password = ''
+  createModal.roleId = ''
+  createModal.error = ''
+  createModal.saving = false
+  createModal.open = true
+}
+
+async function saveCreateUser() {
+  createModal.error = ''
+  if (!createModal.email || !createModal.username || !createModal.password || !createModal.roleId) {
+    createModal.error = 'Tüm alanları doldurun.'
+    return
+  }
+  createModal.saving = true
+  try {
+    await api('/api/admin/users', {
+      method: 'POST',
+      body: {
+        email: createModal.email,
+        username: createModal.username,
+        password: createModal.password,
+        role_id: createModal.roleId,
+      },
+    })
+    createModal.open = false
+    showToast('Kullanıcı başarıyla oluşturuldu.')
+    await loadUsers(1)
+  } catch (e) {
+    const err = e as { data?: { error?: string } }
+    createModal.error = err?.data?.error ?? 'Bir hata oluştu.'
+  } finally {
+    createModal.saving = false
+  }
+}
+
+function openRoleModal(u: UserRow) {  modal.userId = u.id
   modal.username = u.username
   modal.selectedRoleId = u.role_id
   modal.saving = false

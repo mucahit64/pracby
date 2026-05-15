@@ -18,11 +18,12 @@ export async function seed(knex: Knex): Promise<void> {
     return;
   }
 
-  // Find all KPSS Lisans Genel Kültür modules
+  // Find KPSS Lisans Genel Kültür module only
   const gkModules = await knex("modules")
     .join("exam_types", "modules.exam_type_id", "exam_types.id")
     .join("exam_groups", "exam_types.exam_group_id", "exam_groups.id")
     .where("exam_groups.slug", "kpss")
+    .where("exam_types.slug", "lisans")
     .where("modules.name", "Genel Kültür")
     .where("modules.is_active", true)
     .select("modules.id as module_id");

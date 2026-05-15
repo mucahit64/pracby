@@ -21,12 +21,17 @@
           <option v-for="c in filterCourses" :key="c.id" :value="c.id">{{ c.name }}</option>
         </select>
         <!-- Konu -->
-        <select v-model="filters.topic_id" @change="loadQuestions(1)" :disabled="!filterTopics.length" class="admin-select">
+        <select v-model="filters.topic_id" @change="onFilterTopicChange" :disabled="!filterTopics.length" class="admin-select">
           <option value="">Tüm Konular</option>
           <option v-for="t in filterTopics" :key="t.id" :value="t.id">{{ t.name }}</option>
         </select>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+        <!-- Adım -->
+        <select v-model="filters.step_id" @change="loadQuestions(1)" :disabled="!filterSteps.length" class="admin-select">
+          <option value="">Tüm Adımlar</option>
+          <option v-for="s in filterSteps" :key="s.id" :value="s.id">{{ s.name || `Adım ${s.sort_order}` }}</option>
+        </select>
         <select v-model="filters.status" @change="loadQuestions(1)" class="admin-select">
           <option value="">Tüm Durumlar</option>
           <option value="approved">Onaylı</option>
@@ -124,6 +129,7 @@ const limit = 20
 const examTypes = ref<{ id: string; name: string; slug: string }[]>([])
 const filterCourses = ref<{ id: string; name: string }[]>([])
 const filterTopics = ref<{ id: string; name: string }[]>([])
+const filterSteps = ref<{ id: string; name: string; sort_order: number }[]>([])
 
 const filters = reactive({
   exam_type_id: '',
@@ -131,13 +137,16 @@ const filters = reactive({
   status: '',
   question_type: '',
   topic_id: '',
+  step_id: '',
 })
 
 async function onFilterExamChange() {
   filters.course_id = ''
   filters.topic_id = ''
+  filters.step_id = ''
   filterCourses.value = []
   filterTopics.value = []
+  filterSteps.value = []
   if (filters.exam_type_id) {
     filterCourses.value = await api<any[]>(`/api/admin/courses?exam_type_id=${filters.exam_type_id}`).catch(() => [])
   }
@@ -146,9 +155,20 @@ async function onFilterExamChange() {
 
 async function onFilterCourseChange() {
   filters.topic_id = ''
+  filters.step_id = ''
   filterTopics.value = []
+  filterSteps.value = []
   if (filters.course_id) {
     filterTopics.value = await api<any[]>(`/api/admin/topics?course_id=${filters.course_id}`).catch(() => [])
+  }
+  loadQuestions(1)
+}
+
+async function onFilterTopicChange() {
+  filters.step_id = ''
+  filterSteps.value = []
+  if (filters.topic_id) {
+    filterSteps.value = await api<any[]>(`/api/admin/steps?topic_id=${filters.topic_id}`).catch(() => [])
   }
   loadQuestions(1)
 }
@@ -207,6 +227,7 @@ async function loadQuestions(p: number = 1) {
     if (filters.exam_type_id) params.set('exam_type_id', filters.exam_type_id)
     if (filters.course_id) params.set('course_id', filters.course_id)
     if (filters.topic_id) params.set('topic_id', filters.topic_id)
+    if (filters.step_id) params.set('step_id', filters.step_id)
 
     const res = await api<{ questions: any[]; total: number }>(`/api/admin/questions?${params}`)
     questions.value = res.questions

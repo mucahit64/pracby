@@ -150,6 +150,23 @@ export function useUserSession() {
     }
   }
 
+  function reset() {
+    stopEnergyCountdown()
+    streakCount.value = 0
+    enrollments.value = []
+    activeExamTypeId.value = ''
+    switchingExam.value = false
+    streakHistory.value = []
+    isLoggedIn.value = false
+    userRole.value = ''
+    userPermissions.value = []
+    setAcornBalance(0)
+    energyCount.value = 25
+    energyCountdown.value = ''
+    unlimitedEnergy.value = false
+    nextEnergyAt.value = null
+  }
+
   return {
     streakCount,
     enrollments,
@@ -162,5 +179,6 @@ export function useUserSession() {
     switchExam,
     switchingExam,
     stopEnergyCountdown,
+    reset,
   }
 }

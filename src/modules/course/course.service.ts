@@ -19,14 +19,14 @@ export const getCourseById = async (id: string) => {
 
 export const getTopicsByCourse = async (courseId: string) => {
   await getCourseById(courseId);
-  return db("topics").where({ course_id: courseId }).orderBy("sort_order");
+  return db("topics").where({ course_id: courseId, status: "approved" }).orderBy("sort_order");
 };
 
 export const getCourseFull = async (courseId: string, userId?: string) => {
   const course = await getCourseById(courseId);
 
   const topics = await db("topics")
-    .where({ course_id: courseId })
+    .where({ course_id: courseId, status: "approved" })
     .orderBy("sort_order");
 
   const topicIds = topics.map((t) => t.id);
