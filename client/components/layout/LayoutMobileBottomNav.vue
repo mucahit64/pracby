@@ -15,12 +15,12 @@
     </div>
 
     <!-- Nav items -->
-    <div class="flex justify-around py-1">
+    <div class="flex justify-around py-2">
       <NuxtLink
         v-for="item in navItems"
         :key="item.to"
         :to="item.to"
-        class="flex flex-col items-center gap-0.5 py-0.5 text-[0.60rem] font-bold text-gray-600 uppercase tracking-wide"
+        class="flex flex-col items-center gap-0.5 pb-2 text-[0.60rem] font-bold text-gray-600 uppercase tracking-wide"
         :class="{ '!text-primary': isActive(item) }"
         @click="closeTooltip"
       >
