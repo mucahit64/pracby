@@ -46,6 +46,15 @@ export async function up(knex: Knex): Promise<void> {
     ]);
   }
 
+  const yks = await knex("exam_groups").where({ slug: "yks" }).first();
+  if (yks) {
+    await knex("exam_types").insert([
+      { exam_group_id: yks.id, name: "TYT", slug: "tyt", description: "Temel Yeterlilik Testi", sort_order: 1 },
+      { exam_group_id: yks.id, name: "AYT", slug: "ayt", description: "Alan Yeterlilik Testi", sort_order: 2 },
+      { exam_group_id: yks.id, name: "YDT", slug: "ydt", description: "Yabancı Dil Testi", sort_order: 3 },
+    ]);
+  }
+
   // ── 3. users ─────────────────────────────────────────────────────────────
   // Includes: active_exam_type_id (020), acorn_balance (022), role (041)
   await knex.schema.createTable("users", (table) => {
