@@ -68,7 +68,7 @@ const KPSS_GY_COURSES: CourseDef[] = [
 const KPSS_GK_COURSES: CourseDef[] = [
   { name: "TC İnkılap Tarihi ve Atatürkçülük", description: "Kurtuluş savaşı ve Türk inkılabı", icon_url: "🇹🇷", color: "#ef4444", sort_order: 1 },
   { name: "Coğrafya",                          description: "Türkiye ve dünya coğrafyası",       icon_url: "🗺️", color: "#10b981", sort_order: 2 },
-  { name: "Vatandaşlık Bilgisi",               description: "Anayasa ve hukuk temelleri",        icon_url: "⚖️", color: "#f59e0b", sort_order: 3 },
+  { name: "Vatandaşlık",                       description: "Anayasa ve hukuk temelleri",        icon_url: "⚖️", color: "#f59e0b", sort_order: 3 },
   { name: "Din Kültürü ve Ahlak Bilgisi",      description: "Dinler tarihi ve ahlak",            icon_url: "📿", color: "#a855f7", sort_order: 4 },
 ];
 
