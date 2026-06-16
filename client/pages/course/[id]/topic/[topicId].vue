@@ -27,8 +27,11 @@
           <!-- Reward step -->
           <div v-if="step.step_type === 'reward'" class="flex flex-col items-center">
             <button
-              class="w-14 h-14 rounded-full flex items-center justify-center text-2xl border-2 cursor-pointer transition-transform hover:scale-110"
-              :class="isRewardUnlocked(step, idx) ? 'bg-warning/10 border-warning' : 'bg-amber-50 border-amber-200 opacity-60'"
+              class="w-10 h-10 rounded-full flex items-center justify-center text-2xl cursor-pointer transition-all duration-150"
+              :style="{ '--node-shadow-color': isRewardUnlocked(step, idx) ? '#cc7800' : '#d97706' }"
+              :class="isRewardUnlocked(step, idx)
+                ? 'bg-warning text-white shadow-[0_6px_0_0_var(--node-shadow-color)] hover:shadow-[0_4px_0_0_var(--node-shadow-color)] hover:translate-y-[2px] active:shadow-none active:translate-y-[6px]'
+                : 'bg-amber-100 text-amber-400 opacity-60 shadow-[0_6px_0_0_var(--node-shadow-color)]'"
               @click="openRewardDialog(step, idx)"
             >
               🎁
@@ -37,17 +40,41 @@
 
           <!-- Lesson step -->
           <div v-else class="flex flex-col items-center">
-            <button
-              class="w-14 h-14 rounded-full flex items-center justify-center text-lg font-extrabold border-b-4 cursor-pointer transition-transform hover:scale-105"
-              :class="step.progress?.is_step_completed
-                ? 'bg-positive border-green-700 text-white'
-                : isStepActive(idx) ? 'bg-primary border-blue-700 text-white' : 'bg-gray-100 border-gray-300 text-gray-400 cursor-not-allowed'"
-              :disabled="!isStepActive(idx) && !step.progress?.is_step_completed"
-              @click="startStep(step)"
-            >
-              <span v-if="step.progress?.is_step_completed">✓</span>
-              <span v-else>{{ getLessonNumber(idx) }}</span>
-            </button>
+            <div class="relative flex items-center justify-center">
+              <!-- Score ring for completed steps -->
+              <svg
+                v-if="step.progress?.is_step_completed"
+                class="absolute -inset-5 rotate-[-90deg] pointer-events-none"
+                viewBox="0 0 80 80"
+              >
+                <circle
+                  cx="40" cy="40" r="33" fill="none" stroke="#e5e7eb" stroke-width="8"
+                />
+                <circle
+                  cx="40" cy="40" r="33" fill="none"
+                  :stroke="topicColor.hex"
+                  stroke-width="8"
+                  stroke-linecap="round"
+                  :stroke-dasharray="2 * Math.PI * 33"
+                  :stroke-dashoffset="2 * Math.PI * 33 * (1 - (step.progress.best_score ?? 0) / 100)"
+                />
+              </svg>
+              <button
+                class="w-10 h-10 rounded-full flex flex-col items-center justify-center text-base font-extrabold cursor-pointer transition-all duration-150"
+                :style="{ '--node-shadow-color': (isStepActive(idx) || step.progress?.is_step_completed) ? topicColor.shadowHex : '#9ca3af' }"
+                :class="(!isStepActive(idx) && !step.progress?.is_step_completed)
+                  ? 'bg-gray-100 text-gray-400 shadow-[0_6px_0_0_var(--node-shadow-color)] cursor-not-allowed'
+                  : `${topicColor.bg} text-white shadow-[0_6px_0_0_var(--node-shadow-color)] hover:shadow-[0_4px_0_0_var(--node-shadow-color)] hover:translate-y-[2px] active:shadow-none active:translate-y-[6px]`"
+                :disabled="!isStepActive(idx) && !step.progress?.is_step_completed"
+                @click="startStep(step)"
+              >
+                <template v-if="step.progress?.is_step_completed">
+                  <span class="text-sm font-black leading-none">{{ step.progress.best_score ?? 0 }}</span>
+                  <span class="text-[9px] font-bold text-white/70 leading-none mt-0.5">puan</span>
+                </template>
+                <span v-else>{{ getLessonNumber(idx) }}</span>
+              </button>
+            </div>
           </div>
         </template>
       </div>
@@ -77,6 +104,7 @@ interface StepProgress {
   tests_completed: number;
   is_step_completed: boolean;
   step_final_passed: boolean;
+  best_score?: number;
 }
 
 interface Step {
@@ -99,6 +127,8 @@ const route = useRoute();
 const { api } = useApi();
 const loading = ref(true);
 const topic = ref<Topic | null>(null);
+const topicColorIndex = ref(0);
+const topicColor = computed(() => TOPIC_COLORS[topicColorIndex.value % TOPIC_COLORS.length]);
 
 const rewardDialogOpen = ref(false);
 const rewardDialogStep = ref<Step | null>(null);
@@ -119,6 +149,8 @@ onMounted(async () => {
 
     const data = await $fetch<{ topics: Topic[] }>(`/api/courses/${courseId}/full`, { headers });
     const found = data.topics.find((t) => t.id === topicId);
+    const topicIdx = data.topics.findIndex((t) => t.id === topicId);
+    topicColorIndex.value = topicIdx >= 0 ? topicIdx : 0;
 
     if (!token && found) {
       const { overlayGuestProgress } = useGuestState();

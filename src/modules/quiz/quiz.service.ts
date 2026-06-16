@@ -396,6 +396,10 @@ export const finishSession = async (userId: string, sessionId: string, skipRewar
       .where({ user_id: userId, step_id: session.step_id })
       .first();
 
+    const newScore = answers.length > 0
+      ? Math.round((correctCount / answers.length) * 100)
+      : 0;
+
     if (existing) {
       if (!existing.is_step_completed) {
         await db("user_step_progress")
@@ -405,8 +409,13 @@ export const finishSession = async (userId: string, sessionId: string, skipRewar
             is_step_completed: true,
             step_final_passed: true,
             completed_at: db.fn.now(),
+            best_score: newScore,
           });
         stepCompleted = true;
+      } else if (newScore > ((existing.best_score as number) ?? 0)) {
+        await db("user_step_progress")
+          .where({ id: existing.id })
+          .update({ best_score: newScore });
       }
     } else {
       await db("user_step_progress").insert({
@@ -416,6 +425,7 @@ export const finishSession = async (userId: string, sessionId: string, skipRewar
         is_step_completed: true,
         step_final_passed: true,
         completed_at: db.fn.now(),
+        best_score: newScore,
       });
       stepCompleted = true;
     }
@@ -680,12 +690,20 @@ export const finishSessionWithAnswers = async (
         .where({ user_id: userId, step_id: session.step_id })
         .first();
 
+      const newScore = evaluatedAnswers.length > 0
+        ? Math.round((correctCount / evaluatedAnswers.length) * 100)
+        : 0;
+
       if (existing) {
         if (!existing.is_step_completed) {
           await trx("user_step_progress")
             .where({ id: existing.id })
-            .update({ tests_completed: 1, is_step_completed: true, step_final_passed: true, completed_at: db.fn.now() });
+            .update({ tests_completed: 1, is_step_completed: true, step_final_passed: true, completed_at: db.fn.now(), best_score: newScore });
           stepCompleted = true;
+        } else if (newScore > ((existing.best_score as number) ?? 0)) {
+          await trx("user_step_progress")
+            .where({ id: existing.id })
+            .update({ best_score: newScore });
         }
       } else {
         await trx("user_step_progress").insert({
@@ -695,6 +713,7 @@ export const finishSessionWithAnswers = async (
           is_step_completed: true,
           step_final_passed: true,
           completed_at: db.fn.now(),
+          best_score: newScore,
         });
         stepCompleted = true;
       }

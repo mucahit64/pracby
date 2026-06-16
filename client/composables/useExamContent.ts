@@ -19,6 +19,7 @@ interface StepProgress {
   tests_completed: number
   is_step_completed: boolean
   step_final_passed: boolean
+  best_score?: number
 }
 
 interface Step {

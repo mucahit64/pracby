@@ -58,12 +58,12 @@
       <div v-for="(topic, tIdx) in courseFull.topics" :key="topic.id" class="flex flex-col">
         <div class="rounded-2xl p-5 mb-6 border-b-4" :class="[TOPIC_COLORS[tIdx % TOPIC_COLORS.length].bg, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].border]">
           <div class="text-[0.72rem] font-bold text-white/70 tracking-widest uppercase mb-1">BÖLÜM {{ tIdx + 1 }}</div>
-          <div class="text-lg font-black text-white">{{ topic.name }}</div>
+          <div class="text-lg font-black text-white">{{ topic.name}}</div>
         </div>
 
         <div class="flex flex-col items-center gap-4 ">
           <div
-            v-for="(node, nIdx) in buildLessonNodes(topic)"
+            v-for="(node, nIdx) in buildLessonNodes(topic, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].bg, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].border, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].hex, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].shadowHex)"
             :key="node.id"
             class="flex items-end relative py-4"
             :class="{
@@ -74,35 +74,53 @@
           >
             <div class="flex flex-col items-center gap-2 relative">
               <div class="relative flex items-center justify-center">
+                <!-- Score ring for completed lesson nodes -->
+                <svg
+                  v-if="node.status === 'completed' && node.type === 'lesson'"
+                  class="absolute -inset-[18px] rotate-[-90deg] pointer-events-none"
+                  viewBox="0 0 102 102"
+                >
+                  <circle cx="51" cy="51" r="44" fill="none" stroke="#e5e7eb" stroke-width="8" />
+                  <circle
+                    cx="51" cy="51" r="44" fill="none"
+                    :stroke="node.colorHex ?? '#22c55e'"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    :stroke-dasharray="2 * Math.PI * 44"
+                    :stroke-dashoffset="2 * Math.PI * 44 * (1 - (node.bestScore ?? 0) / 100)"
+                  />
+                </svg>
+                
                 <button
-                  class="rounded-full flex flex-col items-center justify-center text-2xl transition-all duration-150 font-[inherit] border-2 select-none w-[80px] h-[80px] z-10"
+                  class="rounded-full flex flex-col items-center justify-center text-2xl transition-all duration-150 font-[inherit] select-none w-[60px] h-[55px]"
+                  :style="{ '--node-shadow-color': getNodeShadowColor(node) }"
                   :class="[
-                    node.status === 'completed' && node.type === 'lesson'
-                      ? 'bg-primary border-primary-dark border-b-[8px] text-white hover:translate-y-[2px] hover:border-b-[6px] active:translate-y-[8px] active:border-b-0 cursor-pointer'
+                    node.type === 'lesson' && node.status !== 'locked'
+                      ? `${node.colorBg ?? ''} text-white shadow-[0_8px_0_0_var(--node-shadow-color)] hover:shadow-[0_6px_0_0_var(--node-shadow-color)] hover:translate-y-[2px] active:shadow-none active:translate-y-[8px] cursor-pointer`
                       : '',
-                    node.status === 'active' && node.type === 'lesson'
-                      ? 'bg-primary border-primary-dark border-b-[8px] text-white hover:translate-y-[2px] hover:border-b-[6px] active:translate-y-[8px] active:border-b-0 cursor-pointer'
-                      : '',
-                    node.status === 'locked' && node.type === 'lesson'
-                      ? 'bg-gray-200 border-gray-300 border-b-[8px] text-gray-400 cursor-not-allowed'
+                    node.type === 'lesson' && node.status === 'locked'
+                      ? 'bg-gray-200 text-gray-400 shadow-[0_8px_0_0_var(--node-shadow-color)] cursor-not-allowed'
                       : '',
                     node.type === 'chest' && node.status !== 'locked'
-                      ? '!bg-warning !border-amber-700 border-b-[8px] text-white hover:translate-y-[2px] hover:border-b-[6px] active:translate-y-[8px] active:border-b-0 cursor-pointer'
+                      ? 'bg-warning text-white shadow-[0_8px_0_0_var(--node-shadow-color)] hover:shadow-[0_6px_0_0_var(--node-shadow-color)] hover:translate-y-[2px] active:shadow-none active:translate-y-[8px] cursor-pointer'
                       : '',
                     node.type === 'chest' && node.status === 'locked'
-                      ? '!bg-amber-100 !border-amber-300 border-b-[8px] opacity-60 cursor-pointer'
+                      ? 'bg-amber-100 text-amber-400 opacity-60 shadow-[0_8px_0_0_var(--node-shadow-color)] cursor-pointer'
                       : '',
                     node.type === 'boss' && node.status === 'active'
-                      ? '!bg-negative !border-red-800 border-b-[8px] text-white hover:translate-y-[2px] hover:border-b-[6px] active:translate-y-[8px] active:border-b-0 cursor-pointer'
+                      ? 'bg-negative text-white shadow-[0_8px_0_0_var(--node-shadow-color)] hover:shadow-[0_6px_0_0_var(--node-shadow-color)] hover:translate-y-[2px] active:shadow-none active:translate-y-[8px] cursor-pointer'
                       : '',
                     node.type === 'boss' && node.status === 'locked'
-                      ? '!bg-gray-200 !border-gray-300 border-b-[8px] text-gray-400 cursor-not-allowed'
+                      ? 'bg-gray-200 text-gray-400 shadow-[0_8px_0_0_var(--node-shadow-color)] cursor-not-allowed'
                       : '',
                   ]"
                   :disabled="node.status === 'locked' && node.type !== 'chest'"
                   @click="goToLesson(node)"
                 >
-                  <span v-if="node.status === 'completed' && node.type === 'lesson'" class="text-3xl font-black text-white/95">✓</span>
+                  <template v-if="node.status === 'completed' && node.type === 'lesson'">
+                    <span class="text-xl font-black text-white/95 leading-none">{{ node.bestScore ?? 0 }}</span>
+                    <span class="text-[10px] font-bold text-white/70 leading-none mt-0.5">puan</span>
+                  </template>
                   <span v-else-if="node.type === 'chest'" class="drop-shadow-sm">🎁</span>
                   <span v-else class="drop-shadow-sm">
                     {{ node.status === 'locked' ? '🔒' : node.icon }}
@@ -166,6 +184,7 @@ interface StepProgress {
   tests_completed: number;
   is_step_completed: boolean;
   step_final_passed: boolean;
+  best_score?: number;
 }
 
 interface Step {
@@ -204,20 +223,12 @@ interface LessonNode {
   stepId?: string;
   sessionType: string;
   rewardAmount?: number;
+  bestScore?: number;
+  colorBg?: string;
+  colorBorder?: string;
+  colorHex?: string;
+  colorShadow?: string;
 }
-
-const TOPIC_COLORS = [
-  { bg: 'bg-blue-500', border: 'border-blue-700' },
-  { bg: 'bg-emerald-500', border: 'border-emerald-700' },
-  { bg: 'bg-amber-500', border: 'border-amber-700' },
-  { bg: 'bg-rose-500', border: 'border-rose-700' },
-  { bg: 'bg-violet-500', border: 'border-violet-700' },
-  { bg: 'bg-cyan-500', border: 'border-cyan-700' },
-  { bg: 'bg-orange-500', border: 'border-orange-700' },
-  { bg: 'bg-fuchsia-500', border: 'border-fuchsia-700' },
-  { bg: 'bg-teal-500', border: 'border-teal-700' },
-  { bg: 'bg-red-500', border: 'border-red-700' },
-];
 
 const selectedNode = ref<LessonNode | null>(null);
 const stepDialogOpen = ref(false);
@@ -271,7 +282,7 @@ onUnmounted(() => {
   window.removeEventListener('offline', setOffline);
 });
 
-function buildLessonNodes(topic: Topic): LessonNode[] {
+function buildLessonNodes(topic: Topic, colorBg: string, colorBorder: string, colorHex: string, colorShadow: string): LessonNode[] {
   const nodes: LessonNode[] = [];
   let foundActive = false;
 
@@ -308,6 +319,11 @@ function buildLessonNodes(topic: Topic): LessonNode[] {
         topicId: topic.id,
         stepId: step.id,
         sessionType: 'lesson',
+        bestScore: step.progress?.best_score,
+        colorBg,
+        colorBorder,
+        colorHex,
+        colorShadow,
       });
     }
   }
@@ -328,6 +344,17 @@ function buildLessonNodes(topic: Topic): LessonNode[] {
   return nodes;
 }
 
+function getNodeShadowColor(node: LessonNode): string {
+  if (node.type === 'chest') {
+    return node.status === 'locked' ? '#d97706' : '#cc7800';
+  }
+  if (node.type === 'boss') {
+    return node.status === 'locked' ? '#9ca3af' : '#cc2222';
+  }
+  if (node.status === 'locked') return '#9ca3af';
+  return node.colorShadow ?? '#6d28d9';
+}
+
 function goToLesson(node: LessonNode) {
   if (node.type === 'chest') {
     if (node.status === 'completed') return;
@@ -337,7 +364,6 @@ function goToLesson(node: LessonNode) {
     return;
   }
   if (node.status === 'locked') return;
-  if (node.status === 'completed') return;
 
   const token = getToken();
   const currentEnergy = token

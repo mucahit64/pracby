@@ -78,7 +78,7 @@
               <span class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-extrabold shrink-0"
                 :class="getMcLetterClass(option.id)"
               >{{ optionLetters[i] }}</span>
-              <span class="text-sm font-bold flex-1">{{ option.answer_text }}</span>
+              <span class="text-sm font-bold flex-1" v-html="option.answer_text" />
             </button>
           </div>
         </template>
@@ -262,7 +262,7 @@
             <span class="text-2xl font-black">{{ lastAnswerCorrect ? '✓' : '✗' }}</span>
             <div class="flex-1 min-w-0">
               <div class="text-base font-black">{{ lastAnswerCorrect ? 'Harika! 🎉' : 'Yanlış! 😔' }}</div>
-              <div v-if="currentQuestion.explanation" class="text-xs font-semibold opacity-80 mt-0.5">{{ currentQuestion.explanation }}</div>
+              <div v-if="currentQuestion.explanation" class="text-xs font-semibold opacity-80 mt-0.5" v-html="currentQuestion.explanation" />
             </div>
             <button class="shrink-0 bg-white font-extrabold text-sm px-5 py-2.5 rounded-xl border-2 cursor-pointer transition-all font-[inherit]"
               :class="lastAnswerCorrect ? 'text-positive border-positive hover:bg-positive/5' : 'text-negative border-negative hover:bg-negative/5'"
