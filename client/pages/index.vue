@@ -61,7 +61,7 @@
           <div class="text-lg font-black text-white">{{ topic.name}}</div>
         </div>
 
-        <div class="flex flex-col items-center gap-4 ">
+        <div class="flex flex-col items-center gap-8">
           <div
             v-for="(node, nIdx) in buildLessonNodes(topic, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].bg, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].border, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].hex, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].shadowHex)"
             :key="node.id"
@@ -72,26 +72,26 @@
               'translate-x-[65px]': nIdx % 5 === 2,
             }"
           >
-            <div class="flex flex-col items-center gap-2 relative">
+            <div class="flex flex-col items-center relative">
              <div class="relative flex items-center justify-center">
               <svg
                 v-if="node.status === 'completed' && node.type === 'lesson'"
                 class="absolute w-[100px] h-[100px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-90deg] pointer-events-none mt-[4px]"
                 viewBox="0 0 100 100"
               >
-                <circle cx="50" cy="50" r="40" fill="none" stroke="#e5e7eb" stroke-width="8" />
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#e5e7eb" stroke-width="8" />
                 <circle
-                  cx="50" cy="50" r="40" fill="none"
+                  cx="50" cy="50" r="45" fill="none"
                   :stroke="node.colorHex ?? '#22c55e'"
                   stroke-width="8"
                   stroke-linecap="round"
-                  :stroke-dasharray="2 * Math.PI * 40"
-                  :stroke-dashoffset="2 * Math.PI * 40 * (1 - (node.bestScore ?? 0) / 100)"
+                  :stroke-dasharray="2 * Math.PI * 45"
+                  :stroke-dashoffset="2 * Math.PI * 45 * (1 - (node.bestScore ?? 0) / 100)"
                 />
               </svg>
                 
                 <button
-                  class="rounded-[50%] flex flex-col items-center justify-center text-2xl transition-all duration-150 font-[inherit] select-none w-[60px] h-[52px]"
+                  class="rounded-[50%] flex flex-col items-center justify-center text-2xl transition-all duration-150 font-[inherit] select-none w-[70px] h-[62px]"
                   :style="{ '--node-shadow-color': getNodeShadowColor(node) }"
                   :class="[
                     node.type === 'lesson' && node.status !== 'locked'
