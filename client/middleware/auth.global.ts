@@ -8,7 +8,7 @@ export default defineNuxtRouteMiddleware((to) => {
   if (to.path.startsWith("/admin")) return;
 
   // Allow guest access to main app pages and quiz
-  const guestAllowedPaths = ["/", "/quiz/", "/course/", "/leaderboard", "/store"];
+  const guestAllowedPaths = ["/", "/quiz/", "/leaderboard", "/store"];
   const isGuestAllowed = guestAllowedPaths.some((p) =>
     p === "/" ? to.path === "/" : to.path.startsWith(p),
   );
