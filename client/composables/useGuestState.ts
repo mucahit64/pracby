@@ -141,11 +141,16 @@ export function useGuestState() {
             step_final_passed: false,
           };
         } else {
-          const hasResult = results.some((r) => r.stepId === step.id);
+          const stepResults = results.filter((r) => r.stepId === step.id);
+          const hasResult = stepResults.length > 0;
+          const bestScore = hasResult
+            ? Math.max(...stepResults.map((r) => r.totalQuestions > 0 ? Math.round((r.correctCount / r.totalQuestions) * 100) : 0))
+            : 0;
           step.progress = {
             tests_completed: hasResult ? 1 : 0,
             is_step_completed: hasResult,
             step_final_passed: hasResult,
+            best_score: bestScore,
           };
         }
       }

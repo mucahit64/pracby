@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-white flex flex-col max-w-[600px] mx-auto px-4 pb-10 text-gray-800 font-sans">
+  <div class="min-h-screen flex flex-col max-w-[600px] mx-auto px-4 pb-10 text-gray-800 font-sans">
     <!-- Loading -->
     <div v-if="loading" class="flex flex-col items-center justify-center flex-1 gap-3 py-20">
       <div class="w-10 h-10 border-4 border-gray-200 border-t-primary rounded-full animate-spin" />
@@ -15,35 +15,35 @@
     <!-- Quiz in progress -->
     <template v-else-if="!finished && questions.length > 0">
       <!-- Top bar -->
-      <div class="flex items-center gap-4 py-4 pb-5 sticky top-0 bg-white z-10">
-        <button class="w-9 h-9 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center text-gray-400 font-bold cursor-pointer hover:bg-gray-200 transition-colors shrink-0" @click="handleClose">✕</button>
-        <div class="flex-1">
-          <div class="h-3 bg-gray-100 rounded-full overflow-hidden border-2 border-gray-200">
-            <div class="h-full bg-primary rounded-full transition-all duration-300" :style="{ width: `${((answeredCount + (answered && currentIndex >= questions.length - 1 ? 1 : 0)) / questions.length) * 100}%` }" />
+      <div class="sticky top-0 z-10 -mx-4 px-4 py-3 bg-white border-b border-gray-100 shadow-sm">
+        <div class="flex items-center gap-3">
+          <button class="w-9 h-9 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-500 font-bold cursor-pointer hover:bg-gray-200 transition-colors shrink-0" @click="handleClose">✕</button>
+          <div class="flex-1 min-w-0">
+            <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+              <div class="h-full bg-primary rounded-full transition-all duration-500" :style="{ width: `${((answeredCount + (answered && currentIndex >= questions.length - 1 ? 1 : 0)) / questions.length) * 100}%` }" />
+            </div>
+            <div class="mt-1 text-[10px] font-bold text-gray-400">{{ currentIndex + 1 }} / {{ questions.length }}</div>
           </div>
+          <template v-if="unlimitedEnergy">
+            <span class="text-sm font-extrabold text-positive shrink-0">♾️🔋</span>
+          </template>
+          <span v-else class="text-sm font-extrabold text-negative shrink-0 bg-red-50 border border-red-100 px-2.5 py-1 rounded-full">🔋 {{ energy }}</span>
         </div>
-        <template v-if="unlimitedEnergy">
-          <span class="text-sm font-extrabold text-positive shrink-0">♾️🔋</span>
-        </template>
-        <span v-else class="text-sm font-extrabold text-negative shrink-0">🔋 {{ energy }}</span>
       </div>
 
       <!-- Question body -->
-      <div class="flex flex-col gap-5 flex-1">
+      <div class="flex flex-col gap-5 flex-1 mt-3">
         <!-- Meta -->
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-bold text-gray-400">Soru {{ currentIndex + 1 }} / {{ questions.length }}</span>
-          <div class="flex items-center gap-3">
-            <button
-              v-if="!guestMode"
-              @click="openReportModal"
-              class="text-gray-300 hover:text-red-400 transition-colors"
-              title="Soruyu Raporla"
-            >
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
-            </button>
-            <span class="text-xs font-extrabold text-primary">⚡ +{{ xpEarned }} XP</span>
-          </div>
+        <div class="flex items-center justify-end gap-3 -mb-1">
+          <button
+            v-if="!guestMode"
+            @click="openReportModal"
+            class="text-gray-300 hover:text-red-400 transition-colors"
+            title="Soruyu Raporla"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
+          </button>
+          <span class="text-xs font-extrabold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-full">⚡ +{{ xpEarned }} XP</span>
         </div>
 
         <!-- Question text (not for swipe/fill_blank) -->
@@ -276,40 +276,36 @@
     <!-- Quiz finished -->
     <template v-else-if="finished">
       <div class="flex flex-col items-center gap-5 py-10">
-        <div :class="{ 'animate-bounce': isBossSession && stepCompleted }" class="text-[80px] leading-none">
+        <div :class="{ 'animate-bounce': isBossSession && stepCompleted }" class="text-[72px] leading-none select-none">
           {{ energyDepleted ? '🔋' : (isBossSession && stepCompleted ? '⚔️' : '🎊') }}
         </div>
 
-        <h1 class="text-2xl font-black text-gray-800 text-center">{{ energyDepleted ? 'Enerjin Bitti! 🔋' : (isBossSession && stepCompleted ? '⚔️ Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
-        <p class="text-sm font-semibold text-gray-400 text-center">{{ energyDepleted ? 'Enerjin tükendi, test sonlandırıldı.' : (isBossSession ? 'Adım finali tamamlandı!' : 'Quiz tamamlandı!') }}</p>
-
-        <!-- Stats grid -->
-        <div class="grid grid-cols-4 gap-3 w-full max-w-[420px]">
-          <div class="bg-positive/10 border-2 border-positive/30 rounded-2xl p-3 text-center">
-            <div class="text-xl font-black text-positive">{{ correctCount }}</div>
-            <div class="text-[0.65rem] font-bold text-positive/70 uppercase">Doğru</div>
-          </div>
-          <div class="bg-negative/10 border-2 border-negative/30 rounded-2xl p-3 text-center">
-            <div class="text-xl font-black text-negative">{{ questions.length - correctCount }}</div>
-            <div class="text-[0.65rem] font-bold text-negative/70 uppercase">Yanlış</div>
-          </div>
-          <div class="bg-primary/10 border-2 border-primary/30 rounded-2xl p-3 text-center">
-            <div class="text-xl font-black text-primary">+{{ xpEarned }}</div>
-            <div class="text-[0.65rem] font-bold text-primary/70 uppercase">XP</div>
-          </div>
-          <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-3 text-center">
-            <div class="text-xl font-black text-amber-700">+{{ acornEarned }}</div>
-            <div class="text-[0.65rem] font-bold text-amber-400 uppercase">Acorn</div>
-          </div>
+        <div class="text-center space-y-1">
+          <h1 class="text-2xl font-black text-gray-800">{{ energyDepleted ? 'Enerjin Bitti! 🔋' : (isBossSession && stepCompleted ? '⚔️ Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
+          <p class="text-sm font-semibold text-gray-400">{{ energyDepleted ? 'Enerjin tükendi, test sonlandırıldı.' : (isBossSession ? 'Adım finali tamamlandı!' : 'Quiz tamamlandı!') }}</p>
         </div>
 
-        <!-- Accuracy bar -->
-        <div class="flex items-center gap-3 w-full max-w-[420px]">
-          <span class="text-xs font-bold text-gray-400 whitespace-nowrap">Doğruluk</span>
-          <div class="flex-1 h-3 bg-gray-100 rounded-full overflow-hidden border-2 border-gray-200">
-            <div class="h-full bg-primary rounded-full transition-all duration-500" :style="{ width: `${questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0}%` }" />
+        <!-- Sınav Puanı (0–100) -->
+        <div class="w-full max-w-[420px] rounded-3xl bg-white border-2 border-primary/20 shadow-sm overflow-hidden">
+          <div class="bg-primary/5 px-6 py-5 text-center">
+            <div class="text-[10px] font-black tracking-[0.2em] text-primary/50 uppercase mb-1">Sınav Puanı</div>
+            <div class="text-6xl font-black text-primary leading-none">{{ examScore }}</div>
+            <div class="mt-2 text-xs font-bold text-gray-400">{{ correctCount }} doğru / {{ questions.length }} soru</div>
           </div>
-          <span class="text-sm font-extrabold text-primary">%{{ questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0 }}</span>
+          <div class="grid grid-cols-3 divide-x divide-gray-100 border-t border-gray-100">
+            <div class="py-3 text-center">
+              <div class="text-lg font-black text-positive">{{ correctCount }}</div>
+              <div class="text-[0.6rem] font-bold text-gray-400 uppercase">Doğru</div>
+            </div>
+            <div class="py-3 text-center">
+              <div class="text-lg font-black text-negative">{{ questions.length - correctCount }}</div>
+              <div class="text-[0.6rem] font-bold text-gray-400 uppercase">Yanlış</div>
+            </div>
+            <div class="py-3 text-center">
+              <div class="text-lg font-black text-amber-600">+{{ acornEarned }}</div>
+              <div class="text-[0.6rem] font-bold text-gray-400 uppercase">Acorn</div>
+            </div>
+          </div>
         </div>
 
         <div v-if="stepCompleted" class="bg-positive/10 text-positive font-extrabold text-sm px-5 py-2.5 rounded-full border-2 border-positive/30">🎉 Adım tamamlandı!</div>
@@ -321,9 +317,9 @@
           Sonuçlar internete bağlanınca otomatik kaydedilecek.
         </div>
 
-        <div class="flex gap-3 w-full max-w-[420px] mt-2">
-          <button class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="restartQuiz">🔄 Tekrar Dene</button>
-          <NuxtLink :to="guestMode ? '/auth/register-wall' : '/'" class="flex-1 bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all text-center">Devam Et →</NuxtLink>
+        <div class="flex gap-3 w-full max-w-[420px] mt-1">
+          <button class="flex-1 bg-white text-gray-500 font-bold text-sm py-3.5 rounded-2xl border-2 border-gray-200 hover:border-gray-300 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="restartQuiz">🔄 Tekrar Dene</button>
+          <NuxtLink :to="guestMode ? '/auth/register-wall' : '/'" class="flex-1 bg-primary text-white font-black text-sm py-3.5 rounded-2xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all text-center">Devam Et →</NuxtLink>
         </div>
       </div>
     </template>
@@ -510,6 +506,7 @@ const reportReasons = [
 
 const currentQuestion = computed(() => questions.value[currentIndex.value]);
 const currentAnswers = computed(() => currentQuestion.value?.answers ?? []);
+const examScore = computed(() => questions.value.length > 0 ? Math.round((correctCount.value / questions.value.length) * 100) : 0);
 
 const swipeCardStyle = computed(() => {
   if (swipeExiting.value) {

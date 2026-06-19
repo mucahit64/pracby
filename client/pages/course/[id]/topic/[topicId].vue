@@ -21,13 +21,11 @@
       <!-- Steps -->
       <div class="flex flex-col items-center gap-0">
         <template v-for="(step, idx) in topic.steps" :key="step.id">
-          <!-- Connector line -->
           <div v-if="idx > 0" class="w-0.5 h-5 bg-gray-200" />
 
-          <!-- Reward step -->
           <div v-if="step.step_type === 'reward'" class="flex flex-col items-center">
             <button
-              class="w-10 h-10 rounded-full flex items-center justify-center text-2xl cursor-pointer transition-all duration-150"
+              class="w-[46px] h-[40px] rounded-[50%] flex items-center justify-center text-xl cursor-pointer transition-all duration-150"
               :style="{ '--node-shadow-color': isRewardUnlocked(step, idx) ? '#cc7800' : '#d97706' }"
               :class="isRewardUnlocked(step, idx)
                 ? 'bg-warning text-white shadow-[0_6px_0_0_var(--node-shadow-color)] hover:shadow-[0_4px_0_0_var(--node-shadow-color)] hover:translate-y-[2px] active:shadow-none active:translate-y-[6px]'
@@ -38,29 +36,26 @@
             </button>
           </div>
 
-          <!-- Lesson step -->
           <div v-else class="flex flex-col items-center">
-            <div class="relative flex items-center justify-center">
-              <!-- Score ring for completed steps -->
+            <div class="relative flex items-center justify-center w-[46px] h-[40px]">
               <svg
                 v-if="step.progress?.is_step_completed"
-                class="absolute -inset-5 rotate-[-90deg] pointer-events-none"
-                viewBox="0 0 80 80"
+                class="absolute w-[100px] h-[100px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-90deg] pointer-events-none mt-[3px]"
+                viewBox="0 0 100 100"
               >
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#e5e7eb" stroke-width="8" />
                 <circle
-                  cx="40" cy="40" r="33" fill="none" stroke="#e5e7eb" stroke-width="8"
-                />
-                <circle
-                  cx="40" cy="40" r="33" fill="none"
+                  cx="50" cy="50" r="40" fill="none"
                   :stroke="topicColor.hex"
                   stroke-width="8"
                   stroke-linecap="round"
-                  :stroke-dasharray="2 * Math.PI * 33"
-                  :stroke-dashoffset="2 * Math.PI * 33 * (1 - (step.progress.best_score ?? 0) / 100)"
+                  :stroke-dasharray="2 * Math.PI * 40"
+                  :stroke-dashoffset="2 * Math.PI * 40 * (1 - (step.progress.best_score ?? 0) / 100)"
                 />
               </svg>
+              
               <button
-                class="w-10 h-10 rounded-full flex flex-col items-center justify-center text-base font-extrabold cursor-pointer transition-all duration-150"
+                class="w-[46px] h-[40px] rounded-[50%] flex flex-col items-center justify-center text-base font-extrabold cursor-pointer transition-all duration-150"
                 :style="{ '--node-shadow-color': (isStepActive(idx) || step.progress?.is_step_completed) ? topicColor.shadowHex : '#9ca3af' }"
                 :class="(!isStepActive(idx) && !step.progress?.is_step_completed)
                   ? 'bg-gray-100 text-gray-400 shadow-[0_6px_0_0_var(--node-shadow-color)] cursor-not-allowed'

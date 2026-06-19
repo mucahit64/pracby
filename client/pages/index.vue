@@ -73,26 +73,25 @@
             }"
           >
             <div class="flex flex-col items-center gap-2 relative">
-              <div class="relative flex items-center justify-center">
-                <!-- Score ring for completed lesson nodes -->
-                <svg
-                  v-if="node.status === 'completed' && node.type === 'lesson'"
-                  class="absolute -inset-[18px] rotate-[-90deg] pointer-events-none"
-                  viewBox="0 0 102 102"
-                >
-                  <circle cx="51" cy="51" r="44" fill="none" stroke="#e5e7eb" stroke-width="8" />
-                  <circle
-                    cx="51" cy="51" r="44" fill="none"
-                    :stroke="node.colorHex ?? '#22c55e'"
-                    stroke-width="8"
-                    stroke-linecap="round"
-                    :stroke-dasharray="2 * Math.PI * 44"
-                    :stroke-dashoffset="2 * Math.PI * 44 * (1 - (node.bestScore ?? 0) / 100)"
-                  />
-                </svg>
+             <div class="relative flex items-center justify-center">
+              <svg
+                v-if="node.status === 'completed' && node.type === 'lesson'"
+                class="absolute w-[100px] h-[100px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-90deg] pointer-events-none mt-[4px]"
+                viewBox="0 0 100 100"
+              >
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#e5e7eb" stroke-width="8" />
+                <circle
+                  cx="50" cy="50" r="40" fill="none"
+                  :stroke="node.colorHex ?? '#22c55e'"
+                  stroke-width="8"
+                  stroke-linecap="round"
+                  :stroke-dasharray="2 * Math.PI * 40"
+                  :stroke-dashoffset="2 * Math.PI * 40 * (1 - (node.bestScore ?? 0) / 100)"
+                />
+              </svg>
                 
                 <button
-                  class="rounded-full flex flex-col items-center justify-center text-2xl transition-all duration-150 font-[inherit] select-none w-[60px] h-[55px]"
+                  class="rounded-[50%] flex flex-col items-center justify-center text-2xl transition-all duration-150 font-[inherit] select-none w-[60px] h-[52px]"
                   :style="{ '--node-shadow-color': getNodeShadowColor(node) }"
                   :class="[
                     node.type === 'lesson' && node.status !== 'locked'
