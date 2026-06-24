@@ -4,22 +4,33 @@
       <h1 class="text-3xl font-black text-primary tracking-tight">pracby</h1>
       <p class="text-lg font-bold text-gray-800 text-center">Hangi sınava hazırlanıyorsun?</p>
 
-      <!-- Step 1: Select exam group -->
       <template v-if="!selectedGroupId">
         <div class="flex flex-col gap-3 w-full">
           <button
             v-for="group in examGroups"
             :key="group.id"
-            class="flex flex-col items-center gap-1 px-5 py-4 bg-white border-2 border-gray-200 rounded-2xl cursor-pointer transition-all duration-150 hover:border-primary hover:bg-primary/5 font-[inherit]"
+            :disabled="group.name === 'YKS'"
+            :class="[
+              'relative flex flex-col items-center gap-1 px-5 py-4 bg-white border-2 rounded-2xl transition-all duration-150 font-[inherit]',
+              group.name === 'YKS' 
+                ? 'border-gray-200 opacity-60 cursor-not-allowed bg-gray-50' 
+                : 'border-gray-200 cursor-pointer hover:border-primary hover:bg-primary/5'
+            ]"
             @click="selectGroup(group.id)"
           >
+            <span 
+              v-if="group.name === 'YKS'" 
+              class="absolute top-2 right-2 bg-primary/10 text-primary text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider"
+            >
+              Çok Yakında
+            </span>
+
             <span class="text-base font-extrabold text-gray-800">{{ group.name }}</span>
-            <span v-if="group.description" class="text-xs font-semibold text-gray-400">{{ group.description }}</span>
+            <span v-if="group.description" class="text-xs font-semibold text-gray-400 text-center">{{ group.description }}</span>
           </button>
         </div>
       </template>
 
-      <!-- Step 2: Select exam type -->
       <template v-else>
         <button class="self-start bg-transparent border-0 text-primary text-sm font-bold cursor-pointer p-1 font-[inherit]" @click="selectedGroupId = null">← Geri</button>
         <p class="text-sm font-bold text-gray-400">Alt kategori seç:</p>
