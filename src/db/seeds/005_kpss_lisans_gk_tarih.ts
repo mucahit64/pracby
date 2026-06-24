@@ -3,7 +3,7 @@ import { KPSS_GK_TARIH_TOPICS } from "../content/kpss/lisans/gk/tarih";
 import { createTopic } from "../content/helpers";
   
 // ============================================================
-// SEED 005 — KPSS Lisans Genel Kültür: TC İnkılap Tarihi ve Atatürkçülük
+// SEED 005 — KPSS Lisans Genel Kültür: Tarih
 // ============================================================
 // Kaynak: KPSS Lisans Genel Kültür Tarih Test Kitabı
 // Modüler veri dosyaları: src/db/content/kpss/lisans/gk/tarih/
@@ -34,7 +34,7 @@ export async function seed(knex: Knex): Promise<void> {
 
   for (const mod of gkModules) {
     const course = await knex("courses")
-      .where({ module_id: mod.module_id, name: "TC İnkılap Tarihi ve Atatürkçülük" })
+      .where({ module_id: mod.module_id, name: "Tarih" })
       .first();
     if (!course) continue;
 
@@ -43,5 +43,5 @@ export async function seed(knex: Knex): Promise<void> {
     }
   }
 
-  console.log("005: KPSS Lisans Genel Kültür (TC İnkılap Tarihi ve Atatürkçülük) içeriği eklendi.");
+  console.log("005: KPSS Lisans Genel Kültür (Tarih) içeriği eklendi.");
 }
