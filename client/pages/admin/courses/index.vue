@@ -2,7 +2,7 @@
   <div>
     <div class="flex items-center justify-between mb-6">
       <h1 class="text-2xl font-bold text-white">Ders Yönetimi</h1>
-      <button @click="openCreate" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-lg transition-colors">
+      <button class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-lg transition-colors" @click="openCreate">
         + Yeni Ders
       </button>
     </div>
@@ -12,14 +12,14 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label class="admin-label">Sınav</label>
-          <select v-model="filterExamTypeId" @change="loadCourses" class="admin-select">
+          <select v-model="filterExamTypeId" class="admin-select" @change="loadCourses">
             <option value="">Tümü</option>
             <option v-for="e in examTypes" :key="e.id" :value="e.id">{{ e.name }}</option>
           </select>
         </div>
         <div>
           <label class="admin-label">Modül</label>
-          <select v-model="filterModuleId" @change="loadCourses" class="admin-select">
+          <select v-model="filterModuleId" class="admin-select" @change="loadCourses">
             <option value="">Tümü</option>
             <option v-for="m in modules" :key="m.id" :value="m.id">{{ m.name }}</option>
           </select>
@@ -56,8 +56,8 @@
             <td class="px-4 py-3 text-gray-400">{{ course.module_name || '-' }}</td>
             <td class="px-4 py-3">
               <div class="flex gap-2">
-                <button @click="editCourse(course)" class="text-blue-400 hover:text-blue-300 text-xs font-medium">Düzenle</button>
-                <button @click="confirmDelete(course)" class="text-red-400 hover:text-red-300 text-xs font-medium">Sil</button>
+                <button class="text-blue-400 hover:text-blue-300 text-xs font-medium" @click="editCourse(course)">Düzenle</button>
+                <button class="text-red-400 hover:text-red-300 text-xs font-medium" @click="confirmDelete(course)">Sil</button>
               </div>
             </td>
           </tr>
@@ -72,7 +72,7 @@
 
         <div>
           <label class="admin-label">Ders Adı *</label>
-          <input v-model="form.name" required class="admin-input" placeholder="Ör: Türkçe" />
+          <input v-model="form.name" required class="admin-input" placeholder="Ör: Türkçe" >
         </div>
 
         <div>
@@ -100,23 +100,23 @@
         <div class="grid grid-cols-3 gap-4">
           <div>
             <label class="admin-label">Sıra</label>
-            <input v-model.number="form.sort_order" type="number" min="0" class="admin-input" />
+            <input v-model.number="form.sort_order" type="number" min="0" class="admin-input" >
           </div>
           <div>
             <label class="admin-label">Renk</label>
-            <input v-model="form.color" type="color" class="admin-input h-10" />
+            <input v-model="form.color" type="color" class="admin-input h-10" >
           </div>
           <div>
             <label class="admin-label">İkon URL</label>
-            <input v-model="form.icon_url" class="admin-input" placeholder="https://..." />
+            <input v-model="form.icon_url" class="admin-input" placeholder="https://..." >
           </div>
         </div>
 
         <div class="flex gap-3 pt-2">
-          <button @click="submitForm" :disabled="submitting" class="px-5 py-2 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white font-semibold rounded-lg transition-colors text-sm">
+          <button :disabled="submitting" class="px-5 py-2 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white font-semibold rounded-lg transition-colors text-sm" @click="submitForm">
             {{ submitting ? 'Kaydediliyor...' : (editing ? 'Güncelle' : 'Oluştur') }}
           </button>
-          <button @click="closeModal" class="px-5 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium rounded-lg transition-colors text-sm">İptal</button>
+          <button class="px-5 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium rounded-lg transition-colors text-sm" @click="closeModal">İptal</button>
         </div>
 
         <p v-if="error" class="text-red-400 text-sm">{{ error }}</p>
@@ -130,8 +130,8 @@
         <h2 class="text-lg font-bold text-white">Dersi Sil</h2>
         <p class="text-gray-300 text-sm">"{{ deleting.name }}" dersini silmek istediğinize emin misiniz? İlişkili tüm konular da silinecektir.</p>
         <div class="flex gap-3">
-          <button @click="doDelete" :disabled="submitting" class="px-4 py-2 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white font-semibold rounded-lg text-sm">Sil</button>
-          <button @click="deleting = null" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium rounded-lg text-sm">İptal</button>
+          <button :disabled="submitting" class="px-4 py-2 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white font-semibold rounded-lg text-sm" @click="doDelete">Sil</button>
+          <button class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium rounded-lg text-sm" @click="deleting = null">İptal</button>
         </div>
       </div>
     </div>

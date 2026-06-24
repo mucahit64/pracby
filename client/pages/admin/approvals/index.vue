@@ -10,15 +10,15 @@
     <!-- Tabs -->
     <div class="flex gap-2 mb-6">
       <button
-        @click="activeTab = 'questions'"
         :class="['px-4 py-2 rounded-lg text-sm font-medium transition-colors', activeTab === 'questions' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600']"
+        @click="activeTab = 'questions'"
       >
         Sorular
         <span v-if="counts.questions > 0" class="ml-1.5 px-1.5 py-0.5 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">{{ counts.questions }}</span>
       </button>
       <button
-        @click="activeTab = 'topics'"
         :class="['px-4 py-2 rounded-lg text-sm font-medium transition-colors', activeTab === 'topics' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600']"
+        @click="activeTab = 'topics'"
       >
         Konular
         <span v-if="counts.topics > 0" class="ml-1.5 px-1.5 py-0.5 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">{{ counts.topics }}</span>
@@ -48,10 +48,10 @@
               </div>
             </div>
             <div class="flex gap-2 shrink-0">
-              <button @click="approve('question', q.id)" :disabled="processing === q.id" class="px-3 py-1.5 bg-green-600 hover:bg-green-700 disabled:opacity-50 text-white text-xs font-semibold rounded-lg transition-colors">
+              <button :disabled="processing === q.id" class="px-3 py-1.5 bg-green-600 hover:bg-green-700 disabled:opacity-50 text-white text-xs font-semibold rounded-lg transition-colors" @click="approve('question', q.id)">
                 ✓ Onayla
               </button>
-              <button @click="reject('question', q.id)" :disabled="processing === q.id" class="px-3 py-1.5 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white text-xs font-semibold rounded-lg transition-colors">
+              <button :disabled="processing === q.id" class="px-3 py-1.5 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white text-xs font-semibold rounded-lg transition-colors" @click="reject('question', q.id)">
                 ✗ Reddet
               </button>
             </div>
@@ -81,10 +81,10 @@
               </div>
             </div>
             <div class="flex gap-2 shrink-0">
-              <button @click="approve('topic', t.id)" :disabled="processing === t.id" class="px-3 py-1.5 bg-green-600 hover:bg-green-700 disabled:opacity-50 text-white text-xs font-semibold rounded-lg transition-colors">
+              <button :disabled="processing === t.id" class="px-3 py-1.5 bg-green-600 hover:bg-green-700 disabled:opacity-50 text-white text-xs font-semibold rounded-lg transition-colors" @click="approve('topic', t.id)">
                 ✓ Onayla
               </button>
-              <button @click="reject('topic', t.id)" :disabled="processing === t.id" class="px-3 py-1.5 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white text-xs font-semibold rounded-lg transition-colors">
+              <button :disabled="processing === t.id" class="px-3 py-1.5 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white text-xs font-semibold rounded-lg transition-colors" @click="reject('topic', t.id)">
                 ✗ Reddet
               </button>
             </div>

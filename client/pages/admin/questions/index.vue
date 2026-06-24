@@ -11,34 +11,34 @@
     <div class="bg-gray-800 rounded-xl p-4 border border-gray-700 mb-4 space-y-3">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <!-- Sınav -->
-        <select v-model="filters.exam_type_id" @change="onFilterExamChange" class="admin-select">
+        <select v-model="filters.exam_type_id" class="admin-select" @change="onFilterExamChange">
           <option value="">Tüm Sınavlar</option>
           <option v-for="e in examTypes" :key="e.id" :value="e.id">{{ e.name }}</option>
         </select>
         <!-- Ders -->
-        <select v-model="filters.course_id" @change="onFilterCourseChange" :disabled="!filterCourses.length" class="admin-select">
+        <select v-model="filters.course_id" :disabled="!filterCourses.length" class="admin-select" @change="onFilterCourseChange">
           <option value="">Tüm Dersler</option>
           <option v-for="c in filterCourses" :key="c.id" :value="c.id">{{ c.name }}</option>
         </select>
         <!-- Konu -->
-        <select v-model="filters.topic_id" @change="onFilterTopicChange" :disabled="!filterTopics.length" class="admin-select">
+        <select v-model="filters.topic_id" :disabled="!filterTopics.length" class="admin-select" @change="onFilterTopicChange">
           <option value="">Tüm Konular</option>
           <option v-for="t in filterTopics" :key="t.id" :value="t.id">{{ t.name }}</option>
         </select>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
         <!-- Adım -->
-        <select v-model="filters.step_id" @change="loadQuestions(1)" :disabled="!filterSteps.length" class="admin-select">
+        <select v-model="filters.step_id" :disabled="!filterSteps.length" class="admin-select" @change="loadQuestions(1)">
           <option value="">Tüm Adımlar</option>
           <option v-for="s in filterSteps" :key="s.id" :value="s.id">{{ s.name || `Adım ${s.sort_order}` }}</option>
         </select>
-        <select v-model="filters.status" @change="loadQuestions(1)" class="admin-select">
+        <select v-model="filters.status" class="admin-select" @change="loadQuestions(1)">
           <option value="">Tüm Durumlar</option>
           <option value="approved">Onaylı</option>
           <option value="pending">Beklemede</option>
           <option value="draft">Taslak</option>
         </select>
-        <select v-model="filters.question_type" @change="loadQuestions(1)" class="admin-select">
+        <select v-model="filters.question_type" class="admin-select" @change="loadQuestions(1)">
           <option value="">Tüm Tipler</option>
           <option value="multiple_choice">Çoktan Seçmeli</option>
           <option value="true_false">Doğru/Yanlış</option>
@@ -103,11 +103,11 @@
       <button
         v-for="p in paginationRange"
         :key="p"
-        @click="loadQuestions(p)"
         :class="[
           'px-3 py-1.5 rounded text-sm font-medium transition-colors',
           p === page ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
         ]"
+        @click="loadQuestions(p)"
       >
         {{ p }}
       </button>

@@ -8,7 +8,7 @@
           <span class="text-base font-extrabold text-gray-800">{{ stats.streak }}</span>
         </div>
         <div v-if="activeTooltip === 'streak'" class="absolute top-full mt-2.5 left-0 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
-          <div class="absolute -top-[8px] left-10 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]"></div>
+          <div class="absolute -top-[8px] left-10 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]"/>
           
           <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest relative z-10">Bu Haftaki Serin</div>
           <div class="flex justify-between gap-0.5 relative z-10">
@@ -39,7 +39,7 @@
           <span class="text-base font-extrabold text-gray-800">{{ sharedAcornBalance }}</span>
         </div>
         <div v-if="activeTooltip === 'acorns'" class="absolute top-full mt-2.5 left-1/2 -translate-x-1/2 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
-          <div class="absolute -top-[8px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]"></div>
+          <div class="absolute -top-[8px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]"/>
 
           <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest relative z-10">Palamutların</div>
           <div class="flex items-center gap-2 relative z-10">
@@ -59,7 +59,7 @@
           <span v-else class="text-base font-extrabold text-gray-800">♾️</span>
         </div>
         <div v-if="activeTooltip === 'energy'" class="absolute top-full mt-2.5 right-0 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
-          <div class="absolute -top-[8px] right-10 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]"></div>
+          <div class="absolute -top-[8px] right-10 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]"/>
 
           <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest relative z-10">Enerjin</div>
           <template v-if="unlimitedEnergy">

@@ -37,9 +37,9 @@
         <div class="flex items-center justify-end gap-3 -mb-1">
           <button
             v-if="!guestMode"
-            @click="openReportModal"
             class="text-gray-300 hover:text-red-400 transition-colors"
             title="Soruyu Raporla"
+            @click="openReportModal"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
           </button>
@@ -57,7 +57,7 @@
             class="block w-full max-h-72 object-contain rounded-lg"
             @error="imageLoadError = true"
             @load="imageLoadError = false"
-          />
+          >
           <div v-if="imageLoadError" class="mt-2 flex items-center gap-2 text-amber-600 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 text-xs font-semibold">
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" /></svg>
             Bu sorunun görseli yüklenemedi veya eksik.
@@ -75,7 +75,8 @@
               :disabled="answered"
               @click="answerMc(option.id)"
             >
-              <span class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-extrabold shrink-0"
+              <span
+class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-extrabold shrink-0"
                 :class="getMcLetterClass(option.id)"
               >{{ optionLetters[i] }}</span>
               <span class="text-sm font-bold flex-1" v-html="option.answer_text" />
@@ -137,7 +138,7 @@
               placeholder="Cevabınızı yazın…"
               :disabled="answered"
               @keyup.enter="answerFillBlank"
-            />
+            >
             <button
               v-if="!answered"
               class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
@@ -256,7 +257,8 @@
 
         <!-- Feedback -->
         <transition name="fade">
-          <div v-if="answered" class="flex items-center gap-3.5 rounded-2xl px-5 py-4 border-b-4"
+          <div
+v-if="answered" class="flex items-center gap-3.5 rounded-2xl px-5 py-4 border-b-4"
             :class="lastAnswerCorrect ? 'bg-positive/10 border-positive text-positive' : 'bg-negative/10 border-negative text-negative'"
           >
             <span class="text-2xl font-black">{{ lastAnswerCorrect ? '✓' : '✗' }}</span>
@@ -264,7 +266,8 @@
               <div class="text-base font-black">{{ lastAnswerCorrect ? 'Harika! 🎉' : 'Yanlış! 😔' }}</div>
               <div v-if="currentQuestion.explanation" class="text-xs font-semibold opacity-80 mt-0.5" v-html="currentQuestion.explanation" />
             </div>
-            <button class="shrink-0 bg-white font-extrabold text-sm px-5 py-2.5 rounded-xl border-2 cursor-pointer transition-all font-[inherit]"
+            <button
+class="shrink-0 bg-white font-extrabold text-sm px-5 py-2.5 rounded-xl border-2 cursor-pointer transition-all font-[inherit]"
               :class="lastAnswerCorrect ? 'text-positive border-positive hover:bg-positive/5' : 'text-negative border-negative hover:bg-negative/5'"
               @click="nextQuestion"
             >DEVAM</button>
@@ -349,7 +352,7 @@
 
         <div class="flex flex-col gap-2">
           <label v-for="opt in reportReasons" :key="opt.value" class="flex items-center gap-3 cursor-pointer">
-            <input type="radio" v-model="reportReason" :value="opt.value" class="w-4 h-4 text-primary" />
+            <input v-model="reportReason" type="radio" :value="opt.value" class="w-4 h-4 text-primary" >
             <span class="text-sm font-semibold text-gray-700">{{ opt.label }}</span>
           </label>
         </div>
@@ -363,13 +366,13 @@
 
         <div class="flex gap-3">
           <button
-            @click="submitReport"
             :disabled="!reportReason || reportSubmitting"
             class="flex-1 bg-primary text-white font-bold text-sm py-2.5 rounded-xl disabled:opacity-50 transition-colors"
+            @click="submitReport"
           >
             {{ reportSubmitting ? 'Gönderiliyor...' : 'Gönder' }}
           </button>
-          <button @click="reportModalOpen = false" class="flex-1 bg-gray-100 text-gray-500 font-bold text-sm py-2.5 rounded-xl hover:bg-gray-200 transition-colors">
+          <button class="flex-1 bg-gray-100 text-gray-500 font-bold text-sm py-2.5 rounded-xl hover:bg-gray-200 transition-colors" @click="reportModalOpen = false">
             İptal
           </button>
         </div>

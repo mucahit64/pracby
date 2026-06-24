@@ -43,7 +43,7 @@
               placeholder="you@example.com"
               autocomplete="email"
               @blur="checkEmailAvailability"
-            />
+            >
             <span v-if="emailStatus === 'checking'" class="absolute right-3 pointer-events-none">⏳</span>
             <span v-else-if="emailStatus === 'ok'" class="absolute right-3 pointer-events-none">✅</span>
           </div>
@@ -70,7 +70,7 @@
               autocomplete="username"
               @input="onUsernameInput"
               @blur="checkUsernameAvailability"
-            />
+            >
             <span v-if="usernameStatus === 'checking'" class="absolute right-3 pointer-events-none">⏳</span>
             <span v-else-if="usernameStatus === 'ok'" class="absolute right-3 pointer-events-none">✅</span>
           </div>
@@ -89,7 +89,7 @@
               autocomplete="new-password"
               maxlength="64"
               @blur="onPasswordBlur"
-            />
+            >
             <button type="button" class="absolute right-2.5 bg-transparent border-0 cursor-pointer text-lg p-1 text-gray-400" tabindex="-1" @click="showPassword = !showPassword">
               {{ showPassword ? '🙈' : '🐵' }}
             </button>

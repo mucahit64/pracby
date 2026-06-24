@@ -150,7 +150,7 @@ export function useExamContent() {
   }
 
   // Initialize on client only — localStorage is not available during SSR
-  if (process.client) {
+  if (import.meta.client) {
     if (globalActiveExamTypeId.value) {
       loadForExam(globalActiveExamTypeId.value)
     } else {
@@ -173,7 +173,7 @@ export function useExamContent() {
     selectedCourseId.value = ''
     courseFull.value = null
     loadingFull.value = false
-    if (process.client) {
+    if (import.meta.client) {
       localStorage.removeItem('pb_selectedModuleId')
       localStorage.removeItem('pb_selectedCourseId')
     }

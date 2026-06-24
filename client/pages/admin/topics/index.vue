@@ -2,7 +2,7 @@
   <div>
     <div class="flex items-center justify-between mb-6">
       <h1 class="text-2xl font-bold text-white">Konu Yönetimi</h1>
-      <button @click="showCreateModal = true" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-lg transition-colors">
+      <button class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-lg transition-colors" @click="showCreateModal = true">
         + Yeni Konu
       </button>
     </div>
@@ -12,14 +12,14 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label class="admin-label">Sınav</label>
-          <select v-model="filterExamTypeId" @change="onFilterExamChange" class="admin-select">
+          <select v-model="filterExamTypeId" class="admin-select" @change="onFilterExamChange">
             <option value="">Tümü</option>
             <option v-for="e in examTypes" :key="e.id" :value="e.id">{{ e.name }}</option>
           </select>
         </div>
         <div>
           <label class="admin-label">Ders</label>
-          <select v-model="filterCourseId" @change="loadTopics" :disabled="!filterCourses.length" class="admin-select">
+          <select v-model="filterCourseId" :disabled="!filterCourses.length" class="admin-select" @change="loadTopics">
             <option value="">Tümü</option>
             <option v-for="c in filterCourses" :key="c.id" :value="c.id">{{ c.name }}</option>
           </select>
@@ -53,8 +53,8 @@
             <td class="px-4 py-3 text-gray-400">{{ topic.total_lessons }}</td>
             <td class="px-4 py-3">
               <div class="flex gap-2">
-                <button @click="editTopic(topic)" class="text-blue-400 hover:text-blue-300 text-xs font-medium">Düzenle</button>
-                <button v-if="isAdmin" @click="confirmDelete(topic)" class="text-red-400 hover:text-red-300 text-xs font-medium">Sil</button>
+                <button class="text-blue-400 hover:text-blue-300 text-xs font-medium" @click="editTopic(topic)">Düzenle</button>
+                <button v-if="isAdmin" class="text-red-400 hover:text-red-300 text-xs font-medium" @click="confirmDelete(topic)">Sil</button>
               </div>
             </td>
           </tr>
@@ -77,7 +77,7 @@
 
         <div>
           <label class="admin-label">Konu Adı *</label>
-          <input v-model="modalForm.name" required class="admin-input" placeholder="Ör: Osmanlı Tarihi" />
+          <input v-model="modalForm.name" required class="admin-input" placeholder="Ör: Osmanlı Tarihi" >
         </div>
 
         <div>
@@ -88,19 +88,19 @@
         <div class="grid grid-cols-2 gap-4">
           <div>
             <label class="admin-label">Sıra (sort_order)</label>
-            <input v-model.number="modalForm.sort_order" type="number" min="0" class="admin-input" />
+            <input v-model.number="modalForm.sort_order" type="number" min="0" class="admin-input" >
             <p class="text-xs text-gray-500 mt-1">Mevcut konu sayısı: {{ courseTopicCount }}</p>
           </div>
           <div>
             <label class="admin-label">Toplam Ders</label>
-            <input v-model.number="modalForm.total_lessons" type="number" min="1" class="admin-input" />
+            <input v-model.number="modalForm.total_lessons" type="number" min="1" class="admin-input" >
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4">
           <div>
             <label class="admin-label">Max Taç Seviyesi</label>
-            <input v-model.number="modalForm.max_crown_level" type="number" min="1" max="10" class="admin-input" />
+            <input v-model.number="modalForm.max_crown_level" type="number" min="1" max="10" class="admin-input" >
           </div>
           <div>
             <label class="admin-label">Kilit Açma (unlock_after)</label>
@@ -112,10 +112,10 @@
         </div>
 
         <div class="flex gap-3 pt-2">
-          <button @click="submitModal" :disabled="modalSubmitting" class="px-5 py-2 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white font-semibold rounded-lg transition-colors text-sm">
+          <button :disabled="modalSubmitting" class="px-5 py-2 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white font-semibold rounded-lg transition-colors text-sm" @click="submitModal">
             {{ modalSubmitting ? 'Kaydediliyor...' : (editingTopic ? 'Güncelle' : 'Oluştur') }}
           </button>
-          <button @click="closeModal" class="px-5 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium rounded-lg transition-colors text-sm">İptal</button>
+          <button class="px-5 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium rounded-lg transition-colors text-sm" @click="closeModal">İptal</button>
         </div>
 
         <p v-if="modalError" class="text-red-400 text-sm">{{ modalError }}</p>
@@ -129,8 +129,8 @@
         <h2 class="text-lg font-bold text-white">Konuyu Sil</h2>
         <p class="text-gray-300 text-sm">"{{ deletingTopic.name }}" konusunu silmek istediğinize emin misiniz? Bu işlem geri alınamaz.</p>
         <div class="flex gap-3">
-          <button @click="doDelete" :disabled="modalSubmitting" class="px-4 py-2 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white font-semibold rounded-lg text-sm">Sil</button>
-          <button @click="deletingTopic = null" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium rounded-lg text-sm">İptal</button>
+          <button :disabled="modalSubmitting" class="px-4 py-2 bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white font-semibold rounded-lg text-sm" @click="doDelete">Sil</button>
+          <button class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 font-medium rounded-lg text-sm" @click="deletingTopic = null">İptal</button>
         </div>
       </div>
     </div>

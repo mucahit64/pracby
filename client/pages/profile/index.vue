@@ -39,14 +39,16 @@
           :key="day.label"
           class="flex flex-col items-center gap-1.5 flex-1 min-w-[36px]"
         >
-          <div class="w-9 h-9 rounded-full flex items-center justify-center text-lg"
+          <div
+            class="w-9 h-9 rounded-full flex items-center justify-center text-lg"
             :class="{
               'bg-warning/15': day.done,
               'border-2 border-primary border-dashed': day.isToday && !day.done,
               'bg-gray-100': !day.done && !day.isToday,
             }"
           >{{ day.done ? '🔥' : '·' }}</div>
-          <span class="text-[0.68rem] font-bold uppercase tracking-wide"
+          <span
+            class="text-[0.68rem] font-bold uppercase tracking-wide"
             :class="day.isToday ? 'text-primary' : 'text-gray-400'"
           >{{ day.label }}</span>
         </div>

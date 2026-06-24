@@ -9,7 +9,7 @@
 
     <div v-if="loading" class="text-gray-400">Yükleniyor...</div>
 
-    <form v-else @submit.prevent="handleUpdate" class="space-y-6">
+    <form v-else class="space-y-6" @submit.prevent="handleUpdate">
       <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 space-y-4">
         <h2 class="text-lg font-semibold text-gray-200">Soru Bilgileri</h2>
 
@@ -84,9 +84,9 @@
         </button>
         <button
           type="button"
-          @click="archiveQuestion"
           :disabled="submitting"
           class="px-6 py-2.5 bg-red-600/20 hover:bg-red-600/30 text-red-400 font-medium rounded-lg transition-colors"
+          @click="archiveQuestion"
         >
           Arşivle
         </button>

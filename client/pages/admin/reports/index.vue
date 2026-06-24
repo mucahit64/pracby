@@ -11,14 +11,14 @@
 
     <!-- Filters -->
     <div class="bg-gray-800 rounded-xl p-4 border border-gray-700 mb-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
-      <select v-model="filters.status" @change="loadReports(1)" class="admin-select">
+      <select v-model="filters.status" class="admin-select" @change="loadReports(1)">
         <option value="">Tüm Durumlar</option>
         <option value="pending">Beklemede</option>
         <option value="reviewed">İncelendi</option>
         <option value="fixed">Düzeltildi</option>
         <option value="dismissed">Reddedildi</option>
       </select>
-      <select v-model="filters.reason" @change="loadReports(1)" class="admin-select">
+      <select v-model="filters.reason" class="admin-select" @change="loadReports(1)">
         <option value="">Tüm Sebepler</option>
         <option value="wrong_answer">Yanlış Cevap</option>
         <option value="unclear_question">Belirsiz Soru</option>
@@ -69,7 +69,7 @@
             </td>
             <td class="px-4 py-3 text-gray-400 text-xs">{{ formatDate(r.created_at) }}</td>
             <td class="px-4 py-3 text-center">
-              <button @click="openDetail(r)" class="text-purple-400 hover:text-purple-300 text-sm">Detay</button>
+              <button class="text-purple-400 hover:text-purple-300 text-sm" @click="openDetail(r)">Detay</button>
             </td>
           </tr>
         </tbody>
@@ -81,8 +81,8 @@
       <button
         v-for="p in paginationRange"
         :key="p"
-        @click="loadReports(p)"
         :class="['px-3 py-1.5 rounded text-sm font-medium transition-colors', p === page ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600']"
+        @click="loadReports(p)"
       >{{ p }}</button>
     </div>
 
@@ -91,7 +91,7 @@
       <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 w-full max-w-lg mx-4 space-y-4">
         <div class="flex items-center justify-between">
           <h3 class="text-lg font-semibold text-white">Rapor Detayı</h3>
-          <button @click="selected = null" class="text-gray-400 hover:text-white">&times;</button>
+          <button class="text-gray-400 hover:text-white" @click="selected = null">&times;</button>
         </div>
 
         <div class="text-sm space-y-2">
@@ -118,7 +118,7 @@
             <textarea v-model="modalForm.admin_note" rows="2" class="admin-input" placeholder="İsteğe bağlı not" />
           </div>
           <div class="flex gap-3">
-            <button @click="updateReport" :disabled="updating" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white text-sm font-medium rounded-lg transition-colors">
+            <button :disabled="updating" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white text-sm font-medium rounded-lg transition-colors" @click="updateReport">
               {{ updating ? 'Güncelleniyor...' : 'Güncelle' }}
             </button>
             <NuxtLink v-if="selected.question_id" :to="`/admin/questions/${selected.question_id}`" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium rounded-lg transition-colors">

@@ -2,7 +2,7 @@
   <div>
     <div class="flex items-center justify-between mb-6">
       <h1 class="text-2xl font-bold text-white">Kullanıcılar</h1>
-      <button @click="openCreateModal" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-lg transition-colors">
+      <button class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-lg transition-colors" @click="openCreateModal">
         + Yeni Kullanıcı
       </button>
     </div>
@@ -12,10 +12,10 @@
       <div class="sm:col-span-2">
         <input
           v-model="searchQuery"
-          @input="debouncedSearch"
           class="admin-input"
           placeholder="Email veya kullanıcı adı ara..."
-        />
+          @input="debouncedSearch"
+        >
       </div>
       <div class="text-sm text-gray-400 flex items-center">
         Toplam: {{ total }} kullanıcı
@@ -64,8 +64,8 @@
             <td class="px-4 py-3 text-center">
               <div class="flex gap-2 justify-center">
                 <button
-                  @click="openRoleModal(u)"
                   class="text-xs px-2 py-1 rounded-lg bg-purple-600/20 text-purple-400 hover:bg-purple-600/40 transition-colors"
+                  @click="openRoleModal(u)"
                 >
                   Rol Değiştir
                 </button>
@@ -87,8 +87,8 @@
       <button
         v-for="p in paginationRange"
         :key="p"
-        @click="loadUsers(p)"
         :class="['px-3 py-1.5 rounded text-sm font-medium transition-colors', p === page ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600']"
+        @click="loadUsers(p)"
       >{{ p }}</button>
     </div>
 
@@ -112,15 +112,15 @@
 
           <div class="flex gap-3">
             <button
-              @click="saveRole"
               :disabled="modal.saving"
               class="flex-1 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium transition-colors disabled:opacity-50"
+              @click="saveRole"
             >
               {{ modal.saving ? 'Kaydediliyor...' : 'Kaydet' }}
             </button>
             <button
-              @click="modal.open = false"
               class="flex-1 py-2 rounded-xl bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium transition-colors"
+              @click="modal.open = false"
             >
               İptal
             </button>
@@ -142,15 +142,15 @@
           <div class="space-y-4">
             <div>
               <label class="block text-xs text-gray-400 mb-1.5 font-medium uppercase tracking-wide">Email</label>
-              <input v-model="createModal.email" type="email" class="admin-input" placeholder="ornek@mail.com" />
+              <input v-model="createModal.email" type="email" class="admin-input" placeholder="ornek@mail.com" >
             </div>
             <div>
               <label class="block text-xs text-gray-400 mb-1.5 font-medium uppercase tracking-wide">Kullanıcı Adı</label>
-              <input v-model="createModal.username" type="text" class="admin-input" placeholder="kullanici_adi" />
+              <input v-model="createModal.username" type="text" class="admin-input" placeholder="kullanici_adi" >
             </div>
             <div>
               <label class="block text-xs text-gray-400 mb-1.5 font-medium uppercase tracking-wide">Şifre</label>
-              <input v-model="createModal.password" type="password" class="admin-input" placeholder="En az 6 karakter" />
+              <input v-model="createModal.password" type="password" class="admin-input" placeholder="En az 6 karakter" >
             </div>
             <div>
               <label class="block text-xs text-gray-400 mb-1.5 font-medium uppercase tracking-wide">Rol</label>
@@ -165,15 +165,15 @@
 
           <div class="flex gap-3 mt-6">
             <button
-              @click="saveCreateUser"
               :disabled="createModal.saving"
               class="flex-1 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium transition-colors disabled:opacity-50"
+              @click="saveCreateUser"
             >
               {{ createModal.saving ? 'Oluşturuluyor...' : 'Oluştur' }}
             </button>
             <button
-              @click="createModal.open = false"
               class="flex-1 py-2 rounded-xl bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium transition-colors"
+              @click="createModal.open = false"
             >
               İptal
             </button>

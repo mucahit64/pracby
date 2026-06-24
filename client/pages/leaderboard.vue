@@ -20,7 +20,8 @@
     </div>
 
     <!-- League info banner -->
-    <div class="flex items-center gap-3.5 rounded-2xl px-5 py-4 text-white border-b-4"
+    <div
+class="flex items-center gap-3.5 rounded-2xl px-5 py-4 text-white border-b-4"
       :class="{
         'bg-amber-800 border-amber-900': activeLeague === 'bronze',
         'bg-gray-500 border-gray-600': activeLeague === 'silver',
@@ -61,7 +62,8 @@
           </div>
 
           <!-- Avatar -->
-          <div class="w-11 h-11 rounded-full flex items-center justify-center text-lg font-black text-white shrink-0 relative"
+          <div
+class="w-11 h-11 rounded-full flex items-center justify-center text-lg font-black text-white shrink-0 relative"
             :style="{ background: player.avatarColor }"
           >
             {{ player.username?.[0]?.toUpperCase() ?? '?' }}

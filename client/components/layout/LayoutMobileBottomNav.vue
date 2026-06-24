@@ -7,8 +7,8 @@
         :key="enr.exam_type_id"
         class="shrink-0 px-3.5 py-1.5 rounded-full border-2 border-gray-200 bg-transparent text-[0.72rem] font-bold text-gray-400 cursor-pointer transition-all duration-150 whitespace-nowrap font-[inherit]"
         :class="{ '!bg-primary/10 !text-primary !border-primary/40': enr.exam_type_id === activeExamTypeId }"
-        @click="handleSwitchExam(enr.exam_type_id)"
         :disabled="switchingExam"
+        @click="handleSwitchExam(enr.exam_type_id)"
       >
         {{ enr.exam_type_name }}
       </button>

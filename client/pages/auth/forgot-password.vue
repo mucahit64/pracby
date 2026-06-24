@@ -13,7 +13,7 @@
           <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-3xl">📬</div>
           <h2 class="text-xl font-extrabold text-gray-800 text-center">E-posta gönderildi</h2>
           <p class="text-sm text-gray-500 text-center leading-relaxed">
-            Eğer bu adres kayıtlıysa, şifre sıfırlama bağlantısı gönderildi.<br />
+            Eğer bu adres kayıtlıysa, şifre sıfırlama bağlantısı gönderildi.<br >
             Spam klasörünü de kontrol etmeyi unutma.
           </p>
           <NuxtLink to="/auth/login" class="w-full mt-2 bg-primary text-white font-black text-base py-3.5 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 text-center block">
@@ -39,7 +39,7 @@
               placeholder="you@example.com"
               autocomplete="email"
               required
-            />
+            >
           </div>
 
           <p v-if="error" class="text-negative text-sm font-semibold text-center">{{ error }}</p>

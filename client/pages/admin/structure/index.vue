@@ -20,8 +20,8 @@
             <span v-if="!group.is_active" class="px-2 py-0.5 text-xs bg-red-900/30 text-red-400 rounded">Pasif</span>
           </div>
           <div class="flex items-center gap-2">
-            <button @click.stop="editExamGroup(group)" class="text-gray-400 hover:text-blue-400 text-xs px-2 py-1 rounded hover:bg-gray-700">Düzenle</button>
-            <button @click.stop="confirmDeleteExamGroup(group)" class="text-gray-400 hover:text-red-400 text-xs px-2 py-1 rounded hover:bg-gray-700">Sil</button>
+            <button class="text-gray-400 hover:text-blue-400 text-xs px-2 py-1 rounded hover:bg-gray-700" @click.stop="editExamGroup(group)">Düzenle</button>
+            <button class="text-gray-400 hover:text-red-400 text-xs px-2 py-1 rounded hover:bg-gray-700" @click.stop="confirmDeleteExamGroup(group)">Sil</button>
           </div>
         </div>
 
@@ -39,9 +39,9 @@
                 <span v-if="!examType.is_active" class="px-2 py-0.5 text-xs bg-red-900/30 text-red-400 rounded">Pasif</span>
               </div>
               <div class="flex items-center gap-2">
-                <button @click.stop="addModule(examType)" class="text-gray-400 hover:text-green-400 text-xs px-2 py-1 rounded hover:bg-gray-700">+ Modül</button>
-                <button @click.stop="editExamType(examType)" class="text-gray-400 hover:text-blue-400 text-xs px-2 py-1 rounded hover:bg-gray-700">Düzenle</button>
-                <button @click.stop="confirmDeleteExamType(examType)" class="text-gray-400 hover:text-red-400 text-xs px-2 py-1 rounded hover:bg-gray-700">Sil</button>
+                <button class="text-gray-400 hover:text-green-400 text-xs px-2 py-1 rounded hover:bg-gray-700" @click.stop="addModule(examType)">+ Modül</button>
+                <button class="text-gray-400 hover:text-blue-400 text-xs px-2 py-1 rounded hover:bg-gray-700" @click.stop="editExamType(examType)">Düzenle</button>
+                <button class="text-gray-400 hover:text-red-400 text-xs px-2 py-1 rounded hover:bg-gray-700" @click.stop="confirmDeleteExamType(examType)">Sil</button>
               </div>
             </div>
 
@@ -59,24 +59,25 @@
                     <span v-if="!mod.is_active" class="px-2 py-0.5 text-xs bg-red-900/30 text-red-400 rounded">Pasif</span>
                   </div>
                   <div class="flex items-center gap-2">
-                    <button @click.stop="addCourse(mod, examType)" class="text-gray-400 hover:text-green-400 text-xs px-2 py-1 rounded hover:bg-gray-700">+ Ders</button>
-                    <button @click.stop="editModule(mod)" class="text-gray-400 hover:text-blue-400 text-xs px-2 py-1 rounded hover:bg-gray-700">Düzenle</button>
-                    <button @click.stop="confirmDeleteModule(mod)" class="text-gray-400 hover:text-red-400 text-xs px-2 py-1 rounded hover:bg-gray-700">Sil</button>
+                    <button class="text-gray-400 hover:text-green-400 text-xs px-2 py-1 rounded hover:bg-gray-700" @click.stop="addCourse(mod, examType)">+ Ders</button>
+                    <button class="text-gray-400 hover:text-blue-400 text-xs px-2 py-1 rounded hover:bg-gray-700" @click.stop="editModule(mod)">Düzenle</button>
+                    <button class="text-gray-400 hover:text-red-400 text-xs px-2 py-1 rounded hover:bg-gray-700" @click.stop="confirmDeleteModule(mod)">Sil</button>
                   </div>
                 </div>
 
                 <!-- Courses under this module -->
                 <div v-if="expandedModules.has(mod.id)">
-                  <div v-for="course in getCoursesForModule(mod.id)" :key="course.id"
+                  <div
+v-for="course in getCoursesForModule(mod.id)" :key="course.id"
                     class="flex items-center justify-between px-5 py-2 pl-24 border-t border-gray-700/30 hover:bg-gray-750/20">
                     <div class="flex items-center gap-2">
-                      <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                      <span class="w-2 h-2 rounded-full bg-green-500"/>
                       <span class="text-gray-300 text-sm">{{ course.name }}</span>
                       <span class="text-xs text-gray-600">sıra: {{ course.sort_order }}</span>
                     </div>
                     <div class="flex items-center gap-2">
-                      <button @click="editCourse(course)" class="text-gray-400 hover:text-blue-400 text-xs px-2 py-1 rounded hover:bg-gray-700">Düzenle</button>
-                      <button @click="confirmDeleteCourse(course)" class="text-gray-400 hover:text-red-400 text-xs px-2 py-1 rounded hover:bg-gray-700">Sil</button>
+                      <button class="text-gray-400 hover:text-blue-400 text-xs px-2 py-1 rounded hover:bg-gray-700" @click="editCourse(course)">Düzenle</button>
+                      <button class="text-gray-400 hover:text-red-400 text-xs px-2 py-1 rounded hover:bg-gray-700" @click="confirmDeleteCourse(course)">Sil</button>
                     </div>
                   </div>
                   <div v-if="!getCoursesForModule(mod.id).length" class="px-5 py-2 pl-24 text-gray-600 text-xs italic">
@@ -92,13 +93,13 @@
 
           <!-- Add exam type button -->
           <div class="px-5 py-3 pl-10 border-t border-gray-700">
-            <button @click="addExamType(group)" class="text-purple-400 hover:text-purple-300 text-xs font-medium">+ Yeni Sınav Türü Ekle</button>
+            <button class="text-purple-400 hover:text-purple-300 text-xs font-medium" @click="addExamType(group)">+ Yeni Sınav Türü Ekle</button>
           </div>
         </div>
       </div>
 
       <!-- Add exam group button -->
-      <button @click="openCreateGroup" class="w-full py-3 border-2 border-dashed border-gray-700 rounded-xl text-gray-400 hover:text-purple-400 hover:border-purple-600 transition-colors text-sm font-medium">
+      <button class="w-full py-3 border-2 border-dashed border-gray-700 rounded-xl text-gray-400 hover:text-purple-400 hover:border-purple-600 transition-colors text-sm font-medium" @click="openCreateGroup">
         + Yeni Sınav Grubu Ekle
       </button>
     </div>
@@ -112,33 +113,33 @@
           <div class="space-y-4">
             <div v-if="modal.fields.includes('name')">
               <label class="admin-label">Ad</label>
-              <input v-model="form.name" class="admin-input" placeholder="Ad girin" />
+              <input v-model="form.name" class="admin-input" placeholder="Ad girin" >
             </div>
             <div v-if="modal.fields.includes('slug')">
               <label class="admin-label">Slug</label>
-              <input v-model="form.slug" class="admin-input" placeholder="slug-formatinda" />
+              <input v-model="form.slug" class="admin-input" placeholder="slug-formatinda" >
             </div>
             <div v-if="modal.fields.includes('description')">
               <label class="admin-label">Açıklama</label>
-              <input v-model="form.description" class="admin-input" placeholder="Opsiyonel" />
+              <input v-model="form.description" class="admin-input" placeholder="Opsiyonel" >
             </div>
             <div v-if="modal.fields.includes('sort_order')">
               <label class="admin-label">Sıra</label>
-              <input v-model.number="form.sort_order" type="number" class="admin-input" />
+              <input v-model.number="form.sort_order" type="number" class="admin-input" >
             </div>
             <div v-if="modal.fields.includes('is_active')">
               <label class="flex items-center gap-2 cursor-pointer">
-                <input v-model="form.is_active" type="checkbox" class="w-4 h-4 rounded bg-gray-700 border-gray-600 accent-purple-500" />
+                <input v-model="form.is_active" type="checkbox" class="w-4 h-4 rounded bg-gray-700 border-gray-600 accent-purple-500" >
                 <span class="text-sm text-gray-300">Aktif</span>
               </label>
             </div>
           </div>
 
           <div class="flex gap-3 mt-6">
-            <button @click="submitModal" :disabled="saving" class="flex-1 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium transition-colors disabled:opacity-50">
+            <button :disabled="saving" class="flex-1 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium transition-colors disabled:opacity-50" @click="submitModal">
               {{ saving ? 'Kaydediliyor...' : 'Kaydet' }}
             </button>
-            <button @click="closeModal" class="flex-1 py-2 rounded-xl bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium transition-colors">
+            <button class="flex-1 py-2 rounded-xl bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium transition-colors" @click="closeModal">
               İptal
             </button>
           </div>
@@ -155,10 +156,10 @@
             <span class="text-white font-medium">{{ deleteConfirm.name }}</span> silinecek. Bu işlem geri alınamaz ve alt öğeleri de etkileyebilir.
           </p>
           <div class="flex gap-3">
-            <button @click="executeDelete" :disabled="saving" class="flex-1 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-sm font-medium transition-colors disabled:opacity-50">
+            <button :disabled="saving" class="flex-1 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-sm font-medium transition-colors disabled:opacity-50" @click="executeDelete">
               {{ saving ? 'Siliniyor...' : 'Sil' }}
             </button>
-            <button @click="deleteConfirm.open = false" class="flex-1 py-2 rounded-xl bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium transition-colors">
+            <button class="flex-1 py-2 rounded-xl bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium transition-colors" @click="deleteConfirm.open = false">
               İptal
             </button>
           </div>

@@ -16,7 +16,7 @@
           class="bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors focus:border-primary"
           placeholder="kullanici_adi"
           autocomplete="username"
-        />
+        >
         <p v-if="fieldErrors.username" class="text-negative text-xs font-semibold">{{ fieldErrors.username }}</p>
       </div>
 
@@ -29,7 +29,7 @@
           class="bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors focus:border-primary"
           placeholder="ornek@email.com"
           autocomplete="email"
-        />
+        >
         <p v-if="fieldErrors.email" class="text-negative text-xs font-semibold">{{ fieldErrors.email }}</p>
       </div>
 
@@ -45,7 +45,7 @@
           class="bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors focus:border-primary"
           placeholder="••••••"
           autocomplete="current-password"
-        />
+        >
         <p class="text-xs font-semibold text-gray-400">E-posta veya şifre değiştirmek için gerekli</p>
         <p v-if="fieldErrors.currentPassword" class="text-negative text-xs font-semibold">{{ fieldErrors.currentPassword }}</p>
       </div>
@@ -59,7 +59,7 @@
           class="bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors focus:border-primary"
           placeholder="••••••"
           autocomplete="new-password"
-        />
+        >
         <p v-if="fieldErrors.newPassword" class="text-negative text-xs font-semibold">{{ fieldErrors.newPassword }}</p>
       </div>
 

@@ -2,7 +2,17 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-05-10",
   devtools: { enabled: false },
   
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxt/eslint",
+    "@nuxtjs/sitemap"
+  ],
+
+  site: {
+    url: "https://www.pracby.com",
+    name: "Pracby",
+    description: "KPSS'ye çalışmanın en eğlenceli yolu. Hemen test çözmeye başla!",
+  },
   
   app: {
     head: {

@@ -6,7 +6,7 @@
         <p class="text-gray-400 mt-2">Yönetim paneline giriş yapın</p>
       </div>
 
-      <form @submit.prevent="handleLogin" class="bg-gray-800 rounded-xl p-6 space-y-4 border border-gray-700">
+      <form class="bg-gray-800 rounded-xl p-6 space-y-4 border border-gray-700" @submit.prevent="handleLogin">
         <div>
           <label class="block text-sm font-medium text-gray-300 mb-1">Email veya Kullanıcı Adı</label>
           <input
@@ -15,7 +15,7 @@
             required
             class="w-full px-3 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
             placeholder="admin@pracby.com"
-          />
+          >
         </div>
 
         <div>
@@ -27,7 +27,7 @@
               required
               class="w-full px-3 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               placeholder="••••••••"
-            />
+            >
             <button type="button" class="absolute right-2.5 bg-transparent border-0 cursor-pointer text-lg p-1 text-gray-400" tabindex="-1" @click="showPassword = !showPassword">
               {{ showPassword ? '🙈' : '🐵' }}
             </button>

@@ -19,7 +19,7 @@
             placeholder="E-posta veya kullanıcı adı"
             autocomplete="username"
             required
-          />
+          >
         </div>
 
         <div class="flex flex-col gap-1.5">
@@ -32,7 +32,7 @@
               placeholder="••••••"
               autocomplete="current-password"
               required
-            />
+            >
             <button type="button" class="absolute right-2.5 bg-transparent border-0 cursor-pointer text-lg p-1 text-gray-400" tabindex="-1" @click="showPassword = !showPassword">
               {{ showPassword ? '🙈' : '🐵' }}
             </button>

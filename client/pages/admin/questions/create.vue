@@ -10,17 +10,17 @@
     <!-- Tab: Single / Bulk -->
     <div class="flex gap-2 mb-6">
       <button
-        @click="mode = 'single'"
         :class="['px-4 py-2 rounded-lg text-sm font-medium transition-colors', mode === 'single' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600']"
+        @click="mode = 'single'"
       >Tekli Ekleme</button>
       <button
-        @click="mode = 'bulk'"
         :class="['px-4 py-2 rounded-lg text-sm font-medium transition-colors', mode === 'bulk' ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600']"
+        @click="mode = 'bulk'"
       >Toplu Ekleme (JSON)</button>
     </div>
 
     <!-- Single Question Form -->
-    <form v-if="mode === 'single'" @submit.prevent="submitSingle" class="space-y-6">
+    <form v-if="mode === 'single'" class="space-y-6" @submit.prevent="submitSingle">
       <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 space-y-4">
         <h2 class="text-lg font-semibold text-gray-200 mb-2">Soru Bilgileri</h2>
 
@@ -28,14 +28,14 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label class="admin-label">Sınav *</label>
-            <select v-model="form.exam_type_id" @change="onExamChange" required class="admin-select">
+            <select v-model="form.exam_type_id" required class="admin-select" @change="onExamChange">
               <option value="">Seçin</option>
               <option v-for="e in examTypes" :key="e.id" :value="e.id">{{ e.name }}</option>
             </select>
           </div>
           <div>
             <label class="admin-label">Ders *</label>
-            <select v-model="form.course_id" @change="onCourseChange" :disabled="!courses.length" required class="admin-select">
+            <select v-model="form.course_id" :disabled="!courses.length" required class="admin-select" @change="onCourseChange">
               <option value="">Seçin</option>
               <option v-for="c in courses" :key="c.id" :value="c.id">{{ c.name }}</option>
             </select>
@@ -44,21 +44,21 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
             <label class="admin-label">Konu *</label>
-            <select v-model="form.topic_id" @change="onTopicChange" :disabled="!topics.length" required class="admin-select">
+            <select v-model="form.topic_id" :disabled="!topics.length" required class="admin-select" @change="onTopicChange">
               <option value="">Seçin</option>
               <option v-for="t in topics" :key="t.id" :value="t.id">{{ t.name }}</option>
             </select>
           </div>
           <div>
             <label class="admin-label">Adım</label>
-            <select v-model="form.step_id" @change="onStepChange" class="admin-select">
+            <select v-model="form.step_id" class="admin-select" @change="onStepChange">
               <option value="">Seçin (opsiyonel)</option>
               <option v-for="s in steps" :key="s.id" :value="s.id">{{ s.name || `Adım ${s.sort_order}` }}</option>
             </select>
           </div>
           <div>
             <label class="admin-label">Test</label>
-            <select v-model="form.test_id" @change="onTestChange" class="admin-select">
+            <select v-model="form.test_id" class="admin-select" @change="onTestChange">
               <option value="">Seçin (opsiyonel)</option>
               <option v-for="t in tests" :key="t.id" :value="t.id">{{ t.name || `Test ${t.sort_order}` }}</option>
             </select>
@@ -69,7 +69,7 @@
         <div v-if="form.test_id" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
             <label class="admin-label">Sıra (sort_order)</label>
-            <input v-model.number="form.sort_order" type="number" min="0" class="admin-input" :placeholder="`Varsayılan: ${suggestedSortOrder}`" />
+            <input v-model.number="form.sort_order" type="number" min="0" class="admin-input" :placeholder="`Varsayılan: ${suggestedSortOrder}`" >
             <p class="text-xs text-gray-500 mt-1">Bu testte {{ existingQuestionCount }} soru var. Önerilen sıra: {{ suggestedSortOrder }}</p>
           </div>
         </div>
@@ -104,7 +104,7 @@
           </div>
           <div>
             <label class="admin-label">Puan</label>
-            <input v-model.number="form.point_value" type="number" min="1" class="admin-input" />
+            <input v-model.number="form.point_value" type="number" min="1" class="admin-input" >
           </div>
         </div>
 
@@ -125,7 +125,7 @@
       <div v-if="form.question_type === 'multiple_choice' || form.question_type === 'true_false'" class="bg-gray-800 rounded-xl p-6 border border-gray-700 space-y-4">
         <div class="flex items-center justify-between">
           <h2 class="text-lg font-semibold text-gray-200">Cevaplar</h2>
-          <button type="button" @click="addAnswer" class="text-sm text-purple-400 hover:text-purple-300">+ Cevap Ekle</button>
+          <button type="button" class="text-sm text-purple-400 hover:text-purple-300" @click="addAnswer">+ Cevap Ekle</button>
         </div>
 
         <div v-for="(ans, idx) in form.answers" :key="idx" class="flex items-center gap-3">
@@ -133,11 +133,11 @@
             type="radio"
             :name="'correct'"
             :checked="ans.is_correct"
-            @change="setCorrect(idx)"
             class="w-4 h-4 text-purple-600 bg-gray-700 border-gray-600"
-          />
-          <input v-model="ans.answer_text" class="admin-input flex-1" :placeholder="`Cevap ${idx + 1}`" required />
-          <button v-if="form.answers.length > 2" type="button" @click="form.answers.splice(idx, 1)" class="text-red-400 hover:text-red-300 text-sm">Sil</button>
+            @change="setCorrect(idx)"
+          >
+          <input v-model="ans.answer_text" class="admin-input flex-1" :placeholder="`Cevap ${idx + 1}`" required >
+          <button v-if="form.answers.length > 2" type="button" class="text-red-400 hover:text-red-300 text-sm" @click="form.answers.splice(idx, 1)">Sil</button>
         </div>
         <p class="text-xs text-gray-500">Doğru cevabı seçmek için radio butonunu tıklayın</p>
       </div>
@@ -174,9 +174,9 @@
 
         <div class="flex gap-3">
           <button
-            @click="submitBulk"
             :disabled="submitting"
             class="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white font-semibold rounded-lg transition-colors"
+            @click="submitBulk"
           >
             {{ submitting ? 'Yükleniyor...' : 'Toplu Ekle' }}
           </button>

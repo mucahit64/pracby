@@ -13,7 +13,9 @@
     "migrate:make": "knex migrate:make --knexfile knexfile.ts -x ts",
     "seed:run": "knex seed:run --knexfile knexfile.ts",
     "seed:make": "knex seed:make --knexfile knexfile.ts -x ts",
-    "db:reset": "knex migrate:rollback --all --knexfile knexfile.ts && knex migrate:latest --knexfile knexfile.ts && knex seed:run --knexfile knexfile.ts"
+    "db:reset": "knex migrate:rollback --all --knexfile knexfile.ts && knex migrate:latest --knexfile knexfile.ts && knex seed:run --knexfile knexfile.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +37,8 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@nuxt/eslint": "^1.16.0",
+    "@nuxtjs/sitemap": "^8.2.1",
     "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",

@@ -58,27 +58,27 @@
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-1">Enerji</label>
-            <input v-model.number="editForm.energy" type="number" min="0" max="25" class="admin-input" />
+            <input v-model.number="editForm.energy" type="number" min="0" max="25" class="admin-input" >
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-1">Palamut</label>
-            <input v-model.number="editForm.acorn_balance" type="number" min="0" class="admin-input" />
+            <input v-model.number="editForm.acorn_balance" type="number" min="0" class="admin-input" >
           </div>
         </div>
 
         <div class="flex gap-3">
           <button
-            @click="handleUpdate"
             :disabled="submitting"
             class="px-4 py-2 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white text-sm font-medium rounded-lg transition-colors"
+            @click="handleUpdate"
           >
             {{ submitting ? 'Kaydediliyor...' : 'Güncelle' }}
           </button>
           <button
             v-if="user.role_name !== 'admin'"
-            @click="handleDelete"
             :disabled="submitting"
             class="px-4 py-2 bg-red-600/20 hover:bg-red-600/30 text-red-400 text-sm font-medium rounded-lg transition-colors"
+            @click="handleDelete"
           >
             Kullanıcıyı Sil
           </button>

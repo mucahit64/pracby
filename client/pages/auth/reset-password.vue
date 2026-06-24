@@ -49,7 +49,7 @@
                 autocomplete="new-password"
                 maxlength="64"
                 required
-              />
+              >
               <button type="button" class="absolute right-2.5 bg-transparent border-0 cursor-pointer text-lg p-1 text-gray-400" tabindex="-1" @click="showPassword = !showPassword">
                 {{ showPassword ? '🙈' : '🐵' }}
               </button>
@@ -71,7 +71,7 @@
               autocomplete="new-password"
               maxlength="64"
               required
-            />
+            >
             <span v-if="confirmPassword.length > 0 && !passwordsMatch" class="text-xs font-semibold text-negative -mt-0.5">Şifreler eşleşmiyor</span>
           </div>
 
