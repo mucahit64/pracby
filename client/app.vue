@@ -1,3 +1,32 @@
+<script setup lang="ts">
+useHead({
+  title: "Pracby",
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} | Pracby` : 'Pracby | Oyunlaştırılmış KPSS Soru Çözümü';
+  },
+  meta: [
+    { 
+      name: "description", 
+      content: "Pracby ile KPSS Tarih, Coğrafya ve Vatandaşlık derslerini oyun oynayarak, sıkılmadan öğrenin. 3D haritalı ve oyunlaştırılmış soru çözüm platformu." 
+    },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    
+    { property: "og:title", content: "Pracby | Oyunlaştırılmış KPSS Platformu" },
+    { property: "og:description", content: "KPSS'ye çalışmanın en eğlenceli yolu. Hemen test çözmeye başla!" },
+    { property: "og:type", content: "website" }
+  ],
+  link: [
+    { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+    { rel: "preconnect", href: "https://fonts.googleapis.com" },
+    { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap",
+    },
+  ],
+});
+</script>
+
 <template>
   <NuxtLayout>
     <NuxtPage />
