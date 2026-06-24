@@ -475,6 +475,7 @@ export async function down(knex: Knex): Promise<void> {
   await knex.schema.dropTableIfExists("friendships");
   await knex.schema.dropTableIfExists("streak_history");
   await knex.schema.dropTableIfExists("user_stats");
+  await knex.schema.dropTableIfExists("password_reset_tokens");
   await knex.schema.dropTableIfExists("users");
   await knex.schema.dropTableIfExists("exam_types");
   await knex.schema.dropTableIfExists("exam_groups");
