@@ -5,14 +5,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/eslint",
-    "@nuxtjs/sitemap"
   ],
-
-  site: {
-    url: "https://www.pracby.com",
-    name: "Pracby",
-    description: "KPSS'ye çalışmanın en eğlenceli yolu. Hemen test çözmeye başla!",
-  },
   
   app: {
     head: {
