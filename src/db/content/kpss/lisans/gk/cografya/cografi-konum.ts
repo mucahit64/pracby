@@ -390,7 +390,7 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
   },
   {
     text: "<p><b>(2012 KPSS-ORTAÖĞRETİM)</b><br><br><b>Türkiye'ye ulaşmaya çalışan bir hava aracı aşağıdaki alanların hangisinden hareket ederse en kısa mesafeyi kullanmış olur?</b></p>",
-    diff: 4,
+    diff: 3,
     expl: "Dünyanın küresel şeklinden dolayı Kutup noktasına (Kuzey Kutbu 90°) çok yakın olan bir merkezden zıt boylam üzerinden gelindiğinde mesafe çok kısa olur. 84°-88° Kuzey / 140°-145° Batı konumundan Kuzey Kutbu'nu aşarak zıt boylamı olan 35°-40° Doğu'ya (Türkiye'ye) inmek en kestirme yoldur.",
     answers: [
       { text: "84° - 89° Kuzey / 5° - 10° Batı", ok: false },
