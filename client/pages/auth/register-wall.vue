@@ -17,6 +17,16 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'default' });
 
+useHead({
+  title: 'Kayıt Ol',
+  meta: [
+    { name: "description", content: "Pracby ile KPSS Tarih, Coğrafya ve Vatandaşlık derslerini oyun oynayarak, sıkılmadan öğrenin. 3D haritalı ve oyunlaştırılmış soru çözüm platformu." },
+    { property: "og:title", content: "Pracby | Oyunlaştırılmış KPSS Platformu" },
+    { property: "og:description", content: "KPSS'ye çalışmanın en eğlenceli yolu. Hemen test çözmeye başla!" },
+    { property: "og:type", content: "website" }
+  ]
+});
+
 onMounted(() => {
   if (localStorage.getItem('pb_token')) {
     navigateTo('/');

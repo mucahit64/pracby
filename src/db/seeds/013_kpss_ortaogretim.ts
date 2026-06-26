@@ -37,7 +37,7 @@ export async function seed(knex: Knex): Promise<void> {
     {
       moduleName: "Genel Kültür",
       courseName: "Coğrafya",
-      checkTopic: "Türkiye'nin Coğrafi Konumu",
+      checkTopic: "Coğrafi Konum",
       topics: KPSS_GK_COGRAFYA_TOPICS,
     },
     {

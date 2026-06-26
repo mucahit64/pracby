@@ -12,7 +12,7 @@ import { KPSS_GK_COGRAFYA_TOPICS } from "../content/kpss/lisans/gk/cografya";
 
 export async function seed(knex: Knex): Promise<void> {
   // Idempotent guard
-  const existing = await knex("topics").where("name", "Türkiye'nin Coğrafi Konumu").first();
+  const existing = await knex("topics").where("name", "Coğrafi Konum").first();
   if (existing) {
     console.log("009: KPSS Lisans Genel Kültür (Coğrafya) içeriği zaten mevcut, atlanıyor.");
     return;

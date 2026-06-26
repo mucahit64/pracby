@@ -1,8 +1,7 @@
 <script setup lang="ts">
 useHead({
-  title: "Pracby",
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} | Pracby` : 'Pracby | Oyunlaştırılmış KPSS Soru Çözümü';
+    return titleChunk ? `${titleChunk} | Pracby` : 'Pracby';
   },
   meta: [
     { 

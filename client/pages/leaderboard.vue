@@ -93,6 +93,16 @@ class="w-11 h-11 rounded-full flex items-center justify-center text-lg font-blac
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: 'Liderlik Tablosu',
+  meta: [
+    { name: "description", content: "Pracby ile KPSS Tarih, Coğrafya ve Vatandaşlık derslerini oyun oynayarak, sıkılmadan öğrenin. 3D haritalı ve oyunlaştırılmış soru çözüm platformu." },
+    { property: "og:title", content: "Pracby | Oyunlaştırılmış KPSS Platformu" },
+    { property: "og:description", content: "KPSS'ye çalışmanın en eğlenceli yolu. Hemen test çözmeye başla!" },
+    { property: "og:type", content: "website" }
+  ]
+});
+
 const activeLeague = ref('bronze');
 
 const leagues = [
