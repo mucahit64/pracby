@@ -77,7 +77,7 @@
             class="border-b border-gray-700/50 hover:bg-gray-700/30 transition-colors"
           >
             <td class="px-4 py-3">
-              <div class="text-gray-200 line-clamp-2 max-w-md" v-html="stripHtml(q.question_text)" />
+              <div class="text-gray-200 line-clamp-2 max-w-md">{{ stripHtml(q.question_text) }}</div>
             </td>
             <td class="px-4 py-3">
               <span class="text-xs px-2 py-1 rounded bg-gray-700 text-gray-300">{{ typeLabel(q.question_type) }}</span>

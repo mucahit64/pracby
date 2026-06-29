@@ -57,7 +57,7 @@
             class="border-b border-gray-700/50 hover:bg-gray-700/30 transition-colors"
           >
             <td class="px-4 py-3">
-              <div class="text-gray-200 line-clamp-2 max-w-xs" v-html="stripHtml(r.question_text)" />
+              <div class="text-gray-200 line-clamp-2 max-w-xs">{{ stripHtml(r.question_text) }}</div>
               <div v-if="r.description" class="text-xs text-gray-500 mt-1 italic">{{ r.description }}</div>
             </td>
             <td class="px-4 py-3 text-gray-300">{{ r.reporter_username ?? 'Anonim' }}</td>
@@ -96,7 +96,7 @@
 
         <div class="text-sm space-y-2">
           <p><span class="text-gray-400">Soru:</span></p>
-          <div class="bg-gray-900 rounded p-3 text-gray-300 text-sm" v-html="selected.question_text" />
+          <div class="bg-gray-900 rounded p-3 text-gray-300 text-sm">{{ selected.question_text }}</div>
 
           <p><span class="text-gray-400">Raporlayan:</span> {{ selected.reporter_username ?? 'Anonim' }} ({{ selected.reporter_email ?? '-' }})</p>
           <p><span class="text-gray-400">Sebep:</span> {{ reasonLabel(selected.reason) }}</p>

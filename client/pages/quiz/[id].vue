@@ -14,20 +14,25 @@
 
     <!-- Quiz in progress -->
     <template v-else-if="!finished && questions.length > 0">
-      <!-- Top bar -->
       <div class="sticky top-0 z-10 -mx-4 px-4 py-3 bg-white border-b border-gray-100 shadow-sm">
         <div class="flex items-center gap-3">
+          
           <button class="w-9 h-9 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-500 font-bold cursor-pointer hover:bg-gray-200 transition-colors shrink-0" @click="handleClose">✕</button>
-          <div class="flex-1 min-w-0">
-            <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+          
+          <div class="flex-1 min-w-0 flex items-center gap-3">
+            <div class="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
               <div class="h-full bg-primary rounded-full transition-all duration-500" :style="{ width: `${((answeredCount + (answered && currentIndex >= questions.length - 1 ? 1 : 0)) / questions.length) * 100}%` }" />
             </div>
-            <div class="mt-1 text-[10px] font-bold text-gray-400">{{ currentIndex + 1 }} / {{ questions.length }}</div>
+            <div class="text-xs font-bold text-gray-400 shrink-0">
+              {{ currentIndex + 1 }} / {{ questions.length }}
+            </div>
           </div>
+
           <template v-if="unlimitedEnergy">
             <span class="text-sm font-extrabold text-positive shrink-0">♾️🔋</span>
           </template>
           <span v-else class="text-sm font-extrabold text-negative shrink-0 bg-red-50 border border-red-100 px-2.5 py-1 rounded-full">🔋 {{ energy }}</span>
+          
         </div>
       </div>
 
@@ -47,7 +52,7 @@
         </div>
 
         <!-- Question text (not for swipe/fill_blank) -->
-        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="question-html text-base sm:text-lg text-gray-800 leading-snug space-y-2" v-html="currentQuestion.question_text" />
+        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="question-html text-base sm:text-lg text-gray-800 leading-snug space-y-2">{{ currentQuestion.question_text }}</div>
 
         <!-- Question image -->
         <div v-if="currentQuestion.image_url" class="w-full">
@@ -76,10 +81,10 @@
               @click="answerMc(option.id)"
             >
               <span
-class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-extrabold shrink-0"
+                class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-extrabold shrink-0"
                 :class="getMcLetterClass(option.id)"
               >{{ optionLetters[i] }}</span>
-              <span class="text-sm font-bold flex-1" v-html="option.answer_text" />
+              <span class="text-sm font-bold flex-1">{{ option.answer_text }}</span>
             </button>
           </div>
         </template>
@@ -101,7 +106,7 @@ class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm fo
                   }"
                   @click="!answered && selectedFillWord ? (selectedFillWord = '') : undefined"
                 >{{ selectedFillWord || '______' }}</span>
-                <span v-else v-html="part" />
+                <span v-else>{{ part }}</span>
               </template>
             </div>
             <div class="flex flex-wrap gap-2">
@@ -246,7 +251,7 @@ class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm fo
             >
               <div class="absolute top-3 right-3 text-positive font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeRightOpacity }">DOĞRU ✓</div>
               <div class="absolute top-3 left-3 text-negative font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeLeftOpacity }">YANLIŞ ✗</div>
-              <p class="text-base font-bold text-gray-800" v-html="currentQuestion.question_text" />
+              <p class="text-base font-bold text-gray-800">{{ currentQuestion.question_text }}</p>
             </div>
             <div v-if="!answered" class="flex justify-between w-full max-w-[340px] text-xs font-extrabold text-gray-400">
               <span>← YANLIŞ</span>
@@ -264,7 +269,7 @@ v-if="answered" class="flex items-center gap-3.5 rounded-2xl px-5 py-4 border-b-
             <span class="text-2xl font-black">{{ lastAnswerCorrect ? '✓' : '✗' }}</span>
             <div class="flex-1 min-w-0">
               <div class="text-base font-black">{{ lastAnswerCorrect ? 'Harika! 🎉' : 'Yanlış! 😔' }}</div>
-              <div v-if="currentQuestion.explanation" class="text-xs font-semibold opacity-80 mt-0.5" v-html="currentQuestion.explanation" />
+              <div v-if="currentQuestion.explanation" class="text-xs font-semibold opacity-80 mt-0.5">{{ currentQuestion.explanation }}</div>
             </div>
             <button
 class="shrink-0 bg-white font-extrabold text-sm px-5 py-2.5 rounded-xl border-2 cursor-pointer transition-all font-[inherit]"

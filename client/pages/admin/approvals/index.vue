@@ -35,7 +35,7 @@
         <div v-for="q in pendingQuestions" :key="q.id" class="bg-gray-800 rounded-xl border border-gray-700 p-4">
           <div class="flex items-start justify-between gap-4">
             <div class="flex-1 min-w-0">
-              <div class="text-gray-200 text-sm mb-2" v-html="truncateHtml(q.question_text, 200)" />
+              <div class="text-gray-200 text-sm mb-2">{{ truncateHtml(q.question_text, 200) }}</div>
               <div class="flex flex-wrap gap-2 text-xs">
                 <span class="px-2 py-0.5 bg-gray-700 text-gray-400 rounded">{{ q.question_type }}</span>
                 <span class="px-2 py-0.5 bg-gray-700 text-gray-400 rounded">Zorluk: {{ q.difficulty }}</span>
@@ -116,7 +116,7 @@ const counts = ref({ questions: 0, topics: 0, total: 0 })
 
 function truncateHtml(html: string, maxLen: number) {
   const text = html.replace(/<[^>]+>/g, '')
-  return text.length > maxLen ? text.slice(0, maxLen) + '...' : html
+  return text.length > maxLen ? text.slice(0, maxLen) + '...' : text
 }
 
 function formatDate(dateStr: string) {

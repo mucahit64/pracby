@@ -118,7 +118,7 @@ export function useUserSession() {
         energyCount.value = fresh.energy ?? energyCount.value
         nextEnergyAt.value = fresh.next_energy_at ?? null
       })
-    } catch (err: any) {
+    } catch (err) {
       // If the token is rejected by the server (user deleted or token revoked),
       // remove the stale token so the app treats the visitor as a guest.
       if (err && typeof err === 'object' && 'statusCode' in err &&

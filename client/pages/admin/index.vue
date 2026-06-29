@@ -8,7 +8,7 @@
       <div v-for="card in cards" :key="card.label" class="bg-gray-800 rounded-xl p-5 border border-gray-700">
         <div class="flex items-center justify-between mb-2">
           <span class="text-gray-400 text-sm">{{ card.label }}</span>
-          <span class="w-5 h-5 text-gray-500" v-html="card.icon" />
+          <span class="w-5 h-5 text-gray-500">{{ card.icon }}</span>
         </div>
         <div class="text-2xl font-bold" :class="card.color">{{ card.value }}</div>
         <p v-if="card.sub" class="text-xs text-gray-500 mt-1">{{ card.sub }}</p>

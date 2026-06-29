@@ -38,7 +38,7 @@
           ]"
           @click="isMobile && (sidebarOpen = false)"
         >
-          <span class="w-5 h-5 shrink-0" v-html="item.icon" />
+          <span class="w-5 h-5 shrink-0">{{ item.icon }}</span>
           {{ item.label }}
         </NuxtLink>
       </nav>
@@ -134,7 +134,7 @@ const ALL_NAV_ITEMS = [
 const navItems = computed(() =>
   ALL_NAV_ITEMS.filter(item => {
     if (item.permission && !userPermissions.value.includes(item.permission)) return false
-    if ((item as any).adminOnly && userRole.value !== 'admin') return false
+    if (item.adminOnly && userRole.value !== 'admin') return false
     return true
   })
 )
