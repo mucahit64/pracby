@@ -5,7 +5,8 @@ import type { McQ } from "../../../../types";
 // ============================================================================
 export const COGRAFI_KONUM_TEST1: McQ[] = [
   {
-    text: "<p><b>(2024 KPSS-LİSANS)</b><br><br>Türkiye'nin coğrafi konumu ifade edilirken kuzey, güney, doğu ve batı yönlerindeki uç noktalarına da yer verilir.<br><br><b>Aşağıdakilerden hangisi bu uç noktalardan biri değildir?</b></p>",
+    text: "<p>Türkiye'nin coğrafi konumu ifade edilirken kuzey, güney, doğu ve batı yönlerindeki uç noktalarına da yer verilir.<br><br><b>Aşağıdakilerden hangisi bu uç noktalardan biri değildir?</b></p>",
+    exam: "2024 KPSS-LİSANS",
     diff: 1,
     expl: "Türkiye'nin uç noktaları; Kuzeyde Sinop (İnceburun), Güneyde Hatay (Topraktutan), Doğuda Iğdır (Dilucu) ve Batıda Gökçeada (Avlaka Burnu/İnceburun)'dır. İzmir - Karaburun bu uç noktalardan biri değildir.",
     answers: [
@@ -17,7 +18,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 KPSS-ÖNLİSANS)</b><br><br>Aşağıdaki grafikte Türkiye'deki iki merkezde yıl içerisindeki gündüz süresinin değişimi gösterilmiştir. (Grafikte I. Merkez'in gündüz süresi değişimi II. Merkez'e göre daha azdır.)<br><br><b>Bu merkezlerin aşağıdakilerden hangisi olduğu söylenebilir?</b></p>",
+    text: "<p>Aşağıdaki grafikte Türkiye'deki iki merkezde yıl içerisindeki gündüz süresinin değişimi gösterilmiştir. (Grafikte I. Merkez'in gündüz süresi değişimi II. Merkez'e göre daha azdır.)<br><br><b>Bu merkezlerin aşağıdakilerden hangisi olduğu söylenebilir?</b></p>",
+    exam: "2024 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Gündüz süresi değişimi Ekvator'dan kutuplara doğru artar. Grafikte I. merkezin değişimi daha az olduğu için Ekvator'a (güneye) daha yakındır, II. merkez ise daha kuzeydedir. Seçenekler arasında I'in güneyde, II'nin kuzeyde olduğu tek eşleşme Antalya - Sinop'tur.",
     answers: [
@@ -29,7 +31,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 KPSS-LİSANS)</b><br><br>I. Uluslararası enerji transferinde üs konumunda olması<br>II. Hidrolik enerji potansiyelinin yüksek olması<br>III. Yer altı ve yer üstü tatlı su kaynaklarının zengin olması<br><br><b>Yukarıdakilerden hangileri Türkiye'nin Orta Doğu ülkelerine göre jeopolitik açıdan daha güçlü olduğu doğal unsurlar arasında bulunur?</b></p>",
+    text: "<p>I. Uluslararası enerji transferinde üs konumunda olması<br>II. Hidrolik enerji potansiyelinin yüksek olması<br>III. Yer altı ve yer üstü tatlı su kaynaklarının zengin olması<br><br><b>Yukarıdakilerden hangileri Türkiye'nin Orta Doğu ülkelerine göre jeopolitik açıdan daha güçlü olduğu doğal unsurlar arasında bulunur?</b></p>",
+    exam: "2023 KPSS-LİSANS",
     diff: 2,
     expl: "Türkiye'nin hidrolik enerji potansiyeli ve tatlı su kaynakları 'doğal' unsurlardır (II ve III). Enerji transferinde üs konumunda olması (I) ise beşeri ve ekonomik bir unsurdur.",
     answers: [
@@ -41,7 +44,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Türkiye'nin konum özellikleri ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>Türkiye'nin konum özellikleri ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    exam: "2023 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Türkiye 26°-45° Doğu meridyenleri arasında yer alır. Bu nedenle Başlangıç Meridyeni'nin (Greenwich) batısında değil, doğusunda yer almaktadır.",
     answers: [
@@ -53,7 +57,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-LİSANS)</b><br><br>Türkiye'nin iklimiyle ilgili olarak;<br>I. dört mevsimin belirgin olarak yaşanması<br>II. yıllık sıcaklık farklarının belirgin olması<br>III. kısa mesafelerde sıcaklık farkının görülmesi<br>IV. doğuya gidildikçe karın yerde kalma süresinin artması<br><br><b>özelliklerinden hangileri üzerinde mutlak konum daha fazla etkili olmaktadır?</b></p>",
+    text: "<p>Türkiye'nin iklimiyle ilgili olarak;<br>I. dört mevsimin belirgin olarak yaşanması<br>II. yıllık sıcaklık farklarının belirgin olması<br>III. kısa mesafelerde sıcaklık farkının görülmesi<br>IV. doğuya gidildikçe karın yerde kalma süresinin artması<br><br><b>özelliklerinden hangileri üzerinde mutlak konum daha fazla etkili olmaktadır?</b></p>",
+    exam: "2022 KPSS-LİSANS",
     diff: 2,
     expl: "Dört mevsimin belirgin yaşanması ve yıllık sıcaklık farkları (I ve II) Orta Kuşakta bulunmanın, yani mutlak konumun sonucudur. Kısa mesafelerde sıcaklık farkı ve doğuya gidildikçe kar süresinin artması ise yükselti ve yer şekilleriyle (göreceli konum) ilgilidir.",
     answers: [
@@ -65,7 +70,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-ORTAÖĞRETİM)</b><br><br>I. Akdeniz kıyısında bulunması<br>II. Başlangıç Meridyeni'nin doğusunda yer alması<br>III. Kuzey Yarım Küre'nin orta kuşağında bulunması<br>IV. Asya ile Avrupa arasında köprü konumunda olması<br><br><b>Yukarıdakilerden hangileri Türkiye'nin mutlak konumuyla ilişkilidir?</b></p>",
+    text: "<p>I. Akdeniz kıyısında bulunması<br>II. Başlangıç Meridyeni'nin doğusunda yer alması<br>III. Kuzey Yarım Küre'nin orta kuşağında bulunması<br>IV. Asya ile Avrupa arasında köprü konumunda olması<br><br><b>Yukarıdakilerden hangileri Türkiye'nin mutlak konumuyla ilişkilidir?</b></p>",
+    exam: "2022 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Başlangıç meridyeninin doğusunda olması (II) ve orta kuşakta bulunması (III) koordinatlarla belirtilen mutlak konum özellikleridir. Deniz kıyısında ve köprü konumunda olması göreceli (özel) konumdur.",
     answers: [
@@ -77,7 +83,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-ÖNLİSANS)</b><br><br><b>Aşağıdakilerden hangisi Türkiye'nin mutlak konumuna ait bir özelliktir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Türkiye'nin mutlak konumuna ait bir özelliktir?</b></p>",
+    exam: "2022 EKPSS-ÖNLİSANS",
     diff: 1,
     expl: "İklim sınıflamalarına göre ılıman (orta) kuşakta yer alması Türkiye'nin mutlak (matematik) konumunun doğrudan bir sonucudur. Diğer seçenekler Türkiye'nin göreceli konumudur.",
     answers: [
@@ -89,7 +96,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-ORTAÖĞRETİM)</b><br><br>Aşağıdaki haritada Ankara'dan yola çıkan beş ayrı gözlemcinin ulaştığı merkezler gösterilmiştir.<br><br><b>Buna göre hangi gözlemcinin ulaştığı yerde Ankara'ya göre hem enlem hem de boylam dereceleri büyümüştür?</b></p>",
+    text: "<p>Aşağıdaki haritada Ankara'dan yola çıkan beş ayrı gözlemcinin ulaştığı merkezler gösterilmiştir.<br><br><b>Buna göre hangi gözlemcinin ulaştığı yerde Ankara'ya göre hem enlem hem de boylam dereceleri büyümüştür?</b></p>",
+    exam: "2022 EKPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Türkiye, Kuzey Yarım Küre ve Doğu Yarım Küre'dedir. Enlem derecesinin büyümesi için kuzeye, boylam derecesinin büyümesi için doğuya gidilmelidir. Haritada Ankara'dan kuzeydoğuya doğru hareket eden gözlemci (I) bu şarta uyar.",
     answers: [
@@ -101,7 +109,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2021 KPSS-LİSANS)</b><br><br>Türkiye, eski dünya karaları olarak bilinen Asya, Afrika ve Avrupa ana karalarının birbirine en fazla yaklaştıkları bir konumda bulunur.<br><br><b>Buna göre; I. ulaşım güzergâhları, II. balık avlanma alanları, III. sanayi üretiminde çeşitlilik unsurlarından hangileri Türkiye için avantaj oluşturur?</b></p>",
+    text: "<p>Türkiye, eski dünya karaları olarak bilinen Asya, Afrika ve Avrupa ana karalarının birbirine en fazla yaklaştıkları bir konumda bulunur.<br><br><b>Buna göre; I. ulaşım güzergâhları, II. balık avlanma alanları, III. sanayi üretiminde çeşitlilik unsurlarından hangileri Türkiye için avantaj oluşturur?</b></p>",
+    exam: "2021 KPSS-LİSANS",
     diff: 2,
     expl: "Kıtaların birbirine yaklaşması ve köprü konumunda olması doğrudan ulaşım ve transit ticaret (ulaşım güzergâhları) açısından avantaj sağlar.",
     answers: [
@@ -113,7 +122,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2021 KPSS-LİSANS)</b><br><br>Türkiye'de güneşin doğuş ve batış saatleri yaz ile kış mevsimlerinde değişiklik gösterir. Ortalama güneşlenme süresi kış aylarında daha kısa iken yaz aylarında daha uzundur.<br><br><b>Bu süre farkının temel nedeni aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Türkiye'de güneşin doğuş ve batış saatleri yaz ile kış mevsimlerinde değişiklik gösterir. Ortalama güneşlenme süresi kış aylarında daha kısa iken yaz aylarında daha uzundur.<br><br><b>Bu süre farkının temel nedeni aşağıdakilerden hangisidir?</b></p>",
+    exam: "2021 KPSS-LİSANS",
     diff: 1,
     expl: "Gündüz sürelerinin mevsimlere göre değişmesi (yazın uzun, kışın kısa olması) eksen eğikliği ve enlem, yani Türkiye'nin mutlak konumu ile ilgilidir.",
     answers: [
@@ -125,7 +135,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2021 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Sinop Yarımadası'nda yer alan Türkiye'nin en kuzey uç noktası aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><b>Sinop Yarımadası'nda yer alan Türkiye'nin en kuzey uç noktası aşağıdakilerden hangisidir?</b></p>",
+    exam: "2021 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Türkiye'nin en kuzey uç noktası Sinop ilindeki İnceburun'dur.",
     answers: [
@@ -137,7 +148,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2021 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Türkiye'nin gerçek yüzölçümü aşağıdaki değerlerden hangisine daha yakındır?</b></p>",
+    text: "<p><b>Türkiye'nin gerçek yüzölçümü aşağıdaki değerlerden hangisine daha yakındır?</b></p>",
+    exam: "2021 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Türkiye'nin izdüşüm yüzölçümü yaklaşık 783 bin km² iken, dağlık ve engebeli yapısı hesaba katıldığında gerçek yüzölçümü yaklaşık 814.000 km² değerine yakındır.",
     answers: [
@@ -155,7 +167,8 @@ export const COGRAFI_KONUM_TEST1: McQ[] = [
 // ============================================================================
 export const COGRAFI_KONUM_TEST2: McQ[] = [
   {
-    text: "<p><b>(2021 MEB-EKYS)</b><br><br>Türkiye'de;<br>I. dört mevsimin belirgin olarak yaşanması,<br>II. batıdan doğuya doğru gidildikçe sıcaklıkların düşmesi,<br>III. ortalama yükseltisinin fazla olması<br><br><b>özelliklerinden hangileri, Türkiye'nin orta kuşakta yer aldığını gösterir?</b></p>",
+    text: "<p>Türkiye'de;<br>I. dört mevsimin belirgin olarak yaşanması,<br>II. batıdan doğuya doğru gidildikçe sıcaklıkların düşmesi,<br>III. ortalama yükseltisinin fazla olması<br><br><b>özelliklerinden hangileri, Türkiye'nin orta kuşakta yer aldığını gösterir?</b></p>",
+    exam: "2021 MEB-EKYS",
     diff: 2,
     expl: "Orta kuşakta yer almanın en kesin kanıtı dört mevsimin belirgin olarak yaşanmasıdır. Yükselti ve batıdan doğuya sıcaklık düşüşü göreceli konumdur.",
     answers: [
@@ -167,7 +180,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 KPSS-LİSANS)</b><br><br><b>Aşağıdakilerin hangisinde 21 Haziran'da belirtilen doğrultuda hareket edildiğinde hem gündüz süresi uzar hem de yerel saat daha geri olur?</b></p>",
+    text: "<p><b>Aşağıdakilerin hangisinde 21 Haziran'da belirtilen doğrultuda hareket edildiğinde hem gündüz süresi uzar hem de yerel saat daha geri olur?</b></p>",
+    exam: "2020 KPSS-LİSANS",
     diff: 3,
     expl: "21 Haziran'da gündüzün uzaması için kuzeye, yerel saatin daha geri olması için ise batıya gidilmelidir. Adana'dan (Güneydoğu) Edirne'ye (Kuzeybatı) giden biri hem kuzeye hem de batıya gitmiş olur.",
     answers: [
@@ -179,7 +193,7 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 KPSS-ORTAÖĞRETİM)</b><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak gösterilmiştir.<br><br><b>Bu alanların hangisinde 21 Haziran tarihinde gündüz süresi daha uzundur?</b></p>",
+    text: "<p><b>Aşağıdaki haritada bazı alanlar numaralandırılarak gösterilmiştir.<br><br>Bu alanların hangisinde 21 Haziran tarihinde gündüz süresi daha uzundur?</b></p>",
     diff: 2,
     expl: "21 Haziran tarihinde Kuzey Yarım Küre'de kuzeye doğru gidildikçe gündüz süresi uzar. Haritada (Kars-Ardahan yöresine denk gelen) V numaralı merkez en kuzeyde yer aldığı için gündüz süresi en uzundur.",
     answers: [
@@ -191,7 +205,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 KPSS-ÖNLİSANS)</b><br><br><b>Aşağıdaki özelliklerden hangisi Türkiye'nin göreceli konumuyla ilgilidir?</b></p>",
+    text: "<p><b>Aşağıdaki özelliklerden hangisi Türkiye'nin göreceli konumuyla ilgilidir?</b></p>",
+    exam: "2020 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Güneyden esen rüzgarların sıcak olması (Enlem), mevsimlerin belirgin yaşanması (Orta Kuşak), Akdeniz iklimi görülmesi mutlak konum sonuçlarıdır. Yükseltinin batıdan doğuya artması ise yer şekilleri ile ilgili olup göreceli (özel) konumdur.",
     answers: [
@@ -203,7 +218,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 EKPSS-ÖNLİSANS)</b><br><br>I. Akdeniz'den Karadeniz'e doğru gidildikçe tuzluluk oranı azalır.<br>II. Çanakkale'den Erzurum'a doğru gidildikçe ağaçlar daha geç çiçeklenir.<br>III. 21 Mart günü cisimlerin öğle vakti oluşan gölge boyları kuzeye doğru gidildikçe uzar.<br>IV. Temmuz ayında Adana'dan Mardin'e doğru gidildiğinde sıcaklık ortalaması artar.<br><br><b>Yukarıdakilerden hangileri Türkiye'nin mutlak konumuyla ilgilidir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangileri Türkiye'nin mutlak konumuyla ilgilidir?</b></p>",
+    exam: "2020 EKPSS-ÖNLİSANS",
     diff: 3,
     expl: "Kuzeye gidildikçe denizlerdeki tuzluluğun azalması ve gölge boyunun uzaması enlem (mutlak konum) etkisidir (I ve III). Batıdan doğuya sıcaklık değişimi ise yükselti/karasallık (göreceli konum) etkisidir.",
     answers: [
@@ -215,7 +231,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 EKPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıdakilerden hangisi Türkiye'nin mutlak konumunun özellikleri arasında bulunur?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Türkiye'nin mutlak konumunun özellikleri arasında bulunur?</b></p>",
+    exam: "2020 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Türkiye'nin Kuzey Yarım Küre'de yer alması doğrudan mutlak (matematik) konumudur. Diğer seçenekler (denizlerle çevrili olması, boğazlara sahip olması vs.) özel konumudur.",
     answers: [
@@ -227,7 +244,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2019 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Sinop Yarımadası üzerinde yer alan, Türkiye'nin en kuzeyindeki burnun adı nedir?</b></p>",
+    text: "<p><b>Sinop Yarımadası üzerinde yer alan, Türkiye'nin en kuzeyindeki burnun adı nedir?</b></p>",
+    exam: "2019 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Türkiye'nin haritadaki en uç kuzey noktası Sinop'ta bulunan İnce Burun'dur.",
     answers: [
@@ -239,7 +257,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 KPSS-LİSANS)</b><br><br><b>Aşağıdaki coğrafi koordinatlardan hangisi Türkiye sınırları içinde kalmaktadır?</b></p>",
+    text: "<p><b>Aşağıdaki coğrafi koordinatlardan hangisi Türkiye sınırları içinde kalmaktadır?</b></p>",
+    exam: "2018 KPSS-LİSANS",
     diff: 1,
     expl: "Türkiye, 36° - 42° Kuzey enlemleri ile 26° - 45° Doğu boylamları arasındadır. 38° Kuzey ve 36° Doğu koordinatları (D seçeneği) bu aralığa denk gelir.",
     answers: [
@@ -251,7 +270,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 KPSS-ÖNLİSANS)</b><br><br><b>Aşağıdakilerden hangisi Türkiye'nin mutlak konumunun etkisiyle ortaya çıkan özelliklerden biridir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Türkiye'nin mutlak konumunun etkisiyle ortaya çıkan özelliklerden biridir?</b></p>",
+    exam: "2018 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Türkiye'de güneyden kuzeye doğru gidildikçe ortalama sıcaklıkların azalması Ekvator'dan uzaklaşmanın (enlemin), yani mutlak konumun bir sonucudur.",
     answers: [
@@ -263,7 +283,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıdakilerden hangisi Türkiye'nin mutlak konumuna ait bir özellik değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Türkiye'nin mutlak konumuna ait bir özellik değildir?</b></p>",
+    exam: "2018 EKPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Batıdan doğuya doğru gidildikçe yükseltinin artması ülkenin yer şekilleriyle ilgilidir ve göreceli (özel) konum özelliğidir, mutlak konumla açıklanamaz.",
     answers: [
@@ -275,7 +296,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdaki şehirlerimizden hangileri arasında yerel saat farkı daha fazladır?</b></p>",
+    text: "<p><b>Aşağıdaki şehirlerimizden hangileri arasında yerel saat farkı daha fazladır?</b></p>",
+    exam: "2018 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Yerel saat farkının fazla olması için şehirlerin doğu-batı ekseninde birbirine en uzak olması gerekir. İzmir (en batı) ile Kars (en doğu) arası yerel saat farkı en fazladır.",
     answers: [
@@ -287,7 +309,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2017 KPSS-LİSANS)</b><br><br><b>Aşağıdakilerden hangisi Türkiye'nin özel konumuyla ilgilidir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Türkiye'nin özel konumuyla ilgilidir?</b></p>",
+    exam: "2017 KPSS-LİSANS",
     diff: 2,
     expl: "Ankara ve Erzurum yaklaşık olarak aynı enlemlerde bulunmalarına rağmen, Erzurum'un Ankara'ya göre çok daha soğuk olması (yükseltisinin fazla olmasından dolayı) özel konumla ilgilidir.",
     answers: [
@@ -299,7 +322,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2015 KPSS-LİSANS)</b><br><br>Türkiye kışın genellikle kuzey sektörlü soğuk ve nemli hava kütlelerinin, yazın ise güney sektörlü sıcak ve kuru hava kütlelerinin etkisinde kalır.<br><br><b>Bu durum Türkiye'nin başlıca hangi özelliğinden kaynaklanmaktadır?</b></p>",
+    text: "<p><b>Türkiye kışın genellikle kuzey sektörlü soğuk ve nemli hava kütlelerinin, yazın ise güney sektörlü sıcak ve kuru hava kütlelerinin etkisinde kalır.<br><br><b>Bu durum Türkiye'nin başlıca hangi özelliğinden kaynaklanmaktadır?</b></p>",
+    exam: "2015 KPSS-LİSANS",
     diff: 2,
     expl: "Türkiye'ye kuzeyden soğuk, güneyden sıcak hava kütlelerinin gelmesi, Ekvator'un kuzeyinde (Kuzey Yarım Küre'de) yer almasının, yani mutlak konumunun doğrudan bir sonucudur.",
     answers: [
@@ -317,7 +341,8 @@ export const COGRAFI_KONUM_TEST2: McQ[] = [
 // ============================================================================
 export const COGRAFI_KONUM_TEST3: McQ[] = [
   {
-    text: "<p><b>(2015 KPSS-LİSANS)</b><br><br>Tatilini geçirmek üzere Türkiye'ye gelen bir turist, Türkiye'de kaldığı dönemde gece süresinin gittikçe kısalmakla birlikte gündüz süresine göre daha uzun olduğunu fark etmiştir.<br><br><b>Buna göre turistin hangi tarihler arasında Türkiye'de olduğu söylenebilir?</b></p>",
+    text: "<p><b>Tatilini geçirmek üzere Türkiye'ye gelen bir turist, Türkiye'de kaldığı dönemde gece süresinin gittikçe kısalmakla birlikte gündüz süresine göre daha uzun olduğunu fark etmiştir.<br><br><b>Buna göre turistin hangi tarihler arasında Türkiye'de olduğu söylenebilir?</b></p>",
+    exam: "2015 KPSS-LİSANS",
     diff: 3,
     expl: "Gece süresi gündüzden daha uzunsa kış dönemi yaşanıyordur (23 Eylül - 21 Mart arası). Geceler 'gittikçe kısalıyorsa' tarih 21 Aralık'ı geçmiş olmalıdır. 31 Ocak - 11 Şubat bu iki kurala uyan tek dönemdir.",
     answers: [
@@ -329,7 +354,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-LİSANS)</b><br><br>Türkiye'de, • dört mevsim belirgin olarak yaşanır, • Akdeniz iklimi etkilidir, • cephesel yağışlar görülür, • Batı rüzgârları etkilidir.<br><br><b>Bu özelliklerin ortaya çıkmasında aşağıdakilerden hangisinin etkisi daha fazladır?</b></p>",
+    text: "<p><b>Türkiye'de, • dört mevsim belirgin olarak yaşanır, • Akdeniz iklimi etkilidir, • cephesel yağışlar görülür, • Batı rüzgârları etkilidir.<br><br><b>Bu özelliklerin ortaya çıkmasında aşağıdakilerden hangisinin etkisi daha fazladır?</b></p>",
+    exam: "2014 KPSS-LİSANS",
     diff: 1,
     expl: "Verilen bu dört temel özellik (ABCD Kuralı: Akdeniz iklimi, Batı rüzgarları, Cephe yağışları, Dört mevsim belirginliği) Türkiye'nin Orta Kuşakta yer almasının sonucudur.",
     answers: [
@@ -341,7 +367,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-ORTAÖĞRETİM)</b><br><br>Türkiye, coğrafi konumu nedeniyle Dünya'da ve içinde bulunduğu bölgede jeopolitik öneme sahip bir ülkedir.<br><br><b>Bu durumun oluşmasında aşağıdakilerden hangisinin bir etkisi yoktur?</b></p>",
+    text: "<p><b>Türkiye, coğrafi konumu nedeniyle Dünya'da ve içinde bulunduğu bölgede jeopolitik öneme sahip bir ülkedir.<br><br><b>Bu durumun oluşmasında aşağıdakilerden hangisinin bir etkisi yoktur?</b></p>",
+    exam: "2014 KPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Türkiye petrol ve doğalgaz gibi fosil yakıtlar bakımından zengin değildir, dışarıdan ithal eder. Dolayısıyla fosil yakıt dış satımının (ihracatının) fazla olması söz konusu olamaz.",
     answers: [
@@ -353,7 +380,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıda coğrafi koordinatları verilen alanlardan hangisi, Türkiye sınırları içerisinde yer almaktadır?</b></p>",
+    text: "<p><b>Aşağıda coğrafi koordinatları verilen alanlardan hangisi, Türkiye sınırları içerisinde yer almaktadır?</b></p>",
+    exam: "2014 KPSS-ORTAÖĞRETİM",
     diff: 3,
     expl: "Türkiye 36° - 42° Kuzey paralelleri ile 26° - 45° Doğu meridyenleri arasındadır. 39°27' Kuzey ile 35°27' Doğu aralıklarında bulunan merkez bu sınırların tam içine düşer.",
     answers: [
@@ -365,7 +393,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2013 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Türkiye'nin en doğusu ile en batısı arasında meridyen farkından dolayı kaç dakikalık fark bulunmaktadır?</b></p>",
+    text: "<p><b>Türkiye'nin en doğusu ile en batısı arasında meridyen farkından dolayı kaç dakikalık fark bulunmaktadır?</b></p>",
+    exam: "2013 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Türkiye 26° ve 45° Doğu meridyenleri arasındadır. 45 - 26 = 19 meridyen fark vardır. 19 x 4 dakika = 76 dakika yerel saat farkı bulunur.",
     answers: [
@@ -377,7 +406,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 EKPSS-LİSANS)</b><br><br><b>Akdeniz kıyısında bulunan X kentiyle Karadeniz kıyısında bulunan Y kenti arasında aşağıdakilerden hangisinin değişim göstermesi kesin olarak enleme bağlıdır?</b></p>",
+    text: "<p><b>Akdeniz kıyısında bulunan X kentiyle Karadeniz kıyısında bulunan Y kenti arasında aşağıdakilerden hangisinin değişim göstermesi kesin olarak enleme bağlıdır?</b></p>",
+    exam: "2012 EKPSS-LİSANS",
     diff: 2,
     expl: "Kuzey-güney yönlü yer değiştirmelerde gece-gündüz süreleri arasındaki farkın değişmesi tamamen mutlak konuma (enleme) bağlıdır.",
     answers: [
@@ -389,7 +419,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 KPSS-ORTAÖĞRETİM)</b><br><br><b>Türkiye'ye ulaşmaya çalışan bir hava aracı aşağıdaki alanların hangisinden hareket ederse en kısa mesafeyi kullanmış olur?</b></p>",
+    text: "<p><b>Türkiye'ye ulaşmaya çalışan bir hava aracı aşağıdaki alanların hangisinden hareket ederse en kısa mesafeyi kullanmış olur?</b></p>",
+    exam: "2012 KPSS-ORTAÖĞRETİM",
     diff: 3,
     expl: "Dünyanın küresel şeklinden dolayı Kutup noktasına (Kuzey Kutbu 90°) çok yakın olan bir merkezden zıt boylam üzerinden gelindiğinde mesafe çok kısa olur. 84°-88° Kuzey / 140°-145° Batı konumundan Kuzey Kutbu'nu aşarak zıt boylamı olan 35°-40° Doğu'ya (Türkiye'ye) inmek en kestirme yoldur.",
     answers: [
@@ -401,7 +432,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 KPSS-LİSANS)</b><br><br><b>Türkiye'nin jeopolitik önemi üzerinde aşağıdakilerden hangisinin etkisi daha azdır?</b></p>",
+    text: "<p><b>Türkiye'nin jeopolitik önemi üzerinde aşağıdakilerden hangisinin etkisi daha azdır?</b></p>",
+    exam: "2012 KPSS-LİSANS",
     diff: 2,
     expl: "Jeopolitik önem ülkenin siyasi, ekonomik ve stratejik konumuyla ölçülür. Dört mevsimin yaşanması bir iklim (mutlak konum) özelliği olup küresel siyasetteki (jeopolitik) etkisi diğer ekonomik ve stratejik özelliklere kıyasla daha zayıftır.",
     answers: [
@@ -413,7 +445,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 KPSS-LİSANS)</b><br><br>21 haziranda, haritada gösterilen kentlerin hangisinde, Kırşehir'e göre hem gündüz süresi daha kısadır hem de güneş daha erken doğar?<br><br><b>Bu merkez aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><b>21 haziranda, haritada gösterilen kentlerin hangisinde, Kırşehir'e göre hem gündüz süresi daha kısadır hem de güneş daha erken doğar?<br><br><b>Bu merkez aşağıdakilerden hangisidir?</b></p>",
+    exam: "2010 KPSS-LİSANS",
     diff: 3,
     expl: "21 Haziran'da gündüz süresinin Kırşehir'den daha kısa olması için güneye inilmesi gerekir. Güneşin daha erken doğması için doğuya gidilmesi gerekir. Kırşehir'in güneydoğusunda kalan tek il Siirt'tir.",
     answers: [
@@ -425,7 +458,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 KPSS-LİSANS)</b><br><br><b>Türkiye'nin orta kuşakta bulunması, aşağıdaki ekonomik özelliklerinden hangisini etkilemiştir?</b></p>",
+    text: "<p><b>Türkiye'nin orta kuşakta bulunması, aşağıdaki ekonomik özelliklerinden hangisini etkilemiştir?</b></p>",
+    exam: "2010 KPSS-LİSANS",
     diff: 2,
     expl: "Orta kuşakta bulunmak dört mevsimin görülmesine ve dolayısıyla çok çeşitli iklim tiplerinin oluşmasına sebep olur. İklim çeşitliliği de doğrudan çeşitli tarım ürünlerinin yetiştirilmesini sağlar.",
     answers: [
@@ -437,7 +471,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 KPSS-ÖNLİSANS)</b><br><br><b>Aşağıdakilerden hangisi, sıcaklık dağılışında bakının etkisine örnek olarak gösterilebilir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi, sıcaklık dağılışında bakının etkisine örnek olarak gösterilebilir?</b></p>",
+    exam: "2010 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Kuzey Yarım Küre'deki dağların güneye dönük yamaçları güneşi doğrudan aldığı için daha sıcaktır (Bakı Etkisi). Giresun'da dağların güney yamacında karların erken erimesi bunun göstergesidir.",
     answers: [
@@ -449,7 +484,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 KPSS-ORTAÖĞRETİM)</b><br><br><b>Türkiye'nin coğrafi konumuyla ilgili olarak aşağıdaki bilgilerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>Türkiye'nin coğrafi konumuyla ilgili olarak aşağıdaki bilgilerden hangisi yanlıştır?</b></p>",
+    exam: "2010 KPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "21 Haziran'da Kuzey Yarım Küre'de kuzeye gidildikçe gündüzler uzar. Güneye gidildikçe uzamaz, aksine kısalır.",
     answers: [
@@ -461,7 +497,8 @@ export const COGRAFI_KONUM_TEST3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2005 MEB-MÜFETTİŞ YARDIMCILIĞI)</b><br><br><b>21 Haziran tarihinde aşağıdakilerden hangisinde gündüz süresi diğerlerinden daha uzundur?</b></p>",
+    text: "<p><b>21 Haziran tarihinde aşağıdakilerden hangisinde gündüz süresi diğerlerinden daha uzundur?</b></p>",
+    exam: "2005 MEB-MÜFETTİŞ YARDIMCILIĞI",
     diff: 1,
     expl: "21 Haziran tarihinde Kuzey Yarım Küre'de kuzeye doğru çıkıldıkça gündüz süresi uzar. Seçeneklerdeki iller arasında en kuzeyde yer alan il Sinop'tur.",
     answers: [

@@ -40,6 +40,11 @@
       <div class="flex flex-col gap-5 flex-1 mt-3">
         <!-- Meta -->
         <div class="flex items-center justify-end gap-3 -mb-1">
+          <!-- Çıkmış Soru -->
+          <span
+            v-if="currentQuestion.exam_source"
+            class="text-xs font-extrabold text-blue-600 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-full"
+          >📚 {{ currentQuestion.exam_source }}</span>
           <button
             v-if="!guestMode"
             class="text-gray-300 hover:text-red-400 transition-colors"
@@ -52,7 +57,7 @@
         </div>
 
         <!-- Question text (not for swipe/fill_blank) -->
-        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="question-html text-base sm:text-lg text-gray-800 leading-snug space-y-2">{{ currentQuestion.question_text }}</div>
+        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="question-html text-base sm:text-lg text-gray-800 leading-snug space-y-2" v-html="currentQuestion.question_text"/>
 
         <!-- Question image -->
         <div v-if="currentQuestion.image_url" class="w-full">
@@ -251,7 +256,7 @@
             >
               <div class="absolute top-3 right-3 text-positive font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeRightOpacity }">DOĞRU ✓</div>
               <div class="absolute top-3 left-3 text-negative font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeLeftOpacity }">YANLIŞ ✗</div>
-              <p class="text-base font-bold text-gray-800">{{ currentQuestion.question_text }}</p>
+              <p class="text-base font-bold text-gray-800" v-html="currentQuestion.question_text"/>
             </div>
             <div v-if="!answered" class="flex justify-between w-full max-w-[340px] text-xs font-extrabold text-gray-400">
               <span>← YANLIŞ</span>
@@ -263,7 +268,7 @@
         <!-- Feedback -->
         <transition name="fade">
           <div
-v-if="answered" class="flex items-center gap-3.5 rounded-2xl px-5 py-4 border-b-4"
+            v-if="answered" class="flex items-center gap-3.5 rounded-2xl px-5 py-4 border-b-4"
             :class="lastAnswerCorrect ? 'bg-positive/10 border-positive text-positive' : 'bg-negative/10 border-negative text-negative'"
           >
             <span class="text-2xl font-black">{{ lastAnswerCorrect ? '✓' : '✗' }}</span>
@@ -272,7 +277,7 @@ v-if="answered" class="flex items-center gap-3.5 rounded-2xl px-5 py-4 border-b-
               <div v-if="currentQuestion.explanation" class="text-xs font-semibold opacity-80 mt-0.5">{{ currentQuestion.explanation }}</div>
             </div>
             <button
-class="shrink-0 bg-white font-extrabold text-sm px-5 py-2.5 rounded-xl border-2 cursor-pointer transition-all font-[inherit]"
+              class="shrink-0 bg-white font-extrabold text-sm px-5 py-2.5 rounded-xl border-2 cursor-pointer transition-all font-[inherit]"
               :class="lastAnswerCorrect ? 'text-positive border-positive hover:bg-positive/5' : 'text-negative border-negative hover:bg-negative/5'"
               @click="nextQuestion"
             >DEVAM</button>
@@ -419,6 +424,7 @@ interface Question {
   question_text: string;
   question_type: string;
   image_url?: string;
+  exam_source?: string;
   explanation?: string;
   hint?: string;
   type_data?: {

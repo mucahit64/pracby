@@ -31,6 +31,7 @@ export async function seedMC(
       test_id: testId,
       question_text: q.text,
       image_url: q.img ?? null,
+      exam_source: q.exam ?? null,
       question_type: "multiple_choice",
       difficulty: q.diff,
       status: "approved",

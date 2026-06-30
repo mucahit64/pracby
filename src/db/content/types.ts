@@ -6,6 +6,7 @@
 export type McQ = {
   text: string;
   img?: string;
+  exam?: string; // Çıkmış soru kaynağı, örn. "2024 KPSS-LİSANS"
   diff: number; // 1=kolay, 2=orta, 3=zor
   expl: string;
   hint?: string;

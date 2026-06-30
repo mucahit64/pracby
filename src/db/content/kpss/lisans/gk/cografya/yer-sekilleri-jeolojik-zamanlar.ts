@@ -5,7 +5,8 @@ import type { McQ } from "../../../../types";
 // ============================================================================
 export const JEOLOJIK_ZAMANLAR_TEST_1: McQ[] = [
   {
-    text: "<p><b>(2024 EKPSS-LİSANS)</b><br><br>Anadolunun en eski kıvrımlarını oluşturan dağlar zamanla metamorfizmaya uğramış, sertleşmiş, aşınmış ve başlıca masif kütleleri oluşturmuşlardır.<br><br><b>Aşağıdakilerden hangisi bu kütlelerden biri değildir?</b></p>",
+    text: "<p>Anadolunun en eski kıvrımlarını oluşturan dağlar zamanla metamorfizmaya uğramış, sertleşmiş, aşınmış ve başlıca masif kütleleri oluşturmuşlardır.<br><br><b>Aşağıdakilerden hangisi bu kütlelerden biri değildir?</b></p>",
+    exam: "2024 EKPSS-LİSANS",
     diff: 2,
     expl: "Türkiye'deki masif araziler I. Jeolojik zamanda oluşmuş sert, yaşlı kütlelerdir. Yıldız Dağları, Saruhan-Menteşe, Ilgaz-Daday ve Bitlis kütleleri masif alanlara örnektir. Bolkar kütlesi (Toroslar) ise III. Jeolojik zamanda Alp orojenezi ile oluşan genç kıvrım sistemine aittir, masif değildir.",
     answers: [
@@ -17,7 +18,8 @@ export const JEOLOJIK_ZAMANLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-LİSANS)</b><br><br><b>Aşağıdakilerden hangisi, Türkiye'nin temel arazilerini oluşturan masiflerde bulunan metamorfik taşlar arasında yer alır?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi, Türkiye'nin temel arazilerini oluşturan masiflerde bulunan metamorfik taşlar arasında yer alır?</b></p>",
+    exam: "2022 EKPSS-LİSANS",
     diff: 1,
     expl: "Masif araziler eski ve sertleşmiş yapılar olup basınç ve sıcaklık altında metamorfizma (başkalaşım) geçirmişlerdir. Kalkerin (kireç taşı) başkalaşmasıyla oluşan Mermer, metamorfik (başkalaşım) bir taştır ve masif alanlarda sıkça görülür.",
     answers: [
@@ -29,7 +31,8 @@ export const JEOLOJIK_ZAMANLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-LİSANS)</b><br><br>Anadolu'da jeolojik dönemler boyunca yağışlı ve nemli iklim koşullarına bağlı olarak gür bir bitki örtüsü gelişmiştir. Bu bitkilerin göl ve bataklık ortamlara birikmesi sonucu zamanla zengin kömür yatakları oluşmuştur. Bunlardan rezerv bakımından en zengin olanı, linyit yataklarıdır. Soma, Yatağan, Elbistan gibi linyit yatakları bunlardan bazılarıdır.<br><br><b>Bu yataklar aşağıdaki jeolojik dönemlerin hangisinde oluşmuştur?</b></p>",
+    text: "<p>Anadolu'da jeolojik dönemler boyunca yağışlı ve nemli iklim koşullarına bağlı olarak gür bir bitki örtüsü gelişmiştir. Bu bitkilerin göl ve bataklık ortamlara birikmesi sonucu zamanla zengin kömür yatakları oluşmuştur. Bunlardan rezerv bakımından en zengin olanı, linyit yataklarıdır. Soma, Yatağan, Elbistan gibi linyit yatakları bunlardan bazılarıdır.<br><br><b>Bu yataklar aşağıdaki jeolojik dönemlerin hangisinde oluşmuştur?</b></p>",
+    exam: "2022 KPSS-LİSANS",
     diff: 1,
     expl: "Türkiye'de linyit, tuz, bor ve petrol yatakları III. Jeolojik Zaman'da (Tersiyer / Senozoik) oluşmuştur. Taşkömürü ise daha eski olan I. zamanda (Paleozoyik) oluşmuştur.",
     answers: [
@@ -41,7 +44,8 @@ export const JEOLOJIK_ZAMANLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-ÖNLİSANS)</b><br><br>I. Tersiyer'de linyit kömürü yatakları oluşmuştur.<br>II. Kuvaterner'de boğazlar oluşmuştur.<br>III. Mesozoyik'te Toroslar oluşmuştur.<br><br><b>Türkiye arazisinin jeolojik gelişimiyle ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
+    text: "<p>I. Tersiyer'de linyit kömürü yatakları oluşmuştur.<br>II. Kuvaterner'de boğazlar oluşmuştur.<br>III. Mesozoyik'te Toroslar oluşmuştur.<br><br><b>Türkiye arazisinin jeolojik gelişimiyle ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
+    exam: "2022 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Tersiyer'de linyit yatakları oluşmuştur (I doğru). Kuvaterner'de Egeid karası çökerek Ege Denizi ile İstanbul ve Çanakkale boğazları oluşmuştur (II doğru). Ancak Toroslar ve Kuzey Anadolu Dağları Mesozoyik'te değil, III. Jeolojik Zaman'da (Tersiyer) meydana gelen Alp Orojenezi ile oluşmuştur (III yanlış).",
     answers: [
@@ -53,7 +57,8 @@ export const JEOLOJIK_ZAMANLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Yukarıdaki haritada numaralandırılarak koyu renkle gösterilen yerlerden hangisi masif arazilerin bulunduğu alanlardan biri değildir?</p>",
+    text: "<p><br><br>Yukarıdaki haritada numaralandırılarak koyu renkle gösterilen yerlerden hangisi masif arazilerin bulunduğu alanlardan biri değildir?</p>",
+    exam: "2018 KPSS-LİSANS",
     diff: 3,
     expl: "Haritadaki I numaralı yer Saruhan-Menteşe, II numaralı yer Ilgaz-Daday (Kastamonu), III numaralı yer Kırşehir, V numaralı yer ise Bitlis masiflerini göstermektedir. IV numaralı Doğu Karadeniz - Erzurum/Kars çevresi ise genç volkanik ve kıvrım arazilerden oluşur, masif özellik göstermez.",
     answers: [
@@ -65,7 +70,8 @@ export const JEOLOJIK_ZAMANLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 KPSS-LİSANS)</b><br><br>I. Ege Denizi'nin oluşması - İkinci Jeolojik Zaman<br>II. Kuzey Anadolu ve Toros Dağlarının oluşması - Üçüncü Jeolojik Zaman<br>III. İstanbul Boğazı'nın oluşması - Dördüncü Jeolojik Zaman<br><br><b>Türkiye'deki bazı coğrafi olayların meydana geldiği jeolojik zamanlarla ilgili yukarıdaki eşleştirmelerden hangileri doğrudur?</b></p>",
+    text: "<p>I. Ege Denizi'nin oluşması - İkinci Jeolojik Zaman<br>II. Kuzey Anadolu ve Toros Dağlarının oluşması - Üçüncü Jeolojik Zaman<br>III. İstanbul Boğazı'nın oluşması - Dördüncü Jeolojik Zaman<br><br><b>Türkiye'deki bazı coğrafi olayların meydana geldiği jeolojik zamanlarla ilgili yukarıdaki eşleştirmelerden hangileri doğrudur?</b></p>",
+    exam: "2018 KPSS-LİSANS",
     diff: 2,
     expl: "Kuzey Anadolu ve Toros Dağları Üçüncü Jeolojik Zaman'da (Tersiyer) oluşmuştur (II doğru). İstanbul ve Çanakkale Boğazları ile Ege Denizi'nin oluşumu ise Dördüncü Jeolojik Zaman'da (Kuvaterner) gerçekleşmiştir (III doğru). Ege Denizi İkinci Jeolojik zamanda oluşmamıştır (I yanlış).",
     answers: [
@@ -77,7 +83,8 @@ export const JEOLOJIK_ZAMANLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2017 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada bazı alanlar koyu renkle gösterilmiştir.<br><br><b>Aşağıdakilerden hangisi bu alanlar için ortak bir özelliktir?</b></p>",
+    text: "<p><br><br>Aşağıdaki haritada bazı alanlar koyu renkle gösterilmiştir.<br><br><b>Aşağıdakilerden hangisi bu alanlar için ortak bir özelliktir?</b></p>",
+    exam: "2017 KPSS-LİSANS",
     diff: 2,
     expl: "Haritada Yıldız Dağları, Menteşe yöresi, Kastamonu (Daday-Devrekani), Kırşehir, Alanya-Anamur ve Bitlis çevresi taranmıştır. Bu alanların tamamı I. Jeolojik Zaman'da (Paleozoyik) oluşmuş, sert, oturmuş ve deprem riskinin nispeten düşük olduğu masif (yaşlı temel) arazilerdir.",
     answers: [
@@ -89,7 +96,8 @@ export const JEOLOJIK_ZAMANLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 MEB-MÜFETTİŞ YARDIMCILIĞI)</b><br><br><b>Egeid karasının çökmesiyle Akdeniz'in suları ile Karadeniz'in suları hangi jeolojik zamanda birleşmiştir?</b></p>",
+    text: "<p><b>Egeid karasının çökmesiyle Akdeniz'in suları ile Karadeniz'in suları hangi jeolojik zamanda birleşmiştir?</b></p>",
+    exam: "2010 MEB-MÜFETTİŞ YARDIMCILIĞI",
     diff: 1,
     expl: "Egeid karasının çökerek Ege Denizi'nin oluşması ve Akdeniz sularının İstanbul-Çanakkale boğazlarını aşarak Karadeniz ile birleşmesi Dördüncü Jeolojik Zaman'da (Kuvaterner) meydana gelmiştir.",
     answers: [
@@ -107,7 +115,8 @@ export const JEOLOJIK_ZAMANLAR_TEST_1: McQ[] = [
 // ============================================================================
 export const IC_KUVVETLER_TEST_1: McQ[] = [
   {
-    text: "<p><b>(2024 KPSS-ÖNLİSANS)</b><br><br><b>Aşağıdaki yeryüzü şekillerinden hangisinin oluşum sürecinde iç kuvvetler etkili olmamıştır?</b></p>",
+    text: "<p><b>Aşağıdaki yeryüzü şekillerinden hangisinin oluşum sürecinde iç kuvvetler etkili olmamıştır?</b></p>",
+    exam: "2024 KPSS-ÖNLİSANS",
     diff: 1,
     expl: "Meke Maarı ve Kula Volkanitleri volkanizma, Gediz Grabeni ve Süphan Dağı orojenez/volkanizma gibi iç kuvvetlerin eseridir. Akyatan Lagünü (Kıyı set gölü) ise dalga ve akıntıların biriktirmesiyle oluşan bir dış kuvvet şeklidir.",
     answers: [
@@ -119,7 +128,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 KPSS-LİSANS)</b><br><br>I. İstanbul ve Çanakkale boğazları<br>II. Kuzey Anadolu ve Toros Dağları<br>III. Çukurova, Bafra ve Çarşamba deltaları<br><br><b>Yukarıdakilerden hangilerinin oluşumunda orojenik hareketler etkili olmuştur?</b></p>",
+    text: "<p>I. İstanbul ve Çanakkale boğazları<br>II. Kuzey Anadolu ve Toros Dağları<br>III. Çukurova, Bafra ve Çarşamba deltaları<br><br><b>Yukarıdakilerden hangilerinin oluşumunda orojenik hareketler etkili olmuştur?</b></p>",
+    exam: "2020 KPSS-LİSANS",
     diff: 2,
     expl: "İstanbul ve Çanakkale boğazları epirojenez (kıta oluşumu) sonucu çökmeyle, deltalar ise akarsuların (dış kuvvet) taşıdığı alüvyonları biriktirmesiyle oluşmuştur. Kuzey Anadolu ve Toros Dağları ise Alp-Himalaya orojenezi (kıvrım dağları) sonucu meydana gelmiştir.",
     answers: [
@@ -131,7 +141,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Yukarıdaki alanlar numaralandırılarak gösterilmiştir.<br><br><b>Bu alanların hangisi genç volkanik arazilerin yaygın olduğu sahalardan biridir?</b></p>",
+    text: "<p><br><br>Yukarıdaki alanlar numaralandırılarak gösterilmiştir.<br><br><b>Bu alanların hangisi genç volkanik arazilerin yaygın olduğu sahalardan biridir?</b></p>",
+    exam: "2022 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/ic-kuvvetler_volkanizma_t1_q1.jpg",
     diff: 2,
     expl: "Haritadaki III numaralı bölge (Nevşehir, Niğde, Kayseri çevresi) Kapadokya ve Erciyes, Hasan Dağı gibi sönmüş genç volkanların bulunduğu geniş volkanik arazileri kapsar.",
@@ -144,7 +155,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 EKPSS-ÖNLİSANS)</b><br><br><b>Kapadokya Bölgesi'nde görülen kırgıbayır topoğrafyası yaygın olarak hangi tür kayaç üzerinde gelişmiştir?</b></p>",
+    text: "<p><b>Kapadokya Bölgesi'nde görülen kırgıbayır topoğrafyası yaygın olarak hangi tür kayaç üzerinde gelişmiştir?</b></p>",
+    exam: "2020 EKPSS-ÖNLİSANS",
     diff: 1,
     expl: "Kırgıbayır (Badlands), bitki örtüsünün cılız olduğu, özellikle volkanik tüf gibi kolay aşınabilen kayaçların bulunduğu yamaçlarda sel sularının oluşturduğu yarıntılı arazilerdir.",
     answers: [
@@ -156,7 +168,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak koyu renkle gösterilmiştir.<br><br><b>Bu alanlardan hangisi volkanik sahalardan değildir?</b></p>",
+    text: "<p><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak koyu renkle gösterilmiştir.<br><br><b>Bu alanlardan hangisi volkanik sahalardan değildir?</b></p>",
+    exam: "2018 EKPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/ic-kuvvetler_volkanizma_t1_q3.jpg",
     diff: 2,
     expl: "Haritadaki I (Kula), III (Kapadokya), IV (Karacadağ) ve V (Erzurum-Kars Platosu) volkanik arazilerdir. Ancak II numaralı alan Menteşe Yöresi'dir ve masif (eski, sert, volkanik olmayan) bir arazidir.",
@@ -169,7 +182,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2017 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Yukarıdaki haritada numaralandırılarak gösterilen alanların hangisinde volkanik araziler yaygın olarak görülür?</p>",
+    text: "<p><br><br>Yukarıdaki haritada numaralandırılarak gösterilen alanların hangisinde volkanik araziler yaygın olarak görülür?</p>",
+    exam: "2017 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/ic-kuvvetler_volkanizma_t1_q4.jpg",
     diff: 2,
     expl: "Haritadaki I numaralı alan Manisa (Kula) çevresidir ve Türkiye'nin en genç volkanik arazilerine (Kula Volkanitleri) ev sahipliği yapar. Diğer numaralı yerlerde volkanik araziler yaygın değildir.",
@@ -182,7 +196,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2011 KPSS-LİSANS)</b><br><br>I. Topraklarının mineral bakımından genellikle zengin olması<br>II. Turizm açısından önemli yer şekillerine sahip olması<br>III. Aktif volkanların bulunması<br>IV. Fay hatları ve püskürük kayaçların olduğu yerlerde bulunması<br><br><b>Yukarıdakilerden hangileri Türkiye'deki volkanik arazilerin tümü için ortak bir özelliktir?</b></p>",
+    text: "<p>I. Topraklarının mineral bakımından genellikle zengin olması<br>II. Turizm açısından önemli yer şekillerine sahip olması<br>III. Aktif volkanların bulunması<br>IV. Fay hatları ve püskürük kayaçların olduğu yerlerde bulunması<br><br><b>Yukarıdakilerden hangileri Türkiye'deki volkanik arazilerin tümü için ortak bir özelliktir?</b></p>",
+    exam: "2011 KPSS-LİSANS",
     diff: 3,
     expl: "Türkiye'de aktif volkan yoktur (III yanlış). Bütün volkanik araziler turizm açısından (Kapadokya gibi) önemli yer şekillerine sahip değildir (II yanlış). Ancak volkanik arazilerin tamamı mineralce zengin topraklara sahiptir ve kırık hatları (faylar) boyunca dağılış gösterirler (I ve IV doğru).",
     answers: [
@@ -194,7 +209,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-LİSANS)</b><br><br><b>Türkiye'de meydana gelen tektonik hareketler sonucu oluşan ve batıda Saros Körfezi'nden başlayıp doğuda Karlıova'ya kadar uzanan fay hattı aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><b>Türkiye'de meydana gelen tektonik hareketler sonucu oluşan ve batıda Saros Körfezi'nden başlayıp doğuda Karlıova'ya kadar uzanan fay hattı aşağıdakilerden hangisidir?</b></p>",
+    exam: "2022 EKPSS-LİSANS",
     diff: 1,
     expl: "Saros Körfezi'nden başlayıp Marmara Denizi'nin altından geçerek Karadeniz sahil şeridine paralel bir şekilde Bingöl Karlıova'ya kadar uzanan dünyanın en aktif fay hatlarından biri Kuzey Anadolu Fay Hattı'dır (KAF).",
     answers: [
@@ -206,7 +222,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2021 KPSS-LİSANS)</b><br><br>Kuzey Anadolu Fay Kuşağı, Doğu Anadolu'da Karlıova yakınlarından başlayıp Ege Denizi'ne kadar ulaşmaktadır.<br><br><b>Aşağıdaki illerden hangisi bu fay kuşağı üzerinde yer almaz?</b></p>",
+    text: "<p>Kuzey Anadolu Fay Kuşağı, Doğu Anadolu'da Karlıova yakınlarından başlayıp Ege Denizi'ne kadar ulaşmaktadır.<br><br><b>Aşağıdaki illerden hangisi bu fay kuşağı üzerinde yer almaz?</b></p>",
+    exam: "2021 KPSS-LİSANS",
     diff: 2,
     expl: "Bolu, Tokat, Yalova ve Erzincan illeri Kuzey Anadolu Fay Hattı (KAF) üzerindedir. Elazığ ise Bingöl Karlıova'dan güneye, Hatay'a doğru uzanan Doğu Anadolu Fay Hattı (DAF) üzerinde yer alır.",
     answers: [
@@ -218,7 +235,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 KPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıdakilerden hangisi, Kuzey Anadolu Fay Kuşağı'ndaki ovalardan biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi, Kuzey Anadolu Fay Kuşağı'ndaki ovalardan biri değildir?</b></p>",
+    exam: "2018 KPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Düzce, Erzincan, Merzifon ve Erbaa ovaları Kuzey Anadolu Fay Hattı (KAF) üzerinde oluşan tektonik ovalardır. Iğdır Ovası ise Doğu Anadolu Bölgesi'nde yer alır ve KAF üzerinde bulunmaz.",
     answers: [
@@ -230,7 +248,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-ÖNLİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak koyu renkle gösterilmiştir.<br><br><b>Bu alanların hangisinde jeotermal enerji potansiyeli daha fazladır?</b></p>",
+    text: "<p><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak koyu renkle gösterilmiştir.<br><br><b>Bu alanların hangisinde jeotermal enerji potansiyeli daha fazladır?</b></p>",
+    exam: "2018 EKPSS-ÖNLİSANS",
     img: "QuestionsImage/kpss/cografya/ic-kuvvetler_depremler_t1_q4.jpg",
     diff: 1,
     expl: "Jeotermal (sıcak su) enerji potansiyeli fay hatlarının yoğun olduğu yerlerde fazladır. Ege Bölgesi (II numaralı alan) kırıklı dağ ve graben yapısından (Batı Anadolu Fay Hattı - BAF) dolayı Türkiye'de jeotermal potansiyelin en yüksek olduğu alandır.",
@@ -243,7 +262,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2016 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Yukarıdaki haritada numaralarla gösterilen alanların hangisinde deprem riski diğerlerinden daha azdır?</p>",
+    text: "<p><br><br>Yukarıdaki haritada numaralarla gösterilen alanların hangisinde deprem riski diğerlerinden daha azdır?</p>",
+    exam: "2016 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/ic-kuvvetler_depremler_t1_q5.jpg",
     diff: 2,
     expl: "Türkiye'de Tuz Gölü'nün güneyi, Karaman çevresi ve Taşeli Platosu (III numaralı alan) eski ve sert (masif) arazi yapısına sahip olduğu için aktif fay hatlarına uzaktır ve deprem riski en az olan bölgelerden biridir.",
@@ -256,7 +276,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 EKPSS-ORTAÖĞRETİM)</b><br><br>I. Depremler<br>II. Obruklar<br>III. Peribacaları<br>IV. Kaplıcalar<br>V. Toprak kaymaları<br><br><b>Yukarıdaki olay ve yer şekilleri göz önüne alındığında hangilerinin Türkiye'de yaygın olarak bir arada bulunması beklenir?</b></p>",
+    text: "<p>I. Depremler<br>II. Obruklar<br>III. Peribacaları<br>IV. Kaplıcalar<br>V. Toprak kaymaları<br><br><b>Yukarıdaki olay ve yer şekilleri göz önüne alındığında hangilerinin Türkiye'de yaygın olarak bir arada bulunması beklenir?</b></p>",
+    exam: "2012 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Depremler ve kaplıcalar (sıcak su kaynakları) yer kabuğundaki zayıf, kırıklı hatlara (faylara) bağlı olarak oluşurlar. Bu nedenle Türkiye'de fay hatlarının geçtiği yerlerde bu iki olayın bir arada görülmesi beklenen bir durumdur.",
     answers: [
@@ -274,7 +295,8 @@ export const IC_KUVVETLER_TEST_1: McQ[] = [
 // ============================================================================
 export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
   {
-    text: "<p><b>(2024 EKPSS-LİSANS)</b><br><br><b>Türkiye'de kırgıbayırların bazı alanlarda yoğun olarak görülmesinde aşağıdakilerden hangisinin etkisi daha fazladır?</b></p>",
+    text: "<p><b>Türkiye'de kırgıbayırların bazı alanlarda yoğun olarak görülmesinde aşağıdakilerden hangisinin etkisi daha fazladır?</b></p>",
+    exam: "2024 EKPSS-LİSANS",
     diff: 2,
     expl: "Kırgıbayır (Badlands), bitki örtüsünün zayıf/cılız olduğu, eğimli ve aşınmaya karşı dayanıksız (tüf vb.) yamaçlarda sel sularının oluşturduğu derin yarıntılardır.",
     answers: [
@@ -286,7 +308,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıda, harita üzerinde numaralandırılarak gösterilmiş beş alan ve bu alanların dördüne ait bilgi verilmiştir.<br><br>• Kalkan şekilli volkan dağı bulunur.<br>• Karstik şekiller yaygın olarak bulunur.<br>• Grabenler arasında yer alan bir horst yapısı bulunur.<br>• Buzul aşındırma ve biriktirme şekilleri bulunur.<br><br><b>Buna göre haritada hangi numarayla gösterilen alana ait bilgi verilmemiştir?</b></p>",
+    text: "<p><br><br>Aşağıda, harita üzerinde numaralandırılarak gösterilmiş beş alan ve bu alanların dördüne ait bilgi verilmiştir.<br><br>• Kalkan şekilli volkan dağı bulunur.<br>• Karstik şekiller yaygın olarak bulunur.<br>• Grabenler arasında yer alan bir horst yapısı bulunur.<br>• Buzul aşındırma ve biriktirme şekilleri bulunur.<br><br><b>Buna göre haritada hangi numarayla gösterilen alana ait bilgi verilmemiştir?</b></p>",
+    exam: "2023 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-genel_t1_q2.jpg",
     diff: 3,
     expl: "Kalkan şekilli volkan Karacadağ'dır (V). Karstik şekiller Teke/Taşeli yöresindedir (IV). Horst-Graben sistemi Ege Bölgesi'ndedir (III). Buzul şekilleri Doğu Karadeniz/Kaçkarlardadır (II). Haritadaki I numaralı alan Ergene Havzasıdır (düzlük) ve verilen özelliklerden hiçbirine sahip değildir.",
@@ -299,7 +322,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 MEB-EKYS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak gösterilmiştir.<br><br><b>Türkiye'nin yerşekilleri dikkate alındığında bu alanlarla ilgili aşağıdakilerden hangisi söylenemez?</b></p>",
+    text: "<p><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak gösterilmiştir.<br><br><b>Türkiye'nin yerşekilleri dikkate alındığında bu alanlarla ilgili aşağıdakilerden hangisi söylenemez?</b></p>",
+    exam: "2023 MEB-EKYS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-genel_t1_q3.jpg",
     diff: 2,
     expl: "Haritadaki III numaralı alan (Kastamonu/Sinop güneyi civarı) dağlık ve ormanlık bir Karadeniz içi alanıdır. Rüzgâr etkisiyle oluşan yer şekilleri (kumullar, mantar kayalar) bitki örtüsünün çok cılız olduğu kurak/yarı kurak (İç Anadolu - Karapınar gibi) yerlerde yaygındır.",
@@ -312,7 +336,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Eğimin fazla ve yükselti değerlerinin kısa mesafede önemli değişmeler gösterdiği yerlerin iz düşüm alanı ile gerçek alanı arasındaki fark fazladır.<br><br><b>Yukarıdaki haritada numaralandırılan eş alanlı yerlerin hangisinde bu fark daha azdır?</b></p>",
+    text: "<p><br><br>Eğimin fazla ve yükselti değerlerinin kısa mesafede önemli değişmeler gösterdiği yerlerin iz düşüm alanı ile gerçek alanı arasındaki fark fazladır.<br><br><b>Yukarıdaki haritada numaralandırılan eş alanlı yerlerin hangisinde bu fark daha azdır?</b></p>",
+    exam: "2022 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-genel_t1_q4.jpg",
     diff: 1,
     expl: "İzdüşüm alanı ile gerçek alan arasındaki farkın az olması için arazinin olabildiğince 'düz' olması gerekir. Haritadaki III numaralı yer Tuz Gölü'nün güneyi (Konya Ovası ve çevresi) olup Türkiye'nin en düz ve sade yer şekillerine sahip alanlarından biridir.",
@@ -325,7 +350,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 AYT)</b><br><br>I. Dağlık ve eğimli alanların fazlalığı tarımsal etkinlikleri kısıtlamaktadır.<br>II. Topraktaki organik ve mineral madde miktarı her yerde yeterli değildir.<br>III. İç kesimlerdeki geniş düzlükler önemli tahıl üretim alanlarını oluşturur.<br>IV. Nadasa bırakılan alanlar giderek azalmaktadır.<br><br><b>Yukarıdakilerden hangileri Türkiye'de yer şekillerinin bitkisel üretim üzerindeki etkisini göstermektedir?</b></p>",
+    text: "<p>I. Dağlık ve eğimli alanların fazlalığı tarımsal etkinlikleri kısıtlamaktadır.<br>II. Topraktaki organik ve mineral madde miktarı her yerde yeterli değildir.<br>III. İç kesimlerdeki geniş düzlükler önemli tahıl üretim alanlarını oluşturur.<br>IV. Nadasa bırakılan alanlar giderek azalmaktadır.<br><br><b>Yukarıdakilerden hangileri Türkiye'de yer şekillerinin bitkisel üretim üzerindeki etkisini göstermektedir?</b></p>",
+    exam: "2020 AYT",
     diff: 2,
     expl: "Soru bizden doğrudan 'yer şekillerinin' etkisini istemektedir. Eğimin ve dağlık alanların tarımı kısıtlaması (I) ile geniş düzlüklerin tahıl tarımına imkan sağlaması (III) doğrudan yer şekilleriyle ilgilidir. Toprak yapısı ve nadas uygulaması yer şekli değildir.",
     answers: [
@@ -337,7 +363,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-LİSANS)</b><br><br><b>Aşağıdakilerden hangisi Türkiye'nin Ege Denizi kıyılarına ait özelliklerden biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Türkiye'nin Ege Denizi kıyılarına ait özelliklerden biri değildir?</b></p>",
+    exam: "2018 EKPSS-LİSANS",
     diff: 1,
     expl: "Ege Denizi kıyılarında dağlar denize dik uzandığı için 'Enine Kıyı Tipi' görülür, bu nedenle girinti-çıkıntı ve koy/körfez çoktur. 'Dalmaçya tipi kıyılar' ise Ege'de değil, Akdeniz'de (Antalya Kaş-Finike çevresi) görülür.",
     answers: [
@@ -349,7 +376,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-LİSANS)</b><br><br><b>Türkiye'nin ortalama yükseltisinin fazla olmasındaki en önemli etken aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><b>Türkiye'nin ortalama yükseltisinin fazla olmasındaki en önemli etken aşağıdakilerden hangisidir?</b></p>",
+    exam: "2018 EKPSS-LİSANS",
     diff: 1,
     expl: "Türkiye'nin ortalama 1132 metre gibi yüksek bir değere sahip olmasının en temel nedeni, III. Jeolojik Zaman'daki 'Alp Orojenezi' (kıvrım dağlarının oluşumu) ve IV. Jeolojik Zaman'daki 'Epirojenez' (Anadolu yarımadasının toptan yükselmesi) hareketleridir.",
     answers: [
@@ -361,7 +389,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 AYT)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak koyu renkle gösterilmiştir.<br><br><b>Bu alanların hangilerinde arazinin dağlık ve engebeli olması tarla tarımının yapılmasını daha fazla kısıtlamaktadır?</b></p>",
+    text: "<p><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak koyu renkle gösterilmiştir.<br><br><b>Bu alanların hangilerinde arazinin dağlık ve engebeli olması tarla tarımının yapılmasını daha fazla kısıtlamaktadır?</b></p>",
+    exam: "2018 AYT",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-genel_t1_q8.jpg",
     diff: 2,
     expl: "Haritadaki II numaralı alan Menteşe Yöresi (Muğla), V numaralı alan ise Doğu Karadeniz (Rize/Artvin civarı) yöresidir. Bu iki alan da oldukça dağlık ve sarp olduğu için tarla tarımı yapılabilecek düzlükler çok kısıtlıdır.",
@@ -374,7 +403,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 MSÜ)</b><br><br>Kayseri, Niğde, Nevşehir ve Konya illeri arazilerinin yer yer engebeli bir yapıya sahip olmasında ---- önemli ölçüde etkili olurken obrukların oluşumunda ---- önemli bir paya sahiptir.<br><br><b>Bu cümlede boş bırakılan yerlere sırasıyla aşağıdakilerden hangisi getirilmelidir?</b></p>",
+    text: "<p>Kayseri, Niğde, Nevşehir ve Konya illeri arazilerinin yer yer engebeli bir yapıya sahip olmasında ---- önemli ölçüde etkili olurken obrukların oluşumunda ---- önemli bir paya sahiptir.<br><br><b>Bu cümlede boş bırakılan yerlere sırasıyla aşağıdakilerden hangisi getirilmelidir?</b></p>",
+    exam: "2018 MSÜ",
     diff: 2,
     expl: "Kayseri ve Nevşehir çevresindeki engebeli araziler (Erciyes, Hasan Dağı, Kapadokya tüfleri) volkanizma faaliyetleri sonucudur. Konya (Karapınar) çevresindeki obruklar ise yeraltı sularının kireçtaşı gibi eriyebilen 'ana kaya'yı (karstik yapı) eriterek çökertmesiyle oluşur.",
     answers: [
@@ -386,7 +416,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2016 KPSS-LİSANS)</b><br><br>I. Kuzey ve güneyde Alp orojeneziyle oluşan sıradağların bulunması<br>II. Batı Anadolu'da horst ve grabenlerin bulunması<br>III. Epirojenik hareketlerle Anadolu yarımadasının yükselmesi<br>IV. Akarsu aşındırmasıyla oluşan derin vadilerin yer alması<br><br><b>Yukarıdakilerden hangileri, Türkiye arazisinin ortalama yükseltisinin fazla olmasında diğerlerinden daha etkili olmuştur?</b></p>",
+    text: "<p>I. Kuzey ve güneyde Alp orojeneziyle oluşan sıradağların bulunması<br>II. Batı Anadolu'da horst ve grabenlerin bulunması<br>III. Epirojenik hareketlerle Anadolu yarımadasının yükselmesi<br>IV. Akarsu aşındırmasıyla oluşan derin vadilerin yer alması<br><br><b>Yukarıdakilerden hangileri, Türkiye arazisinin ortalama yükseltisinin fazla olmasında diğerlerinden daha etkili olmuştur?</b></p>",
+    exam: "2016 KPSS-LİSANS",
     diff: 2,
     expl: "Türkiye'yi genel olarak yüksek bir ülke yapan iki temel etken; dağlık sistemlerin kurulduğu Alp Orojenezi (I) ve Anadolu kütlesinin blok halinde toptan yükselmesini sağlayan Epirojenik hareketlerdir (III). Vadiler, yüksekliğin nedeni değil sonucudur.",
     answers: [
@@ -398,7 +429,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-LİSANS)</b><br><br>Türkiye genel hatlarıyla yüksek, dağlık ve engebeli bir arazi yapısına sahiptir.<br><br><b>Bu durumun ortaya çıkmasında aşağıdakilerden hangisi daha az etkili olmuştur?</b></p>",
+    text: "<p>Türkiye genel hatlarıyla yüksek, dağlık ve engebeli bir arazi yapısına sahiptir.<br><br><b>Bu durumun ortaya çıkmasında aşağıdakilerden hangisi daha az etkili olmuştur?</b></p>",
+    exam: "2014 KPSS-LİSANS",
     diff: 2,
     expl: "Orojenez (kıvrım dağları), epirojenez (toptan yükselme), akarsuların araziyi derin yarması ve aktif fay hatlarına bağlı kırılmalar engebeyi yaratan faktörlerdir. 'Farklı kayaç türlerinin bulunması' doğrudan yüksek veya engebeli olmayı yaratan ana bir kuvvet değildir.",
     answers: [
@@ -410,7 +442,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-LİSANS)</b><br><br><b>Türkiye'nin jeomorfolojik özellikleri dikkate alındığında aşağıdakilerden hangisi söylenemez?</b></p>",
+    text: "<p><b>Türkiye'nin jeomorfolojik özellikleri dikkate alındığında aşağıdakilerden hangisi söylenemez?</b></p>",
+    exam: "2014 KPSS-LİSANS",
     diff: 2,
     expl: "Türkiye'de yükseltisi 3000 metreyi aşan büyük volkanik dağlar (Örn: Ağrı, Süphan, Erciyes) üzerinde güncel takke buzulları veya eski buzul izleri bulunmaktadır. 'Buzullar bulunmamaktadır' ifadesi yanlıştır.",
     answers: [
@@ -422,7 +455,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-ÖNLİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada numaralandırılarak koyu renkle gösterilmiş beş doğrultu verilmiştir.<br><br><b>Yer şekli özellikleri göz önüne alındığında, doğrultu boyunca yükselti farkının en fazla olduğu yer aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><br><br>Aşağıdaki haritada numaralandırılarak koyu renkle gösterilmiş beş doğrultu verilmiştir.<br><br><b>Yer şekli özellikleri göz önüne alındığında, doğrultu boyunca yükselti farkının en fazla olduğu yer aşağıdakilerden hangisidir?</b></p>",
+    exam: "2014 KPSS-ÖNLİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-genel_t1_q13.jpg",
     diff: 3,
     expl: "I numaralı alanda Batı Toroslar (Bey Dağları) kıyı çizgisinden aniden yükselir. 0 metreden (deniz seviyesi) kısa bir mesafe içinde 2500-3000 metrelere çıkıldığı için en kısa mesafede yükselti farkının en fazla olduğu yerdir.",
@@ -435,7 +469,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-ORTAÖĞRETİM)</b><br><br>Akdeniz ve Ege Denizi'nin kıyı kesimlerinde iklim özellikleri benzer olduğu hâlde, Ege kıyılarında zeytin yetişme alanları daha geniştir.<br><br><b>Bu durumun nedeni aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Akdeniz ve Ege Denizi'nin kıyı kesimlerinde iklim özellikleri benzer olduğu hâlde, Ege kıyılarında zeytin yetişme alanları daha geniştir.<br><br><b>Bu durumun nedeni aşağıdakilerden hangisidir?</b></p>",
+    exam: "2014 KPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Ege Bölgesi'nde dağlar denize dik uzandığı için denizel etki (Akdeniz iklimi) vadiler boyunca (grabenler) iç kesimlere kadar rahatça sokulabilir. Bu da zeytin gibi ürünlerin daha geniş bir alanda yetişmesini sağlar.",
     answers: [
@@ -447,7 +482,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-LİSANS)</b><br><br>Ege Bölgesi, genellikle horst ve graben sistemlerini meydana getiren tektonik hareketlerle şekillenmiştir.<br><br><b>Buna göre, aşağıdakilerden hangisi bu şekillenmenin bir sonucu değildir?</b></p>",
+    text: "<p>Ege Bölgesi, genellikle horst ve graben sistemlerini meydana getiren tektonik hareketlerle şekillenmiştir.<br><br><b>Buna göre, aşağıdakilerden hangisi bu şekillenmenin bir sonucu değildir?</b></p>",
+    exam: "2014 KPSS-LİSANS",
     diff: 1,
     expl: "Ege Bölgesi'nde dağların (horstların) denize dik (doğu-batı yönlü) uzanması ve aralarında çöküntü ovaları (grabenler) bulunması nedeniyle kıyı ile iç kesimler arasındaki ulaşım 'zor değil, aksine oldukça kolaydır'. Ulaşımın zor olduğu yerler dağların denize paralel uzandığı Akdeniz ve Karadeniz kıyılarıdır.",
     answers: [
@@ -459,7 +495,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2013 KPSS-LİSANS)</b><br><br><b>Türkiye'de Doğu Karadeniz kıyı kesimine ait aşağıdaki özelliklerin hangisinde, yer şekillerinin etkisi yoktur?</b></p>",
+    text: "<p>Türkiye'de Doğu Karadeniz kıyı kesimine ait aşağıdaki özelliklerin hangisinde, yer şekillerinin etkisi yoktur?</b></p>",
+    exam: "2013 KPSS-LİSANS",
     diff: 1,
     expl: "Bölgenin dağlık ve engebeli olması tarım alanlarının az olmasına, nüfusun kıyıda sıkışmasına ve ulaşımın zor olmasına neden olur. Ancak yer altı kaynaklarının (madenlerin) dağılışı yer şekilleriyle değil, arazinin jeolojik yapısıyla (kayaların içeriğiyle) ilgilidir.",
     answers: [
@@ -471,7 +508,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 EKPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Haritada verilen X ve Y yerleşim birimleriyle ilgili aşağıdakilerden hangisi kesin olarak söylenir?</p>",
+    text: "<p><br><br>Haritada verilen X ve Y yerleşim birimleriyle ilgili aşağıdakilerden hangisi kesin olarak söylenir?</p>",
+    exam: "2012 EKPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-genel_t1_q17.jpg",
     diff: 2,
     expl: "Haritaya baktığımızda Y merkezinin X merkezine göre daha doğuda yer aldığını görüyoruz. Dünya batıdan doğuya doğru döndüğü için doğudaki merkezlerde yerel saat daha ileridir ve güneş daha erken doğar. Bu nedenle X beldesinde güneş Y'ye göre daha geç doğar.",
@@ -484,7 +522,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 KPSS-ÖNLİSANS)</b><br><br><b>Aşağıda verilen ekonomik etkinliklerden hangisinin, topoğrafik koşullara bağlı olarak geliştiği söylenemez?</b></p>",
+    text: "<p><b>Aşağıda verilen ekonomik etkinliklerden hangisinin, topoğrafik koşullara bağlı olarak geliştiği söylenemez?</b></p>",
+    exam: "2012 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Yaylacılık, hidroelektrik santraller, kış turizmi ve kıyı ovalarındaki tarım tamamen yükselti ve yer şekilleri (topoğrafya) ile ilgilidir. Ancak Çatalca-Kocaeli'de sanayinin gelişmesi yer şekillerinin düzlüğünden çok sermaye, ulaşım ve pazar gibi beşeri faktörlere bağlıdır.",
     answers: [
@@ -496,7 +535,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 EKPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıdakilerden hangisi Türkiye'de ortalama yükseltinin fazla olması sonucunda ortaya çıkan bir durum değildir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi Türkiye'de ortalama yükseltinin fazla olması sonucunda ortaya çıkan bir durum değildir?</b></p>",
+    exam: "2012 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Depremler, ülkenin ortalama yükseltisi veya engebesi ile ilgili bir durum değildir. Depremler yer kabuğundaki kırıklar (fay hatları) ve tektonik hareketlerle ilgilidir. Yükseltinin fazla olması ulaşımı zorlaştırır, sıcaklığı düşürür ve kışların sert geçmesine neden olur.",
     answers: [
@@ -508,7 +548,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 EKPSS-LİSANS)</b><br><br><b>Aşağıdakilerden hangisi Türkiye'nin kıyı kesimlerinin ortak özelliğidir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Türkiye'nin kıyı kesimlerinin ortak özelliğidir?</b></p>",
+    exam: "2012 EKPSS-LİSANS",
     diff: 2,
     expl: "Tüm kıyı bölgelerimizde (Karadeniz, Marmara, Ege, Akdeniz) denizin ılımanlaştırıcı etkisinden dolayı kışlar iç kesimlere göre daha ılık geçer, bu nedenle kar yağışlı gün sayısı ve don olayları azdır. Diğer seçenekler (kıta sahanlığı, karstik arazi vs.) kıyıdan kıyıya farklılık gösterir.",
     answers: [
@@ -520,7 +561,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2011 KPSS-LİSANS)</b><br><br>Akdeniz Bölgesi'nin dağlık ve platoluk kesimlerinin jeomorfolojik özellikleri,<br>I. yaylacılık,<br>II. ticaret,<br>III. turizm,<br>IV. ulaşım<br><br><b>etkinliklerinden hangilerini olumlu yönde etkilemiştir?</b></p>",
+    text: "<p>Akdeniz Bölgesi'nin dağlık ve platoluk kesimlerinin jeomorfolojik özellikleri,<br>I. yaylacılık,<br>II. ticaret,<br>III. turizm,<br>IV. ulaşım<br><br><b>etkinliklerinden hangilerini olumlu yönde etkilemiştir?</b></p>",
+    exam: "2011 KPSS-LİSANS",
     diff: 2,
     expl: "Dağlık ve yüksek kesimler sıcak yaz aylarında serinlemek için 'Yaylacılık' (I) faaliyetlerini ve sahip olduğu doğal güzellikler/kış şartları ile doğa/kış 'Turizmini' (III) olumlu yönde etkiler. Ticaret ve ulaşım ise engebeli araziden olumsuz etkilenir.",
     answers: [
@@ -532,7 +574,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2011 KPSS-LİSANS)</b><br><br>İzmir'in merkez ilçesine bağlı bir köye kara yoluyla ulaşabilmek için ortalama on kilometre yol almak gerekirken Kütahya'da kuş uçumu mesafesi aynı olan bir köye on beş kilometre yol almak gerekmektedir.<br><br><b>Bu durum, aşağıdakilerden hangisiyle açıklanabilir?</b></p>",
+    text: "<p>İzmir'in merkez ilçesine bağlı bir köye kara yoluyla ulaşabilmek için ortalama on kilometre yol almak gerekirken Kütahya'da kuş uçumu mesafesi aynı olan bir köye on beş kilometre yol almak gerekmektedir.<br><br><b>Bu durum, aşağıdakilerden hangisiyle açıklanabilir?</b></p>",
+    exam: "2011 KPSS-LİSANS",
     diff: 1,
     expl: "Kuş uçumu (harita üzerindeki düz çizgi) mesafe aynı olmasına rağmen karayolu mesafesi uzuyorsa, o arazide yolun mecburen dağların ve vadilerin etrafından dolandığı anlaşılır. Bu durum doğrudan yer şekillerinin engebeliği ile ilgilidir.",
     answers: [
@@ -544,7 +587,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 KPSS-ÖNLİSANS)</b><br><br><b>Türkiye'nin yüksek ve engebeli bir ülke olmasının aşağıdaki ekonomik etkinliklerden hangisi üzerinde etkisi yoktur?</b></p>",
+    text: "<p>Türkiye'nin yüksek ve engebeli bir ülke olmasının aşağıdaki ekonomik etkinliklerden hangisi üzerinde etkisi yoktur?</b></p>",
+    exam: "2010 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Madenlerin yeryüzünde bulunması veya çıkarılması, yer şekillerinin (topoğrafyanın) engebeli olup olmamasına değil; arazinin jeolojik yaşına ve yapısına bağlıdır.",
     answers: [
@@ -556,7 +600,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 KPSS-LİSANS)</b><br><br><b>Türkiye'nin aşağıdaki özelliklerinden hangisi, yükseltinin fazla olmasının sonucu değildir?</b></p>",
+    text: "<p>Türkiye'nin aşağıdaki özelliklerinden hangisi, yükseltinin fazla olmasının sonucu değildir?</b></p>",
+    exam: "2010 KPSS-LİSANS",
     diff: 3,
     expl: "Kuzey Anadolu ve Toros Sıradağlarının genelde doğu-batı yönünde uzanması, Türkiye'nin kuzeyden ve güneyden (Avrasya ve Afrika/Arap levhaları tarafından) sıkıştırılmasının bir sonucudur. Dağların uzanış yönü, yükseltinin fazla olmasının bir sonucu değildir.",
     answers: [
@@ -574,7 +619,8 @@ export const TURKIYENIN_YER_SEKILLERININ_GENEL_OZELLIKLERI_TEST_1: McQ[] = [
 // ============================================================================
 export const DAGLAR_TEST_1: McQ[] = [
   {
-    text: "<p><b>(2025 MEB-EKYS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak gösterilmiştir.<br><br><b>Bu alanlarda bulunan dağ sıraları aşağıdakilerin hangisinde doğru verilmiştir?</b></p>",
+    text: "<p><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak gösterilmiştir.<br><br><b>Bu alanlarda bulunan dağ sıraları aşağıdakilerin hangisinde doğru verilmiştir?</b></p>",
+    exam: "2025 MEB-EKYS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-daglar_t1_q1.jpg",
     diff: 3,
     expl: "Haritada I numara Batı Toroslar'da Geyik Dağları'nı, II numara Orta Toroslar'da Aladağlar'ı (veya Bolkar), III numara ise İç Anadolu'da Tecer Dağları'nı (Sivas çevresi) göstermektedir. Geyik (I), Aladağlar (II) ve Tecer (III) sıralaması D seçeneğinde doğru verilmiştir.",
@@ -587,7 +633,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 KPSS-LİSANS)</b><br><br><b>Üçüncü Jeolojik Zaman'da, Toros Dağları'nın oluşumunda aşağıdakilerden hangisi etkili olmuştur?</b></p>",
+    text: "<p><b>Üçüncü Jeolojik Zaman'da, Toros Dağları'nın oluşumunda aşağıdakilerden hangisi etkili olmuştur?</b></p>",
+    exam: "2024 KPSS-LİSANS",
     diff: 1,
     expl: "Toros Dağları ve Kuzey Anadolu Dağları, III. Jeolojik Zaman'da (Tersiyer) meydana gelen 'Alp Orojenezi' (kıvrım hareketleri) sonucu oluşmuştur.",
     answers: [
@@ -599,7 +646,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada beş alan numaralandırılarak gösterilmiştir.<br><br><b>Bu alanların hangilerinde dağlık sahalar daha az yer kaplar?</b></p>",
+    text: "<p><br><br>Aşağıdaki haritada beş alan numaralandırılarak gösterilmiştir.<br><br><b>Bu alanların hangilerinde dağlık sahalar daha az yer kaplar?</b></p>",
+    exam: "2024 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-daglar_t1_q3.jpg",
     diff: 2,
     expl: "Haritadaki I numara Küre Dağları, II numara İç Anadolu (Tuz Gölü kuzeyi, nispeten düz), III numara Orta Toroslar (Bolkar/Aladağlar), IV numara Güneydoğu Anadolu'nun güneyi (Harran/Ceylanpınar düzlükleri), V numara ise Doğu Karadeniz Dağlarıdır. Dağlık sahaların en az olduğu (en düz) yerler II ve IV'tür.",
@@ -612,7 +660,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 EKPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıdakilerden hangisi Türkiye'deki volkanik dağlardan biridir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Türkiye'deki volkanik dağlardan biridir?</b></p>",
+    exam: "2024 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Ilgaz, Canik, Istranca ve Akdağ kıvrım/kırık dağlarına örnektir. Süphan Dağı (Bitlis/Muş civarı) ise Doğu Anadolu'daki sönmüş volkanik dağlardan biridir.",
     answers: [
@@ -624,7 +673,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 MEB-EKYS)</b><br><br>Alp-Himalaya Orojenik Kuşağı içerisinde yer alan Türkiye'de Kuzey Anadolu Dağları ve Toros Dağları iki önemli dağ sırasını oluşturur.<br><br><b>Aşağıda verilen bu dağ sıraları ile içerisindeki bazı dağ eşleştirmelerinden hangisi doğrudur?</b></p>",
+    text: "<p>Alp-Himalaya Orojenik Kuşağı içerisinde yer alan Türkiye'de Kuzey Anadolu Dağları ve Toros Dağları iki önemli dağ sırasını oluşturur.<br><br><b>Aşağıda verilen bu dağ sıraları ile içerisindeki bazı dağ eşleştirmelerinden hangisi doğrudur?</b></p>",
+    exam: "2024 MEB-EKYS",
     diff: 2,
     expl: "Küre Dağları, Kuzey Anadolu Dağları (Karadeniz) sistemi içinde yer alırken; Dedegöl Dağları, Toroslar (Akdeniz) sistemi içinde yer alır. Bu eşleştirme C seçeneğinde doğru verilmiştir.",
     answers: [
@@ -636,7 +686,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-LİSANS)</b><br><br><b>Türkiye'nin güneyindeki en uç noktasından kuzeyindeki en uç noktasına çizilecek doğrusal bir hat boyunca seyahat edecek bir kişinin sırasıyla aşağıdaki dağlardan hangileri ile karşılaşması beklenir?</b></p>",
+    text: "<p><b>Türkiye'nin güneyindeki en uç noktasından kuzeyindeki en uç noktasına çizilecek doğrusal bir hat boyunca seyahat edecek bir kişinin sırasıyla aşağıdaki dağlardan hangileri ile karşılaşması beklenir?</b></p>",
+    exam: "2022 KPSS-LİSANS",
     diff: 3,
     expl: "Hatay (en güney) bölgesinden yola çıkan biri önce Nur (Amanos) Dağları'nı geçer. İç Anadolu'ya doğru ilerlerken Sivas çevresinde Tahtalı (veya Tecer/Binboğa uzantıları) ile karşılaşır. En kuzeye (Sinop) ulaştığında ise Küre Dağları'nı aşması gerekir.",
     answers: [
@@ -648,7 +699,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada bazı dağ sıraları numaralandırılarak gösterilmiştir.<br><br><b>Bu dağ sıralarının adları aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    text: "<p><br><br>Aşağıdaki haritada bazı dağ sıraları numaralandırılarak gösterilmiştir.<br><br><b>Bu dağ sıralarının adları aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    exam: "2022 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-daglar_t1_q7.jpg",
     diff: 2,
     expl: "I numaralı yer Göller Yöresi çevresindeki Sultan Dağları'nı, II numaralı yer Kastamonu-Çankırı sınırındaki Ilgaz Dağları'nı, III numaralı yer ise Erzincan-Tunceli çevresindeki Mercan (Munzur) Dağları'nı gösterir.",
@@ -661,7 +713,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-ORTAÖĞRETİM)</b><br><br>Normal faylar arasında yükselen bloklar horst yapıları olarak adlandırılmaktadır. Türkiye'deki bazı dağlar büyük horst yapılarından oluşmuştur.<br><br><b>Aşağıdakilerden hangisi, bu şekilde oluşmuş dağlardan biri değildir?</b></p>",
+    text: "<p><b>Normal faylar arasında yükselen bloklar horst yapıları olarak adlandırılmaktadır. Türkiye'deki bazı dağlar büyük horst yapılarından oluşmuştur.<br><br><b>Aşağıdakilerden hangisi, bu şekilde oluşmuş dağlardan biri değildir?</b></p>",
+    exam: "2022 KPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Boz, Aydın, Yunt ve Madra dağları Ege Bölgesi'nde kırılma sonucu oluşan 'Horst' (kırık) dağlarıdır. Tahtalı Dağları ise Toroslar sistemi içinde yer alan ve kıvrılma (orojenez) sonucu oluşan dağlardır.",
     answers: [
@@ -673,7 +726,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-LİSANS)</b><br><br>Karadeniz kıyılarına paralel uzanan Kuzey Anadolu Dağları, birbirine paralel birkaç sıra halinde uzanır.<br><br><b>Aşağıdakilerden hangisi bu dağ sıralarından biri değildir?</b></p>",
+    text: "<p>Karadeniz kıyılarına paralel uzanan Kuzey Anadolu Dağları, birbirine paralel birkaç sıra halinde uzanır.<br><br><b>Aşağıdakilerden hangisi bu dağ sıralarından biri değildir?</b></p>",
+    exam: "2022 EKPSS-LİSANS",
     diff: 1,
     expl: "Canik, Küre, Mescit ve Ilgaz dağları Karadeniz Bölgesi'nde Kuzey Anadolu Dağ sistemi içerisinde yer alır. Binboğa Dağları ise Akdeniz Bölgesi'nde Toroslar sistemi içinde bulunur.",
     answers: [
@@ -685,7 +739,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-ÖNLİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Türkiye, genel olarak engebeli ve dağlık bölgelerin geniş alanlar kapladığı bir ülkedir.<br><br><b>Buna göre yukarıdaki haritada numaralandırılarak gösterilen yerlerden hangisi dağlık bölgelere örnek gösterilebilir?</b></p>",
+    text: "<p><br><br>Türkiye, genel olarak engebeli ve dağlık bölgelerin geniş alanlar kapladığı bir ülkedir.<br><br><b>Buna göre yukarıdaki haritada numaralandırılarak gösterilen yerlerden hangisi dağlık bölgelere örnek gösterilebilir?</b></p>",
+    exam: "2022 EKPSS-ÖNLİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-daglar_t1_q10.jpg",
     diff: 2,
     expl: "Haritada I (Ergene), III (Tuz Gölü çevresi), IV (Çukurova), V (Güneydoğu düzlükleri) nispeten düz alanlardır. II numaralı alan ise Menteşe Yöresi (Muğla) olup oldukça dağlık ve engebeli bir bölgedir.",
@@ -698,7 +753,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2021 KPSS-LİSANS)</b><br><br>I. Tektonik hareketler<br>II. Volkanik faaliyetler<br>III. Kimyasal ayrışma<br>IV. Kayaç türü<br><br><b>Türkiye'de dağların geniş alanlar kaplamasında yukarıdakilerden hangileri daha fazla etkili olmuştur?</b></p>",
+    text: "<p>I. Tektonik hareketler<br>II. Volkanik faaliyetler<br>III. Kimyasal ayrışma<br>IV. Kayaç türü<br><br><b>Türkiye'de dağların geniş alanlar kaplamasında yukarıdakilerden hangileri daha fazla etkili olmuştur?</b></p>",
+    exam: "2021 KPSS-LİSANS",
     diff: 2,
     expl: "Türkiye'deki dağların büyük çoğunluğu kıvrılma/kırılma (tektonik hareketler - Alp Orojenezi) ve yanardağ patlamaları (volkanik faaliyetler) sonucu oluşmuştur. Kimyasal ayrışma ve kayaç türü yer şekillerini aşındırır/şekillendirir ama 'dağ oluşumunu' sağlayan ana kuvvetler değildir.",
     answers: [
@@ -710,7 +766,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdakilerden hangisi ülkemizdeki volkanik dağlardan biridir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi ülkemizdeki volkanik dağlardan biridir?</b></p>",
+    exam: "2020 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Kaz, Aladağlar, Kaçkar ve Küre dağları orojenez (kıvrım/kırık) ile oluşmuştur. Kayseri'deki Erciyes Dağı ise Türkiye'nin en büyük sönmüş volkanik dağlarından biridir.",
     answers: [
@@ -722,7 +779,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 KPSS-ORTAÖĞRETİM)</b><br><br>I. Ilgaz<br>II. Bolkar<br>III. Melendiz<br>IV. Tendürek<br><br><b>Yukarıdaki dağlardan hangileri volkanik faaliyet sonucu oluşmuştur?</b></p>",
+    text: "<p>I. Ilgaz<br>II. Bolkar<br>III. Melendiz<br>IV. Tendürek<br><br><b>Yukarıdaki dağlardan hangileri volkanik faaliyet sonucu oluşmuştur?</b></p>",
+    exam: "2018 KPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Ilgaz ve Bolkar kıvrım dağlarıdır. Melendiz (İç Anadolu) ve Tendürek (Doğu Anadolu) ise volkanik patlamalar sonucu oluşmuş sönmüş volkan dağlarıdır.",
     answers: [
@@ -734,7 +792,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-ÖNLİSANS)</b><br><br><b>Aşağıdaki dağlık alanlardan hangisi oluşum özellikleri bakımından diğerlerinden farklıdır?</b></p>",
+    text: "<p>Aşağıdaki dağlık alanlardan hangisi oluşum özellikleri bakımından diğerlerinden farklıdır?</b></p>",
+    exam: "2018 EKPSS-ÖNLİSANS",
     diff: 1,
     expl: "Istranca (Yıldız), Munzur, Canik ve Bolkar dağları kıvrılma (orojenez) sonucu oluşan dağlardır. Nemrut (Bitlis) ise volkanik bir dağdır (farklıdır).",
     answers: [
@@ -746,7 +805,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdaki dağlardan hangisi volkaniktir?</b></p>",
+    text: "<p><b>Aşağıdaki dağlardan hangisi volkaniktir?</b></p>",
+    exam: "2018 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Aydın, Kaçkar, Canik ve Bolkar kıvrım/kırık dağlarıdır. Erciyes Dağı volkaniktir.",
     answers: [
@@ -758,7 +818,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2016 KPSS-ORTAÖĞRETİM)</b><br><br>Türkiye'nin ortalama yükseltisinin fazla olmasında etkili olan dağlar genel olarak;<br>I. kıvrılma,<br>II. kırılma,<br>III. volkanizma<br>ile meydana gelmişlerdir.<br><br><b>Numaralandırılan bu etmenler, aşağıdaki dağların hangilerinin oluşumunda daha fazla etkili olmuştur?</b></p>",
+    text: "<p>Türkiye'nin ortalama yükseltisinin fazla olmasında etkili olan dağlar genel olarak;<br>I. kıvrılma,<br>II. kırılma,<br>III. volkanizma<br>ile meydana gelmişlerdir.<br><br><b>Numaralandırılan bu etmenler, aşağıdaki dağların hangilerinin oluşumunda daha fazla etkili olmuştur?</b></p>",
+    exam: "2016 KPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Küre Dağları Karadeniz'de 'kıvrılma' (I) ile, Madra Dağı Ege'de 'kırılma' (II) ile, Karacadağ ise Güneydoğu/İç Anadolu'da 'volkanizma' (III) ile oluşmuştur. Bu eşleştirme B seçeneğinde doğru verilmiştir.",
     answers: [
@@ -770,7 +831,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Ülkemizin önemli zirvelerinden biri olan Demirkazık Tepesi aşağıdaki dağlarımızın hangisinde yer almaktadır?</b></p>",
+    text: "<p>Ülkemizin önemli zirvelerinden biri olan Demirkazık Tepesi aşağıdaki dağlarımızın hangisinde yer almaktadır?</b></p>",
+    exam: "2014 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 3,
     expl: "Demirkazık Tepesi (3756m), Orta Toroslar'da Niğde, Kayseri ve Adana sınırları içinde yer alan Aladağlar kütlesinin en yüksek zirvesidir.",
     answers: [
@@ -782,7 +844,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2013 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdakilerden hangisi Kuzey Anadolu Dağlarından biridir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi Kuzey Anadolu Dağlarından biridir?</b></p>",
+    exam: "2013 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Sultan, Geyik (Toroslar), Tecer (İç Anadolu) ve Madra (Ege) dağlarıdır. Canik Dağları ise Orta Karadeniz'de (Samsun gerisi) yer alan ve Kuzey Anadolu Dağları sistemine ait olan bir dağ sırasıdır.",
     answers: [
@@ -794,7 +857,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 KPSS-LİSANS)</b><br><br><b>Türkiye'nin dağlarıyla ilgili aşağıda verilen bilgilerden hangisi doğrudur?</b></p>",
+    text: "<p>Türkiye'nin dağlarıyla ilgili aşağıda verilen bilgilerden hangisi doğrudur?</b></p>",
+    exam: "2012 KPSS-LİSANS",
     diff: 2,
     expl: "Türkiye'de dağların yükseltisi ve güncel (aktif) buzullar batıdan doğuya doğru gidildikçe artar. Güncel takke buzulları Cilo, Ağrı, Süphan gibi ülkenin doğusundaki yüksek dağlar üzerinde toplanmıştır.",
     answers: [
@@ -806,7 +870,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 MEB-MÜFETTİŞ YARDIMCILIĞI)</b><br><i>(Haritalı Soru)</i><br><br><b>Melendiz Volkanik Dağı kaç numaralı daire içinde yer alır?</b></p>",
+    text: "<p><br><br><b>Melendiz Volkanik Dağı kaç numaralı daire içinde yer alır?</b></p>",
+    exam: "2010 MEB-MÜFETTİŞ YARDIMCILIĞI",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-daglar_t1_q20.jpg",
     diff: 2,
     expl: "Melendiz Dağı İç Anadolu Bölgesi'nde, Niğde-Aksaray çevresinde yer alır. Haritada bu konuma denk gelen daire III numaralı alandır.",
@@ -819,7 +884,8 @@ export const DAGLAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2009 MEB-MÜFETTİŞ YARDIMCILIĞI)</b><br><br><b>Aşağıdaki sıradağlardan hangisi diğerlerine göre daha doğuda yer alır?</b></p>",
+    text: "<p>Aşağıdaki sıradağlardan hangisi diğerlerine göre daha doğuda yer alır?</b></p>",
+    exam: "2009 MEB-MÜFETTİŞ YARDIMCILIĞI",
     diff: 2,
     expl: "Eğrigöz (Ege), Bolkar (Orta Toroslar), Tecer (Sivas), Erciyes (Kayseri) daha batıdadır. Kargapazarı Dağları ise Doğu Anadolu'da (Erzurum çevresi) yer aldığı için hepsinden daha doğudadır.",
     answers: [
@@ -837,7 +903,8 @@ export const DAGLAR_TEST_1: McQ[] = [
 // ============================================================================
 export const TURKIYENIN_PLATOLARI_TEST_1: McQ[] = [
   {
-    text: "<p><b>(2024 EKPSS-ÖNLİSANS)</b><br><br><b>Aşağıdakilerden hangisi Orta Anadolu'da yer alan platolardan biridir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi Orta Anadolu'da yer alan platolardan biridir?</b></p>",
+    exam: "2024 EKPSS-ÖNLİSANS",
     diff: 1,
     expl: "Haymana Platosu Ankara çevresinde, yani Orta (İç) Anadolu Bölgesi'nde yer alır. Taşeli Akdeniz'de, Ardahan Doğu Anadolu'da, Gaziantep Güneydoğu Anadolu'da, Çatalca-Kocaeli ise Marmara Bölgesi'ndedir.",
     answers: [
@@ -849,7 +916,8 @@ export const TURKIYENIN_PLATOLARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 KPSS-LİSANS)</b><br><br>I. Uzunyayla platosunda buzul şekilleri yaygındır.<br>II. Cihanbeyli platosunda derin kanyon vadiler yaygındır.<br>III. Kapadokya platosunda volkanik şekiller yaygındır.<br><br><b>Türkiye'nin platolarıyla ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
+    text: "<p>I. Uzunyayla platosunda buzul şekilleri yaygındır.<br>II. Cihanbeyli platosunda derin kanyon vadiler yaygındır.<br>III. Kapadokya platosunda volkanik şekiller yaygındır.<br><br><b>Türkiye'nin platolarıyla ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
+    exam: "2023 KPSS-LİSANS",
     diff: 2,
     expl: "Kapadokya platosu volkanik tüflerden oluştuğu için volkanik şekiller (peribacaları) yaygındır (III doğru). Uzunyayla'da buzul şekilleri bulunmaz (yükseltisi buzullaşma sınırında değildir). Cihanbeyli platosu ise dümdüz ve sığ vadilerden oluşur, kanyon vadi görülmez.",
     answers: [
@@ -861,7 +929,8 @@ export const TURKIYENIN_PLATOLARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 KPSS-ORTAÖĞRETİM)</b><br><br>Türkiye'de geniş yer kaplayan platolarda en fazla yapılan ekonomik faaliyet tarım ve hayvancılıktır.<br><br><b>Aşağıdaki platolardan hangisi bu özelliğin dışında kalmaktadır?</b></p>",
+    text: "<p>Türkiye'de geniş yer kaplayan platolarda en fazla yapılan ekonomik faaliyet tarım ve hayvancılıktır.<br><br><b>Aşağıdaki platolardan hangisi bu özelliğin dışında kalmaktadır?</b></p>",
+    exam: "2020 KPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Çatalca-Kocaeli platosu, Türkiye'nin en gelişmiş, nüfusun ve sanayinin en yoğun olduğu bölgesidir. Bu platoda tarım ve hayvancılık yerine sanayi, ticaret ve hizmet sektörleri ön plandadır.",
     answers: [
@@ -873,7 +942,8 @@ export const TURKIYENIN_PLATOLARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 KPSS-LİSANS)</b><br><br>Volkanik faaliyet sonucu yüzeye çıkan lavlardan oluşan arazinin akarsular tarafından aşındırılmasıyla lav platoları oluşur.<br><br><b>Aşağıdaki platolardan hangisi bu tür oluşum özelliğine sahiptir?</b></p>",
+    text: "<p>Volkanik faaliyet sonucu yüzeye çıkan lavlardan oluşan arazinin akarsular tarafından aşındırılmasıyla lav platoları oluşur.<br><br><b>Aşağıdaki platolardan hangisi bu tür oluşum özelliğine sahiptir?</b></p>",
+    exam: "2020 KPSS-LİSANS",
     diff: 1,
     expl: "Türkiye'deki en tipik ve en büyük lav platosu örneği, Doğu Anadolu Bölgesi'nde yer alan Erzurum-Kars (ve Ardahan) platolarıdır.",
     answers: [
@@ -885,7 +955,8 @@ export const TURKIYENIN_PLATOLARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 KPSS-ORTAÖĞRETİM)</b><br><br>Platolar, geniş düzlüklerin akarsular tarafından derin bir şekilde yarılarak parçalanması sonucu oluşmuşlardır. Türkiye'de platolara daha çok Orta Anadolu Bölgesi'nde rastlanır.<br><br><b>Aşağıdakilerden hangisi bu bölgede yer alan platolardan biri değildir?</b></p>",
+    text: "<p>Platolar, geniş düzlüklerin akarsular tarafından derin bir şekilde yarılarak parçalanması sonucu oluşmuşlardır. Türkiye'de platolara daha çok Orta Anadolu Bölgesi'nde rastlanır.<br><br><b>Aşağıdakilerden hangisi bu bölgede yer alan platolardan biri değildir?</b></p>",
+    exam: "2020 KPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Obruk, Bozok, Haymana ve Uzunyayla platoları İç (Orta) Anadolu Bölgesi'nde yer alırken, Taşeli Platosu Akdeniz Bölgesi'nde yer alan karstik bir platodur.",
     answers: [
@@ -897,7 +968,8 @@ export const TURKIYENIN_PLATOLARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 EKPSS-LİSANS)</b><br><br><b>Oluşumunda Fırat Nehri ve kollarının etkili olduğu plato aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Oluşumunda Fırat Nehri ve kollarının etkili olduğu plato aşağıdakilerden hangisidir?</b></p>",
+    exam: "2020 EKPSS-LİSANS",
     diff: 1,
     expl: "Fırat Nehri ve kolları Güneydoğu Anadolu Bölgesi'nden geçer. Bu bölgedeki geniş düzlükleri yararak Şanlıurfa Platosu ve Gaziantep Platosu'nun oluşumunda etkili olmuştur.",
     answers: [
@@ -909,7 +981,8 @@ export const TURKIYENIN_PLATOLARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2019 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Obruk Platosu, adını üzerinde yer alan çok sayıdaki obruktan almıştır. Yüzeyi genel olarak 1100-1150 metre arasında değişen ve çevresindeki ovalara göre yükseltisi fazla olmayan bu plato, özellikle yer altı karst gelişiminin etkin olduğu bir sahadır.<br><br><b>Yukarıda açıklaması verilen plato, haritada numaralandırılarak gösterilen alanların hangisinde yer almaktadır?</b></p>",
+    text: "<p>Obruk Platosu, adını üzerinde yer alan çok sayıdaki obruktan almıştır. Yüzeyi genel olarak 1100-1150 metre arasında değişen ve çevresindeki ovalara göre yükseltisi fazla olmayan bu plato, özellikle yer altı karst gelişiminin etkin olduğu bir sahadır.<br><br><b>Yukarıda açıklaması verilen plato, haritada numaralandırılarak gösterilen alanların hangisinde yer almaktadır?</b></p>",
+    exam: "2019 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-platolar_t1_q7.jpg",
     diff: 2,
     expl: "Obruk Platosu, İç Anadolu Bölgesi'nde Tuz Gölü'nün güney ve güneydoğusunda (Konya, Karapınar civarı) yer alır. Haritada bu konuma karşılık gelen yer III numaralı alandır.",
@@ -922,7 +995,8 @@ export const TURKIYENIN_PLATOLARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2019 MEB-EKYS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak kırmızı renkle gösterilmiştir.<br><br><b>Bu alanlardan hangisi karstik platodur?</b></p>",
+    text: "<p>Aşağıdaki haritada bazı alanlar numaralandırılarak kırmızı renkle gösterilmiştir.<br><br><b>Bu alanlardan hangisi karstik platodur?</b></p>",
+    exam: "2019 MEB-EKYS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-platolar_t1_q8.jpg",
     diff: 2,
     expl: "Türkiye'nin en belirgin karstik platoları Akdeniz Bölgesi'nde yer alan Teke ve Taşeli platolarıdır. Haritada III numaralı alan (Antalya'nın doğusu, Mersin'in batısı) Taşeli Platosu'dur.",
@@ -935,7 +1009,8 @@ export const TURKIYENIN_PLATOLARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2015 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Platolar, Türkiye arazisi içinde geniş yer kaplamaktadır. Bu alanlarda genellikle kuru tarım ve hayvancılık faaliyetleri yapılmaktadır.<br><br><b>Buna göre yukarıdaki haritada numaralarla gösterilen platolardan hangisi bu faaliyetlerin her ikisi bakımından bu genellemeye uymamaktadır?</b></p>",
+    text: "<p>Platolar, Türkiye arazisi içinde geniş yer kaplamaktadır. Bu alanlarda genellikle kuru tarım ve hayvancılık faaliyetleri yapılmaktadır.<br><br><b>Buna göre yukarıdaki haritada numaralarla gösterilen platolardan hangisi bu faaliyetlerin her ikisi bakımından bu genellemeye uymamaktadır?</b></p>",
+    exam: "2015 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-platolar_t1_q9.jpg",
     diff: 3,
     expl: "Haritadaki II numaralı alan İstanbul ve Kocaeli'yi kapsayan Çatalca-Kocaeli Platosu'dur. Bu plato tarım ve hayvancılıktan çok sanayi, ticaret ve yoğun yerleşme özellikleriyle diğer tüm platolardan farklıdır.",
@@ -948,7 +1023,8 @@ export const TURKIYENIN_PLATOLARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 MEB-MÜFETTİŞ YARDIMCILIĞI)</b><br><i>(Haritalı Soru)</i><br><br><b>Numaralandırılarak verilen plato alanları hangi seçenekte doğru sıralanmıştır?</b></p>",
+    text: "<p>Numaralandırılarak verilen plato alanları hangi seçenekte doğru sıralanmıştır?</b></p>",
+    exam: "2010 MEB-MÜFETTİŞ YARDIMCILIĞI",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-platolar_t1_q10.jpg",
     diff: 2,
     expl: "Haritada 1 numara Ankara güneyindeki Haymana Platosunu, 2 numara Tuz Gölü güneyindeki Obruk Platosunu, 3 numara ise Yozgat çevresindeki Bozok Platosunu göstermektedir.",
@@ -967,7 +1043,8 @@ export const TURKIYENIN_PLATOLARI_TEST_1: McQ[] = [
 // ============================================================================
 export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
   {
-    text: "<p><b>(2025 MEB AGS)</b><br><br>Türkiye'de tektonik kökenli ovaların büyük bir kısmı aktif fay kuşakları üzerinde yer alır.<br><br><b>Aşağıdakilerden hangisi bu kuşaklar üzerinde yer alan ovalardan biri değildir?</b></p>",
+    text: "<p>Türkiye'de tektonik kökenli ovaların büyük bir kısmı aktif fay kuşakları üzerinde yer alır.<br><br><b>Aşağıdakilerden hangisi bu kuşaklar üzerinde yer alan ovalardan biri değildir?</b></p>",
+    exam: "2025 MEB AGS",
     diff: 2,
     expl: "Amik, Muş, Düzce ve Niksar ovaları aktif fay kuşakları üzerinde oluşan tektonik çöküntü ovalarıdır. Ergene Ovası da tektonik (çöküntü) kökenlidir ancak aktif ve büyük bir deprem üreten fay kuşağı (KAF/DAF gibi) üzerinde yer almaz; masif arazilerle çevrili nispeten daha durağan bir çöküntü alanıdır.",
     answers: [
@@ -979,7 +1056,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 KPSS-ÖNLİSANS)</b><br><br>Türkiye'de ovalar bulundukları yere ve oluşumlarında etkili olan süreçlere bağlı olarak farklı yükseltilerde bulunur.<br><br><b>Buna göre aşağıdaki ovalardan hangisinin ortalama yükseltisi daha azdır?</b></p>",
+    text: "<p>Türkiye'de ovalar bulundukları yere ve oluşumlarında etkili olan süreçlere bağlı olarak farklı yükseltilerde bulunur.<br><br><b>Buna göre aşağıdaki ovalardan hangisinin ortalama yükseltisi daha azdır?</b></p>",
+    exam: "2024 KPSS-ÖNLİSANS",
     diff: 1,
     expl: "Muş, Kütahya, Develi ve Pasinler ovaları iç kesimlerde yer alan yüksek rakımlı tektonik ovalardır. Akhisar Ovası ise Ege Bölgesi'nde, denize çok daha yakın ve graben sistemleri içinde yer aldığı için yükseltisi en az olandır.",
     answers: [
@@ -991,7 +1069,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 EKPSS-ORTAÖĞRETİM)</b><br><br>Bir grup öğrenci, Güneydoğu Anadolu Projesi'nin kapsadığı illerde yer alan ovalarda araştırma yapacaktır.<br><br><b>Bu öğrencilerin aşağıdaki ovalardan hangisine gitmesi beklenmez?</b></p>",
+    text: "<p>Bir grup öğrenci, Güneydoğu Anadolu Projesi'nin kapsadığı illerde yer alan ovalarda araştırma yapacaktır.<br><br><b>Bu öğrencilerin aşağıdaki ovalardan hangisine gitmesi beklenmez?</b></p>",
+    exam: "2024 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Ceylanpınar, Harran, Suruç ve Viranşehir ovaları Güneydoğu Anadolu Bölgesi'nde yer alan ve GAP kapsamında sulanan ovalardır. Amik Ovası ise Akdeniz Bölgesi'nde (Hatay) yer alır ve GAP kapsamında değildir.",
     answers: [
@@ -1003,7 +1082,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 EKPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada üç kıyı ovası numaralandırılarak gösterilmiştir.<br><br><b>Bu ovaları oluşturan akarsular aşağıdakilerin hangisinde verilmiştir?</b></p>",
+    text: "<p>Aşağıdaki haritada üç kıyı ovası numaralandırılarak gösterilmiştir.<br><br><b>Bu ovaları oluşturan akarsular aşağıdakilerin hangisinde verilmiştir?</b></p>",
+    exam: "2024 EKPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-ovalar_t1_q4.jpg",
     diff: 2,
     expl: "I numaralı yer Sakarya Nehri'nin oluşturduğu Karasu Ovası/Deltasıdır. II numaralı yer Göksu Nehri'nin oluşturduğu Silifke Deltasıdır. III numaralı yer ise Yeşilırmak'ın oluşturduğu Çarşamba Deltasıdır.",
@@ -1016,7 +1096,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 KPSS-LİSANS)</b><br><br>Türkiye'deki ovalarda ana ekonomik faaliyet tarımsal etkinliklerdir. Bununla birlikte büyük şehirlere yakın olan bazı ovalarda ulaşım ve sanayi gibi diğer faaliyetler de önemli oranda yapılmaktadır.<br><br><b>Aşağıdaki ovalardan hangisinin belirtilen tarım dışı faaliyetlerde yoğun bir kullanımı söz konusudur?</b></p>",
+    text: "<p>Türkiye'deki ovalarda ana ekonomik faaliyet tarımsal etkinliklerdir. Bununla birlikte büyük şehirlere yakın olan bazı ovalarda ulaşım ve sanayi gibi diğer faaliyetler de önemli oranda yapılmaktadır.<br><br><b>Aşağıdaki ovalardan hangisinin belirtilen tarım dışı faaliyetlerde yoğun bir kullanımı söz konusudur?</b></p>",
+    exam: "2023 KPSS-LİSANS",
     diff: 1,
     expl: "İnegöl Ovası (Bursa) çevresindeki büyük şehirlere yakınlığı ve gelişmiş kara yolları üzerinde olması nedeniyle Türkiye'de sanayinin (özellikle mobilya sanayisinin) ve yerleşmenin en yoğun olduğu ovalardan biridir.",
     answers: [
@@ -1028,7 +1109,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-ORTAÖĞRETİM)</b><br><br>Ovaların bir kısmı akarsular tarafından taşınan malzemenin denizi doldurması ile oluşmaktadır.<br><br><b>Aşağıdakilerden hangisi bu türde oluşan ovalardan biri değildir?</b></p>",
+    text: "<p>Ovaların bir kısmı akarsular tarafından taşınan malzemenin denizi doldurması ile oluşmaktadır.<br><br><b>Aşağıdakilerden hangisi bu türde oluşan ovalardan biri değildir?</b></p>",
+    exam: "2022 KPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Akarsuların denizi doldurmasıyla 'Delta Ovaları' oluşur. Bakırçay, Silifke, Bafra ve Menemen ovaları delta ovasıdır. Elmalı Ovası (Antalya) ise eriyebilen kayaçların çökmesiyle oluşan 'Karstik' bir ovadır.",
     answers: [
@@ -1040,7 +1122,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-ÖNLİSANS)</b><br><br><b>Aşağıdaki ovalardan hangisi küçük ölçekli bir fiziki haritada yeşil renkle gösterilir?</b></p>",
+    text: "<p>Aşağıdaki ovalardan hangisi küçük ölçekli bir fiziki haritada yeşil renkle gösterilir?</b></p>",
+    exam: "2022 EKPSS-ÖNLİSANS",
     diff: 1,
     expl: "Fiziki haritalarda 0-500 metre arası yükseltiler yeşil renkle gösterilir. Bu nedenle deniz kenarında bulunan delta ve kıyı ovaları yeşildir. Çarşamba Ovası (Samsun) deniz kıyısında yer alan bir delta ovasıdır.",
     answers: [
@@ -1052,7 +1135,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-ÖNLİSANS)</b><br><br>Türkiye'de iç kesimlerdeki ovaların büyük çoğunluğunun yükseltisi 500 metrenin üzerindedir.<br><br><b>Aşağıdaki ovalardan hangisinin ortalama yükseltisi bu genellemenin dışında kalır?</b></p>",
+    text: "<p>Türkiye'de iç kesimlerdeki ovaların büyük çoğunluğunun yükseltisi 500 metrenin üzerindedir.<br><br><b>Aşağıdaki ovalardan hangisinin ortalama yükseltisi bu genellemenin dışında kalır?</b></p>",
+    exam: "2022 EKPSS-ÖNLİSANS",
     diff: 2,
     expl: "Pasinler, Malatya, Aksaray ve Konya ovaları iç kesimlerde yer alır ve rakımları 1000 metrenin üzerindedir. Güneydoğu Anadolu'daki Ceylanpınar Ovası ise iç kesimde yer almasına rağmen ortalama yükseltisi 400-500 metre civarında olup diğerlerine göre çok daha alçaktır.",
     answers: [
@@ -1064,7 +1148,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-ÖNLİSANS)</b><br><br><b>Aşağıdakilerden hangisi Güneydoğu Anadolu Projesi kapsamında sulanan ovalardan biridir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi Güneydoğu Anadolu Projesi kapsamında sulanan ovalardan biridir?</b></p>",
+    exam: "2022 EKPSS-ÖNLİSANS",
     diff: 1,
     expl: "GAP (Güneydoğu Anadolu Projesi) Şanlıurfa, Mardin, Diyarbakır gibi illeri kapsar. Harran Ovası bu projenin en önemli sulama ve tarım merkezlerinden biridir.",
     answers: [
@@ -1076,7 +1161,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 EKPSS-LİSANS)</b><br><br>Tektonik hareketler sonucunda sınırları büyük ölçüde faylarla belirlenmiş olan çöküntü alanlarına akarsularla taşınan sedimanların birikmesiyle tektonik kökenli ovalar oluşmuştur.<br><br><b>Aşağıdakilerden hangisi bu tür ovalardan biri değildir?</b></p>",
+    text: "<p>Tektonik hareketler sonucunda sınırları büyük ölçüde faylarla belirlenmiş olan çöküntü alanlarına akarsularla taşınan sedimanların birikmesiyle tektonik kökenli ovalar oluşmuştur.<br><br><b>Aşağıdakilerden hangisi bu tür ovalardan biri değildir?</b></p>",
+    exam: "2020 EKPSS-LİSANS",
     diff: 1,
     expl: "Muş, Erzincan, Amik ve Suluova fay hatları üzerindeki tektonik çöküntü ovalarıdır. Bafra Ovası ise Kızılırmak'ın taşıdığı alüvyonları Karadeniz kıyısında biriktirmesiyle oluşan bir Delta ovasıdır.",
     answers: [
@@ -1088,7 +1174,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 KPSS-ÖNLİSANS)</b><br><br><b>Aşağıdaki ovalardan hangisinin oluşumunda etkili olan faktörler diğerlerinden farklıdır?</b></p>",
+    text: "<p>Aşağıdaki ovalardan hangisinin oluşumunda etkili olan faktörler diğerlerinden farklıdır?</b></p>",
+    exam: "2020 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Çarşamba, Menemen, Silifke ve Çukurova ovaları akarsu biriktirmesi sonucu oluşan (dış kuvvet etkili) Delta ovalarıdır. Elmalı Ovası (Antalya) ise kireçtaşının kimyasal yollarla erimesiyle oluşan Karstik bir ovadır.",
     answers: [
@@ -1100,7 +1187,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 MEB-EKYS)</b><br><br>I. Kızılırmak - Bafra<br>II. Aksu - Silifke<br>III. Gediz - Menemen<br>IV. Filyos - Çarşamba<br><br><b>Yukarıdaki akarsu ve oluşturduğu ova eşleştirmelerinden hangileri doğru olarak verilmiştir?</b></p>",
+    text: "<p>I. Kızılırmak - Bafra<br>II. Aksu - Silifke<br>III. Gediz - Menemen<br>IV. Filyos - Çarşamba<br><br><b>Yukarıdaki akarsu ve oluşturduğu ova eşleştirmelerinden hangileri doğru olarak verilmiştir?</b></p>",
+    exam: "2020 MEB-EKYS",
     diff: 2,
     expl: "Kızılırmak Bafra deltasını (I), Gediz Nehri Menemen deltasını (III) oluşturur. Silifke deltasını Aksu değil Göksu Nehri oluşturur. Çarşamba deltasını ise Filyos değil Yeşilırmak oluşturur.",
     answers: [
@@ -1112,7 +1200,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 MSÜ)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada bazı ovalık alanlar numaralandırılarak gösterilmiştir.<br><br><b>Bu alanlardan hangilerinin oluşumunda tektonik hareketlerin etkisi daha fazla olmuştur?</b></p>",
+    text: "<p><br><br>Aşağıdaki haritada bazı ovalık alanlar numaralandırılarak gösterilmiştir.<br><br><b>Bu alanlardan hangilerinin oluşumunda tektonik hareketlerin etkisi daha fazla olmuştur?</b></p>",
+    exam: "2020 MSÜ",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-ovalar_t1_q13.jpg",
     diff: 3,
     expl: "Haritadaki III (Çarşamba) ve V (Çukurova) akarsu biriktirmesiyle oluşan delta ovalarıdır. II numaralı alan Kuzey Anadolu Fay Hattı üzerindeki Düzce/Bolu tektonik ovasını, IV numaralı alan ise Batı Anadolu'daki tektonik çöküntü alanı olan Büyük Menderes grabenini gösterir. Tektonik olanlar II ve IV'tür.",
@@ -1125,7 +1214,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2019 KPSS-LİSANS)</b><br><br>Türkiye'de;<br>I. tektonik hareketler sonucunda oluşan çöküntü alanlarında gelişen,<br>II. akarsuların taşıdığı alüvyonların deniz kıyısında birikmesiyle oluşan,<br>III. kireç taşının çözünmesi sonucunda başlıca karstik süreçlerle şekillenen ovalar yaygın olarak görülmektedir.<br><br><b>Buna göre I, II ve III numaralı süreçlere bağlı gelişen ovalara ait örnekler aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    text: "<p>Türkiye'de;<br>I. tektonik hareketler sonucunda oluşan çöküntü alanlarında gelişen,<br>II. akarsuların taşıdığı alüvyonların deniz kıyısında birikmesiyle oluşan,<br>III. kireç taşının çözünmesi sonucunda başlıca karstik süreçlerle şekillenen ovalar yaygın olarak görülmektedir.<br><br><b>Buna göre I, II ve III numaralı süreçlere bağlı gelişen ovalara ait örnekler aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    exam: "2019 KPSS-LİSANS",
     diff: 2,
     expl: "Suluova Kuzey Anadolu Fay Hattı üzerindeki 'tektonik' (I) bir ovadır. Çarşamba Ovası Karadeniz kıyısındaki bir 'delta' (II) ovasıdır. Elmalı Ovası ise Antalya çevresindeki 'karstik' (III) bir ovadır.",
     answers: [
@@ -1137,7 +1227,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-LİSANS)</b><br><br><b>Aşağıdakilerden hangisi graben içerisinde oluşmuş ovalardan biri değildir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi graben içerisinde oluşmuş ovalardan biri değildir?</b></p>",
+    exam: "2018 EKPSS-LİSANS",
     diff: 1,
     expl: "Acıpayam, Küçük Menderes, Bakırçay ve Gediz ovaları Ege Bölgesi'ndeki kırılmalar sonucu çöken graben (tektonik) ovalarıdır. Çarşamba Ovası ise faylanma ile değil, akarsuyun (Yeşilırmak) denizi doldurmasıyla oluşan bir delta ovasıdır.",
     answers: [
@@ -1149,7 +1240,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-ORTAÖĞRETİM)</b><br><br>I. Erzurum - Karstik<br>II. Bafra - Delta<br>III. Gediz - Delta<br><br><b>Yukarıdakilerin hangilerinde ova ve ovanın oluşum türü doğru eşleştirilmiştir?</b></p>",
+    text: "<p>I. Erzurum - Karstik<br>II. Bafra - Delta<br>III. Gediz - Delta<br><br><b>Yukarıdakilerin hangilerinde ova ve ovanın oluşum türü doğru eşleştirilmiştir?</b></p>",
+    exam: "2018 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Bafra ve Gediz deniz kıyısında akarsuların getirdiği alüvyonlarla oluşan delta ovalarıdır (II ve III doğru). Erzurum Ovası ise karstik değil, fay hatlarına bağlı olarak oluşan 'tektonik' bir ovadır.",
     answers: [
@@ -1161,7 +1253,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2016 KPSS-ÖNLİSANS)</b><br><br><b>Aşağıdakilerden hangisi karstik kökenli bir ova değildir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi karstik kökenli bir ova değildir?</b></p>",
+    exam: "2016 KPSS-ÖNLİSANS",
     diff: 1,
     expl: "Muğla, Kestel, Elmalı ve Suğla (TAKKE-M şifresi ile bilinen) eriyebilen kalkerli arazide oluşan karstik polyelerdir (ovalar). Tercan (Erzincan) ise fay hatları üzerindeki tektonik bir ovadır.",
     answers: [
@@ -1173,7 +1266,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2015 KPSS-LİSANS)</b><br><br><b>Aşağıdaki ova ve oluşum kökeni eşleştirmelerinden hangisi yanlıştır?</b></p>",
+    text: "<p>Aşağıdaki ova ve oluşum kökeni eşleştirmelerinden hangisi yanlıştır?</b></p>",
+    exam: "2015 KPSS-LİSANS",
     diff: 1,
     expl: "Ergene Ovası, Marmara Bölgesi'nde Trakya'nın iç kısımlarında yer alan ve toptan çökmeyle oluşan tektonik bir ovadır. Deniz kıyısında olmadığı için delta ovası olması imkânsızdır.",
     answers: [
@@ -1185,7 +1279,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2015 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdaki ovalarımızdan hangisinin ortalama yükseltisi daha fazladır?</b></p>",
+    text: "<p>Aşağıdaki ovalarımızdan hangisinin ortalama yükseltisi daha fazladır?</b></p>",
+    exam: "2015 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 2,
     expl: "Düzce (~150m), Çarşamba ve Bafra (Delta, ~0m) deniz seviyesine yakındır. Harran (~400m) civarıdır. Erzincan Ovası ise Doğu Anadolu Bölgesi'nde yer aldığı için yükseltisi en fazla olandır (~1200m).",
     answers: [
@@ -1197,7 +1292,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2015 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdakilerden hangisi delta ovası değildir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi delta ovası değildir?</b></p>",
+    exam: "2015 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Çukurova, Çarşamba, Bafra ve Silifke deniz kenarında akarsu biriktirmesiyle oluşan büyük delta ovalarımızdır. Konya Ovası ise İç Anadolu Bölgesi'nde yer alan, eski göl tabanı olan tektonik bir ovadır.",
     answers: [
@@ -1209,7 +1305,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-ÖNLİSANS)</b><br><br>Bir Türkiye fiziki haritası incelendiğinde Çukurova'nın yeşil, Konya Ovası'nın sarı, Erzurum Ovası'nın kahverengi ile gösterilmesi aşağıdakilerin hangisiyle ilgilidir?</p>",
+    text: "<p>Bir Türkiye fiziki haritası incelendiğinde Çukurova'nın yeşil, Konya Ovası'nın sarı, Erzurum Ovası'nın kahverengi ile gösterilmesi aşağıdakilerin hangisiyle ilgilidir?</p>",
+    exam: "2014 KPSS-ÖNLİSANS",
     diff: 1,
     expl: "Fiziki haritalarda renkler arazinin bitki örtüsünü değil, doğrudan yükselti basamaklarını gösterir. 0-500m Yeşil (Çukurova), 500-1000m Sarı (Konya), 1500m ve üzeri Kahverengi (Erzurum) ile ifade edilir.",
     answers: [
@@ -1221,7 +1318,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-LİSANS)</b><br><br>Ovalar; tarım, yerleşme, sanayi kuruluşu için uygun alanları oluşturur.<br><br><b>Buna göre, aşağıdaki ovalardan hangisi diğerlerinden farklı bir özellik göstermektedir?</b></p>",
+    text: "<p>Ovalar; tarım, yerleşme, sanayi kuruluşu için uygun alanları oluşturur.<br><br>Buna göre, aşağıdaki ovalardan hangisi diğerlerinden farklı bir özellik göstermektedir?</b></p>",
+    exam: "2014 KPSS-LİSANS",
     diff: 2,
     expl: "Konya, Erzincan, Bursa ve Eskişehir ovalarında tarımın yanı sıra ulaşım kolaylığı ve stratejik konumdan dolayı sanayi tesisleri ve yoğun yerleşmeler kurulmuştur. Muş Ovası ise Doğu Anadolu'da şiddetli kış koşulları ve ulaşım zorluğu nedeniyle sanayi kuruluşu açısından en elverişsiz ve gelişmemiş ovadır.",
     answers: [
@@ -1233,7 +1331,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2013 KPSS-LİSANS)</b><br><br><b>Bir Türkiye fiziki haritasında, yaklaşık aynı boylam üzerinde olan iki ovanın farklı renklerle gösterilmesi aşağıdakilerden hangisine bağlanabilir?</b></p>",
+    text: "<p>Bir Türkiye fiziki haritasında, yaklaşık aynı boylam üzerinde olan iki ovanın farklı renklerle gösterilmesi aşağıdakilerden hangisine bağlanabilir?</b></p>",
+    exam: "2013 KPSS-LİSANS",
     diff: 1,
     expl: "Fiziki haritalarda renk farklılığı sadece ve sadece yükselti farkını belirtmek için kullanılır. Ovaların aynı boylamda (kuzey-güney hizasında) olması yükseltilerinin de aynı olacağı anlamına gelmez (Örn: Bafra ovası 0m yeşil iken, aynı boylamdaki Elbistan ovası 1150m sarıdır).",
     answers: [
@@ -1245,7 +1344,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdakilerden hangisi deniz kıyısında yer alan ovamızdır?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi deniz kıyısında yer alan ovamızdır?</b></p>",
+    exam: "2012 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Düzce, Niksar, Altınbaşak (Harran) ve Pasinler ovaları Türkiye'nin iç kısımlarında, kara içlerinde yer alırlar. Bafra Ovası ise Kızılırmak'ın Karadeniz'e döküldüğü yerde oluşan kıyı (delta) ovasıdır.",
     answers: [
@@ -1263,7 +1363,8 @@ export const TURKIYENIN_OVALARI_TEST_1: McQ[] = [
 // ============================================================================
 export const DENIZLER_VE_KORFEZLER_TEST_1: McQ[] = [
   {
-    text: "<p><b>(2024 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdaki körfezlerden hangisi diğerlerine göre Ege Denizi'nin daha kuzeyinde yer almaktadır?</b></p>",
+    text: "<p>Aşağıdaki körfezlerden hangisi diğerlerine göre Ege Denizi'nin daha kuzeyinde yer almaktadır?</b></p>",
+    exam: "2024 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Ege kıyılarımızdaki körfezler kuzeyden güneye doğru; Saros, Edremit, Çandarlı, İzmir, Kuşadası, Güllük ve Gökova şeklinde sıralanır. Seçeneklerde verilenler arasında en kuzeyde yer alanı Edremit Körfezi'dir.",
     answers: [
@@ -1275,7 +1376,8 @@ export const DENIZLER_VE_KORFEZLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 KPSS-LİSANS)</b><br><br><b>Bozcaada'dan Aydın Kuşadası'na gemiyle kıyı boyunca seyahat eden bir kişinin sırasıyla aşağıdaki körfezlerin hangilerinden geçmesi beklenir?</b></p>",
+    text: "<p>Bozcaada'dan Aydın Kuşadası'na gemiyle kıyı boyunca seyahat eden bir kişinin sırasıyla aşağıdaki körfezlerin hangilerinden geçmesi beklenir?</b></p>",
+    exam: "2023 KPSS-LİSANS",
     diff: 2,
     expl: "Bozcaada (Çanakkale) açıklarından güneye (Aydın/Kuşadası yönüne) doğru hareket eden bir gemi, harita üzerinde sırasıyla Edremit (Balıkesir), Çandarlı (İzmir kuzeyi) ve İzmir körfezlerinden geçerek Kuşadası'na ulaşır.",
     answers: [
@@ -1287,7 +1389,8 @@ export const DENIZLER_VE_KORFEZLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Osman Gazi Köprüsü aşağıdaki körfezlerden hangisinin iki kıyısını birbirine bağlar?</b></p>",
+    text: "<p>Osman Gazi Köprüsü aşağıdaki körfezlerden hangisinin iki kıyısını birbirine bağlar?</b></p>",
+    exam: "2020 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Osman Gazi Köprüsü, Marmara Denizi'nin doğu uzantısı olan İzmit Körfezi'nin iki yakasını (Dilovası ile Hersek Burnu) birbirine bağlayarak İstanbul-İzmir otoyolunun geçişini sağlar.",
     answers: [
@@ -1299,7 +1402,8 @@ export const DENIZLER_VE_KORFEZLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2019 KPSS-LİSANS)</b><br><br>Karadeniz'de tuzluluk oranının Akdeniz'den daha az olmasında;<br>I. büyük akarsularla beslenmesi,<br>II. buharlaşmanın daha az olması,<br>III. derinliğin fazla olması,<br>IV. kirliliğin yüksek olması<br><br><b>faktörlerinden hangileri etkili olmuştur?</b></p>",
+    text: "<p>Karadeniz'de tuzluluk oranının Akdeniz'den daha az olmasında;<br>I. büyük akarsularla beslenmesi,<br>II. buharlaşmanın daha az olması,<br>III. derinliğin fazla olması,<br>IV. kirliliğin yüksek olması<br><br><b>faktörlerinden hangileri etkili olmuştur?</b></p>",
+    exam: "2019 KPSS-LİSANS",
     diff: 2,
     expl: "Karadeniz'in tuzluluk oranının düşük olmasının temel nedenleri; enlemden dolayı güneş ışınlarını daha eğik alması ve buna bağlı buharlaşmanın az olması (II) ile Kızılırmak, Yeşilırmak, Sakarya gibi büyük akarsularla (bol tatlı suyla) beslenmesidir (I).",
     answers: [
@@ -1311,7 +1415,8 @@ export const DENIZLER_VE_KORFEZLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2019 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada Türkiye kıyılarına ait üç yer numaralandırılarak gösterilmiştir.<br><br><b>Bu yerlerin kıta sahanlıkları, genişten dara doğru aşağıdakilerin hangisinde sırasıyla verilmiştir?</b></p>",
+    text: "<p><br><br>Aşağıdaki haritada Türkiye kıyılarına ait üç yer numaralandırılarak gösterilmiştir.<br><br><b>Bu yerlerin kıta sahanlıkları, genişten dara doğru aşağıdakilerin hangisinde sırasıyla verilmiştir?</b></p>",
+    exam: "2019 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-denizler-korfezler_t1_q5.jpg",
     diff: 3,
     expl: "Haritadaki yerleri incelediğimizde; III numaralı yer Ege kıyılarıdır ve dağlar denize dik uzandığı için kıta sahanlığı en geniş olan yerdir. II numaralı yer Çukurova deltasıdır, delta oluşabildiğine göre kıta sahanlığı geniştir. I numaralı yer ise Doğu Karadeniz'dir, dağlar kıyıya çok yakın ve paralel olduğu için kıta sahanlığı en dar olan yerdir. Genişten dara sıralama: III (Ege) > II (Çukurova) > I (Doğu Karadeniz) şeklindedir.",
@@ -1324,7 +1429,8 @@ export const DENIZLER_VE_KORFEZLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2015 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdaki denizlerimizden hangisinin toplam kıyı uzunluğu daha fazladır?</b></p>",
+    text: "<p>Aşağıdaki denizlerimizden hangisinin toplam kıyı uzunluğu daha fazladır?</b></p>",
+    exam: "2015 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Ege Bölgesi'nde dağların denize dik uzanması nedeniyle girinti, çıkıntı, koy, körfez ve yarımada sayısı çok fazladır. Bu zikzaklı yapı (enine kıyı tipi), Ege Denizi'nin Türkiye'nin en uzun kıyı şeridine sahip denizi olmasını sağlamıştır.",
     answers: [
@@ -1335,7 +1441,8 @@ export const DENIZLER_VE_KORFEZLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-LİSANS)</b><br><br>Türkiye'de ekonomik balıkçılık açısından Karadeniz önemli bir yer tutmaktadır. Ancak Karadeniz'de 200 metrenin altındaki derinliklerde canlı yaşamamaktadır.<br><br><b>Bunun nedeni aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Türkiye'de ekonomik balıkçılık açısından Karadeniz önemli bir yer tutmaktadır. Ancak Karadeniz'de 200 metrenin altındaki derinliklerde canlı yaşamamaktadır.<br><br><b>Bunun nedeni aşağıdakilerden hangisidir?</b></p>",
+    exam: "2014 KPSS-LİSANS",
     diff: 1,
     expl: "Karadeniz'de 200 metrenin altındaki derinliklerde zehirli bir gaz olan hidrojen sülfür (kükürtlü hidrojen) yoğun olarak bulunduğu ve oksijen tükendiği için deniz canlılarının yaşaması imkânsızdır.",
     answers: [
@@ -1347,7 +1454,8 @@ export const DENIZLER_VE_KORFEZLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 KPSS-ORTAÖĞRETİM)</b><br><i>(Haritalı Soru)</i><br><br>İzmir ile Yunanistan'ın Dedeağaç yerleşmesi arasında turizm faaliyetinde bulunan bir yat firması, İzmir Körfezi'nden hareket edip Türkiye'nin kıyı çizgisini takip ederek sırasıyla bazı körfezlere uğramaktadır.<br><br><b>Buna göre, haritada numaralandırılan körfezler aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    text: "<p><br><br>İzmir ile Yunanistan'ın Dedeağaç yerleşmesi arasında turizm faaliyetinde bulunan bir yat firması, İzmir Körfezi'nden hareket edip Türkiye'nin kıyı çizgisini takip ederek sırasıyla bazı körfezlere uğramaktadır.<br><br><b>Buna göre, haritada numaralandırılan körfezler aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    exam: "2012 KPSS-ORTAÖĞRETİM",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-denizler-korfezler_t1_q8.jpg",
     diff: 2,
     expl: "İzmir'den kuzeye doğru hareket eden yat; sırasıyla I numaralı yerdeki Çandarlı Körfezi'ne (İzmir kuzeyi), ardından II numaralı yerdeki Edremit Körfezi'ne (Balıkesir) ve Çanakkale Boğazı'nı geçmeden hemen yukarıda yer alan III numaralı Saros Körfezi'ne uğrar.",
@@ -1366,7 +1474,8 @@ export const DENIZLER_VE_KORFEZLER_TEST_1: McQ[] = [
 // ============================================================================
 export const GOLLER_TEST_1: McQ[] = [
   {
-    text: "<p><b>(2024 KPSS-LİSANS)</b><br><br>Bazı göller, vadilerin önlerinin birikinti yelpazesiyle tıkanması sonucunda oluşur.<br><br><b>Türkiye'de yer alan aşağıdaki göllerden hangisi bu şekilde oluşmuştur?</b></p>",
+    text: "<p>Bazı göller, vadilerin önlerinin birikinti yelpazesiyle tıkanması sonucunda oluşur.<br><br><b>Türkiye'de yer alan aşağıdaki göllerden hangisi bu şekilde oluşmuştur?</b></p>",
+    exam: "2024 KPSS-LİSANS",
     diff: 1,
     expl: "Açıklamada 'Alüvyal set gölü' tanımlanmıştır. Vadilerin önünün alüvyonlarla (birikinti yelpazesi) tıkanmasıyla oluşan göllere örneğin Ankara'daki Eymir ve Mogan gölleri, Ege'deki Bafa (Çamiçi) ve Akdeniz'deki Köyceğiz gölleri verilebilir.",
     answers: [
@@ -1378,7 +1487,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 EKPSS-ÖNLİSANS)</b><br><br><b>Aşağıdakilerden hangisi Kuzey Anadolu Fay hattındaki göllerden biridir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Kuzey Anadolu Fay hattındaki göllerden biridir?</b></p>",
+    exam: "2024 EKPSS-ÖNLİSANS",
     diff: 2,
     expl: "Güney Marmara'da doğu-batı doğrultusunda sıralanan Sapanca, İznik, Ulubat ve Manyas (Kuş) gölleri, Kuzey Anadolu Fay Hattı'nın (KAF) güney kolu üzerindeki tektonik çöküntü hendeklerinde oluşmuştur.",
     answers: [
@@ -1390,7 +1500,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 KPSS-LİSANS)</b><br><br>Tektonik hareketlere bağlı olarak oluşan göl, kapalı bir havzada yer alır. Türkiye'de göçmen kuşların önemli uğrak yerleri arasında olan gölün su seviyesi son yıllarda önemli miktarda alçalmış ve alanı daralmıştır.<br><br><b>Bazı özellikleri belirtilen bu göl aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Tektonik hareketlere bağlı olarak oluşan göl, kapalı bir havzada yer alır. Türkiye'de göçmen kuşların önemli uğrak yerleri arasında olan gölün su seviyesi son yıllarda önemli miktarda alçalmış ve alanı daralmıştır.<br><br><b>Bazı özellikleri belirtilen bu göl aşağıdakilerden hangisidir?</b></p>",
+    exam: "2023 KPSS-LİSANS",
     diff: 3,
     expl: "Tektonik kökenli, kapalı havza özelliği gösteren, uluslararası öneme sahip bir kuş alanı (Ramsar) olan ve son yıllarda ciddi kuruma/çekilme tehlikesi yaşayan göl, Göller Yöresi'ndeki Burdur Gölü'dür.",
     answers: [
@@ -1402,7 +1513,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-LİSANS)</b><br><br><b>Aşağıdakilerden hangisi tektonik kökenli göllerden biridir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi tektonik kökenli göllerden biridir?</b></p>",
+    exam: "2022 EKPSS-LİSANS",
     diff: 1,
     expl: "Burdur Gölü tektonik kökenli bir göldür. Tortum heyelan set, Terkos (Durusu) kıyı set, Nemrut volkanik (kaldera), Bafa ise alüvyal set gölüdür.",
     answers: [
@@ -1414,7 +1526,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıdaki göllerden hangisi baraj gölüdür?</b></p>",
+    text: "<p><b>Aşağıdaki göllerden hangisi baraj gölüdür?</b></p>",
+    exam: "2022 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Keban, Elazığ'da Fırat Nehri üzerinde elektrik üretimi amacıyla inşa edilmiş Türkiye'nin en büyük yapay (baraj) göllerinden biridir. Burdur, İznik, Beyşehir ve Van doğal göllerdir.",
     answers: [
@@ -1426,7 +1539,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-ORTAÖĞRETİM)</b><br><br>Göl / Oluşum türü<br>I. Mogan - Volkanik set<br>II. Avlan - Alüvyal set<br>III. Durusu - Kıyı set<br>IV. Yedigöller - Heyelan set<br><br><b>Yukarıdakilerin hangilerinde göl ve gölün oluşum türü doğru eşleştirilmiştir?</b></p>",
+    text: "<p>Göl / Oluşum türü<br>I. Mogan - Volkanik set<br>II. Avlan - Alüvyal set<br>III. Durusu - Kıyı set<br>IV. Yedigöller - Heyelan set<br><br><b>Yukarıdakilerin hangilerinde göl ve gölün oluşum türü doğru eşleştirilmiştir?</b></p>",
+    exam: "2022 KPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Durusu (Terkos) kıyı set gölüdür, Yedigöller ise heyelan set gölüdür (III ve IV doğru). Mogan alüvyal set gölüdür (volkanik değil). Avlan ise Elmalı polyesinde yer alan karstik bir göldür (alüvyal değil).",
     answers: [
@@ -1438,7 +1552,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-ÖNLİSANS)</b><br><br>Kütle hareketleri sonucunda bir akarsu vadisinin tıkanması ve gerisinde suyun birikmesiyle doğal göller oluşabilmektedir.<br><br><b>Aşağıdaki göllerden hangisi bu şekilde oluşmuştur?</b></p>",
+    text: "<p>Kütle hareketleri sonucunda bir akarsu vadisinin tıkanması ve gerisinde suyun birikmesiyle doğal göller oluşabilmektedir.<br><br><b>Aşağıdaki göllerden hangisi bu şekilde oluşmuştur?</b></p>",
+    exam: "2022 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Kütle hareketleri (heyelan/toprak kayması) sonucu oluşan göllere Heyelan Set Gölü denir. Trabzon'daki Sera Gölü, Erzurum'daki Tortum ve Bolu'daki Abant/Yedigöller bu duruma örnektir.",
     answers: [
@@ -1450,7 +1565,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-LİSANS)</b><br><br>Bazı göl çanaklarının oluşumunda karstik süreçler etkilidir.<br><br><b>Aşağıdakilerden hangisi bu süreçte oluşmuş göllerden biridir?</b></p>",
+    text: "<p>Bazı göl çanaklarının oluşumunda karstik süreçler etkilidir.<br><br><b>Aşağıdakilerden hangisi bu süreçte oluşmuş göllerden biridir?</b></p>",
+    exam: "2022 KPSS-LİSANS",
     diff: 3,
     expl: "Karstik göller kalker ve jips gibi eriyebilen kayaçların olduğu yerlerde oluşur. Sivas çevresindeki Hafik, Tödürge (Zara) ve Lota gölleri jips (alçıtaşı) karstı üzerinde oluşmuş karstik göllerdir.",
     answers: [
@@ -1462,7 +1578,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2021 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Marmara Gölü hangi ilimizin sınırları içindedir?</b></p>",
+    text: "<p>Marmara Gölü hangi ilimizin sınırları içindedir?</b></p>",
+    exam: "2021 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Marmara Gölü (Gölmarmara), isminin aksine Marmara Bölgesi'nde değil, Ege Bölgesi'nde Manisa il sınırları içerisinde yer alan alüvyal set gölüdür.",
     answers: [
@@ -1474,7 +1591,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2021 MEB-EKYS)</b><br><br><b>Aşağıdakilerden hangisi, Van Gölü çevresinde yer alan göllerden biri değildir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi, Van Gölü çevresinde yer alan göllerden biri değildir?</b></p>",
+    exam: "2021 MEB-EKYS",
     diff: 2,
     expl: "Erçek, Nazik, Arin, Haçlı ve Çıldır gölleri Doğu Anadolu Bölgesi'nde (Van Gölü çevresinde) yer alan volkanik set gölleridir. Seyfe Gölü ise İç Anadolu Bölgesi'nde Kırşehir il sınırları içerisinde yer alır.",
     answers: [
@@ -1486,7 +1604,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2021 TYT)</b><br><br>Türkiye'de yer alan göllerin özellikleri ile ilgili,<br>I. Ülke genelinde dengeli bir dağılıma sahiptir.<br>II. Yükseklikleri, batıdan doğuya doğru genellikle artmaktadır.<br>III. Bazıları taşımacılık yapmaya elverişlidir.<br>IV. Tamamı tektonik aktivitelere bağlı olarak gelişmiştir.<br><br><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p>Türkiye'de yer alan göllerin özellikleri ile ilgili,<br>I. Ülke genelinde dengeli bir dağılıma sahiptir.<br>II. Yükseklikleri, batıdan doğuya doğru genellikle artmaktadır.<br>III. Bazıları taşımacılık yapmaya elverişlidir.<br>IV. Tamamı tektonik aktivitelere bağlı olarak gelişmiştir.<br><br><b>ifadelerinden hangileri doğrudur?</b></p>",
+    exam: "2021 TYT",
     diff: 2,
     expl: "Türkiye'nin genel yükseltisi doğuya doğru arttığı için göllerin rakımı da doğuya gidildikçe artar (II doğru). Van Gölü gibi büyük göllerde feribot taşımacılığı yapılır (III doğru). Ancak göller dengeli dağılmamıştır (Göller Yöresi, Marmara gibi alanlarda yoğundur) ve tamamı tektonik değildir (karstik, set vb. tipleri vardır).",
     answers: [
@@ -1498,7 +1617,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 EKPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıdakilerden hangisi heyelan set göllerden biri değildir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi heyelan set göllerden biri değildir?</b></p>",
+    exam: "2020 EKPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Tortum, Abant, Borabay ve Sera gölleri vadilerin önünün heyelan sonucu kapanmasıyla oluşmuş heyelan set gölleridir. Küçükçekmece Gölü ise dalgaların bir körfezin ağzını kumlarla kapatmasıyla oluşan bir Kıyı Set (Lagün) gölüdür.",
     answers: [
@@ -1510,7 +1630,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 EKPSS-LİSANS)</b><br><br><b>Aşağıdakilerden hangisi Göller Yöresi'nde göllerden biridir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi Göller Yöresi'nde göllerden biridir?</b></p>",
+    exam: "2020 EKPSS-LİSANS",
     diff: 1,
     expl: "Göller Yöresi Akdeniz Bölgesi'nin batısındadır (Isparta, Burdur civarı). Bu yörede Eğirdir, Burdur, Acıgöl, Beyşehir ve Salda gibi birçok karstik/tektonik göl bulunur. Salda Gölü (Burdur) bu yörededir.",
     answers: [
@@ -1522,7 +1643,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıdakilerden hangisi kıyı set gölüdür?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi kıyı set gölüdür?</b></p>",
+    exam: "2018 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Dalga ve akıntıların taşıdığı kumların koy veya körfezlerin önünü kapatmasıyla Kıyı Set Gölleri (Lagün / Deniz Kulağı) oluşur. İstanbul'daki Büyükçekmece, Küçükçekmece ve Durusu (Terkos) en bilinen kıyı set gölleridir.",
     answers: [
@@ -1534,7 +1656,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-ÖNLİSNAS)</b><br><br><b>Aşağıdaki göllerden hangisi kapalı havza içinde yer alır?</b></p>",
+    text: "<p>Aşağıdaki göllerden hangisi kapalı havza içinde yer alır?</b></p>",
+    exam: "2018 EKPSS-ÖNLİSNAS",
     diff: 2,
     expl: "Sularını bir akarsu vasıtasıyla denize ulaştıramayan göller kapalı havza durumundadır. İznik, Manyas ve Sapanca sularını Marmara Denizi'ne, Tortum ise Karadeniz'e ulaştırır. İç Anadolu'daki Akşehir Gölü (ve Tuz Gölü, Eber Gölü) kapalı havza içindedir.",
     answers: [
@@ -1546,7 +1669,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdaki göllerden hangisi Güney Marmara'da yer alır?</b></p>",
+    text: "<p>Aşağıdaki göllerden hangisi Güney Marmara'da yer alır?</b></p>",
+    exam: "2018 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Güney Marmara bölümünde tektonik çöküntüler (KAF güney kolu) içerisinde Sapanca, İznik, Ulubat ve Manyas (Kuş) gölleri yer alır.",
     answers: [
@@ -1558,7 +1682,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2017 KPSS-LİSANS)</b><br><br><b>Aşağıdakilerden hangisi Türkiye'deki set göllerinden biri değildir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi Türkiye'deki set göllerinden biri değildir?</b></p>",
+    exam: "2017 KPSS-LİSANS",
     diff: 2,
     expl: "Büyükçekmece (Kıyı set), Köyceğiz (Alüvyal set), Uzungöl (Alüvyal/Heyelan set), Tortum (Heyelan set) doğal setleşmelerle oluşmuştur. Beyşehir Gölü ise tektonik ve karstik çöküntü alanına suların dolmasıyla oluşan 'karma yapılı' bir göldür, set gölü değildir.",
     answers: [
@@ -1570,7 +1695,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2017 MEB-MÜFETTİŞLİK)</b><br><br><b>Aşağıdakilerden hangisi heyelan sonucu yamaçtan kopup gelen kütlenin bir vadi veya çukurluğu tıkamasına bağlı oluşan heyelan set göllerinden biridir?</b></p>",
+    text: "<p>Aşağıdakilerden hangisi heyelan sonucu yamaçtan kopup gelen kütlenin bir vadi veya çukurluğu tıkamasına bağlı oluşan heyelan set göllerinden biridir?</b></p>",
+    exam: "2017 MEB-MÜFETTİŞLİK",
     diff: 1,
     expl: "Erzurum'daki Tortum Gölü, Tortum Çayı vadisinin önünün yamaçtan inen devasa bir heyelan kütlesiyle kapanması sonucu oluşmuş tipik bir heyelan set gölüdür.",
     answers: [
@@ -1582,7 +1708,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2016 KPSS-ÖNLİSANS)</b><br><br>I. Ereğli Sazlığı<br>II. Sultan Sazlığı<br>III. Hotamış Sazlığı<br><br><b>Yukarıdakilerin hangileri Konya Kapalı Havzası'nda bulunan sulak alanlardan biri değildir?</b></p>",
+    text: "<p>I. Ereğli Sazlığı<br>II. Sultan Sazlığı<br>III. Hotamış Sazlığı<br><br>Yukarıdakilerin hangileri Konya Kapalı Havzası'nda bulunan sulak alanlardan biri değildir?</b></p>",
+    exam: "2016 KPSS-ÖNLİSANS",
     diff: 3,
     expl: "Ereğli ve Hotamış sazlıkları Konya sınırları içerisinde ve Konya Kapalı Havzası'ndadır. Sultan Sazlığı ise Kayseri (Develi Ovası) sınırları içerisinde yer aldığı için Konya Kapalı Havzası'nda yer almaz.",
     answers: [
@@ -1594,7 +1721,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Türkiye ile Gürcistan arasındaki sınırın bir bölümü hangi gölün üzerinden geçer?</b></p>",
+    text: "<p>Türkiye ile Gürcistan arasındaki sınırın bir bölümü hangi gölün üzerinden geçer?</b></p>",
+    exam: "2014 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 2,
     expl: "Aktaş (Hazapin) Gölü, Ardahan ilimizde yer alır ve gölün ortasından Türkiye-Gürcistan uluslararası sınırı geçmektedir.",
     answers: [
@@ -1606,7 +1734,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 KPSS-ÖNLİSANS)</b><br><br>Karadeniz Bölgesi'nin jeolojik ve jeomorfolojik özellikleri göz önüne alındığında, bölgede aşağıdaki göl tiplerinden hangisine rastlanması beklenmez?</p>",
+    text: "<p>Karadeniz Bölgesi'nin jeolojik ve jeomorfolojik özellikleri göz önüne alındığında, bölgede aşağıdaki göl tiplerinden hangisine rastlanması beklenmez?</p>",
+    exam: "2010 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Karadeniz Bölgesi'nde aktif veya sönmüş volkanik dağ oluşumları bulunmadığı için krater, kaldera veya maar gibi volkanik aktivitelere bağlı göllere rastlanmaz. (Heyelan set, buzul, alüvyal set, kıyı set gölleri mevcuttur).",
     answers: [
@@ -1618,7 +1747,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 MEB-MÜFETTİŞ YARDIMCILIĞI)</b><br><br><b>Aşağıda verilen göllerden hangisi oluşum bakımından diğerlerinden farklıdır?</b></p>",
+    text: "<p>Aşağıda verilen göllerden hangisi oluşum bakımından diğerlerinden farklıdır?</b></p>",
+    exam: "2010 MEB-MÜFETTİŞ YARDIMCILIĞI",
     diff: 2,
     expl: "Tuz Gölü, İznik, Hazar ve Manyas gölleri yerkabuğundaki fay hatlarına bağlı çöküntülerde oluşan Tektonik göllerdir. Burdur ilindeki Salda Gölü ise kalkerli (kireçtaşı) arazinin erimesiyle oluşan Karstik bir göldür.",
     answers: [
@@ -1630,7 +1760,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2009 MEB-MÜFETTİŞ YARDIMCILIĞI)</b><br><br><b>Aşağıdaki göllerden hangisi heyelân sonucu oluşmamıştır?</b></p>",
+    text: "<p>Aşağıdaki göllerden hangisi heyelân sonucu oluşmamıştır?</b></p>",
+    exam: "2009 MEB-MÜFETTİŞ YARDIMCILIĞI",
     diff: 2,
     expl: "Tortum (Erzurum), Zinav (Tokat), Sülük (Bolu), Borabay (Amasya) ve Abant/Yedigöller heyelan set gölleridir. Kırşehir'deki Seyfe Gölü ise faylanmalara bağlı tektonik çöküntü içinde oluşan tuzlu, kapalı havza gölüdür.",
     answers: [
@@ -1642,7 +1773,8 @@ export const GOLLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2009 MEB-MÜFETTİŞ YARDIMCILIĞI)</b><br><br><b>Aşağıdaki göllerden hangisi Isparta ve Konya il sınırlarının bir bölümünü oluşturur?</b></p>",
+    text: "<p>Aşağıdaki göllerden hangisi Isparta ve Konya il sınırlarının bir bölümünü oluşturur?</b></p>",
+    exam: "2009 MEB-MÜFETTİŞ YARDIMCILIĞI",
     diff: 1,
     expl: "Türkiye'nin en büyük tatlı su gölü olan Beyşehir Gölü, İç Anadolu (Konya) ile Akdeniz (Isparta) bölgeleri arasında doğal bir il sınırı oluşturur.",
     answers: [
@@ -1660,7 +1792,8 @@ export const GOLLER_TEST_1: McQ[] = [
 // ============================================================================
 export const AKARSULAR_TEST_1: McQ[] = [
   {
-    text: "<p><b>(2024 KPSS-ÖNLİSANS)</b><br><br>Türkiye'nin önemli akarsularından biri olan Kızılırmak ile ilgili<br><br>I. Taşıdığı alüvyonlarla oluşturduğu Çarşamba Ovası'ndan denize dökülür.<br>II. Kaynağını Sivas ilindeki Kızıldağ'dan alarak Orta Anadolu'da büyük bir yay çizer.<br>III. Terme Çayı ve Kelkit Çayı en önemli kolları arasında yer alır.<br><br><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p>Türkiye'nin önemli akarsularından biri olan Kızılırmak ile ilgili<br><br>I. Taşıdığı alüvyonlarla oluşturduğu Çarşamba Ovası'ndan denize dökülür.<br>II. Kaynağını Sivas ilindeki Kızıldağ'dan alarak Orta Anadolu'da büyük bir yay çizer.<br>III. Terme Çayı ve Kelkit Çayı en önemli kolları arasında yer alır.<br><br>ifadelerinden hangileri doğrudur?</b></p>",
+    exam: "2024 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Kızılırmak, Sivas Kızıldağ'dan doğar ve geniş bir yay çizerek Karadeniz'e ulaşır (II doğru). Ancak Çarşamba'dan değil, Bafra Ovası'ndan denize dökülür (I yanlış). Kelkit Çayı ise Kızılırmak'ın değil, Yeşilırmak'ın en büyük koludur (III yanlış).",
     answers: [
@@ -1672,7 +1805,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 EKPSS-ÖNLİSANS)</b><br><br>I. Türkiye'den doğan ve yine Türkiye'den denize dökülen en uzun akarsudur.<br>II. Taşıdığı alüvyonlarla oluşturduğu Çarşamba Ovası'ndan denize dökülür.<br>III. Küre ve Ilgaz dağları arasından doğuya doğru akan Gökırmak en önemli kollarından biridir.<br><br><b>Yeşilırmak ile ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
+    text: "<p>Türkiye'den doğan ve yine Türkiye'den denize dökülen en uzun akarsudur.<br>II. Taşıdığı alüvyonlarla oluşturduğu Çarşamba Ovası'ndan denize dökülür.<br>III. Küre ve Ilgaz dağları arasından doğuya doğru akan Gökırmak en önemli kollarından biridir.<br><br>Yeşilırmak ile ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
+    exam: "2024 EKPSS-ÖNLİSANS",
     diff: 2,
     expl: "Yeşilırmak, Karadeniz kıyısında Çarşamba Deltası'nı oluşturur (II doğru). Sınırlarımız içindeki en uzun akarsu Kızılırmak'tır (I yanlış). Gökırmak da Yeşilırmak'ın değil, Kızılırmak'ın önemli bir koludur (III yanlış).",
     answers: [
@@ -1684,7 +1818,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 EKPSS-LİSANS)</b><br><br><b>Aşağıdaki akarsulardan hangisi bir graben içinde akmaktadır?</b></p>",
+    text: "<p>Aşağıdaki akarsulardan hangisi bir graben içinde akmaktadır?</b></p>",
+    exam: "2024 EKPSS-LİSANS",
     diff: 1,
     expl: "Ege Bölgesi'ndeki akarsular (Bakırçay, Gediz, Küçük Menderes, Büyük Menderes) dağların kırılmasıyla çöken tektonik hendekler olan grabenler içerisinde akarlar.",
     answers: [
@@ -1696,7 +1831,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2024 KPSS-ORTAÖĞRETİM)</b><br><br><b>Sinop - Ordu arasında deniz yoluyla kıyı boyunca seyahat eden bir kişi, aşağıdaki akarsulardan hangisinin denize döküldüğü yeri görebilir?</b></p>",
+    text: "<p>Sinop - Ordu arasında deniz yoluyla kıyı boyunca seyahat eden bir kişi, aşağıdaki akarsulardan hangisinin denize döküldüğü yeri görebilir?</b></p>",
+    exam: "2024 KPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Sinop'tan Ordu'ya doğru (doğuya) Karadeniz kıyısında seyahat eden biri, Samsun kıyılarından geçerken sırasıyla Kızılırmak (Bafra) ve Yeşilırmak (Çarşamba) nehirlerinin denize döküldüğü yerleri görür.",
     answers: [
@@ -1708,7 +1844,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 KPSS-LİSANS)</b><br><br><b>Aşağıdakilerin hangisinde akarsu havzalarının açık veya kapalı olma durumuna ilişkin eşleştirme doğru verilmiştir?</b></p>",
+    text: "<p>Aşağıdakilerin hangisinde akarsu havzalarının açık veya kapalı olma durumuna ilişkin eşleştirme doğru verilmiştir?</b></p>",
+    exam: "2023 KPSS-LİSANS", 
     diff: 2,
     expl: "Gediz Nehri Ege Denizi'ne ulaşır (Açık Havza). Aras Nehri, bir göl olan Hazar Denizi'ne/Gölü'ne döküldüğü için okyanuslara bağlantısı yoktur (Kapalı Havza). Çoruh Nehri Gürcistan üzerinden Karadeniz'e dökülür (Açık Havza).",
     answers: [
@@ -1720,7 +1857,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıda bir bölümü gösterilen harita parçasında Anamur Burnu'ndan Karataş Burnu'na hareket eden yolcu teknesinin rotası gösterilmiştir.<br><br><b>Bu rotada yolcuların aşağıdaki akarsulardan hangisinin denize döküldüğü yeri görmesi beklenir?</b></p>",
+    text: "<p>Aşağıda bir bölümü gösterilen harita parçasında Anamur Burnu'ndan Karataş Burnu'na hareket eden yolcu teknesinin rotası gösterilmiştir.<br><br>Bu rotada yolcuların aşağıdaki akarsulardan hangisinin denize döküldüğü yeri görmesi beklenir?</b></p>",
+    exam: "2023 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-akarsular_t1_q6.jpg",
     diff: 3,
     expl: "Haritada Anamur (Mersin'in batısı) ile Karataş (Adana'nın güneyi) arasındaki kıyı şeridi gösterilmiştir. Bu rota üzerinde Mersin'in Silifke ilçesinden denize dökülen Göksu Nehri'nin deltası görülür. Seyhan ve Ceyhan Karataş Burnu'nun daha doğusundadır.",
@@ -1733,7 +1871,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdaki akarsulardan hangisi Karadeniz'e dökülür?</b></p>",
+    text: "<p>Aşağıdaki akarsulardan hangisi Karadeniz'e dökülür?</b></p>",
+    exam: "2023 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Sakarya Nehri, İç Batı Anadolu'dan doğup Adapazarı üzerinden Karadeniz'e dökülür. Gediz ve Bakırçay Ege'ye; Susurluk ve Gönen ise Marmara Denizi'ne dökülür.",
     answers: [
@@ -1745,7 +1884,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2023 MEB-EKYS)</b><br><br>Bir yolcu, Sinop İnce Burun'dan yola çıkarak deniz yoluyla Şile'ye doğru sahil şeridini takip edecek şekilde seyahat gerçekleştirecektir.<br><br><b>Bu yolcunun aşağıdaki akarsulardan hangilerinin denize döküldüğü yerlerden sırasıyla geçmesi beklenir?</b></p>",
+    text: "<p>Bir yolcu, Sinop İnce Burun'dan yola çıkarak deniz yoluyla Şile'ye doğru sahil şeridini takip edecek şekilde seyahat gerçekleştirecektir.<br><br>Bu yolcunun aşağıdaki akarsulardan hangilerinin denize döküldüğü yerlerden sırasıyla geçmesi beklenir?</b></p>",
+    exam: "2023 MEB-EKYS",
     diff: 2,
     expl: "Sinop'tan yola çıkıp batıya (İstanbul/Şile yönüne) giden biri sırasıyla Bartın Çayı'nı (Bartın), Filyos Nehri'ni (Zonguldak) ve son olarak Sakarya Nehri'ni (Karasu) geçerek Şile'ye ulaşır.",
     answers: [
@@ -1757,7 +1897,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-LİSANS)</b><br><br><b>Aşağıdaki akarsulardan hangisinin üzerinde kurulu barajlardan elde edilen toplam hidroelektrik enerji üretimi diğerlerinden daha fazladır?</b></p>",
+    text: "<p>Aşağıdaki akarsulardan hangisinin üzerinde kurulu barajlardan elde edilen toplam hidroelektrik enerji üretimi diğerlerinden daha fazladır?</b></p>",
+    exam: "2022 EKPSS-LİSANS",
     diff: 1,
     expl: "Fırat Nehri, taşıdığı su miktarı ve yatak eğimi sayesinde Türkiye'nin hidroelektrik potansiyeli en yüksek nehridir. Üzerinde Atatürk, Karakaya ve Keban gibi Türkiye'nin en çok enerji üreten devasa barajları yer alır.",
     answers: [
@@ -1769,7 +1910,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-ÖNLİSANS)</b><br><br><b>Aşağıdaki akarsu ile üzerinde kurulan baraj eşleştirmelerinden hangisi yanlıştır?</b></p>",
+    text: "<p>Aşağıdaki akarsu ile üzerinde kurulan baraj eşleştirmelerinden hangisi yanlıştır?</b></p>",
+    exam: "2022 EKPSS-ÖNLİSANS",
     diff: 2,
     expl: "Keban Barajı Dicle Nehri üzerinde değil, Elazığ sınırları içerisinde Fırat Nehri üzerinde kurulmuştur.",
     answers: [
@@ -1781,7 +1923,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıdaki akarsu ve döküldüğü deniz eşleştirmelerinden hangisi yanlıştır?</b></p>",
+    text: "<p>Aşağıdaki akarsu ve döküldüğü deniz eşleştirmelerinden hangisi yanlıştır?</b></p>",
+    exam: "2022 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Sakarya Nehri Marmara Denizi'ne değil, Karasu (Adapazarı kuzeyi) üzerinden Karadeniz'e dökülmektedir.",
     answers: [
@@ -1793,7 +1936,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıdaki akarsuların hangisi Ege Denizi'ne dökülür?</b></p>",
+    text: "<p>Aşağıdaki akarsuların hangisi Ege Denizi'ne dökülür?</b></p>",
+    exam: "2022 KPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Gediz Nehri, Ege Bölgesi'nde graben alanı içinde akarak İzmir kıyılarından (Menemen deltası) Ege Denizi'ne dökülür.",
     answers: [
@@ -1805,7 +1949,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 EKPSS-ÖNLİSANS)</b><br><br>Türkiye'deki akarsuların genellikle en fazla akım miktarına sahip oldukları dönem ilkbahar mevsimidir. Bu dönemde kar erimelerinin fazla olması akarsuların akım miktarının artmasına neden olmaktadır.<br><br><b>Buna göre;<br>I. Fırat<br>II. Bakırçay<br>III. Seyhan<br>IV. Asi<br>akarsularından hangilerinin akım miktarının artmasında bu etkinin rolü daha fazladır?</b></p>",
+    text: "<p>Türkiye'deki akarsuların genellikle en fazla akım miktarına sahip oldukları dönem ilkbahar mevsimidir. Bu dönemde kar erimelerinin fazla olması akarsuların akım miktarının artmasına neden olmaktadır.<br><br><b>Buna göre;<br>I. Fırat<br>II. Bakırçay<br>III. Seyhan<br>IV. Asi<br>akarsularından hangilerinin akım miktarının artmasında bu etkinin rolü daha fazladır?</b></p>",
+    exam: "2022 EKPSS-ÖNLİSANS",
     diff: 2,
     expl: "Kaynağını yüksek dağlık alanlardan (Doğu Anadolu ve Toroslar) alan Fırat ve Seyhan nehirleri, ilkbaharda yağan karların erimesiyle en yüksek debilerine ulaşırlar. Bakırçay ve Asi ise daha düşük rakımlı yerlerden beslendiği için kar erimelerinden ziyade yağmur suları etkilidir.",
     answers: [
@@ -1817,7 +1962,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-LİSANS)</b><br><br>Aşağıda, Türkiye'de yer alan bir akarsu ile ilgili bazı özellikler verilmiştir.<br>► En büyük su toplama havzasına sahiptir.<br>► En yüksek akım değerlerine sahiptir.<br>► En önemli kolları Murat Nehri ve Karasu'dur.<br>► Sınır aşan akarsu olup Basra Körfezi'nden denize dökülmektedir.<br><br><b>Özellikleri verilen bu akarsu aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Aşağıda, Türkiye'de yer alan bir akarsu ile ilgili bazı özellikler verilmiştir.<br>► En büyük su toplama havzasına sahiptir.<br>► En yüksek akım değerlerine sahiptir.<br>► En önemli kolları Murat Nehri ve Karasu'dur.<br>► Sınır aşan akarsu olup Basra Körfezi'nden denize dökülmektedir.<br><br><b>Özellikleri verilen bu akarsu aşağıdakilerden hangisidir?</b></p>",
+    exam: "2022 KPSS-LİSANS",
     diff: 1,
     expl: "Murat ve Karasu kollarının birleşmesiyle oluşan, Türkiye'nin en büyük havzasına ve su potansiyeline sahip, Suriye ve Irak'ı geçerek Şattülarap'ta Dicle ile birleşip Basra'ya dökülen nehir Fırat'tır.",
     answers: [
@@ -1829,7 +1975,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-ÖNLİSANS)</b><br><br>I. Akdeniz'e dökülen akarsuların debisinin en yüksek olduğu mevsim yazdır.<br>II. Karadeniz'e dökülen kısa boylu akarsuların rejimi diğerlerine göre daha düzenlidir.<br>III. İç Anadolu'da akarsular yaz mevsiminde düşük debiyle akış gösterir.<br><br><b>Türkiye'deki akarsuların rejimleriyle ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Türkiye'deki akarsuların rejimleriyle ilgilidir.<br>I. Akdeniz'e dökülen akarsuların debisinin en yüksek olduğu mevsim yazdır.<br>II. Karadeniz'e dökülen kısa boylu akarsuların rejimi diğerlerine göre daha düzenlidir.<br>III. İç Anadolu'da akarsular yaz mevsiminde düşük debiyle akış gösterir.<br><br><b>Türkiye'deki akarsuların rejimleriyle ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
+    exam: "2022 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Karadeniz her mevsim yağışlı olduğu için akarsu rejimleri diğer bölgelere göre daha düzenlidir (II doğru). İç Anadolu'da şiddetli yaz kuraklığı nedeniyle akarsuların suları yazın çekilir (III doğru). Akdeniz ikliminde ise yazlar kurak olduğu için debi yazın en yüksek değil, tam tersine en düşüktür (I yanlış).",
     answers: [
@@ -1841,7 +1988,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2022 KPSS-ORTAÖĞRETİM)</b><br><br>I. Çarşamba Ovası'ndan Karadeniz'e dökülür.<br>II. Nehir üzerinde Kesikköprü ve Altınkaya barajları bulunur.<br>III. Türkiye topraklarından doğarak Karadeniz'e dökülen en uzun akarsudur.<br><br><b>Kızılırmak Nehri'yle ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Kızılırmak Nehri ile ilgilidir.<br>I. Çarşamba Ovası'ndan Karadeniz'e dökülür.<br>II. Nehir üzerinde Kesikköprü ve Altınkaya barajları bulunur.<br>III. Türkiye topraklarından doğarak Karadeniz'e dökülen en uzun akarsudur.<br><br><b>Kızılırmak Nehri'yle ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
+    exam: "2022 KPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Kızılırmak Türkiye içindeki en uzun nehir olup üzerinde Altınkaya, Derbent, Kesikköprü, Hirfanlı gibi barajlar vardır (II ve III doğru). Ancak Karadeniz'e Çarşamba'dan değil, Bafra Deltası'nı oluşturarak dökülür (I yanlış).",
     answers: [
@@ -1853,7 +2001,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 KPSS-ÖNLİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada bazı akarsular numaralandırılarak gösterilmiştir.<br><br><b>Bu akarsular aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    text: "<p>Aşağıdaki haritada bazı akarsular numaralandırılarak gösterilmiştir.<br><br><b>Bu akarsular aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
+    exam: "2020 KPSS-ÖNLİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-akarsular_t1_q17.jpg",
     diff: 3,
     expl: "Haritadaki I numaralı nehir İç Batı Anadolu'dan doğup Karadeniz'e dökülen Sakarya'dır. II numaralı nehir İç Anadolu'da yay çizerek Bafra'dan dökülen Kızılırmak'tır. III numaralı nehir ise Orta Toroslardan doğup Mersin Silifke'den denize dökülen Göksu nehridir.",
@@ -1866,7 +2015,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 EKPSS-LİSANS)</b><br><br><b>Arpaçay ırmağı, aşağıdaki ülkelerden hangisiyle Türkiye arasında sınırın bir bölümünü oluşturur?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Arpaçay ırmağı ile ilgilidir.<br><br><b>Arpaçay ırmağı, aşağıdaki ülkelerden hangisiyle Türkiye arasında sınırın bir bölümünü oluşturur?</b></p>",
+    exam: "2020 EKPSS-LİSANS",
     diff: 1,
     expl: "Aras Nehri'nin önemli bir kolu olan Arpaçay, Çıldır Gölü'nden doğar ve Türkiye ile Ermenistan arasındaki doğal devlet sınırının büyük bir bölümünü çizer.",
     answers: [
@@ -1878,7 +2028,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 EKPSS-ÖNLİSANS)</b><br><br><b>Aşağıdakilerden hangisi sınır aşan akarsu özelliği taşımaz?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, sınır aşan akarsular ile ilgilidir.<br><br><b>Aşağıdakilerden hangisi sınır aşan akarsu özelliği taşımaz?</b></p>",
+    exam: "2020 EKPSS-ÖNLİSANS",
     diff: 1,
     expl: "Dicle ve Fırat güneyden, Çoruh, Aras ve Kura doğudan Türkiye'yi terk eder; Asi ve Meriç ise dışarıdan gelir (Sınır aşan sulardır). Susurluk Nehri ise kaynağını Türkiye'den alıp Marmara Denizi'ne dökülen, tamamen iç sınırlarımızda kalan bir akarsudur.",
     answers: [
@@ -1890,7 +2041,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2020 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Kızılırmak Nehri ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Kızılırmak Nehri ile ilgilidir.<br><br><b>Kızılırmak Nehri ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?</b></p>",
+    exam: "2020 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 2,
     expl: "Kızılırmak, Türkiye'nin kendi içindeki en uzun nehridir, Bafra deltasını oluşturur ve Gökırmak, Delice gibi kolları vardır. Ancak 'Birecik' ve 'Kralkızı' barajları Kızılırmak üzerinde değil, sırasıyla Fırat ve Dicle nehirleri üzerindedir.",
     answers: [
@@ -1902,7 +2054,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2019 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada Ege Denizi'ne ulaşan önemli akarsularımızdan üçü numaralandırılarak gösterilmiştir.<br><br><b>Bu akarsularımızın isimlerinin kuzeyden güneye sıralanışı hangi seçenekte doğru verilmiştir?</b></p>",
+    text: "<p>Aşağıdaki haritada Ege Denizi'ne ulaşan önemli akarsularımızdan üçü numaralandırılarak gösterilmiştir.<br><br><b>Bu akarsularımızın isimlerinin kuzeyden güneye sıralanışı hangi seçenekte doğru verilmiştir?</b></p>",
+    exam: "2019 MEB-YURTDIŞI ÖĞRETMENLİK",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-akarsular_t1_q21.jpg",
     diff: 3,
     expl: "Haritada Ege kıyılarında yer alan akarsular; en kuzeyde Bakırçay (III), ortada Gediz (II) ve en güneyde Büyük Menderes (I) olarak işaretlenmiştir. Kuzeyden güneye doğru isim sıralaması Bakırçay, Gediz, Büyük Menderes şeklindedir (Seçeneklerde I, II, III sütunları haritadaki numaralarla eşleşmektedir).",
@@ -1915,7 +2068,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 KPSS-LİSANS)</b><br><br><b>Aşağıdakilerden hangisi, Anadolu'nun iç kısımlarından kaynağını alarak kuzey veya güneydeki sıradağları aşan akarsulardan biri değildir?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Anadolu'nun iç kısımlarından kaynağını alarak kuzey veya güneydeki sıradağları aşan akarsular ile ilgilidir.<br><br><b>Aşağıdakilerden hangisi, Anadolu'nun iç kısımlarından kaynağını alarak kuzey veya güneydeki sıradağları aşan akarsulardan biri değildir?</b></p>",
+    exam: "2018 KPSS-LİSANS",
     diff: 2,
     expl: "Kızılırmak ve Sakarya Karadeniz dağlarını, Fırat ve Seyhan ise Toros Dağlarını yararak denize/güneye ulaşır. Dalaman Çayı ise boyu çok kısa olan ve kaynağını doğrudan Akdeniz kıyısındaki dağların denize bakan yamaçlarından alan bir akarsudur, iç kısımlardan gelip sıradağ aşmaz.",
     answers: [
@@ -1927,7 +2081,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-ORTAÖĞRETİM)</b><br><br><b>Seyhan ve Ceyhan akarsularının oluşturduğu ova aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Seyhan ve Ceyhan akarsularının oluşturduğu ova ile ilgilidir.<br><br><b>Seyhan ve Ceyhan akarsularının oluşturduğu ova aşağıdakilerden hangisidir?</b></p>",
+    exam: "2018 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Toroslardan doğan Seyhan ve Ceyhan nehirlerinin taşıdığı alüvyonların Akdeniz'e döküldüğü yerde birikmesiyle Türkiye'nin en büyük delta ovası olan Çukurova oluşmuştur.",
     answers: [
@@ -1939,7 +2094,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 EKPSS-ORTAÖĞRETİM)</b><br><br>Türkiye'deki bazı akarsular, kaynağını ülke içinden alarak başka ülke topraklarından deniz ve göle dökülmektedir.<br><br><b>Aşağıdakilerden hangisi bu tür akarsulara örnektir?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Türkiye'deki bazı akarsuların kaynağını ülke içinden alarak başka ülke topraklarından deniz ve göle dökülmesi ile ilgilidir.<br><br><b>Aşağıdakilerden hangisi bu tür akarsulara örnektir?</b></p>",
+    exam: "2018 EKPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Kızılırmak ve Sakarya sadece Türkiye içindedir. Asi ve Meriç dışarıdan doğup ülkemize girerler. Arpaçay ise Türkiye'den (Çıldır'dan) doğup Ermenistan sınırını çizerek dışarıda (Hazar kapalı havzasında) Aras nehri ile birleşir.",
     answers: [
@@ -1951,7 +2107,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Çarşamba deltası aşağıda verilen akarsulardan hangisinin taşıdığı alüvyonlarla oluşmuştur?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Çarşamba deltası ile ilgilidir.<br><br><b>Çarşamba deltası aşağıda verilen akarsulardan hangisinin taşıdığı alüvyonlarla oluşmuştur?</b></p>",
+    exam: "2018 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Orta Karadeniz'de Samsun kıyılarında yer alan Çarşamba Deltası'nı Yeşilırmak, hemen batısındaki Bafra Deltası'nı ise Kızılırmak oluşturmuştur.",
     answers: [
@@ -1963,7 +2120,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2018 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Kaynağını Türkiye'den alan Fırat ve Dicle nehirleri hangi körfeze dökülür?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Fırat ve Dicle nehirleri ile ilgilidir.<br><br><b>Kaynağını Türkiye'den alan Fırat ve Dicle nehirleri hangi körfeze dökülür?</b></p>",
+    exam: "2018 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Fırat ve Dicle nehirleri Türkiye'den doğup Suriye ve Irak topraklarını geçer, Şattülarap adı verilen bölgede birleşerek Basra Körfezi'ne dökülürler.",
     answers: [
@@ -1975,7 +2133,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2016 KPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıdakilerden hangisi Akdeniz'e dökülen akarsulardan biri değildir?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Akdeniz'e dökülen akarsular ile ilgilidir.<br><br><b>Aşağıdakilerden hangisi Akdeniz'e dökülen akarsulardan biri değildir?</b></p>",
+    exam: "2016 KPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Seyhan, Ceyhan, Eşen ve Manavgat çayları sularını Akdeniz'e ulaştırır. Gönen Çayı ise Marmara Bölgesi'nden doğup Marmara Denizi'ne dökülen bir akarsudur.",
     answers: [
@@ -1987,7 +2146,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2015 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>Aşağıdaki akarsularımızdan hangisinin denize ulaştığı yer daha batıdadır?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, akarsuların denize ulaştığı yerler ile ilgilidir.<br><br><b>Aşağıdaki akarsularımızdan hangisinin denize ulaştığı yer daha batıdadır?</b></p>",
+    exam: "2015 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 1,
     expl: "Verilen akarsuların tamamı Karadeniz'e dökülür. Doğudan batıya doğru sırasıyla; Çoruh, Yeşilırmak, Kızılırmak, Filyos ve Sakarya bulunur. İçlerinde en batıda olanı (Adapazarı/Karasu'dan dökülen) Sakarya Nehri'dir.",
     answers: [
@@ -1999,7 +2159,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-ORTAÖĞRETİM)</b><br><br>I. Göksu - Akdeniz<br>II. Sakarya - Karadeniz<br>III. Filyos - Marmara<br>IV. Ergene - Ege<br><br><b>Yukarıdaki akarsulardan hangileri, karşısında verilen denize dökülmez?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, bazı akarsuların denize döküldüğü yerler ile ilgilidir.<br><br>I. Göksu - Akdeniz<br>II. Sakarya - Karadeniz<br>III. Filyos - Marmara<br>IV. Ergene - Ege<br><br><b>Yukarıdaki akarsulardan hangileri, karşısında verilen denize dökülmez?</b></p>",
+    exam: "2014 KPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Göksu Akdeniz'e, Sakarya Karadeniz'e dökülür. Ergene Nehri ise Meriç ile birleşerek Ege Denizi'ne ulaşır. Ancak Filyos (Yenice) Irmağı Marmara Denizi'ne değil, Batı Karadeniz'den Karadeniz'e dökülür.",
     answers: [
@@ -2011,7 +2172,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2014 KPSS-ORTAÖĞRETİM)</b><br><br><b>Aşağıda verilen akarsu ve oluşturduğu delta ovası eşleştirmelerinden hangisi yanlıştır?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, akarsu ve oluşturduğu delta ovası eşleştirmeleri ile ilgilidir.<br><br><b>Aşağıda verilen akarsu ve oluşturduğu delta ovası eşleştirmelerinden hangisi yanlıştır?</b></p>",
+    exam: "2014 KPSS-ORTAÖĞRETİM",
     diff: 1,
     expl: "Büyük Menderes Nehri, Balat deltasını oluşturur. Menemen deltasını ise Gediz Nehri oluşturmaktadır.",
     answers: [
@@ -2023,7 +2185,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2013 KPSS-LİSANS)</b><br><br>Kaynağını Batı ve Orta Torosların güney yamaçlarından alan akarsuların Akdeniz'e döküldükleri alanlarda büyük deltalar oluşmamıştır.<br><br><b>Bu durum, aşağıdakilerden hangisi ile açıklanabilir?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Batı ve Orta Torosların güney yamaçlarından kaynaklanan akarsular ile ilgilidir.<br><br>Kaynağını Batı ve Orta Torosların güney yamaçlarından alan akarsuların Akdeniz'e döküldükleri alanlarda büyük deltalar oluşmamıştır.<br><br><b>Bu durum, aşağıdakilerden hangisi ile açıklanabilir?</b></p>",
+    exam: "2013 KPSS-LİSANS",
     diff: 2,
     expl: "Batı ve Orta Toroslar ağırlıklı olarak kolay eriyebilen 'Kalker' (kireçtaşı) kayalarından oluşur. Akarsular bu litolojik (taş yapısı) özellik nedeniyle malzeme (alüvyon) taşımak yerine kayayı eriterek kimyasal yolla taşır. Alüvyon yükü az olduğu için kıyıda biriktirme yapıp delta oluşturmaları çok zordur.",
     answers: [
@@ -2035,7 +2198,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2013 MEB-YURTDIŞI ÖĞRETMENLİK)</b><br><br><b>\"Demirköprü Barajı\" hangi akarsu üzerinde kurulmuştur?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Demirköprü Barajı ile ilgilidir.<br><br><b>\"Demirköprü Barajı\" hangi akarsu üzerinde kurulmuştur?</b></p>",
+    exam: "2013 MEB-YURTDIŞI ÖĞRETMENLİK",
     diff: 2,
     expl: "Demirköprü Barajı, Manisa ili sınırları içerisinde yer alan ve taşkın koruma/enerji üretimi amacıyla Gediz Nehri üzerinde inşa edilmiş önemli bir barajdır.",
     answers: [
@@ -2047,7 +2211,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 EKPSS-LİSANS)</b><br><br><b>Aşağıdaki akarsuların hangisinde, geçtiği yerler göz önüne alındığında endüstriyel atıklara bağlı kirlilik oranının en az olması beklenir?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, akarsuların kirlilik oranları ile ilgilidir.<br><br><b>Aşağıdaki akarsuların hangisinde, geçtiği yerler göz önüne alındığında endüstriyel atıklara bağlı kirlilik oranının en az olması beklenir?</b></p>",
+    exam: "2012 EKPSS-LİSANS",
     diff: 1,
     expl: "Ergene, Büyük Menderes, Sakarya ve Gediz nehirleri sanayinin, tarımın ve yerleşimin çok yoğun olduğu bölgelerden geçtikleri için kirlilik oranları yüksektir. Çoruh Nehri ise sarp ve sanayileşmemiş Doğu Karadeniz dağlarından aktığı için en temiz nehirlerden biridir.",
     answers: [
@@ -2059,7 +2224,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 EKPSS-ÖNLİSANS)</b><br><br><b>Aşağıdaki akarsulardan hangisi, Türkiye sınırları dışında denize dökülür?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Türkiye sınırları dışında denize dökülen akarsular ile ilgilidir.<br><br><b>Aşağıdaki akarsulardan hangisi, Türkiye sınırları dışında denize dökülür?</b></p>",
+    exam: "2012 EKPSS-ÖNLİSANS",
     diff: 1,
     expl: "Kızılırmak, Sakarya, Gediz Türkiye'den doğup Türkiye kıyılarından dökülür. Asi, dışarıdan doğup Türkiye'den dökülür. Çoruh Nehri ise Mescit Dağları'ndan (Erzurum) doğar, Gürcistan'ın Batum şehrinden Karadeniz'e (sınır dışından) dökülür.",
     answers: [
@@ -2071,7 +2237,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2012 EKPSS-ÖNLİSANS)</b><br><br><b>Kaynağını Türkiye'den alan aşağıdaki akarsulardan hangisi kapalı havzada akmaktadır?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Türkiye'den doğan ve kapalı havzada akan akarsular ile ilgilidir.<br><br><b>Kaynağını Türkiye'den alan aşağıdaki akarsulardan hangisi kapalı havzada akmaktadır?</b></p>",
+    exam: "2012 EKPSS-ÖNLİSANS",
     diff: 1,
     expl: "Aras Nehri ve Kura Nehri Türkiye'den doğup, okyanus bağlantısı olmayan (kapalı havza özelliği gösteren) dünyanın en büyük gölü olan Hazar'a döküldükleri için Kapalı Havza akarsularıdır.",
     answers: [
@@ -2083,7 +2250,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 KPSS-ORTAÖĞRETİM)</b><br><br><b>Yatak eğimi ve yağış rejimi, Doğu Karadeniz Bölümü akarsularının aşağıdaki özelliklerinden hangisi üzerinde etkili değildir?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Doğu Karadeniz Bölümü akarsularının özellikleri ile ilgilidir.<br><br><b>Yatak eğimi ve yağış rejimi, Doğu Karadeniz Bölümü akarsularının aşağıdaki özelliklerinden hangisi üzerinde etkili değildir?</b></p>",
+    exam: "2010 KPSS-ORTAÖĞRETİM",
     diff: 2,
     expl: "Yatak eğiminin fazla olması; derin vadilerde akmalarını (E), akış hızlarının (C) ve enerji potansiyellerinin (A) yüksek olmasını sağlar. Düzenli yağış rejimi ise yıl boyunca su taşımalarını (D) sağlar. Ancak buzullardan beslenmeleri, iklim veya eğimle değil o dağların 3000 metrenin üzerinde (kalıcı kar sınırında) olmasıyla ilgilidir.",
     answers: [
@@ -2095,7 +2263,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 MEB-MÜFETTİŞ YARDIMCILIĞI)</b><br><br><b>Taşıdığı alüvyonların İzmir Körfezi'ni doldurma tehlikesinden dolayı; yatağı 1886 yılında insan müdahalesiyle değiştirilen akarsu aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, İzmir Körfezi'ni doldurma tehlikesi nedeniyle yatağı değiştirilen akarsu ile ilgilidir.<br><br><b>Taşıdığı alüvyonların İzmir Körfezi'ni doldurma tehlikesinden dolayı; yatağı 1886 yılında insan müdahalesiyle değiştirilen akarsu aşağıdakilerden hangisidir?</b></p>",
+    exam: "2010 MEB-MÜFETTİŞ YARDIMCILIĞI",
     diff: 2,
     expl: "Gediz Nehri'nin taşıdığı yoğun alüvyonların İzmir Körfezi'ni doldurup limanı kullanılamaz hale getirme riski üzerine, 1886 yılında Fransız mühendisler tarafından yatağı değiştirilerek körfezin daha uzağından (Kuzeyden) denize dökülmesi sağlanmıştır.",
     answers: [
@@ -2107,7 +2276,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2010 MEB-MÜFETTİŞ YARDIMCILIĞI)</b><br><br><b>Aşağıdaki akarsulardan hangisi Ege Denizi'ne dökülmez?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Ege Denizi'ne dökülen akarsular ile ilgilidir.<br><br><b>Aşağıdaki akarsulardan hangisi Ege Denizi'ne dökülmez?</b></p>",
+    exam: "2010 MEB-MÜFETTİŞ YARDIMCILIĞI",
     diff: 1,
     expl: "Bakırçay, Gediz, Büyük Menderes (ve Küçük Menderes) Ege bölgesinden, Meriç Nehri ise Trakya'dan Ege Denizi'ne dökülür. Susurluk Nehri ise Marmara Bölgesi'nden doğup Marmara Denizi'ne dökülür.",
     answers: [
@@ -2119,7 +2289,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>(2009 MEB-MÜFETTİŞ YARDIMCILIĞI)</b><br><br><b>Aşağıdaki akarsulardan hangisi Çandarlı Körfezinden denize ulaşır?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Çandarlı Körfezine dökülen akarsular ile ilgilidir.<br><br><b>Aşağıdaki akarsulardan hangisi Çandarlı Körfezinden denize ulaşır?</b></p>",
+    exam: "2009 MEB-MÜFETTİŞ YARDIMCILIĞI",
     diff: 2,
     expl: "Ege kıyılarında kuzeyden güneye doğru nehirlerin döküldüğü yerler; Bakırçay -> Çandarlı Körfezi, Gediz -> İzmir Körfezi, Küçük Menderes -> Selçuk (Kuşadası Körfezi), Büyük Menderes -> Balat şeklindedir. Çandarlı'ya dökülen Bakırçay'dır.",
     answers: [
@@ -2137,7 +2308,8 @@ export const AKARSULAR_TEST_1: McQ[] = [
 // ============================================================================
 export const YER_SEKILLERI_TURKIYENIN_YERALTI_SULARI_KAYNAKLARI_VE_KIYI_TIPLERI_TEST_1: McQ[] = [
   {
-    text: "<p><b>(2018 KPSS-ÖNLİSANS)</b><br><br>I. Anadolu'daki toprak çeşitliliği son derece fazladır.<br>II. Anadolu aktif bir tektonik kuşakta yer alır.<br>III. Anadolu'da çok sayıda uzun boylu akarsu yer alır.<br>IV. Anadolu'da genç volkanik alanlar bulunmaktadır.<br><br><b>\"Türkiye, termal su kaynakları bakımından zengindir.\" ifadesini kullanan bir kişi, yukarıdakilerden hangilerine dayanarak bu yargıya varmıştır?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Türkiye'deki termal su kaynakları ile ilgilidir.<br><br>I. Anadolu'daki toprak çeşitliliği son derece fazladır.<br>II. Anadolu aktif bir tektonik kuşakta yer alır.<br>III. Anadolu'da çok sayıda uzun boylu akarsu yer alır.<br>IV. Anadolu'da genç volkanik alanlar bulunmaktadır.<br><br><b>\"Türkiye, termal su kaynakları bakımından zengindir.\" ifadesini kullanan bir kişi, yukarıdakilerden hangilerine dayanarak bu yargıya varmıştır?</b></p>",
+    exam: "2018 KPSS-ÖNLİSANS",
     diff: 2,
     expl: "Termal sular (sıcak sular) ve jeotermal enerji potansiyeli; yer kabuğunun kırıklı olduğu aktif fay hatlarına (tektonik kuşak - II) ve magmaya yakın olan genç volkanik arazilerin (IV) varlığına bağlıdır. Toprak çeşitliliği veya akarsuların boyu termal su oluşumunu etkilemez.",
     answers: [
@@ -2149,7 +2321,8 @@ export const YER_SEKILLERI_TURKIYENIN_YERALTI_SULARI_KAYNAKLARI_VE_KIYI_TIPLERI_
     ]
   },
   {
-    text: "<p><b>(2012 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Yukarıdaki haritada bazı alanlar numaralandırılarak koyu renkle gösterilmiştir.<br><br><b>Bu alanlardan hangisi termal kaynaklar bakımından daha zengindir?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, termal kaynaklar bakımından zengin olan alanlar ile ilgilidir.<br><br><b>Bu alanlardan hangisi termal kaynaklar bakımından daha zengindir?</b></p>",
+    exam: "2012 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-yeralti-sulari_t1_q2.jpg",
     diff: 2,
     expl: "Türkiye'de termal (sıcak su) ve jeotermal kaynakların en zengin olduğu bölge, kırıklı dağ yapısının (fay hatlarının) çok yaygın olduğu Ege Bölgesi'dir. Haritada Batı Anadolu Fay Hattı (BAF) üzerinde yer alan II numaralı alan termal kaynaklar bakımından en zengin olanıdır.",
@@ -2162,7 +2335,8 @@ export const YER_SEKILLERI_TURKIYENIN_YERALTI_SULARI_KAYNAKLARI_VE_KIYI_TIPLERI_
     ]
   },
   {
-    text: "<p><b>(2020 KPSS-ÖNLİSANS)</b><br><br><b>Türkiye'de aşağıdaki kıyı tiplerinden hangisi görülmez?</b></p>",
+    text: "<p>Aşağıdaki ifadeler, Türkiye'deki kıyı tipleri ile ilgilidir.<br><br><b>Türkiye'de aşağıdaki kıyı tiplerinden hangisi görülmez?</b></p>",
+    exam: "2020 KPSS-ÖNLİSANS",
     diff: 1,
     expl: "Fiyort ve Skyer tipi kıyılar, buzulların deniz seviyesine kadar inip vadileri aşındırmasıyla oluşur. Türkiye, orta kuşakta yer aldığı için (mutlak konum) buzullar deniz seviyesine inemez, bu nedenle fiyort tipi kıyılar Türkiye'de görülmez.",
     answers: [
@@ -2174,7 +2348,8 @@ export const YER_SEKILLERI_TURKIYENIN_YERALTI_SULARI_KAYNAKLARI_VE_KIYI_TIPLERI_
     ]
   },
   {
-    text: "<p><b>(2021 KPSS-LİSANS)</b><br><i>(Haritalı Soru)</i><br><br>Aşağıdaki haritada bazı alanlar numaralandırılarak gösterilmiştir.<br><br><b>Bu alanların hangisinde Dalmaçya tipi kıyılar görülmektedir?</b></p>",
+    text: "<p>Aşağıdaki haritada bazı alanlar numaralandırılarak gösterilmiştir.<br><br><b>Bu alanların hangisinde Dalmaçya tipi kıyılar görülmektedir?</b></p>",
+    exam: "2021 KPSS-LİSANS",
     img: "QuestionsImage/kpss/cografya/yer-sekilleri-kiyi-tipleri_t1_q2.jpg",
     diff: 1,
     expl: "Dalmaçya kıyı tipi, dağların kıyıya paralel uzandığı yerlerde deniz seviyesinin yükselmesiyle dağlar arasındaki vadilerin sular altında kalması ve dağ zirvelerinin kıyıya paralel adalar halinde dizilmesiyle oluşur. Türkiye'de bu kıyı tipinin tek örneği Akdeniz kıyılarındaki Antalya Kaş - Finike arasındaki kıyı şerididir (Haritada III numaralı alan).",
