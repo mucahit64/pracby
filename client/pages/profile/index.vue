@@ -167,7 +167,7 @@
                 >
                   <span class="text-sm font-extrabold text-gray-800">{{ group.name }}</span>
                   <span class="text-xs text-gray-400 font-semibold">{{ group.description }}</span>
-                  <span v-if="!group.is_active" class="absolute top-3 right-3 text-[0.65rem] font-bold text-warning bg-warning/10 px-2 py-0.5 rounded-full">Yakında</span>
+                  <span v-if="!group.is_active" class="absolute top-3 right-3 text-[0.65rem] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full whitespace-nowrap">Çok Yakında</span>
                 </button>
               </div>
               <button class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="!selectedGroupId" @click="enrollStep = 2">Devam →</button>

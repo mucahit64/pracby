@@ -1,11 +1,16 @@
 import db from "../../db/knex";
 
 export const getExamGroups = async () => {
-  const groups = await db("exam_groups").where({ is_active: true }).orderBy("sort_order");
+  // Return ALL groups (active and inactive) so the UI can render inactive ones
+  // (e.g. YKS) as "Çok Yakında" / disabled. Only active groups expose their
+  // (active) exam_types — inactive groups come back with an empty list, so
+  // they can never be enrolled in.
+  const groups = await db("exam_groups").orderBy("sort_order");
 
   const types = await db("exam_types")
     .join("exam_groups", "exam_types.exam_group_id", "exam_groups.id")
     .where("exam_groups.is_active", true)
+    .where("exam_types.is_active", true)
     .select("exam_types.*")
     .orderBy("exam_types.sort_order");
 

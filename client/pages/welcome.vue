@@ -9,17 +9,17 @@
           <button
             v-for="group in examGroups"
             :key="group.id"
-            :disabled="group.name === 'YKS'"
+            :disabled="!group.is_active"
             :class="[
               'relative flex flex-col items-center gap-1 px-5 py-4 bg-white border-2 rounded-2xl transition-all duration-150 font-[inherit]',
-              group.name === 'YKS' 
-                ? 'border-gray-200 opacity-60 cursor-not-allowed bg-gray-50' 
+              !group.is_active
+                ? 'border-gray-200 opacity-60 cursor-not-allowed bg-gray-50'
                 : 'border-gray-200 cursor-pointer hover:border-primary hover:bg-primary/5'
             ]"
             @click="selectGroup(group.id)"
           >
-            <span 
-              v-if="group.name === 'YKS'" 
+            <span
+              v-if="!group.is_active"
               class="absolute top-2 right-2 bg-primary/10 text-primary text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider"
             >
               Çok Yakında
@@ -76,6 +76,7 @@ interface ExamGroup {
   id: string;
   name: string;
   description?: string;
+  is_active: boolean;
   exam_types: ExamType[];
 }
 
@@ -100,6 +101,7 @@ onMounted(async () => {
 
 function selectGroup(groupId: string) {
   const group = examGroups.value.find((g) => g.id === groupId);
+  if (!group || !group.is_active) return;
   if (group && group.exam_types.length === 1) {
     selectExamType(group.exam_types[0].id);
     return;
