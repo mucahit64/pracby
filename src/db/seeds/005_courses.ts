@@ -1,7 +1,7 @@
 import type { Knex } from "knex";
 
 // ============================================================
-// SEED 004 — Courses (Dersler)
+// SEED 005 — Courses (Dersler)
 // ============================================================
 // Hiyerarşi: modules (oturumlar) → courses (dersler)
 //
@@ -98,7 +98,7 @@ export async function seed(knex: Knex): Promise<void> {
     );
 
   if (modules.length === 0) {
-    throw new Error("Hiç modül bulunamadı — önce 003_exam_structure seed'i çalıştırıldı mı?");
+    throw new Error("Hiç modül bulunamadı — önce 004_exam_structure seed'i çalıştırıldı mı?");
   }
 
   // Mevcut kursları yükle

@@ -228,7 +228,7 @@ interface Enrollment {
 }
 
 const activeExamTypeId = ref('');
-const { activeExamTypeId: globalActiveExamTypeId, switchExam: globalSwitchExam, switchingExam } = useUserSession()
+const { activeExamTypeId: globalActiveExamTypeId, switchExam: globalSwitchExam } = useUserSession()
 const { enrollments } = useUserSession()
 const loadingEnrollments = ref(false);
 const showEnrollModal = ref(false);

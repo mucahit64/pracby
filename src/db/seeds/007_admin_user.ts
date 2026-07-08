@@ -11,18 +11,12 @@ export async function seed(knex: Knex): Promise<void> {
     return;
   }
 
-  // Ensure the admin role exists.
-  // 010_rbac_seed runs AFTER this file, so we upsert here; 010 will skip it idempotently.
-  const existingAdminRole = await knex("roles").where({ name: "admin" }).first();
-  let adminRoleId: string;
-  if (existingAdminRole) {
-    adminRoleId = existingAdminRole.id as string;
-  } else {
-    const [inserted] = await knex("roles")
-      .insert({ name: "admin", description: "Tam yetkili sistem yöneticisi" })
-      .returning(["id"]);
-    adminRoleId = inserted.id as string;
+  // Admin rolü 003_rbac seed'inde oluşturulur.
+  const adminRole = await knex("roles").where({ name: "admin" }).first();
+  if (!adminRole) {
+    throw new Error("007_admin_user: 'admin' rolü bulunamadı — 003_rbac seed çalıştırıldı mı?");
   }
+  const adminRoleId = adminRole.id as string;
 
   const activeExamTypes = await knex("exam_types").where({ is_active: true }).orderBy("sort_order");
   const defaultExamType = activeExamTypes[0];

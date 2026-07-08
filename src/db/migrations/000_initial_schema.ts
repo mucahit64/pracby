@@ -6,6 +6,38 @@ import type { Knex } from "knex";
 export async function up(knex: Knex): Promise<void> {
   await knex.raw('CREATE EXTENSION IF NOT EXISTS "pgcrypto"');
 
+  // ── 0a. roles ────────────────────────────────────────────────────────────
+  await knex.schema.createTable("roles", (table) => {
+    table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
+    table.text("name").unique().notNullable();
+    table.text("description").nullable();
+    table.timestamp("created_at").defaultTo(knex.fn.now());
+    table.timestamp("updated_at").defaultTo(knex.fn.now());
+  });
+
+  await knex.raw("CREATE INDEX idx_roles_name ON roles(name)");
+
+  // ── 0b. permissions ──────────────────────────────────────────────────────
+  await knex.schema.createTable("permissions", (table) => {
+    table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
+    table.text("name").unique().notNullable();
+    table.text("description").nullable();
+    table.timestamp("created_at").defaultTo(knex.fn.now());
+    table.timestamp("updated_at").defaultTo(knex.fn.now());
+  });
+
+  await knex.raw("CREATE INDEX idx_permissions_name ON permissions(name)");
+
+  // ── 0c. role_permissions (Çoka-Çok Köprü Tablosu) ────────────────────────
+  await knex.schema.createTable("role_permissions", (table) => {
+    table.uuid("role_id").references("id").inTable("roles").onDelete("CASCADE").notNullable();
+    table.uuid("permission_id").references("id").inTable("permissions").onDelete("CASCADE").notNullable();
+    table.primary(["role_id", "permission_id"]);
+  });
+
+  await knex.raw("CREATE INDEX idx_role_permissions_role_id ON role_permissions(role_id)");
+  await knex.raw("CREATE INDEX idx_role_permissions_permission_id ON role_permissions(permission_id)");
+
   // ── 1. exam_groups ───────────────────────────────────────────────────────
   await knex.schema.createTable("exam_groups", (table) => {
     table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
@@ -19,8 +51,6 @@ export async function up(knex: Knex): Promise<void> {
   await knex("exam_groups").insert([
     { name: "KPSS", slug: "kpss", description: "Kamu Personeli Seçme Sınavı", sort_order: 1 },
     { name: "YKS", slug: "yks", description: "Yükseköğretim Kurumları Sınavı", sort_order: 2, is_active: false },
-    { name: "ALES", slug: "ales", description: "Akademik Personel ve Lisansüstü Eğitimi Giriş Sınavı", sort_order: 3, is_active: false },
-    { name: "DGS", slug: "dgs", description: "Dikey Geçiş Sınavı", sort_order: 4, is_active: false },
   ]);
 
   // ── 2. exam_types ────────────────────────────────────────────────────────
@@ -49,14 +79,14 @@ export async function up(knex: Knex): Promise<void> {
   const yks = await knex("exam_groups").where({ slug: "yks" }).first();
   if (yks) {
     await knex("exam_types").insert([
-      { exam_group_id: yks.id, name: "TYT", slug: "tyt", description: "Temel Yeterlilik Testi", sort_order: 1 },
-      { exam_group_id: yks.id, name: "AYT", slug: "ayt", description: "Alan Yeterlilik Testi", sort_order: 2 },
-      { exam_group_id: yks.id, name: "YDT", slug: "ydt", description: "Yabancı Dil Testi", sort_order: 3 },
+      { exam_group_id: yks.id, name: "TYT", slug: "tyt", description: "Temel Yeterlilik Testi", sort_order: 1, is_active: false },
+      { exam_group_id: yks.id, name: "AYT", slug: "ayt", description: "Alan Yeterlilik Testi", sort_order: 2, is_active: false },
+      { exam_group_id: yks.id, name: "YDT", slug: "ydt", description: "Yabancı Dil Testi", sort_order: 3, is_active: false },
     ]);
   }
 
   // ── 3. users ─────────────────────────────────────────────────────────────
-  // Includes: active_exam_type_id (020), acorn_balance (022), role (041)
+  // Includes: active_exam_type_id (020), acorn_balance (022), role_id (RBAC)
   await knex.schema.createTable("users", (table) => {
     table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
     table.text("email").unique().notNullable();
@@ -68,15 +98,15 @@ export async function up(knex: Knex): Promise<void> {
     table.timestamp("energy_refreshed_at").defaultTo(knex.fn.now());
     table.uuid("active_exam_type_id").references("id").inTable("exam_types").onDelete("SET NULL").nullable();
     table.integer("acorn_balance").defaultTo(0).notNullable();
-    table.text("role").notNullable().defaultTo("user");
+    table.uuid("role_id").references("id").inTable("roles").onDelete("RESTRICT").notNullable();
     table.timestamp("created_at").defaultTo(knex.fn.now());
   });
 
   await knex.raw("CREATE INDEX idx_users_email ON users(email)");
   await knex.raw("CREATE INDEX idx_users_username ON users(username)");
+  await knex.raw("CREATE INDEX idx_users_role_id ON users(role_id)");
   await knex.raw("ALTER TABLE users ADD CONSTRAINT chk_energy_non_negative CHECK (energy >= 0)");
   await knex.raw("ALTER TABLE users ADD CONSTRAINT chk_acorn_balance_non_negative CHECK (acorn_balance >= 0)");
-  await knex.raw("ALTER TABLE users ADD CONSTRAINT chk_users_role CHECK (role IN ('user', 'admin'))");
 
   // ── 4. password_reset_tokens ─────────────────────────────────────────────
   await knex.schema.createTable("password_reset_tokens", (table) => {
@@ -182,6 +212,7 @@ export async function up(knex: Knex): Promise<void> {
   await knex.raw("CREATE INDEX idx_courses_module ON courses(module_id)");
 
   // ── 10. topics ───────────────────────────────────────────────────────────
+  // Includes: status + created_by (approval workflow)
   await knex.schema.createTable("topics", (table) => {
     table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
     table.uuid("course_id").references("id").inTable("courses").onDelete("CASCADE");
@@ -192,10 +223,13 @@ export async function up(knex: Knex): Promise<void> {
     table.integer("total_lessons").defaultTo(5);
     table.integer("max_crown_level").defaultTo(5);
     table.uuid("unlock_after").references("id").inTable("topics");
+    table.text("status").notNullable().defaultTo("approved");
+    table.uuid("created_by").references("id").inTable("users").onDelete("SET NULL").nullable();
   });
 
   await knex.raw("CREATE INDEX idx_topics_course ON topics(course_id)");
   await knex.raw("CREATE INDEX idx_topics_sort ON topics(course_id, sort_order)");
+  await knex.raw("CREATE INDEX idx_topics_status ON topics(status)");
 
   // ── 11. user_topic_progress ──────────────────────────────────────────────
   await knex.schema.createTable("user_topic_progress", (table) => {
@@ -265,6 +299,7 @@ export async function up(knex: Knex): Promise<void> {
     table.jsonb("type_data");
     table.uuid("test_id").references("id").inTable("tests").onDelete("SET NULL");
     table.integer("sort_order").defaultTo(0).notNullable();
+    table.text("exam_source").nullable();
     table.timestamp("created_at").defaultTo(knex.fn.now());
   });
 
@@ -381,6 +416,7 @@ export async function up(knex: Knex): Promise<void> {
     table.uuid("exam_type_id").references("id").inTable("exam_types").onDelete("CASCADE").notNullable();
     table.timestamp("enrolled_at").defaultTo(knex.fn.now());
     table.boolean("is_active").defaultTo(true);
+    table.timestamp("deleted_at").nullable().defaultTo(null);
     table.unique(["user_id", "exam_type_id"]);
   });
 
@@ -395,6 +431,7 @@ export async function up(knex: Knex): Promise<void> {
     table.boolean("is_step_completed").defaultTo(false).notNullable();
     table.boolean("step_final_passed").defaultTo(false).notNullable();
     table.integer("stars").defaultTo(0).notNullable();
+    table.integer("best_score").defaultTo(0).notNullable();
     table.timestamp("completed_at");
     table.unique(["user_id", "step_id"]);
   });
@@ -447,10 +484,30 @@ export async function up(knex: Knex): Promise<void> {
   await knex.raw("CREATE INDEX idx_acorn_transactions_user ON acorn_transactions(user_id)");
   await knex.raw("CREATE INDEX idx_acorn_transactions_created ON acorn_transactions(created_at)");
   await knex.raw("CREATE INDEX idx_acorn_transactions_user_type ON acorn_transactions(user_id, type)");
+
+  // ── 28. question_reports ─────────────────────────────────────────────────
+  await knex.schema.createTable("question_reports", (table) => {
+    table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
+    table.uuid("question_id").references("id").inTable("questions").onDelete("CASCADE").notNullable();
+    table.uuid("user_id").references("id").inTable("users").onDelete("SET NULL");
+    table.text("reason").notNullable();
+    table.text("description");
+    table.text("status").notNullable().defaultTo("pending");
+    table.text("admin_note");
+    table.uuid("resolved_by").references("id").inTable("users").onDelete("SET NULL");
+    table.timestamp("resolved_at");
+    table.timestamp("created_at").defaultTo(knex.fn.now());
+
+    table.unique(["question_id", "user_id"]);
+    table.index("question_id");
+    table.index("status");
+    table.index("user_id");
+  });
 }
 
 export async function down(knex: Knex): Promise<void> {
   // Drop in reverse dependency order
+  await knex.schema.dropTableIfExists("question_reports");
   await knex.schema.dropTableIfExists("acorn_transactions");
   await knex.schema.dropTableIfExists("user_reward_claims");
   await knex.schema.dropTableIfExists("user_active_effects");
@@ -479,5 +536,8 @@ export async function down(knex: Knex): Promise<void> {
   await knex.schema.dropTableIfExists("users");
   await knex.schema.dropTableIfExists("exam_types");
   await knex.schema.dropTableIfExists("exam_groups");
+  await knex.schema.dropTableIfExists("role_permissions");
+  await knex.schema.dropTableIfExists("permissions");
+  await knex.schema.dropTableIfExists("roles");
   await knex.raw('DROP EXTENSION IF EXISTS "pgcrypto"');
 }

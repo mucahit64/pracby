@@ -1,16 +1,16 @@
 import type { Knex } from "knex";
 
 /**
- * Seed: 010_rbac_seed
+ * Seed: 003_rbac
  *
  * 1. Temel rolleri ekler: admin, teacher, student
  * 2. Temel yetkileri ekler: view_admin_panel, manage_users, manage_exams
  * 3. Rol-Yetki ilişkilerini kurar:
  *    - admin  → tüm yetkiler
- *    - teacher → manage_exams
+ *    - teacher → view_admin_panel + manage_exams
  *    - student → (yetki yok)
- * 4. Admin kullanıcısını (ADMIN_EMAIL env) yeni role_id ile günceller
  *
+ * Admin kullanıcısının oluşturulması/atanması 007_admin_user seed'inde yapılır.
  * Tüm adımlar idempotent olarak yazılmıştır (tekrar çalıştırılabilir).
  */
 
@@ -118,36 +118,4 @@ export async function seed(knex: Knex): Promise<void> {
   }
 
   // student rolüne kasıtlı olarak hiçbir yetki bağlanmıyor
-
-  // ── 4. Admin kullanıcısını role_id ile güncelle ───────────────────────────
-  const adminEmail = process.env.ADMIN_EMAIL;
-  if (!adminEmail) {
-    console.warn(
-      "[010_rbac_seed] ADMIN_EMAIL env değişkeni tanımlı değil, admin kullanıcı güncellemesi atlandı."
-    );
-    return;
-  }
-
-  const adminUser = await knex("users").where({ email: adminEmail }).first();
-  if (!adminUser) {
-    console.warn(
-      `[010_rbac_seed] '${adminEmail}' e-posta adresine sahip kullanıcı bulunamadı, güncelleme atlandı.`
-    );
-    return;
-  }
-
-  // Kullanıcı zaten doğru role_id'ye sahipse güncelleme yapma
-  if (adminUser.role_id !== adminRoleId) {
-    await knex("users")
-      .where({ id: adminUser.id })
-      .update({ role_id: adminRoleId });
-
-    console.log(
-      `[010_rbac_seed] Admin kullanıcı (${adminEmail}) 'admin' rolüne atandı.`
-    );
-  } else {
-    console.log(
-      `[010_rbac_seed] Admin kullanıcı (${adminEmail}) zaten 'admin' rolünde.`
-    );
-  }
 }

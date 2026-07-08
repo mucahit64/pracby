@@ -1,11 +1,12 @@
 import type { Knex } from "knex";
 
 // ============================================================
-// SEED 003 — Exam Structure (Oturumlar / Modüller)
+// SEED 004 — Exam Structure (Oturumlar / Modüller)
 // ============================================================
 // Hiyerarşi: exam_groups → exam_types → modules (= oturumlar)
 //
-// Migration (000_initial.ts) ile Exam Groups ve Types kuruldu.
+// Migration (000_initial_schema.ts) ile Exam Groups ve Types kuruldu.
+// KPSS aktif, YKS pasif (placeholder) olarak gelir.
 // Bu seed dosyası sadece Modules (Oturumlar) tablosunu doldurur.
 // ============================================================
 
@@ -43,11 +44,11 @@ const MODULES_MAP: Record<string, any[]> = {
 // ============================================================
 
 export async function seed(knex: Knex): Promise<void> {
-  // 1. Grupları aktifleştir (Migration'da YKS is_active: false gelmişti, kullanıma açıyoruz)
-  await knex("exam_groups").whereIn("slug", ["yks", "kpss"]).update({ is_active: true });
+  // Not: exam_groups aktiflik durumu migration'da belirlenir (KPSS aktif, YKS pasif).
+  // Bu seed sadece modülleri (oturumları) doldurur.
 
-  // 2. Veritabanındaki tüm exam_type'ları getir
-  const examTypes = await knex("exam_types").select("id", "slug", "name");
+  // 1. Sadece aktif exam_type'lar için modül oluştur (YKS pasif → atlanır)
+  const examTypes = await knex("exam_types").where("is_active", true).select("id", "slug", "name");
 
   // 3. Mevcut modülleri yükle (idempotent kontrol için, aynı kaydı 2 kez girmemek adına)
   const existingModules = await knex("modules").select("exam_type_id", "name");
