@@ -8,6 +8,8 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
 COPY . .
+ARG API_INTERNAL_BASE=http://api:3000
+ENV API_INTERNAL_BASE=${API_INTERNAL_BASE}
 RUN pnpm build
 
 # ── Stage 2: Production ─────────────────────────────────────
