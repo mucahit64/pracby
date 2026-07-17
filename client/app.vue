@@ -1,5 +1,8 @@
 <script setup lang="ts">
+const { public: { siteUrl } } = useRuntimeConfig()
+
 useHead({
+  htmlAttrs: { lang: 'tr' },
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} | Pracby` : 'Pracby';
   },
@@ -12,7 +15,8 @@ useHead({
     
     { property: "og:title", content: "Pracby | Oyunlaştırılmış KPSS Platformu" },
     { property: "og:description", content: "KPSS'ye çalışmanın en eğlenceli yolu. Hemen test çözmeye başla!" },
-    { property: "og:type", content: "website" }
+    { property: "og:type", content: "website" },
+    { name: "robots", content: "index, follow" }
   ],
   link: [
     { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -21,6 +25,31 @@ useHead({
     {
       rel: "stylesheet",
       href: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap",
+    },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            '@id': `${siteUrl}/#organization`,
+            name: 'Pracby',
+            url: siteUrl,
+            logo: `${siteUrl}/p-icon.png`,
+          },
+          {
+            '@type': 'WebSite',
+            '@id': `${siteUrl}/#website`,
+            name: 'Pracby',
+            url: siteUrl,
+            inLanguage: 'tr-TR',
+            publisher: { '@id': `${siteUrl}/#organization` },
+          },
+        ],
+      }),
     },
   ],
 });

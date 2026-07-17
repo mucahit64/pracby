@@ -9,7 +9,7 @@
     <!-- Error -->
     <div v-else-if="error" class="flex flex-col items-center justify-center flex-1 gap-4 py-20">
       <p class="text-gray-400 font-bold text-center">{{ error }}</p>
-      <NuxtLink to="/" class="bg-primary text-white font-black text-sm py-3 px-6 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all">Ana Sayfaya Dön</NuxtLink>
+      <NuxtLink to="/learn" class="bg-primary text-white font-black text-sm py-3 px-6 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all">Öğrenmeye Dön</NuxtLink>
     </div>
 
     <!-- Quiz in progress -->
@@ -268,16 +268,15 @@
         <!-- Feedback -->
         <transition name="fade">
           <div
-            v-if="answered" class="flex items-center gap-3.5 rounded-2xl px-5 py-4 border-b-4"
+            v-if="answered" class="flex flex-col items-stretch gap-3 rounded-2xl px-4 py-4 border-b-4 sm:flex-row sm:items-center sm:gap-3.5 sm:px-5"
             :class="lastAnswerCorrect ? 'bg-positive/10 border-positive text-positive' : 'bg-negative/10 border-negative text-negative'"
           >
-            <span class="text-2xl font-black">{{ lastAnswerCorrect ? '✓' : '✗' }}</span>
-            <div class="flex-1 min-w-0">
-              <div class="text-base font-black">{{ lastAnswerCorrect ? 'Harika! 🎉' : 'Yanlış! 😔' }}</div>
+          <div class="flex-1 min-w-0">
+              <div class="text-base font-black">{{ lastAnswerCorrect ? '✓ Harika! 🎉' : '✗ Yanlış! 😔' }}</div>
               <div v-if="currentQuestion.explanation" class="text-xs font-semibold opacity-80 mt-0.5">{{ currentQuestion.explanation }}</div>
             </div>
             <button
-              class="shrink-0 bg-white font-extrabold text-sm px-5 py-2.5 rounded-xl border-2 cursor-pointer transition-all font-[inherit]"
+              class="self-end shrink-0 bg-white font-extrabold text-sm px-5 py-2.5 rounded-xl border-2 cursor-pointer transition-all font-[inherit] sm:self-auto"
               :class="lastAnswerCorrect ? 'text-positive border-positive hover:bg-positive/5' : 'text-negative border-negative hover:bg-negative/5'"
               @click="nextQuestion"
             >DEVAM</button>
@@ -1031,7 +1030,7 @@ function declineEnergyPurchase() {
 
   if (finished.value) return;
   if (questions.value.length === 0) {
-    router.replace('/');
+    router.replace('/learn');
     return;
   }
   exitWarningDialog.value = true;
@@ -1046,7 +1045,7 @@ function continueFromWarning() {
 
 function exitQuiz() {
   if (guestMode.value) {
-    router.replace('/');
+    router.replace('/learn');
     return;
   }
   const token = getToken();
@@ -1057,7 +1056,7 @@ function exitQuiz() {
     headers: { Authorization: `Bearer ${token}` },
     body: { answers: [], skip_rewards: true },
   }).catch(() => {});
-  router.replace('/');
+  router.replace('/learn');
 }
 
 function handleClose() {

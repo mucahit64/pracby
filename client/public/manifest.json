@@ -2,7 +2,7 @@
   "name": "Pracby",
   "short_name": "Pracby",
   "description": "Sınavlara hazırlanmanın en eğlenceli yolu.",
-  "start_url": "/",
+  "start_url": "/learn",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#7c3aed",

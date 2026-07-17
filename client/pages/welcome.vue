@@ -60,6 +60,7 @@ definePageMeta({ layout: 'default' });
 useHead({
   title: 'Hoş Geldin',
   meta: [
+    { name: "robots", content: "noindex, follow" },
     { name: "description", content: "Pracby ile KPSS Tarih, Coğrafya ve Vatandaşlık derslerini oyun oynayarak, sıkılmadan öğrenin. 3D haritalı ve oyunlaştırılmış soru çözüm platformu." },
     { property: "og:title", content: "Pracby | Oyunlaştırılmış KPSS Platformu" },
     { property: "og:description", content: "KPSS'ye çalışmanın en eğlenceli yolu. Hemen test çözmeye başla!" },
@@ -90,7 +91,7 @@ const selectedGroupTypes = computed(() => {
 
 onMounted(async () => {
   if (localStorage.getItem('pb_token')) {
-    navigateTo('/');
+    navigateTo('/learn');
     return;
   }
   try {
@@ -112,6 +113,6 @@ function selectGroup(groupId: string) {
 function selectExamType(examTypeId: string) {
   localStorage.setItem('guestExamTypeId', examTypeId);
   localStorage.setItem('guestExamGroupId', selectedGroupId.value ?? '');
-  navigateTo('/');
+  navigateTo('/learn');
 }
 </script>

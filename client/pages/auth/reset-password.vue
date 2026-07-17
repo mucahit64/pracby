@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-white px-6 relative">
-    <div class="w-full max-w-[420px] bg-white border-2 border-gray-200 rounded-3xl p-10 flex flex-col gap-6">
+  <div class="min-h-screen flex items-center justify-center bg-white px-4 sm:px-6 relative">
+    <div class="w-full max-w-[420px] bg-white border-2 border-gray-200 rounded-2xl p-5 flex flex-col gap-5 sm:rounded-3xl sm:p-10 sm:gap-6">
       <div class="flex items-center justify-center">
         <h1 class="text-3xl font-black text-primary">pracby</h1>
       </div>

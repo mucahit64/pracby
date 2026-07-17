@@ -1,6 +1,6 @@
 <template>
-  <div class="flex items-center justify-center min-h-[80vh] px-5">
-    <div class="flex flex-col items-center gap-4 max-w-[420px] w-full bg-white border-2 border-gray-200 rounded-3xl p-10 text-center">
+  <div class="flex items-center justify-center min-h-[80vh] px-4 sm:px-5">
+    <div class="flex flex-col items-center gap-4 max-w-[420px] w-full bg-white border-2 border-gray-200 rounded-2xl p-5 text-center sm:rounded-3xl sm:p-10">
       <h1 class="text-xl font-black text-gray-800">Harika gidiyorsun! 🎉</h1>
       <p class="text-sm font-semibold text-gray-500 leading-relaxed">
         İlerlemeni kaydetmek ve ücretsiz olarak öğrenmeye devam etmek için bir profil oluştur.

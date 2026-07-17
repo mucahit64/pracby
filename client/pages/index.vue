@@ -12,11 +12,11 @@
       Önceki test sonuçları senkronize ediliyor…
     </div>
     <!-- Module tabs -->
-    <div v-if="modules.length > 0" class="flex gap-2">
+    <div v-if="modules.length > 0" class="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
       <button
         v-for="mod in modules"
         :key="mod.id"
-        class="flex items-center gap-2 px-5 py-2.5 rounded-xl border-2 font-bold text-sm cursor-pointer transition-all duration-150 font-[inherit]"
+        class="shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 font-bold text-sm cursor-pointer transition-all duration-150 font-[inherit] sm:px-5"
         :class="selectedModuleId === mod.id
           ? 'bg-primary border-primary text-white border-b-4 border-b-primary-dark'
           : 'bg-white border-gray-200 text-gray-800 hover:border-primary/40'"
@@ -166,27 +166,13 @@
 <script setup lang="ts">
 useHead({
   meta: [
+    { name: "robots", content: "noindex, follow" },
     { name: "description", content: "Pracby ile KPSS Tarih, Coğrafya ve Vatandaşlık derslerini oyun oynayarak, sıkılmadan öğrenin. 3D haritalı ve oyunlaştırılmış soru çözüm platformu." },
     { property: "og:title", content: "Pracby | Oyunlaştırılmış KPSS Platformu" },
     { property: "og:description", content: "KPSS'ye çalışmanın en eğlenceli yolu. Hemen test çözmeye başla!" },
     { property: "og:type", content: "website" }
   ]
 });
-
-interface Module {
-  id: string;
-  name: string;
-  icon_url: string;
-  sort_order: number;
-}
-
-interface Course {
-  id: string;
-  name: string;
-  icon_url: string;
-  color: string;
-  sort_order: number;
-}
 
 interface StepProgress {
   tests_completed: number;
@@ -218,10 +204,6 @@ interface Topic {
   progress: TopicProgress | null;
 }
 
-interface CourseFull extends Course {
-  topics: Topic[];
-}
-
 interface LessonNode {
   id: string;
   icon: string;
@@ -250,7 +232,7 @@ function getToken() {
   return localStorage.getItem('pb_token') ?? '';
 }
 
-const { activeExamName, activeExamTypeId, modules, selectedModuleId, courses, selectedCourseId, courseFull, loadingFull, selectModule, selectCourse } = useExamContent()
+const { modules, selectedModuleId, courses, selectedCourseId, courseFull, loadingFull, selectModule, selectCourse } = useExamContent()
 
 const { syncPendingSessions, loadPending } = useOfflineQuiz();
 const isOnline = ref(true);

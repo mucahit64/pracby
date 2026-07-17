@@ -40,7 +40,7 @@ const activeTooltip = useState('pbMobileTooltip', () => null)
 
 const navItems = computed(() => {
   const items: Array<{ emoji: string; label: string; to: string; exact: boolean }> = [
-    { emoji: '📚', label: 'ÖĞREN', to: '/', exact: true },
+    { emoji: '📚', label: 'ÖĞREN', to: '/learn', exact: true },
     { emoji: '🏆', label: 'LİDERLİK', to: '/leaderboard', exact: false },
     { emoji: '🌰', label: 'MARKET', to: '/store', exact: false },
     { emoji: '👤', label: 'PROFİL', to: isLoggedIn.value ? '/profile' : '/auth/register', exact: false },

@@ -3,9 +3,9 @@
     <!-- Main Content -->
     <div class="flex flex-col gap-7 max-w-[560px] mx-auto pb-10">
       <!-- Profile Header -->
-      <div class="flex gap-5 items-start bg-white border-2 border-gray-200 rounded-2xl p-6">
+      <div class="flex gap-3 items-start bg-white border-2 border-gray-200 rounded-2xl p-4 sm:gap-5 sm:p-6">
         <div class="flex flex-col items-center gap-2 shrink-0">
-          <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-3xl font-black text-white border-b-4 border-primary-dark">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-2xl font-black text-white border-b-4 border-primary-dark sm:w-20 sm:h-20 sm:text-3xl">
             {{ profile.username?.[0]?.toUpperCase() ?? '?' }}
           </div>
           <span class="bg-primary text-white text-[0.72rem] font-extrabold px-2.5 py-1 rounded-full tracking-wide whitespace-nowrap">Seviye {{ profile.level }}</span>
@@ -39,7 +39,7 @@
           <div
             v-for="day in weekDays"
             :key="day.label"
-            class="flex flex-col items-center gap-1.5 flex-1 min-w-[36px]"
+            class="flex flex-col items-center gap-1.5 flex-1 min-w-0"
           >
             <div
               class="w-9 h-9 rounded-full flex items-center justify-center text-lg"
@@ -122,7 +122,7 @@
     <Teleport to="body">
       <transition name="fade">
         <div v-if="showDeleteConfirm" class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-5" @click.self="closeDeleteConfirm">
-          <div class="bg-white border-2 border-gray-200 rounded-3xl max-w-[380px] w-full p-8 relative flex flex-col gap-5">
+          <div class="bg-white border-2 border-gray-200 rounded-2xl max-w-[380px] w-full p-5 relative flex flex-col gap-5 sm:rounded-3xl sm:p-8">
             <button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center text-gray-400 font-bold cursor-pointer hover:bg-gray-200 transition-colors" @click="closeDeleteConfirm">✕</button>
             <div class="flex flex-col items-center gap-3 text-center">
               <div class="w-14 h-14 rounded-full bg-negative/10 flex items-center justify-center text-2xl">🗑️</div>
@@ -145,7 +145,7 @@
     <Teleport to="body">
       <transition name="fade">
         <div v-if="showEnrollModal" class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-5" @click.self="closeEnrollModal">
-          <div class="bg-white border-2 border-gray-200 rounded-3xl max-w-[440px] w-full p-8 relative flex flex-col gap-5">
+          <div class="bg-white border-2 border-gray-200 rounded-2xl max-w-[440px] w-full p-5 relative flex flex-col gap-5 sm:rounded-3xl sm:p-8">
             <button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center text-gray-400 font-bold cursor-pointer hover:bg-gray-200 transition-colors" @click="closeEnrollModal">✕</button>
 
             <!-- Step 1 -->

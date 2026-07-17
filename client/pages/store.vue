@@ -16,7 +16,7 @@
           <div class="flex-1 text-sm font-semibold text-gray-800 leading-snug">
             <strong>{{ balance }} palamut kazandın!</strong> Mağazada harcamak için bir profil oluştur!
           </div>
-          <NuxtLink to="/auth/register" class="shrink-0 bg-primary text-white font-bold text-xs px-3 py-2 rounded-xl border-b-3 border-primary-dark active:border-b-0 active:translate-y-0.5 transition-all">Profil Oluştur</NuxtLink>
+          <NuxtLink to="/auth/register" class="shrink-0 bg-primary text-white font-bold text-xs px-2.5 py-2 text-center rounded-xl border-b-3 border-primary-dark active:border-b-0 active:translate-y-0.5 transition-all sm:px-3">Profil Oluştur</NuxtLink>
         </div>
 
         <div v-if="loadingItems" class="text-sm font-semibold text-gray-400 py-3">Yükleniyor…</div>
@@ -102,8 +102,8 @@
       <!-- Acorn packages -->
       <div v-if="!isGuest" class="flex flex-col gap-3">
         <h2 class="text-base font-extrabold text-gray-800">🌰 Buy Acorn</h2>
-        <div class="flex gap-3">
-          <div v-for="pkg in packages" :key="pkg.id" class="flex-1 bg-white border-2 border-gray-200 rounded-2xl p-5 flex flex-col items-center gap-2 text-center">
+        <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          <div v-for="pkg in packages" :key="pkg.id" class="bg-white border-2 border-gray-200 rounded-2xl p-4 flex flex-col items-center gap-2 text-center sm:p-5">
             <div class="text-xl font-black text-amber-700">🌰 {{ pkg.amount }}</div>
             <div class="text-xs font-bold text-gray-400">{{ pkg.label }}</div>
             <button class="w-full bg-amber-50 border-2 border-amber-600 text-amber-700 font-extrabold text-xs py-2 rounded-xl cursor-pointer hover:bg-amber-100 transition-colors font-[inherit]" @click="buyAcorn(pkg)">Satın Al</button>

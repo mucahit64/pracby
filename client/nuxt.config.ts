@@ -1,6 +1,16 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-10",
   devtools: { enabled: false },
+
+  hooks: {
+    "pages:extend"(pages) {
+      const learningPage = pages.find((page) => page.name === "index");
+      if (learningPage) learningPage.path = "/learn";
+
+      const homePage = pages.find((page) => page.name === "home");
+      if (homePage) homePage.path = "/";
+    },
+  },
   
   modules: [
     "@nuxtjs/tailwindcss",
@@ -30,12 +40,21 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE || "http://localhost:3000",
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://pracby.com",
     },
   },
   
   nitro: {
     routeRules: {
       "/api/**": { proxy: `${process.env.NUXT_PUBLIC_API_BASE || "http://localhost:3000"}/api/**` },
+      "/learn": { headers: { "X-Robots-Tag": "noindex, follow" } },
+      "/quiz/**": { headers: { "X-Robots-Tag": "noindex, follow" } },
+      "/auth/**": { headers: { "X-Robots-Tag": "noindex, follow" } },
+      "/profile/**": { headers: { "X-Robots-Tag": "noindex, follow" } },
+      "/admin/**": { headers: { "X-Robots-Tag": "noindex, follow" } },
+      "/store": { headers: { "X-Robots-Tag": "noindex, follow" } },
+      "/leaderboard": { headers: { "X-Robots-Tag": "noindex, follow" } },
+      "/welcome": { headers: { "X-Robots-Tag": "noindex, follow" } },
     },
   },
 });

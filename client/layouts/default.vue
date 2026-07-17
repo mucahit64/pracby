@@ -50,7 +50,7 @@ onMounted(async () => {
     localStorage.removeItem('pb_token')
   }
 
-  if (route.path === '/' && (isGuestWithoutExam || isUserWithoutExam || hasStaleToken)) {
+  if (route.path === '/learn' && (isGuestWithoutExam || isUserWithoutExam || hasStaleToken)) {
     navigateTo('/welcome')
   }
 })
