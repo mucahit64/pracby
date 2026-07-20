@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { public: { siteUrl } } = useRuntimeConfig()
+const canonicalSiteUrl = `${siteUrl.replace(/\/+$/, '')}/`
 
 useHead({
   htmlAttrs: { lang: 'tr' },
@@ -35,18 +36,19 @@ useHead({
         '@graph': [
           {
             '@type': 'Organization',
-            '@id': `${siteUrl}/#organization`,
+            '@id': `${canonicalSiteUrl}#organization`,
             name: 'Pracby',
-            url: siteUrl,
-            logo: `${siteUrl}/p-icon.png`,
+            url: canonicalSiteUrl,
+            logo: `${canonicalSiteUrl}p-icon.png`,
           },
           {
             '@type': 'WebSite',
-            '@id': `${siteUrl}/#website`,
+            '@id': `${canonicalSiteUrl}#website`,
             name: 'Pracby',
-            url: siteUrl,
+            alternateName: 'pracby.com',
+            url: canonicalSiteUrl,
             inLanguage: 'tr-TR',
-            publisher: { '@id': `${siteUrl}/#organization` },
+            publisher: { '@id': `${canonicalSiteUrl}#organization` },
           },
         ],
       }),

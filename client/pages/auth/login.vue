@@ -116,7 +116,7 @@ const submit = async () => {
       clearGuestState();
     }
 
-    await router.push('/');
+    await router.push('/learn');
   } catch (e: unknown) {
     const err = e as { data?: { message?: string } };
     error.value = err?.data?.message ?? 'Giriş başarısız. Bilgilerini kontrol et.';
