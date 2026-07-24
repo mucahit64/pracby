@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between">
         <div class="w-10" />
         <h1 class="text-3xl font-black text-primary">pracby</h1>
-        <NuxtLink to="/" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 border-2 border-gray-200 text-gray-800 font-bold hover:bg-gray-200 transition-colors">✕</NuxtLink>
+        <button type="button" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 border-2 border-gray-200 text-gray-800 font-bold hover:bg-gray-200 transition-colors cursor-pointer font-[inherit]" aria-label="Geri dön" @click="handleClose">✕</button>
       </div>
 
       <h2 class="text-xl font-extrabold text-gray-800 text-center -mt-2">Tekrar hoş geldin!</h2>
@@ -79,6 +79,11 @@ const error = ref('');
 const loading = ref(false);
 
 const showPassword = ref(false);
+
+function handleClose() {
+  if (window.history.length > 1) router.back();
+  else navigateTo('/', { replace: true });
+}
 
 const submit = async () => {
   error.value = '';

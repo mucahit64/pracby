@@ -9,7 +9,7 @@
         <NuxtLink to="/auth/register" class="w-full bg-primary text-white font-black text-sm py-3.5 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 text-center block">Profil Oluştur</NuxtLink>
         <NuxtLink to="/auth/login" class="w-full bg-white text-primary font-extrabold text-sm py-3 rounded-xl border-2 border-primary hover:bg-primary/5 transition-all duration-150 text-center block">Giriş Yap</NuxtLink>
       </div>
-      <button class="bg-transparent border-0 text-gray-400 text-sm font-bold cursor-pointer mt-2 hover:text-primary font-[inherit]" @click="navigateTo('/')">← Ana sayfaya dön</button>
+      <button class="bg-transparent border-0 text-gray-400 text-sm font-bold cursor-pointer mt-2 hover:text-primary font-[inherit]" @click="handleClose">← Ana sayfaya dön</button>
     </div>
   </div>
 </template>
@@ -27,9 +27,16 @@ useHead({
   ]
 });
 
+const router = useRouter();
+
+function handleClose() {
+  if (window.history.length > 1) router.back();
+  else navigateTo('/', { replace: true });
+}
+
 onMounted(() => {
   if (localStorage.getItem('pb_token')) {
-    navigateTo('/');
+    handleClose();
   }
 });
 </script>
