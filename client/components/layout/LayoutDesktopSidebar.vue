@@ -1,7 +1,7 @@
 <template>
-  <aside class="w-64 min-w-[256px] sticky top-0 h-screen border-r-2 border-gray-200 flex flex-col py-6 px-4 overflow-y-auto">
+  <aside class="w-64 min-w-[256px] fixed left-0 top-0 z-30 h-screen border-r-2 border-gray-200 flex flex-col py-6 px-4 overflow-y-auto bg-white">
     <!-- Logo -->
-    <NuxtLink to="/" class="flex items-center gap-2.5 px-4 py-4 mb-2">
+    <NuxtLink to="/learn" class="flex items-center gap-2.5 px-4 py-4 mb-2">
       <span class="text-2xl font-black text-primary tracking-tight">pracby</span>
     </NuxtLink>
 

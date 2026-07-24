@@ -2,9 +2,9 @@
   <div>
     <LayoutMobileHeader v-if="isMobile" />
 
-    <div class="max-w-7xl mx-auto flex bg-white">
-      <LayoutDesktopSidebar v-if="!isMobile" />
+    <LayoutDesktopSidebar v-if="!isMobile" />
 
+    <div class="max-w-7xl mx-auto flex bg-white lg:pl-64">
       <div class="flex-1 flex justify-center min-w-0">
         <main class="w-full max-w-[700px] min-w-0 px-4 py-6" :class="{ 'max-w-full !px-3 !pb-32 !pt-20': isMobile }">
           <slot />
