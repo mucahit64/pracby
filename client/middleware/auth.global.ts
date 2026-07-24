@@ -1,6 +1,12 @@
 export default defineNuxtRouteMiddleware((to) => {
   if (import.meta.server) return;
 
+  // Authed users visiting the landing page are redirected to /learn immediately,
+  // before the page renders. Guests and bots (no token) stay on the landing page.
+  if (to.path === "/" && localStorage.getItem("pb_token")) {
+    return navigateTo("/learn", { replace: true });
+  }
+
   const publicPaths = ["/auth/login", "/auth/register", "/auth/register-wall", "/auth/forgot-password", "/auth/reset-password", "/welcome", "/admin/login"];
   if (publicPaths.some((p) => to.path.startsWith(p))) return;
 

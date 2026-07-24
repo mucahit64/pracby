@@ -136,28 +136,4 @@ useHead({
   link: [{ rel: 'canonical', href: 'https://pracby.com/' }],
 })
 
-onMounted(async () => {
-  const token = localStorage.getItem('pb_token')
-  if (!token) return
-
-  try {
-    await $fetch('/api/users/me', {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    await navigateTo('/learn', { replace: true })
-  } catch (error) {
-    if (!error || typeof error !== 'object') return
-
-    const status = 'statusCode' in error
-      ? error.statusCode
-      : 'status' in error
-        ? error.status
-        : undefined
-
-    if (status === 401 || status === 403) {
-      localStorage.removeItem('pb_token')
-    }
-  }
-})
-
 </script>
