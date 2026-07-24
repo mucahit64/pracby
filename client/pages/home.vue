@@ -2,9 +2,8 @@
   <div class="min-h-screen bg-[#f7f8fc] text-gray-900">
     <header class="border-b border-gray-200 bg-white/95">
       <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-5 sm:py-4">
-        <NuxtLink to="/" class="flex items-center gap-3" aria-label="Pracby ana sayfa">
-          <img src="/p-icon.png" alt="" class="h-8 w-8 rounded-md sm:h-10 sm:w-10 sm:rounded-lg">
-          <span class="text-xl font-black text-primary sm:text-2xl">Pracby</span>
+        <NuxtLink to="/" aria-label="Pracby ana sayfa">
+          <span class="text-xl font-black text-primary sm:text-2xl">pracby</span>
         </NuxtLink>
         <nav class="flex items-center gap-1 sm:gap-2" aria-label="Ana navigasyon">
           <NuxtLink to="/auth/login" class="px-2 py-2 text-xs font-extrabold text-gray-700 hover:text-primary sm:px-4 sm:text-sm">
@@ -27,7 +26,7 @@
           <p class="mx-auto mt-5 max-w-xl text-base font-semibold leading-7 text-gray-600 sm:text-lg sm:leading-8">
             KPSS konularını kısa alıştırmalarla pekiştir, ilerlemeni takip et ve kaldığın yerden devam et.
           </p>
-          <div class="mx-auto mt-8 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
+          <div class="mx-auto mt-8 flex w-full max-w-xs flex-col gap-3 sm:max-w-sm">
             <NuxtLink to="/welcome" class="rounded-lg bg-primary px-7 py-3.5 text-base font-black text-white transition-colors hover:bg-primary-dark">
               Başla
             </NuxtLink>
