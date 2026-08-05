@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import crypto from "crypto";
 import jwt from "jsonwebtoken";
 import { Resend } from "resend";
+import type { Knex } from "knex";
 import db from "../../db/knex";
 import { env } from "../../config/env";
 import { AppError } from "../../middleware/error";
@@ -14,101 +15,126 @@ const BCRYPT_ROUNDS = 12;
 const signToken = (userId: string, username: string): string =>
   jwt.sign({ userId, username }, env.jwtSecret, { expiresIn: "7d" });
 
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+// Misafir verisindeki stepId'lerin TAMAMI DB'de mevcut değilse false döner;
+// çağıran taraf bu durumda misafir verisinin tamamını yok saymalı (kısmi aktarım yapmamalı).
+const areStepIdsValid = async (trx: Knex.Transaction, stepIds: string[]): Promise<boolean> => {
+  if (stepIds.length === 0) return true;
+  if (!stepIds.every((id) => UUID_RE.test(id))) return false;
+  const existing = await trx("steps").whereIn("id", stepIds).select("id");
+  return existing.length === new Set(stepIds).size;
+};
+
 export const register = async (input: RegisterInput) => {
-  const emailExists = await db("users").where({ email: input.email }).first();
-  if (emailExists) throw new AppError(409, "Email already in use");
+  return db.transaction(async (trx) => {
+    const emailExists = await trx("users").where({ email: input.email }).first();
+    if (emailExists) throw new AppError(409, "Email already in use");
 
-  const usernameExists = await db("users").where({ username: input.username }).first();
-  if (usernameExists) throw new AppError(409, "Username already taken");
+    const usernameExists = await trx("users").where({ username: input.username }).first();
+    if (usernameExists) throw new AppError(409, "Username already taken");
 
-  const passwordHash = await bcrypt.hash(input.password, BCRYPT_ROUNDS);
+    const passwordHash = await bcrypt.hash(input.password, BCRYPT_ROUNDS);
 
-  const studentRole = await db("roles").where({ name: "student" }).first();
-  if (!studentRole) throw new AppError(500, "Default role not found. Run RBAC seed first.");
+    const studentRole = await trx("roles").where({ name: "student" }).first();
+    if (!studentRole) throw new AppError(500, "Default role not found. Run RBAC seed first.");
 
-  let examTypeId = input.exam_type_id;
-  if (!examTypeId) {
-    const defaultType = await db("exam_types").where({ slug: "lisans" }).first();
-    examTypeId = defaultType?.id;
-  }
-
-  const [user] = await db("users")
-    .insert({
-      email: input.email,
-      username: input.username,
-      password_hash: passwordHash,
-      role_id: studentRole.id,
-      acorn_balance: input.acorn_balance ?? 500,
-      energy: input.energy ?? 25,
-      ...(examTypeId && { active_exam_type_id: examTypeId }),
-    })
-    .returning(["id", "email", "username", "active_exam_type_id", "created_at"]);
-
-  await db("user_stats").insert({ user_id: user.id });
-
-  if (examTypeId) {
-    await db("user_exam_enrollments").insert({ user_id: user.id, exam_type_id: examTypeId });
-  }
-
-  // Apply guest quiz progress if provided
-  if (input.guest_data?.quiz_results?.length) {
-    const stepIds = [...new Set(input.guest_data.quiz_results.map((r) => r.stepId).filter(Boolean))] as string[];
-    if (stepIds.length > 0) {
-      const steps = await db("steps").whereIn("id", stepIds).select("id", "tests_required");
-      const stepMap = new Map(steps.map((s) => [s.id as string, s.tests_required as number]));
-
-      const totalCorrect = input.guest_data.quiz_results.reduce((sum, r) => sum + r.correctCount, 0);
-      if (totalCorrect > 0) {
-        await db("user_stats").where({ user_id: user.id }).increment({ xp: totalCorrect, total_xp: totalCorrect });
-      }
-
-      const stepProgressRows = stepIds.map((stepId) => {
-        const results = input.guest_data!.quiz_results!.filter((r) => r.stepId === stepId);
-        const completedTestIds = new Set(results.filter((r) => r.testId).map((r) => r.testId!));
-        const completedTests = completedTestIds.size > 0 ? completedTestIds.size : (results.length > 0 ? 1 : 0);
-        const testsRequired = stepMap.get(stepId) ?? 1;
-        const isCompleted = completedTests >= testsRequired;
-        return {
-          user_id: user.id,
-          step_id: stepId,
-          tests_completed: completedTests,
-          is_step_completed: isCompleted,
-          step_final_passed: false,
-          stars: 0,
-          ...(isCompleted && { completed_at: new Date() }),
-        };
-      });
-
-      await db("user_step_progress").insert(stepProgressRows).onConflict(["user_id", "step_id"]).merge();
+    let examTypeId = input.exam_type_id;
+    if (!examTypeId) {
+      const defaultType = await trx("exam_types").where({ slug: "lisans" }).first();
+      examTypeId = defaultType?.id;
     }
-  }
 
-  // Apply guest claimed rewards if provided
-  if (input.guest_data?.claimed_reward_step_ids?.length) {
-    const rewardStepIds = input.guest_data.claimed_reward_step_ids;
+    const [user] = await trx("users")
+      .insert({
+        email: input.email,
+        username: input.username,
+        password_hash: passwordHash,
+        role_id: studentRole.id,
+        acorn_balance: input.acorn_balance ?? 500,
+        energy: input.energy ?? 25,
+        ...(examTypeId && { active_exam_type_id: examTypeId }),
+      })
+      .returning(["id", "email", "username", "active_exam_type_id", "created_at"]);
 
-    const claimInserts = rewardStepIds.map((stepId) => ({
-      user_id: user.id,
-      step_id: stepId,
-    }));
-    await db("user_reward_claims")
-      .insert(claimInserts)
-      .onConflict(["user_id", "step_id"])
-      .ignore();
+    await trx("user_stats").insert({ user_id: user.id });
 
-    const rewardProgressInserts = rewardStepIds.map((stepId) => ({
-      user_id: user.id,
-      step_id: stepId,
-      is_step_completed: true,
-      tests_completed: 0,
-    }));
-    await db("user_step_progress")
-      .insert(rewardProgressInserts)
-      .onConflict(["user_id", "step_id"])
-      .merge({ is_step_completed: true });
-  }
+    if (examTypeId) {
+      await trx("user_exam_enrollments").insert({ user_id: user.id, exam_type_id: examTypeId });
+    }
 
-  return { user, token: signToken(user.id as string, user.username as string) };
+    // Misafir verisindeki stepId'lerin (test sonuçları + ödül sandıkları) tamamı DB'de
+    // gerçekten var mı diye tek seferde doğrula. Biri bile geçersizse (ör. dev DB sıfırlandıktan
+    // sonra tarayıcıda kalan eski stepId'ler), misafir verisinin tamamı yok sayılır — kısmen
+    // onarılmaz. Kullanıcı yine de kayıt olur, sadece geçmiş ilerlemesi aktarılmaz.
+    const guestStepIds = [
+      ...new Set([
+        ...(input.guest_data?.quiz_results?.map((r) => r.stepId).filter(Boolean) ?? []),
+        ...(input.guest_data?.claimed_reward_step_ids ?? []),
+      ]),
+    ] as string[];
+    const guestData = (await areStepIdsValid(trx, guestStepIds)) ? input.guest_data : undefined;
+
+    // Apply guest quiz progress if provided
+    if (guestData?.quiz_results?.length) {
+      const stepIds = [...new Set(guestData.quiz_results.map((r) => r.stepId).filter(Boolean))] as string[];
+      if (stepIds.length > 0) {
+        const steps = await trx("steps").whereIn("id", stepIds).select("id", "tests_required");
+        const stepMap = new Map(steps.map((s) => [s.id as string, s.tests_required as number]));
+
+        const totalCorrect = guestData.quiz_results.reduce((sum, r) => sum + r.correctCount, 0);
+        if (totalCorrect > 0) {
+          await trx("user_stats").where({ user_id: user.id }).increment({ xp: totalCorrect, total_xp: totalCorrect });
+        }
+
+        const stepProgressRows = stepIds.map((stepId) => {
+          const results = guestData.quiz_results!.filter((r) => r.stepId === stepId);
+          const completedTestIds = new Set(results.filter((r) => r.testId).map((r) => r.testId!));
+          const completedTests = completedTestIds.size > 0 ? completedTestIds.size : (results.length > 0 ? 1 : 0);
+          const testsRequired = stepMap.get(stepId) ?? 1;
+          const isCompleted = completedTests >= testsRequired;
+          return {
+            user_id: user.id,
+            step_id: stepId,
+            tests_completed: completedTests,
+            is_step_completed: isCompleted,
+            step_final_passed: false,
+            stars: 0,
+            ...(isCompleted && { completed_at: new Date() }),
+          };
+        });
+
+        await trx("user_step_progress").insert(stepProgressRows).onConflict(["user_id", "step_id"]).merge();
+      }
+    }
+
+    // Apply guest claimed rewards if provided
+    if (guestData?.claimed_reward_step_ids?.length) {
+      const rewardStepIds = guestData.claimed_reward_step_ids;
+
+      const claimInserts = rewardStepIds.map((stepId) => ({
+        user_id: user.id,
+        step_id: stepId,
+      }));
+      await trx("user_reward_claims")
+        .insert(claimInserts)
+        .onConflict(["user_id", "step_id"])
+        .ignore();
+
+      const rewardProgressInserts = rewardStepIds.map((stepId) => ({
+        user_id: user.id,
+        step_id: stepId,
+        is_step_completed: true,
+        tests_completed: 0,
+      }));
+      await trx("user_step_progress")
+        .insert(rewardProgressInserts)
+        .onConflict(["user_id", "step_id"])
+        .merge({ is_step_completed: true });
+    }
+
+    return { user, token: signToken(user.id as string, user.username as string) };
+  });
 };
 
 export const login = async (input: LoginInput) => {
@@ -159,11 +185,19 @@ export const mergeGuestProgress = async (
   return db.transaction(async (trx) => {
     let newXp = 0;
 
+    // Misafir verisindeki stepId'lerin tamamı DB'de gerçekten var mı diye tek seferde doğrula.
+    // Biri bile geçersizse, adım ilerlemesi/ödül aktarımı tamamen atlanır (kısmen onarılmaz).
+    // earnedAcorns adım ID'sine referans vermediği için bu kontrolden etkilenmez.
+    const guestStepIds = [...new Set([...quizResults.map((r) => r.stepId).filter(Boolean), ...claimedRewards])] as string[];
+    const guestDataValid = await areStepIdsValid(trx, guestStepIds);
+    const validQuizResults = guestDataValid ? quizResults : [];
+    const validClaimedRewards = guestDataValid ? claimedRewards : [];
+
     // ==========================================
     // 1. NORMAL TESTLERİN AKTARILMASI (Mevcut mantığın)
     // ==========================================
-    const stepIds = [...new Set(quizResults.map((r) => r.stepId).filter(Boolean))] as string[];
-    
+    const stepIds = [...new Set(validQuizResults.map((r) => r.stepId).filter(Boolean))] as string[];
+
     if (stepIds.length > 0) {
       const steps = await trx("steps").whereIn("id", stepIds).select("id", "tests_required");
       const stepMap = new Map(steps.map((s) => [s.id as string, s.tests_required as number]));
@@ -174,7 +208,7 @@ export const mergeGuestProgress = async (
       const existingMap = new Map(existingProgress.map((p) => [p.step_id as string, p]));
 
       for (const stepId of stepIds) {
-        const results = quizResults.filter((r) => r.stepId === stepId);
+        const results = validQuizResults.filter((r) => r.stepId === stepId);
         const completedTestIds = new Set(results.filter((r) => r.testId).map((r) => r.testId!));
         const guestTestsCompleted = completedTestIds.size > 0 ? completedTestIds.size : (results.length > 0 ? 1 : 0);
         const testsRequired = stepMap.get(stepId) ?? 1;
@@ -213,9 +247,9 @@ export const mergeGuestProgress = async (
     // ==========================================
     // 2. ÖDÜL SANDIKLARININ (REWARDS) AKTARILMASI
     // ==========================================
-    if (claimedRewards.length > 0) {
+    if (validClaimedRewards.length > 0) {
       // a. user_reward_claims tablosuna ekle (Aynı sandığı tekrar açmasın diye)
-      const claimInserts = claimedRewards.map((stepId) => ({
+      const claimInserts = validClaimedRewards.map((stepId) => ({
         user_id: userId,
         step_id: stepId,
       }));
@@ -225,7 +259,7 @@ export const mergeGuestProgress = async (
         .ignore(); // Zaten varsa hata verme, atla
 
       // b. user_step_progress tablosuna "Tamamlandı" olarak ekle (Frontend mavi tik yapsın diye)
-      const rewardProgressInserts = claimedRewards.map((stepId) => ({
+      const rewardProgressInserts = validClaimedRewards.map((stepId) => ({
         user_id: userId,
         step_id: stepId,
         is_step_completed: true,
