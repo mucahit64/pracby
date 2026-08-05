@@ -131,7 +131,10 @@
             <span v-if="!group.is_active" class="absolute top-3 right-3 text-[0.68rem] font-bold text-warning bg-warning/10 px-2 py-0.5 rounded-full">Yakında</span>
           </button>
         </div>
-        <button class="w-full bg-primary text-white font-black text-base py-3.5 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="!selectedGroupId" @click="step = 3">Devam →</button>
+        <div class="flex gap-2.5">
+          <button class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="step = 1">← Geri</button>
+          <button class="flex-1 bg-primary text-white font-black text-base py-3.5 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="!selectedGroupId" @click="step = 3">Devam →</button>
+        </div>
       </div>
 
       <!-- Step 3: Exam type -->
