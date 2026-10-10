@@ -27,11 +27,8 @@ useHead({
   ]
 });
 
-const router = useRouter();
-
 function handleClose() {
-  if (window.history.length > 1) router.back();
-  else navigateTo('/', { replace: true });
+  navigateTo('/learn', { replace: true });
 }
 
 onMounted(() => {

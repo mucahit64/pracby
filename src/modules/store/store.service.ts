@@ -43,11 +43,15 @@ export const purchase = async (userId: string, input: PurchaseInput) => {
     const newEnergy = Math.min(25, currentEnergy + energyCount);
 
     return db.transaction(async (trx) => {
-      await trx("users").where({ id: userId }).update({
-        acorn_balance: db.raw("acorn_balance - ?", [totalCost]),
-        energy: newEnergy,
-        ...(newEnergy >= 25 ? { energy_refreshed_at: new Date() } : {}),
-      });
+      const updatedRows = await trx("users")
+        .where({ id: userId })
+        .where("acorn_balance", ">=", totalCost)
+        .update({
+          acorn_balance: db.raw("acorn_balance - ?", [totalCost]),
+          energy: newEnergy,
+          ...(newEnergy >= 25 ? { energy_refreshed_at: new Date() } : {}),
+        });
+      if (updatedRows === 0) throw new AppError(400, "Insufficient acorn balance");
 
       await trx("acorn_transactions").insert({
         user_id: userId,
@@ -61,7 +65,11 @@ export const purchase = async (userId: string, input: PurchaseInput) => {
   }
 
   return db.transaction(async (trx) => {
-    await trx("users").where({ id: userId }).decrement("acorn_balance", totalCost);
+    const updatedRows = await trx("users")
+      .where({ id: userId })
+      .where("acorn_balance", ">=", totalCost)
+      .decrement("acorn_balance", totalCost);
+    if (updatedRows === 0) throw new AppError(400, "Insufficient acorn balance");
 
     await trx("acorn_transactions").insert({
       user_id: userId,
@@ -70,21 +78,10 @@ export const purchase = async (userId: string, input: PurchaseInput) => {
       reference_id: item.id,
     });
 
-    const existing = await trx("user_items")
-      .where({ user_id: userId, item_id: input.itemId })
-      .first();
-
-    if (existing) {
-      await trx("user_items")
-        .where({ id: existing.id })
-        .increment("quantity", input.quantity);
-    } else {
-      await trx("user_items").insert({
-        user_id: userId,
-        item_id: input.itemId,
-        quantity: input.quantity,
-      });
-    }
+    await trx("user_items")
+      .insert({ user_id: userId, item_id: input.itemId, quantity: input.quantity })
+      .onConflict(["user_id", "item_id"])
+      .merge({ quantity: trx.raw("user_items.quantity + excluded.quantity") });
 
     return { balance: user.acorn_balance - totalCost, spent: totalCost, item: item.name };
   });
