@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "dompurify": "^3.4.16",
     "nuxt": "^3.17.5"
   },
   "packageManager": "pnpm@10.29.2",

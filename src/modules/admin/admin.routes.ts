@@ -55,18 +55,18 @@ router.delete("/modules/:id", requirePermission("manage_exams"), AdminController
 
 // Topics
 router.get("/topics", AdminController.listTopics);
-router.post("/topics", validate(CreateTopicSchema), AdminController.createTopic);
-router.patch("/topics/:id", validate(UpdateTopicSchema), AdminController.updateTopic);
+router.post("/topics", requirePermission("manage_exams"), validate(CreateTopicSchema), AdminController.createTopic);
+router.patch("/topics/:id", requirePermission("manage_exams"), validate(UpdateTopicSchema), AdminController.updateTopic);
 router.delete("/topics/:id", requirePermission("manage_exams"), AdminController.deleteTopic);
 
 // Steps
 router.get("/steps", AdminController.listSteps);
-router.post("/steps", validate(CreateStepSchema), AdminController.createStep);
+router.post("/steps", requirePermission("manage_exams"), validate(CreateStepSchema), AdminController.createStep);
 router.delete("/steps/:id", requirePermission("manage_exams"), AdminController.deleteStep);
 
 // Tests
 router.get("/tests", AdminController.listTests);
-router.post("/tests", validate(CreateTestSchema), AdminController.createTest);
+router.post("/tests", requirePermission("manage_exams"), validate(CreateTestSchema), AdminController.createTest);
 router.delete("/tests/:id", requirePermission("manage_exams"), AdminController.deleteTest);
 
 // Dashboard
@@ -87,9 +87,9 @@ router.patch("/reports/:id", validate(UpdateReportSchema), AdminController.updat
 // Users
 router.get("/users", AdminController.listUsers);
 router.post("/users", requirePermission("manage_users"), validate(CreateUserAdminSchema), AdminController.createUser);
-router.get("/users/:id", AdminController.getUserDetail);
-router.patch("/users/:id", validate(UpdateUserAdminSchema), AdminController.updateUser);
-router.delete("/users/:id", AdminController.deleteUser);
+router.get("/users/:id", requirePermission("manage_users"), AdminController.getUserDetail);
+router.patch("/users/:id", requirePermission("manage_users"), validate(UpdateUserAdminSchema), AdminController.updateUser);
+router.delete("/users/:id", requirePermission("manage_users"), AdminController.deleteUser);
 router.patch("/users/:id/role", requirePermission("manage_users"), validate(UpdateUserRoleSchema), AdminController.updateUserRole);
 
 // Roles

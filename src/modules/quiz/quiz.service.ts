@@ -207,7 +207,7 @@ export const submitAnswer = async (
       case "multiple_choice":
       case "true_false": {
         if (input.answerId) {
-          const answer = await db("answers").where({ id: input.answerId }).first();
+          const answer = await db("answers").where({ id: input.answerId, question_id: input.questionId }).first();
           isCorrect = Boolean(answer?.is_correct);
         }
         break;
@@ -224,12 +224,7 @@ export const submitAnswer = async (
         if (input.matchingAnswer && question.type_data) {
           const pairs: { left: string; right: string }[] = question.type_data.pairs ?? [];
           if (input.matchingAnswer.length === pairs.length) {
-            isCorrect = input.matchingAnswer.every((ma) => {
-              const pair = pairs[ma.leftIndex];
-              const matchedPair = pairs[ma.rightIndex];
-              return pair && matchedPair && pair.right === pairs[ma.leftIndex]?.right
-                && ma.rightIndex === ma.leftIndex; // user must match left[i] to right[i]
-            });
+            isCorrect = input.matchingAnswer.every((ma) => ma.rightIndex === ma.leftIndex); // user must match left[i] to right[i]
           }
         }
         break;
@@ -296,165 +291,167 @@ export const finishSession = async (userId: string, sessionId: string, skipRewar
   if (!session) throw new AppError(404, "Session not found");
   if (session.finished_at) throw new AppError(400, "Session already finished");
 
-  const answers = await db("user_answers").where({ session_id: sessionId });
-  const correctCount = answers.filter((a) => a.is_correct).length;
-  const totalSeconds = Math.round(
-    (Date.now() - new Date(session.started_at as string).getTime()) / 1000,
-  );
+  return db.transaction(async (trx) => {
+    const answers = await trx("user_answers").where({ session_id: sessionId });
+    const correctCount = answers.filter((a) => a.is_correct).length;
+    const totalSeconds = Math.round(
+      (Date.now() - new Date(session.started_at as string).getTime()) / 1000,
+    );
 
-  let xpEarned = 0;
-  let acornEarned = 0;
+    let xpEarned = 0;
+    let acornEarned = 0;
 
-  if (!skipRewards) {
-    // Calculate XP
-    const correctAnswerIds = answers.filter((a) => a.is_correct).map((a) => a.question_id);
-    if (correctAnswerIds.length > 0) {
-      const questions = await db("questions").whereIn("id", correctAnswerIds).select("point_value");
-      xpEarned = questions.reduce((sum, q) => sum + (Number(q.point_value) || 1), 0);
-    }
-
-    // Calculate acorn earnings (1 per correct answer)
-    acornEarned = correctCount;
-  }
-
-  const [updated] = await db("quiz_sessions")
-    .where({ id: sessionId })
-    .update({
-      finished_at: db.fn.now() as unknown as string,
-      correct_answers: correctCount,
-      xp_earned: xpEarned,
-      duration: totalSeconds,
-    })
-    .returning("*");
-
-  // Update XP, streak, acorn — skipped if energy depleted
-  if (!skipRewards) {
-    await db("user_stats").where({ user_id: userId }).increment("xp", xpEarned);
-    await db("user_stats").where({ user_id: userId }).increment("total_xp", xpEarned);
-    await db("user_stats").where({ user_id: userId }).increment("quizzes_completed", 1);
-
-    // Update streak
-    const today = new Date().toISOString().split("T")[0];
-    const currentStats = await db("user_stats").where({ user_id: userId }).first();
-    const lastActive = currentStats?.last_active_date
-      ? (currentStats.last_active_date instanceof Date
-          ? currentStats.last_active_date.toISOString().split("T")[0]
-          : String(currentStats.last_active_date).split("T")[0])
-      : null;
-    const yesterday = new Date(Date.now() - 86400000).toISOString().split("T")[0];
-
-    let newStreak = currentStats?.current_streak ?? 0;
-    if (lastActive !== today) {
-      newStreak = lastActive === yesterday ? newStreak + 1 : 1;
-      const newMaxStreak = Math.max(newStreak, currentStats?.max_streak ?? 0);
-      await db("user_stats").where({ user_id: userId }).update({
-        current_streak: newStreak,
-        streak: newStreak,
-        max_streak: newMaxStreak,
-        last_active_date: today,
-      });
-      // Upsert streak_history
-      const existing = await db("streak_history").where({ user_id: userId, date: today }).first();
-      if (!existing) {
-        await db("streak_history").insert({ user_id: userId, date: today, xp_earned: xpEarned, quizzes_completed: 1 });
-      } else {
-        await db("streak_history").where({ user_id: userId, date: today })
-          .increment("xp_earned", xpEarned).increment("quizzes_completed", 1);
+    if (!skipRewards) {
+      // Calculate XP
+      const correctAnswerIds = answers.filter((a) => a.is_correct).map((a) => a.question_id);
+      if (correctAnswerIds.length > 0) {
+        const questions = await trx("questions").whereIn("id", correctAnswerIds).select("point_value");
+        xpEarned = questions.reduce((sum, q) => sum + (Number(q.point_value) || 1), 0);
       }
-    } else {
-      // Same day — just increment streak_history
-      const existing = await db("streak_history").where({ user_id: userId, date: today }).first();
-      if (!existing) {
-        await db("streak_history").insert({ user_id: userId, date: today, xp_earned: xpEarned, quizzes_completed: 1 });
+
+      // Calculate acorn earnings (1 per correct answer)
+      acornEarned = correctCount;
+    }
+
+    const [updated] = await trx("quiz_sessions")
+      .where({ id: sessionId })
+      .update({
+        finished_at: db.fn.now() as unknown as string,
+        correct_answers: correctCount,
+        xp_earned: xpEarned,
+        duration: totalSeconds,
+      })
+      .returning("*");
+
+    // Update XP, streak, acorn — skipped if energy depleted
+    if (!skipRewards) {
+      await trx("user_stats").where({ user_id: userId }).increment("xp", xpEarned);
+      await trx("user_stats").where({ user_id: userId }).increment("total_xp", xpEarned);
+      await trx("user_stats").where({ user_id: userId }).increment("quizzes_completed", 1);
+
+      // Update streak
+      const today = new Date().toISOString().split("T")[0];
+      const currentStats = await trx("user_stats").where({ user_id: userId }).first();
+      const lastActive = currentStats?.last_active_date
+        ? (currentStats.last_active_date instanceof Date
+            ? currentStats.last_active_date.toISOString().split("T")[0]
+            : String(currentStats.last_active_date).split("T")[0])
+        : null;
+      const yesterday = new Date(Date.now() - 86400000).toISOString().split("T")[0];
+
+      let newStreak = currentStats?.current_streak ?? 0;
+      if (lastActive !== today) {
+        newStreak = lastActive === yesterday ? newStreak + 1 : 1;
+        const newMaxStreak = Math.max(newStreak, currentStats?.max_streak ?? 0);
+        await trx("user_stats").where({ user_id: userId }).update({
+          current_streak: newStreak,
+          streak: newStreak,
+          max_streak: newMaxStreak,
+          last_active_date: today,
+        });
+        // Upsert streak_history
+        const existing = await trx("streak_history").where({ user_id: userId, date: today }).first();
+        if (!existing) {
+          await trx("streak_history").insert({ user_id: userId, date: today, xp_earned: xpEarned, quizzes_completed: 1 });
+        } else {
+          await trx("streak_history").where({ user_id: userId, date: today })
+            .increment("xp_earned", xpEarned).increment("quizzes_completed", 1);
+        }
       } else {
-        await db("streak_history").where({ user_id: userId, date: today })
-          .increment("xp_earned", xpEarned).increment("quizzes_completed", 1);
+        // Same day — just increment streak_history
+        const existing = await trx("streak_history").where({ user_id: userId, date: today }).first();
+        if (!existing) {
+          await trx("streak_history").insert({ user_id: userId, date: today, xp_earned: xpEarned, quizzes_completed: 1 });
+        } else {
+          await trx("streak_history").where({ user_id: userId, date: today })
+            .increment("xp_earned", xpEarned).increment("quizzes_completed", 1);
+        }
+      }
+
+      // Update acorn balance
+      if (acornEarned > 0) {
+        await trx("users").where({ id: userId }).increment("acorn_balance", acornEarned);
+        await trx("acorn_transactions").insert({
+          user_id: userId,
+          amount: acornEarned,
+          type: "earned_quiz",
+          reference_id: sessionId,
+        });
       }
     }
 
-    // Update acorn balance
-    if (acornEarned > 0) {
-      await db("users").where({ id: userId }).increment("acorn_balance", acornEarned);
-      await db("acorn_transactions").insert({
-        user_id: userId,
-        amount: acornEarned,
-        type: "earned_quiz",
-        reference_id: sessionId,
-      });
-    }
-  }
+    // Update step progress
+    let stepCompleted = false;
+    let topicCompleted = false;
 
-  // Update step progress
-  let stepCompleted = false;
-  let topicCompleted = false;
+    if (session.step_id && !skipRewards) {
+      const step = await trx("steps").where({ id: session.step_id }).first();
 
-  if (session.step_id && !skipRewards) {
-    const step = await db("steps").where({ id: session.step_id }).first();
+      // Upsert user_step_progress
+      const existing = await trx("user_step_progress")
+        .where({ user_id: userId, step_id: session.step_id })
+        .first();
 
-    // Upsert user_step_progress
-    const existing = await db("user_step_progress")
-      .where({ user_id: userId, step_id: session.step_id })
-      .first();
+      const newScore = answers.length > 0
+        ? Math.round((correctCount / answers.length) * 100)
+        : 0;
 
-    const newScore = answers.length > 0
-      ? Math.round((correctCount / answers.length) * 100)
-      : 0;
-
-    if (existing) {
-      if (!existing.is_step_completed) {
-        await db("user_step_progress")
-          .where({ id: existing.id })
-          .update({
-            tests_completed: 1,
-            is_step_completed: true,
-            step_final_passed: true,
-            completed_at: db.fn.now(),
-            best_score: newScore,
-          });
+      if (existing) {
+        if (!existing.is_step_completed) {
+          await trx("user_step_progress")
+            .where({ id: existing.id })
+            .update({
+              tests_completed: 1,
+              is_step_completed: true,
+              step_final_passed: true,
+              completed_at: db.fn.now(),
+              best_score: newScore,
+            });
+          stepCompleted = true;
+        } else if (newScore > ((existing.best_score as number) ?? 0)) {
+          await trx("user_step_progress")
+            .where({ id: existing.id })
+            .update({ best_score: newScore });
+        }
+      } else {
+        await trx("user_step_progress").insert({
+          user_id: userId,
+          step_id: session.step_id,
+          tests_completed: 1,
+          is_step_completed: true,
+          step_final_passed: true,
+          completed_at: db.fn.now(),
+          best_score: newScore,
+        });
         stepCompleted = true;
-      } else if (newScore > ((existing.best_score as number) ?? 0)) {
-        await db("user_step_progress")
-          .where({ id: existing.id })
-          .update({ best_score: newScore });
       }
-    } else {
-      await db("user_step_progress").insert({
-        user_id: userId,
-        step_id: session.step_id,
-        tests_completed: 1,
-        is_step_completed: true,
-        step_final_passed: true,
-        completed_at: db.fn.now(),
-        best_score: newScore,
-      });
-      stepCompleted = true;
+
+      // Check if all lesson steps in topic are completed
+      if (stepCompleted && step) {
+        const lessonSteps = await trx("steps")
+          .where({ topic_id: step.topic_id, step_type: "lesson" });
+        const completedSteps = await trx("user_step_progress")
+          .where({ user_id: userId, is_step_completed: true })
+          .whereIn("step_id", lessonSteps.map((s) => s.id));
+
+        topicCompleted = completedSteps.length === lessonSteps.length;
+      }
     }
 
-    // Check if all lesson steps in topic are completed
-    if (stepCompleted && step) {
-      const lessonSteps = await db("steps")
-        .where({ topic_id: step.topic_id, step_type: "lesson" });
-      const completedSteps = await db("user_step_progress")
-        .where({ user_id: userId, is_step_completed: true })
-        .whereIn("step_id", lessonSteps.map((s) => s.id));
+    // Check and grant achievements
+    await checkAndGrantAchievementsInTrx(trx, userId, {
+      correctCount,
+      totalQuestions: answers.length,
+      sessionId,
+    });
 
-      topicCompleted = completedSteps.length === lessonSteps.length;
-    }
-  }
-
-  // Check and grant achievements
-  await checkAndGrantAchievements(userId, {
-    correctCount,
-    totalQuestions: answers.length,
-    sessionId,
+    return {
+      ...updated,
+      acorn_earned: acornEarned,
+      step_completed: stepCompleted,
+      topic_completed: topicCompleted,
+    };
   });
-
-  return {
-    ...updated,
-    acorn_earned: acornEarned,
-    step_completed: stepCompleted,
-    topic_completed: topicCompleted,
-  };
 };
 
 export const finishSessionWithAnswers = async (
@@ -494,7 +491,7 @@ export const finishSessionWithAnswers = async (
   // Fetch all MC answers needed for validation
   const answerIds = input.answers.map((a) => a.answerId).filter(Boolean) as string[];
   const dbAnswers = answerIds.length > 0
-    ? await db("answers").whereIn("id", answerIds).select("id", "is_correct")
+    ? await db("answers").whereIn("id", answerIds).select("id", "question_id", "is_correct")
     : [];
   const answerMap = new Map(dbAnswers.map((a) => [a.id, a]));
 
@@ -524,7 +521,7 @@ export const finishSessionWithAnswers = async (
             case "true_false": {
               if (ans.answerId) {
                 const dbAns = answerMap.get(ans.answerId);
-                isCorrect = Boolean(dbAns?.is_correct);
+                isCorrect = Boolean(dbAns && dbAns.question_id === ans.questionId && dbAns.is_correct);
               }
               break;
             }
@@ -565,7 +562,7 @@ export const finishSessionWithAnswers = async (
             default: {
               if (ans.answerId) {
                 const dbAns = answerMap.get(ans.answerId);
-                isCorrect = Boolean(dbAns?.is_correct);
+                isCorrect = Boolean(dbAns && dbAns.question_id === ans.questionId && dbAns.is_correct);
               }
             }
           }
@@ -594,7 +591,9 @@ export const finishSessionWithAnswers = async (
 
     // Deduct energy for wrong answers
     if (energyToDeduct > 0) {
-      await trx("users").where({ id: userId }).decrement("energy", energyToDeduct);
+      await trx("users")
+        .where({ id: userId })
+        .update({ energy: db.raw("GREATEST(energy - ?, 0)", [energyToDeduct]) });
       await trx("quiz_sessions").where({ id: sessionId }).increment("energy_lost", energyToDeduct);
     }
 
@@ -743,89 +742,6 @@ export const finishSessionWithAnswers = async (
   });
 };
 
-async function checkAndGrantAchievements(
-  userId: string,
-  sessionResult: { correctCount: number; totalQuestions: number; sessionId: string },
-) {
-  const achievements = await db("achievements");
-  const userAchievements = await db("user_achievements").where({ user_id: userId });
-  const earnedIds = new Set(userAchievements.map((ua) => ua.achievement_id));
-
-  const stats = await db("user_stats").where({ user_id: userId }).first();
-  const totalQuizzes = await db("quiz_sessions")
-    .where({ user_id: userId })
-    .whereNotNull("finished_at")
-    .count("id as count")
-    .first();
-
-  const quizzesCompleted = Number(totalQuizzes?.count ?? 0);
-  const accuracy = sessionResult.totalQuestions > 0
-    ? sessionResult.correctCount / sessionResult.totalQuestions
-    : 0;
-
-  const newlyEarned: string[] = [];
-
-  for (const achievement of achievements) {
-    if (earnedIds.has(achievement.id)) continue;
-
-    let qualified = false;
-
-    switch (achievement.requirement_type) {
-      case "quiz_accuracy":
-        qualified = accuracy >= achievement.requirement_value / 100;
-        break;
-      case "quiz_perfect":
-        qualified = accuracy === 1 && sessionResult.totalQuestions >= achievement.requirement_value;
-        break;
-      case "quizzes_completed":
-        qualified = quizzesCompleted >= achievement.requirement_value;
-        break;
-      case "streak_days":
-        qualified = (stats?.current_streak ?? 0) >= achievement.requirement_value;
-        break;
-      case "total_xp":
-        qualified = (stats?.total_xp ?? 0) >= achievement.requirement_value;
-        break;
-      case "friends_count": {
-        const friendCount = await db("friendships")
-          .where({ user_id: userId, status: "accepted" })
-          .count("id as count")
-          .first();
-        qualified = Number(friendCount?.count ?? 0) >= achievement.requirement_value;
-        break;
-      }
-    }
-
-    if (qualified) {
-      newlyEarned.push(achievement.id);
-    }
-  }
-
-  if (newlyEarned.length > 0) {
-    await db("user_achievements").insert(
-      newlyEarned.map((achievementId) => ({
-        user_id: userId,
-        achievement_id: achievementId,
-      })),
-    );
-
-    // Award acorn for each new achievement
-    const acornPerAchievement = 5;
-    const totalAcorn = newlyEarned.length * acornPerAchievement;
-
-    await db("users").where({ id: userId }).increment("acorn_balance", totalAcorn);
-
-    for (const achievementId of newlyEarned) {
-      await db("acorn_transactions").insert({
-        user_id: userId,
-        amount: acornPerAchievement,
-        type: "earned_achievement",
-        reference_id: achievementId,
-      });
-    }
-  }
-}
-
 async function checkAndGrantAchievementsInTrx(
   trx: Knex.Transaction,
   userId: string,
@@ -886,23 +802,30 @@ async function checkAndGrantAchievementsInTrx(
   }
 
   if (newlyEarned.length > 0) {
-    await trx("user_achievements").insert(
-      newlyEarned.map((achievementId) => ({
-        user_id: userId,
-        achievement_id: achievementId,
-      })),
-    );
+    const insertedRows: Array<{ achievement_id: string }> = await trx("user_achievements")
+      .insert(
+        newlyEarned.map((achievementId) => ({
+          user_id: userId,
+          achievement_id: achievementId,
+        })),
+      )
+      .onConflict(["user_id", "achievement_id"])
+      .ignore()
+      .returning("achievement_id");
 
-    const acornPerAchievement = 5;
-    await trx("users").where({ id: userId }).increment("acorn_balance", newlyEarned.length * acornPerAchievement);
+    const actuallyEarned = insertedRows.map((r) => r.achievement_id);
+    if (actuallyEarned.length > 0) {
+      const acornPerAchievement = 5;
+      await trx("users").where({ id: userId }).increment("acorn_balance", actuallyEarned.length * acornPerAchievement);
 
-    for (const achievementId of newlyEarned) {
-      await trx("acorn_transactions").insert({
-        user_id: userId,
-        amount: acornPerAchievement,
-        type: "earned_achievement",
-        reference_id: achievementId,
-      });
+      for (const achievementId of actuallyEarned) {
+        await trx("acorn_transactions").insert({
+          user_id: userId,
+          amount: acornPerAchievement,
+          type: "earned_achievement",
+          reference_id: achievementId,
+        });
+      }
     }
   }
 }

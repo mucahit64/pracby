@@ -57,7 +57,7 @@
         </div>
 
         <!-- Question text (not for swipe/fill_blank) -->
-        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="question-html text-base sm:text-lg text-gray-800 leading-snug space-y-2" v-html="currentQuestion.question_text"/>
+        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="question-html text-base sm:text-lg text-gray-800 leading-snug space-y-2" v-html="sanitizeHtml(currentQuestion.question_text)"/>
 
         <!-- Question image -->
         <div v-if="currentQuestion.image_url" class="w-full">
@@ -256,7 +256,7 @@
             >
               <div class="absolute top-3 right-3 text-positive font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeRightOpacity }">DOĞRU ✓</div>
               <div class="absolute top-3 left-3 text-negative font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeLeftOpacity }">YANLIŞ ✗</div>
-              <p class="text-base font-bold text-gray-800" v-html="currentQuestion.question_text"/>
+              <p class="text-base font-bold text-gray-800" v-html="sanitizeHtml(currentQuestion.question_text)"/>
             </div>
             <div v-if="!answered" class="flex justify-between w-full max-w-[340px] text-xs font-extrabold text-gray-400">
               <span>← YANLIŞ</span>
