@@ -256,7 +256,7 @@
             >
               <div class="absolute top-3 right-3 text-positive font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeRightOpacity }">DOĞRU ✓</div>
               <div class="absolute top-3 left-3 text-negative font-black text-lg opacity-0 transition-opacity" :style="{ opacity: swipeLeftOpacity }">YANLIŞ ✗</div>
-              <p class="text-base font-bold text-gray-800" v-html="sanitizeHtml(currentQuestion.question_text)"/>
+              <div class="text-base font-bold text-gray-800 space-y-2" v-html="sanitizeHtml(currentQuestion.question_text)"/>
             </div>
             <div v-if="!answered" class="flex justify-between w-full max-w-[340px] text-xs font-extrabold text-gray-400">
               <span>← YANLIŞ</span>
