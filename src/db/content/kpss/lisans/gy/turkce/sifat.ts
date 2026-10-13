@@ -5,7 +5,7 @@ import { McQ } from "../../../../types";
 // ============================================================================
 export const TUR_SIFAT_TEST_1: McQ[] = [
   {
-    text: "<p>Tohum <u>I. ekmeyen</u> çiftçi ürün <u>II. alamayacağı</u> gibi aşısı sevgi olmayan eğitim de insan yetiştiremeyecektir. Öyleyse <u>III. sevgisiz</u> eğitim, <u>IV. beklenen</u> meyvesini veremeyecektir. <u>V. meyvesini</u></p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangisi niteleme görevinde <u>kullanılmamıştır</u>?</b></p>",
+    text: "<p>Tohum <u>I. ekmeyen</u> çiftçi ürün <u>II. alamayacağı</u> gibi aşısı sevgi <u>III. olmayan</u> eğitim de insan yetiştiremeyecektir. Öyleyse <u>IV. sevgisiz</u> eğitim, <u>V. beklenen</u> meyvesini veremeyecektir.</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangisi niteleme görevinde <u>kullanılmamıştır</u>?</b></p>",
     diff: 3,
     expl: "II numaralı 'alamayacağı' sözcüğü '-acak' sıfat-fiil ekiyle çekimlenmiş olmasına rağmen herhangi bir ismi nitelemediği için adlaşmıştır, isim görevinde kullanılmıştır. Diğerleri sıfat-fiil veya türemiş sıfat olarak isim nitelemiştir.",
     answers: [
@@ -17,19 +17,19 @@ export const TUR_SIFAT_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>İsviçre'nin kışı başka, yazı başka güzel. Kışın, bembeyaz, <u>I. gıcır gıcır</u> bir kar dünyayı kaplamış; yazın her taraf alabildiğine yemyeşil ve her yerde <u>II. rengârenk</u> çiçekler fışkırır, Leman Gölü ise yaz kış mavi ile yeşil <u>III. arası</u>.</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangileri niteleme görevinde kullanılmıştır?</b></p>",
+    text: "<p>İsviçre'nin kışı başka, yazı başka <u>I. güzel</u>. Kışın, bembeyaz, <u>II. gıcır gıcır</u> bir kar dünyayı kaplamış; yazın her taraf alabildiğine <u>III. yemyeşil</u> ve her yerde <u>IV. rengârenk</u> çiçekler fışkırır, Leman Gölü ise yaz kış <u>V. mavi</u> ile yeşil arası.</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangileri niteleme görevinde kullanılmıştır?</b></p>",
     diff: 2,
-    expl: "Parçadaki 'gıcır gıcır' ikilemesi 'bir kar' söz grubunu; 'rengârenk' sözcüğü ise 'çiçekler' ismini nitelediği için sıfattır. Bu ikisi niteleme görevindedir.",
+    expl: "Parçadaki II numaralı 'gıcır gıcır' ikilemesi 'bir kar' söz grubunu; IV numaralı 'rengârenk' sözcüğü de 'çiçekler' ismini nitelediği için sıfattır. Diğer sözcükler herhangi bir ismi nitelemedikleri için isimleşmiştir.",
     answers: [
-      { text: "Yalnız I", ok: false },
       { text: "Yalnız II", ok: false },
-      { text: "I ve II", ok: true },
-      { text: "II ve III", ok: false },
-      { text: "I, II ve III", ok: false }
+      { text: "Yalnız IV", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "II ve IV", ok: true },
+      { text: "III ve V", ok: false }
     ]
   },
   {
-    text: "<p>Gerçek bir ay <u>I. başlangıcı</u>. Hava sıcak ve boğucu. Bozkır, <u>II. yaz</u> mevsiminin geldiğinin farkında. Ankara'da yaz başlangıcı böyle <u>III. mattır</u>; kaldırımlardan, topraktan fışkırmaz <u>IV. sıcak</u>. Yayılır, havada durur, renkleri parlaklaştırır. Güneş, <u>V. uzun</u> süre yerine çakılı kalır.</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangileri niteleme görevinde kullanılmıştır?</b></p>",
+    text: "<p>Gerçek bir ay başlangıcı. Hava sıcak ve <u>I. boğucu</u>. Bozkır, <u>II. yaz</u> mevsiminin geldiğinin farkında. Ankara'da yaz başlangıcı böyle <u>III. mattır</u>; kaldırımlardan, topraktan fışkırmaz <u>IV. sıcak</u>. Yayılır, havada durur, renkleri parlaklaştırır. Güneş, <u>V. uzun</u> süre yerine çakılı kalır.</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangileri niteleme görevinde kullanılmıştır?</b></p>",
     diff: 2,
     expl: "Parçadaki 'uzun' sözcüğü, 'süre' isminden hemen önce geldiği ve onunla ilgili nitelik bildirdiği için sıfattır (uzun süre). Fakat diğer sözcükler herhangi bir isimden önce gelip niteleme görevinde kullanılmadıkları için isimdir.",
     answers: [
@@ -45,11 +45,11 @@ export const TUR_SIFAT_TEST_1: McQ[] = [
     diff: 2,
     expl: "E seçeneğindeki 'kimi' sözcüğü bir isimden hemen önce gelmediği, ismin yerini tuttuğu için zamirdir. Diğer seçeneklerdeki 'onlarca insan', 'on on beş kişi', 'birçok göl', 'nice zamandır' tamlamalarında altı çizili türdeki sözcükler belgisiz sıfattır.",
     answers: [
-      { text: "<u>Onlarca</u> insan bankanın önünde sıraya girmiş, maaşlarını çekmeyi bekliyordu.", ok: false },
-      { text: "Öğretmenler <u>on on beş</u> kişiyi bir araya getirmiş, onları çalışma kampına almışlardı.", ok: false },
-      { text: "Mağaranın içine girince gördük ki mağarada aynı zamanda <u>birçok</u> göl bulunuyordu.", ok: false },
-      { text: "<u>Nice</u> zamandır memleketime gidemiyor, büyüklerimi ziyaret edemiyorum.", ok: false },
-      { text: "Bu konuda <u>kimi</u> akademik kaynağa yönelir <u>kimi</u> de öğretmenlere danışır.", ok: true }
+      { text: "Onlarca insan bankanın önünde sıraya girmiş, maaşlarını çekmeyi bekliyordu.", ok: false },
+      { text: "Öğretmenler on on beş kişiyi bir araya getirmiş, onları çalışma kampına almışlardı.", ok: false },
+      { text: "Mağaranın içine girince gördük ki mağarada aynı zamanda birçok göl bulunuyordu.", ok: false },
+      { text: "Nice zamandır memleketime gidemiyor, büyüklerimi ziyaret edemiyorum.", ok: false },
+      { text: "Bu konuda kimi akademik kaynağa yönelir kimi de öğretmenlere danışır.", ok: true }
     ]
   },
   {
@@ -77,9 +77,9 @@ export const TUR_SIFAT_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Senaryonun kaynağı <u>I. olan</u> kitabı daha <u>II. iyi</u> <u>III. yansıtsın</u> diye filmin senaryosunda <u>IV. büyük</u> çaplı değil, <u>V. ufak</u> birkaç değişiklik yaptık.</p><p><b>Numaralanmış sözcüklerden hangisi tür bakımından diğerlerinden farklıdır?</b></p>",
+    text: "<p>Senaryonun kaynağı <u>I. olan</u> kitabı daha <u>II. iyi</u> yansıtsın diye filmin senaryosunda <u>III. büyük</u> çaplı değil, <u>IV. ufak</u> <u>V. birkaç</u> değişiklik yaptık.</p><p><b>Numaralanmış sözcüklerden hangisi tür bakımından diğerlerinden farklıdır?</b></p>",
     diff: 2,
-    expl: "II numaralı 'iyi' sözcüğü 'yansıtsın' fiilini nitelediği için zarftır. I (olan kitap), III (büyük çap), IV (ufak değişiklik) sözcükleri ise ismi niteledikleri için sıfattır.",
+    expl: "II numaralı 'iyi' sözcüğü 'yansıtsın' fiilini nitelediği için zarftır. I (olan kitap), III (büyük çap), IV (ufak değişiklik) ve V (birkaç değişiklik) sözcükleri ise ismi niteledikleri için sıfattır.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: true },
@@ -91,7 +91,7 @@ export const TUR_SIFAT_TEST_1: McQ[] = [
   {
     text: "<p>(I) Bugün şehir beni pırıl pırıl bir havayla karşılıyor. (II) Bu güzel havada yeni keşifler için otelden ayrılıyorum. (III) Burası için metropol denemez ama oldukça hareketli bir şehir. (IV) Bu şehrin en güzel tarafı eşsiz tarihî güzellikleri ve leziz yemekleri. (V) Tarih yolculuğu ise hemen şehrin girişinde sizleri karşılıyor.</p><p><b>Bu parçada numaralanmış cümlelerle ilgili olarak aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
     diff: 3,
-    expl: "V numaralı cümlede 'hemen' sözcüğü 'çok' anlamında bir zarftır. Cümlede sıfat görevi gören veya niteleme yapan bir sözcük yoktur ('tarih yolculuğu' ve 'şehrin girişi' isim tamlamalarıdır).",
+    expl: "V numaralı cümlede 'hemen' sözcüğü 'çok' anlamında, bir isimden hemen önce kullanıldığı için sıfattır ('hemen yanında, hemen dibinde' gibi). Net bir miktar ve nitelik bilgisi vermediği için belgisiz sıfat kabul edilir. Bu nedenle E'deki yargı yanlıştır.",
     answers: [
       { text: "I. cümlede ikileme, niteleme sıfatı görevindedir.", ok: false },
       { text: "II. cümlede farklı türde sıfatlar bulunmaktadır.", ok: false },
@@ -103,11 +103,11 @@ export const TUR_SIFAT_TEST_1: McQ[] = [
   {
     text: "<p><b>Aşağıda verilen altı çizili sözcüklerden hangisi cümlede sıfat görevinde <u>kullanılmamıştır</u>?</b></p>",
     diff: 2,
-    expl: "E seçeneğindeki 'kolaydan zora doğru' ifadesinde 'kolaydan' sözcüğü '-dan' çıkma hâl eki almış bir isimdir. Çekim ekleri sıfatların niteleme/belirtme işlevlerini bozarak onları adlaştırır. Diğerlerindeki altı çizili sözcükler 'sözde özne', 'baş mimar', 'yazlık belde', 'candan insan' sıfat tamlaması kurmuştur.",
+    expl: "E seçeneğindeki 'kolaydan zora doğru' ifadesinde 'kolaydan' sözcüğü '-dan' çıkma hâl eki almış bir isimdir. Çekim ekleri sıfatların niteleme/belirtme işlevlerini bozarak onları adlaştırır. Diğer sözcüklerdeki (sözde, uzaktan, tahtadan, candan) '-da' ve '-dan' ekleri çekim eki işlevlerinden sıyrılmış, isimden isim yapma görevinde kullanılmış ve türemiş sıfat yapmıştır.",
     answers: [
       { text: "Edilgen cümlelerde <u>sözde</u> özne dediğimiz, işten etkilenen nesnenin kendisidir.", ok: false },
-      { text: "Aileler arasındaki tartışmaların <u>baş</u> mimarı nedir dersiniz: uzaktan kumanda!", ok: false },
-      { text: "Bu yıl gittiğimiz <u>yazlık</u> beldede, orada yaşayan herkes dizmiş bahçeye tahtadan iskemlelerini.", ok: false },
+      { text: "Aileler arasındaki tartışmaların baş mimarı nedir dersiniz: <u>uzaktan</u> kumanda!", ok: false },
+      { text: "Bu yıl gittiğimiz yazlık beldede, orada yaşayan herkes dizmiş bahçeye <u>tahtadan</u> iskemlelerini.", ok: false },
       { text: "Etrafınız <u>candan</u> insanlarla dolsun taşsın ki her zaman kendiniz olabilin.", ok: false },
       { text: "Soru bankasını hazırlarken soruları <u>kolaydan</u> zora doğru düzenledim, beğendiniz mi?", ok: true }
     ]
@@ -141,10 +141,10 @@ export const TUR_SIFAT_TEST_1: McQ[] = [
     diff: 3,
     expl: "E seçeneğinde verilen durumu örnekleyen kurallı birleşik sıfata yer verilmemiştir. Cümlede 'cimri insanlar' sıfat tamlamasıdır ama basit yapılıdır. A'da 'uzun kol-lu giysi', B'de 'iki kişi-lik oda', C'de 'üç gün-lük dünya', D'de 'bir milyon-luk ev' ifadeleri kurallı birleşik sıfattır.",
     answers: [
-      { text: "Artık Ankara'da iki mevsim yaşanıyor; <u>uzun kollu</u>, ince giysiler giyilemiyor maalesef.", ok: false },
-      { text: "Bu yaz da <u>iki kişilik</u> bir oda kiralamışlar, yemeklerini kendileri yapmışlar.", ok: false },
-      { text: "<u>Üç günlük</u> dünyada insanları kırmaya, keşkelerle yaşamaya değer mi?", ok: false },
-      { text: "<u>Bir milyonluk</u> evde oturacağına, küçük bir evde otur da kalan paraya hayvan barınağı yaptır.", ok: false },
+      { text: "Artık Ankara'da iki mevsim yaşanıyor; uzun kollu, ince giysiler giyilemiyor maalesef.", ok: false },
+      { text: "Bu yaz da iki kişilik bir oda kiralamışlar, yemeklerini kendileri yapmışlar.", ok: false },
+      { text: "Üç günlük dünyada insanları kırmaya, keşkelerle yaşamaya değer mi?", ok: false },
+      { text: "Bir milyonluk evde oturacağına, küçük bir evde otur da kalan paraya hayvan barınağı yaptır.", ok: false },
       { text: "Cimri insanlardan kaçının; parasını esirgeyen, koşulsuz sever mi seni?", ok: true }
     ]
   }

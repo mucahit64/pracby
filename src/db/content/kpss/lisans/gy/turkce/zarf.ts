@@ -29,7 +29,7 @@ export const TUR_ZARF_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><u>I. Elbette</u> ki serbest nazım <u>II. en</u> güç olanıdır. <u>III. Hele</u> okuyanın anlaması <u>IV. büsbütün</u> zordur çünkü her şairin ahengini keşfetmesi lâzımdır. Bunun için serbest nazmın <u>V. ne kadar</u> yerleşirse yerleşsin aruzu ve heceyi büsbütün ortadan kaldırması imkânsızdır.</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangisi tür bakımından ötekilerden farklıdır?</b></p>",
+    text: "<p><u>I. Elbette</u> ki serbest nazım <u>II. en</u> güç olanıdır. <u>III. Hele</u> okuyanın anlaması büsbütün zordur çünkü her şairin ahengini keşfetmesi lâzımdır. Bunun için serbest nazmın <u>IV. ne kadar</u> yerleşirse yerleşsin aruzu ve heceyi <u>V. büsbütün</u> ortadan kaldırması imkânsızdır.</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangisi tür bakımından ötekilerden farklıdır?</b></p>",
     diff: 3,
     expl: "III numaralı \"hele\" sözcüğü cümleler arası anlam bağı sağladığı için bağlaçtır. Diğerleri ise zarftır (elbette: durum zarfı, en: derecelendirme zarfı, büsbütün: durum zarfı, ne kadar: soru zarfı).",
     answers: [
@@ -41,7 +41,7 @@ export const TUR_ZARF_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>İnsanı ancak kendisi tamamlar<br>İçinde başka dışında başkasın<br>Eksiğin fazlana elbet bulaşacak</p><p><b>Bu şiirde aşağıdakilerden hangisi örneklenmemiştir?</b></p>",
+    text: "<p>İnsanı ancak kendisi tamamlar<br>İçinde başka dışında başkasın<br>Eksiğin fazlana elbet bulaşacak</p><p><b>Bu şiirde aşağıdakilerden hangisi <u>örneklenmemiştir</u>?</b></p>",
     diff: 3,
     expl: "Şiirde derecelendirme zarfı (en, daha, çok vb.) kullanılmamıştır. İnsanı (tekil ad), ancak (zarf), kendisi (zamir), elbet (durum zarfı), eksiğin (adlaşmış sıfat) sözcükleri diğer seçenekleri örnekler.",
     answers: [
@@ -57,35 +57,35 @@ export const TUR_ZARF_TEST_1: McQ[] = [
     diff: 2,
     expl: "E seçeneğindeki \"perperişan\" pekiştirmeli sözcüğü, \"bırakır\" fiilini nitelediği (Nasıl bırakır?) için zarf görevindedir. Diğerlerindeki pekiştirmeli sözcükler (koskoca dünyanın, yepyeni bir adam, yemyeşil bir ışık, yusyuvarlak gözler) ismin önüne gelerek sıfat görevini üstlenmiştir.",
     answers: [
-      { text: "<u>Koskoca</u> dünyanın içinde tek başına kalmış gibiyim.", ok: false },
-      { text: "Hayatın bütün zorluklarına rağmen her daim <u>yepyeni</u> bir adam olacaktı.", ok: false },
-      { text: "<u>Yemyeşil</u> bir ışığın altına küçük masalar ve tabureler konmuştu.", ok: false },
-      { text: "Uzun tüyleri, <u>yusyuvarlak</u> gözleriyle kendisini sevmemi istiyordu.", ok: false },
-      { text: "Gün ağardı mı zavallıyı ter içinde <u>perperişan</u> bırakır giderdi.", ok: true }
+      { text: "Koskoca dünyanın içinde tek başına kalmış gibiyim.", ok: false },
+      { text: "Hayatın bütün zorluklarına rağmen her daim yepyeni bir adam olacaktı.", ok: false },
+      { text: "Yemyeşil bir ışığın altına küçük masalar ve tabureler konmuştu.", ok: false },
+      { text: "Uzun tüyleri, yusyuvarlak gözleriyle kendisini sevmemi istiyordu.", ok: false },
+      { text: "Gün ağardı mı zavallıyı ter içinde perperişan bırakır giderdi.", ok: true }
     ]
   },
   {
-    text: "<p><u>I. Bazı günler</u> sadece <u>II. gökyüzüne</u> <u>III. birkaç dakika</u> bakmak, var olduğunu kendime hatırlatmak için <u>IV. dışarı</u> çıkıyorum. Kriz <u>V. her ne ise</u> hepimiz, <u>VI. aynı gökyüzünün</u> altındayız.</p><p><b>Bu parçadaki altı çizili sözcüklerden hangisi farklı türdedir?</b></p>",
+    text: "<p><u>I. Bazı</u> günler sadece gökyüzüne <u>II. birkaç</u> dakika bakmak, var olduğunu kendime hatırlatmak için <u>III. dışarı</u> çıkıyorum. Kriz <u>IV. her</u> ne ise hepimiz, <u>V. aynı</u> gökyüzünün altındayız.</p><p><b>Bu parçadaki altı çizili sözcüklerden hangisi farklı türdedir?</b></p>",
     diff: 2,
-    expl: "IV numaralı \"dışarı\" sözcüğü \"çıkıyorum\" fiilinin yönünü (Nereye çıkıyorum?) yalın hâlde bildirdiğine göre yön zarfıdır. Parçadaki diğer altı çizili kelimeler veya gruplar ise isim veya sıfat (bazı, birkaç, aynı vb.) görevlerindedir.",
+    expl: "III numaralı \"dışarı\" sözcüğü \"çıkıyorum\" fiilinin yönünü bildirdiğine göre yön zarfıdır. Diğer sözcükler (bazı, birkaç, her, aynı) ise sıfattır.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
-      { text: "IV (dışarı)", ok: true },
-      { text: "V", ok: false },
-      { text: "VI", ok: false }
+      { text: "III", ok: true },
+      { text: "IV", ok: false },
+      { text: "V", ok: false }
     ]
   },
   {
-    text: "<p><u>I. Bugünü</u>, dünün sözcükleriyle ifade edemeyeceğimiz gibi, <u>II. yarının</u> dünyasını da <u>III. bugünün</u> anlamlarıyla anlatamayız. <u>IV. Şu an</u> kullandığımız sözcükler, toplumsal değişim sürecine ister istemez ayak uyduracaktır.</p><p><b>Bu parçadaki numaralanmış altı çizili sözcüklerden hangisi zaman bildirme görevinde kullanılmıştır?</b></p>",
+    text: "<p><u>I. Bugünü</u>, <u>II. dünün</u> sözcükleriyle ifade edemeyeceğimiz gibi, <u>III. yarının</u> dünyasını da <u>IV. bugünün</u> anlamlarıyla anlatamayız. <u>V. Şu an</u> kullandığımız sözcükler, toplumsal değişim sürecine ister istemez ayak uyduracaktır.</p><p><b>Bu parçadaki numaralanmış altı çizili sözcüklerden hangisi zaman bildirme görevinde kullanılmıştır?</b></p>",
     diff: 2,
-    expl: "IV numaralı \"şu an\" sözcüğü \"kullandığımız\" sıfat-fiilini zaman bakımından (Ne zaman kullandığımız?) kısıtladığı için zaman zarfıdır. Diğerlerindeki zaman bildiren kelimeler (bugünü, yarının vb.) çekim ekleri aldıkları için isimleşmişlerdir.",
+    expl: "V numaralı \"şu an\" sözcüğü \"kullandığımız\" sıfat-fiilini zaman bakımından (Ne zaman kullandığımız?) kısıtladığı için zaman zarfıdır. Diğerlerindeki zaman bildiren kelimeler (bugünü, yarının vb.) çekim ekleri aldıkları için isimleşmişlerdir.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
       { text: "III", ok: false },
-      { text: "IV", ok: true },
-      { text: "Soru metnindeki V (kitap baskı hatası)", ok: false }
+      { text: "IV", ok: false },
+      { text: "V", ok: true }
     ]
   },
   {
@@ -93,11 +93,11 @@ export const TUR_ZARF_TEST_1: McQ[] = [
     diff: 3,
     expl: "Öncüldeki dizelerde geçen \"çok\" sözcüğü \"erken\" zaman zarfını derecelendirdiği için derecelendirme zarfıdır. C seçeneğinde derecelendirme zarfına yer verilmemiştir. Diğerlerindeki 'çok', 'hayli', 'en', 'pek' sözcükleri derecelendirme zarfıdır.",
     answers: [
-      { text: "Sosyal hayatın <u>çok</u> boyutlu yapısının, birtakım olumsuzluklar doğurduğu yadsınamaz bir gerçektir.", ok: false },
-      { text: "Pandemi başladığından beri öğrencilerden, sınıf ortamından <u>hayli</u> uzakta kalmış bulunuyoruz.", ok: false },
-      { text: "Bugünkü şartlar eskiyi aramak değil, yeniyi kurmağa çalışmaktır.", ok: true },
-      { text: "Büyüklerimiz mutlu bir anda dahi <u>en</u> kötü günümüz böyle olsun, derlerdi.", ok: false },
-      { text: "Son zamanlarda <u>pek</u> de elverişli olmayan bir çalışma temposu içerisinde olmaktan yorgun düştü.", ok: false }
+      { text: "Sosyal hayatın çok boyutlu yapısının, birtakım olumsuzluklar doğurduğu yadsınamaz bir gerçektir.", ok: false },
+      { text: "Pandemi başladığından beri öğrencilerden, sınıf ortamından hayli uzakta kalmış bulunuyoruz.", ok: false },
+      { text: "Bugünkü şairin vazifesi eskiyi aramak değil, yeniyi kurmağa çalışmaktır.", ok: true },
+      { text: "Büyüklerimiz mutlu bir anda dahi en kötü günümüz böyle olsun, derlerdi.", ok: false },
+      { text: "Son zamanlarda pek de elverişli olmayan bir çalışma temposu içerisinde olmaktan yorgun düştü.", ok: false }
     ]
   },
   {
@@ -125,7 +125,7 @@ export const TUR_ZARF_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Şiirde sesi <u>nasıl</u> kullandığımız, <u>hangi</u> kelimeyi veya heceyi vurguladığımız, <u>nasıl</u> bir ses tonu ile okuduğumuz, uzun-kısa, kalın-ince ses özelliklerini <u>nasıl</u> kullandığımız, <u>nasıl</u> bir hece ölçüsü seçtiğimiz ve ses benzerliğini <u>nasıl</u> sağladığımız şiirin ritmine yöneliktir. Ritmi <u>ne kadar</u> duyurabildiğimiz, <u>hangi</u> kelimeyi <u>ne zaman</u>, <u>nerede</u>, <u>niye</u> kullandığımız, <u>ne</u> tür bir yapı kurguladığımız önemlidir.</p><p><b>Bu parçadaki numaralanmış on iki soru sözcüğünü, türleri bakımından sınıflandırırsak aşağıdakilerden hangisi doğrudur?</b></p>",
+    text: "<p>Şiirde sesi <u>I. nasıl</u> kullandığımız, <u>II. hangi</u> kelimeyi veya heceyi vurguladığımız, <u>III. nasıl</u> bir ses tonu ile okuduğumuz, uzun-kısa, kalın-ince ses özelliklerini <u>IV. nasıl</u> kullandığımız, <u>V. nasıl</u> bir hece ölçüsü seçtiğimiz ve ses benzerliğini <u>VI. nasıl</u> sağladığımız şiirin ritmine yöneliktir. Ritmi <u>VII. ne kadar</u> duyurabildiğimiz, <u>VIII. hangi</u> kelimeyi <u>IX. ne zaman</u>, <u>X. nerede</u>, <u>XI. niye</u> kullandığımız, <u>XII. ne</u> tür bir yapı kurguladığımız önemlidir.</p><p><b>Bu parçadaki numaralanmış on iki soru sözcüğünü, türleri bakımından sınıflandırırsak aşağıdakilerden hangisi doğrudur?</b></p>",
     diff: 3,
     expl: "Parçadaki soru sözcüklerinden 6'sı zarf (nasıl kullandığımız, nasıl kullandığımız, nasıl sağladığımız, ne kadar duyurabildiğimiz, ne zaman, niye), 1'i zamir (nerede), 5'i sıfattır (hangi kelime, nasıl bir ses, nasıl bir hece, hangi kelime, ne tür).",
     answers: [

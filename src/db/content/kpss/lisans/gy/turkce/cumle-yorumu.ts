@@ -5,7 +5,7 @@ import { McQ } from "../../../../types";
 // ============================================================================
 export const TUR_CUMLE_YORUMU_TEST_1: McQ[] = [
   {
-    text: "<p>Zamana direnemeyen mekânlar, edebiyatın tanıklığıyla oluşan hafızada sonsuza kadar yaşayabilir.</p><p><b>Bu cümlede asıl anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Zamana direnemeyen mekânlar, edebiyatın tanıklığıyla oluşan hafızada sonsuza kadar yaşayabilir.</p><p><b>Bu cümlede <u>asıl</u> anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Cümlede fiziksel olarak yok olan (zamana direnemeyen) yerlerin, edebi eserler sayesinde insanların hafızasında kalıcı olabileceği vurgulanmıştır. Yazın metinlerinin bu hafızayı kayıt altına alması bir arşiv işlevi görmesidir.",
     answers: [
@@ -17,7 +17,7 @@ export const TUR_CUMLE_YORUMU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Dil, tamamlanmış bir sistem değil; sürüp giden bir etkinliktir. Her gün dile yeni sözcükler eklenir, zamanla bazı değişiklikler gösterir. Çünkü dil, canlı bir organizma gibidir dil.</p><p><b>Bu parçada dilin özelliğiyle ilgili asıl anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Dil, tamamlanmış bir sistem değil; sürüp giden bir etkinliktir. Her gün dile yeni sözcükler eklenir, zamanla bazı değişiklikler gösterir. Çünkü dil, canlı bir organizma gibidir dil.</p><p><b>Bu parçada dilin özelliğiyle ilgili <u>asıl</u> anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Dilin canlı bir organizma olması ve sürekli değişmesi, dildeki kelime varlığının sabit (altına çizgi çekilmiş bir sayı) olmadığını, her an geliştiğini ifade eder.",
     answers: [
@@ -29,7 +29,7 @@ export const TUR_CUMLE_YORUMU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>“Yazarken kitapları bir yana bırakır, aklımdan çıkarırım; kendi gidişimi aksatırlar diye. Gerçekten de iyi yazarlar üstüme fena abanır, yüreksiz ederler beni. Hani bir ressam varmış, kötü horoz resimleri yapar ve uşaklarına, dükkana hiç canlı horoz sokmamalarını sıkı sıkı tembih edermiş, ben de öyle.”</p><p><b>Bu sözleri söyleyen yazarın kaçındığı durum aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>“Yazarken kitapları bir yana bırakır, aklımdan çıkarırım; kendi gidişimi aksatırlar diye. Gerçekten de iyi yazarlar üstüme fena abanır, yüreksiz ederler beni. Hani bir ressam varmış, kötü horoz resimleri yapar ve uşaklarına, dükkâna hiç canlı horoz sokmamalarını sıkı sıkı tembih edermiş, ben de öyle.”</p><p><b>Bu sözleri söyleyen yazarın kaçındığı durum aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Yazarın başka yazarların etkisinden korkması ve onlara benzemekten kaçınması 'öykünmek' (taklit etmek) kavramıyla açıklanır. Yazar özgünlüğünü korumak için öykünmekten kaçınmaktadır.",
     answers: [
@@ -45,15 +45,15 @@ export const TUR_CUMLE_YORUMU_TEST_1: McQ[] = [
     diff: 3,
     expl: "Edebi eserlerin modernleşmenin getirdiği olumsuzluklara karşı bir sığınak olması, onların kimlik inşasındaki rolü ve güven duygusu sağlamasıyla doğrudan ilişkilidir.",
     answers: [
-      { text: "A) Modernleşmeyle hafıza yalnızca sanatın değil, birçok disiplinin ilgi odağı haline gelmiştir.", ok: false },
-      { text: "B) Teknoloji dünyasındaki gelişmelere bağlı olarak insanlarda en çok görülen sorun hafıza kaybıdır.", ok: false },
+      { text: "A) Modernleşmeyle hafıza yalnızca sanatın değil, psikoloji, tarih, felsefe gibi birçok disiplinin de ilgi odağı hâline gelmiştir.", ok: false },
+      { text: "B) Teknoloji dünyasındaki gelişmelere bağlı olarak modernleşme sürecinde insanlarda en çok görülen sorunlardan birisi hafıza kaybıdır.", ok: false },
       { text: "C) Edebiyat eserinin, hafıza ürününe dönüşmesinin altında yatan nedenler modernleşme süreci içinde incelenmelidir.", ok: true },
-      { text: "D) Modernleşmeyle birlikte “hafıza ve geçmiş”, sanatın öncelikli konuları haline gelmiştir.", ok: false },
+      { text: "D) Modernleşmeyle birlikte “hafıza ve geçmiş”, sanatın öncelikli konuları hâline gelmiş, geçmişe özlem artmıştır.", ok: false },
       { text: "E) Kimliğin inşasındaki rolü ve güven duygusunu sağlayan unsurlarla olan doğrudan ilişkisi nedeniyle hafıza, tutunacak bir alana dönüşür.", ok: false }
     ]
   },
   {
-    text: "<p>O; yaşadığı biricik güzel bir anı sonrasızlaştırmak, yaşanıp duran birbirine benzer günlerin renksizliğinden kurtulmak, geçmesiyle güzelleşen günleri daha da güzelleştirmek, özlemini taşıdığı bir dünya canlandırmak, onu bütün insanlarla paylaşmak, içindeki ağırlıkları atmak için yazar.</p><p><b>Bu cümleye göre yazarın bir anı sonrasızlaştırmasıyla anılarına yönelik yapmak istediği aşağıdakilerden hangisi olamaz?</b></p>",
+    text: "<p>O; yaşadığı biricik güzel bir anı sonrasızlaştırmak, yaşanıp duran birbirine benzer günlerin renksizliğinden kurtulmak, geçmesiyle güzelleşen günleri daha da güzelleştirmek, özlemini taşıdığı bir dünya canlandırmak, onu bütün insanlarla paylaşmak, içindeki ağırlıkları atmak için yazar.</p><p><b>Bu cümleye göre yazarın bir anı sonrasızlaştırmasıyla anılarına yönelik yapmak istediği aşağıdakilerden hangisi <u>olamaz</u>?</b></p>",
     diff: 2,
     expl: "Sonrasızlaştırmak; kalıcı kılmak, unutulmamasını sağlamak ve kayıt altına almaktır. Hafızadan silmek bu eylemin tam tersidir.",
     answers: [
@@ -77,15 +77,15 @@ export const TUR_CUMLE_YORUMU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Tolstoy, dünya tarihinin en çok okunan yazarlarından biri olmanın yanında gerek sıra dışı yaşamı gerekse <u>çağını aşan</u> düşünceleri ile hâlen düşünce dünyasının önemli isimlerinden biri olma özelliğini taşımaktadır.</p><p><b>Bu cümlede altı çizili sözün cümleye kattığı anlam aşağıdaki seçeneklerden hangisinde yoktur?</b></p>",
+    text: "<p>Tolstoy, dünya tarihinin en çok okunan yazarlarından biri olmanın yanında gerek sıra dışı yaşamı gerekse <u>çağını aşan</u> düşünceleri ile hâlen düşünce dünyasının önemli isimlerinden biri olma özelliğini taşımaktadır.</p><p><b>Bu cümlede altı çizili sözün cümleye kattığı anlam aşağıdaki seçeneklerden hangisinde <u>yoktur</u>?</b></p>",
     diff: 3,
     expl: "'Çağını aşmak' ifadesi geleceğe seslenmek, evrensel ve kalıcı olmak anlamlarını taşır. A seçeneğinde ise sadece eserlerinin temalarına değinilmiş, çağını aşma vurgusu (bulunduğu zamandan ilerde olma) yapılmamıştır.",
     answers: [
-      { text: "A) Tolstoy'un yazmış olduğu eserlerde inanç, sevgi, ölüm gibi kavramları görmemiz mümkündür.", ok: true },
-      { text: "B) O, insanlık tarihinin kadim sorularına hâlâ geçerli olan cevapları ulaştırdı bugünlere.", ok: false },
+      { text: "A) Tolstoy'un yazmış olduğu eserlerde inanç, mutlak sonsuzluk, sevgi, ölüm gibi kavramları, bütün yalınlığı ve edebî ihtişamıyla görmemiz mümkündür.", ok: true },
+      { text: "B) O, insanlık tarihinin kadim sorularına kendi ölçeğinde cevaplar aradı, hâlâ geçerli olan bu cevapları ulaştırdı bugünlere.", ok: false },
       { text: "C) Tavrı, kendi zamanını aşan bir özgürlük savaşçısı olarak onu tarihte unutulmaz bir yere koymuştur.", ok: false },
-      { text: "D) Ölümsüzlüğü, eserlerinde gerçeği bulmak ve tüm insanlığı kurtarmak için savaşmasına bağlanır.", ok: false },
-      { text: "E) Tolstoy'un bulunduğu çağdan daha ileride olması, okurların ona 'dev' demesini sağlamıştır.", ok: false }
+      { text: "D) Ölümsüzlüğü, eserlerinde gerçeği bulmak ve sadece kendisini değil, tüm insanlığı da kurtarmak için savaşmasına bağlanır.", ok: false },
+      { text: "E) Okurların Tolstoy'a “dev” demeleri, öteki yazarların “cüce” olmasından değil, Tolstoy'un bulunduğu çağdan daha ileride olmasıdır.", ok: false }
     ]
   },
   {
@@ -97,7 +97,7 @@ export const TUR_CUMLE_YORUMU_TEST_1: McQ[] = [
       { text: "B) Sanatın amacı güzelliktir çünkü güzelliği, sanattan duyduğumuz hazla algılarız.", ok: false },
       { text: "C) Halktan ayrılarak üst sınıfın ürettiği bir şey, sanata benzer ama sanat değildir.", ok: true },
       { text: "D) Sanat; gizemli bir düşüncenin, güzelliğin, duyguların sözcüklere dökümüdür.", ok: false },
-      { text: "E) Sanat, duyguların birtakım işaretlerle dışa vurulmasıdır.", ok: false }
+      { text: "E) Sanat, duyguların birtakım işaretlerle dışa vurulması, güzel nesneler üretilmesidir.", ok: false }
     ]
   },
   {
@@ -113,7 +113,7 @@ export const TUR_CUMLE_YORUMU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Özüyle hiççi, biçimiyle şiir geleneğimize aykırı gibi görünen... bu şamar oğlanı şiirin; sadece günümüz şiirine değil, tüm sanat ve kültür yaşamına taze kan getirdiği, bir itici güç olduğu görülecektir.</p><p><b>Bu cümleden aşağıdakilerden hangisine ulaşılamaz?</b></p>",
+    text: "<p>Özüyle hiççi, biçimiyle şiir geleneğimize aykırı gibi görünen, ölüsüne kimsenin, mirasına ise herkesin gizli gizli sahip çıktığı bu şamar oğlanı şiirin; sadece günümüz şiirine değil, tüm sanat ve kültür yaşamına taze kan getirdiği, bir itici güç olduğu görülecektir.</p><p><b>Bu cümleden aşağıdakilerden hangisine <u>ulaşılamaz</u>?</b></p>",
     diff: 3,
     expl: "Cümlede şiirin özünün 'hiççi' olduğu belirtilmektedir ancak 'varoluşu inkâr eden' bir temel üzerine şekillendiği gibi kesin ve genel bir yargıya ulaşmak için metin yeterli bilgi sunmamaktadır.",
     answers: [
@@ -125,7 +125,7 @@ export const TUR_CUMLE_YORUMU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Terimler, bilimsel bir kavramın tek karşılığı olarak kullanılmaktadır; terim dışındaki anlamlı kelimeler... cümledeki yerine göre değişebilirken terimlerde böyle bir durum söz konusu olamaz.</p><p><b>Bu cümlede terimlerin;<br/>I. anlamlarının sabit olduğu,<br/>II. sayıca sınırlı olduğu,<br/>III. yoruma açık olduğu,<br/>IV. bir kavramı karşıladığı<br/>özelliklerinin hangilerinden bahsedilmektedir?</b></p>",
+    text: "<p>Terimler, bilimsel bir kavramın tek karşılığı olarak kullanılmaktadır; terim dışındaki anlamlı kelimeler, cümlede yanında bulunduğu kelimelere göre anlamca ve görevce değişikliğe uğrayabilirken terimlerde böyle bir durum söz konusu olamaz.</p><p><b>Bu cümlede terimlerin;<br/>I. anlamlarının sabit olduğu,<br/>II. sayıca sınırlı olduğu,<br/>III. yoruma açık olduğu,<br/>IV. bir kavramı karşıladığı<br/>özelliklerinin hangilerinden bahsedilmektedir?</b></p>",
     diff: 3,
     expl: "Metinde terimlerin bir kavramın 'tek karşılığı' olması (IV) ve diğer kelimeler gibi değişime uğramaması (I - sabit olması) vurgulanmıştır.",
     answers: [
@@ -149,19 +149,19 @@ export const TUR_CUMLE_YORUMU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>“Her kitapta iki insan var: yazar ve okuyucu... edebiyat eseri yazarın düşüncesini okuyucuya ulaştırır ama unutmayalım ki eserde daha önce vardır bu okuyucu... Yazmak, bir davete icabet etmektir.”</p><p><b>Bu parçada anlatılmak istenen aşağıdaki cümlelerin hangisinde özetlenmiştir?</b></p>",
+    text: "<p>“Her kitapta iki insan var: yazar ve okuyucu. Fert olarak değil, toplumsal bir varlık olarak okuyucu. Elbette edebiyat eseri yazarın düşüncesini okuyucuya ulaştırır ama unutmayalım ki eserde daha önce vardır bu okuyucu. Çünkü yazar, belli bir okuyucuya seslenir, söyleyeceklerini ona göre seçer ve ayarlar. Yazmak, bir davete icabet etmektir.”</p><p><b>Bu parçada anlatılmak istenen aşağıdaki cümlelerin hangisinde özetlenmiştir?</b></p>",
     diff: 3,
     expl: "Metindeki 'eserde daha önce vardır bu okuyucu' ve 'davete icabet' vurguları, eserin henüz yazılma aşamasındayken bile zihinde bir okuyucu kitlesiyle başladığını gösterir.",
     answers: [
       { text: "A) Hikâyeleriyle yapmak istediği, ideal okurun özelliklerini belirlemektir.", ok: false },
-      { text: "B) Edebiyat eserinin henüz yazılma aşamasında seslenilen belli bir okuyucu kitlesi ile ilişkinin başladığı söylenebilir.", ok: true },
+      { text: "B) Edebiyat eserinin henüz yazılma aşamasında toplumsal süreç başlar.", ok: true },
       { text: "C) Okur ve yazarla ilgili her ayrıntı, edebî eserlerde kendine bir yer bulur.", ok: false },
       { text: "D) Okura aktarılmak istenilen değerler ancak yazın ile ulaştırılabilir.", ok: false },
       { text: "E) Edebiyat ve toplum arasındaki ilişki, yazıya dökülürse somutlaşır.", ok: false }
     ]
   },
   {
-    text: "<p>Sanatçı; zamana karşı dayanıklı olmak, eskimemek, insanoğlunu sürekli bir sulama gücüne sahip olmak ister.</p><p><b>Aşağıda tanıtılan sanatçılardan hangisi bu cümledeki durumu <u>örneklememektedir</u>?</b></p>",
+    text: "<p>Sanatçı; zamana karşı dayanıklı olmak, eskimemek, insanoğlunu sürekli bir sulama gücüne sahip olmak ister.</p><p><b>Aşağıda tanıtılan sanatçılardan hangisi bu cümledeki durumu <u>örneklendirmemektedir</u>?</b></p>",
     diff: 2,
     expl: "Zamana karşı dayanıklı olmak kalıcılıkla ilgilidir. A, B, C ve E şıklarındaki sanatçılar kalıcılığı yakalamıştır. D seçeneğinde ise Şair Nigar Hanım'ın geleneksel kalıpları aşamadığı için 'edebiyat okyanusunda boğulduğu' (kalıcı olamadığı) belirtilmiştir.",
     answers: [

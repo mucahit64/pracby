@@ -97,10 +97,10 @@ export const TUR_ANLATIM_BOZUKLUGU_TEST_1: McQ[] = [
     expl: "A seçeneğindeki 'süreyle' sözcüğü gereksizdir. 'Beş saat görüştüler' ifadesi zaten süreyi belirtir.",
     answers: [
       { text: "İki lider, beş saat <u>süreyle</u> görüştüler.", ok: true },
-      { text: "O kadar konuşmadan sonra bir sonuca <u>varamadık</u>.", ok: false },
-      { text: "Suçlu yakalanıp <u>müebbet</u> hapse mahkûm edildi.", ok: false },
+      { text: "<u>O kadar</u> konuşmadan sonra bir sonuca varamadık.", ok: false },
+      { text: "Suçlu yakalanıp müebbet <u>hapse</u> mahkûm edildi.", ok: false },
       { text: "O, <u>ağzıyla</u> kuş tutsa yine de kendini affettiremez.", ok: false },
-      { text: "Hepimiz sürprizler karşısında <u>şaşakalmıştık</u>.", ok: false }
+      { text: "Hepimiz <u>sürprizler</u> karşısında şaşakalmıştık.", ok: false }
     ]
   },
   {
@@ -124,7 +124,7 @@ export const TUR_ANLATIM_BOZUKLUGU_TEST_1: McQ[] = [
       { text: "Bu bölgenin her koyunda, birbirinden güzel tatil siteleri vardır.", ok: true },
       { text: "İki şirket arasında mevcut bir yazılı anlaşma vardı.", ok: false },
       { text: "Öğrenciler ne İngilizce ne de İspanyolca bilmiyorlardı.", ok: false },
-      { text: "Yapılan bir ebrunun ikinci bir kopyasını yapmak mümkün değildi.", ok: false }
+      { text: "Yapılan bir ebrunun ikinci bir kopyasını yapmak mümkün değildir.", ok: false }
     ]
   },
   {
@@ -172,7 +172,7 @@ export const TUR_ANLATIM_BOZUKLUGU_TEST_1: McQ[] = [
   {
     text: "<p><b>16. Aşağıdaki cümlelerin hangisinde anlatım bozukluğu <u>yoktur</u>?</b></p>",
     diff: 2,
-    expl: "E seçeneğinde herhangi bir bozukluk yoktur. A'da 'liste başı oldu' (liste başına yerleşti), B'de 'üstüne' (üzerine), C'de 'görevli' (gereksiz), D'de 'siyasi' (gereksiz) hataları vardır.",
+    expl: "E seçeneğinde herhangi bir bozukluk yoktur. A'da sözcüğün yanlış yerde kullanımı ('iki gün içinde' sözü 'liste başı'ndan önce gelmeli), B'de 'üstüne' (üzerine), C'de 'görevli' (gereksiz), D'de 'siyasi' (gereksiz) hataları vardır.",
     answers: [
       { text: "İki gün içinde yazdığım bu roman liste başı oldu.", ok: false },
       { text: "Sahnedeki hataları üstüne akıl yoruyor, sonra yığınla düş kuruyordu.", ok: false },
@@ -184,7 +184,7 @@ export const TUR_ANLATIM_BOZUKLUGU_TEST_1: McQ[] = [
   {
     text: "<p><b>17. Aşağıdakilerden hangisinde farklı bir nedenden kaynaklı anlatım bozukluğu vardır?</b></p>",
     diff: 3,
-    expl: "A seçeneğinde gereksiz sözcük kullanımı (geri) varken; diğer şıklarda sözcüğün yanlış yerde kullanımı veya nesne/özne eksikliği gibi hatalar mevcuttur.",
+    expl: "A seçeneğinde gereksiz sözcük kullanımı (geri) varken; diğer şıklarda sözcüğün yanlış yerde kullanılmasından kaynaklı bozukluk vardır.",
     answers: [
       { text: "Şimdi “Divan edebiyatına niçin sahip çıkmalıyız?” sorusuna geri dönebiliriz.", ok: true },
       { text: "İçinizde en az olaylara karışmış kişi sensin.", ok: false },
@@ -219,7 +219,7 @@ export const TUR_ANLATIM_BOZUKLUGU_TEST_1: McQ[] = [
     diff: 3,
     expl: "Örnekte 'haber duydum' değil 'haber okudum' olmalıdır (Yanlış sözcük kullanımı). A'da 'ayrıntı' yerine 'ayrım/fark' olmalıdır.",
     answers: [
-      { text: "İki edebî eser arasındaki ayrıntıyı görüp eserleri karşılaştırdım.", ok: true },
+      { text: "İki edebî eser arasındaki ayrıntıyı görüp bu eserleri karşılaştırdım.", ok: true },
       { text: "Arkadaşım fazla dışarıda beklediği için bana sinirlenmişti.", ok: false },
       { text: "Bu durumu herkes kabul ediyor, hiçbir şekilde karşı çıkmıyordu.", ok: false },
       { text: "Şiddetli yağmur yağdığından dolayı bu haftaki geziyi ertelemek zorunda kaldık.", ok: false },
@@ -229,7 +229,7 @@ export const TUR_ANLATIM_BOZUKLUGU_TEST_1: McQ[] = [
   {
     text: "<p><b>21. Aşağıdaki cümlelerin hangisinde bir anlatım bozukluğu <u>yoktur</u>?</b></p>",
     diff: 3,
-    expl: "C seçeneği doğrudur. A'da 'baba da' (babası da) tamlama hatası, B'de tamlama hatası, D'de anlamca çelişen sözcükler, E'de yanlış sözcük (sağlıyor) vardır.",
+    expl: "C seçeneği doğrudur. A'da dolaylı tümleç eksikliği ('sarılmaktadır'dan önce 'çocuğuna' gelmeli), B'de tamlama hatası, D'de anlamca çelişen sözcükler, E'de yanlış sözcük (sağlıyor) vardır.",
     answers: [
       { text: "Rubens'in aile portresinde anne elini çocuğun omzuna koymuştur ve baba da sarılmaktadır.", ok: false },
       { text: "Çocuklara zarar verilmesi konusunda ahlak ve yasal bir sınırlama yok.", ok: false },

@@ -46,7 +46,7 @@ export const TUR_CUMLE_BIRLESTIRME_TEST_1: McQ[] = [
     expl: "A seçeneği, hem Avrupa ülkeleriyle yapılan karşılaştırmayı hem de geniş coğrafyaya rağmen ticari yapılanmanın zayıflığını neden-sonuç ilişkisi kurmadan, öncüldeki anlamı koruyarak aktarmıştır.",
     answers: [
       { text: "Bir araştırmaya göre XVI. ve XVII. yüzyılda Osmanlı İmparatorluğu çağdaşı, coğrafi alanı çok daha küçük Avrupa ülkelerine göre daha az ticari potansiyele sahip olması, Osmanlı İmparatorluğu'nun çok geniş bir coğrafyaya yayılmış olsa da ticari olarak o kadar iyi bir yapılanmaya sahip olmadığını gösterir.", ok: true },
-      { text: "Bir araştırmaya göre XVI. ve XVII. yüzyılda Osmanlı İmparatorluğu çağdaşı Avrupa ülkelerine göre daha az ticari potansiyele sahip olmasının, Osmanlı İmparatorluğu'nun çok geniş bir coğrafyaya yayılmış olsa da ticari olarak o kadar iyi bir yapılanmaya sahip olmadığını gösterir.", ok: false },
+      { text: "Bir araştırmaya göre XVI. ve XVII. yüzyılda Osmanlı İmparatorluğu çağdaşı Avrupa ülkelerine göre daha az ticari potansiyele sahip olması, Osmanlı İmparatorluğu'nun çok geniş bir coğrafyaya yayılmış olsa da ticari olarak o kadar iyi bir yapılanmaya sahip olmadığını gösterir.", ok: false },
       { text: "Bir araştırmaya göre XVI. ve XVII. yüzyılda Osmanlı İmparatorluğu çağdaşı, coğrafi alanı çok daha küçük Avrupa ülkelerine göre daha az ticari potansiyele sahip olması, Osmanlı İmparatorluğu'nun ticari yapılanmayı bilmediğini gösterir.", ok: false },
       { text: "Bir araştırmaya göre XVI. ve XVII. yüzyılda Osmanlı İmparatorluğu, coğrafi alanı çok daha küçük Avrupa ülkelerine göre daha çok ticari potansiyele sahip olması, Osmanlı İmparatorluğu'nun çok geniş bir coğrafyaya yayılmasıyla ticari olarak iyi bir yapılanmaya sahip olduğunu gösterir.", ok: false },
       { text: "Bir araştırmaya göre Osmanlı İmparatorluğu çağdaşı, coğrafi alanı çok daha küçük Avrupa ülkelerine göre daha az ticari potansiyele sahip olması, Osmanlı İmparatorluğu'nun çok geniş bir coğrafyaya yayılmış olsa da ticari olarak o kadar iyi bir yapılanmaya sahip olmadığını gösterir.", ok: false }
@@ -73,11 +73,11 @@ export const TUR_CUMLE_BIRLESTIRME_TEST_1: McQ[] = [
       { text: "I. cümlede belirtilen durumun gerekçesini açıklamaktadır.", ok: false },
       { text: "I. cümlede belirtilen medya türünün hedef kitleye yönelik durumundan dijital medya reklamcılığının farklı tarafları açıklanmıştır.", ok: true },
       { text: "I. cümledeki yargıyı kanıtlama amacı taşımaktadır.", ok: false },
-      { text: "I. cümlede yer verilen reklam panoları, basılı reklamlar ve televizyon reklamları gibi araçların önemini hiçbir zaman yitirmeyeceğini açıklamak tadır.", ok: false }
+      { text: "I. cümlede yer verilen reklam panoları, basılı reklamlar ve televizyon reklamları gibi araçların önemini hiçbir zaman yitirmeyeceğini açıklamaktadır.", ok: false }
     ]
   },
   {
-    text: "<p>I. XIX. asra gelindiğinde divan şiiri artık iyiden iyiye tükenmiş, Şeyh Galip'in gençlik aşısına benzeyen şiiri bile onu hayata döndürmeye yetmemiş tir.<br>II. Hatta denebilir ki bu aşı, kocalmış gövdenin kalan bütün gücünü de harcayarak şiirin birdenbire iflas etmesine yol açmıştır.</p><p><b>Yukarıda verilen II numaralı cümleyle ilgili olarak aşağıdakilerden hangisi söylenebilir?</b></p>",
+    text: "<p>I. XIX. asra gelindiğinde divan şiiri artık iyiden iyiye tükenmiş, Şeyh Galip'in gençlik aşısına benzeyen şiiri bile onu hayata döndürmeye yetmemiştir.<br>II. Hatta denebilir ki bu aşı, kocalmış gövdenin kalan bütün gücünü de harcayarak şiirin birdenbire iflas etmesine yol açmıştır.</p><p><b>Yukarıda verilen II numaralı cümleyle ilgili olarak aşağıdakilerden hangisi söylenebilir?</b></p>",
     diff: 3,
     expl: "I. cümlede Şeyh Galip'in şiirinin (aşının) divan şiirini kurtarmaya yetmediği söylenmiş, II. cümlede ise bu durumun tam tersi bir etki yaratarak (olumsuz sonuç) şiirin iflasına (çöküşüne) neden olduğu belirtilmiştir.",
     answers: [

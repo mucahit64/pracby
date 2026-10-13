@@ -5,9 +5,9 @@ import { McQ } from "../../../../types";
 // ============================================================================
 export const TUR_FIILIMSILER_TEST_1: McQ[] = [
   {
-    text: "<p>Gezi yazısının başarılı <u>I. olması</u> iyi bir gözlemci <u>II. olmaktan</u> geçer. Geziye <u>III. çıkmadan</u> önce <u>IV. gezilecek</u> yerler hakkında çeşitli kaynaklardan bilgi edinmek, <u>V. görülenleri</u> bu bilgilerle karşılaştırmak gözlemin başarısını arttırır.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi eylemsi değildir?</b></p>",
+    text: "<p><u>Gezi</u> (I) yazısının başarılı olması iyi bir gözlemci olmaktan geçer. Geziye <u>çıkmadan</u> (II) önce <u>gezilecek</u> (III) yerler hakkında çeşitli kaynaklardan bilgi edinmek, <u>görülenleri</u> (IV) bu bilgilerle <u>karşılaştırmak</u> (V) gözlemin başarısını arttırır.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi eylemsi <u>değildir</u>?</b></p>",
     diff: 2,
-    expl: "I numaralı 'olması' sözcüğü 'ol-ma' şeklinde isim-fiil ekini değil, iyelik ekiyle karıştırılmamalıdır; ancak metne bakıldığında 'gez-i' sözcüğü fiilden isim yapım eki almış bir kalıplaşmış isimdir. Diğerleri isim-fiil, zarf-fiil ve sıfat-fiildir.",
+    expl: "I numaralı 'gez-i' sözcüğü fiilden isim yapım eki almış bir isimdir, fiilimsi değildir. II numaralı 'çık-madan' zarf-fiil, III numaralı 'gez-il-ecek' ve IV numaralı 'gör-ül-en-ler-i' sıfat-fiil, V numaralı 'karşılaştır-mak' isim-fiildir.",
     answers: [
       { text: "I", ok: true },
       { text: "II", ok: false },
@@ -17,7 +17,7 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Sanatı bir yansıtma olarak <u>I. yorumlayanlara</u> göre edebiyat, dünyaya <u>II. tutulmuş</u> bir aynadır... <u>III. benimseyen</u> kimi düşünürler... eğitici bir nitelik <u>IV. taşıması</u> <u>V. gerektiğini</u> öne sürerler.</p><p><b>Bu parçada numaralanmış eylemsilerden hangisi diğerlerinden farklıdır?</b></p>",
+    text: "<p>Sanatı bir yansıtma olarak <u>yorumlayanlara</u> (I) göre edebiyat, dünyaya <u>tutulmuş</u> (II) bir aynadır; toplumu, gerçekliği yansıtır. Dolayısıyla da insanı, yaşamı açıklar. Yansıtma kuramını <u>benimseyen</u> (III) kimi düşünürlerse bunu yeterli bulmaz, edebiyatın eğitici bir nitelik <u>taşıması</u> (IV) <u>gerektiğini</u> (V) öne sürerler.</p><p><b>Bu parçada numaralanmış eylemsilerden hangisi diğerlerinden farklıdır?</b></p>",
     diff: 3,
     expl: "I, II, III ve V numaralı sözcükler sıfat-fiil (-an, -muş, -en, -dik) eklerini almıştır. IV numaralı 'taşıması' sözcüğü ise isim-fiil (-ma) ekini almıştır.",
     answers: [
@@ -29,9 +29,9 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...Senden <u>I. taşmış</u>, senden <u>II. çıkmış</u> o hesapçılarla!... <u>III. konuşurken</u> neydi o sözcüklerin anlamı?... <u>IV. gidecek</u> sorgular... <u>V. Yaşadıklarının</u> tek tek hesabını vermeye başlayacaksın!</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangisi fiilimsi değildir?</b></p>",
+    text: "<p>Çaresiz hesaplaşacaksın kendi kendinle! Senden <u>taşmış</u> (I), senden <u>çıkmış</u> (II) o hesapçılarla! Yaşantının, düşüncelerinin, düşlerinin hesabını vereceksin. Soracaklar \"Bunu neden yaptın, şunu niçin söyledin, öyle yaparken neydi amacın, falancanın ardından, filancanın önünden <u>konuşurken</u> (III) neydi o sözcüklerin anlamı?\" Daha da gerilere <u>gidecek</u> (IV) sorgular: İlkokul günlerine dek. <u>Yaşadıklarının</u> (V) tek tek hesabını vermeye başlayacaksın!</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangisi fiilimsi <u>değildir</u>?</b></p>",
     diff: 3,
-    expl: "IV numaralı 'gidecek' sözcüğü cümlede yüklem görevinde kullanılan gelecek zaman kipi (-ecek) ekini almıştır ve bir ismi nitelememektedir, bu yüzden fiilimsi değildir.",
+    expl: "IV numaralı 'gidecek' sözcüğüne gelen '-ecek' eki gelecek zaman çekim ekidir ve sözcük cümlenin yüklemidir, bu yüzden fiilimsi değildir. I ve II sıfat-fiil, III zarf-fiil, V adlaşmış sıfat-fiildir.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
@@ -41,21 +41,21 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Aşağıda verilen dizelerin hangisinde <b>birden çok eylemsi vardır?</b></p>",
+    text: "<p>Aşağıda verilen dizelerin hangisinde <b><u>birden çok</u> eylemsi vardır?</b></p>",
     diff: 3,
     expl: "C seçeneğinde 'durmadan' (zarf-fiil) ve 'oynadıkça' (zarf-fiil) olmak üzere iki adet eylemsi bulunmaktadır.",
     answers: [
-      { text: "Senin sorunlarınla diridir sahne / Öz benliğinle yüzleşme yeridir sahne.", ok: false },
-      { text: "Dünya sahneden sunar sana kendini / İnsanın ölümsüzleşme yeridir sahne", ok: false },
-      { text: "Oyunda durmadan kendini ararsın. / Şu göklerin altında oynadıkça varsın.", ok: true },
-      { text: "Aşkın, kederin, umutların, sevincin... / Sen bunları oynayabildiğin kadarsın.", ok: false },
-      { text: "Dünün, bugünün, yarının sahnededir / Sahnedir sana tüm boyutlarını veren.", ok: false }
+      { text: "Senin sorunlarınla diridir sahne<br>Öz benliğinle yüzleşme yeridir sahne.", ok: false },
+      { text: "Dünya sahneden sunar sana kendini<br>İnsanın ölümsüzleşme yeridir sahne", ok: false },
+      { text: "Oyunda durmadan kendini ararsın.<br>Şu göklerin altında oynadıkça varsın.", ok: true },
+      { text: "Aşkın, kederin, umutların, sevincin...<br>Sen bunları oynayabildiğin kadarsın.", ok: false },
+      { text: "Dünün, bugünün, yarının sahnededir<br>Sahnedir sana tüm boyutlarını veren.", ok: false }
     ]
   },
   {
-    text: "<p>Aşağıda verilen cümlelerin hangisinde isim-fiil, <b>sıfat görevinde kullanılmamıştır?</b></p>",
+    text: "<p>Aşağıda verilen cümlelerin hangisinde isim-fiil, <b>sıfat görevinde <u>kullanılmamıştır</u>?</b></p>",
     diff: 3,
-    expl: "A, B, C ve D seçeneklerinde isim-fiiller (asma, dönme, süzme, sıkma) bir ismi niteleyerek sıfat görevindedir. E seçeneğinde ise 'gelişme' ve 'olgunlaşma' sözcükleri isim görevindedir.",
+    expl: "A, B, C ve D seçeneklerinde isim-fiiller (asma, dönme, süzme, sıkma) bir ismi niteleyerek sıfat görevindedir. E seçeneğinde ise 'gelişme' ve 'olgunlaşma' sözcükleri isim tamlamasının tamlayanı olarak isim görevindedir.",
     answers: [
       { text: "Bugün piyasadaki tüm tavan yapıları arasında en popüler model, modüler asma tavandır.", ok: false },
       { text: "Dönme dolap aslında harem ve selamlık arasına yerleştirilen bir servis dolabının adıdır.", ok: false },
@@ -65,9 +65,9 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. Hoşgörmez</u> bakışlarına karşın... <u>II. övündüğünü</u> bildiği. Dağ başlarına <u>III. döne döne</u> çıkan yolları... <u>IV. çıkan</u> yolları... <u>V. süzülen</u> bir tepkili uçağı...</p><p><b>Bu parçada altı çizili sözcüklerden hangisi niteleme amacıyla kullanılmamıştır?</b></p>",
+    text: "<p>Gözleri çakmak çakmak ona bakardı. <u>Hoşgörmez</u> (I) bakışlarına karşın, babası gibi dedesinin de kendisiyle <u>övündüğünü</u> (II) bilirdi. Dağ başlarına <u>döne döne</u> (III) <u>çıkan</u> (IV) yolları, maviliklerde <u>süzülen</u> (V) bir tepkili uçağı ikisi de akıl etmemişti.</p><p><b>Bu parçada altı çizili sözcüklerden hangisi niteleme amacıyla <u>kullanılmamıştır</u>?</b></p>",
     diff: 3,
-    expl: "II numaralı 'övündüğünü' sözcüğü belirtme eki aldığı için artık isim görevindedir ve bir niteleme amacı taşımaz. Diğerleri bir ismi nitelemektedir.",
+    expl: "II numaralı 'övündüğünü' sözcüğü isim çekim eklerini aldığı için isim görevindedir ve bir niteleme amacı taşımaz. I 'bakışlarına', III 'çıkan', IV 'yolları', V 'uçağı' sözcüğünü nitelemektedir.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: true },
@@ -77,9 +77,9 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...en belirgin ve <u>I. genelleştirilebilir</u> ortak özelliği... <u>II. seçmiş</u> olmalarıdır... <u>III. kavramaya</u> ve onun doğasını <u>IV. tanımaya çalışarak</u>... <u>V. uğraşındadır</u>...</p><p><b>Bu parçada numaralanmış altı çizili sözcüklerden hangisi fiilimsi değildir?</b></p>",
+    text: "<p>Edebiyat ve psikolojinin en belirgin ve <u>genelleştirilebilir</u> (I) ortak özelliği kendilerine insanın bütününü hedef ve malzeme olarak <u>seçmiş</u> (II) olmalarıdır. Gerçekten de beşeri ve sosyal bilimler içinde edebiyat ve psikoloji dışında insanı bütünüyle <u>kavramaya</u> (III) ve onun doğasını tanımaya <u>çalışarak</u> (IV) yakinen bilmeye dönük bir çabaları yoktur. Her biri insanın bir başka yönünü ele alma <u>uğraşındadır</u> (V). Bunu yapabilmek için de insanı iyi analiz etmek gerekir.</p><p><b>Bu parçada numaralanmış altı çizili sözcüklerden hangisi fiilimsi <u>değildir</u>?</b></p>",
     diff: 2,
-    expl: "V numaralı 'uğraşındadır' sözcüğü herhangi bir fiilimsi eki almamış bir isimdir. Diğerleri sıfat-fiil, isim-fiil veya zarf-fiildir.",
+    expl: "V numaralı 'uğraşındadır' sözcüğü herhangi bir fiilimsi eki almamış bir isimdir. I 'genelleştirilebil-ir' ve II 'seç-miş' sıfat-fiil, III 'kavra-ma-ya' isim-fiil, IV 'çalış-arak' zarf-fiildir.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
@@ -89,9 +89,9 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. kalıp</u> sözler... <u>II. saklanan</u>... <u>III. üretilmeden</u>... <u>IV. ayrıştırılmadan</u>... <u>V. hatırlanarak</u>...</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangisi tür bakımından ötekilerden farklıdır?</b></p>",
+    text: "<p>\"Zihinsel üretim ve yapıyı temel alan bir başka tanıma göre <u>kalıp</u> (I) sözler, önceden belirli bir biçime <u>girip</u> (II) öylece hafızada saklanan, söyleneceği sırada yeniden <u>üretilmeden</u> (III) veya dil bilgisel olarak <u>ayrıştırılmadan</u> (IV) olduğu gibi <u>hatırlanarak</u> (V) kullanılan, ardışık veya aralı sözcüklerden oluşan dizidir.</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangisi tür bakımından ötekilerden farklıdır?</b></p>",
     diff: 3,
-    expl: "I numaralı 'kalıp' sözcüğü metinde bir ismi nitelediği için sıfattır. Diğerleri (-en, -meden, -arak) fiilimsi (sıfat-fiil ve zarf-fiil) görevindedir.",
+    expl: "I numaralı 'kalıp' sözcüğü '-ıp' yapım eki almış ve 'sözler' ismini nitelediği için sıfattır. Diğerleri (gir-ip, üretil-meden, ayrıştırıl-madan, hatırlan-arak) zarf-fiildir.",
     answers: [
       { text: "I", ok: true },
       { text: "II", ok: false },
@@ -103,7 +103,7 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
   {
     text: "<p>Aşağıdaki cümlelerin hangisinde isim-fiil, <b>isim tamlamasında tamlayan görevindedir?</b></p>",
     diff: 3,
-    expl: "B seçeneğindeki 'otur-uş şekline' tamlamasında 'oturuş' bir isim-fiildir ve tamlamanın tamlayanı durumundadır.",
+    expl: "B seçeneğindeki 'otur-uş şekline' tamlamasında 'oturuş' bir isim-fiildir ve tamlamanın tamlayanı durumundadır. A, C ve E seçeneklerindeki isim-fiiller (uçuşu, dönmesi, alınması) tamlanan görevindedir.",
     answers: [
       { text: "Aynı boylam üzerinde iki paralel arası kuş uçuşu uzaklık dünyanın her yerinde 111 km’dir.", ok: false },
       { text: "Bir kişinin yalnızca oturuş şekline bakarak bile nasıl bir karakterde olduğunu öğrenebilirmişiz.", ok: true },
@@ -113,9 +113,9 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Doğan Cüceloğlu insanı; <u>I. düşünen</u>, <u>II. üreten</u>... <u>III. ürettiklerini</u>... <u>IV. duyuyan</u>... <u>V. olarak</u> tanımlar.</p><p><b>Bu parçada altı çizili sözcüklerden hangisi niteleme amacıyla kullanılmamıştır?</b></p>",
+    text: "<p>Doğan Cüceloğlu insanı; <u>düşünen</u> (I), düşündükleriyle yeni şeyler <u>üreten</u> (II), sonra da <u>ürettiklerini</u> (III) başkalarıyla paylaşma gereği <u>duyan</u> (IV) sosyal bir varlık <u>olarak</u> (V) tanımlar.</p><p><b>Bu parçada altı çizili sözcüklerden hangisi niteleme amacıyla <u>kullanılmamıştır</u>?</b></p>",
     diff: 3,
-    expl: "III numaralı 'ürettiklerini' sözcüğü adlaşmış sıfat-fiil olup nesne görevinde kullanılmıştır, niteleme görevi yoktur. Diğerleri sıfat-fiil olarak niteleme yapar.",
+    expl: "III numaralı 'ürettiklerini' sözcüğü adlaşmış sıfat-fiil olup belirtme hâl eki aldığı için isim görevindedir, niteleme görevi yoktur. I, II ve IV 'varlık' ismini, V ise 'tanımlar' fiilini niteler.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
@@ -125,21 +125,21 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Aşağıdaki verilen dizelerin hangisinde altı çizili <b>sözcük zarf-fiil değildir?</b></p>",
+    text: "<p>Aşağıdaki verilen dizelerin hangisinde altı çizili <b>sözcük zarf-fiil <u>değildir</u>?</b></p>",
     diff: 3,
-    expl: "C seçeneğindeki 'ümidin-ce-dir' sözcüğündeki '-ce' eki eşitlik ekidir, zarf-fiil eki değildir. Diğerlerindeki ekler fiillere gelerek zarf-fiil oluşturmuştur.",
+    expl: "C seçeneğindeki 'ümit-in-ce-dir' sözcüğünün kökü isim olduğu için zarf-fiil olamaz; buradaki '-ce' eşitlik ekidir. Diğerlerindeki '-IncA' eki fiillere (bit, erit, git, işit) gelerek zarf-fiil oluşturmuştur.",
     answers: [
-      { text: "bayram ufukta gün bitincedir.", ok: false },
-      { text: "Sanki sihirbaz bir el eritincedir.", ok: false },
-      { text: "Gökte yıldızların da ümidincedir.", ok: true },
-      { text: "Sonsuzlaşarak başı boş gidincedir.", ok: false },
-      { text: "Sesimi yalnız kendim işitincedir.", ok: false }
+      { text: "Âlemde gündüz gönlüme işkencedir;<br>Bence bayram ufukta gün <u>bitincedir.</u>", ok: false },
+      { text: "Günün geçit vermez karlı dağlarını<br>Sanki sihirbaz bir el <u>eritincedir.</u>", ok: false },
+      { text: "Bütün gün beklediğim bahar ki gece,<br>Gökte yıldızların da <u>ümidincedir.</u>", ok: true },
+      { text: "Yollar, yollarda nihayet içime denk,<br>Sonsuzlaşarak başı boş <u>gidincedir.</u>", ok: false },
+      { text: "Ben ister güleyim, ister ağlayayım,<br>Sesimi yalnız kendim <u>işitincedir.</u>", ok: false }
     ]
   },
   {
-    text: "<p>...<u>I. diye</u>... <u>II. aksatmadan</u>... <u>III. olarak</u>... <u>IV. yaşadığı</u>... <u>V. uymadığında</u>...</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangisi bağ-fiil değildir?</b></p>",
+    text: "<p>Sigmund Freud ruh sağlığını \"sevmek ve çalışmak\" <u>diye</u> (I) özetler. Bu tanıma göre kendisini, insanları, canlıları, doğayı seven ve rutin işlerini <u>aksatmadan</u> (II) verimli bir şekilde çalışabilen insan ruhsal <u>olarak</u> (III) sağlıklıdır. Ruhsal yönden sağlıklı olan insan, <u>yaşadığı</u> (IV) toplumun kurallarına, gelenek ve göreneklerine uyar; kurallara <u>uymadığında</u> (V) ise çevreyi rahatsız etmeden yaşadığı çatışmayı çözmeyi başarabilir.</p><p><b>Bu parçada altı çizili numaralanmış sözcüklerden hangisi bağ - fiil <u>değildir</u>?</b></p>",
     diff: 3,
-    expl: "IV numaralı 'yaşadığı' sözcüğü '-dik' sıfat-fiil ekini almıştır. Diğerleri (-a, -madan, -arak, -dığında) zarf-fiil (bağ-fiil) ekleridir.",
+    expl: "IV numaralı 'yaşa-dık-ı' sözcüğü '-dık' sıfat-fiil ekini almıştır. Diğerleri (de-y-e, aksat-madan, ol-arak, uy-ma-dığında) zarf-fiil (bağ-fiil) ekleridir.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
@@ -149,9 +149,9 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. oldukları</u>... <u>II. çözemeyip</u>... <u>III. düşenler</u>... <u>IV. olamamanın</u>... <u>V. çalışır</u>...</p><p><b>Bu parçadaki numaralanmış sözcüklerden hangisi fiilimsi değildir?</b></p>",
+    text: "<p>Pek hevesli <u>oldukları</u> (I) hâlde, şiirin düğmelerini bir türlü <u>çözemeyip</u> (II) de denemenin peşine <u>düşenler</u> (III) vardır. Şair <u>olamamanın</u> (IV) bütün ezikliğini, hıncını düzyazıdan çıkarmaya <u>çalışır</u> (V) böyleleri. O zavallı cümleler, talihsiz paragraflar neler çeker elinden!</p><p><b>Bu parçadaki numaralanmış sözcüklerden hangisi fiilimsi <u>değildir</u>?</b></p>",
     diff: 2,
-    expl: "V numaralı 'çalışır' sözcüğü geniş zaman kipiyle çekimlenmiş bir fiildir, fiilimsi değildir.",
+    expl: "V numaralı 'çalışır' sözcüğü geniş zaman haber kipiyle çekimlenmiş bir fiildir, fiilimsi değildir. I 'ol-duk-lar-ı' ve III 'düş-en-ler' sıfat-fiil, II 'çöz-eme-y-ip' zarf-fiil, IV 'ol-ama-ma-nın' isim-fiildir.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
@@ -163,7 +163,7 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
   {
     text: "<p>Aşağıdaki cümlelerin hangisinde sıfat-fiil, <b>ötekilerden farklı görevde kullanılmıştır?</b></p>",
     diff: 3,
-    expl: "C seçeneğindeki 'yaşananları' sözcüğü bir ismi nitelemek yerine adlaşmış sıfat-fiil görevinde kullanılmıştır. Diğerleri bir ismi niteler.",
+    expl: "C seçeneğindeki 'yaşananları' sözcüğü bir ismi nitelemek yerine adlaşmış sıfat-fiil olarak isim görevinde kullanılmıştır. Diğerleri bir ismi niteler.",
     answers: [
       { text: "Çağının duygu ve düşüncelerini yansıtan bir sanatçıydı.", ok: false },
       { text: "Dün aldığımız yarım bilete amorti çıktı yine.", ok: false },
@@ -173,7 +173,7 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. Aradığınız</u>... <u>II. dilemek</u>... <u>III. güvenmektir</u>... <u>IV. çalışarak</u>... <u>V. gereken</u>...</p><p><b>Numaralanmış fiilimsiler türce eşleştiğinde hangisi dışarıda kalır?</b></p>",
+    text: "<p><u>Aradığınız</u> (I) tüm yanıtları görmek size bağlı. Yapmanız gereken tek şey içinize bakmak, <u>dilemek</u> (II) ve kendinize <u>güvenmektir</u> (III). İçinizdeki en derin sorunların herhangi birine yanıt bulmaya <u>çalışarak</u> (IV) derinliklerinizde bilmeniz <u>gereken</u> (V) her şeye ulaşabilirsiniz.</p><p><b>Bu parçadaki numaralanmış fiilimsiler, türce ikişerli eşleştiğinde hangisi <u>dışarıda</u> kalır?</b></p>",
     diff: 3,
     expl: "I ve V sıfat-fiil, II ve III isim-fiildir. IV numaralı 'çalışarak' sözcüğü zarf-fiildir ve tek kalır.",
     answers: [
@@ -185,9 +185,9 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir şey bildiğin zaman, onu bildiğini göstermeye çalış... <b>Bu parçayla ilgili aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>Bir şey bildiğin zaman, onu bildiğini göstermeye çalış; bir şey bilmiyorken onu bilmediğini kabul et, işte bu bilgidir.</p><p><b>Bu parçayla ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
-    expl: "Parçada 'göstermeye' isim-fiili dolaylı tümleç değil, nesne görevindedir. Diğer seçenekler metne uygundur.",
+    expl: "Parçada yalnızca 'göster-me-y-e' sözcüğü ad eylemdir (isim-fiil); başka ad eylem yoktur. Bu nedenle A yanlıştır. 'Bil-dik-in' sıfat-fiil, 'bilmiyor-ken' zarf-fiil, 'göstermeye' isim-fiil olmak üzere üç farklı fiilimsi vardır. 'Bilmiyorken' cümleye zaman anlamı katmıştır; 'bilmediğini' adlaşmış sıfat-fiildir; 'göstermeye' ise 'Neye?' sorusunun cevabı olarak dolaylı tümleç görevindedir.",
     answers: [
       { text: "Birden fazla ad eylem kullanılmıştır.", ok: true },
       { text: "Üç farklı türde fiilimsi vardır.", ok: false },
@@ -197,9 +197,9 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Geçen günlere yazık... II. dizede birden fazla sıfat-fiil vardır... <b>Bu dizelerle ilgili aşağıdakilerden hangisi söylenemez?</b></p>",
+    text: "<p>Geçen günlere yazık, yazık etmişsin gönül sen!<br>Öyleyse hiç sevmemiş, sevilmemişsin gönül sen!<br>Albümdeki o resme bakarken ağladın mı hiç?<br>Çılgın gibi koşarak kırlara uzandın mı hiç?<br>Unutmayıp adını senelerce andın mı hiç?</p><p><b>Bu dizelerle ilgili aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
     diff: 3,
-    expl: "II. dizedeki 'sevmemiş' ve 'sevilmemişsin' sözcükleri fiilimsi değil, öğrenilen geçmiş zaman kipiyle çekimlenmiş fiillerdir.",
+    expl: "II. dizedeki 'sevmemiş' ve 'sevilmemişsin' sözcükleri fiilimsi değil, öğrenilen geçmiş zaman kipiyle (-miş) çekimlenmiş fiillerdir; bu dizede sıfat-fiil yoktur.",
     answers: [
       { text: "I. dizede, ortaç sıfat görevinde kullanılmıştır.", ok: false },
       { text: "II. dizede, birden fazla sıfat-fiil vardır.", ok: true },
@@ -209,9 +209,9 @@ export const TUR_FIILIMSILER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. oldukça</u>... <u>II. Giderek</u>... <u>III. alacakmışçasına</u>... <u>IV. bırakıp</u>... <u>V. demeden</u>...</p><p><b>Bu parçada numaralanmış altı çizili sözcüklerden hangisi zarf-fiil değildir?</b></p>",
+    text: "<p>Ahmet, sınav gününe doğru <u>oldukça</u> (I) stresli bir hâle büründü ama ders çalışmayı her zamankinden daha yoğun bir şekilde sürdürmeye başardı. <u>Giderek</u> (II) artan bir endişeyle notlarını gözden geçirirken, sınavdan yüksek not <u>alacakmışçasına</u> (III) çalışmaya devam etti. Tüm sosyal aktivitelerini <u>bırakıp</u> (IV) sadece sınava odaklandı. Sabah akşam <u>demeden</u> (V) başarıya ulaşmak için elinden geleni yapıyordu.</p><p><b>Bu parçada numaralanmış altı çizili sözcüklerden hangisi zarf-fiil <u>değildir</u>?</b></p>",
     diff: 3,
-    expl: "I numaralı 'oldukça' sözcüğü metinde fiili nitelemek yerine bir sıfatın derecesini belirten 'zarf' görevindedir ve fiilimsi özelliğini yitirmiştir.",
+    expl: "I numaralı 'oldukça' sözcüğü 'stresli' sıfatını derecelendiren bir zarftır; '-dukça' eki temel işlevinin dışına çıktığı için fiilimsi özelliğini yitirmiştir.",
     answers: [
       { text: "I", ok: true },
       { text: "II", ok: false },

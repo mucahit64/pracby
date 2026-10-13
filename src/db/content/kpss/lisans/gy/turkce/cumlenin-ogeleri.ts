@@ -17,7 +17,7 @@ export const TUR_CUMLE_OGELERI_TEST_24: McQ[] = [
     ]
   },
   {
-    text: "<p>İnsanoğlu; fizyolojik ve psikolojik yönleriyle çok karmaşık olan bu nedenle de anlaşılmayan, âdeta bir sorular ve bilinmezler yumağı olan bir varlıktır.</p><p><b>Bu cümlenin yükleminde aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>İnsanoğlu; fizyolojik ve psikolojik yönleriyle çok karmaşık olan bu nedenle de anlaşılmayan, âdeta bir sorular ve bilinmezler yumağı olan bir varlıktır.</p><p><b>Bu cümlenin yükleminde aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
     expl: "Yüklem içerisinde 'sorular ve bilinmezler yumağı' isim tamlaması, 'yönleriyle' edat, 'âdeta' durum zarfı ve 'karmaşık olan' sıfat-fiil grubu mevcuttur. Ancak yüklemde zarf-fiil eki almış bir sözcük bulunmamaktadır.",
     answers: [
@@ -41,7 +41,7 @@ export const TUR_CUMLE_OGELERI_TEST_24: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdaki cümlelerden hangisi yalnızca temel ögelerden (Özne ve Yüklem) oluşmaktadır?</b></p>",
+    text: "<p><b>Aşağıdaki cümlelerden hangisi <u>yalnızca</u> temel ögelerden oluşmaktadır?</b></p>",
     diff: 3,
     expl: "B seçeneğinde 'Günlüklü Koyu'ndaki muhteşem manzara' özne, 'ziyaretçilerin ağzını açık bırakıyordu' ise deyimleşmiş bir yüklemdir. Cümlede yardımcı öge bulunmaz.",
     answers: [
@@ -55,7 +55,7 @@ export const TUR_CUMLE_OGELERI_TEST_24: McQ[] = [
   {
     text: "<p><b>Aşağıdakilerin hangisinde vurgulanan öge diğerlerinden farklıdır?</b></p>",
     diff: 3,
-    expl: "Fiil cümlelerinde vurgu yüklemden önceki ögededir. E seçeneğinde 'bugünlere' dolaylı tümleci (yer tamlayıcısı) vurgulanmıştır. Diğer seçeneklerde yüklem isim soylu olduğu için vurgu yüklemin kendisindedir.",
+    expl: "Fiil cümlelerinde vurgu yüklemden önceki ögededir. E seçeneğinde yüklem 'ulaştı' anlamındaki 'vardı' eylemidir; bu nedenle yüklemden önceki 'bugünlere' zarf tümleci vurgulanmıştır. Diğer seçeneklerde yüklem isim soylu olduğu için vurgu yüklemin kendisindedir.",
     answers: [
       { text: "Batı edebiyatının temel kaynağı Yunan kültürüdür.", ok: false },
       { text: "Akşamki organizasyondan akılda kalacak tek şey müzik ziyafetiydi.", ok: false },
@@ -77,7 +77,7 @@ export const TUR_CUMLE_OGELERI_TEST_24: McQ[] = [
     ]
   },
   {
-    text: "<p>Çağın, toplumun ve dünyanın bireyden beklentileri değiştiğinden bireyin sıkça başvurduğu okuma becerisinin tanımı tarihten günümüze birçok kez farklı tanımlarla ifade edilmiştir.</p><p><b>Bu cümlede öge bulunurken aşağıdaki sorulardan hangisinin cevabı yoktur?</b></p>",
+    text: "<p>Çağın, toplumun ve dünyanın bireyden beklentileri değiştiğinden bireyin sıkça başvurduğu okuma becerisinin tanımı tarihten günümüze birçok kez farklı tanımlarla ifade edilmiştir.</p><p><b>Bu cümlede öge bulunurken aşağıdaki sorulardan hangisinin cevabı <u>yoktur</u>?</b></p>",
     diff: 2,
     expl: "Cümlede 'Neden?' (beklentiler değiştiğinden), 'Ne?' (okuma becerisinin tanımı), 'Ne zaman?' (tarihten günümüze) ve 'Nasıl?' (farklı tanımlarla) sorularının cevabı varken, 'Nereden?' sorusunun cevabı yoktur.",
     answers: [
@@ -101,7 +101,7 @@ export const TUR_CUMLE_OGELERI_TEST_24: McQ[] = [
     ]
   },
   {
-    text: "<p>Film festivalleri; sanatı, sanatçıyı ve izleyiciyi bir araya getirirken izleyenlere muhteşem bir sinema seli sunar.</p><p><b>Bu cümlede eylemden etkilenen öge (nesne) aşağıdakilerden hangisinde doğru olarak verilmiştir?</b></p>",
+    text: "<p>Film festivalleri; sanatı, sanatçıyı ve izleyiciyi bir araya getirirken izleyenlere muhteşem bir sinema seli sunar.</p><p><b>Bu cümlede eylemden etkilenen öge aşağıdakilerden hangisinde doğru olarak verilmiştir?</b></p>",
     diff: 2,
     expl: "Cümlede 'sunar' yüklemine sorulan 'Ne sunar?' sorusunun cevabı olan 'muhteşem bir sinema seli' belirtisiz nesnedir ve eylemden etkilenen ögedir.",
     answers: [
@@ -113,7 +113,7 @@ export const TUR_CUMLE_OGELERI_TEST_24: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir kelebeğin kanatlarının üzerindeki pullar vasıtasıyla ışığın yansıyarak ortaya çıkması, gerçekte olmayan ama akıl almaz güzellik sergileyen renkleri görmemizi sağlar.</p><p><b>Bu cümlenin öznesinde aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>Bir kelebeğin kanatlarının üzerindeki pullar vasıtasıyla ışığın yansıyarak ortaya çıkması, gerçekte olmayan ama akıl almaz güzellik sergileyen renkleri görmemizi sağlar.</p><p><b>Bu cümlenin öznesinde aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
     expl: "Özne 'Bir kelebeğin kanatlarının üzerindeki pullar vasıtasıyla ışığın yansıyarak ortaya çıkması' grubudur. Bu grupta isim-fiil, edat öbeği ve zincirleme isim tamlaması varken sıfat-fiil grubu bulunmamaktadır.",
     answers: [
@@ -125,7 +125,7 @@ export const TUR_CUMLE_OGELERI_TEST_24: McQ[] = [
     ]
   },
   {
-    text: "<p>Mantık, Aristoteles'in sistemleştirdiği şeklini koruyarak yaklaşık yirmi asırdır önemli bir değişikliğe uğramamıştır.</p><p><b>Bu cümlede numaralanmış sözcüklerin hangisi tek başına cümlenin bir ögesini oluşturmaktadır?</b></p>",
+    text: "<p><u>Mantık</u> (I), Aristoteles'in sistemleştirdiği <u>şeklini</u> (II) koruyarak <u>yaklaşık</u> (III) yirmi asırdır <u>önemli</u> (IV) bir <u>değişikliğe</u> (V) uğramamıştır.</p><p><b>Bu cümlede numaralanmış sözcüklerin hangisi <u>tek başına</u> cümlenin bir ögesini oluşturmaktadır?</b></p>",
     diff: 3,
     expl: "Cümlede 'Mantık' (I) tek başına özne görevindedir. Diğer numaralı kısımlar zarf tümleci veya dolaylı tümleç gruplarının birer parçasıdır.",
     answers: [
@@ -139,7 +139,7 @@ export const TUR_CUMLE_OGELERI_TEST_24: McQ[] = [
   {
     text: "<p>Atmosfere çeşitli etkilerle yayılan gazların sera etkisi yaratması sonucunda, Dünya yüzeyinde sıcaklığın artmasıdır küresel ısınma.</p><p><b>Bu cümlenin ögelerinin doğru sıralaması aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
-    expl: "Cümlede 'Atmosfere... artmasıdır' kısmı ek-eylem alarak yüklem olmuştur. 'küresel ısınma' ise öznedir. Ancak cümle 'zarf tümleci - yüklem - özne' şeklinde de analiz edilebilir.",
+    expl: "'Atmosfere çeşitli etkilerle yayılan gazların sera etkisi yaratması sonucunda' zarf tümleci, 'Dünya yüzeyinde sıcaklığın artmasıdır' yüklem, 'küresel ısınma' öznedir. Sıralama: zarf tümleci - yüklem - özne.",
     answers: [
       { text: "Zarf tümleci - özne - yüklem", ok: false },
       { text: "Zarf tümleci - yüklem - nesne", ok: false },
@@ -167,9 +167,9 @@ export const TUR_CUMLE_OGELERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdaki cümlelerin hangisinde ögelerine ayırmada yanlışlık yapılmıştır?</b></p>",
+    text: "<p><b>Aşağıdaki cümlelerin hangisinde ögelerine ayırmada <u>yanlışlık</u> yapılmıştır?</b></p>",
     diff: 3,
-    expl: "D seçeneğinde 'bilim insanlarının dikkati' bir zincirleme isim tamlamasıdır. 'dikkatini çekmek' ise deyimleşmiş bir birleşik fiildir ve bölünemez. Yüklem 'dikkatini çekmiştir' şeklinde bir bütün olarak alınmalıydı.",
+    expl: "D seçeneğinde 'dikkat çekmek' birleşik fiildir, ayrılmaz. Ayrıca 'bilim insanlarının dikkati' isim tamlaması olduğu için 'bilim insanlarının' ifadesi yükleme dâhildir. Doğrusu: İnsanlar ve hayvanlar arasındaki ilişkilerin tarihi (özne) / her daim (zarf tümleci) / bilim insanlarının dikkatini çekmiştir (yüklem).",
     answers: [
       { text: "Bahar / toprak ananın o kendine özgü telaşıyla çırpınan kalbini dinlemenin tam zamanıdır.", ok: false },
       { text: "Böcekler uyanmaya, yollar tozlanmaya kırlar çiçeklenmeye / başlamıştı / bahar gelince.", ok: false },
@@ -191,7 +191,7 @@ export const TUR_CUMLE_OGELERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Küçük burjuva çevrelerindeki yozlaşmış aile ilişkilerini en ince ayrıntılarına kadar irdeleyen \"Dönüşüm\"; toplumun dayattığı, işlevini çoktan yitirmiş kalıplara bilinç düzeyinde başkaldıran bireyin tragedyasını çarpıcı bir biçimde dile getirir.</p><p><b>Bu cümlenin ögeleri sırasıyla aşağıdakilerden hangisinde verilmiştir?</b></p>",
+    text: "<p>Küçük burjuva çevrelerindeki yozlaşmış aile ilişkilerini en ince ayrıntılarına kadar irdeleyen \"Dönüşüm\"; toplumun dayattığı, işlevini çoktan yitirmiş kalıplara bilinç düzeyinde başkaldıran bireyin tragedyasını çarpıcı bir biçimde dile getirir.</p><p><b>Bu cümlenin ögeleri <u>sırasıyla</u> aşağıdakilerden hangisinde verilmiştir?</b></p>",
     diff: 3,
     expl: "Özne: Küçük burjuva... 'Dönüşüm'; Nesne: toplumun dayattığı... bireyin tragedyasını; Zarf Tümleci: çarpıcı bir biçimde; Yüklem: dile getirir.",
     answers: [
@@ -203,7 +203,7 @@ export const TUR_CUMLE_OGELERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Bozuk kaldırımların üzerinde buz tutmuş çamur parçalarına dikkatle basarak işe gidenler, yol üzerindeki fabrikanın önünde biraz soluklanırlardı.</p><p><b>Bu cümlenin öznesinde aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>Bozuk kaldırımların üzerinde buz tutmuş çamur parçalarına dikkatle basarak işe gidenler, yol üzerindeki fabrikanın önünde biraz soluklanırlardı.</p><p><b>Bu cümlenin öznesinde aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
     expl: "Özne 'Bozuk kaldırımların üzerinde buz tutmuş çamur parçalarına dikkatle basarak işe gidenler' kısmıdır. Burada 'dikkatle' (ilgeç/edat), 'basarak' (zarf-fiil), 'tutmuş' (sıfat-fiil) ve 'bozuk kaldırım' (tamlama) vardır; ancak isim-fiil yoktur.",
     answers: [
@@ -215,7 +215,7 @@ export const TUR_CUMLE_OGELERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Bu yarı aydınlık gecede, siyahımtırak bir mavinin bütün değişik şekillerini kucakladığı bu bahçede, insanın içini bayıltan hanımeli kokuları, sessiz yaz gecelerini anımsatıyordu.</p><p><b>Bu cümlenin ögeleriyle ilgili olarak aşağıda verilen bilgilerden hangisi yanlıştır?</b></p>",
+    text: "<p>Bu yarı aydınlık gecede, siyahımtırak bir mavinin bütün değişik şekillerini kucakladığı bu bahçede, insanın içini bayıltan hanımeli kokuları, sessiz yaz gecelerini anımsatıyordu.</p><p><b>Bu cümlenin ögeleriyle ilgili olarak aşağıda verilen bilgilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "Yüklem olan 'anımsatıyordu', 'anımsa-' fiilinden türemiş birleşik zamanlı (hikaye) bir fiildir. Ancak 'gövdeden türemiş basit zamanlı' ifadesi yanlıştır çünkü fiil hem türemiştir hem de birleşik zamanlıdır.",
     answers: [
@@ -239,9 +239,9 @@ export const TUR_CUMLE_OGELERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><u>Bu bakışları</u>; <u>kucaklaşma hıçkırıklarına benzeyen gülüşlerine</u> <u>gece gündüz</u> <u>yârenlik eder</u>.</p><p><b>Bu cümle ögelerine ayrıldığında numaralanmış ifadelerden hangileri yanlış bir öge gösterimi olacaktır?</b></p>",
+    text: "<p><u>Bu bakışları</u> (I); <u>kucaklaşma hıçkırıklarına</u> (II) <u>benzeyen gülüşlerine</u> (III) <u>gece gündüz</u> (IV) <u>yârenlik eder</u> (V).</p><p><b>Bu cümle ögelerine ayrıldığında altı çizili ifadelerden hangileri <u>yanlış</u> bir öge gösterimi olacaktır?</b></p>",
     diff: 3,
-    expl: "II numaralı 'kucaklaşma hıçkırıklarına benzeyen gülüşlerine' öbeği bir bütündür ve yer tamlayıcısıdır, bölünemez. Bu yüzden gösterim yanlıştır.",
+    expl: "'kucaklaşma hıçkırıklarına benzeyen gülüşlerine' ifadesinin tamamı yer tamlayıcısıdır ve bölünemez. Bu nedenle II ve III numaralı ayrı gösterimler yanlıştır.",
     answers: [
       { text: "I ve II", ok: false },
       { text: "II ve III", ok: true },
@@ -251,7 +251,7 @@ export const TUR_CUMLE_OGELERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Mustafa Kemal Atatürk, bilimin önemini \"Eğer bir gün benim sözlerim bilimle ters düşerse bilimi seçin.\" sözüyle vurgulamıştır.</p><p><b>Bu cümleyle ilgili olarak aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>Mustafa Kemal Atatürk, bilimin önemini \"Eğer bir gün benim sözlerim bilimle ters düşerse bilimi seçin.\" sözüyle vurgulamıştır.</p><p><b>Bu cümleyle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "Yüklem 'vurgulamıştır' basit zamanlı bir fiildir. Seçenekte belirtilen 'birleşik zamanlı türemiş fiil' ifadesi yanlıştır. Bildirme eki (-dır) fiili birleşik zamanlı yapmaz.",
     answers: [
@@ -263,7 +263,7 @@ export const TUR_CUMLE_OGELERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>(I) Cümle... ana unsuru yargıyı taşıyan yüklem olan kelime veya kelime dizisidir... (V) Bu vasıftaki söz dizilerinin art arda sıralanmasıyla metinler oluşturulur.</p><p><b>Bu parçada numaralanmış cümlelerle ilgili aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>(I) Cümle; bir düşünceyi, duyguyu, durumu, olayı yargı bildirerek anlatan ve ana unsuru yargıyı taşıyan yüklem olan kelime veya kelime dizisidir. (II) Yüklem ya çekimli bir fiil ya da ek-fiille çekimlenmiş bir isim unsurudur. (III) Yüklemin anlamı diğer ögelerle desteklenir. (IV) Bir cümledeki kelime ve öge sayısı ihtiyaca göre değişebilir. (V) Bu vasıftaki söz dizilerinin art arda sıralanmasıyla metinler oluşturulur.</p><p><b>Bu parçada numaralanmış cümlelerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "V numaralı cümle 'Bu vasıftaki söz dizilerinin art arda sıralanmasıyla' (zarf tümleci), 'metinler' (özne), 'oluşturulur' (yüklem) şeklinde üç ögelidir. İki ögeli olduğu bilgisi yanlıştır.",
     answers: [
@@ -275,7 +275,7 @@ export const TUR_CUMLE_OGELERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>\"Sonsuz mor bir kubbeyi andıran dumanlı göklerden hayatın gelip geçiciliği yansıyordu ağaçlardaki yaprakların üzerine.\"</p><p><b>Bu cümleyle ilgili olarak aşağıdakilerden hangisi söylenemez?</b></p>",
+    text: "<p>\"Sonsuz mor bir kubbeyi andıran dumanlı göklerden hayatın gelip geçiciliği yansıyordu ağaçlardaki yaprakların üzerine.\"</p><p><b>Bu cümleyle ilgili olarak aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
     diff: 3,
     expl: "Cümlede isim-fiil (-ma, -ış, -mak) eki almış bir sözcük bulunmamaktadır. Dolayısıyla üç fiilimsi türünün de örneklendiği bilgisi yanlıştır.",
     answers: [
@@ -305,7 +305,7 @@ export const TUR_CUMLE_OGELERI_TEST_2: McQ[] = [
 // ============================================================================
 export const TUR_CUMLE_OGELERI_TEST_3: McQ[] = [
   {
-    text: "<p>İstanbul'da çok uzun zaman yaşamış, yaşadıkça birçok semtini sevmiş bir insan bir süre sonra bu şehrin sonu gelmez güzellikleri olduğuna inanır.</p><p><b>Bu cümlenin öge sıralanışı aşağıdakilerin hangisinde sırasıyla doğru olarak verilmiştir?</b></p>",
+    text: "<p>İstanbul'da çok uzun zaman yaşamış, yaşadıkça birçok semtini sevmiş bir insan bir süre sonra bu şehrin sonu gelmez güzellikleri olduğuna inanır.</p><p><b>Bu cümlenin öge sıralanışı aşağıdakilerin hangisinde <u>sırasıyla</u> doğru olarak verilmiştir?</b></p>",
     diff: 3,
     expl: "Özne: İstanbul'da... sevmiş bir insan / Zarf Tümleci: bir süre sonra / Dolaylı Tümleç: bu şehrin sonu gelmez güzellikleri olduğuna / Yüklem: inanır.",
     answers: [
@@ -329,7 +329,7 @@ export const TUR_CUMLE_OGELERI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Ölümün zaferinin yanı başında imkânsız bir kışın kasıp kavurduğu bir bahçede buzların kilidi çözülür çözülmez başlayan bahar gibi bir hayat türküsü yükseliyordu.</p><p><b>Bu cümlenin öznesinde aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>Ölümün zaferinin yanı başında imkânsız bir kışın kasıp kavurduğu bir bahçede buzların kilidi çözülür çözülmez başlayan bahar gibi bir hayat türküsü yükseliyordu.</p><p><b>Bu cümlenin öznesinde aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
     expl: "Özne 'buzların... hayat türküsü' kısmıdır. 'çözülür çözülmez' zarf-fiildir, 'başlayan' sıfat-fiildir, 'hayat türküsü' isim tamlamasıdır, 'gibi' edat grubudur. Öznede isim-fiil bulunmamaktadır.",
     answers: [
@@ -341,7 +341,7 @@ export const TUR_CUMLE_OGELERI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdaki cümlelerinde hangisinde \"özne\" yoktur?</b></p>",
+    text: "<p><b>Aşağıdaki cümlelerinde hangisinde \"özne\" <u>yoktur</u>?</b></p>",
     diff: 3,
     expl: "D seçeneğinde 'gözü dönmek' bir deyimdir ve bu tür deyimleşmiş yüklemler (geçişsiz/edilgen karakterli olanlar) bazen mantıksal bir özne gerektirmez. Diğer şıklarda özneler sırasıyla: Ben, o, o ve onlar'dır.",
     answers: [
@@ -355,12 +355,12 @@ export const TUR_CUMLE_OGELERI_TEST_3: McQ[] = [
   {
     text: "<p>I. Bizden yüz çevirmişler, bizimle hasım olmuşlardı.<br/>II. Mide hastası olduğunu öğrenene kadar yaşadığı her şeyi içine atıyordu.<br/>III. Bu sırrı çözmeye kalkışırsan dibini bulamazsın.<br/>IV. Topluma örnek niteliğindeki davranışlarıyla herkesin gözüne girdi.</p><p><b>Yukarıda numaralanmış cümlelerin hangilerinde \"nesne\" vardır?</b></p>",
     diff: 3,
-    expl: "II. cümlede 'yaşadığı her şeyi' nesnedir. III. cümlede 'dibini' nesnedir. I ve IV. cümlelerde nesne bulunmamaktadır.",
+    expl: "II. cümlede 'yaşadığı her şeyi' nesnedir; 'içine atmak' deyimi nesne kabul eder. III. cümledeki 'dibini bulmak' deyimdir, öge bulunurken ayrılmaz; bu nedenle 'dibini' nesne olamaz. I ve IV. cümlelerde de nesne yoktur.",
     answers: [
-      { text: "Yalnız II", ok: false },
+      { text: "Yalnız II", ok: true },
       { text: "Yalnız III", ok: false },
       { text: "I ve IV", ok: false },
-      { text: "II ve III", ok: true },
+      { text: "II ve III", ok: false },
       { text: "III ve IV", ok: false }
     ]
   },
@@ -377,7 +377,7 @@ export const TUR_CUMLE_OGELERI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Ey mavi göklerin beyaz ve kızıl süsü<br/>Kız kardeşimin gelinliği, şehidimin son örtüsü<br/>Işık ışık, dalga dalga bayrağım,<br/>Senin destanını okudum, senin destanını yazacağım.</p><p><b>Bu dörtlükteki ünlem grubunda aşağıdakilerden hangisine yer verilmemiştir?</b></p>",
+    text: "<p>Ey mavi göklerin beyaz ve kızıl süsü<br/>Kız kardeşimin gelinliği, şehidimin son örtüsü<br/>Işık ışık, dalga dalga bayrağım,<br/>Senin destanını okudum, senin destanını yazacağım.</p><p><b>Bu dörtlükteki ünlem grubunda aşağıdakilerden hangisine <u>yer verilmemiştir</u>?</b></p>",
     diff: 3,
     expl: "Ünlem grubunda tamlayanı kişi zamiri olan belirtili isim tamlaması (senin destanın) bulunmamaktadır; çünkü 'senin destanın' ünlem grubunda değil, cümlenin nesnesi konumundadır.",
     answers: [
@@ -389,7 +389,7 @@ export const TUR_CUMLE_OGELERI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkçenin söz diziminde bir cümlede birden fazla, farklı yer tamlayıcısı bulunabilir.</p><p><b>Aşağıdaki cümlelerin hangisinde bu durumu örnekleyecek bir kullanım yoktur?</b></p>",
+    text: "<p>Türkçenin söz diziminde bir cümlede birden fazla, farklı yer tamlayıcısı bulunabilir.</p><p><b>Aşağıdaki cümlelerin hangisinde bu durumu örnekleyecek bir kullanım <u>yoktur</u>?</b></p>",
     diff: 3,
     expl: "C seçeneğinde altı çizili olan tüm yer bildiren ifadeler (ormanlardan, derelerden, köprülerden...) tek bir 'Nereden?' sorusuna yanıt verir, dolayısıyla tek bir ögedir. Diğer şıklarda farklı sorulara (Nerede, Kime, Neyden vb.) yanıt veren ayrı ögeler vardır.",
     answers: [
@@ -413,7 +413,7 @@ export const TUR_CUMLE_OGELERI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>İstanbul'un fethinin beş yüzüncü yıldönümüne ait bahislerin gazetelerde sık sık yer aldığı bu günlerde, bu gazel bana birdenbire bu fethin genç yaşlarıma karışmış canlı bir hatırası gibi göründü.</p><p><b>Bu cümleyle ilgili olarak aşağıdaki değerlendirmelerden hangisi yanlıştır?</b></p>",
+    text: "<p>İstanbul'un fethinin beş yüzüncü yıldönümüne ait bahislerin gazetelerde sık sık yer aldığı bu günlerde, bu gazel bana birdenbire bu fethin genç yaşlarıma karışmış canlı bir hatırası gibi göründü.</p><p><b>Bu cümleyle ilgili olarak aşağıdaki değerlendirmelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "C seçeneği yanlıştır; çünkü cümlede iki farklı sıfat-fiil grubu (Biri 'gazetelerde... yer aldığı', diğeri 'bu fethin... hatırası') vardır fakat her ikisi de zarf tümlecinin içinde yer alır. Yer tamlayıcısı değildir.",
     answers: [

@@ -5,7 +5,7 @@ import { McQ } from "../../../../types";
 // ============================================================================
 export const TUR_CUMLE_TAMAMLAMA_TEST_1: McQ[] = [
   {
-    text: "<p>Gerçekte Yunus'un şiirlerini ----, yaşlanmaz kılan birçok etken gösterilebilir. Bana göre ana etken, ondaki ---- söyleyiş biçimidir. Sözü ---- kılmanın gizini, özlü söyleyişte bulmasıdır.</p><p><b>Bu parçada boş bırakılan yerler aşağıdakilerden hangileriyle en uygun biçimde doldurulabilir?</b></p>",
+    text: "<p>Gerçekte Yunus'un şiirlerini ----, yaşlanmaz kılan birçok etken gösterilebilir. Bana göre ana etken, ondaki ---- söyleyiş biçimidir. Sözü ---- kılmanın gizini, özlü söyleyişte bulmasıdır.</p><p><b>Bu parçada boş bırakılan yerler aşağıdakilerden hangileriyle <u>en uygun</u> biçimde doldurulabilir?</b></p>",
     diff: 3,
     expl: "Cümlede Yunus Emre'nin şiirlerinin kalıcılığı ve yaşlanmazlığı vurgulanmaktadır. 'Yaşlanmaz' ifadesini 'eskimez' sözcüğü, 'özlü söyleyiş' vurgusunu ise 'sade' ve 'yaşsız' kelimeleri en iyi şekilde tamamlar.",
     answers: [
@@ -13,11 +13,11 @@ export const TUR_CUMLE_TAMAMLAMA_TEST_1: McQ[] = [
       { text: "B) eskimez – sade – yaşsız", ok: true },
       { text: "C) çarpıcı – duru – kabul edilir", ok: false },
       { text: "D) kalıcı – yalın – genel geçer", ok: false },
-      { text: "E) popüler – kestirme – açık", ok: false }
+      { text: "E) popüler – kestirmez – açık", ok: false }
     ]
   },
   {
-    text: "<p>Ağır sanayi ve hafif sanayi devrimleri ardından bilişim dönemiyle \"beyin\" para ---- başladı. İnternet, bilgisayar programları ve internet ile alakalı işlerden Batı milyar dolarlar ---- başlarken ağır sanayi ve hafif sanayi gelişmekte olan ülkelere devredildi. Batı; internet alan adları, internet üzerinden yapılan ticaret, Google, Facebook, Twitter gibi daha birkaç yıl önce kurulmuş sitelerle birçok ülkenin ---- gelirinden çok kazanmaya başladı.</p><p><b>Bu parçada boş bırakılan yerler aşağıdakilerden hangileriyle en uygun biçimde doldurulabilir?</b></p>",
+    text: "<p>Ağır sanayi ve hafif sanayi devrimleri ardından bilişim dönemiyle \"beyin\" para ---- başladı. İnternet, bilgisayar programları ve internet ile alakalı işlerden Batı milyar dolarlar ---- başlarken ağır sanayi ve hafif sanayi gelişmekte olan ülkelere devredildi. Batı; internet alan adları, internet üzerinden yapılan ticaret, Google, Facebook, Twitter gibi daha birkaç yıl önce kurulmuş sitelerle birçok ülkenin ---- gelirinden çok kazanmaya başladı.</p><p><b>Bu parçada boş bırakılan yerler aşağıdakilerden hangileriyle <u>en uygun</u> biçimde doldurulabilir?</b></p>",
     diff: 3,
     expl: "Parçada bilginin (beyin) ekonomik bir güce dönüşmesi anlatılıyor. 'Beyin para etmeye başladı', 'milyar dolarlar kazanmaya' ve 'ülkelerin yıllık gelirinden' ifadeleri anlam akışına tam uygundur.",
     answers: [
@@ -29,7 +29,7 @@ export const TUR_CUMLE_TAMAMLAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Hemen şunu söyleyelim: Rıfat Ilgaz'ı herkes bilir; onun şiirlerinin, düzyazılarının ve gazete yazılarının ---- yaşamdır. O, bütün yaratılarını yaşamın ---- çıkarır.</p><p><b>Bu parçada boş bırakılan yerler aşağıdakilerden hangileriyle en uygun biçimde <u>doldurulamaz</u>?</b></p>",
+    text: "<p>Hemen şunu söyleyelim: Rıfat Ilgaz'ı herkes bilir; onun şiirlerinin, düzyazılarının ve gazete yazılarının ---- yaşamdır. O, bütün yaratılarını yaşamın ---- çıkarır.</p><p><b>Bu parçada boş bırakılan yerler aşağıdakilerden hangileriyle <u>en uygun</u> biçimde <u>doldurulamaz</u>?</b></p>",
     diff: 3,
     expl: "Rıfat Ilgaz toplumcu bir yazardır. Şiirlerinin 'merkezi', 'odak noktası', 'kaynağı' veya 'referansı' yaşam olabilir. Ancak 'çelişkili yanı yaşamdır' ifadesi yazarın sanat anlayışıyla ve cümlenin devamıyla uyum sağlamaz.",
     answers: [
@@ -41,7 +41,7 @@ export const TUR_CUMLE_TAMAMLAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Üstbiliş stratejileri kişinin kendi özelliklerini bilmesine ve kendisini tanımasına bağlı olduğundan öğretmen, öncelikle öğrencilerin kendi okumalarını değerlendirebilecekleri eğitim-öğretim ortamları hazırlamalı; onların kendilerini tanımalarına ---- etmelidir. Öğrencilerin okuma becerileriyle ilgili eksikliklerini belirlemeleri, üstbiliş stratejilerinin uygulandığı bir ileri okuma sürecinin her ne kadar ilk adımıysa da ileri okurun becerileri bu adımla ---- değildir.</p><p><b>Bu parçada boş bırakılan yerlere sırasıyla aşağıdakilerden hangisi getirilmelidir?</b></p>",
+    text: "<p>Üstbiliş stratejileri kişinin kendi özelliklerini bilmesine ve kendisini tanımasına bağlı olduğundan öğretmen, öncelikle öğrencilerin kendi okumalarını değerlendirebilecekleri eğitim-öğretim ortamları hazırlamalı; onların kendilerini tanımalarına ---- etmelidir. Öğrencilerin okuma becerileriyle ilgili eksikliklerini belirlemeleri, üstbiliş stratejilerinin uygulandığı bir ileri okuma sürecinin her ne kadar ilk adımıysa da ileri okurun becerileri bu adımla ---- değildir. İleri okur; üstbiliş stratejisini farklılaştırabilen, farklı okuma faaliyetlerine aktarabilen, farklı stratejiler geliştirebilen bireydir.</p><p><b>Bu parçada boş bırakılan yerlere sırasıyla aşağıdakilerden hangisi getirilmelidir?</b></p>",
     diff: 3,
     expl: "Öğretmenin görevi öğrencilere 'kılavuzluk' etmektir. Cümlenin devamında ise bu ilk adımın önemli olduğu fakat becerilerin sadece bununla 'sınırlı' kalmadığı anlatılmaktadır.",
     answers: [
@@ -53,7 +53,7 @@ export const TUR_CUMLE_TAMAMLAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Ben siyaseti öğrenmeliyim ki çocuklarımın sanayi ve ticareti öğrenme ---- olsun; çocuklarım sanayi ve ticareti öğrenmeliler ki onların çocukları sanat, edebiyat ve felsefeyi öğrenme ---- sahip olsunlar.</p><p><b>Bu cümlede boş bırakılan yerler aşağıdakilerden hangileriyle en uygun biçimde doldurulabilir?</b></p>",
+    text: "<p>Ben siyaseti öğrenmeliyim ki çocuklarımın sanayi ve ticareti öğrenme ---- olsun; çocuklarım sanayi ve ticareti öğrenmeliler ki onların çocukları sanat, edebiyat ve felsefeyi öğrenme ---- sahip olsunlar.</p><p><b>Bu cümlede boş bırakılan yerler aşağıdakilerden hangileriyle <u>en uygun</u> biçimde doldurulabilir?</b></p>",
     diff: 2,
     expl: "Nesiller arası gelişimi anlatan bu cümlede, bir önceki neslin çabası bir sonraki nesil için 'imkân' veya 'olanak' yaratır. 'İmkânı' ve 'şansına' kelimeleri boşluklara tam oturur.",
     answers: [
@@ -65,7 +65,7 @@ export const TUR_CUMLE_TAMAMLAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Onun en büyük erdemi bence şiire olan ---- hiç azaltmadan sürdürebilmesiydi. Daha ilk yazdıklarıyla sevilmişti. Bunlarla bile kendi dünyasında beklediği aşamaya gelmişti fakat daha fazlasını istemedi. İyi bir ozandı ama ---- bir ozan değildi.</p><p><b>Bu parçada boş bırakılan yerlere aşağıdakilerden hangisi sırasıyla getirilmelidir?</b></p>",
+    text: "<p>Onun en büyük erdemi bence şiire olan ---- hiç azaltmadan sürdürebilmesiydi. Daha ilk yazdıklarıyla sevilmişti. Bunlarla bile kendi dünyasında beklediği aşamaya gelmişti fakat daha fazlasını istemedi. İyi bir ozandı ama ---- bir ozan değildi.</p><p><b>Bu parçada boş bırakılan yerlere aşağıdakilerden hangisi <u>sırasıyla</u> getirilmelidir?</b></p>",
     diff: 3,
     expl: "Şairin şiire olan 'tutkusunu' sürdürmesi bir erdemdir. Cümlenin sonundaki 'ama' bağlacı karşıtlık bildirir; başarılı ve iyi bir ozan olmasına rağmen geniş kitlelerce tanınan 'popüler' biri olmadığı vurgulanmıştır.",
     answers: [
@@ -77,7 +77,7 @@ export const TUR_CUMLE_TAMAMLAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Romanın doğuşu, Don Kişot'un kılıcını, kalkanını kuşanıp evinden çıkmasıyla başlar ve günümüze kadar gelir. Don Kişot'u önemli kılan sadece anlattığı hikâyelerin ---- değildir. Burada önemli olan içeriğinde okuru, yazarı ve metni bir bütün olarak ele alınmasını sağlayan toplumun sorunlarını değil bireyin ---- anlatan bir türün, yani ilk romanın ortaya çıkmasıdır.</p><p><b>Bu parçada boş bırakılan yerlere aşağıdakilerden hangisi sırasıyla getirilmelidir?</b></p>",
+    text: "<p>Romanın doğuşu, Don Kişot'un kılıcını, kalkanını kuşanıp evinden çıkmasıyla başlar ve günümüze kadar gelir. Don Kişot'u önemli kılan sadece anlattığı hikâyelerin ---- değildir. Burada önemli olan içeriğinde okuru, yazarı ve metni bir bütün olarak ele alınmasını sağlayan toplumun sorunlarını değil bireyin ---- anlatan bir türün, yani ilk romanın ortaya çıkmasıdır.</p><p><b>Bu parçada boş bırakılan yerlere aşağıdakilerden hangisi <u>sırasıyla</u> getirilmelidir?</b></p>",
     diff: 3,
     expl: "Don Kişot 'özgünlüğü' ile tanınır. Parçanın sonunda romanın toplumdan ziyade bireyin iç dünyasını veya 'yalnızlığını' (veya varoluşunu) işlemesine değinilmiştir.",
     answers: [
@@ -89,7 +89,7 @@ export const TUR_CUMLE_TAMAMLAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Otizmli bireylerin ---- yetersizlik alanı sosyal iletişim becerileri olduğu için akranları ile birlikte ---- olmayan ortamlarda eğitim almaları, ---- için şarttır.</p><p><b>Bu cümlede boş bırakılan yerlere aşağıdakiler den hangisi sırasıyla getirilmelidir?</b></p>",
+    text: "<p>Otizmli bireylerin ---- yetersizlik alanı sosyal iletişim becerileri olduğu için akranları ile birlikte ---- olmayan ortamlarda eğitim almaları, ---- için şarttır.</p><p><b>Bu cümlede boş bırakılan yerlere aşağıdakilerden hangisi <u>sırasıyla</u> getirilmelidir?</b></p>",
     diff: 3,
     expl: "Otizmin 'temel' alanı iletişimdir. Bireyin gelişimi için 'kısıtlayıcı' olmayan ortamlar ve bu durumun onların 'gelişimleri' için gerekliliği vurgulanmıştır.",
     answers: [
@@ -101,19 +101,19 @@ export const TUR_CUMLE_TAMAMLAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>---- nesillerin giderek düşünme fonksiyonu ----, fikir üretme yetenekleri gerilemekte, ---- kelime hazinesi ile başarılı iletişim kurma özelliği kazanılamamaktadır.</p><p><b>Bu cümlede boş bırakılan yerlere aşağıdakiler den hangisi sırasıyla getirilmelidir?</b></p>",
+    text: "<p>---- nesillerin giderek düşünme fonksiyonu ----, fikir üretme yetenekleri gerilemekte, ---- kelime hazinesi ile başarılı iletişim kurma özelliği kazanılamamaktadır.</p><p><b>Bu cümlede boş bırakılan yerlere aşağıdakilerden hangisi <u>sırasıyla</u> getirilmelidir?</b></p>",
     diff: 2,
     expl: "Cümledeki olumsuz gidişatı 'Kitap okumayan' nesiller, fonksiyonların 'körelmesi' ve 'yetersiz' kelime hazinesi ifadeleri en mantıklı şekilde tamamlar.",
     answers: [
       { text: "A) Kitap okumayan – körelmekte – yetersiz", ok: true },
       { text: "B) Araştırma yapmayan – zayıflamakta – oldukça fazla", ok: false },
       { text: "C) Herhangi bir dergiye abone olan – gelişmekte – zengin", ok: false },
-      { text: "D) Kendini geliştirebilen – derinleşmemekte – ileri derecede", ok: false },
+      { text: "D) Kendini geliştirebilen – derinleşememekte – ileri derecede", ok: false },
       { text: "E) Okumayı sevmeyen – etkilenmekte – hayli çok", ok: false }
     ]
   },
   {
-    text: "<p>Çevre sorunlarını ---- çevrenin kirletilmesi veya bilinçsizce kullanılması olarak değil; ---- toplumsal, siyasal, ekonomik, kültürel, dinî ve ahlaki boyutları da olan son derece karmaşık bir sorunlar yumağı olarak görmek daha doğru olacaktır.</p><p><b>Bu parçada boş bırakılan yerlere aşağıdakilerden hangisi sırasıyla getirilmelidir?</b></p>",
+    text: "<p>Çevre sorunlarını ---- çevrenin kirletilmesi veya bilinçsizce kullanılması olarak değil; ---- toplumsal, siyasal, ekonomik, kültürel, dinî ve ahlaki boyutları da olan son derece karmaşık bir sorunlar yumağı olarak görmek daha doğru olacaktır.</p><p><b>Bu parçada boş bırakılan yerlere aşağıdakilerden hangisi <u>sırasıyla</u> getirilmelidir?</b></p>",
     diff: 3,
     expl: "Yazar çevre sorununa 'yalnızca' dar bir açıdan bakılmaması gerektiğini, 'daha geniş açıdan bakıldığında' bunun çok boyutlu olduğunu belirtmektedir.",
     answers: [
@@ -125,19 +125,19 @@ export const TUR_CUMLE_TAMAMLAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>... Doğadan insanın emrine sunulmuş ve her türlü ---- bir ürünmüş gibi değerlendirilmesini de içeren bu yeni paradigma etkili olmuştur. Doğa merkezli anlayış yerine insan merkezli anlayış ---- olmuş...</p><p><b>Bu parçada boş bırakılan yerlere aşağıdakilerden hangisi sırasıyla getirilmelidir?</b></p>",
+    text: "<p>Sanayi Devrimi'yle birlikte başlayan sürecin devamında doğal kaynakların ölçüsüz kullanımı artmış ve özellikle sanayileşmenin yoğun olduğu alanlarda doğal tahribat ---- hâle gelmiştir. İnsanı, çevre sorunlarının odağı hâline getiren bu bakış açısının temelinde kuşkusuz doğanın insanın emrine sunulmuş ve her türlü ---- bir ürünmüş gibi değerlendirilmesini de içeren bu yeni paradigma etkili olmuştur. Doğa merkezli anlayış yerine insan merkezli anlayış ---- olmuş, organik dünya görüşü yerine mekanik dünya görüşüne geçilmiştir.</p><p><b>Bu parçada boş bırakılan yerlere aşağıdakilerden hangisi <u>sırasıyla</u> getirilmelidir?</b></p>",
     diff: 3,
     expl: "Doğanın 'tüketilebilir' bir kaynak olarak görülmesi ve bu süreçte insan merkezli anlayışın 'hâkim' olması metnin ana fikridir. 'Belirgin' bir tahribat ifadesi de ilk boşluğa uygundur.",
     answers: [
       { text: "A) göze çarpar – yok edilecek – baskın", ok: false },
-      { text: "B) belirgin – tüketilebilir – hâkim", ok: true },
+      { text: "B) belirgin – tüketilebilecek – hâkim", ok: true },
       { text: "C) bariz bir – zarar verilebilecek – geçersiz", ok: false },
       { text: "D) olumsuz – ihtiyacı karşılayabilecek – egemen", ok: false },
       { text: "E) can alıcı – isteğine cevap verebilecek – ön planda", ok: false }
     ]
   },
   {
-    text: "<p>Dil öğretimini yenileştirme arayışları, ---- ürettiği ve dilimizin yaratıcı ---- sergileyen, dolayısıyla çok yönlü dil çalışmalarına olanak sağlayan ---- bu bağlamdaki işlevini ve kullanımını yeni bakış açılarıyla sorgulamayı da gündeme getiriyor.</p><p><b>Bu parçada boş bırakılan yerlere aşağıdakilerden hangisi sırasıyla getirilmelidir?</b></p>",
+    text: "<p>Dil öğretimini yenileştirme arayışları, ---- ürettiği ve dilimizin yaratıcı ---- sergileyen, dolayısıyla çok yönlü dil çalışmalarına olanak sağlayan ---- bu bağlamdaki işlevini ve kullanımını yeni bakış açılarıyla sorgulamayı da gündeme getiriyor.</p><p><b>Bu parçada boş bırakılan yerlere aşağıdakilerden hangisi <u>sırasıyla</u> getirilmelidir?</b></p>",
     diff: 3,
     expl: "Dilin yaratıcı 'yanlarını' sergileyen 'söz ustalarımızın' (yazarların) ürettiği 'yazın metinlerinin' (edebi metinler) incelenmesi dil öğretimi için esastır.",
     answers: [

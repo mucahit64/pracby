@@ -41,7 +41,7 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Edebiyat tarihinde pek klasik sorular vardır. '...’nın edebiyatımızdaki <u>I. yeri ne</u> olmalıdır?' cümlesi... Ancak bununla <u>II. ne</u> kastedildiği, soranın <u>III. ne</u> tür bilgiyi ölçmek istediği kadar da açık değildir... <u>IV. ne</u> öğrenilmek istendiğini... Türk edebiyatında <u>V. ne</u> olmazdı?</p><p><b>Bu parçada numaralanmış \"ne\" sözcüklerinden hangisinin türü diğerlerinden farklıdır?</b></p>",
+    text: "<p>Edebiyat tarihinde pek klasik sorular vardır. \"...'nın edebiyatımızdaki yeri <u>ne</u> (I) olmalıdır?\" cümlesi, edebiyat sınavlarında daima karşılaşılan sorulardandır. Ancak bununla <u>ne</u> (II) kastedildiği, soranın <u>ne</u> (III) tür bilgiyi ölçmek istediği kadar da açık değildir. Aynı soruyu Ömer Seyfettin için açıklayıcı biçimde sorarak <u>ne</u> (IV) öğrenilmek istendiğini ortaya koyabiliriz: Ömer Seyfettin olmasaydı Türk edebiyatında <u>ne</u> (V) olmazdı?</p><p><b>Bu parçada numaralanmış \"ne\" sözcüklerinden hangisinin türü diğerlerinden farklıdır?</b></p>",
     diff: 3,
     expl: "I, II, IV ve V numaralı 'ne' sözcükleri zamir görevindeyken, III numaralı 'ne' sözcüğü 'tür' ismini nitelediği için soru sıfatıdır.",
     answers: [
@@ -53,9 +53,9 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Meslek gruplarının <u>I. bazıları</u>... onlardan <u>II. birinin</u>... <u>III. diğerlerine</u>... <u>IV. birbiriyle</u>... <u>V. tüm</u> meslektaşların...</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi zamir değildir?</b></p>",
+    text: "<p>Meslek gruplarının <u>bazıları</u> (I) üyelerinin davranışlarından sorumlu tutulur. Anneliğin de kimi açılardan bir meslek grubu sayılmasına rağmen onlardan <u>birinin</u> (II) kötü davranışı <u>diğerlerine</u> (III) duyulan saygıyı pek etkilemez. Ancak iyi örgütlenmiş meslek gruplarının üyeleri, insanların gözünde <u>birbiriyle</u> (IV) öyle özdeşleşmiştir ki mesleği icra eden birinin tutumu <u>tüm</u> (V) meslektaşların itibarını etkiler.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi zamir <u>değildir</u>?</b></p>",
     diff: 2,
-    expl: "I, II, III ve IV numaralı sözcükler belgisiz veya işaret zamiridir. V numaralı 'tüm' sözcüğü ise ismi niteleyen bir belgisiz sıfattır.",
+    expl: "I, II, III ve IV numaralı sözcükler belgisiz zamirdir. V numaralı 'tüm' sözcüğü ise 'meslektaşlar' ismini niteleyen bir belgisiz sıfattır.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
@@ -65,7 +65,7 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>(I) Mantarlar denizlerde... (II) bunları su yüzeyinde... (III) Bazılarıysa hayvanların... <b>Bu parçadaki numaralandırılmış cümlelerin hangisinde belirsizlik zamiri kullanılmıştır?</b></p>",
+    text: "<p>(I) Mantarlar denizlerde ve tatlı sularda bulunur. (II) Kimi zaman bunları su yüzeyinde köpükler şeklinde görürüz. (III) Bazılarıysa hayvanların derilerinde yaşarlar. (IV) Birçok deri hastalığına, ağız ve kulak iltihaplarına bu mantarlar neden olur. (V) Ancak mantarlar yararlı da olabilirler. (VI) Hayat kurtaran antibiyotiklerden penisilin, küf mantarından üretilmiştir.</p><p><b>Bu parçadaki numaralandırılmış cümlelerin hangisinde belirsizlik zamiri kullanılmıştır?</b></p>",
     diff: 2,
     expl: "III. cümledeki 'Bazılarıysa' kelimesi, hangi mantarlar olduğu tam belli olmayan bir topluluğun yerini tuttuğu için belgisiz (belirsizlik) zamiridir.",
     answers: [
@@ -91,53 +91,53 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
   {
     text: "<p>Aşağıdaki cümlelerin hangisinde altı çizili söz, <b>eylemin nasıl gerçekleştiğini bildirmektedir?</b></p>",
     diff: 2,
-    expl: "D seçeneğindeki 'hızla' sözcüğü, 'yaygınlaşıyor' eyleminin nasıl yapıldığını bildiren bir durum zarfıdır. Diğerleri zaman bildirmektedir.",
+    expl: "D seçeneğindeki 'hızla' sözcüğü, 'yaygınlaşıyor' eyleminin nasıl gerçekleştiğini bildiren bir durum zarfıdır. Diğerleri zaman bildirmektedir.",
     answers: [
-      { text: "Zaman <u>hızla akarken</u> çoğu kez...", ok: false },
-      { text: "<u>her zaman</u> buraya gelirlerdi.", ok: false },
-      { text: "İşinin <u>akşama kadar</u> biteceğini...", ok: false },
-      { text: "tohumların kullanımı <u>hızla</u> yaygınlaşıyor.", ok: true },
-      { text: "<u>Biraz sonra</u>, yaklaşık iki saat sürecek...", ok: false }
+      { text: "Zaman hızla akarken <u>çoğu kez</u>, çevremizdeki güzelliklerin farkına varamıyoruz.", ok: false },
+      { text: "Güvercinler yiyecek bulmak için <u>her zaman</u> buraya gelirlerdi.", ok: false },
+      { text: "İşinin <u>akşama kadar</u> biteceğini umuyordu ama düşündüğü gibi olmadı.", ok: false },
+      { text: "Genleriyle oynanmış tohumların kullanımı <u>hızla</u> yaygınlaşıyor.", ok: true },
+      { text: "<u>Biraz sonra</u>, yaklaşık iki saat sürecek maceralı bir yolculuğa çıkacağız.", ok: false }
     ]
   },
   {
-    text: "<p>On sekizinci yüzyıl romantik romanlarının... <b>Bu parçada aşağıdaki sıfat türlerinden hangisi yoktur?</b></p>",
+    text: "<p>On sekizinci yüzyıl romantik romanlarının atmosferini yaşatan <i>Seven Ne Yapmaz</i>'da başka bir kültürden gelen ve yabancı adlar taşıyan roman kahramanları yer alıyor. İçerdiği bazı klişelerle bu roman, yerli duyarlılığa da seslenen, Yeşilçam filmlerinin formülüne yaslanan bir eser olarak değerlendirilebilir.</p><p><b>Bu parçada aşağıdaki sıfat türlerinden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
-    expl: "Parçada niteleme, işaret, belgisiz ve soru sıfatları bulunurken, sayı bildiren bir sıfat (sayı sıfatı) bulunmamaktadır.",
+    expl: "Parçada 'On sekizinci' (sayı sıfatı), 'romantik, yabancı, yerli' (niteleme sıfatı), 'bu roman' (işaret sıfatı), 'başka, bazı, bir' (belgisiz sıfat) vardır; ancak soru sıfatı yoktur.",
     answers: [
       { text: "Niteleme sıfatı", ok: false },
       { text: "İşaret sıfatı", ok: false },
-      { text: "Soru sıfatı", ok: false },
+      { text: "Soru sıfatı", ok: true },
       { text: "Belgisiz sıfat", ok: false },
-      { text: "Sayı sıfatı", ok: true }
+      { text: "Sayı sıfatı", ok: false }
     ]
   },
   {
-    text: "<p>Dört yaşında olduğunuzu ve birinin size şunu teklif ettiğini düşünün... <b>Bu parçada aşağıdaki sözcük türlerinden hangisi yoktur?</b></p>",
+    text: "<p>Dört yaşında olduğunuzu ve birinin size şunu teklif ettiğini düşünün: Eğer yapmakta olduğum görevi bitirmemi beklersen iki lokum alabilirsin. O zamana kadar bekleyemezsen hemen şimdi ama sadece bir tane alabilirsin. Çocuğun hangi tercihte bulunduğu, onun kendi yaşamında izleyeceği yol hakkında sizce de bir fikir vermez mi?</p><p><b>Bu parçada aşağıdaki sözcük türlerinden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
-    expl: "Parçada 'size' (kişi), 'şunu' (işaret), 'kendi' (dönüşlülük) ve 'hangi' (soru) zamirleri varken belgisiz zamir bulunmamaktadır.",
+    expl: "Parçada 'birinin' (belgisiz zamir), 'size, sizce, onun' (kişi zamiri), 'şunu' (işaret zamiri) ve 'kendi' (dönüşlülük zamiri) vardır. 'Hangi tercihte' ifadesindeki 'hangi' ise soru sıfatıdır; parçada soru zamiri yoktur.",
     answers: [
-      { text: "Belgisiz zamir", ok: true },
+      { text: "Belgisiz zamir", ok: false },
       { text: "Kişi zamiri", ok: false },
-      { text: "Soru zamiri", ok: false },
+      { text: "Soru zamiri", ok: true },
       { text: "İşaret zamiri", ok: false },
       { text: "Dönüşlülük zamiri", ok: false }
     ]
   },
   {
-    text: "<p>Her sevginin başlangıcı ve süreci... <b>Bu parçada aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>Her sevginin başlangıcı ve süreci, o sevginin bitişinin getireceği sonsuz boşluk ve yalnızlıkla dolu. Belirsizlikler arasında belirlemeye çalıştığımız yaşam gibi. Sevgi isteği, kendi kendine yaşamı kanıtlama dileği kadar büyük. Birisiyle yan yana olmak, kendi mevcudiyetini unutmak mı?</p><p><b>Bu parçada aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
-    expl: "Metinde 'her sevgi' (belgisiz sıfat), 'boşluk' (niteleme sıfatı - sonsuz boşluk), 'birisiyle' (belgisiz zamir), 'kendi' (dönüşlülük zamiri - şıklarda yok ama kişi zamiri kategorisinde de değerlendirilebilir) mevcuttur; ancak işaret sıfatı yoktur.",
+    expl: "Parçada 'her sevgi' (belgisiz sıfat), 'Birisiyle' (belgisiz zamir), 'sonsuz boşluk' (niteleme sıfatı) ve 'o sevginin' (işaret sıfatı) vardır; ancak kişi zamiri yoktur.",
     answers: [
       { text: "Belgisiz sıfat", ok: false },
       { text: "Belgisiz zamir", ok: false },
       { text: "Niteleme sıfatı", ok: false },
-      { text: "Kişi zamiri", ok: false },
-      { text: "İşaret sıfatı", ok: true }
+      { text: "Kişi zamiri", ok: true },
+      { text: "İşaret sıfatı", ok: false }
     ]
   },
   {
-    text: "<p>Çalışma modellerinin ve beklentilerinin hızla değiştiği bu yıllarda... <b>Bu parçada aşağıdaki sözcük türlerinden hangisi yoktur?</b></p>",
+    text: "<p>Çalışma modellerinin ve beklentilerinin hızla değiştiği bu yıllarda, hibrit modeli benimseyen şirketlerin çalışanlarına hangi destekleri sağlayacağı konusunda bazı tereddütler yaşanmaktadır. Hibrit modelde sunulan desteklerde günlük yemek ücreti ve çevrim içi sağlık destekleri kadar internet ücreti ve ofis mobilyaları da oldukça önem arz etmektedir.</p><p><b>Bu parçada aşağıdaki sözcük türlerinden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
     expl: "Metinde 'hızla' (durum zarfı), 'bu yıllarda' (işaret sıfatı), 'hangi' (soru sıfatı), 'bazı' (belgisiz sıfat) vardır. Zaman zarfı bulunmamaktadır.",
     answers: [
@@ -149,19 +149,19 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>İlhan Berk... <u>I. en</u>... <u>II. hiç</u>... <u>III. son</u>... <u>IV. ondandır</u>... <u>V. daima</u>... <b>Hangisinin türü diğerlerinden farklıdır?</b></p>",
+    text: "<p>İlhan Berk, Türk edebiyatının <u>en</u> (I) etkili şairlerindendir. <u>Hayattayken</u> (II) şiirsel arayışlarından hiç vazgeçmedi, ömrünün son yıllarında bile tekrara düşmedi. <u>Sınırsız</u> (III) bir yenilik ve genişlemeydi onun derdi. Şiirleri, ondandır, <u>hep</u> (IV) diri kaldı. Şiir yazma uğraşı bir tutku olarak <u>daima</u> (V) sürdü onda.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi türü bakımından diğerlerinden farklıdır?</b></p>",
     diff: 3,
-    expl: "I, II, III ve V numaralı kelimeler zarf görevindeyken, IV numaralı 'ondandır' sözcüğü ek fiil almış bir işaret zamiridir.",
+    expl: "I (en), II (Hayattayken), IV (hep) ve V (daima) numaralı sözcükler zarf görevindedir. III numaralı 'Sınırsız' sözcüğü ise 'yenilik' ismini nitelediği için sıfattır.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
-      { text: "III", ok: false },
-      { text: "IV", ok: true },
+      { text: "III", ok: true },
+      { text: "IV", ok: false },
       { text: "V", ok: false }
     ]
   },
   {
-    text: "<p>...<u>I. binlerce</u>... <u>II. iki yanı</u>... <u>III. kadar</u>... <u>IV. deniz</u>... <u>V. hafif</u>... <b>Hangisi gruplandırıldığında dışarıda kalır?</b></p>",
+    text: "<p>Yüzlerce belki <u>binlerce</u> (I) senelik zeytin ağaçlarının arasında uzanan, çukur, iki <u>yanı</u> (II) böğürtlen ve hayıtlarla örtülü yolda ağır ağır yürüyordum. Arkamdan yükselen güneş, gölgemi araba izlerinin kıvrımları üzerine serip uzaklara <u>kadar</u> (III) götürüyor; <u>deniz</u> (IV) tarafından yüzüme doğru esen <u>hafif</u> (V) fakat serin bahar rüzgârı, kasabadan uzaklaştığımı hatırlatıyordu.</p><p><b>Bu parçada numaralanmış sözcükler tür bakımından gruplandırıldığında hangisi dışarıda kalır?</b></p>",
     diff: 3,
     expl: "I ve V sıfat, II ve IV isimdir. III numaralı 'kadar' ise edattır ve tek başına kalır.",
     answers: [
@@ -173,19 +173,19 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. kadar</u>... <u>II. rengârenk</u>... <u>III. bu</u>... <u>IV. kendine</u>... <b>Sözcük türleri sırasıyla hangisidir?</b></p>",
+    text: "<p>Sonbaharda İstanbul, bir ressamın paleti <u>kadar</u> (I) renklidir. Kuruyan yapraklar bulutları, bulutlar da denizi <u>rengârenk</u> (II) boyar. Bir de lodos çıkmışsa insanın başı döner <u>bu</u> (III) cümbüşün içinde, kendini sokaklara atıveresi gelir. Martılar, adalar çağırır <u>kendine</u> (IV).</p><p><b>Bu parçada numaralanmış sözcüklerin türleri aşağıdakilerin hangisinde sırasıyla doğru olarak verilmiştir?</b></p>",
     diff: 3,
-    expl: "kadar (edat), rengârenk (sıfat - boyar eylemini nitelediği için burada zarf olabilir ancak rengârenk bulutlar anlamındaysa sıfat), 'bu' (sıfat), 'kendine' (zamir). Doğru sıralama C şıkkıdır.",
+    expl: "'kadar' edat, 'rengârenk' (boyar eylemini nitelediği için) zarf, 'bu' (cümbüş ismini işaret ettiği için) sıfat, 'kendine' zamirdir. Doğru sıralama A seçeneğidir.",
     answers: [
-      { text: "Edat - zarf - sıfat - zamir", ok: false },
+      { text: "Edat - zarf - sıfat - zamir", ok: true },
       { text: "Bağlaç - sıfat - zamir - zarf", ok: false },
-      { text: "Edat - sıfat - isim - sıfat", ok: true },
+      { text: "Edat - sıfat - isim - sıfat", ok: false },
       { text: "Bağlaç - zarf - zamir - sıfat", ok: false },
       { text: "Zarf - sıfat - zarf - zamir", ok: false }
     ]
   },
   {
-    text: "<p>...<u>I. Çok</u>... <u>II. öylesine</u>... <u>III. birtakım</u>... <u>IV. bu</u>... <b>Sözcük türleri sırasıyla hangisidir?</b></p>",
+    text: "<p><u>Çok</u> (I) sevdiğiniz insanlar hakkında konuşmak zordur. Sevginiz <u>öylesine</u> (II) taşar ki kalbinizden yükselen heyecan dalgası nefesinizi keser. Kelimeler dilinizden bir türlü dökülmez, dışarıdan bakana anlamsız gelecek <u>birtakım</u> (III) jest ve mimiklere dönüşür. En azından benim için böyledir <u>bu</u> (IV).</p><p><b>Bu parçadaki altı çizili sözcüklerin türleri aşağıdakilerin hangisinde sırasıyla doğru olarak verilmiştir?</b></p>",
     diff: 3,
     expl: "Sırasıyla: Çok (Zarf), öylesine (Zarf), birtakım (Sıfat), bu (Zamir).",
     answers: [
@@ -197,7 +197,7 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. Bilincimiz</u>... <u>II. durmadan</u>... <u>III. o</u>... <u>IV. çağdaş</u>... <b>Sözcük türleri sırasıyla hangisidir?</b></p>",
+    text: "<p><u>Bilincimiz</u> (I) ve dolayısıyla bilincimizdeki kavramlar değişiyor <u>durmadan</u> (II). Bir yüzyıldan öbürüne \"şair\" kavramının da değiştiğini söyleyebiliriz. Dünün <u>o</u> (III) duygulu şairi gitti,yerine tam anlamıyla bir \"insan araştırmacısı\" olan <u>çağdaş</u> (IV) şair geldi.</p><p><b>Bu parçada altı çizili sözcüklerin türleri aşağıdakilerin hangisinde sırasıyla verilmiştir?</b></p>",
     diff: 3,
     expl: "Bilincimiz (İsim), durmadan (Zarf), o (Sıfat - 'o duygulu şairi'), çağdaş (Sıfat).",
     answers: [
@@ -209,9 +209,9 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. Gece</u>... <u>II. tarafı</u>... <u>III. fazla</u>... <u>IV. ise</u>... <b>Sözcük türleri sırasıyla hangisidir?</b></p>",
+    text: "<p>Cisimler, ısındığında veya soğuduğunda ya enerji kazanır ya da enerji kaybeder. <u>Gece</u> (I) yanan bir ateşin karşısında ayakta durursanız vücudunuzun ateşe dönük <u>tarafı</u> (II), diğer tarafınıza göre kaybettiğinden daha <u>fazla</u> (III) enerji kazandığı için ısınır. Sırtınız ise havaya, kazandığından daha fazla enerji verdiği <u>için</u> (IV) soğuyarak üşür.</p><p><b>Bu parçadaki altı çizili sözcüklerin türleri aşağıdakilerin hangisinde sırasıyla doğru olarak verilmiştir?</b></p>",
     diff: 3,
-    expl: "Sırasıyla: Gece (Zarf), tarafı (İsim), fazla (Sıfat), ise (Bağlaç/Edat benzeri). Cevap anahtarına göre D şıkkıdır.",
+    expl: "Sırasıyla: Gece (zarf), tarafı (isim), fazla ('enerji' ismini nitelediği için sıfat), için (edat).",
     answers: [
       { text: "İsim - edat - zarf - sıfat", ok: false },
       { text: "Zarf - isim - sıfat - zarf", ok: false },
@@ -221,7 +221,7 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. berrak</u>... <u>II. sürekli</u>... <u>III. için</u>... <u>IV. birine</u>... <b>Sözcük türleri sırasıyla hangisidir?</b></p>",
+    text: "<p>Yemyeşil ağaçlar, <u>berrak</u> (I) bir dere,dere kenarında su içen ve dinlenen ceylanlar, her yeri kaplayan rengârenk çiçekler... Bu tasvir, hepimizin <u>sürekli</u> (II) gördüğü manzaraya değil, bilgisayar ekranlarımızı süslemesi <u>için</u> (III) seçtiğimiz ekran koruyuculardan <u>birine</u> (IV) ait.</p><p><b>Bu parçada numaralanmış sözcüklerin türü aşağıdakilerin hangisinde sırasıyla verilmiştir?</b></p>",
     diff: 3,
     expl: "berrak (Sıfat), sürekli (Zarf), için (Edat), birine (Zamir).",
     answers: [
@@ -233,21 +233,21 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. asıl</u>... <u>II. ile</u>... <u>III. daima</u>... <u>IV. böyle</u>... <b>Sözcük türleri sırasıyla hangisidir?</b></p>",
+    text: "<p>Ahmet Hamdi Tanpınar, ilk baskısı 1946'da yayımlanan <i>Beş Şehir</i> denemesinin <u>asıl</u> (I) konusunun hayatımızda kaybolan şeylerin ardından duyulan üzüntü ile yeniye <u>karşı</u> (II) beslenen özlem olduğunu söyler. Sadece milletlerin değil bireyin asıl manasını maziyle tanımlayabileceğini düşünen yazara göre mazi, <u>daima</u> (III) vardır. Kendimiz olabilmek için maziyle hesaplaşmaya mecburuz. İşte <i>Beş Şehir</i> <u>böyle</u> (IV) bir mecburiyetin sesidir.</p><p><b>Bu parçada numaralanmış sözcüklerin türü aşağıdakilerin hangisinde sırasıyla verilmiştir?</b></p>",
     diff: 3,
-    expl: "asıl (Sıfat), ile (Edat), daima (Zarf), böyle (Sıfat).",
+    expl: "asıl (Sıfat), karşı (Edat), daima (Zarf), böyle (Sıfat). Kitapta A ve B seçenekleri aynı verilmiştir; cevap anahtarında doğru cevap B'dir.",
     answers: [
-      { text: "Sıfat - edat - zarf - sıfat", ok: true },
-      { text: "Sıfat - edat - zarf - sıfat", ok: false }, // Şıklarda benzerlik var, görsele göre A doğru.
+      { text: "Sıfat - edat - zarf - edat", ok: false },
+      { text: "Sıfat - edat - zarf - sıfat", ok: true }, // Kitapta A ve B seçenekleri aynı; cevap anahtarı B.
       { text: "İsim - edat - sıfat - zamir", ok: false },
       { text: "İsim - zarf - zarf - edat", ok: false },
       { text: "Zamir - sıfat - zarf - bağlaç", ok: false }
     ]
   },
   {
-    text: "<p>...<u>I. Azıcık</u>... <u>II. kadar</u>... <u>III. büyüğü</u>... <u>IV. Nasıl</u>... <b>Sözcük türleri sırasıyla hangisidir?</b></p>",
+    text: "<p><u>Azıcık</u> (I) esinti olmasa insanı eritecek <u>kadar</u> (II) sıcak bir İstanbul gününde şehrimin yağmurlarını özleyerek Tophane-i Amire'deki Büyük Ustalar Sergisi'ne doğru yol alıyorum. Rönesans'ın üç <u>büyüğü</u> (III) Leonardo, Michelangelo ve Raphael... <u>Nasıl</u> (IV) olmuş da üçü aynı zamanda, aynı coğrafyada yetişmiş?</p><p><b>Bu parçada numaralanmış sözcüklerin türü aşağıdakilerin hangisinde sırasıyla doğru olarak verilmiştir?</b></p>",
     diff: 3,
-    expl: "Sırasıyla: Azıcık (Zarf), kadar (Edat), büyüğü (İsim - adlaşmış sıfat/isim), Nasıl (Zarf).",
+    expl: "Sırasıyla: Azıcık ('esinti' ismini nitelediği için sıfat), kadar (edat), büyüğü (adlaşmış sıfat, isim), Nasıl (zarf).",
     answers: [
       { text: "Zarf - Edat - Sıfat - Zamir", ok: false },
       { text: "Sıfat - Edat - İsim - Zarf", ok: true },
@@ -257,15 +257,15 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. sığ</u>... <u>II. için</u>... <u>III. bu</u>... <u>IV. biri</u>... <b>Sözcük türleri sırasıyla hangisidir?</b></p>",
+    text: "<p>Tahiti açıklarında, 30 m <u>derinlikte</u> (I), el değmemiş bir mercan resifi keşfedildi. Mercan resifleri genellikle daha <u>sığ</u> (II) sularla özdeşleştirildiği için söz konusu keşif biraz şaşırtıcı bulundu. 3 km uzunluğa sahip olan doğa harikasının <u>bu</u> (III) derinlikte bulunan <u>en</u> (IV) büyük resiflerden biri olduğu bildirildi.</p><p><b>Bu parçada numaralanmış sözcüklerin türü aşağıdakilerin hangisinde sırasıyla doğru verilmiştir?</b></p>",
     diff: 3,
-    expl: "sığ (Sıfat), için (Edat), bu (Sıfat), biri (Zamir).",
+    expl: "derinlikte (isim), sığ ('sular' ismini nitelediği için sıfat), bu ('derinlik' ismini işaret ettiği için sıfat), en ('büyük' sıfatını derece yönünden belirttiği için zarf).",
     answers: [
       { text: "Bağlaç - edat - sıfat - zamir", ok: false },
-      { text: "İsim - sıfat - sıfat - zarf", ok: false },
+      { text: "İsim - sıfat - sıfat - zarf", ok: true },
       { text: "Zarf - edat - sıfat - zarf", ok: false },
       { text: "İsim - edat - zarf - zamir", ok: false },
-      { text: "Zarf - bağlaç - sıfat - isim", ok: true }
+      { text: "Zarf - bağlaç - sıfat - isim", ok: false }
     ]
   },
   {
@@ -285,15 +285,15 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     diff: 3,
     expl: "B seçeneğinde ilk 'gece' isim, ikinci 'gece' zarf görevindedir. D seçeneğinde ise 'çok' sözcüklerinin ikisi de zarf görevinde kullanılmıştır.",
     answers: [
-      { text: "Gecenin <u>geç</u> / Çok <u>geç</u> kalktığını", ok: false },
-      { text: "<u>gece</u> sakin / yalnız <u>gece</u> oynatılan", ok: false },
-      { text: "<u>güzel</u> şıngırdıyordu / <u>güzel</u> hatırın", ok: false },
-      { text: "<u>Çok</u> beğendiği / <u>çok</u> zorlansam da", ok: true },
-      { text: "<u>delice</u> fikirler / <u>delice</u> seviyor", ok: false }
+      { text: "Gecenin <u>geç</u> ve yıldızsız bir saatinde gökyüzüne baktı.<br>Çok <u>geç</u> kalktığını, saate bakınca anladı ne yazık ki.", ok: false },
+      { text: "Eski güzel günlerdeki gibi, <u>gece</u> sakin ve huzur vericiydi.<br>Çocukluk yıllarımda, yalnız <u>gece</u> oynatılan kuklalar vardı.", ok: false },
+      { text: "Arabayı koştururken boynundaki ziller <u>güzel</u> şıngırdıyordu atın.<br>İnan ki senin <u>güzel</u> hatırın olmasa bu işe kesinlikle girişmezdim.", ok: false },
+      { text: "<u>Çok</u> beğendiği ve sevdiği hâlde yine de almadı o elbiseyi.<br>Çalışırken <u>çok</u> zorlansam da emeklerimin karşılığını aldım.", ok: true },
+      { text: "Çekmecesindeki deftere ne <u>delice</u> fikirler yazmıştı, kim bilir.<br>Mesleğin <u>delice</u> seviyor ve kariyer basamaklarını bir bir tırmanıyordu.", ok: false }
     ]
   },
   {
-    text: "<p>(I) Roman kahramanları... (II) Onların da... (III) Dünyamız... (IV) O kişiler... (V) Hele sıkıntılı... <b>Hangisi yanlıştır?</b></p>",
+    text: "<p>(I) Roman kahramanları; gerçek dediğimiz insanlar gibi hatta onlardan daha çok düşünen, sevinen ve acı duyan kişilerdir. (II) Onların da bizim gibi yaşadıklarını hangimiz düşünmedik ki? (III) Dünyamız, hayalî dediğimiz ancak hakikatte bizden daha canlı olan roman kişileriyle doludur. (IV) O kişiler aramızda dolaşıp dururlar. (V) Hele sıkıntılı zamanlarımızda aradıklarımız onlardır fakat roman kahramanları bütün gerçeklikleri ile asıl kendilerini ortaya çıkaranlar için vardır.</p><p><b>Bu parçadaki numaralanmış cümlelerle ilgili olarak aşağıda verilenlerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "IV. cümlede 'O kişiler' ifadesindeki 'o' sözcüğü zamir değil, ismi işaret eden bir işaret sıfatıdır.",
     answers: [
@@ -305,7 +305,7 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>(I) Bugüne kadar... (II) Bu hatıralardan... (III) fazla müdahale... (IV) Yalnızca yazım... (V) Özetle, sıkılmadan... <b>Hangisi söylenemez?</b></p>",
+    text: "<p>(I) Bugüne kadar yaptığım mülakatların hemen hepsiyle ilgili hoş hatıralarım var. (II) Bu hatıralardan birkaçına kitabımın giriş bölümünde yer verdim. (III) Kitapta yer alan metinlere fazla müdahale etmedim. (IV) Yalnızca yazım birliğini sağlamak için küçük düzenlemeler yaptım. (V) Özetle, sıkılmadan okuyacağınızı ümit ettiğim bir kitap yazdım.</p><p><b>Bu parçada numaralanmış cümlelerle ilgili aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
     diff: 3,
     expl: "V. cümlede 'sıkılmadan' sözcüğü zarf-fiildir, 'özetle' ise edat/bağlaç görevindedir. Yer-yön zarfı (aşağı, yukarı vb.) yoktur.",
     answers: [
@@ -317,21 +317,21 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. zamanı</u>... <u>II. köylerine</u>... <u>III. yapılmış</u>... <u>IV. minderleri</u>... <u>V. taşınırlardı</u>... <b>Hangisi yanlıştır?</b></p>",
+    text: "<p>Her sene, <u>zamanı</u> (I) gelince İstanbul'un mahallelerinden Boğaz'ın <u>köylerine</u> (II) göçler başlardı. Eski İstanbullular; Boğaziçi'nin kenarlarına <u>yapılmış</u> (III) ve eski erkân sedirleriyle, kerevet, şilte ve halılar üstünde yer <u>minderleri</u> (IV) gibi eski eşyalarla döşenmiş geniş odalı, gönül ferahlatıcı yalılara <u>taşınırlardı</u> (V).</p><p><b>Bu parçada altı çizili sözcüklerle ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
-    expl: "V. sözcük 'taşın-ırlar-dı' şeklinde analiz edilir. 'ır' geniş zaman ekidir ancak soru kökünde belirtilen ek bilgisi yanlıştır (Cevap anahtarı E).",
+    expl: "'zamanı gelince' ifadesindeki 'zamanı' sözcüğündeki '-ı' eki belirtme durumu eki değil, iyelik ekidir. Bu nedenle A seçeneğindeki yargı yanlıştır.",
     answers: [
-      { text: "I. sözcük belirtme durumu eki almıştır.", ok: false },
-      { text: "II. sözcük iyelik eki almıştır.", ok: false },
+      { text: "I. sözcük belirtme durumu eki almıştır.", ok: true },
+      { text: "II.sözcük iyelik eki almıştır.", ok: false },
       { text: "III. sözcük sıfat-fiil eki almıştır.", ok: false },
       { text: "IV. sözcük çokluk eki almıştır.", ok: false },
-      { text: "V. sözcük geniş zaman eki almıştır.", ok: true }
+      { text: "V. sözcük geniş zaman eki almıştır.", ok: false }
     ]
   },
   {
-    text: "<p>Önce baygın bir iniltiydi yamaçtan duyulan... <b>Bu dizelerde aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>Önce baygın bir iniltiydi yamaçtan duyulan<br>Sonra bir gölge belirmişti kuş uçmaz yoldan</p><p><b>Bu dizelerde aşağıdakilerin hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
-    expl: "Dizelerde 'önce' (zaman belirteci), 'iniltiydi' (ek-fiil almış isim), 'bir' (belgisiz sıfat) vardır ancak iyelik eki almış sözcük bulunmamaktadır.",
+    expl: "Dizelerde 'önce, sonra' (zaman belirteci), 'belirmişti' (çekimli fiil), 'bir' (belgisiz sıfat) ve 'inilti' (fiilden türemiş isim) vardır ancak iyelik eki almış sözcük bulunmamaktadır.",
     answers: [
       { text: "Zaman belirteci", ok: false },
       { text: "İyelik eki almış sözcük", ok: true },
@@ -341,7 +341,7 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>...<u>I. mavi</u>... <u>II. yanında</u>... <u>III. üzerindeki</u>... <u>IV. yıkık dökük</u>... <u>V. kadar</u>... <b>Hangisi yanlıştır?</b></p>",
+    text: "<p>Şanlıurfa iline bağlı olan Birecik, <u>mavi</u> (I) suları durgun akan Fırat'ın <u>yanında</u> (II), Asurlulardan kalma surlar <u>üzerindeki</u> (III) on iki burçlu kalesiyle, tarihî mimarısını <u>yıkık dökük</u> (IV) de olsa günümüze <u>kadar</u> (V) taşıyan güzel bir yer.</p><p><b>Bu cümledeki numaralanmış sözlerle ilgili olarak aşağıda verilenlerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "III. numaralı 'üzerindeki' sözcüğündeki '-ki' bağlaç değil, sıfat yapan ektir.",
     answers: [
@@ -353,9 +353,9 @@ export const TUR_SOZCUK_TURLERI_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>İnsan; daha güçlü canlılara karşı tek başına kendini koruyamaz... <b>Bu cümlede aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>İnsan; daha güçlü canlılara karşı tek başına kendini koruyamaz, tek başına ihtiyaçlarını karşılayamaz dolayısıyla bir arada yaşamak tabii ve zaruridir.</p><p><b>Bu cümlede aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
-    expl: "Cümlede 'kendini' (belirtme eki almış zamir), 'karşı' (yönelme haliyle kullanılan edat), 'koruyamaz' (yeterlilik olumsuzu) vardır. 'İhtiyaçlarını' kelimesi iyelik eki almıştır ancak 'üçüncü çoğul' değil tekildir.",
+    expl: "Cümlede 'daha güçlü' (niteleme sıfatını niteleyen zarf), 'canlılara karşı' (yönelme durumuyla kullanılan edat), 'koruyamaz, karşılayamaz' (yeterlilik bildiren olumsuz fiil) ve 'kendini' (belirtme durumu eki almış zamir) vardır. 'İhtiyaçlarını' sözcüğündeki iyelik eki üçüncü tekil kişi iyelik ekidir; üçüncü çoğul iyelik eki almış isim yoktur.",
     answers: [
       { text: "Niteleme sıfatını niteleyen zarf", ok: false },
       { text: "Yönelme durumuyla kullanılan edat", ok: false },

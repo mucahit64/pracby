@@ -29,7 +29,7 @@ export const TUR_EDAT_BAGLAC_UNLEM_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Sınava kadar disiplinli olman gerektiğini sana şimdiden söylemek daha <u>doğru</u>.<br>II. <u>Doğru</u> söylüyorsun Müge ama sen de biliyorsun ki kazın ayağı öyle değil!<br>III. <u>Doğru</u> oraya gitmiş olsaydınız herhâlde daha uygun olurdu.<br>IV. Kışın kaygan olur yamaçlar, tepelerden göle <u>doğru</u> tahta kızaklarla hızlı inişler yapılır.<br>V. Söyleyin <u>doğrusunu</u>, siz insanoğlunun ahlaklı olabileceğine inanmıyorsunuz.</p><p><b>Bu cümlelerdeki \"doğru\" sözcüğü hangisinde diğerlerinden farklı türdedir?</b></p>",
+    text: "<p>I. Sınava kadar disiplinli olman gerektiğini sana şimdiden söylemek daha doğru.<br>II. Doğru söylüyorsun Müge ama sen de biliyorsun ki kazın ayağı öyle değil!<br>III. Doğru oraya gitmiş olsaydınız herhâlde daha uygun olurdu.<br>IV. Kışın kaygan olur yamaçlar, tepelerden göle doğru tahta kızaklarla hızlı inişler yapılır.<br>V. Söyleyin doğrusunu, siz insanoğlunun ahlaklı olabileceğine inanmıyorsunuz.</p><p><b>Bu cümlelerdeki \"doğru\" sözcüğü hangisinde diğerlerinden farklı türdedir?</b></p>",
     diff: 3,
     expl: "IV numaralı cümlede \"doğru\" sözcüğü \"karşı, yönünce\" anlamında olup kendinden önceki isme (göle doğru) bağlanarak edat (ilgeç) görevinde kullanılmıştır. I ve V. cümlelerde isim, II ve III. cümlelerde ise fiili nitelediği için zarf görevindedir. Ancak seçeneklerde doğrudan hangisinin farklı türde olduğu sorulduğu için ve edat olarak sadece IV'te yer aldığı için cevap IV'tür.",
     answers: [
@@ -77,7 +77,7 @@ export const TUR_EDAT_BAGLAC_UNLEM_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Boğuk bir bakışın oluyor senin<br>Bir girdap derinliğinde kayboluyor <u>I. gibiyim</u><br>Yok <u>II. gibi</u> yaşamak bu,<br>Kalkıp kurtulmak <u>III. gibi</u> kalabalıktan<br>Durma bana türkü söyle Anadolu olsun<br>Susuz dudak <u>IV. gibi</u> çatlamış olsun<br>Karanfil <u>V. gibi</u> olsun kara çiçek gibi yüzün</p><p><b>Bu dizelerdeki numaralanmış altı çizili \"gibi\" sözcüğüyle ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
+    text: "<p>Boğuk bir bakışın oluyor senin<br>Bir girdap derinliğinde kayboluyor <u>I. gibiyim</u><br>Yok <u>II. gibi</u> yaşamak bu,<br>Kalkıp kurtulmak <u>III. gibi</u> kalabalıktan<br>Durma bana türkü söyle Anadolu olsun<br>Susuz dudak <u>IV. gibi</u> çatlamış olsun<br>Karanfil gibi olsun kara çiçek <u>V. gibi</u> yüzün</p><p><b>Bu dizelerdeki numaralanmış altı çizili \"gibi\" sözcüğüyle ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "C seçeneğinde \"III. sözcük, bir isim-fiile bağlanmış ve sıfat görevinde kullanılmıştır\" denmektedir. Oysa \"Kalkıp kurtulmak gibi kalabalıktan\" dizesi \"Kalabalıktan kalkıp kurtulmak gibi(dir)\" şeklinde yüklem görevindedir. Yüklem olduğu için sıfat görevinde kullanılması imkânsızdır.",
     answers: [
@@ -137,7 +137,7 @@ export const TUR_EDAT_BAGLAC_UNLEM_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>(I) Milyonlarca yıl öncesinden günümüze kadar insanlar büyük bir evrim geçirmiştir. (II) Hatta bir görüşe göre insanın evrim süreci fiziksel yapısındaki değişiklik sonucu ayağa kalkması ile başlamıştır. (III) Ancak esas evrim insanın aklını kullanmaya başlaması ve aklının yardımı ile yaratıcı gücünü harekete geçirmesi ile olmuştur. (IV) Tarih öncesi çağlar olarak bilinen Yontma Taş Devri, Cilalı Taş Devri ve Maden Devri insanın aklını kullanmaya başladığı, yaşadığı ortama daha kolay uyum sağladığı için, yaratıcı gücünü geliştirme çabasında olduğu dönemlerdir. (V) İnsanlar bu dönemlerde de çeşitli biçimlerde birbirleriyle iletişim kurmanın gereksinimini duyarak bu alanda yöntemler geliştirmeye başlamışlardır.</p><p><b>Bu parçada numaralanmış cümlelerin hangisinde de hem edat hem bağlaca yer <u>verilmemiştir</u>?</b></p>",
+    text: "<p>(I) Milyonlarca yıl öncesinden günümüze kadar insanlar büyük bir evrim geçirmiştir. (II) Hatta bir görüşe göre insanın evrim süreci fiziksel yapısındaki değişiklik sonucu ayağa kalkması ile başlamıştır. (III) Ancak esas evrim insanın aklını kullanmaya başlaması ve aklının yardımı ile yaratıcı gücünü harekete geçirmesi ile olmuştur. (IV) Tarih öncesi çağlar olarak bilinen Yontma Taş Devri, Cilalı Taş Devri ve Maden Devri insanın aklını kullanmaya başladığı, yaşadığı ortama daha kolay uyum sağladığı için, yaratıcı gücünü geliştirme çabasında olduğu dönemlerdir. (V) İnsanlar bu dönemlerde de çeşitli biçimlerde birbirleriyle iletişim kurmanın gereksinimini duyarak bu alanda yöntemler geliştirmeye başlamışlardır.</p><p><b>Bu parçada numaralanmış cümlelerin hangisinde hem edat hem bağlaca yer <u>verilmemiştir</u>?</b></p>",
     diff: 3,
     expl: "I numaralı cümlede yalnızca \"kadar\" edatı kullanılmıştır, cümlede bağlaca yer verilmemiştir. Diğer cümlelerde; II'de \"hatta\" (bağlaç) ve \"ile\" (edat), III'te \"ancak / ve\" (bağlaç) ile \"ile\" (edat), IV'te \"ve\" (bağlaç) ile \"için\" (edat), V'te \"de\" (bağlaç) ile \"ile\" (birbirleriyle - edat) birlikte kullanılmıştır.",
     answers: [

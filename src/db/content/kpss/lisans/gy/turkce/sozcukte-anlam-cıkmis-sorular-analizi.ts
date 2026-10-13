@@ -53,7 +53,7 @@ export const TUR_SOZCUKTE_ANLAM_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>... Dünyanın yükünü sırtlanmış omuzlarını biraz kısarak eğreti oturduğu sandalyeden kalkıp pencereye doğru yöneldi.</p><p><b>Bu parçada \"kısmak\" sözcüğü aşağıdaki anlamlardan hangisine karşılık gelecek şekilde <u>kullanılmamıştır?</u></b></p>",
+    text: "<p>Yorgunluk ve uykusuzluktan bitap hâlde göz kapaklarını kısarak saate baktı. Gün ağarmak üzereydi. Aklındakiler dağılır diye korktuğundan olsa gerek radyonun sesini kıstı. Başka şeyler düşünmeli dedi, kendi kendine. Mesela bu ay; lambayı idareli kullanmalı, yakacaktan da biraz kısmalıydı. Ne yapsa olmuyordu, en sonunda bıraktı kendini. Dünyanın yükünü sırtlanmış omuzlarını biraz kısarak eğreti oturduğu sandalyeden kalkıp pencereye doğru yöneldi.</p><p><b>Bu parçada \"kısmak\" sözcüğü aşağıdaki anlamlardan hangisine karşılık gelecek şekilde <u>kullanılmamıştır?</u></b></p>",
     diff: 3,
     expl: "Metinde 'göz kapaklarını kısmak' (biraz kapamak), 'sesini kısmak' (azaltmak), 'omuzlarını kısmak' (büzmek) ve 'lambayı kısmak' (eksiltmek/sınırlandırmak) anlamları vardır ancak 'yatıştırmak' anlamı yoktur.",
     answers: [
@@ -65,19 +65,19 @@ export const TUR_SOZCUKTE_ANLAM_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>... J. K. Rowling'in Harry Potter <u>kitaplarıyla (I)</u> <u>canlanan (II)</u> ve S. Meyer'in Alacakaranlık serisinin, kelimenin tam anlamıyla <u>parlattığı (III)</u> kahramanlarla devam eden süreç, özellikle S. Collins'in Açlık Oyunları'yla <u>taçlandırıldığı (IV)</u> yoldan ilerliyor. Bu sürece... <u>inanılmaz (V)</u>...</p><p><b>Bu parçadaki altı çizili sözcüklerden hangisi mecaz anlamda <u>kullanılmamıştır?</u></b></p>",
+    text: "<p>Son zamanlarda genç yetişkin edebiyatının hızla <u>filizlendiği (I)</u> söylenebilir. J. K. Rowling'in Harry Potter kitaplarıyla <u>canlanan (II)</u> ve S. Meyer'in Alacakaranlık serisinin, kelimenin tam anlamıyla <u>parlattığı (III)</u> kahramanlarla devam eden süreç, özellikle S. Collins'in Açlık Oyunları'yla <u>taçlandırdığı (IV)</u> yoldan ilerliyor. Bu sürece yüksek bütçeli ve beyaz perdenin genç yıldızlarıyla renklenen uyarlama filmlerin etkisi <u>inanılmaz (V)</u>...</p><p><b>Bu parçadaki altı çizili sözcüklerden hangisi mecaz anlamda <u>kullanılmamıştır?</u></b></p>",
     diff: 2,
-    expl: "'Kitaplarıyla' sözcüğü gerçek anlamında, basılı eserleri ifade etmek için kullanılmıştır. Diğerleri (canlanmak, parlatmak, taçlandırmak, inanılmaz) mecaz anlam kazanmıştır.",
+    expl: "'Filizlenmek', 'canlanmak', 'parlatmak' ve 'taçlandırmak' sözcükleri mecaz anlamda kullanılmıştır. 'İnanılmaz' sözcüğü ise gerçek anlamıyla kullanılmıştır.",
     answers: [
-      { text: "I", ok: true },
+      { text: "I", ok: false },
       { text: "II", ok: false },
       { text: "III", ok: false },
       { text: "IV", ok: false },
-      { text: "V", ok: false }
+      { text: "V", ok: true }
     ]
   },
   {
-    text: "<p>Yönetmenin son filmi... Bu filmi izlerken <u>kavuşturduğumuz kolları çözmemiz</u> gerekiyor. Çünkü artık hazırlıklı değiliz...</p><p><b>Bu parçada altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Yönetmenin son filmi, olacakların tahmin edilmemesiyle önceki eserlerinden ayrılıyor. Bu filmi izlerken <u>kavuşturduğumuz kolları çözmemiz gerekiyor</u>. Çünkü artık hazırlıklı değiliz, eskiden olduğu gibi ışığın, görülmesi beklenenin üzerine doğrudan tutulduğu bir film izlemiyoruz.</p><p><b>Bu parçada altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "'Kolları çözmek' ifadesi burada edilgenliği bırakıp, önyargılardan sıyrılıp eseri anlamak için aktif bir zihinsel çaba harcamayı simgeler.",
     answers: [
@@ -89,19 +89,19 @@ export const TUR_SOZCUKTE_ANLAM_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>... Bu nedenle tablo, resim alanında <u>renkler korosu</u> olarak adlandırılır.</p><p><b>Bu parçada altı çizili sözle tabloyla ilgili aşağıdakilerden hangisi vurgulanmaktadır?</b></p>",
+    text: "<p>Ressamın Füg adlı tablosu, müziğin görsel bir yansımasının güzel bir örneği olarak ele alınabilir. Tabloya adını veren ve aynı zamanda müzikte bir beste türü olan füg, çok sesli olarak yazılır ve farklı konuları temsil eden birden fazla melodik ritimden oluşur. Bir kalıbı ya da kuralı takip etmeyen bu ritimler; tabloya çizgi, renk ve doku olarak taşınır. Tabloda birbirine benzemeyen pek çok çizgi, farklı yoğunlukta renk ve gerçeklik algısını kıran şekil yer alır. Bu nedenle tablo, resim alanında <u>renkler korosu</u> olarak adlandırılır.</p><p><b>Bu parçada altı çizili sözle tabloyla ilgili aşağıdakilerden hangisi vurgulanmaktadır?</b></p>",
     diff: 3,
-    expl: "'Koro' çok sesliliğin uyumudur. 'Renkler korosu' ifadesi, tablodaki farklı renk ve öğelerin bir araya gelerek oluşturduğu büyük ahengi ve bütünlüğü temsil eder.",
+    expl: "Füg, kalıp ya da kural takip etmeyen birden fazla melodik ritimden oluşur; tabloda da birbirine benzemeyen çizgiler, farklı yoğunlukta renkler ve şekiller bir arada yer alır. 'Renkler korosu' ifadesi, tablonun aralarındaki uyuma bakılmaksızın farklı çağrışımların bir karışımını sunduğunu vurgular.",
     answers: [
-      { text: "Aralarındaki uyuma bakılmaksızın farklı çağrışımların bir karışımını sunduğu", ok: false },
-      { text: "Eserin içerdiği kompozisyondaki ahengin büyük bir yankı uyandırdığı", ok: true },
+      { text: "Aralarındaki uyuma bakılmaksızın farklı çağrışımların bir karışımını sunduğu", ok: true },
+      { text: "Eserin içerdiği kompozisyondaki ahengin büyük bir yankı uyandırdığı", ok: false },
       { text: "Disiplinlerin kendine has özelliklerini soyutlayarak bir düzen içinde yansıttığı", ok: false },
       { text: "Bir sanat dalının diğerinde baskın etkiyle değişim meydana getirdiği", ok: false },
       { text: "Sanatın amacını farklı bakış açılarıyla özgün bir şekilde yeniden ürettiği", ok: false }
     ]
   },
   {
-    text: "<p>... Bu, bereketli topraklardan hasat edilen zeytinleri sızma yağa dönüştürmek gibi bir şey aslında...</p><p><b>Bu parçada altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Dünyayı anlatmak isteyen yazarların Filistin'i sıklıkla bir metafor olarak kullandığını görüyoruz. Okudukça Filistin üzerine söylenmiş ve söylenecek daha nice söz olduğunu anlıyoruz. Bu, <u>bereketli topraklardan hasat edilen zeytinleri sızma yağa dönüştürmek</u> gibi bir şey aslında. Sayfalara ekmeğinizi bandığınızda toprağın kokusunu almanız da bundan kaynaklanıyor.</p><p><b>Bu parçada altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Zeytini yağa dönüştürmek, ham maddeyi işleyerek daha kıymetli ve rafine bir ürün elde etmektir. Bu da coğrafyanın sunduğu malzemeden nitelikli eserler üretmeyi karşılar.",
     answers: [
@@ -113,7 +113,7 @@ export const TUR_SOZCUKTE_ANLAM_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>... Çağımızın birçok tenkitçisi de <u>yaşayan, değişen, binbir kılığa giren bir türü</u> herhangi bir tanıma hapsetmenin budalalık olduğunu düşünüyor.</p><p><b>Bu parçada altı çizili sözle, roman türü ile ilgili anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Son edebiyat ansiklopedilerinin birinde \"Romanı tarife ne lüzum var, roman deyince ne kastettiğimizi herkes anlar.\" ifadesi geçiyor. Çağımızın birçok tenkitçisi de <u>yaşayan, değişen, binbir kılığa giren bir türü herhangi bir tanıma hapsetmenin budalalık olduğunu</u> düşünüyor.</p><p><b>Bu parçada altı çizili sözle, roman türü ile ilgili anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Romanın 'yaşayan, değişen ve binbir kılığa giren' bir tür olması, onun sürekli devinim halinde olan yapısı nedeniyle sabit bir tanıma sığdırılamayacağını gösterir.",
     answers: [
@@ -125,31 +125,31 @@ export const TUR_SOZCUKTE_ANLAM_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>... Muhakkak çok değerli çalışmalar var ama Osmanlıların olgunluk dönemiyle kıyaslayacak olursak <u>çok yetersiz. Burada doğurganlığa hazır bir birikim problemi var.</u></p><p><b>Bu parçaya göre altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Anadolu medeniyetlerinin Orta Çağ'daki durumuna ilişkin araştırmalar çok zayıf. Muhakkak çok değerli çalışmalar var ama Osmanlıların olgunluk dönemiyle kıyaslayacak olursak çok yetersiz. Burada <u>doğurganlığa hazır bir birikim problemi</u> var. Nicelik açısından, belli bir dönem hakkındaki çalışmalar belli bir yoğunluğa ulaştığında o dönemi kavramlaştırmak konusunda yeni adımlar atılabiliyor. Bence Orta Çağ çalışmaları bu yoğunluğa ulaşmadığından analitik yaklaşımlara ve çözümlere ihtiyacımız var.</p><p><b>Bu parçaya göre altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
-    expl: "'Doğurganlığa hazır bir birikim problemi', mevcut çalışmaların yeni sentezlere, kapsayıcı teorilere veya bütüncül bakış açılarına dönüşecek nicelik ve nitelikte olmadığını anlatır.",
+    expl: "Parçada değerli çalışmalar bulunduğu ancak Osmanlıların olgunluk dönemiyle kıyaslandığında bunların çok yetersiz kaldığı belirtilmektedir. 'Doğurganlığa hazır bir birikim problemi' ifadesi, alanda kaliteli çalışmalar yapılmış olmasına rağmen bu çalışmaların istenilen düzeye ulaşmadığını anlatır.",
     answers: [
       { text: "Ortaya konan eserlerde dönemin özelliklerinin tek bir boyutla öne çıkarılmasının niteliği düşürmesi", ok: false },
-      { text: "Alana özgü kaliteli çalışmalar yapılmış olmasına rağmen bu çalışmaların istenilen düzeyde olmaması", ok: false },
+      { text: "Alana özgü kaliteli çalışmalar yapılmış olmasına rağmen bu çalışmaların istenilen düzeyde olmaması", ok: true },
       { text: "Yapılan çalışmalarla ulaşılan sonuçlar genellenebilir olmadığı için alana özgü kavramsal bilginin eksik olması", ok: false },
       { text: "Konu seçiminde ölçütler belirlenmediği için genel çerçeveyi görmekte başarılı olunamaması", ok: false },
-      { text: "Alanın bütüncül bir bakış açısıyla değerlendirilmesini sağlayacak ölçüde çalışmanın yapılmaması", ok: true }
+      { text: "Alanın bütüncül bir bakış açısıyla değerlendirilmesini sağlayacak ölçüde çalışmanın yapılmaması", ok: false }
     ]
   },
   {
-    text: "<p>... Bir yere gittiğinde mekânla bütünleşmek yerine oranın yüzlerce fotoğrafını çekip anında başkalarına sunmak... <u>Görülmeyi, yaşamaya tercih etmek</u> bunun bir göstergesi değil mi?</p><p><b>Bu parçada altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Modern zamanlarda bireyin yaşadığı en önemli sorunlardan biri <u>kendi hayatının tanıdığı olmak</u>. Bir yere gittiğinde mekânla bütünleşmek yerine oranın yüzlerce fotoğrafını çekip anında başkalarına sunmak, denize girmek yerine orada olduğunu sosyal medya araçlarından duyurmak bunun bir göstergesi değil mi?</p><p><b>Bu parçada altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
-    expl: "Metin, insanların anı bizzat deneyimlemek yerine, o anı başkalarına gösterip 'beğeni' alma çabasını, yani onaylanma kaygısını eleştirmektedir.",
+    expl: "'Kendi hayatının tanıdığı olmak', mekânla bütünleşmek yerine fotoğraf çekip paylaşmak, denize girmek yerine orada olduğunu duyurmak gibi davranışlarla açıklanmıştır. Yani birey, anı yaşamak yerine görülmeyi tercih etmektedir.",
     answers: [
-      { text: "Görülmeyi, yaşamaya tercih etmek", ok: false },
-      { text: "Beğenilme kaygısı içinde olmak", ok: true },
+      { text: "Görülmeyi, yaşamaya tercih etmek", ok: true },
+      { text: "Beğenilme kaygısı içinde olmak", ok: false },
       { text: "Güncel olanı, anında kayda geçirmek", ok: false },
       { text: "Belli yaşantıları kalıcı kılmayı istemek", ok: false },
       { text: "Deneyimlerini başkalarına aktarmak", ok: false }
     ]
   },
   {
-    text: "<p>... Einstein bu deneyimi... bir <u>kristalleştirici deneyim</u> onun uyuyan dehasını harekete geçirmiştir.</p><p><b>Bu parçada altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Dâhi olarak bilinen ve kabul edilen dünyadaki birçok kimsenin hayat hikâyesi incelendiğinde birtakım basit deneyimlerin bile onların performanslarına ne kadar önemli katkı sağladığı görülecektir. Örneğin Albert Einstein bu deneyimi, beş yaşında iken babasının ona hediye ettiği basit bir manyetik pusula sonucunda yaşamış ve bu <u>kristalleştirici deneyim</u> onun uyuyan dehasını harekete geçirmiştir.</p><p><b>Bu parçada altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "'Kristalleştirici deneyim', dağınık olan potansiyelin netleştiği, bir amaca yöneldiği ve gelişimin başladığı dönüm noktasını ifade eder.",
     answers: [
@@ -161,19 +161,19 @@ export const TUR_SOZCUKTE_ANLAM_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>... Teklifisizlerdir, resmiyetten nefret ederler. Bir dostun yakınlığına sığınırlar. Tanıdıklarınıza tanıştırarak hiç gitmediğiniz <u>yeni ufukları önünüze sererler.</u></p><p><b>Bu parçada altı çizili ifadeyle deneme türü ile ilgili anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Edebî türler arasında denemeleri okumaya öncelik veririm. Onlar benim en yakın arkadaşlarımdır. <u>Kravat takmaz, ütülü pantolon giymezler.</u> Teklifsizlerdir, resmiyetten nefret ederler. Bir dostun yakınlığına sığınırlar. Tanıdıkları bir kez daha anımsatır, tanımadıklarınızla tanıştırarak hiç gitmediğiniz yeni ufukları önünüze sererler.</p><p><b>Bu parçada altı çizili ifadeyle deneme türü ile ilgili anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
-    expl: "'Yeni ufuklar sermek', bir konuya alışılagelmişin dışında, farklı ve geniş bir perspektiften bakabilme imkânı sunmak demektir.",
+    expl: "'Kravat takmaz, ütülü pantolon giymezler.' ifadesi, denemenin resmiyetten uzak, kalıplara bağlı olmayan bir tür olduğunu; yazarın düşüncelerini özgürce aktarabildiğini anlatır.",
     answers: [
       { text: "Kişisel görüşlerin yaygınlaşabilmesini kolaylaştırması", ok: false },
       { text: "Görüşlerin ispatlanabilirliğinin ikinci plana atılması", ok: false },
-      { text: "Gerçeklerin farklı görülebilmesine imkân tanıması", ok: true },
-      { text: "Düşünceleri özgürce aktarma serbestliğini sağlaması", ok: false },
+      { text: "Gerçeklerin farklı görülebilmesine imkân tanıması", ok: false },
+      { text: "Düşünceleri özgürce aktarma serbestliğini sağlaması", ok: true },
       { text: "Gelişigüzel bir üslubun kullanılmasına öncelik tanıması", ok: false }
     ]
   },
   {
-    text: "<p>... Edebiyatın <u>sağaltıcı</u>, kurtarıcı veya dönüştürücü yanını giderek daha az dile getiriyoruz.</p><p><b>Bu parçada altı çizili sözcüğü anlamca karşılayabilecek bir kullanım aşağıdakilerin hangisinde vardır?</b></p>",
+    text: "<p>İnsanın gelişiminde edebiyatın etkisinin dolaylı ve kısıtlı olduğunu düşünmeye yatkınız maalesef. Edebiyatın <u>sağaltıcı</u>, kurtarıcı veya dönüştürücü yanını giderek daha az dile getiriyoruz. Roman, öykü ve şiirleri eğlence endüstrisinin bir parçası olarak sınırlamak bir gereklilikmiş gibi hareket ediyoruz.</p><p><b>Bu parçada altı çizili sözcüğü anlamca karşılayabilecek bir kullanım aşağıdakilerin hangisinde vardır?</b></p>",
     diff: 2,
     expl: "'Sağaltıcı' kelimesi 'iyileştirici, tedavi edici' anlamına gelir. B seçeneğindeki 'tedavi edici güç' ifadesi bu anlamı doğrudan karşılar.",
     answers: [
@@ -185,7 +185,7 @@ export const TUR_SOZCUKTE_ANLAM_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>... Bütün uğraşıma, edebiyat tarihi duvarındaki <u>kırık bir tuğlanın eksik bir parçasını yerine koyma çabası</u> denilebilir; o kadar.</p><p><b>Bu parçada altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Yılların emeğiyle ortaya çıkan bu kitap sonuçta benim değil, Halide Edip'in kitabı. Dolayısıyla benim bir karşılık beklemem anlamsız. Halide Edip'in dergi sayfalarında kalmış, artık kolay kolay ulaşılamayacak yazılarını gün ışığına kavuşturup akademisyenlerin, araştırmacıların, Halide Edip okurlarının ilgisine sunmaktı amacım; bunu da başarmış oldum. Bütün uğraşıma, edebiyat tarihi duvarındaki <u>kırık bir tuğlanın eksik bir parçasını yerine koyma</u> çabası denebilir; o kadar.</p><p><b>Bu parçada altı çizili sözle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "'Eksik bir parçayı yerine koymak', mevcut bir yapıya (literatüre) küçük de olsa yeni ve özgün bir katkıda bulunmak anlamına gelir.",
     answers: [
@@ -197,7 +197,7 @@ export const TUR_SOZCUKTE_ANLAM_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>... Dergilerin imbiğinden süzerek biriktirdiği malzemesi ona, düşünce yazılarında bir <u>uzun mesafe koşucusu</u> özelliği kazandırdı.</p><p><b>Bu parçada altı çizili ifadeyle söz edilen yazarla ilgili anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Yitirilmiş kuşağın kıdemli temsilcilerindendi. Dergilerin imbiğinden süzerek biriktirdiği malzemesi ona, <u>düşünce yazılarında bir uzun mesafe koşucusu özelliği</u> kazandırdı. Kişiliğinin içtenliği gibi yapmacıksız olan kalemiyle Türk yazını içinde saygın bir yere kavuştu.</p><p><b>Bu parçada altı çizili ifadeyle söz edilen yazarla ilgili anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "'Uzun mesafe koşucusu' ifadesi, bir işte sabırla, sebat ederek ve uzun süre emek vererek çalışmayı, yani yazılar üzerinde titizlikle ve uzun süreli uğraşmayı simgeler.",
     answers: [
@@ -209,7 +209,7 @@ export const TUR_SOZCUKTE_ANLAM_CIKMIS_SORULAR_ANALIZI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>... Terzi \"Evet, onu bilerek yaptım. Aslında ceketin güzelliğini o potluk gösteriyor. Hesaplanmış kusurda <u>aklın izi</u>, kusursuz olanınkinden daha derindir.\" diyerek...</p><p><b>Bu parçada altı çizili ifadeyle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Ustalığıyla ünlü bir terzi, diktiği ceketlerden birini kontrol etmesi için çırağına gösterir. Ceketi dikkatle inceleyen çırak, ustasına ceketin omzunda bir potluk olduğunu söyler. Terzi \"Evet, onu bilerek yaptım. Aslında ceketin güzelliğini o potluk gösteriyor. <u>Hesaplanmış kusurda aklın izi, kusursuz olanınkinden daha derindir.</u>\" diyerek potluğu oluşturabilmek için ne kadar titizlikle çalıştığını belirtir.</p><p><b>Bu parçada altı çizili ifadeyle anlatılmak istenen aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "'Aklın izi', hatanın kazaen değil, belirli bir estetik veya teknik amaçla, bilinçli ve zekice yapıldığını ifade eder.",
     answers: [

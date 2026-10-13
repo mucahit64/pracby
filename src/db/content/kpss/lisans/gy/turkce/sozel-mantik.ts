@@ -46,7 +46,7 @@ export const TUR_SOZEL_MANTIK_TEST_1: McQ[] = [
     ],
   },
   {
-    text: CTX85A + "<p><b>2. Buna göre; I. Dilek, II. Sadettin, III. Yelda adlı kişilerden hangilerinin gittiği film türü kesin olarak bilinmektedir?</b></p>",
+    text: CTX85A + "<p><b>2. Buna göre; I. Dilek, II. Sadettin, III. Yelda adlı kişilerden hangilerinin gittiği film türü <u>kesin olarak</u> bilinmektedir?</b></p>",
     diff: 3,
     expl: "Yelda'nın komedi, Sadettin'in ise bilim kurgu filmine gittiği kesinleşmiştir. Dilek'in gittiği film türü ve günü ise olasılıklıdır. Bu yüzden doğru cevap II ve III'tür.",
     answers: [
@@ -70,13 +70,13 @@ export const TUR_SOZEL_MANTIK_TEST_1: McQ[] = [
     ],
   },
   {
-    text: CTX85A + "<p><b>4. Dilek ve Erdal'ın aynı gün filme gittiği bilindiğine göre aşağıdakiler-den hangisi <u>kesin olarak doğrudur</u>?</b></p>",
+    text: CTX85A + "<p><b>4. Dilek ve Erdal'ın aynı gün filme gittiği bilindiğine göre aşağıdakilerden hangisi <u>kesin olarak doğrudur</u>?</b></p>",
     diff: 3,
-    expl: "Dilek ve Erdal pazar günü filme gitmişse, Ömür cumartesi komediye gitmiştir. Bu durumda Ömür ve İlyas'ın her ikisinin de cumartesi günü filme gittiği kesinleşir.",
+    expl: "Dilek ve Erdal pazar günü filme gitmişse, Ömür cumartesi macera filmine gitmiştir. Bu durumda Ömür ve İlyas'ın her ikisinin de cumartesi günü filme gittiği kesinleşir.",
     answers: [
       { text: "Ömür ve İlyas aynı gün filme gitmiştir.", ok: true },
       { text: "Ramazan ve Dilek aynı gün filme gitmiştir.", ok: false },
-      { text: "Sadettin ve Erdal farklı günlerde filme gitmiştir.", ok: false },
+      { text: "Sadettin ve Erdal farklı gün filme gitmiştir.", ok: false },
       { text: "Bayram ve Ömür farklı günlerde filme gitmiştir.", ok: false },
       { text: "Yelda ve Ramazan aynı gün filme gitmiştir.", ok: false }
     ],
@@ -100,8 +100,8 @@ export const TUR_SOZEL_MANTIK_TEST_1: McQ[] = [
     expl: "Tablo analizi yapıldığında F'nin cumartesi günü TYT seminerine katıldığı bilgisi net bir şekilde ortaya çıkar.",
     answers: [
       { text: "A, cumartesi seminere katılmıştır.", ok: false },
-      { text: "C, pazar seminerine katılmıştır.", ok: false },
-      { text: "D, cumartesi seminerine katılmıştır.", ok: false },
+      { text: "C, pazar seminere katılmıştır.", ok: false },
+      { text: "D, cumartesi seminere katılmıştır.", ok: false },
       { text: "E, pazar seminerine katılmıştır.", ok: false },
       { text: "F, cumartesi seminere katılmıştır.", ok: true }
     ],
@@ -119,7 +119,7 @@ export const TUR_SOZEL_MANTIK_TEST_1: McQ[] = [
     ],
   },
   {
-    text: CTX85B + "<p><b>8. Tüm öğrencilerin katıldıkları seminerin ve günün tam olarak belirlenebilmesi için aşağıdakilerden hangisinin bilinmesi yeterlidir?</b></p>",
+    text: CTX85B + "<p><b>8. Tüm öğrencilerin katıldıkları seminerin ve günün <u>tam olarak</u> belirlenebilmesi için aşağıdakilerden hangisinin bilinmesi yeterlidir?</b></p>",
     diff: 3,
     expl: "Olasılıkları ortadan kaldırmak için C'nin seminer günü ile A'nın katıldığı seminer türünün bilinmesi tüm tablonun netleşmesini sağlar.",
     answers: [
@@ -149,7 +149,7 @@ const CTX86A =
 
 const CTX86B =
   "<p><b>5. - 8. soruları aşağıdaki bilgilere göre birbirinden bağımsız olarak cevaplayınız.</b></p>" +
-  "<p>Ayşegül, Bülent, Can, Erdal, Ramazan, Sabri ve Zeynep adlı öğretmenlerin hazırladığı konu anlatımı, soru bankası ve video ders notu olmak üzere üç farklı kitap, Benim Hocam Yayınevi tarafından belli bir sırada yayımlanmıştır. Bilgiler şöyledir:</p>" +
+  "<p>Ayşegül, Bülent, Can, Erdal, Ramazan, Sabri ve Zeynep adlı öğretmenlerin hazırladığı konu anlatımı, soru bankası ve video ders notu olmak üzere üç farklı kitap, Benim Hocam Yayınevi tarafından belli bir sırada yayımlanmıştır. Öğretmenlerin yayımladığı kitaplara ve bu kitapların yayımlanma sıralarına ilişkin kimi bilgiler şunlardır:</p>" +
   "<ul>" +
   "<li>Her öğretmenin yayımlanan sadece bir tür kitabı vardır.</li>" +
   "<li>Öğretmenlerden üçünün video ders notu, ikisinin konu anlatımlı kitabı vardır.</li>" +
@@ -175,7 +175,7 @@ export const TUR_SOZEL_MANTIK_TEST_2: McQ[] = [
     ],
   },
   {
-    text: CTX86A + "<p><b>2. Buna göre; I. Leyla, II. Mine, III. Nurgül adlı öğrencilerden hangilerinin seçtiği ders kesin olarak bilinmektedir?</b></p>",
+    text: CTX86A + "<p><b>2. Buna göre; I. Leyla, II. Mine, III. Nurgül adlı öğrencilerden hangilerinin seçtiği ders <u>kesin olarak</u> bilinmektedir?</b></p>",
     diff: 3,
     expl: "Tablo analizi yapıldığında Mine'nin coğrafyadan ödev hazırladığı kesinleşir. Leyla ve Nurgül'ün dersleri ise tarih ve Türkçe arasında olasılıklıdır.",
     answers: [
@@ -207,12 +207,12 @@ export const TUR_SOZEL_MANTIK_TEST_2: McQ[] = [
       { text: "Sevil'in öğrenim gördüğü şube ile Leyla'nın seçtiği dersin", ok: false },
       { text: "Nurgül'ün öğrenim gördüğü şube ile Kemal'in seçtiği dersin", ok: false },
       { text: "Leyla'nın seçtiği ders ile Nurgül'ün öğrenim gördüğü şubenin", ok: false },
-      { text: "Kemal'in öğrenim gördüğü şube ile Mine'nın seçtiği dersin", ok: false }
+      { text: "Kemal'in öğrenim gördüğü şube ile Mine'nin seçtiği dersin", ok: false }
     ],
   },
   // --- SENARYO 2 (5-8) ---
   {
-    text: CTX86B + "<p><b>5. Buna göre; I. Ayşegül, II. Bülent, III. Ramazan adlı öğretmenlerden hangilerinin kitabının yayımlanma sırası kesin olarak bilinmektedir?</b></p>",
+    text: CTX86B + "<p><b>5. Buna göre; I. Ayşegül, II. Bülent, III. Ramazan adlı öğretmenlerden hangilerinin kitabının yayımlanma sırası <u>kesin olarak</u> bilinmektedir?</b></p>",
     diff: 3,
     expl: "Ayşegül'ün kitabı 5. sırada, Bülent'in kitabı ise 1. sırada kesin olarak yayımlanmıştır. Ramazan'ın sırası ise 6 veya 7 olarak olasılıklıdır. Bu yüzden I ve II kesindir.",
     answers: [
@@ -236,7 +236,7 @@ export const TUR_SOZEL_MANTIK_TEST_2: McQ[] = [
     ],
   },
   {
-    text: CTX86B + "<p><b>7. Aşağıdaki sıralardan hangisinde kitabı yayımlanan öğretmenlerin hazırladığı kitapların türleri kesin olarak aynıdır?</b></p>",
+    text: CTX86B + "<p><b>7. Aşağıdaki sıralardan hangisinde kitabı yayımlanan öğretmenlerin hazırladığı kitapların türleri <u>kesin olarak</u> aynıdır?</b></p>",
     diff: 2,
     expl: "Birinci sırada (Bülent) ve yedinci sırada (Erdal/Ramazan) yayımlanan kitapların türü kesinlikle video ders notudur.",
     answers: [
@@ -280,10 +280,10 @@ const CTX87B =
   "<p><b>5. - 8. soruları aşağıdaki bilgilere göre birbirinden bağımsız olarak cevaplayınız.</b></p>" +
   "<p>Bir konserde A, B ve C adlı bestecilere ait şarkıları; Kemal, Leman, Metin, Oya, Ömer, Pınar ve Rüya adlı sanatçılar belli bir sırada söylemişlerdir. Her kişinin sadece bir şarkı söylediği konsere ilişkin kimi bilgiler şu şekildedir:</p>" +
   "<ul>" +
-  "<li>Aynı besteciye ait şarkılar, art arda söylenmemiştir.</li>" +
+  "<li>Aynı besteciye ait şarkılar, art arda <u>söylenmemiştir</u>.</li>" +
   "<li>İlk sırada B, son sırada A adlı besteciye ait şarkılar söylenmiştir.</li>" +
   "<li>Rüya üçüncü sırada şarkı söylemiştir.</li>" +
-  "<li>Altıncı sırada şarkı söyleyen Pınar, B adlı besteciye ait bir şarkı söylememiştir.</li>" +
+  "<li>Altıncı sırada şarkı söyleyen Pınar, B adlı besteciye ait bir şarkı <u>söylememiştir</u>.</li>" +
   "<li>Ömer, A adlı besteciye ait bir şarkı söylemiştir.</li>" +
   "<li>Ömer, Rüya'dan önce şarkı söylemiştir.</li>" +
   "<li>Kemal'den hemen sonra Oya şarkı söylemiştir.</li>" +
@@ -305,7 +305,7 @@ export const TUR_SOZEL_MANTIK_TEST_3: McQ[] = [
     ],
   },
   {
-    text: CTX87A + "<p><b>2. Bu bilgilere göre, aşağıdakilerden hangisi kesinlikle yanlıştır?</b></p>",
+    text: CTX87A + "<p><b>2. Bu bilgilere göre, aşağıdakilerden hangisi kesinlikle <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "Ömer'in birinci sınıfta öğrenim gördüğü kesindir. Bu nedenle 'Ömer Gazi Üniversitesinde ikinci sınıfta öğrenim görmektedir' yargısı kesinlikle yanlıştır.",
     answers: [
@@ -354,7 +354,7 @@ export const TUR_SOZEL_MANTIK_TEST_3: McQ[] = [
     ],
   },
   {
-    text: CTX87B + "<p><b>6. Oya ---- sırada ---- adlı besteciye ait bir şarkı söylemiştir. Boş bırakılan yerlere sırasıyla aşağıdakilerden hangisi getirilmelidir?</b></p>",
+    text: CTX87B + "<p><b>6. Oya ---- sırada ---- adlı besteciye ait bir şarkı söylemiştir. Bu cümlede boş bırakılan yerlere <u>sırasıyla</u> aşağıdakilerden hangisi getirilmelidir?</b></p>",
     diff: 2,
     expl: "Kemal 4. sırada, Oya ise hemen ardından 5. sıradadır. 3. ve 5. sırada aynı besteci (B) olduğu için Oya, 5. sırada B bestecisine ait şarkı söylemiştir.",
     answers: [
@@ -366,7 +366,7 @@ export const TUR_SOZEL_MANTIK_TEST_3: McQ[] = [
     ],
   },
   {
-    text: CTX87B + "<p><b>7. Aşağıdakilerden hangisi kesin olarak bilinmektedir?</b></p>",
+    text: CTX87B + "<p><b>7. Aşağıdakilerden hangisi <u>kesin olarak</u> bilinmektedir?</b></p>",
     diff: 2,
     expl: "Tablo yerleştirildiğinde B adlı besteciye ait toplam şarkı sayısının (1, 3 ve 5. sıralar) 3 olduğu kesin olarak bilinmektedir.",
     answers: [
@@ -396,7 +396,7 @@ export const TUR_SOZEL_MANTIK_TEST_3: McQ[] = [
 // ============================================================================
 const CTX88A =
   "<p><b>1. - 4. soruları aşağıdaki bilgilere göre birbirinden bağımsız olarak cevaplayınız.</b></p>" +
-  "<p>Bilim kurgu, komedi ve macera filmlerine bilet almak için bir sinema gişesinde sırada bekleyen Pelin, Raşit, Tuna, Ümit, Vedat, Yasemin ve Zerrin adlı kişilerin bilet alma sıralarına ve bilet aldıkları filmlerin türlerine ilişkin kimi bilgiler şöyledir:</p>" +
+  "<p>Bilim kurgu, komedi ve macera filmlerine bilet almak için bir sinema gişesinde sırada bekleyen Pelin, Raşit, Tuna, Ümit, Vedat, Yasemin ve Zerrin adlı kişilerin bilet alma sıralarına ve bilet aldıkları filmlerin türlerine ilişkin kimi bilgiler şu şekildedir:</p>" +
   "<ul>" +
   "<li>Her bir kişi, sadece bir bilet almıştır.</li>" +
   "<li>İkinci ve üçüncü sırada bekleyen kişiler, aynı türdeki filme bilet almıştır.</li>" +
@@ -410,13 +410,13 @@ const CTX88A =
 
 const CTX88B =
   "<p><b>5. - 8. soruları aşağıdaki bilgilere göre birbirinden bağımsız olarak cevaplayınız.</b></p>" +
-  "<p>Etrabe ile Selim adlı yönetmenler haftanın farklı günlerinde Türkçe ve matematik derslerinin videolarını çekmektedirler. Bu redaktörlerin hangi gün hangi videoyu çektiğine ilişkin bilgiler şöyledir:</p>" +
+  "<p>Etrabe ile Selim adlı yönetmenler haftanın farklı günlerinde Türkçe ve matematik derslerinin videolarını çekmektedir. Hangi dersin kim tarafından çekildiğine ve videoların çekim günlerine ilişkin kimi bilgiler şunlardır:</p>" +
   "<ul>" +
   "<li>Her gün yalnızca bir video çekimi yapılmıştır.</li>" +
   "<li>Etrabe, dört gün çekim yapmıştır.</li>" +
   "<li>Haftanın ilk ve son günü aynı yönetmen çekim yapmıştır.</li>" +
   "<li>Çarşamba ve cumartesi aynı dersin çekimleri yapılmıştır.</li>" +
-  "<li>Türkçe videoları art arda çekilmemiştir.</li>" +
+  "<li>Türkçe videoları art arda <u>çekilmemiştir</u>.</li>" +
   "<li>Üçüncü gün Etrabe tarafından çekim yapılmıştır.</li>" +
   "<li>Dördüncü gün Selim, Türkçe videosu çekmiştir.</li>" +
   "<li>Etrabe'nin çektiği Türkçe videosundan sonra Selim matematik videosu çekmiştir.</li>" +
@@ -429,17 +429,17 @@ export const TUR_SOZEL_MANTIK_TEST_4: McQ[] = [
     diff: 3,
     expl: "Çözüm tablosuna göre 1. ve 7. sıradaki kişiler komedi filmi almıştır. Ayrıca 4. veya 5. sıradaki kişilerden biri de komedi almış olabilir. Bu durumda 1. ve 5. sıra olasılık dahilindedir.",
     answers: [
-      { text: "Yalnız I", ok: false }, { text: "B) Yalnız II", ok: false }, { text: "C) I ve II", ok: false },
-      { text: "D) I ve III", ok: true }, { text: "E) II ve III", ok: false }
+      { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "I ve II", ok: false },
+      { text: "I ve III", ok: true }, { text: "II ve III", ok: false }
     ],
   },
   {
-    text: CTX88A + "<p><b>2. Buna göre; I. Pelin, II. Tuna, III. Ümit adlı kişilerden hangilerinin bilet aldığı filmin türü kesin olarak bilinmektedir?</b></p>",
+    text: CTX88A + "<p><b>2. Buna göre; I. Pelin, II. Tuna, III. Ümit adlı kişilerden hangilerinin bilet aldığı filmin türü <u>kesin olarak</u> bilinmektedir?</b></p>",
     diff: 3,
     expl: "Pelin'in 7. sırada olduğu ve komedi filmine bilet aldığı kesindir. Tuna ve Ümit'in film türleri ise yer değişim olasılıkları nedeniyle kesin değildir.",
     answers: [
-      { text: "A) Yalnız I", ok: true }, { text: "B) Yalnız II", ok: false }, { text: "C) Yalnız III", ok: false },
-      { text: "D) I ve III", ok: false }, { text: "E) II ve III", ok: false }
+      { text: "Yalnız I", ok: true }, { text: "Yalnız II", ok: false }, { text: "Yalnız III", ok: false },
+      { text: "I ve III", ok: false }, { text: "II ve III", ok: false }
     ],
   },
   {
@@ -447,19 +447,19 @@ export const TUR_SOZEL_MANTIK_TEST_4: McQ[] = [
     diff: 2,
     expl: "Tabloya göre Vedat 6. sırada, Zerrin ise 5. sıradadır. Dolayısıyla Vedat, Zerrin'den hemen sonra bilet almıştır ifadesi doğrudur.",
     answers: [
-      { text: "A) Pelin, Tuna'dan önce bilet almıştır.", ok: false }, { text: "B) Raşit, Yasemin'den önce bilet almıştır.", ok: false },
-      { text: "C) Tuna, Ümit'ten sonra bilet almıştır.", ok: false }, { text: "D) Ümit, Pelin'den sonra bilet almıştır.", ok: false },
-      { text: "E) Vedat, Zerrin'den sonra bilet almıştır.", ok: true }
+      { text: "Pelin, Tuna'dan önce bilet almıştır.", ok: false }, { text: "Raşit, Yasemin'den önce bilet almıştır.", ok: false },
+      { text: "Tuna, Ümit'ten sonra bilet almıştır.", ok: false }, { text: "Ümit, Pelin'den sonra bilet almıştır.", ok: false },
+      { text: "Vedat, Zerrin'den sonra bilet almıştır.", ok: true }
     ],
   },
   {
-    text: CTX88A + "<p><b>4. Tuna ve Ümit'in aynı filme bilet aldığı biliniyorsa aşağıdakilerden hangisi kesin olarak doğrudur?</b></p>",
+    text: CTX88A + "<p><b>4. Tuna ve Ümit'in aynı filme bilet aldığı biliniyorsa aşağıdakilerden hangisi doğrudur?</b></p>",
     diff: 3,
     expl: "Tuna ve Ümit aynı filme bilet alıyorsa bu film komedidir. Bu durumda Zerrin'in bilim kurgu türünde bilet aldığı kesinleşir.",
     answers: [
-      { text: "A) Yasemin, bilim kurgu türünde bir filme bilet almıştır.", ok: false }, { text: "B) Zerrin, bilim kurgu türünde bir filme bilet almıştır.", ok: true },
-      { text: "C) Pelin, macera türünde bir filme bilet almıştır.", ok: false }, { text: "D) Raşit, ikinci sırada bilet almıştır.", ok: false },
-      { text: "E) Ümit, beşinci sırada bilet almıştır.", ok: false }
+      { text: "Yasemin, bilim kurgu türünde bir filme bilet almıştır.", ok: false }, { text: "Zerrin, bilim kurgu türünde bir filme bilet almıştır.", ok: true },
+      { text: "Pelin, macera türünde bir filme bilet almıştır.", ok: false }, { text: "Raşit, ikinci sırada bilet almıştır.", ok: false },
+      { text: "Ümit, beşinci sırada bilet almıştır.", ok: false }
     ],
   },
   // --- SENARYO 2 (5-8) ---
@@ -468,8 +468,8 @@ export const TUR_SOZEL_MANTIK_TEST_4: McQ[] = [
     diff: 3,
     expl: "Analize göre matematik videoları Salı, Çarşamba, Cuma, Cumartesi ve Pazar günlerinden herhangi birinde çekilmiş olabilir. Öncüllerdeki tüm günler matematik çekimine uygundur.",
     answers: [
-      { text: "A) Yalnız I", ok: false }, { text: "B) Yalnız III", ok: false }, { text: "C) I ve II", ok: false },
-      { text: "D) II ve III", ok: false }, { text: "E) I, II ve III", ok: true }
+      { text: "Yalnız I", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve II", ok: false },
+      { text: "II ve III", ok: false }, { text: "I, II ve III", ok: true }
     ],
   },
   {
@@ -477,28 +477,28 @@ export const TUR_SOZEL_MANTIK_TEST_4: McQ[] = [
     diff: 3,
     expl: "Etrabe'nin Pazartesi, Çarşamba ve Pazar günleri kesin çekim yaptığı; Cuma veya Cumartesi günlerinden birinde de 4. çekimini yaptığı bilinmektedir. Salı günü ise Selim çekim yapmıştır.",
     answers: [
-      { text: "A) Yalnız I", ok: false }, { text: "B) Yalnız II", ok: false }, { text: "C) Yalnız III", ok: false },
-      { text: "D) I ve II", ok: false }, { text: "E) II ve III", ok: true }
+      { text: "Yalnız I", ok: false }, { text: "Yalnız II", ok: false }, { text: "Yalnız III", ok: false },
+      { text: "I ve II", ok: false }, { text: "II ve III", ok: true }
     ],
   },
   {
-    text: CTX88B + "<p><b>7. Aşağıdakilerden hangisi kesin olarak doğrudur?</b></p>",
+    text: CTX88B + "<p><b>7. Aşağıdakilerden hangisi <u>kesin olarak</u> doğrudur?</b></p>",
     diff: 2,
-    expl: "Selim Salı günü matematik, Perşembe ve Cumartesi/Cuma günlerinden birinde de matematik çekmiştir. Türkçe videosu ise sadece Perşembe günü Selim tarafından çekilmiştir.",
+    expl: "Selim salı günü matematik, perşembe günü Türkçe, cuma veya cumartesi günlerinden birinde de matematik videosu çekmiştir. Yani Selim'in yalnızca bir Türkçe videosu çektiği kesindir.",
     answers: [
-      { text: "A) Etrabe, iki matematik videosu çekimi yapmıştır.", ok: false }, { text: "B) Selim, yalnızca bir Türkçe videosu çekimi yapmıştır.", ok: true },
-      { text: "C) Selim, art arda iki gün video çekimi yapmıştır.", ok: false }, { text: "D) Hafta sonu Etrabe, video çekimi yapmıştır.", ok: false },
-      { text: "E) Etrabe en az iki Türkçe videosu çekimi yapmıştır.", ok: false }
+      { text: "Etrabe, iki matematik videosu çekimi yapmıştır.", ok: false }, { text: "Selim, yalnızca bir Türkçe videosu çekimi yapmıştır.", ok: true },
+      { text: "Selim, art arda iki gün video çekimi yapmıştır.", ok: false }, { text: "Hafta sonu Etrabe, video çekimi yapmıştır.", ok: false },
+      { text: "Etrabe en az iki Türkçe videosu çekimi yapmıştır.", ok: false }
     ],
   },
   {
-    text: CTX88B + "<p><b>8. Etrabe'nin art arda iki gün matematik videosu çekimi yaptığı bilinirse aşağıdakilerden hangisi kesin olarak yanlıştır?</b></p>",
+    text: CTX88B + "<p><b>8. Etrabe'nin art arda iki gün matematik videosu çekimi yaptığı bilinirse aşağıdakilerden hangisi kesin olarak <u>yanlıştır</u>?</b></p>",
     diff: 3,
-    expl: "Haftanın ilk günü (Pazartesi) Türkçe, son günü (Pazar) matematik ya da Türkçe olabilir. Ancak kurallara göre haftanın ilk ve son günü farklı derslerin videoları çekilmiştir yargısı kesin yanlıştır.",
+    expl: "Etrabe'nin art arda iki gün matematik videosu çekmesi ancak cumartesi ve pazar günleriyle mümkündür. Bu durumda pazartesi Türkçe, pazar ise matematik videosu çekilmiştir. Haftanın ilk ve son günü farklı derslerin videosu çekildiğinden C'deki yargı kesinlikle yanlıştır.",
     answers: [
-      { text: "A) Selim, cuma günü matematik videosu çekmiştir.", ok: false }, { text: "B) Etrabe, yalnızca bir Türkçe videosu çekimi yapmıştır.", ok: false },
-      { text: "C) Haftanın ilk ve son günü aynı dersin videosu çekilmiştir.", ok: true }, { text: "D) Selim, art arda iki gün farklı derslerin videosunu çekmiştir.", ok: false },
-      { text: "E) Hafta sonu matematik dersinin videoları çekilmiştir.", ok: false }
+      { text: "Selim, cuma günü matematik videosu çekmiştir.", ok: false }, { text: "Etrabe, yalnızca bir Türkçe videosu çekimi yapmıştır.", ok: false },
+      { text: "Haftanın ilk ve son günü aynı dersin videosu çekilmiştir.", ok: true }, { text: "Selim, art arda iki gün farklı derslerin videosunu çekmiştir.", ok: false },
+      { text: "Hafta sonu matematik dersinin videoları çekilmiştir.", ok: false }
     ],
   },
 ];
@@ -601,7 +601,7 @@ export const TUR_SOZEL_MANTIK_TEST_5: McQ[] = [
   {
     text:
       CTX5B +
-      "<p><b>Buna göre hem Erkan'ın hem Hüseyin'in;</b><br>I. K,<br>II. L,<br>III. M<br><b>adlı kitaplardan hangilerini hangi gün incelediği kesin olarak bilinmektedir?</b></p>",
+      "<p><b>Buna göre hem Erkan'ın hem Hüseyin'in;</b><br>I. K,<br>II. L,<br>III. M<br><b>adlı kitaplardan hangilerini hangi gün incelediği <u>kesin olarak</u> bilinmektedir?</b></p>",
     diff: 3,
     expl:
       "Her iki olasılıkta da Erkan'ın düzeni: L(Pzt), N(Sal), R(Çar), M(Per), P(Cum) şeklinde sabittir; yalnızca son iki gün K ve S yer değiştirebilir. Hüseyin için: P(Pzt), M(Sal), R(Çar), N(Per) sabittir. Her iki olasılıkta L'yi Erkan pazartesi, Hüseyin pazar incelemiştir (kesin, II ✓). M'yi Erkan perşembe, Hüseyin salı incelemiştir (kesin, III ✓). K'nın konumu Hüseyin için değişkendir (I ✗). Doğru cevap E'dir.",

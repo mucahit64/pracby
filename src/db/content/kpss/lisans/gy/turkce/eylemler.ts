@@ -139,12 +139,12 @@ export const TUR_EYLEMLER_TEST_15: McQ[] = [
   {
     text: "<p><b>Aşağıdaki cümlelerin hangisinde altı çizili fiildeki kip, temel işlevinde kullanılmıştır?</b></p>",
     diff: 3,
-    expl: "Fiil kiplerinin kendi zaman anlamları dışında başka bir zaman kastedilerek kullanılmasına anlam (zaman) kayması denir. E seçeneğindeki \"Gecenin geç saatlerinde her şeyin sustuğu anlarda köşeye çekilip şiir okurum.\" cümlesindeki \"okurum\" geniş zamanla çekimlenmiştir ve her zaman (sürekli) yapılan bir eylemi anlattığı için temel işlevindedir. Diğerlerinde ise anlam kayması vardır (A: getirir -> getireceksin, B: yaşadık -> yaşayacağız, C: oluvermiş -> oluverir, D: etmeyeceksin -> etme).",
+    expl: "Fiil kiplerinin kendi zaman anlamları dışında başka bir zaman kastedilerek kullanılmasına anlam (zaman) kayması denir. E seçeneğindeki \"Gecenin geç saatlerinde her şeyin sustuğu anlarda köşeye çekilip şiir okurum.\" cümlesindeki \"okurum\" geniş zamanla çekimlenmiştir ve her zaman (sürekli) yapılan bir eylemi anlattığı için temel işlevindedir. Diğerlerinde ise anlam kayması vardır (A: götürürsün -> gelecek zaman, B: yaşadık -> gelecek zaman, C: bakmışsın -> geniş zaman, D: davet etmeyeceksin -> emir kipi işlevinde).",
     answers: [
-      { text: "Önce sendeki kitapları <u>getirir</u> sonra da istediklerini alıp <u>götürürsün</u>.", ok: false },
+      { text: "Önce sendeki kitapları getirir sonra da istediklerini alıp <u>götürürsün</u>.", ok: false },
       { text: "Dedelerimizden kalan topraklar o kadar değerli miymiş? <u>Yaşadık</u> desene!", ok: false },
-      { text: "Hiç ummadığın sıra bir bakmışsın tüm isteklerin gerçek <u>oluvermiş</u>.", ok: false },
-      { text: "Bir daha olumsuzlukları konuşmayacak, onları hayatına davet <u>etmeyeceksin</u>!", ok: false },
+      { text: "Hiç ummadığın sıra bir <u>bakmışsın</u> tüm isteklerin gerçek oluvermiş.", ok: false },
+      { text: "Bir daha olumsuzlukları konuşmayacak, onları hayatına <u>davet etmeyeceksin</u>!", ok: false },
       { text: "Gecenin geç saatlerinde, her şeyin sustuğu, anlarda, bir köşeye çekilip şiir <u>okurum</u>.", ok: true }
     ]
   }
@@ -155,7 +155,7 @@ export const TUR_EYLEMLER_TEST_15: McQ[] = [
 // ============================================================================
 export const TUR_EYLEMLER_TEST_2: McQ[] = [
   {
-    text: "<p>Tiyatro, insanı insana insanla anlatmayı çok iyi <u>I. başarır.</u> Onun özünde hoşgörüyü ön plana çıkarmak <u>II. vardır.</u> Toplumsal duyarlılığı artırmayı, estetik duyguları <u>III. geliştirmeyi</u> egemen kılmayı <u>IV. amaçlar.</u> Gündelik yaşam sahnemizi aydınlatan tiyatrocularımızın Dünya Tiyatro Gününü <u>V. kutlarız.</u></p><p><b>Bu parçada altı çizili sözcüklerden hangileri çekimlenmiş fiil değildir?</b></p>",
+    text: "<p>Tiyatro, insanı insana insanla anlatmayı çok iyi <u>I. başarır.</u> Onun özünde hoşgörüyü ön plana çıkarmak <u>II. vardır.</u> Toplumsal duyarlılığı artırmayı, estetik duyguları <u>III. geliştirmeyi</u> egemen kılmayı <u>IV. amaçlar.</u> Gündelik yaşam sahnemizi aydınlatan tiyatrocularımızın Dünya Tiyatro Gününü <u>V. kutlarız.</u></p><p><b>Bu parçada altı çizili sözcüklerden hangileri çekimlenmiş fiil <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Çekimli fiil, fiil çekim ekleri olan kip ve kişi ekleri alabilen fiillerdir. Parçadaki II numaralı 'vardır' sözcüğü isim olduğu için, III numaralı 'geliştirmeyi' sözcüğü de isim-fiil eki alarak isimleştiği için çekimli fiil değildir. I (başarır), IV (amaçlar) ve V (kutlarız) sözcükleri geniş zamanla çekimlenmiş fiillerdir.",
     answers: [
@@ -167,7 +167,7 @@ export const TUR_EYLEMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Güzel yüzün görülmezdi<br>Bu aşk bende dirilmezdi<br>Güle kıymet verilmezdi<br>Âşık ve maşuk olmasa</p><p><b>Bu dizelerle ilgili olarak aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>Güzel yüzün görülmezdi<br>Bu aşk bende dirilmezdi<br>Güle kıymet verilmezdi<br>Âşık ve maşuk olmasa</p><p><b>Bu dizelerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Dizelerde yer alan 'olmasa' fiili, dilek kiplerinden şart kipiyle (-sa/-se) çekimlenmiş basit zamanlı bir fiildir. Şiirde istek kipiyle (-a/-e) çekimlenmiş bir fiile yer verilmemiştir.",
     answers: [
@@ -179,7 +179,7 @@ export const TUR_EYLEMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Çocuk kitapları, çocuklara yaşama sevinci aşılar.<br>II. Ülkenin her yanında çocukları doğayla buluşturmayı hedefleyen fikirler filizleniyor.<br>III. İnsan, elinde olan nimetlerin kıymetini ancak bunlar elinden çıktıktan sonra anlayacak.<br>IV. Cehalet kadar büyük kötülük ve yoksulluk düşünülemez.<br>V. Koruma altındaki ormanlar içinde yürüyüş yaparken kaybolmamaya dikkat ediniz.</p><p><b>Yukarıdaki numaralanmış cümlelerin hangisinin eyleminde zaman anlamı yoktur?</b></p>",
+    text: "<p>I. Çocuk kitapları, çocuklara yaşama sevinci aşılar.<br>II. Ülkenin her yanında çocukları doğayla buluşturmayı hedefleyen fikirler filizleniyor.<br>III. İnsan, elinde olan nimetlerin kıymetini ancak bunlar elinden çıktıktan sonra anlayacak.<br>IV. Cehalet kadar büyük kötülük ve yoksulluk düşünülemez.<br>V. Koruma altındaki ormanlar içinde yürüyüş yaparken kaybolmamaya dikkat ediniz.</p><p><b>Yukarıdaki numaralanmış cümlelerin hangisinin eyleminde zaman anlamı <u>yoktur</u>?</b></p>",
     diff: 2,
     expl: "Haber (bildirme) kipleri (geçmiş zaman, şimdiki zaman vb.) zaman anlamı taşırken, dilek (tasarlama) kipleri (emir, şart vb.) zaman anlamı taşımaz. V numaralı cümledeki eylem 'dikkat ediniz' olup emir kipiyle çekimlenmiştir. Bu nedenle bu eylemde zaman anlamı yoktur.",
     answers: [
@@ -191,7 +191,7 @@ export const TUR_EYLEMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>(I) Nahit Sırrı Örik yıllarca unutulmuş, değeri tam bilinmemiş bir yazarımız olarak kaldı. (II) Bu kendine özgü yazarımız \"Kıskanmak\" adlı romanıyla karşımıza çıkarak onu yeniden keşfetmemizi sağladı. (III) Bu romanında Türk edebiyatında daha önce değinilmemiş konulara yer vermiştir. (IV) Örik, kıskançlık duygusundan yola çıkarak insanoğlunun içindeki kötülüğü bize ustalıkla anlatır. (V) Alışıldık bir aşk öyküsü olarak başlayan kitabın sürprizlerle dolu ilerleyişi sizi şaşırtacaktır.</p><p><b>Bu parçadaki numaralanmış cümlelerle ilgili olarak aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>(I) Nahit Sırrı Örik yıllarca unutulmuş, değeri tam bilinmemiş bir yazarımız olarak kaldı. (II) Bu kendine özgü yazarımız \"Kıskanmak\" adlı romanıyla karşımıza çıkarak onu yeniden keşfetmemizi sağladı. (III) Bu romanında Türk edebiyatında daha önce değinilmemiş konulara yer vermiştir. (IV) Örik, kıskançlık duygusundan yola çıkarak insanoğlunun içindeki kötülüğü bize ustalıkla anlatır. (V) Alışıldık bir aşk öyküsü olarak başlayan kitabın sürprizlerle dolu ilerleyişi sizi şaşırtacaktır.</p><p><b>Bu parçadaki numaralanmış cümlelerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "IV. cümlenin fiili 'anlatır' olup geniş zamanla çekimlenmiştir. Fakat cümlenin anlamına bakıldığında söz konusu fiil, geçmiş bir zamanda gerçekleşmiş bir olayı (yazarın üslubunu/yaptığını) bugüne taşımaktadır. Bu nedenle bu cümlenin fiilinde kip/zaman kayması görülmektedir. D seçeneğindeki 'kip kayması yoktur' ifadesi yanlıştır.",
     answers: [
@@ -215,7 +215,7 @@ export const TUR_EYLEMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Sana gitme <u>I. demeyeceğim</u><br><u>II. Üşüyorsun</u> ceketimi al.<br>Gene de sen bilirsin.<br>Yalanlar <u>III. istiyorsan</u> yalanlar <u>IV. söyleyeyim</u>.<br>Adını <u>V. gizleyeceğim</u><br>Sen de bilme Lavinia.</p><p><b>Bu dizelerdeki numaralanmış sözcüklerle ilgili aşağıdaki yargılardan hangisi söylenemez?</b></p>",
+    text: "<p>Sana gitme demeyeceğim<br><u>I. Üşüyorsun</u> ceketimi al.<br>Gene de sen <u>II. bilirsin</u>.<br>Yalanlar <u>III. istiyorsan</u> yalanlar <u>IV. söyleyeyim</u>.<br>Adını <u>V. gizleyeceğim</u><br>Sen de bilme Lavinia.</p><p><b>Bu dizelerdeki numaralanmış sözcüklerle ilgili aşağıdaki yargılardan hangisi <u>söylenemez</u>?</b></p>",
     diff: 3,
     expl: "IV numaralı \"söyle-y-e-yim\" sözcüğü istek kipi 1. tekil kişisiyle çekimlenmiştir. Bu nedenle bu fiil zaman bildiren haber kipiyle değil, dilek (tasarlama) kipiyle çekimlenmiştir. Bu yüzden D şıkkı yanlıştır. (A seçeneğindeki üşümek fiili ise bir durumdan başka bir duruma geçişi bildirdiği için oluş fiilidir ve basit yapılıdır.)",
     answers: [
@@ -227,7 +227,7 @@ export const TUR_EYLEMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>(I) Üç yüzyılı aşkın bir süre en önemli bilimsel ve felsefi çalışmalar İslam ülkelerinde <u>yürütülmüştür.</u> (II) Avrupa uyku hâlindeyken Orta Doğu ve Müslüman İspanya <u>çalışıyordu.</u> (III) En önemli merkezler; Bağdat, Şam, Kahire ve İspanya'daki <u>Kordoba'ydı.</u> (IV) Ayrıca bu şehirlerin ortak bir özelliği <u>bulunuyormuş</u>, o da araştırmaya değer vermektir. (V) Bununla birlikte bu merkezler, her inanca hoşgörüyle yaklaşan aydınlanmış idareciler tarafından <u>yönetiliyordu.</u></p><p><b>Bu parçadaki numaralanmış cümlelerle ilgili olarak aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>(I) Üç yüzyılı aşkın bir süre en önemli bilimsel ve felsefi çalışmalar İslam ülkelerinde yürütülmüştür. (II) Avrupa uyku hâlindeyken Orta Doğu ve Müslüman İspanya çalışıyordu. (III) En önemli merkezler; Bağdat, Şam, Kahire ve İspanya'daki Kordoba'ydı. (IV) Ayrıca bu şehirlerin ortak bir özelliği bulunuyormuş, o da araştırmaya değer vermektir. (V) Bununla birlikte bu merkezler, her inanca hoşgörüyle yaklaşan aydınlanmış idareciler tarafından yönetiliyordu.</p><p><b>Bu parçadaki numaralanmış cümlelerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "II numaralı cümlede geçen \"uyku hâlindeyken (hâlinde - iken)\" ile \"çalışıyordu (çalışıyor-idi)\" sözcüklerinin her ikisinde de ek-eylem (ek-fiil) kullanılmıştır. B seçeneğinde ise \"ek-eylemle çekimlenmiş (sadece) bir sözcük bulunmaktadır\" denilerek yanlış bilgi verilmiştir.",
     answers: [
@@ -239,7 +239,7 @@ export const TUR_EYLEMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>İnsanlarda bulunan başlıca sterol tipi yağ, kolesteroldür. Adı kötüye çıkmış olsa da vücudumuz kolesterol olmadan işleyemez. Hücre zarında sabitliği sağlamak için uygun boşluklar oluşmasında kritik bir öneme sahiptir. Ayrıca, östrojen ve testosteron gibi hormonlar kolesterolden türemektedir.</p><p><b>Bu parçada aşağıdakilerden hangisine yer verilmemiştir?</b></p>",
+    text: "<p>İnsanlarda bulunan başlıca sterol tipi yağ, kolesteroldür. Adı kötüye çıkmış olsa da vücudumuz kolesterol olmadan işleyemez. Hücre zarında sabitliği sağlamak için uygun boşluklar oluşmasında kritik bir öneme sahiptir. Ayrıca, östrojen ve testosteron gibi hormonlar kolesterolden türemektedir.</p><p><b>Bu parçada aşağıdakilerden hangisine <u>yer verilmemiştir</u>?</b></p>",
     diff: 3,
     expl: "Parçada '-idi, -imiş, -ise' eklerinden birini almış birleşik zamanlı/çekimli bir fiil olmadığı için 'Birleşik çekimli eyleme' yer verilmemiştir. Kolesterol-dür, sahip-tir (A), işleyemez (C, D), türemekte-dir (D, E - 'mekte' şimdiki zaman ekidir) parçada mevcuttur.",
     answers: [
@@ -251,7 +251,7 @@ export const TUR_EYLEMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Öğretmenim bilir misin,<br>Seni nasıl sevdiğimi?<br>Sorsan bana nerede yerin,<br>Gösteririm ben kalbimi.<br>Ana değil, ana gibi<br>Baba değil, baba gibi<br>Öğretmenim bende sevgin<br>Can içinde can gibi!</p><p><b>Bu dizelerle ilgili olarak aşağıdakilerden hangisi söylenemez?</b></p>",
+    text: "<p>Öğretmenim bilir misin,<br>Seni nasıl sevdiğimi?<br>Sorsan bana nerede yerin,<br>Gösteririm ben kalbimi.<br>Ana değil, ana gibi<br>Baba değil, baba gibi<br>Öğretmenim bende sevgin<br>Can içinde can gibi!</p><p><b>Bu dizelerle ilgili olarak aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
     diff: 3,
     expl: "Ek-eylem (ek-fiil), dizelerde yalnızca \"nerede(dir)\", \"değil(dir)\", \"gibi(dir)\" örneklerinde olduğu gibi isim soylu sözcüklerin üzerine gelmiş, tek göreviyle (isimleri yüklem yapma göreviyle) kullanılmıştır. Parçada fiillere gelerek birleşik zamanlı fiil yapan ikinci bir görevine örnek olmadığı için E söylenemez.",
     answers: [
@@ -263,7 +263,7 @@ export const TUR_EYLEMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>(I) Nasıl ki vücudumuzun bir savunma mekanizması varsa ruhumuzun da aynı şekilde bir savunma mekanizması <u>bulunmaktadır.</u> (II) Psikolojik savunma mekanizması, kişinin başa çıkamadığı negatif durumlara çözüm üretme çabası ile oluşur. (III) Zihin genelde negatif çalışır ve savunma mekanizmalarını aktif ederek kişinin kendisini korumaya yönelik bir reflekste bulunmasını sağlar. (IV) O yüzden beyne bolca kaygı, korku ve endişe pompalanabilir. (V) Bu da benlik algısı için var olan tehdidin alabildiğine büyümesine <u>neden olmaktadır.</u></p><p><b>Bu parçada numaralandırılmış cümlelerle ilgili olarak aşağıdakilerden hangisi söylenemez?</b></p>",
+    text: "<p>(I) Nasıl ki vücudumuzun bir savunma mekanizması varsa ruhumuzun da aynı şekilde bir savunma mekanizması bulunmaktadır. (II) Psikolojik savunma mekanizması, kişinin başa çıkamadığı negatif durumlara çözüm üretme çabası ile oluşur. (III) Zihin genelde negatif çalışır ve savunma mekanizmalarını aktif ederek kişinin kendisini korumaya yönelik bir reflekste bulunmasını sağlar. (IV) O yüzden beyne bolca kaygı, korku ve endişe pompalanabilir. (V) Bu da benlik algısı için var olan tehdidin alabildiğine büyümesine neden olmaktadır.</p><p><b>Bu parçada numaralandırılmış cümlelerle ilgili olarak aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
     diff: 3,
     expl: "V. cümlede geçen 'neden olmaktadır' fiili, şimdiki zamanla (-makta) çekimlenmiş basit çekimli bir fiildir ama yardımcı eylemle (olmak) kurulduğu için yapıca 'birleşik' fiildir. E seçeneğindeki 'basit yapılı' ifadesi yanlıştır.",
     answers: [
@@ -275,7 +275,7 @@ export const TUR_EYLEMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Doğada hiçbir şey kendisi için <u>I. yaşamaz.</u><br>Nehirler kendi suyunu <u>II. içemez.</u><br>Güneş kendisi için <u>III. ısıtmaz.</u><br>Çiçekler kendileri için <u>IV. kokmaz.</u><br>Toprak kendisi için <u>V. doğurmaz.</u></p><p><b>Bu dizelerdeki fiillerle ilgili olarak aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>Doğada hiçbir şey kendisi için yaşamaz.<br>Nehirler kendi suyunu içemez.<br>Güneş kendisi için ısıtmaz.<br>Çiçekler kendileri için kokmaz.<br>Toprak kendisi için doğurmaz.</p><p><b>Bu dizelerdeki fiillerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "III. dizede geçen \"ısıtmaz\" sözcüğündeki \"t\" eki fiilden fiil yapım ekidir (ısı-n-mak, ısı-t-mak). Türkçede doğrudan isme gelip fiil yapan bir \"-n\" veya \"-t\" eki olmadığı için bu sözcüğün ortak kökünün \"ısı(mak)\" fiili olması gerekir. C seçeneğindeki 'isimden fiil yapım eki' bilgisi yanlıştır.",
     answers: [
@@ -287,7 +287,7 @@ export const TUR_EYLEMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>(I) Hintliler için kutsal olan Ganj Nehri'ne Himalaya Dağları'nın kızlarından biri olan Tanrıça Ganga adıyla da <u>tapınılır.</u> (II) Ganga, efsanevi Kral Shamani ile evlenmeyi bir şartla <u>kabul eder.</u> (III) Kral onun hiçbir davranışını <u>sorgulamayacaktır.</u> (IV) Ganga yedi çocuğunu da nehirde <u>boğar.</u> (V) Kral dayanamayıp neden bunu yaptığını sorduğunda yanıtı: Benim çocuklarım tanrıdır ama insan suretinde doğarlar, onları bu lanetten kurtarmak için <u>öldürdüm.</u></p><p><b>Bu parçada numaralanmış cümlelerle ilgili olarak aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>(I) Hintliler için kutsal olan Ganj Nehri'ne Himalaya Dağları'nın kızlarından biri olan Tanrıça Ganga adıyla da tapınılır. (II) Ganga, efsanevi Kral Shamani ile evlenmeyi bir şartla kabul eder. (III) Kral onun hiçbir davranışını sorgulamayacaktır. (IV) Ganga yedi çocuğunu da nehirde boğar. (V) Kral dayanamayıp neden bunu yaptığını sorduğunda yanıtı: Benim çocuklarım tanrıdır ama insan suretinde doğarlar, onları bu lanetten kurtarmak için öldürdüm.</p><p><b>Bu parçada numaralanmış cümlelerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "III. cümlede geçen \"sorgulamayacaktır\" fiili, yalnızca gelecek zaman kipiyle çekimlendiği için 'basit çekimli'dir. Bu fiildeki bildirme eki \"-dır\" fiile kesinlik anlamı katmıştır ama onu birleşik çekimli (hikaye, rivayet, şart) yapmaz. C seçeneğinde 'birleşik çekimli' denmesi yanlıştır.",
     answers: [

@@ -6,7 +6,7 @@ import type { McQ } from "../../../../types";
 // ============================================================================
 export const TUR_SOZCUKTE_YAPI_TEST_1: McQ[] = [
   {
-    text: "<p>1462 yılında Çanakkale Boğazı'nın en dar yerine yaptırılan iki kaleden biri olan Çimenlik Kalesi, 18 Mart 1982'de müze olarak <u>I. açıldı</u>. Müzedeki koleksiyon; savaş alanlarında yüzey <u>II. araştırması</u> yapılarak, köyler <u>III. taranarak</u> <u>IV. toplanan</u> ve bağışlanan objelerden oluşmaktadır. Bu Çanakkale Deniz Müzesi; lojman binası, kalenin içindeki iç kale, Nusret Mayın Gemisi ve bahçe olmak üzere dört <u>V. bölümden</u> oluşmaktadır.</p><p><b>Bu parçadaki numaralanmış sözcüklerin hangisi, kökünün türü yönüyle diğerlerinden farklıdır?</b></p>",
+    text: "<p>1462 yılında Çanakkale Boğazı'nın en dar yerine yaptırılan iki kaleden biri olan Çimenlik Kalesi, 18 Mart 1982'de müze olarak <u>I. açıldı</u>. Müzedeki koleksiyon; savaş alanlarında yüzey <u>II. araştırması</u> yapılarak, köyler <u>III. taranarak</u> <u>IV. toplanan</u> ve bağışlanan objelerden oluşmaktadır. Bu Çanakkale Deniz Müzesi; lojman binası, kalenin içindeki iç kale, Nusret Mayın Gemisi ve bahçe olmak üzere dört <u>V. bölümden</u> oluşmaktadır.</p><p><b>Bu parçadaki numaralanmış cümlelerin hangisindeki altı çizili sözcük, kökünün türü yönüyle diğerlerinden farklıdır?</b></p>",
     diff: 2,
     expl: "I. aç(mak) - fiil kökü, II. ara(mak) - fiil kökü, III. tara(mak) - fiil kökü, V. böl(mek) - fiil köküdür. Ancak IV. 'toplanan' sözcüğünün kökü 'top' (yığın) isim köküdür.",
     answers: [
@@ -18,7 +18,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Temmuzun <u>I. kımıldamayan</u> ağaçları, çakıldan daha fazla tanesi olan tek kollu her bir yaprak sapına tutunmuş rüzgâr... Haydi, rüzgârın sesine eşlik edip hep birlikte hüzünlü bir şarkı <u>II. söyleyelim</u>. Sonuçta on bir yıllık yokluktan sonra nihayet Santiago'ya, doğduğum köye yaklaşıyorum. Atım <u>III. ilerliyor</u> ve ben, dört ayaklının pürdikkat kulakları ve dans eder gibi görünen toynak vuruşlarıyla aynı yerde dönerek, belki de aynı sıradağlardan geçerek, güzergâhın ve bilinmezliğin huzursuz eden gizemli <u>IV. duyguları</u> içinde, varlığımın <u>V. derinliklerinden</u> emek sarf etmiş parmaklarıma kadar, on bir yıl evvel ölen atım için ağlıyorum.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi fiil kökünden türemiştir?</b></p>",
+    text: "<p>Temmuzun <u>I. kımıldamayan</u> ağaçları, çakıldan daha fazla tanesi olan tek kollu her bir yaprak sapına tutunmuş rüzgâr... Haydi, rüzgârın sesine eşlik edip hep birlikte hüzünlü bir şarkı <u>II. söyleyelim</u>. Sonuçta on bir yıllık yokluktan sonra nihayet Santiago'ya, doğduğum köye yaklaşıyorum. Atım <u>III. ilerliyor</u> ve ben, dört ayaklının pürdikkat kulakları ve dans eder gibi görünen toynak vuruşlarıyla aynı yerde dönerek, belki de aynı sıradağlardan geçerek, güzergâhın ve bilinmezliğin huzursuz eden gizemli <u>IV. duyguları</u> içinde, <u>V. varlığımın</u> derinliklerinden emek sarf etmiş parmaklarıma kadar, on bir yıl evvel ölen atım için ağlıyorum.</p><p><b>Bu parçada numaralanmış sözcüklerden hangileri fiil kökünden türemiştir?</b></p>",
     diff: 2,
     expl: "I. kımıl (yansıma isim), II. söz (isim kökü), III. ileri (isim kökü), V. var (isim kökü). IV numaralı 'duyguları' sözcüğünün kökü ise 'duy(mak)' fiilidir.",
     answers: [
@@ -30,15 +30,15 @@ export const TUR_SOZCUKTE_YAPI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Eski denizcilerin <u>I. ölçüm</u> için sık başvurdukları bir yöntem \"kör tahmin\"di. Suya bırakılan bir kütük ve ona bağlı ip ile astronomik gözlemlerden <u>II. yararlanılırdı</u>. Denizci geminin pruvasından bir ipe bağlı kütüğü denize atıp <u>III. sürüklenişini</u> gözlemlerdi. Kütüğün gemi mesafesini kat etmesi için geçen <u>IV. süreyi</u> belirleyen denizciler, gemilerinin hızını <u>V. hesaplarlardı</u>. Ardından Güneş'in ve yıldızların açısını ölçerek geminin enlemini belirlerlerdi.</p><p><b>Bu parçada numaralanmış sözcüklerden hangileri isim kökünden türemiştir?</b></p>",
+    text: "<p>Eski denizcilerin <u>I. ölçüm</u> için sık başvurdukları bir <u>II. yöntem</u> \"kör tahmin\"di. Suya bırakılan bir kütük ve ona bağlı ip ile astronomik gözlemlerden <u>III. yararlanılırdı</u>. Denizci geminin pruvasından bir ipe bağlı kütüğü denize atıp <u>IV. sürüklenişini</u> gözlemlerdi. Kütüğün gemi mesafesini kat etmesi için geçen <u>V. süreyi</u> belirleyen denizciler, gemilerinin hızını <u>VI. hesaplarlardı</u>. Ardından Güneş'in ve yıldızların açısını ölçerek geminin enlemini belirlerlerdi.</p><p><b>Bu parçada numaralanmış sözcüklerden hangileri isim kökünden türemiştir?</b></p>",
     diff: 2,
-    expl: "I. ölç(mek), III. sür(mek), IV. sür(mek) fiil köküdür. II numaralı 'yöntem' sözcüğünün kökü 'yön' (isim), V numaralı 'hesaplarlardı' sözcüğünün kökü 'hesap' (isim) köküdür.",
+    expl: "I. ölç(mek), III. yara(mak), IV. sür(mek), V. sür(mek) fiil köküdür. II numaralı 'yöntem' sözcüğünün kökü 'yön' (isim), VI numaralı 'hesaplarlardı' sözcüğünün kökü 'hesap' (isim) köküdür.",
     answers: [
       { text: "I ve II", ok: false },
       { text: "II ve III", ok: false },
-      { text: "II ve V", ok: true },
+      { text: "II ve VI", ok: true },
       { text: "III ve IV", ok: false },
-      { text: "IV ve V", ok: false }
+      { text: "V ve VI", ok: false }
     ]
   },
   {
@@ -54,7 +54,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir sözcüğe hem yapım hem çekim eki gelirse öncelik -istisna durumlar hariç- yapım ekinindir.</p><p><b>Aşağıdaki cümlelerin hangisinde söz konusu istisna durum örneklendirilmemiştir?</b></p>",
+    text: "<p>Bir sözcüğe hem yapım hem çekim eki gelirse öncelik -istisna durumlar hariç- yapım ekinindir.</p><p><b>Aşağıdaki cümlelerin hangisinde söz konusu istisna durum <u>örneklendirilmemiştir</u>?</b></p>",
     diff: 3,
     expl: "Türkçede önce çekim, sonra yapım eki alan istisna kelimeler vardır: A'da 'teyze-m-gil', B'de 'boy-un-ca', C'de 'sayı-sı-nda-ki', D'de 'tara-r-ken'. E seçeneğinde böyle bir istisnai diziliş yoktur.",
     answers: [
@@ -168,9 +168,9 @@ export const TUR_SOZCUKTE_YAPI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Sabah olmuştu. Kapının aralığından bembeyaz <u>I. ışık</u> çizgileri parlıyordu. O hiç öyle dalıp kalmazdı, güneş doğmadan <u>II. uyanırdı</u>. Doğruldu, musandıradan atladı. Ayakkabılarını giymeden yürüdü. Hızla <u>III. sürmeyi</u> çekti. Birdenbire açılan kapıdan dükkânı <u>IV. dolduran</u> aydınlığın içinde, bıyıkları yeni terlemiş delikanlıyı <u>V. gördü</u>.</p><p><b>Bu parçadaki numaralanmış sözcüklerden hangisi kökü bakımından diğerlerinden farklıdır?</b></p>",
+    text: "<p>Sabah olmuştu. Kapının <u>I. aralığından</u> bembeyaz <u>II. ışık</u> çizgileri parlıyordu. O hiç öyle dalıp kalmazdı, güneş doğmadan <u>III. uyanırdı</u>. Doğruldu, musandıradan atladı. Ayakkabılarını giymeden yürüdü. Hızla <u>IV. sürmeyi</u> çekti. Birdenbire açılan kapıdan dükkânı <u>V. dolduran</u> aydınlığın içinde, bıyıkları yeni terlemiş delikanlıyı gördü.</p><p><b>Bu parçadaki numaralanmış sözcüklerden hangisi kökü bakımından diğerlerinden farklıdır?</b></p>",
     diff: 2,
-    expl: "I numaralı 'ışık' sözcüğünün kökü 'ışık' ismi olarak kabul edilir (Kimi kaynaklarda 'ışı(mak)' alınsa da ÖSYM tipi sorularda bağlama göre değerlendirilir). Diğerleri ise sırasıyla uyu(mak), sür(mek), dol(mak) ve gör(mek) fiil köklerinden türemiştir.",
+    expl: "I numaralı 'aralığından' sözcüğünün kökü 'ara' isim köküdür. Diğerleri ise sırasıyla ışı(mak), uyan(mak), sür(mek) ve dol(mak) fiil köklerinden türemiştir.",
     answers: [
       { text: "I", ok: true },
       { text: "II", ok: false },
@@ -180,21 +180,21 @@ export const TUR_SOZCUKTE_YAPI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Afrika'da Sahra Çölü'nün güneyi boyunca uzanan <u>I. bölgeye</u> düşen <u>II. yıllık</u> yağış miktarı, ortalamanın altına düşünce Ravana köyünün <u>III. yerleşik</u> nüfusu 1985 yılından itibaren <u>IV. azalmaya</u> <u>V. başlamış</u>.</p><p><b>Bu parçadaki numaralanmış sözcüklerden hangisi kökü bakımından farklıdır?</b></p>",
+    text: "<p>Afrika'da Sahra Çölü'nün <u>I. güneyi</u> boyunca uzanan <u>II. bölgeye</u> düşen <u>III. yıllık</u> yağış miktarı, ortalamanın altına düşünce Ravana köyünün <u>IV. yerleşik</u> nüfusu 1985 yılından itibaren <u>V. azalmaya</u> başlamış.</p><p><b>Bu parçadaki numaralanmış sözcüklerden hangisi kökü bakımından farklıdır?</b></p>",
     diff: 2,
-    expl: "I numaralı 'bölgeye' sözcüğünün kökü 'böl(mek)' fiilidir. II (yıl), III (yer), IV (az) ve V (baş) sözcüklerinin kökleri ise isimdir.",
+    expl: "II numaralı 'bölgeye' sözcüğünün kökü 'böl(mek)' fiilidir. I (gün), III (yıl), IV (yer) ve V (az) sözcüklerinin kökleri ise isimdir.",
     answers: [
-      { text: "I", ok: true },
-      { text: "II", ok: false },
+      { text: "I", ok: false },
+      { text: "II", ok: true },
       { text: "III", ok: false },
       { text: "IV", ok: false },
       { text: "V", ok: false }
     ]
   },
   {
-    text: "<p>Ürdün'ün güney ucunda bulunan Akabe, ülkenin en turistik <u>I. bölgelerinden</u> biri. Dört mevsim tatile gidilebilen şehir; deniz ve su altı <u>II. tutkunlarını</u> kendisine çekiyor. Kızıldeniz'in rengârenk balıkları ve eşsiz <u>III. kumsalları</u>, kışın <u>IV. ılık</u> geçmesi, burayı dünyanın dört bir yanından akın akın gelen dalgıçların <u>V. uğrak</u> noktası hâline getiriyor.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi, farklı bir kökten türemiştir?</b></p>",
+    text: "<p>Ürdün'ün güney ucunda bulunan Akabe, ülkenin en turistik <u>I. bölgelerinden</u> biri. Dört mevsim tatile gidilebilen şehir; deniz ve su altı <u>II. tutkunlarını</u> kendisine çekiyor. Kızıldeniz'in rengârenk balıkları ve eşsiz <u>III. kumsalları</u>, kışın <u>IV. ılık</u> geçmesi, burayı dünyanın dört bir yanından akın akın gelen <u>V. dalgıçların</u> uğrak noktası hâline getiriyor.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi, farklı bir kökten türemiştir?</b></p>",
     diff: 2,
-    expl: "III numaralı 'kumsalları' sözcüğünün kökü 'kum' (isim kökü) dur. 'bölgelerinden' (böl-mek), 'tutkunlarını' (tut-mak), 'ılık' (ılı-mak), 'uğrak' (uğra-mak) sözcüklerinin kökleri ise fiildir.",
+    expl: "III numaralı 'kumsalları' sözcüğünün kökü 'kum' (isim kökü) dur. 'bölgelerinden' (böl-mek), 'tutkunlarını' (tut-mak), 'ılık' (ılı-mak), 'dalgıçların' (dal-mak) sözcüklerinin kökleri ise fiildir.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
@@ -204,9 +204,9 @@ export const TUR_SOZCUKTE_YAPI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Gelecekteki bilişsel sistemlerin çevreyle <u>I. etkileşim</u> hâlinde olması bekleniyor. Canlı organizmaların sinir sistemlerinden <u>II. esinlenerek</u> geliştirilen bu mekanizmaların en önemli <u>III. özelliği</u>, klasik işlemcilerin aksine hafıza ve işlemci birimlerinin bir arada olmasıdır. İnsan beynine benzer biçimde <u>IV. çalışan</u> elektronik cihazlar henüz tasarlanmamış olsa da yakın zamanda bu konuda önemli gelişmeler <u>V. yaşanması</u> bekleniyor.</p><p><b>Bu parçada numaralanmış sözcüklerden hangileri isim kökünden türemiştir?</b></p>",
+    text: "<p>Gelecekteki bilişsel sistemlerin çevreyle <u>I. etkileşim</u> hâlinde olması bekleniyor. Canlı organizmaların sinir sistemlerinden <u>II. esinlenerek</u> geliştirilen bu mekanizmaların en önemli özelliği, klasik <u>III. işlemcilerin</u> aksine hafıza ve işlemci birimlerinin bir arada olmasıdır. İnsan beynine benzer <u>IV. biçimde</u> çalışan elektronik cihazlar henüz tasarlanmamış olsa da yakın zamanda bu konuda önemli gelişmeler <u>V. yaşanması</u> bekleniyor.</p><p><b>Bu parçada numaralanmış sözcüklerden hangileri isim kökünden türemiştir?</b></p>",
     diff: 3,
-    expl: "III numaralı 'özelliği' (öz) ve V numaralı 'yaşanması' (yaş) sözcüklerinin kökleri isimdir. I (et-mek), II (es-mek), IV (çalış-mak) sözcüklerinin kökleri ise fiildir.",
+    expl: "III numaralı 'işlemcilerin' (iş) ve V numaralı 'yaşanması' (yaş) sözcüklerinin kökleri isimdir. I (et-mek), II (es-mek), IV (biç-mek) sözcüklerinin kökleri ise fiildir.",
     answers: [
       { text: "I ve II", ok: false },
       { text: "I ve III", ok: false },
@@ -240,7 +240,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Edebiyat-estetik <u>I. bağlantısı</u> üzerinde duran Tanpınar, gençlik <u>II. yıllarından</u> hayatının <u>III. sonuna</u> kadar denilebilir ki yalnız güzel eserleri <u>IV. önemsemiş</u>, onlardan daha üstün bir değerin varlığını <u>V. tanımamıştır</u>.</p><p><b>Bu parçadaki numaralanmış sözcüklerden hangileri hem yapım hem de çekim eki almıştır?</b></p>",
+    text: "<p>Edebiyat-estetik <u>I. bağlantısı</u> üzerinde duran Tanpınar, gençlik <u>II. yıllarından</u> hayatının <u>III. sonuna</u> kadar denilebilir ki yalnız güzel eserleri <u>IV. önemsemiş</u>, <u>V. onlardan</u> daha üstün bir değerin varlığını tanımamıştır.</p><p><b>Bu parçadaki numaralanmış sözcüklerden hangileri hem yapım hem de çekim eki almıştır?</b></p>",
     diff: 3,
     expl: "I numaralı 'bağlantısı' (bağ-la-n-tı-sı -> '-tı' yapım, '-sı' iyelik/çekim ekidir) ve IV numaralı 'önemsemiş' (ön-em-se-miş -> '-se' yapım, '-miş' öğrenilen geçmiş zaman/çekim ekidir) sözcükleri hem yapım hem çekim eki almıştır.",
     answers: [
@@ -252,9 +252,9 @@ export const TUR_SOZCUKTE_YAPI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Sosyalleşme <u>I. süreci</u>; gittikçe yoğunlaşan kontrol, yön verme ve biçimlendirme etkisiyle doğal bir <u>II. varlık</u> olan insanı; uygar, kanunlara <u>III. saygılı</u>, diğer insanların hak ve sorumluluklarını hesaba katan, <u>IV. kendinden</u> emin, sakin, mutlu, mesleki yeterliğe sahip bireyler hâline <u>V. getirir</u>.</p><p><b>Bu parçada altı çizili sözcüklerden hangisi yapım eki <u>almamıştır</u>?</b></p>",
+    text: "<p>Sosyalleşme <u>I. süreci</u>; gittikçe yoğunlaşan kontrol, yön verme ve biçimlendirme etkisiyle doğal bir <u>II. varlık</u> olan insanı; uygar, kanunlara <u>III. saygılı</u>, diğer insanların hak ve sorumluluklarını hesaba katan, <u>IV. kendinden</u> emin, sakin, mutlu, mesleki <u>V. yeterliğe</u> sahip bireyler hâline getirir.</p><p><b>Bu parçada altı çizili sözcüklerden hangisi yapım eki <u>almamıştır</u>?</b></p>",
     diff: 2,
-    expl: "IV numaralı 'kendinden' sözcüğü (kendi-n-den) yalnızca kaynaştırma ünsüzü ve ayrılma durum eki (çekim eki) almıştır, yapım eki yoktur. Diğerleri sırasıyla yapım eki almıştır (sür-eç, var-lık, say-gı-lı, gel-tir(getir)).",
+    expl: "IV numaralı 'kendinden' sözcüğü (kendi-n-den) yalnızca kaynaştırma ünsüzü ve ayrılma durum eki (çekim eki) almıştır, yapım eki yoktur. Diğerleri sırasıyla yapım eki almıştır (sür-eç, var-lık, say-gı-lı, yet-er-lik).",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
@@ -282,9 +282,9 @@ export const TUR_SOZCUKTE_YAPI_TEST_2: McQ[] = [
 // ============================================================================
 export const TUR_SOZCUKTE_YAPI_TEST_3: McQ[] = [
   {
-    text: "<p>Kadife <u>I. çiçeği</u>, kırmızı ağırlıklı olmak üzere sıcak renklerde bir çiçektir. Dikine uzayan bir bitkidir ve genellikle 15-30 cm arasında uzar. <u>II. İklim</u> tipi seçmez ama bol güneş ister. Mevsimlik ve kolay yetişen bir çiçektir. <u>III. Çiçeğin</u> yaprakları da en az çiçeği kadar keskin kokuludur. Bu <u>IV. kokunun</u> yoğunluğu alerjik bünyeye sahip <u>V. kişileri</u> olumsuz etkileyebilir.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi \"belirtme durumu eki\" almıştır?</b></p>",
+    text: "<p>Kadife <u>I. çiçeği</u>, kırmızı ağırlıklı olmak üzere sıcak renklerde bir çiçektir. Dikine uzayan bir bitkidir ve genellikle 15-30 cm arasında uzar. İklim <u>II. tipi</u> seçmez ama bol güneş ister. Mevsimlik ve kolay yetişen bir çiçektir. Çiçeğin <u>III. yaprakları</u> da en az çiçeği kadar keskin kokuludur. Bu kokunun <u>IV. yoğunluğu</u> alerjik bünyeye sahip <u>V. kişileri</u> olumsuz etkileyebilir.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi \"belirtme durumu eki\" almıştır?</b></p>",
     diff: 2,
-    expl: "V numaralı 'kişileri' sözcüğü 'Kimi olumsuz etkileyebilir?' sorusuna yanıt verdiği için aldığı '-i' belirtme durum ekidir. Diğer sözcüklerdeki ekler (çiçek-i, iklim tip-i, çiçek-in, koku-nun) iyelik ve tamlayan (ilgi) ekleridir.",
+    expl: "V numaralı 'kişileri' sözcüğü 'Kimi olumsuz etkileyebilir?' sorusuna yanıt verdiği için aldığı '-i' belirtme durum ekidir. Diğer sözcüklerdeki ekler (çiçeğ-i, tip-i, yaprak-lar-ı, yoğunluğ-u) tamlama kurdukları için iyelik ekleridir.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
@@ -294,13 +294,13 @@ export const TUR_SOZCUKTE_YAPI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>İngilizcenin en popüler dil olmasının altında yatan <u>I. nedenlerden</u> biri de dünyada İngilizceyi ikinci veya yabancı dil olarak kullanan insanların <u>II. sayısının</u> İngilizceyi birinci dil olarak <u>III. konuşanlardan</u> daha fazla olmasıdır. 2020 yılında yapılan bir araştırmaya göre çeşitli nedenlerle İngilizce iletişim <u>IV. kuranların</u> sayısı 2 <u>V. milyardan</u> daha fazladır.</p><p><b>Bu parçadaki numaralanmış sözcüklerin hangisi, bir varlığın neye ait olduğunu belirten ek almıştır?</b></p>",
+    text: "<p><u>I. İngilizcenin</u> en popüler dil olmasının altında yatan <u>II. nedenlerden</u> biri de dünyada İngilizceyi ikinci veya yabancı dil olarak kullanan insanların <u>III. sayısının</u> İngilizceyi birinci dil olarak <u>IV. konuşanlardan</u> daha fazla olmasıdır. 2020 yılında yapılan bir araştırmaya göre çeşitli nedenlerle İngilizce iletişim <u>V. kuranların</u> sayısı 2 milyardan daha fazladır.</p><p><b>Bu parçadaki numaralanmış sözcüklerin hangisi, bir varlığın neye ait olduğunu belirten ek almıştır?</b></p>",
     diff: 2,
-    expl: "Bir varlığın neye ait olduğunu belirten ek iyelik ekidir. II numaralı 'sayı-sı-nın' sözcüğündeki '-sı' eki iyelik ekidir (sayı, insanlara ait). Diğer sözcükler çokluk ve ayrılma/ilgi ekleri almıştır.",
+    expl: "Bir varlığın neye ait olduğunu belirten ek iyelik ekidir. III numaralı 'sayı-sı-nın' sözcüğündeki '-sı' eki iyelik ekidir (sayı, insanlara ait). Diğer sözcükler çokluk, çıkma ve ilgi ekleri almıştır.",
     answers: [
       { text: "I", ok: false },
-      { text: "II", ok: true },
-      { text: "III", ok: false },
+      { text: "II", ok: false },
+      { text: "III", ok: true },
       { text: "IV", ok: false },
       { text: "V", ok: false }
     ]
@@ -318,7 +318,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Türküleriyle tanınan Anadolu, insanların yaşamları, <u>I. gelenekleri</u> ve toplumları hakkında derin izler taşır. Bu türküler, sadece melodileriyle değil, aynı zamanda <u>II. sözleriyle</u> de halkın duygularını, acılarını ve sevinçlerini dile getirir. Köy <u>III. meydanlarında</u>, düğünlerde ve tarlalarda yankılanan türküler, nesilden nesile aktarılan birer hazine gibidir. Her bir türkü, <u>IV. geçmişlerinin</u> izlerini taşırken aynı zamanda geleceklerine dair umutları da içinde barındırır. Gelenekleri yaşatan bu türkülerin her biri, geçmişten günümüze uzanan bir köprü kurarak toplumları bir arada tutar ve kültürel mirasın korunmasına katkı sağlar. Bu yüzden türküler sadece birer müzik eseri değil; aynı zamanda Anadolu insanının ruhunu yansıtan, <u>V. onların</u> yaşam mücadelelerini, sevinçlerini ve hayal kırıklıklarını anlatan birer hikâye kitabı gibidir.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi \"üçüncü çoğul iyelik eki\" <u>almamıştır</u>?</b></p>",
+    text: "<p>Türküleriyle tanınan Anadolu, insanların yaşamları, <u>I. gelenekleri</u> ve toplumları hakkında derin izler taşır. Bu türküler, sadece melodileriyle değil, aynı zamanda <u>II. sözleriyle</u> de halkın duygularını, acılarını ve sevinçlerini dile getirir. Köy <u>III. meydanlarında</u>, düğünlerde ve tarlalarda yankılanan türküler, nesilden nesile aktarılan birer hazine gibidir. Her bir türkü, geçmişlerinin <u>IV. izlerini</u> taşırken aynı zamanda geleceklerine dair umutları da içinde barındırır. Gelenekleri yaşatan bu türkülerin her biri, geçmişten günümüze uzanan bir köprü kurarak toplumları bir arada tutar ve kültürel mirasın korunmasına katkı sağlar. Bu yüzden türküler sadece birer müzik eseri değil; aynı zamanda Anadolu insanının ruhunu yansıtan, onların yaşam mücadelelerini, <u>V. sevinçlerini</u> ve hayal kırıklıklarını anlatan birer hikâye kitabı gibidir.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi \"üçüncü çoğul iyelik eki\" <u>almamıştır</u>?</b></p>",
     diff: 3,
     expl: "III numaralı 'meydan-lar-ı-nda' sözcüğünün tamlayanı olan 'köy' tekil olduğu için buradaki '-ları' ekinin tamamı iyelik eki değildir; '-lar' çokluk, '-ı' üçüncü tekil iyelik ekidir.",
     answers: [
@@ -342,7 +342,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Yekpare varlığımı<br>Siz misiniz parçalayan,<br>Farksız kırık aynalardan?<br>Sizde mi yaşamaktayım,<br>Gülmekte, ağlamaktayım,<br>Gündüze alışan renkler,<br>Her gece perişan renkler?</p><p><b>Bu dizelerde aşağıdaki hâl (durum) eklerinden hangisi yoktur?</b></p>",
+    text: "<p>Yekpare varlığımı<br>Siz misiniz parçalayan,<br>Farksız kırık aynalardan?<br>Sizde mi yaşamaktayım,<br>Gülmekte, ağlamaktayım,<br>Gündüze alışan renkler,<br>Her gece perişan renkler?</p><p><b>Bu dizelerde aşağıdaki hâl (durum) eklerinden hangisi <u>yoktur</u>?</b></p>",
     diff: 2,
     expl: "Belirtme 'varlığım-ı', Yönelme 'gündüz-e', Bulunma 'siz-de', Ayrılma 'aynalar-dan' ekleri mevcuttur. Ancak ilgi eki (-nın/-in) alan bir sözcük yoktur.",
     answers: [
@@ -354,7 +354,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Kediler, evcil hayvanlar arasında en <u>I. sevilenlerdendir</u> çünkü <u>II. doğaları</u> şöyledir: sevecen ve bağımsız. <u>III. Çoktandır</u> insanlar kedileri evlerinde besler ve bundandır ki kediler <u>IV. evcildir</u> ve ev yaşamına uyum sağlarlar. Bir kedi, sahiplerine hem arkadaşlık eder hem de onların stresini azaltır. Bu yüzden kediler, pek çok insan için vazgeçilmez birer <u>V. dosttur</u>.</p><p><b>Bu parçada numaralanmış altı çizili sözcüklerin hangisinde \"-dır/-dir/-dur/-dür\" bildirme eki farklı görevde kullanılmıştır?</b></p>",
+    text: "<p>Kediler, evcil hayvanlar arasında en <u>I. sevilenlerdendir</u> çünkü doğaları <u>II. şöyledir</u>: sevecen ve bağımsız. <u>III. Çoktandır</u> insanlar kedileri evlerinde besler ve bundandır ki kediler <u>IV. evcildir</u> ve ev yaşamına uyum sağlarlar. Bir kedi, sahiplerine hem arkadaşlık eder hem de onların stresini azaltır. Bu yüzden kediler, pek çok insan için vazgeçilmez birer <u>V. dosttur</u>.</p><p><b>Bu parçada numaralanmış altı çizili sözcüklerin hangisinde \"-dır/-dir/-dur/-dür\" bildirme eki farklı görevde kullanılmıştır?</b></p>",
     diff: 3,
     expl: "III numaralı 'çoktandır' sözcüğü zarftır ve eki yapım eki işlevindedir (anlamı değiştirir). Diğerlerinde (-dir/-dur) isim soylu sözcüklere gelerek onların yüklem olmasını sağlayan çekim ekidir.",
     answers: [
@@ -378,7 +378,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Türk <u>I. dili</u> açısından 10 Şubat önemli bir gündü. Kaşgarlı Mahmut bir süreden bu yana üzerinde çalıştığı ilk Türkçe <u>II. sözlüğü</u> bitirdi. Bu salt bir sözlük değil, Türk dünyasının bir ansiklopedisiydi. Bu önemli çalışma aradan onlarca yıl geçtikten sonra ilginç bir biçimde yeniden doğdu. Kaşgarlı Mahmut, o dönemin İslam büyüklerine seslenerek \"Türklerin gönlünü almak için onla dilleriyle konuşmaktan başka çare yoktur. Türk dilini öğreniniz çünkü onlar için uzun sürecek bir egemenlik vardır. Türk dilini öğrenmek çok gerekli bir iş olur.\" <u>III. çağrısı</u> yaptı. <u>IV. Türkçeyi</u> çok iyi bildiğini söyleyen Kaşgarlı Mahmut \"Ben; onların en uz dillisi, en açık <u>V. anlatatanı</u>, akılca en incesi, soyca en köklüsü, en iyi kargı kullananı olduğum hâlde onların şartlarını, çöllerini baştan başa dolaştım. Türk, Türkmen, Oğuz, Kırgız boylarının dillerini kafiyelerini belleyerek yararlandım.\" diyerek kendini tanıtmıştır.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi \"belirtme durumu eki\" almıştır?</b></p>",
+    text: "<p>Türk <u>I. dili</u> açısından 10 Şubat önemli bir gündü. Kaşgarlı Mahmut bir süreden bu yana üzerinde çalıştığı ilk Türkçe <u>II. sözlüğü</u> bitirdi. Bu salt bir sözlük değil, Türk dünyasının bir ansiklopedisiydi. Bu önemli çalışma aradan onlarca yıl geçtikten sonra ilginç bir biçimde yeniden doğdu. Kaşgarlı Mahmut, o dönemin İslam büyüklerine seslenerek \"Türklerin gönlünü almak için onla dilleriyle konuşmaktan başka çare yoktur. Türk dilini öğreniniz çünkü onlar için uzun sürecek bir egemenlik vardır. Türk dilini öğrenmek çok gerekli bir iş olur.\" <u>III. çağrısı</u> yaptı. <u>IV. Türkçeyi</u> çok iyi bildiğini söyleyen Kaşgarlı Mahmut \"Ben; onların en uz dillisi, en açık <u>V. anlatanı</u>, akılca en incesi, soyca en köklüsü, en iyi kargı kullananı olduğum hâlde onların şartlarını, çöllerini baştan başa dolaştım. Türk, Türkmen, Oğuz, Kırgız boylarının dillerini kafiyelerini belleyerek yararlandım.\" diyerek kendini tanıtmıştır.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi \"belirtme durumu eki\" almıştır?</b></p>",
     diff: 2,
     expl: "IV numaralı 'Türkçeyi' sözcüğü 'Neyi çok iyi bildiğini söyleyen?' sorusuna yanıt verdiği için belirtme durum eki almıştır. Diğerleri iyelik eki (-i/-ı) almıştır.",
     answers: [
@@ -414,19 +414,19 @@ export const TUR_SOZCUKTE_YAPI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Eski filmlere âşığım. <u>I. Geçerliliğini</u> hiç kaybetmeyecek o sapasağlam konularıyla, paradan çok sanat için, alkış için oynamış aktörleri, aktrisleriyle ama ille de o <u>II. güzelim</u> arabaları, <u>III. konakları</u> ve henüz betona <u>IV. boğulmamış</u> yemyeşil şehirleriyle...</p><p><b>Bu parçada altı çizili sözcüklerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
+    text: "<p>Eski filmlere âşığım. <u>I. Geçerliliğini</u> hiç <u>II. kaybetmeyecek</u> o sapasağlam konularıyla, paradan çok sanat için, alkış için oynamış aktörleri, aktrisleriyle ama ille de o <u>III. güzelim</u> arabaları, <u>IV. konakları</u> ve henüz betona <u>V. boğulmamış</u> yemyeşil şehirleriyle...</p><p><b>Bu parçada altı çizili sözcüklerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
-    expl: "II numaralı 'güzelim' kelimesindeki '-im' eki burada iyelik eki değil, ismi sıfatlaştıran (isimden isim) yapım ekidir ('güzelim arabalar'). Eğer 'sen de güzelim' deseydi iyelik olurdu.",
+    expl: "III numaralı 'güzelim' sözcüğündeki '-im' eki isim çekim eki işlevinden çıkmış, isimden isim yapım eki işlevinde kullanılmıştır; birinci tekil iyelik eki değildir. Diğer bilgiler doğrudur: Geç-er-li-lik-i (farklı işlevlerde yapım ekleri), kaybet- (kayıp + et-: birleşik sözcük), kon-ak-ları (fiilden isim yapım eki), boğ-ul-mamış (fiilden fiil yapım eki).",
     answers: [
       { text: "I. sözcük, farklı işlevlerde yapım ekleri almıştır.", ok: false },
-      { text: "II. sözcük, birinci tekil iyelik eki almıştır.", ok: true },
-      { text: "III. sözcük, fiilden isim yapım eki almıştır.", ok: false },
-      { text: "IV. sözcük, fiilden fiil yapım eki almıştır.", ok: false },
-      { text: "V. Seçenek soruda eksik basılmış (Çözüme göre C yanlıştır)", ok: false }
+      { text: "II. sözcük, birleşik bir sözcükten türemiştir.", ok: false },
+      { text: "III. sözcük, birinci tekil iyelik eki almıştır.", ok: true },
+      { text: "IV. sözcük, fiilden isim yapım eki almıştır.", ok: false },
+      { text: "V. sözcük, fiilden fiil yapım eki almıştır.", ok: false }
     ]
   },
   {
-    text: "<p><u>I. Tarihte</u> ilk kez Çin'de \"yaşam <u>II. iksirini</u>\" arayan simyacılar ortaya çıktı. İnsan ömrünü uzatabilecek, hatta insanı <u>III. ölümsüz</u> kılacak maddeler araştırıldı. Tabii ki başarılı olunamadı. Tam tersine birçok imparator deneysel ama zehirli <u>IV. iksirleri</u> içmemiş olsaydı daha uzun yaşayabilirdi. Ancak bu büyülü madde arayışı, sıradan <u>V. hastalıkları</u> tedavi etmek için kullanılabilecek birçok ilacı ortaya çıkardı.</p><p><b>Bu parçada altı çizili sözcüklerle açıklamalar eşleştirilirse hangi sözcük dışarıda kalır?</b><br><br>• Bir sözcüğe hem yapım hem çekim eki getirilmiştir.<br>• Bir sözcük, iyelik ekinden sonra durum eki almıştır.<br>• Bir sözcük, fiilden isim yapım eki almıştır.<br>• Bir sözcükte bulunma durum eki kullanılmıştır.</p>",
+    text: "<p><u>I. Tarihte</u> ilk kez Çin'de \"yaşam <u>II. iksirini</u>\" arayan simyacılar ortaya çıktı. İnsan ömrünü uzatabilecek, hatta insanı <u>III. ölümsüz</u> kılacak maddeler araştırıldı. Tabii ki başarılı olunamadı. Tam tersine birçok imparator deneysel ama zehirli <u>IV. iksirleri</u> içmemiş olsaydı daha uzun yaşayabilirdi. Ancak bu büyülü madde arayışı, sıradan <u>V. hastalıkları</u> tedavi etmek için kullanılabilecek birçok ilacı ortaya çıkardı.</p><p>• Bir sözcüğe hem yapım hem çekim eki getirilmiştir.<br>• Bir sözcük, iyelik ekinden sonra durum eki almıştır.<br>• Bir sözcük, fiilden isim yapım eki almıştır.<br>• Bir sözcükte bulunma durum eki kullanılmıştır.</p><p><b>Bu parçada altı çizili sözcüklerle açıklamalar eşleştirilirse hangi sözcük dışarıda kalır?</b></p>",
     diff: 3,
     expl: "I. (tarih-te) bulunma. II. (iksir-i-ni) iyelik+durum. III. (öl-üm-süz) fiilden isim yapım. V. (hasta-lık-lar-ı) hem yapım hem çekim almıştır. IV numaralı 'iksirleri' sözcüğü ise sadece çokluk ve belirtme almıştır, açıklamalarda eşleşeceği bir yer yoktur.",
     answers: [
@@ -438,14 +438,14 @@ export const TUR_SOZCUKTE_YAPI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>İçimize sığdıramadığımız hayallerimiz vardır. Oysa ki <u>I. küçüklüğümüzdür</u> o hayalleri büyüten. Kendi içimizden çıkanı sığdıramayız dünyamıza. Yıkılır hayaller, yerine daha küçükleri inşa edilir. Ama yıkılan bir aşk, geride öyle acılar bırakır ki tek bir tuğlasını uzanıp koyamazsın yerine. İzler vardır geride ve izler <u>II. hatırladığın</u> kadar derindir. Her şey bir aşk oyunuysa gidişlere seyirci kalmak düşer kalanlara. Aşkın bitişi değil de geride kalan her şeyin yalan oluşu yıkar insanı. Oysa siz, onun yanında ondan daha güçlü görünmekten bile sakınmışsınızdır <u>III. kendinizi</u>, sırf o güçsüz gibi görünmesin diye. Bu kadar iyi olduğunuza kimse inanamaz, görmek istemez ve bazı gerçeklerin <u>IV. inanılmazlığı</u>, bir yalana dönüştürür onları. En çok da bu yüzden giderler. Çünkü haklı görürler kendilerini, <u>V. göremediklerinin</u> gölgesinde...</p><p><b>Bu parçadaki altı çizili sözcüklerden hangileri \"iyelik eki\" <u>almamıştır</u>?</b></p>",
+    text: "<p>İçimize sığdıramadığımız hayallerimiz vardır. Oysa ki <u>I. küçüklüğümüzdür</u> o hayalleri büyüten. Kendi içimizden çıkanı sığdıramayız dünyamıza. Yıkılır hayaller, yerine daha küçükleri inşa edilir. Ama yıkılan bir aşk, geride öyle acılar bırakır ki tek bir tuğlasını uzanıp koyamazsın yerine. İzler vardır geride ve izler <u>II. hatırladığın</u> kadar derindir. Her şey bir aşk oyunuysa gidişlere seyirci kalmak düşer kalanlara. Aşkın bitişi değil de geride kalan her şeyin yalan oluşu yıkar <u>III. insanı</u>. Oysa siz, onun yanında ondan daha güçlü görünmekten bile sakınmışsınızdır <u>IV. kendinizi</u>, sırf o güçsüz gibi görünmesin diye. Bu kadar iyi olduğunuza kimse inanamaz, görmek istemez ve bazı gerçeklerin <u>V. inanılmazlığı</u>, bir yalana dönüştürür <u>VI. onları</u>. En çok da bu yüzden giderler. Çünkü haklı görürler kendilerini, göremediklerinin gölgesinde...</p><p><b>Bu parçadaki altı çizili sözcüklerden hangileri \"iyelik eki\" <u>almamıştır</u>?</b></p>",
     diff: 3,
-    expl: "I, II, IV ve V numaralı kelimelerde iyelik eki mevcuttur (küçüklüğ-ümüz, hatırladığ-ın vb.). Ancak 'insan-ı', 'onlar-ı' (onları yalana dönüştürür) kelimeleri 'Kimi?' sorusuna yanıt verdikleri için belirtme durum eki almışlardır. Bu kelimeler metnin genelinde III (kendinizi) kelimesi hariç yalın iyeliksiz kullanılmıştır. Çözüm anahtarı 'kendinizi' ve 'onları' (metindeki zamir) sözcüklerini hedef almıştır.",
+    expl: "III numaralı 'insanı' sözcüğü 'Kimi yıkar?', VI numaralı 'onları' sözcüğü 'Kimleri bir yalana dönüştürür?' sorusuna yanıt verdiği için aldıkları ek belirtme durum ekidir; kişi zamirleri iyelik eki almaz. I (küçüklüğ-ümüz), II (hatırladığ-ın), IV (kendi-niz) ve V (inanılmazlığ-ı) sözcükleri ise iyelik eki almıştır.",
     answers: [
       { text: "I ve II", ok: false },
       { text: "II ve IV", ok: false },
-      { text: "III ve V", ok: true },
-      { text: "III ve VI", ok: false },
+      { text: "III ve V", ok: false },
+      { text: "III ve VI", ok: true },
       { text: "IV ve VI", ok: false }
     ]
   }
@@ -492,7 +492,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>\"Yazarın bu kitapta bize <u>anlatacaklarını</u> merakla bekliyoruz.\" <b>cümlesinde altı çizili sözcükte aşağıdaki eklerden hangisi yoktur?</b></p>",
+    text: "<p>\"Yazarın bu kitapta bize <u>anlatacaklarını</u> merakla bekliyoruz.\" <b>cümlesinde altı çizili sözcükte aşağıdaki eklerden hangisi <u>yoktur</u>?</b></p>",
     diff: 2,
     expl: "'anlat-acak-lar-ı-n-ı' sözcüğünde -acak (sıfat-fiil/yapım eki), -lar (çokluk eki), -ı (üçüncü tekil iyelik/tamlanan eki) ve -ı (belirtme durum eki) vardır. Sözcük fiilimsi (isim soylu) olduğu için kip eki alamaz.",
     answers: [
@@ -516,7 +516,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Gelse de en acı sözler <u>I. dilime</u>,<br><u>II. Uçacak</u> sanırdım birkaç kelime,<br>Bir alev hâlinde düştün <u>III. elime</u>,<br>Hani ey <u>IV. gözyaşım</u>, <u>V. akmayacaktın</u>?</p><p><b>Bu dizede numaralanmış altı çizili sözcüklerin hangilerinde kişi eki yoktur?</b></p>",
+    text: "<p>Gelse de en acı sözler <u>I. dilime</u>,<br>Uçacak <u>II. sanırdım</u> birkaç kelime,<br>Bir alev hâlinde <u>III. düştün</u> elime,<br>Hani ey <u>IV. gözyaşım</u>, <u>V. akmayacaktın</u>?</p><p><b>Bu dizede numaralanmış altı çizili sözcüklerin hangilerinde kişi eki <u>yoktur</u>?</b></p>",
     diff: 2,
     expl: "Kişi (şahıs) ekleri yalnızca eylemlere gelir ve işi kimin yaptığını belirtir ('sanırdı-m', 'düştü-n', 'akmayacaktı-n'). I ve IV numaralı 'dilim' ve 'gözyaşım' sözcüklerindeki '-m' ekleri isme geldikleri için iyelik (tamlanan) ekidir, kişi eki değildir.",
     answers: [
@@ -540,7 +540,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdaki cümlelerin hangisinde bir sözcüğün yapısındaki iyelik eki çıkarıldığında cümlenin anlamı bozulmaz?</b></p>",
+    text: "<p><b>Aşağıdaki cümlelerin hangisinde bir sözcüğün yapısındaki iyelik eki çıkarıldığında cümlenin anlamı <u>bozulmaz</u>?</b></p>",
     diff: 2,
     expl: "A seçeneğindeki 'kendisinden' sözcüğündeki '-si' eki iyelik ekidir. Bu eki çıkarıp cümleyi okuduğumuzda ('Herkes kendinden sorumludur!') cümlenin anlamında ve yapısında bir bozulma olmaz.",
     answers: [
@@ -556,8 +556,8 @@ export const TUR_SOZCUKTE_YAPI_TEST_4: McQ[] = [
     diff: 3,
     expl: "II numaralı 'mekân-ı' ve III numaralı 'yorum-lar-ı-n-ı' sözcükleri cümlede 'neyi?' sorusunun cevabı oldukları için belirtme hâl eki almışlardır. I ve V 'gez-i' ve 'yaz-ı' (yapım eki), IV 'aktardığ-ı' ise iyelik eki almıştır.",
     answers: [
-      { text: "Yalnız III", ok: false },
-      { text: "Yalnız V", ok: false },
+      { text: "Yalnız II", ok: false },
+      { text: "I ve V", ok: false },
       { text: "II ve III", ok: true },
       { text: "II ve IV", ok: false },
       { text: "IV ve V", ok: false }
@@ -588,7 +588,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Türklerin gösterdikleri gülme <u>I. eğilimiyle</u> ilgili bir İngiliz yazar şunları söylüyor: Türkçe <u>II. konuştuğumda</u> komik anılar yaşansa da bu anılar bir süre sonra komplekse girmeme neden oluyor, <u>III. Türkçemin</u> çok iyi olmadığını düşünüyor ve <u>IV. benim</u> yerime konuşmasına izin veriyorum. Başkalarına bağımlı olduğum için öğrenmem ve <u>V. gelişmem</u> de sekteye uğruyor.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisinde kullanılan \"-m (-ım, -im, -um, -üm)\" eki farklı görevde kullanılmıştır?</b></p>",
+    text: "<p>Türklerin gösterdikleri gülme <u>I. eğilimiyle</u> ilgili bir İngiliz yazar şunları söylüyor: Türkçe <u>II. konuştuğumda</u> komik anılar yaşansa da bu anılar bir süre sonra komplekse <u>III. girmeme</u> neden oluyor, <u>IV. Türkçemin</u> çok iyi olmadığını düşünüyor ve birinin benim yerime konuşmasına izin veriyorum. Başkalarına bağımlı olduğum için öğrenmem ve <u>V. gelişmem</u> de sekteye uğruyor.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisinde kullanılan \"-m (-ım, -im, -um, -üm)\" eki farklı görevde kullanılmıştır?</b></p>",
     diff: 2,
     expl: "I numaralı 'eğilim' sözcüğündeki '-im' eki fiilden isim yapma (yapım) ekidir (eğil-mekten eğilim). Diğer sözcüklerdeki '-m / -im' ekleri ise iyelik (tamlanan/tamlayan) ekidir ve çekim eki görevindedir.",
     answers: [
@@ -678,7 +678,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>İstanbul <u>I. deyince</u> aklıma Sait Faik gelir<br>Burgaz adasında kıyıda<br>Mavi <u>II. gözlü</u> bir çocuk büyür <u>III. döne</u> döne<br>Mavi gözlü bir ihtiyar <u>IV. balıkçı</u> gencelir küçülür</p><p><b>Bu dizelerde altı çizili sözcüklere gelen yapım ekleri, işlevleri bakımından ikişerli gruplandığında hangisi dışarıda kalır?</b></p>",
+    text: "<p>İstanbul <u>I. deyince</u> aklıma Sait Faik gelir<br>Burgaz adasında kıyıda<br>Mavi <u>II. gözlü</u> bir çocuk büyür <u>III. döne</u> döne<br>Mavi gözlü bir ihtiyar <u>IV. balıkçı</u> <u>V. gencelir</u> küçülür</p><p><b>Bu dizelerde altı çizili sözcüklere gelen yapım ekleri, işlevleri bakımından ikişerli gruplandığında hangisi dışarıda kalır?</b></p>",
     diff: 3,
     expl: "I. deyince ve III. döne döne (fiilden isim/zarf fiil); II. gözlü ve IV. balıkçı (isimden isim yapım eki) olarak eşleşir. V numaralı 'gencelir' (genç-el-ir) sözcüğündeki '-el' eki isimden fiil yapım eki olduğu için dışarıda kalır.",
     answers: [
@@ -702,7 +702,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><u>I. Yokluğu</u> hissedilen ve <u>II. giderilmesi</u> için çaba sarf edilen, <u>III. giderildiği</u> zaman haz, <u>IV. giderilmediği</u> zaman acı ve üzüntü veren <u>V. insani</u> duyguya ihtiyaç denir.</p><p><b>Bu cümlede altı çizili numaralanmış sözcüklerden hangileri tamlanan (iyelik) eki <u>almamıştır</u>?</b></p>",
+    text: "<p><u>I. Yokluğu</u> hissedilen ve <u>II. giderilmesi</u> için çaba sarf edilen, <u>III. giderildiği</u> zaman haz, <u>IV. giderilmediği</u> zaman acı ve üzüntü veren <u>V. insani</u> duyguya ihtiyaç denir.</p><p><b>Bu cümlede altı çizili numaralanmış sözcüklerden hangileri tamlanan eki <u>almamıştır</u>?</b></p>",
     diff: 3,
     expl: "V numaralı 'insani' sözcüğünün sonundaki '-i' nispet i'sidir ve isimden isim yapım eki (sıfat yapan) görevindedir. I, II, III ve IV numaralı sözcükler ise '(bir şeyin) yokluğ-u', '(ihtiyacın) giderilme-si' şeklinde tamlanan yani iyelik eki almışlardır.",
     answers: [
@@ -726,7 +726,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>İslamiyet öncesi Türk devletlerinde \"kut anlayışı\" ilahi bir <u>I. kavramdı</u>. Kağan, Tanrı <u>II. istediği</u> ve kendisine kut verildiği için hükümdardı. Ancak onun yöneticiliği kalıcı değildi. Tanrı'nın verdiği yetki gene onun tarafından <u>III. alınabilirdi</u>. Kağanın devleti yönetmeye devam edebilmesi için <u>IV. üzerine</u> düşen görevleri <u>V. yerine</u> getirmesi <u>VI. gerekirdi</u>.</p><p><b>Bu parçadaki sözcüklerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
+    text: "<p>İslamiyet öncesi Türk devletlerinde \"kut anlayışı\" ilahi bir kavramdı. Kağan, Tanrı istediği ve kendisine kut verildiği için hükümdardı. Ancak onun yöneticiliği kalıcı değildi. Tanrı'nın verdiği yetki gene onun tarafından alınabilirdi. Kağanın devleti yönetmeye devam edebilmesi için üzerine düşen görevleri yerine getirmesi gerekirdi.</p><p><b>Bu parçadaki sözcüklerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "E seçeneğindeki 'gerekirdi' sözcüğünün kökü 'gerek(mek)' fiilidir, isim kökü değildir. A'da kavra-m (fiilden isim), B'de iste-dik-i (yapım ve çekim), C'de yer-i-n-e (iyelik ve yönelme), D'de alın-abil-ir-di (birleşik yapılı çekimli fiil) yargıları doğrudur.",
     answers: [
@@ -756,14 +756,14 @@ export const TUR_SOZCUKTE_YAPI_TEST_5: McQ[] = [
 // ============================================================================
 export const TUR_SOZCUKTE_YAPI_TEST_6: McQ[] = [
   {
-    text: "<p>Rüyaların âlemi, herkes tarafından merak edilen bir unsurdur. Uyku laboratuvarlarında incelenen bütün <u>I. insanların</u> <u>II. beyinleri</u> etkinleşmiştir. Bu bilgiden yola çıkılarak aslında herkesin uyku esnasında rüya gördüğü varsayılmaktadır. Rüya görmediğini iddia edenlerin yaşadığı deneyim, rüya görmemekten çok rüyaları <u>III. uyandıklarında</u> anımsama zorluğuyla <u>IV. bağlantılıdır</u>.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi \"üçüncü çoğul kişi iyelik eki\" almıştır?</b></p>",
+    text: "<p><u>I. Rüyaların</u> âlemi, herkes tarafından merak edilen bir unsurdur. Uyku <u>II. laboratuvarlarında</u> incelenen bütün <u>III. insanların</u> <u>IV. beyinleri</u> etkinleşmiştir. Bu bilgiden yola çıkılarak aslında herkesin uyku esnasında rüya gördüğü varsayılmaktadır. Rüya görmediğini iddia edenlerin yaşadığı deneyim, rüya görmemekten çok <u>V. rüyaları</u> uyandıklarında anımsama zorluğuyla bağlantılıdır.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi \"üçüncü çoğul kişi iyelik eki\" almıştır?</b></p>",
     diff: 2,
     expl: "Üçüncü çoğul iyelik eki '-ları/-leri', tamlayanı çoğul olan tamlamalarda tamlananın aldığı ektir. Parçadaki 'beyinleri' sözcüğünün tamlayanı 'insanların'dır ve bu sözcük çoğul olduğu için beyin sözcüğüne gelen '-leri' eki üçüncü çoğul iyelik ekidir.",
     answers: [
       { text: "I", ok: false },
-      { text: "II", ok: true },
+      { text: "II", ok: false },
       { text: "III", ok: false },
-      { text: "IV", ok: false },
+      { text: "IV", ok: true },
       { text: "V", ok: false }
     ]
   },
@@ -780,7 +780,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>(I) Geçmişten bugüne var olan cinsiyetçilik kadınların <u>I. yaşamını</u> hep gölgeledi. (II) Kadınlar eğitim alamaz, fikir <u>II. belirtemez</u>, topluma karışamazlardı. (III) Bu <u>III. şartlarda</u> kadınların var olmaları epey zordu. (IV) Kısıtlamalara rağmen yine de çok başarılı kadın bilim insanları vardır ve bilim dünyasına <u>IV. kattıkları</u> kesinlikle basit şeyler değil. (V) Eğer kadınlar hor görülmeseydi kim bilir belki de binlerce kadın bilim insanı olup dünyamızı daha erkenden geliştirebileceklerdi. <u>V. bilim</u>.</p><p><b>Bu parçadaki numaralanmış cümlelerin hangisinde altı çizili sözcük basit yapılıdır?</b></p>",
+    text: "<p>(I) Geçmişten bugüne var olan cinsiyetçilik kadınların <u>I. yaşamını</u> hep gölgeledi. (II) Kadınlar eğitim alamaz, fikir <u>II. belirtemez</u>, topluma karışamazlardı. (III) Bu <u>III. şartlarda</u> kadınların var olmaları epey zordu. (IV) Kısıtlamalara rağmen yine de çok başarılı kadın bilim insanları vardır ve bilim dünyasına <u>IV. kattıkları</u> kesinlikle basit şeyler değil. (V) Eğer kadınlar hor görülmeseydi kim bilir belki de binlerce kadın <u>V. bilim</u> insanı olup dünyamızı daha erkenden geliştirebileceklerdi.</p><p><b>Bu parçadaki numaralanmış cümlelerin hangisinde altı çizili sözcük basit yapılıdır?</b></p>",
     diff: 2,
     expl: "III numaralı 'şartlarda' sözcüğü herhangi bir yapım eki almadığı için basit yapılıdır. Diğerleri: yaş-a-m (türemiş), belirt-e-mez (birleşik), kat-tık (türemiş), bil-im (türemiş).",
     answers: [
@@ -792,21 +792,21 @@ export const TUR_SOZCUKTE_YAPI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Kitap yorumlama <u>I. alışkanlığı</u> kazandığımdan bu yana kitap <u>II. okurken</u> bir yandan da <u>III. yorumlamaya</u> çalışıyor, yazacağım yazının hatlarını kabataslak <u>IV. tanımlamaya</u> çalışıyorum. Okurken bir hayli <u>V. zorlandığımı</u> itiraf etmeliyim.</p><p><b>Bu parçada altı çizili sözcüklerden hangisi gövdeden türemiş sözcük özelliği <u>göstermez</u>?</b></p>",
+    text: "<p>Kitap yorumlama <u>I. alışkanlığı</u> kazandığımdan bu yana kitap okurken bir yandan da <u>II. yorumlamaya</u> çalışıyor, yazacağım yazının hatlarını kabataslak <u>III. tanımlamaya</u> çalışıyorum. <u>IV. Okurken</u> bir hayli <u>V. zorlandığımı</u> itiraf etmeliyim.</p><p><b>Bu parçada altı çizili sözcüklerden hangisi gövdeden türemiş sözcük özelliği <u>göstermez</u>?</b></p>",
     diff: 3,
-    expl: "Gövdeden türemiş sözcükler en az iki yapım eki almış sözcüklerdir. II numaralı 'okurken' sözcüğünde '-ur' geniş zaman eki, '-ken' ise zarf-fiil (yapım) ekidir; yani yalnızca 1 yapım eki vardır. Diğerlerinde en az iki yapım eki bulunur (ör: alış-kan-lık, zor-lan-dık vb.).",
+    expl: "Gövdeden türemiş sözcükler en az iki yapım eki almış sözcüklerdir. IV numaralı 'okurken' sözcüğünde '-ur' geniş zaman eki, '-ken' ise zarf-fiil (yapım) ekidir; yani yalnızca 1 yapım eki vardır. Diğerlerinde en az iki yapım eki bulunur (ör: alış-kan-lık, zor-lan-dık vb.).",
     answers: [
       { text: "I", ok: false },
-      { text: "II", ok: true },
+      { text: "II", ok: false },
       { text: "III", ok: false },
-      { text: "IV", ok: false },
+      { text: "IV", ok: true },
       { text: "V", ok: false }
     ]
   },
   {
-    text: "<p>Güzelliği <u>I. tanımış</u> olmaktır daha da iyisi,<br>Bütün bir hayatın düzeni ve yüceliği olan güzelliği,<br>Harcanan <u>II. çabaların</u> zahmeti mutluluğun<br><u>III. kaynağı</u> olduğunda,<br>Ve bilmek, zaman <u>IV. içindeki</u> onca <u>V. zenginliğin</u> adını.</p><p><b>Bu dizelerdeki altı çizili sözcüklerden hangisi yapım eki <u>almamıştır</u>?</b></p>",
+    text: "<p>Güzelliği <u>I. tanımış</u> olmaktır daha da iyisi,<br>Bütün bir hayatın düzeni ve yüceliği olan güzelliği,<br>Harcanan <u>II. çabaların</u> zahmeti mutluluğun<br><u>III. kaynağı</u> olduğunda,<br>Ve bilmek, zaman <u>IV. içindeki</u> <u>V. onca</u> zenginliğin adını.</p><p><b>Bu dizelerdeki altı çizili sözcüklerden hangisi yapım eki <u>almamıştır</u>?</b></p>",
     diff: 2,
-    expl: "II numaralı 'çabaların' sözcüğünün kökü 'çaba' olup aldığı ekler (-lar çokluk, -ın tamlayan) çekim ekidir, yapım eki yoktur. Diğerleri yapım eki almıştır (tanı-mış, kaynamaktan kaynak, iç-in-de-ki, zengin-lik).",
+    expl: "II numaralı 'çabaların' sözcüğünün kökü 'çaba' olup aldığı ekler (-lar çokluk, -ın tamlayan) çekim ekidir, yapım eki yoktur. Diğerleri yapım eki almıştır (tanı-mış, kayna-k, iç-i-n-de-ki, o-n-ca).",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: true },
@@ -840,7 +840,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Uzmanlar, dönem dönem özellikle de kişinin <u>I. yorgun</u> ve yıpranmış hissettiği <u>II. süreçlerde</u> çevresindeki insanlardan bir <u>III. süreliğine</u> uzaklaşmasının ve kendi <u>IV. içine</u> dönmesinin, insan psikolojisi üzerinde çok <u>V. büyük</u> bir olumlu etkisi olduğunu söylüyor.</p><p><b>Bu cümledeki numaralanmış sözcüklerden hangisi birden çok yapım eki almıştır?</b></p>",
+    text: "<p>Uzmanlar, dönem dönem özellikle de kişinin <u>I. yorgun</u> ve yıpranmış hissettiği <u>II. süreçlerde</u> çevresindeki insanlardan bir <u>III. süreliğine</u> uzaklaşmasının ve kendi içine dönmesinin, insan psikolojisi üzerinde çok <u>IV. büyük</u> bir olumlu etkisi <u>V. olduğunu</u> söylüyor.</p><p><b>Bu cümledeki numaralanmış sözcüklerden hangisi <u>birden çok</u> yapım eki almıştır?</b></p>",
     diff: 3,
     expl: "III numaralı 'süreliğine' sözcüğünde sür(mek) fiiline '-e' (fiilden isim) ve '-lik' (isimden isim) olmak üzere birden fazla yapım eki gelmiştir.",
     answers: [
@@ -864,7 +864,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><u>Veganlık</u>, yeme-içme gibi <u>ihtiyaçların</u> yanı sıra <u>hayatınızdaki</u> kozmetik alışverişinizden sanayiye, <u>sağlıktan</u> ulaşıma kadar <u>birçok</u> alanda da hassasiyet göstermeniz gereken bir konu.</p><p><b>Bu parçadaki bazı sözcüklerle ilgili olarak aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
+    text: "<p>Veganlık, yeme-içme gibi ihtiyaçların yanı sıra hayatınızdaki kozmetik alışverişinizden sanayiye, sağlıktan ulaşıma kadar birçok alanda da hassasiyet göstermeniz gereken bir konu.</p><p><b>Bu parçadaki bazı sözcüklerle ilgili olarak aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
     diff: 2,
     expl: "B seçeneğindeki 'ihtiyaçların' sözcüğünde 'ihtiyaç' isim kökü büyük ünlü uyumuna uymaz (kök hâlindedir). Aldığı ekler ise sadece çoğul ve tamlayan (çekim) ekleridir; yapım eki almamıştır.",
     answers: [
@@ -900,7 +900,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Kuşlar <u>I. ülkesinin</u> bütün kuşları Hüthüt'ün kılavuzluğunda Kaf Dağı'nın <u>II. ardındaki</u> padişahları Simurg'u <u>III. bulabilmek</u> için yola revan olurlar. <u>IV. Yolculuk</u> uzun ve zorludur. <u>V. İsteği</u> ve sebâtı az olanlar, hem Simurg'u görmek isterler hem de mazeretler üretmeye başlarlar.</p><p><b>Bu parçada numaralanmış sözcüklerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
+    text: "<p>Kuşlar ülkesinin bütün kuşları Hüthüt'ün kılavuzluğunda Kaf Dağı'nın ardındaki padişahları Simurg'u bulabilmek için yola revan olurlar. Yolculuk uzun ve zorludur. İsteği ve sebâtı az olanlar, hem Simurg'u görmek isterler hem de mazeretler üretmeye başlarlar.</p><p><b>Bu parçada numaralanmış sözcüklerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "V numaralı 'isteği' sözcüğü iste(mek) fiil kökünden '-k' yapım ekiyle (istek) türemiştir, ardından iyelik eki almıştır. Yani türemiş yapılıdır, 'basit yapılı' ifadesi yanlıştır.",
     answers: [
@@ -912,7 +912,7 @@ export const TUR_SOZCUKTE_YAPI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><u>I. Alınıyorsam</u> geçimsiz ve <u>II. iştahsız</u><br>Yüzüm öfkeden karaya çalıyorsa<br>Denize bile iştahsız bakıyorsam<br>Hep bu <u>III. boyu</u> devrilesi <u>IV. bozuk</u> düzen<br>Bu darağacı suratlı toplum <u>V. yüzüm</u></p><p><b>Bu dizelerle ilgili olarak aşağıda verilenlerden hangisinde yanlışlık vardır?</b></p>",
+    text: "<p>Alınıyorsam geçimsiz ve işkilli<br>Yüzüm öfkeden karaya çalıyorsa<br>Denize bile iştahsız bakıyorsam<br>Hep bu boyu devrilesi bozuk düzen<br>Bu darağacı suratlı toplum</p><p><b>Bu dizelerle ilgili olarak aşağıda verilenlerden hangisinde <u>yanlışlık</u> vardır?</b></p>",
     diff: 3,
     expl: "III numaralı 'boyu' kelimesi 'boyu devrilesi' tamlamasında 'onun boyu' anlamı taşıdığı için iyelik eki almıştır, belirtme durum eki almamıştır.",
     answers: [
@@ -924,19 +924,19 @@ export const TUR_SOZCUKTE_YAPI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Ektir sıfat yapar ismi (I)<br>Fiil olur bir ekle yansıma (II)<br>Ekten doğar bir isim aslında fiilken (III)</p><p><b>Aşağıdakilerden hangisinde verilen altı çizili sözcükler, bu dizelerde numaralanmış açıklamalara sırasıyla örnek gösterilebilir?</b></p>",
+    text: "<p>Biz sözleri eklerle yaratır, yok ederiz<br>Türer yeni yeni sözler eklerden<br><u>Ektir sıfat yapar ismi</u> (I)<br><u>Fiil olur bir ekle yansıma</u> (II)<br><u>Ekten doğar bir isim aslında fiilken</u> (III)</p><p><b>Aşağıdakilerden hangisinde verilen altı çizili sözcükler, bu dizelerde numaralanmış açıklamalara sırasıyla örnek gösterilebilir?</b></p>",
     diff: 3,
     expl: "I: Yaslı (yas isminden sıfat türetmiş). II: gürler (gür yansımasından fiil türetmiş). III: Sevgin (sevmek fiilinden sevgi ismini türetmiş).",
     answers: [
       { text: "Geceler <u>uzun</u>, geceler korkulu / Ümitler savrulmada <u>köpük</u> köpük / <u>Zamanı</u> unutuyor insanoğlu", ok: false },
       { text: "<u>Yaslı</u> bir kışa rehin düşse günler / İçimdeki fırtına sessizce <u>gürler</u> / <u>Sevgin</u> daima içimde bu duyguyu gizler", ok: true },
-      { text: "Düşler rıhtımında <u>sevecen</u> kuşlar / Pembe <u>şafaklara</u> yelken açıyor / Billûr kadehlerde <u>renklenen</u> düşler", ok: false },
+      { text: "Düşler rıhtımında <u>sevecen</u> kuşlar / Pembe şafaklara yelken <u>açıyor</u> / Billûr kadehlerde renklenen <u>düşler</u>", ok: false },
       { text: "Kuşlar vardır, cana <u>benzer</u> havalarda / <u>Soğuksa</u> kar, baharsa yaprak / Bir başına <u>büyür</u> toprakta ömrümüz", ok: false },
-      { text: "Seni <u>görmediğim</u> günler büyüyor gözümde / Bir çocuk <u>ağlaması</u> başlıyor kulaklarımda / <u>Ellerim</u> bir yerlere yapışıyor, kurtaramıyorum", ok: false }
+      { text: "Seni <u>görmediğim</u> günler büyüyor gözümde / Bir çocuk ağlaması <u>başlıyor</u> kulaklarımda / <u>Ellerim</u> bir yerlere yapışıyor, kurtaramıyorum", ok: false }
     ]
   },
   {
-    text: "<p>Atmosferi meydana getiren gazların <u>I. karışımı</u> olarak tanımlanan hava; insan ve canlıların yaşaması için hayati öneme sahiptir. Artan dünya <u>II. nüfusu</u> ile birlikte insanların, çağlar boyunca yaşam <u>III. koşullarını</u> iyileştirme çabasına paralel olarak sanayi ve teknoloji de sürekli gelişmiştir. Ancak bu gelişme canlı ve cansız bütün varlıkların üzerinde bulunduğu <u>IV. ekosistemi</u> bilinçli veya bilinçsizce kirletmiş, tüm canlı <u>V. hayatı</u> ve canlı hayatın bir parçası olan bitkileri tehdit eder hâle gelmiştir.</p><p><b>Bu parçada numaralanmış altı çizili sözcüklerden hangisi \"belirtme durum eki\" <u>almamıştır</u>?</b></p>",
+    text: "<p><u>I. Atmosferi</u> meydana getiren gazların karışımı olarak tanımlanan hava; insan ve canlıların yaşaması için hayati öneme sahiptir. Artan dünya <u>II. nüfusu</u> ile birlikte insanların, çağlar boyunca yaşam <u>III. koşullarını</u> iyileştirme çabasına paralel olarak sanayi ve teknoloji de sürekli gelişmiştir. Ancak bu gelişme canlı ve cansız bütün varlıkların üzerinde bulunduğu <u>IV. ekosistemi</u> bilinçli veya bilinçsizce kirletmiş, tüm canlı <u>V. hayatı</u> ve canlı hayatın bir parçası olan bitkileri tehdit eder hâle gelmiştir.</p><p><b>Bu parçada numaralanmış altı çizili sözcüklerden hangisi \"belirtme durum eki\" <u>almamıştır</u>?</b></p>",
     diff: 2,
     expl: "II numaralı 'nüfusu' kelimesi 'dünya nüfusu' isim tamlamasında tamlanan durumundadır ve aldığı '-su' eki 3. tekil iyelik ekidir. Diğer kelimeler (neyi? sorusuna cevap veren) belirtme durum eki almışlardır.",
     answers: [
@@ -954,14 +954,14 @@ export const TUR_SOZCUKTE_YAPI_TEST_6: McQ[] = [
 // ============================================================================
 export const TUR_SOZCUKTE_YAPI_TEST_7: McQ[] = [
   {
-    text: "<p><u>I. Merdivenlerin</u> oraya <u>II. koşuyorum</u><br><u>III. Beklemek</u> gövde <u>IV. kazanması</u> gibi zamanın<br>Çok erken <u>V. gelmişim</u> seni <u>VI. bulamıyorum</u></p><p><b>Bu dizelerde altı çizili sözcüklerden hangisi birden çok çekim eki <u>almamıştır</u>?</b></p>",
+    text: "<p><u>I. Merdivenlerin</u> oraya <u>II. koşuyorum</u><br>Beklemek gövde <u>III. kazanması</u> gibi zamanın<br>Çok erken <u>IV. gelmişim</u> seni <u>V. bulamıyorum</u><br>Bir şeyin provası yapılıyor sanki</p><p><b>Bu dizelerde altı çizili sözcüklerden hangisi birden çok çekim eki <u>almamıştır</u>?</b></p>",
     diff: 2,
-    expl: "IV numaralı (kazanması) kelimesi isim-fiil ekinden sonra yalnızca iyelik eki (-sı) alarak tek bir çekim eki almıştır. Diğer sözcükler çokluk+ilgi (merdiven-ler-in), şimdiki zaman+şahıs (koş-uyor-um) gibi birden çok çekim eki almıştır.",
+    expl: "III numaralı (kazanması) kelimesi isim-fiil ekinden sonra yalnızca iyelik eki (-sı) alarak tek bir çekim eki almıştır. Diğer sözcükler çokluk+ilgi (merdiven-ler-in), şimdiki zaman+şahıs (koş-uyor-um) gibi birden çok çekim eki almıştır.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
-      { text: "III", ok: false },
-      { text: "IV", ok: true },
+      { text: "III", ok: true },
+      { text: "IV", ok: false },
       { text: "V", ok: false }
     ]
   },
@@ -1090,11 +1090,11 @@ export const TUR_SOZCUKTE_YAPI_TEST_7: McQ[] = [
     diff: 3,
     expl: "A seçeneğindeki 'baş ağrısı' birleşik ismi belirtisiz isim tamlaması (ne ağrısı) yoluyla kaynaşmıştır. Diğer seçeneklerdeki 'yan etki', 'kesme şeker', 'kuru yemiş' ve 'öz geçmiş' sözcükleri sıfat tamlaması (nasıl etki vb.) şeklinde oluşmuştur.",
     answers: [
-      { text: "Yaşamın her döneminde herkesin çektiği bir <u>baş ağrısı</u>, ilk sorundur.", ok: true },
-      { text: "Teknoloji sayesinde tehlikeli <u>yan etkilere</u> sahip morfin benzeri ilaçlara alternatif yeni ilaçlar geliştirildi.", ok: false },
-      { text: "Günümüzde firmalar <u>kesme şekerini</u>, su ve buharın kullanıldığı kalıplarda presleme işlemi sonucunda üretmektedir.", ok: false },
-      { text: "Kırk türlü <u>kuru yemişle</u> donanmış masanın ortasına dikilmiş bir ince, ufak mum vardı.", ok: false },
-      { text: "<u>Öz geçmiş</u>, bir kimsenin hayatındaki belli başlı evreleri içeren bilgileri sunar.", ok: false }
+      { text: "Yaşamın her döneminde herkesin çektiği bir sağlık sorunudur baş ağrısı.", ok: true },
+      { text: "Teknoloji sayesinde tehlikeli yan etkilere sahip morfin benzeri ilaçlara alternatif yeni ilaçlar geliştirildi.", ok: false },
+      { text: "Günümüzde firmalar kesme şekerini, su ve buharın kullanıldığı kalıplarda presleme işlemi sonucunda üretmektedir.", ok: false },
+      { text: "Kırk türlü kuru yemişle donanmış masanın ortasına dikilmiş bir ince, ufak mum vardı.", ok: false },
+      { text: "Öz geçmiş, bir kimsenin hayatındaki belli başlı evreleri içeren bilgileri sunar.", ok: false }
     ]
   }
 ];
@@ -1104,15 +1104,15 @@ export const TUR_SOZCUKTE_YAPI_TEST_7: McQ[] = [
 // ============================================================================
 export const TUR_SOZCUKTE_YAPI_TEST_8: McQ[] = [
   {
-    text: "<p>Yeryüzünün yörüngesine yerleştirilen uydular haberleşme ya da gözlem <u>I. amacına</u> yönelik kullanılıyor. Bu <u>II. uydular</u>, üzerlerinde bulunan özel kameraları aracılığıyla <u>III. dünyamızdan</u> aldığı görüntüyü ilgili yer istasyonlarına <u>IV. gönderiyor</u>.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi tek bir çekim eki almıştır?</b></p>",
+    text: "<p>Yeryüzünün <u>I. yörüngesine</u> yerleştirilen uydular haberleşme ya da gözlem <u>II. amacına</u> yönelik kullanılıyor. Bu uydular, <u>III. üzerlerinde</u> bulunan özel kameraları aracılığıyla <u>IV. dünyamızdan</u> aldığı <u>V. görüntüyü</u> ilgili yer istasyonlarına gönderiyor.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi tek bir çekim eki almıştır?</b></p>",
     diff: 3,
-    expl: "II numaralı 'uydular' (uydu-lar) sözcüğü sadece çokluk eki (-lar) alarak tek bir çekim eki almıştır. Diğerleri: amac-ı-n-a (iyelik ve yönelme), dünya-mız-dan (iyelik ve ayrılma), gönder-iyor (şimdiki zaman).",
+    expl: "V numaralı 'görüntüyü' (görüntü-y-ü) sözcüğü yalnızca belirtme hâl eki almıştır. Diğerleri birden çok çekim eki almıştır: yörünge-si-n-e, amac-ı-n-a (iyelik ve yönelme), üzer-ler-i-n-de (çokluk, iyelik ve bulunma), dünya-mız-dan (iyelik ve ayrılma).",
     answers: [
       { text: "I", ok: false },
-      { text: "II", ok: true },
+      { text: "II", ok: false },
       { text: "III", ok: false },
       { text: "IV", ok: false },
-      { text: "V", ok: false }
+      { text: "V", ok: true }
     ]
   },
   {
@@ -1140,9 +1140,9 @@ export const TUR_SOZCUKTE_YAPI_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>Ana karakter olarak <u>I. insanı</u> göremediğimiz anlatılarla karşılaşmamız çok eskiye dayanır. En çok da kadim metinlerde görürüz onları. Çocukken Ezop'un, La Fontaine'in fabllarını dinleyen herkes, laf ebesi horoz ile onu yemek isteyen <u>II. kurdu</u>, kurnaz tilki ile ağzındaki <u>III. peyniri</u> kaptıran şaşkın kargayı ve bu hikâyelerdeki diğer birçok <u>IV. kahramanı</u> bilir. Peki, bu karakterler çağdaş metinlerde karşımıza nasıl çıkıyor? Bizi tüm doğallığıyla heyecanlandırabilecek bir fabl <u>V. karakteri</u> ile karşılaşabiliyor muyuz?</p><p><b>Bu parçadaki altı çizili sözcüklerden hangisi diğerlerinden farklı bir ek almıştır?</b></p>",
+    text: "<p>Ana karakter olarak <u>I. insanı</u> göremediğimiz anlatılarla karşılaşmamız çok eskiye dayanır. En çok da kadim metinlerde görürüz onları. Çocukken Ezop'un, La Fontaine'in fabllarını dinleyen herkes, laf ebesi horoz ile onu yemek isteyen <u>II. kurdu</u>, kurnaz tilki ile ağzındaki <u>III. peyniri</u> kaptıran şaşkın kargayı ve bu hikâyelerdeki diğer birçok kahramanı bilir. Peki, bu karakterler çağdaş metinlerde karşımıza nasıl çıkıyor? <u>IV. Bizi</u> tüm doğallığıyla heyecanlandırabilecek bir fabl <u>V. karakteri</u> ile karşılaşabiliyor muyuz?</p><p><b>Bu parçadaki altı çizili sözcüklerden hangisi diğerlerinden farklı bir ek almıştır?</b></p>",
     diff: 3,
-    expl: "V numaralı 'fabl karakteri' tamlamasındaki '-i' eki tamlanan (iyelik) ekidir. I (insan-ı), II (kurd-u), III (peynir-i) ve IV (kahraman-ı) kelimeleri ise belirtme (yükleme) durum eki almıştır.",
+    expl: "V numaralı 'fabl karakteri' tamlamasındaki '-i' eki tamlanan (iyelik) ekidir. I (insan-ı), II (kurd-u), III (peynir-i) ve IV (biz-i) kelimeleri ise belirtme (yükleme) durum eki almıştır.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
@@ -1152,75 +1152,75 @@ export const TUR_SOZCUKTE_YAPI_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>Oyuncular, herhangi bir rolü canlandırdığında izleyicilerinden gözleri önüne serilen <u>I. sahneleri</u> ciddiye almalarını beklerler. Kendilerinden, <u>II. izledikleri</u> karakterlerin sahipmiş gibi görünen niteliklere gerçekten sahip olduklarına, yapmakta oldukları işin yol <u>III. açacağı</u> sonuçların gerçekleşeceğine ve genelde her şeyin göründüğü gibi olduğuna <u>IV. inanmaları</u> istenir.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi, \"belirtme durumu eki\" almıştır?</b></p>",
+    text: "<p>Oyuncular, herhangi bir rolü canlandırdığında izleyicilerinden <u>I. gözleri</u> önüne serilen <u>II. sahneleri</u> ciddiye almalarını beklerler. Kendilerinden, <u>III. izledikleri</u> karakterlerin sahipmiş gibi görünen niteliklere gerçekten sahip olduklarına, yapmakta <u>IV. oldukları</u> işin yol açacağı sonuçların gerçekleşeceğine ve genelde her şeyin göründüğü gibi olduğuna <u>V. inanmaları</u> istenir.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi, \"belirtme durumu eki\" almıştır?</b></p>",
     diff: 3,
-    expl: "I numaralı 'sahneleri' (sahne-ler-i) sözcüğü 'Neyi ciddiye almalarını beklerler?' sorusuna yanıt verdiği için belirtme durum eki almıştır. Diğerlerindeki ekler iyelik ve fiilimsi/zaman ekleridir.",
+    expl: "II numaralı 'sahneleri' (sahne-ler-i) sözcüğü 'Neyi ciddiye almalarını beklerler?' sorusuna yanıt verdiği için belirtme durum eki almıştır. Diğerlerindeki ekler iyelik ve fiilimsi/zaman ekleridir.",
     answers: [
-      { text: "I", ok: true },
-      { text: "II", ok: false },
+      { text: "I", ok: false },
+      { text: "II", ok: true },
       { text: "III", ok: false },
       { text: "IV", ok: false },
       { text: "V", ok: false }
     ]
   },
   {
-    text: "<p>Halikarnas Balıkçısı; <u>I. üslubunu</u> mektuplarıyla başarılı bir şekilde yansıtır çünkü yalnız bir konu, bir yaşantı ya da bir düşünce üstüne yazmamıştı onları. Balıkçı, <u>II. mektuplarını</u> bu yönlerin <u>III. tümünü</u> bir araya getirerek yaşaya yaşaya kaleme almıştı. Sesi ve sözü vardı <u>IV. yazdığı</u> <u>V. mektuplarda</u>.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi iyelik eki <u>almamıştır</u>?</b></p>",
+    text: "<p>Halikarnas Balıkçısı; <u>I. üslubunu</u> mektuplarıyla başarılı bir şekilde yansıtır çünkü yalnız bir konu, bir yaşantı ya da bir düşünce üstüne yazmamıştı <u>II. onları</u>. Balıkçı, mektuplarını bu yönlerin <u>III. tümünü</u> bir araya getirerek yaşaya yaşaya kaleme almıştı. <u>IV. Sesi</u> ve sözü vardı <u>V. yazdığı</u> mektuplarda.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi iyelik eki <u>almamıştır</u>?</b></p>",
     diff: 3,
-    expl: "V numaralı 'mektuplarda' (mektup-lar-da) sözcüğü sadece çokluk eki ve bulunma durum eki almıştır. Herhangi bir iyelik eki barındırmaz. Diğerlerinde 'üslub-u-nu', 'mektuplar-ı-nı', 'tüm-ü-nü', 'yazdığ-ı' iyelik ekleri vardır.",
+    expl: "II numaralı 'onları' (o-n-lar-ı) zamiri çokluk ve belirtme hâl eki almıştır, iyelik eki yoktur. Diğerlerinde iyelik eki vardır: üslub-u-nu, tüm-ü-nü, ses-i, yazdığ-ı.",
     answers: [
       { text: "I", ok: false },
-      { text: "II", ok: false },
+      { text: "II", ok: true },
       { text: "III", ok: false },
       { text: "IV", ok: false },
-      { text: "V", ok: true }
+      { text: "V", ok: false }
     ]
   },
   {
-    text: "<p>Eski çağlardan bu yana Orta Asya'dan Avrupa'ya tuz hem sadeliğin <u>I. göstergesi</u> hem de kıymet bilmenin <u>II. sembolü</u> olmuş. Eskilerde gıdayı uzun süre saklamanın başlıca yolu tuzlamak olduğundan, zor <u>III. bulunurluğu</u> ve kullanılır hâle gelmesi pek çok işlem gerektirdiğinden <u>IV. değeri</u> hep artmıştır <u>V. tuzun</u>.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi iyelik eki <u>almamıştır</u>?</b></p>",
+    text: "<p>Eski çağlardan bu yana Orta Asya'dan Avrupa'ya tuz hem sadeliğin <u>I. göstergesi</u> hem de kıymet bilmenin <u>II. sembolü</u> olmuş. Eskilerde <u>III. gıdayı</u> uzun süre saklamanın başlıca yolu tuzlamak olduğundan, zor <u>IV. bulunurluğu</u> ve kullanılır hâle gelmesi pek çok işlem gerektirdiğinden <u>V. değeri</u> hep artmıştır tuzun.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi iyelik eki <u>almamıştır</u>?</b></p>",
     diff: 2,
-    expl: "V numaralı 'tuzun' sözcüğündeki '-un' eki tamlayan (ilgi) ekidir (tuzun değeri). I, II, III ve IV numaralı sözcükler ise tamlanan (iyelik) eki almışlardır.",
+    expl: "III numaralı 'gıdayı' (gıda-y-ı) sözcüğündeki '-ı' eki 'neyi saklamanın?' sorusunun cevabı olduğu için belirtme hâl ekidir, iyelik eki değildir. I (göstergesi), II (sembolü), IV (bulunurluğu) ve V (değeri) sözcükleri ise tamlanan (iyelik) eki almıştır.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
-      { text: "III", ok: false },
+      { text: "III", ok: true },
       { text: "IV", ok: false },
-      { text: "V", ok: true }
+      { text: "V", ok: false }
     ]
   },
   {
     text: "<p><b>Aşağıdaki cümlelerin hangisinde çıkma (ayrılma) durumu eki diğerlerinden farklı bir işlevde kullanılmıştır?</b></p>",
     diff: 3,
-    expl: "C, D ve E seçeneklerinde ve B'deki 'ortadaydı' ifadesinde ayrılma durumu yoktur veya sebep bildirir. Ancak A seçeneğindeki 'kanserden kaybetti' ifadesinde '-den' eki ölümün nedenini (sebep işlevi) belirtmek için zarf tümleci oluşturmuştur. Soru kökündeki '-den/-dan' eki cümleye 'neden/sebep' anlamı kattığında yapım eki veya zarf işlevine bürünür.",
+    expl: "D seçeneğindeki 'takımından' sözcüğünde '-dan' eki 'o takımdan biri, o gruba ait' anlamı vererek aitlik/nitelik bildirmektedir. Diğer seçeneklerdeki 'kanserden', 'korkudan', 'ilgilenmediğinden', 'olduğundan' sözcüklerinde ise ayrılma hâl eki sebep bildirme işlevindedir.",
     answers: [
       { text: "Uzun bir hastalık sürecinin akabinde babasını kanserden kaybetti.", ok: false },
-      { text: "Korkudan tek bir söz söyleyemedi ancak her şey gün gibi ortadaydı.", ok: true },
+      { text: "Korkudan tek bir söz söyleyemedi ancak her şey gün gibi ortadaydı.", ok: false },
       { text: "Bahçeyle kimse ilgilenmediğinden bütün çiçekler kuruyup gitmişti.", ok: false },
-      { text: "O adam bildiğimiz serseri takımından, ona laf anlatmak boş bir çaba.", ok: false },
+      { text: "O adam bildiğimiz serseri takımından, ona laf anlatmak boş bir çaba.", ok: true },
       { text: "Genel kurul toplantısı, katılım az olduğundan ileri bir tarihe ertelendi.", ok: false }
     ]
   },
   {
     text: "<p><b>Aşağıdakilerin hangisinde bildirme eki, diğerlerinden farklı bir görevde kullanılmıştır?</b></p>",
     diff: 3,
-    expl: "A, B, C ve E seçeneklerinde '-dir/-dır' eki isim soylu sözcüklere gelerek onları yüklem yapmıştır (tilkidir, yoldur, yadımdır vb.). D seçeneğindeki 'nelerdir' sözcüğü ise zamire gelmiştir ancak B seçeneğindeki (sorunun orijinalinde) kullanım yapısı fiile kesinlik/olasılık katma işlevi yönünden diğerlerinden ayrılır.",
+    expl: "B seçeneğindeki 'yıllardır' sözcüğünde '-dır' eki yüklem yapma (bildirme) işlevinde değil, süre bildirerek sözcüğü zarf yapma işlevindedir. Diğer seçeneklerdeki 'tilkidir, yumaktır', 'yanıktır, şifasızdır', 'neferdir', 'yoldaşımdır' sözcüklerinde ise ek, isim soylu sözcükleri yüklem yapan bildirme ekidir.",
     answers: [
       { text: "Ufuk bir tilkidir, kaçak ve kurnaz / Yollar bir yumaktır, uzun dolaşık", ok: false },
       { text: "Yıllardır kaybettim o tatlı sesi / Bir türlü içimde ötmez o bülbül", ok: true },
       { text: "Ruhum ki yanıktır ve şifasızdır ezelden / Sormak dilesem, bir kara mendil neme yetmez?", ok: false },
-      { text: "Bir nelerdir bu zafer mabedinin mimarı / Ulu mabet! Seni ancak bu sabah anlıyorum.", ok: false },
+      { text: "Bir neferdir bu zafer mabedinin mimarı / Ulu mabet! Seni ancak bu sabah anlıyorum.", ok: false },
       { text: "Bana yadigârın kaldı âlemde / Kırılmış bir ney ki son yoldaşımdır!", ok: false }
     ]
   },
   {
-    text: "<p>Dede Korkut <u>I. anlatılarının</u> üçüncü hikâyesi olan Bey Böyrek, neredeyse tüm Türk <u>II. halklarının</u> sözlü edebiyatında yer almaktadır. Bu anlatı, Oğuz <u>III. boylarının</u> arasında Bamsı Beyrek, Altay Türklerinde ise Alıp Manaş, Başkurt ve Tatarlarda Alıpmenşen olarak bilinir. Bu destanın birbirine yakın biçimlerinin bu kadar geniş bir coğrafyada yaşaması, bu toplulukların ortak bir düşünce tarihine sahip <u>IV. olduklarının</u> güzel bir <u>V. göstergesidir</u>.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi \"üçüncü çoğul kişi iyelik eki\" almıştır?</b></p>",
+    text: "<p>Dede Korkut <u>I. anlatılarının</u> üçüncü hikâyesi olan Bey Böyrek, neredeyse tüm Türk <u>II. halklarının</u> sözlü edebiyatında yer almaktadır. Bu anlatı, Oğuz <u>III. boylarının</u> arasında Bamsı Beyrek, Altay Türklerinde ise Alıp Manaş, Başkurt ve Tatarlarda Alıpmenşen olarak bilinir. Bu destanın birbirine yakın <u>IV. biçimlerinin</u> bu kadar geniş bir coğrafyada yaşaması, bu toplulukların ortak bir düşünce tarihine <u>V. sahip olduklarının</u> güzel bir göstergesidir.</p><p><b>Bu parçada numaralanmış sözcüklerin hangisi \"üçüncü çoğul kişi iyelik eki\" almıştır?</b></p>",
     diff: 3,
-    expl: "IV numaralı 'olduklarının' (sahip oldukları-nın) sözcüğünde, toplulukların (çoğul) sahip oldukları şeyler ifade edildiği için '-ları' üçüncü çoğul kişi iyelik ekidir. Diğerlerinde '-lar' çokluk, '-ı/-ı' tekil iyelik ekidir.",
+    expl: "V numaralı 'sahip olduklarının' sözcüğündeki '-ları' eki, tamlayanı çoğul olan ('bu toplulukların') tamlamada tamlanan eki olduğundan üçüncü çoğul kişi iyelik ekidir. I, II, III ve IV numaralı sözcüklerdeki '-lar/-ler' çokluk eki, ardından gelen '-ı/-i' ise üçüncü tekil kişi iyelik ekidir.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: false },
       { text: "III", ok: false },
-      { text: "IV", ok: true },
-      { text: "V", ok: false }
+      { text: "IV", ok: false },
+      { text: "V", ok: true }
     ]
   },
   {
@@ -1260,33 +1260,45 @@ export const TUR_SOZCUKTE_YAPI_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>Büyük Patlama Kuramı'na göre evrenin oluşumunun erken <u>I. dönemlerinde</u> sıcaklıklar, atom çekirdeklerinin birleşmesini sağlayacak kadar yüksekti. Bu durum hafif elementlerin oluşumuna zemin <u>II. hazırladı</u>.</p><p><b>Bu parçadaki sözcüklerle ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
+    text: "<p>Büyük Patlama Kuramı'na göre evrenin oluşumunun erken dönemlerinde sıcaklıklar, atom çekirdeklerinin birleşmesini sağlayacak kadar yüksekti. Bu durum hafif elementlerin oluşumuna zemin hazırladı.</p><p><b>Bu parçadaki sözcüklerle ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
-    expl: "A, C, D ve E seçeneklerindeki ifadeler doğrudur. Ancak B seçeneğinde 'oluşumunun' sözcüğünün 'fiilden isim türeten yapım eki (oluş-um)' aldığı belirtilmiş, fakat soru kökünde yanlışlık arandığı için buradaki kök/ek tahlili değerlendirmesinde B şıkkında belirtilen kural parçadaki yapıya uymamaktadır.",
+    expl: "'hazırladı' sözcüğü 'hazır' isim kökünden '-la' isimden fiil yapım ekiyle türemiştir; bu sözcükte fiilden fiil yapım eki yoktur. Diğer yargılar doğrudur: Kuram-ı-n-a (iyelik ve yönelme), oluş-um (fiilden isim yapım eki), sıcak-lık-lar (yapım ve çekim eki), bir-le-ş-me-si-ni (birden fazla yapım eki).",
     answers: [
       { text: "\"Kuramı'na\" sözcüğünde birden fazla çekim eki kullanılmıştır.", ok: false },
-      { text: "\"oluşumunun\" sözcüğünde fiilden isim türeten yapım eki kullanılmıştır.", ok: true },
+      { text: "\"oluşumunun\" sözcüğünde fiilden isim türeten yapım eki kullanılmıştır.", ok: false },
       { text: "\"sıcaklıklar\" sözcüğünde yapım eki ile çekim eki bir arada kullanılmıştır.", ok: false },
       { text: "\"birleşmesini\" sözcüğünde birden fazla yapım eki kullanılmıştır.", ok: false },
-      { text: "\"hazırladı\" sözcüğünde fiilden fiil türeten yapım eki kullanılmıştır.", ok: false }
+      { text: "\"hazırladı\" sözcüğünde fiilden fiil türeten yapım eki kullanılmıştır.", ok: true }
     ]
   },
   {
-    text: "<p><u>I. Hareketlerini</u> bitirdikten sonra <u>II. vücudunun</u> her tarafını güneşte döndüre döndüre <u>III. siyahlatıyor</u>, sonra denize atlıyor, <u>IV. kurbağalama</u> yüzerek epeyce <u>V. açılıyordu</u>.</p><p><b>Bu parçada kimi sözcüklerin yapısıyla ilgili aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
+    text: "<p>Hareketlerini bitirdikten sonra vücudunun her tarafını güneşte döndüre döndüre siyahlatıyor, sonra denize atlıyor, kurbağalama yüzerek epeyce açılıyordu.</p><p><b>Bu parçada kimi sözcüklerin yapısıyla ilgili aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
     diff: 3,
-    expl: "'siyahlatıyor' sözcüğünün kökü 'siyah' (isim) dır. siyah-la (isimden fiil) ve siyahla-t (fiilden fiil) eklerini almıştır. Seçenekteki 'isimden fiil yapım eki kullanılmıştır' ifadesi eksik/yanlış değerlendirildiği için doğru cevap C'dir.",
+    expl: "'kurbağalama' sözcüğü kurbağa (isim kökü) -la (isimden fiil yapım eki) -ma (fiilden isim yapım eki) şeklinde türemiştir; fiilden fiil yapım eki yoktur. 'siyahlatıyor' sözcüğünde ise siyah-la (isimden fiil) eki bulunduğundan C doğrudur.",
     answers: [
       { text: "\"hareketlerini\" sözcüğünde birden fazla çekim eki kullanılmıştır.", ok: false },
       { text: "\"vücudunun\" sözcüğünde tamlayan eki kullanılmıştır.", ok: false },
-      { text: "\"siyahlatıyor\" sözcüğüyle isimden fiil yapım eki kullanılmıştır.", ok: true },
-      { text: "\"kurbağalama\" sözcüğünde fiilden fiil yapım eki kullanılmıştır.", ok: false },
+      { text: "\"siyahlatıyor\" sözcüğüyle isimden fiil yapım eki kullanılmıştır.", ok: false },
+      { text: "\"kurbağalama\" sözcüğünde fiilden fiil yapım eki kullanılmıştır.", ok: true },
       { text: "\"açılıyordu\" sözcüğünde yapım ekiyle çekim eki bir arada kullanılmıştır.", ok: false }
     ]
   },
   {
-    text: "<p>Yeryüzünün <u>I. yapısıyla</u> hayvancılık arasında yakın bir ilişki vardır. Hayvancılıkla uğraşan topluluklar, yaz başlarında yüksek dağlar ya da bozkır <u>II. alanların</u> başka yerlerine göçerek hayvanlarını <u>III. otlatır</u>. Ülkemizde yörükler, yazları hayvanlarını otlatmak için Torosların yüksek <u>IV. kesimlerine</u> çıkar, ekim ayının başlarından itibaren de sahil bölgelerindeki otlak <u>V. alanlara</u> döner.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi, yapısı bakımından diğerlerinden farklıdır?</b></p>",
+    text: "<p>Yeryüzünün <u>I. yapısıyla</u> hayvancılık arasında yakın bir ilişki vardır. Hayvancılıkla uğraşan <u>II. topluluklar</u>, yaz başlarında yüksek dağlar ya da bozkır <u>III. alanların</u> başka yerlerine göçerek hayvanlarını otlatır. Ülkemizde yörükler, yazları hayvanlarını otlatmak için Torosların yüksek <u>IV. kesimlerine</u> çıkar, ekim ayının başlarından itibaren de sahil <u>V. bölgelerindeki</u> otlak alanlara döner.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi, yapısı bakımından diğerlerinden farklıdır?</b></p>",
     diff: 2,
-    expl: "I (yap-ı-sı-y-la) türemiş, III (ot-la-t-ır) türemiş, IV (kes-im-ler-i-n-e) türemiş sözcüklerdir. II numaralı 'alanların' (alan-lar-ın) sözcüğü sadece çekim eki almıştır, bu nedenle basit yapılıdır ve diğerlerinden farklıdır.",
+    expl: "III numaralı 'alanların' (alan-lar-ın) sözcüğü yalnızca çekim eki almış basit yapılı bir sözcüktür. I (yap-ı-sı-y-la), II (top-lu-luk-lar), IV (kes-im-ler-i-n-e) ve V (bölge-ler-i-n-de-ki) ise yapım eki almış türemiş sözcüklerdir.",
+    answers: [
+      { text: "I", ok: false },
+      { text: "II", ok: false },
+      { text: "III", ok: true },
+      { text: "IV", ok: false },
+      { text: "V", ok: false }
+    ]
+  },
+  {
+    text: "<p>Gözlerden uzak küçük su <u>I. kaynakları</u> pek çok balık türü için yaşam <u>II. alanlarının</u> insanlar tarafından kirletildiği büyük nehirlere kıyasla daha <u>III. güvenli</u> yerlerdir. Ancak şu günlerde bu akarsularda <u>IV. yaşayan</u> binlerce balık bir başka <u>V. korkunç</u> tehditle karşı karşıya: istilacı türler.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi yapısı bakımından diğerlerinden farklıdır?</b></p>",
+    diff: 2,
+    expl: "II numaralı 'alanlarının' (alan-lar-ı-nın) sözcüğü yalnızca çekim ekleri aldığı için basit yapılıdır. I (kayna-k), III (güven-li), IV (yaşa-y-an) ve V (kork-unç) ise yapım eki almış türemiş sözcüklerdir.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: true },
@@ -1296,21 +1308,9 @@ export const TUR_SOZCUKTE_YAPI_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>Gözlerden uzak küçük su <u>I. kaynakları</u> pek çok balık türü için yaşam alanlarının insanlar tarafından kirletildiği büyük nehirlere kıyasla daha güvenli <u>II. yerlerdir</u>. Ancak şu günlerde bu akarsularda <u>III. yaşayan</u> binlerce balık bir başka <u>IV. korkunç</u> tehditle karşı karşıya: istilacı <u>V. türler</u>.</p><p><b>Bu parçada numaralanmış sözcüklerden hangisi yapısı bakımından diğerlerinden farklıdır?</b></p>",
+    text: "<p>\"Normal insanlar, hayatlarında bir defa <u>I. ergenlik</u> acısı <u>II. çekerler</u>.\" der. Goethe; ardından \"Fakat\" <u>III. diye</u> devam eder: \"Dehanın çocukları olan <u>IV. sanatçılar</u> bu acıyı birçok kere yaşarlar ve böylece her defasında <u>V. gençleşirler</u>.\"</p><p><b>Bu parçadaki numaralanmış sözcüklerden hangisi yapısı bakımından diğerlerinden farklıdır?</b></p>",
     diff: 2,
-    expl: "I (kayna-k), III (yaş-a-y-an) ve IV (kork-unç) kelimeleri yapım eki alarak türemiştir. II numaralı 'yerlerdir' (yer-ler-dir) sözcüğü ise sadece çekim ekleri aldığı için yapısı bakımından basittir.",
-    answers: [
-      { text: "I", ok: false },
-      { text: "II", ok: true },
-      { text: "III", ok: false },
-      { text: "IV", ok: false },
-      { text: "V", ok: false }
-    ]
-  },
-  {
-    text: "<p>\"Normal insanlar, hayatlarında bir defa <u>I. ergenlik</u> acısı <u>II. çekerler</u>.\" der. Goethe; ardından \"Fakat\" diye devam eder: \"Dehanın çocukları olan <u>III. sanatçılar</u> bu acıyı birçok kere yaşarlar ve böylece her defasında <u>IV. gençleşirler</u>.\"</p><p><b>Bu parçadaki numaralanmış sözcüklerden hangisi yapısı bakımından diğerlerinden farklıdır?</b></p>",
-    diff: 2,
-    expl: "I (ergen-lik), III (sanat-çı) ve IV (genç-leş) kelimeleri yapım eki alarak türemiş sözcüklerdir. II numaralı 'çekerler' (çek-er-ler) kelimesi ise geniş zaman ve şahıs eki (çekim ekleri) aldığı için basit yapılıdır.",
+    expl: "I (ergen-lik), III (de-y-e), IV (sanat-çı) ve V (genç-le-ş) kelimeleri yapım eki alarak türemiş sözcüklerdir. II numaralı 'çekerler' (çek-er-ler) kelimesi ise geniş zaman ve şahıs eki (çekim ekleri) aldığı için basit yapılıdır.",
     answers: [
       { text: "I", ok: false },
       { text: "II", ok: true },

@@ -5,9 +5,9 @@ import { McQ } from "../../../../types";
 // ============================================================================
 export const TUR_SOZCUK_TURLERI_BILGISI_GEREKTIREN_SOZCUKTE_YAPI_CIKMIS_SORULAR_TEST_1: McQ[] = [
   {
-    text: "<p>North Carolina Üniversitesinde <u>I. yapılan</u> bir araştırma, çocukların yeni besinlerle <u>II. tanışmayı</u> <u>III. reddetmesinde</u> tabaklarında hangi yemeğin olduğundan çok, <u>IV. kalıtsal</u> özelliklerinin etkili olduğunu <u>V. ortaya koyuyor</u>.</p><p><b>Bu parçadaki altı çizili sözcüklerin yapısıyla ilgili olarak aşağıdakilerin hangisi söylenemez?</b></p>",
+    text: "<p>North Carolina Üniversitesinde <u>yapılan</u> (I) bir araştırma, çocukların yeni besinlerle <u>tanışmayı</u> (II) <u>reddetmesinde</u> (III) tabaklarında hangi yemeğin olduğundan çok, <u>kalıtsal</u> (IV) özelliklerinin etkili olduğunu <u>ortaya koyuyor</u> (V).</p><p><b>Bu parçadaki altı çizili sözcüklerin yapısıyla ilgili olarak aşağıdakilerin hangisi <u>söylenemez</u>?</b></p>",
     diff: 3,
-    expl: "III numaralı 'reddetmesinde' sözcüğü 'red' ve 'etmek' sözcüklerinin birleşimi sırasında 'd' ünsüzü türemiştir, bu bir ses türemesidir. Ancak IV numaralı 'kalıtsal' sözcüğü 'kalıt' isminden '-sal' ekiyle türetilmiş bir isimdir, isimden fiil yapma eki almamıştır.",
+    expl: "III numaralı 'reddetmesinde' sözcüğünde 'red' ve 'etmek' sözcüklerinin birleşimi sırasında 'd' ünsüzü türemiştir, bu bir ses türemesidir. Ancak IV numaralı 'kalıtsal' sözcüğü 'kalıt' isminden '-sal' ekiyle türetilmiştir; bu ek isimden isim yapma ekidir, isimden fiil yapma eki değildir.",
     answers: [
       { text: "I. sözcük, sıfat-fiil eki almıştır.", ok: false },
       { text: "II. sözcük, hem yapım hem de çekim eki almıştır.", ok: false },
@@ -17,7 +17,7 @@ export const TUR_SOZCUK_TURLERI_BILGISI_GEREKTIREN_SOZCUKTE_YAPI_CIKMIS_SORULAR_
     ]
   },
   {
-    text: "<p>NASA'nın Jüpiter'i <u>I. incelemek</u> amacıyla gezegenin yörüngesine gönderdiği Juno adlı uzay aracı, ağustos ayı başında önemli bir dönüm <u>II. noktasını</u> geride bıraktı. <u>III. Katedeceği</u> iki yakalama yörüngesinin <u>IV. ilindeki</u> en uzak noktaya ulaşan Juno, dev gezegene geri <u>V. dönmeye</u> başladı.</p><p><b>Bu parçadaki altı çizili sözcüklerle ilgili aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>NASA'nın Jüpiter'i <u>incelemek</u> (I) amacıyla gezegenin yörüngesine gönderdiği Juno adlı uzay aracı, ağustos ayı başında önemli bir dönüm <u>noktasını</u> (II) geride bıraktı. <u>Katedeceği</u> (III) iki yakalama yörüngesinin <u>ilindeki</u> (IV) en uzak noktaya ulaşan Juno, dev gezegene geri <u>dönmeye</u> (V) başladı. Apojove adı verilen bu en uzak nokta, gezegenden 8,1 km uzakta.</p><p><b>Bu parçadaki altı çizili sözcüklerle ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "IV numaralı 'ilindeki' sözcüğündeki '-ki' eki aitlik (sıfat yapan) ekidir. V numaralı 'dönmeye' sözcüğü ise '-ma/-me' isim-fiil eki almıştır, zarf-fiil eki almamıştır.",
     answers: [
@@ -29,21 +29,21 @@ export const TUR_SOZCUK_TURLERI_BILGISI_GEREKTIREN_SOZCUKTE_YAPI_CIKMIS_SORULAR_
     ]
   },
   {
-    text: "<p>Bir pazar günü Kanlıca'nın tarihî <u>I. yerlerini</u> gezmeyi umut ederek çıktığım yolda Boğaz'ın masmavi <u>II. suları</u>, martıların çığlığı ve bir ölüyü bile <u>III. diriltecek</u> kadar tatlı esen meltem, beni <u>IV. kendine</u> doğru çekmişti. Kendi kendime \"Kanlıca bu hafta kalsın.\" deyip <u>V. sahile</u> doğru yürümüş ve orada saatlerce oturmuştum.</p><p><b>Bu parçadaki altı çizili sözcüklerle ilgili olarak aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>Bir pazar günü Kanlıca'nın tarihî <u>yerlerini</u> (I) gezmeyi umut ederek <u>çıktığım</u> (II) yolda Boğaz'ın masmavi suları, martıların çığlığı ve bir ölüyü bile <u>diriltecek</u> (III) kadar tatlı esen meltem, beni kendine doğru <u>çekmişti</u> (IV). Kendi kendime \"Kanlıca bu hafta kalsın.\" deyip <u>sahile</u> (V) doğru yürümüş ve orada saatlerce oturmuştum.</p><p><b>Bu parçadaki altı çizili sözcüklerle ilgili olarak aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
-    expl: "III numaralı 'diriltecek' sözcüğü 'kadar' edatıyla öbekleşerek sıfat görevinde kullanılmıştır, yani bu bir sıfat-fiildir. Gelecek zaman kipi eki olarak kullanılmamıştır.",
+    expl: "III numaralı 'diriltecek' sözcüğü 'kadar' edatıyla öbekleşerek 'tatlı' sözcüğünü nitelemektedir; buradaki '-ecek' eki gelecek zaman eki değil, sıfat-fiil ekidir. I 'yer-ler-i-ni' belirtme hâli eki, II 'çık-tığ-ım' sıfat-fiil eki, IV 'çek-miş-ti' geçmiş zaman eki, V 'sahil-e' yönelme hâli eki almıştır.",
     answers: [
       { text: "I. sözcükte belirtme hâli eki kullanılmıştır.", ok: false },
-      { text: "II. sözcükte sıfat-fiil eki kullanılmıştır.", ok: true },
-      { text: "III. sözcükte gelecek zaman eki kullanılmıştır.", ok: false },
+      { text: "II. sözcükte sıfat-fiil eki kullanılmıştır.", ok: false },
+      { text: "III. sözcükte gelecek zaman eki kullanılmıştır.", ok: true },
       { text: "IV. sözcükte geçmiş zaman eki kullanılmıştır.", ok: false },
       { text: "V. sözcükte yönelme hâli eki kullanılmıştır.", ok: false }
     ]
   },
   {
-    text: "<p>Her sene, <u>I. zamanı</u> gelince İstanbul'un mahallelerinden Boğaz'ın <u>II. köylerine</u> göçler başlardı... Boğaziçi'nin kenarlarına <u>III. yapılmış</u> ve eski erkân sedirleriyle... yer <u>IV. minderleri</u> gibi... yalılara <u>V. taşınırlardı</u>.</p><p><b>Bu parçada altı çizili sözcüklerle ilgili aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>Her sene, <u>zamanı</u> (I) gelince İstanbul'un mahallelerinden Boğaz'ın <u>köylerine</u> (II) göçler başlardı. Eski İstanbullular; Boğaziçi'nin kenarlarına <u>yapılmış</u> (III) ve eski erkân sedirleriyle,kerevet, şilte ve halılar üstünde yer <u>minderleri</u> (IV) gibi eski eşyalarla döşenmiş geniş odalı, gönül ferahlatıcı yalılara <u>taşınırlardı</u> (V).</p><p><b>Bu parçada altı çizili sözcüklerle ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
-    expl: "V numaralı 'taşınırlardı' sözcüğü 'taşın-ırlar-dı' şeklinde analiz edilir. '-ır' geniş zaman ekidir. 'dı' ise ek-fiilin hikayesidir. Geniş zaman eki almıştır ancak iyelik ekiyle ilgili bir yanlışlık yoktur (Cevap anahtarı A dendiği için I. sözcük 'zamanı'ndaki -ı iyelik ekidir, belirtme durumu değildir).",
+    expl: "'zamanı gelince' ifadesindeki 'zamanı' sözcüğündeki '-ı' eki belirtme durumu eki değil, iyelik ekidir. Bu nedenle A seçeneğindeki yargı yanlıştır. V numaralı 'taşın-ır-lar-dı' sözcüğü ise geniş zaman eki almıştır.",
     answers: [
       { text: "I. sözcük belirtme durumu eki almıştır.", ok: true },
       { text: "II. sözcük iyelik eki almıştır.", ok: false },
@@ -53,9 +53,9 @@ export const TUR_SOZCUK_TURLERI_BILGISI_GEREKTIREN_SOZCUKTE_YAPI_CIKMIS_SORULAR_
     ]
   },
   {
-    text: "<p>Orta Asya ve Sibirya'da eski geleneklere yeniden can <u>veren</u> mistik insanların ayinleri, kitlelerin ilgisini çekiyor... \"Ey engin mavi gökyüzü, battaniyem, lütfen gel bana.\"</p><p><b>Bu parçada aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>Orta Asya ve Sibirya'da eski geleneklere yeniden can veren mistik insanların ayinleri, kitlelerin ilgisini çekiyor. Bu mistiklerden biri olan Nergui'nin sesi inişli çıkışlı, çok çok eskilerin balatları gibi tekrar ediyor: \"Ey engin mavi gökyüzü, battaniyem, lütfen gel bana.\"</p><p><b>Bu parçada aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
-    expl: "Metinde 'veren' (sıfat-fiil), 'geleneklere' (çokluk), 'battaniyem' (iyelik), 'kitlelerin' (tamlayan) ekleri vardır ancak zarf-fiil eki (-arak, -ınca vb.) yoktur.",
+    expl: "Metinde 'veren, olan' (sıfat-fiil), 'geleneklere' (çokluk), 'battaniyem' (iyelik), 'kitlelerin' (tamlayan) ekleri vardır ancak zarf-fiil eki (-arak, -ınca vb.) yoktur.",
     answers: [
       { text: "Zarf-fiil eki", ok: true },
       { text: "Çokluk eki", ok: false },
@@ -65,7 +65,7 @@ export const TUR_SOZCUK_TURLERI_BILGISI_GEREKTIREN_SOZCUKTE_YAPI_CIKMIS_SORULAR_
     ]
   },
   {
-    text: "<p>Bilgisayar teknolojisiyle yetişen kuşaklarda ekrandan kitap okumanın yaratacağı hazzı, bilgisayarla ileriki yaşlarda tanışan insanlar tadamayacaktır.</p><p><b>Bu cümlede aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>Bilgisayar teknolojisiyle yetişen kuşaklarda ekrandan kitap okumanın yaratacağı hazzı, bilgisayarla ileriki yaşlarda tanışan insanlar tadamayacaktır.</p><p><b>Bu cümlede aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
     expl: "Cümlede 'teknolojisi' (iyelik), 'okumanın' (isim-fiil), 'kitap okuma' (belirtisiz ad tamlaması), 'yetişen kuşaklar' (sıfat tamlaması) vardır. Ancak yüklem 'tadamayacaktır' (tat-a-ma-y-acak) geçişli bir fiildir (Neyi tadamayacaktır? Hazzı).",
     answers: [
@@ -77,7 +77,7 @@ export const TUR_SOZCUK_TURLERI_BILGISI_GEREKTIREN_SOZCUKTE_YAPI_CIKMIS_SORULAR_
     ]
   },
   {
-    text: "<p>Duvara bir titiz örümcek gibi, / İnce dertlerimle işledim bir ağ. / Ruhum, gün doğunca sönecek gibi, / Şimdiden hayata ediyor veda.</p><p><b>Bu dizelerde aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>Duvara bir titiz örümcek gibi,<br>İnce dertlerimle işledim bir ağ.<br>Ruhum, gün doğunca sönecek gibi,<br>Şimdiden hayata ediyor veda.</p><p><b>Bu dizelerde aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 2,
     expl: "Dizelerde 'şimdiden' (zaman zarfı), 'gibi' (edat), 'veda etmek' (birleşik eylem), 'bir' (belgisiz sıfat) vardır ancak isim-fiil (-ma, -ış, -mak) yoktur.",
     answers: [
@@ -89,19 +89,19 @@ export const TUR_SOZCUK_TURLERI_BILGISI_GEREKTIREN_SOZCUKTE_YAPI_CIKMIS_SORULAR_
     ]
   },
   {
-    text: "<p>Köprü Sokağı'nın iki tarafında <u>I. güzelliklere</u> kucak <u>II. açacak</u> <u>III. yıllanan</u> <u>IV. meydanlarda</u>, büyüleyici saraylar, kiliseler ve bahçelerden <u>V. oluşan</u> hoş bir dünya saklıdır.</p><p><b>Bu parçadaki altı çizili sözcüklerle ilgili olarak aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p>Köprü Sokağı'nın iki tarafında <u>güzelliklere</u> (I) kucak <u>açacak</u> (II) <u>yıllanan</u> (III) <u>meydanlarda</u> (IV), büyüleyici saraylar, kiliseler ve bahçelerden <u>oluşan</u> (V) hoş bir dünya saklıdır.</p><p><b>Bu parçadaki altı çizili sözcüklerle ilgili olarak aşağıdaki ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
-    expl: "II numaralı 'açacak' sözcüğü bir sıfat-fiildir. 'Meydan' ismini nitelemektedir. Zarf-fiil eki almamıştır.",
+    expl: "V numaralı 'oluşan' sözcüğü 'ol-uş-an' şeklinde sıfat-fiil eki almıştır; 'oluşmak' fiili karşılıklı ya da birlikte yapılan bir eylem bildirmediği için sözcükte işteşlik eki yoktur. Bu nedenle E yanlıştır.",
     answers: [
       { text: "I, hem yapım hem çekim eki almıştır.", ok: false },
-      { text: "II, zarf-fiil eki almıştır.", ok: true },
+      { text: "II, zarf-fiil eki almıştır.", ok: false },
       { text: "III, isim kökünden türemiştir.", ok: false },
       { text: "IV, çoğul eki almıştır.", ok: false },
-      { text: "V, işteşlik eki almıştır.", ok: false }
+      { text: "V, işteşlik eki almıştır.", ok: true }
     ]
   },
   {
-    text: "<p>Her zamanki gibi bir sabahtı. O gün de yandaki taş binanın yüksek tavanlarına ve eskimiş pencerelerinden odaya sızan renk renk ışıklara merhaba demişti.</p><p><b>Bu parçada aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>Her zamanki gibi bir sabahtı. O gün de yandaki taş binanın yüksek tavanlarına ve eskimiş pencerelerinden odaya sızan renk renk ışıklara merhaba demişti.</p><p><b>Bu parçada aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
     expl: "Parçada 'yandaki' (ilgi ekiyle türemiş sıfat), 'renk renk' (ikileme), 'bir' (belgisiz), 'o' (işaret) sıfatları vardır. Sıra sayı sıfatı (birinci, ikinci vb.) yoktur.",
     answers: [
@@ -113,15 +113,15 @@ export const TUR_SOZCUK_TURLERI_BILGISI_GEREKTIREN_SOZCUKTE_YAPI_CIKMIS_SORULAR_
     ]
   },
   {
-    text: "<p>\"Rüyalar gerçekleştirmenin yolu, uyanıvermektir uykulardan.\" demiş bir düşünür. Öyleyse ne duruyoruz, hemen silkinip kalkalım yumuşak yataklarımızdan!</p><p><b>Bu parçada, aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>\"Rüyalar gerçekleştirmenin yolu, uyanıvermektir uykulardan.\" demiş bir düşünür. Öyleyse ne duruyoruz, hemen silkinip kalkalım yumuşak yataklarımızdan!</p><p><b>Bu parçada, aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
-    expl: "Metinde 'uyanıvermek' (tezlik), 'silkinip' (zarf-fiil), 'gerçekleştirmenin' (isim-fiil/sıfat-fiil), 'kalkalım' (istek kipi) vardır. Şimdiki zamanla çekimlenmiş (-yor) bir fiil yoktur.",
+    expl: "Metinde 'uyanıvermek' (tezlik fiili), 'silkinip' (zarf-fiil), 'kalkalım' (istek kipi), 'duruyoruz' (şimdiki zaman) vardır. 'Gerçekleştirmenin' ve 'uyanıvermektir' isim-fiildir; parçada sıfat-fiil yoktur.",
     answers: [
       { text: "Tezlik fiili", ok: false },
       { text: "Zarf-fiil", ok: false },
-      { text: "Sıfat-fiil", ok: false },
+      { text: "Sıfat-fiil", ok: true },
       { text: "İstek kipiyle çekimlenmiş fiil", ok: false },
-      { text: "Şimdiki zamanla çekimlenmiş fiil", ok: true }
+      { text: "Şimdiki zamanla çekimlenmiş fiil", ok: false }
     ]
   }
 ];

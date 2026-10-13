@@ -81,11 +81,11 @@ export const TUR_TAMLAMALAR_TEST_1: McQ[] = [
     diff: 2,
     expl: "A seçeneğindeki \"ağaç mantarı\", ağaçta yetişen bir mantar türüdür. Bu tamlamada tamlayan (ağaç), tamlananın (mantar) çıktığı, yetiştiği yer bilgisini vermektedir. Diğerlerindeki tamlayanlar (misafir, kömür, öğrenci) türe, amaca veya kime özgü olduğuna dair bilgi verir.",
     answers: [
-      { text: "<u>Ağaç mantarı</u>; birçok isimlerle bilinen, doğada yetişebilen ve yenilebilen mantar türlerinden bir tanesidir.", ok: true },
-      { text: "Eskiden bir odamız misafirlere ayrılırdı; sürekli o <u>misafir odası</u> temizlenir, havalandırılırdı.", ok: false },
-      { text: "Karadeniz'in doğasıyla tanışmak için büyük bir tura katılmıştık; <u>kömür sobası</u> etrafındaki sohbeti hâlâ anımsarım.", ok: false },
-      { text: "Üniversiteden mezun olan çoğu genç, otobüse bindiklerinde <u>öğrenci bileti</u> parası verdiği zamanları özlüyor.", ok: false },
-      { text: "<u>Varis çorabı</u>; hastalığın ilerlemesini yavaşlatan ve şikâyetleri hafifleten bir üründür.", ok: false }
+      { text: "Ağaç mantarı; birçok isimlerle bilinen, doğada yetişebilen ve yenilebilen mantar türlerinden bir tanesidir.", ok: true },
+      { text: "Eskiden bir odamız misafirlere ayrılırdı; sürekli o misafir odası temizlenir, havalandırılırdı çünkü ne zaman kimin geleceği belli olmazdı.", ok: false },
+      { text: "Karadeniz'in doğasıyla tanışmak için büyük bir tura katılmıştık; Zigana'ya çıkarken bir kahvehanede, kömür sobası etrafındaki sohbeti hâlâ anımsarım.", ok: false },
+      { text: "Üniversiteden mezun olan çoğu genç, sadece öğrencilik zamanlarını değil, otobüse bindiklerinde öğrenci bileti parası verdiği zamanları özlüyor.", ok: false },
+      { text: "Varis çorabı; hastalığın ilerlemesini yavaşlatan ve yaşanan şikâyetleri hafifleten, tedavi sürecine yardımcı, ek bir üründür.", ok: false }
     ]
   },
   {

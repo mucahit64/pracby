@@ -4,7 +4,7 @@ import type { McQ } from "../../../../types";
 // PARAGRAFA BAĞLI ÇOKLU SORULAR - TEST 1
 // ============================================================================
 const CTX1A =
-  "<p>Bugünün film senaryolarına bakıyorum da gerçek hayatla çok da bağlantısı olmayan, gerçekleşmesi neredeyse imkânsız kurgular üzerine oturtulmuş onlarca konu, kahraman ve mekân görüyorum. O an ne popülerse onu yazan, çizen, çeken, yöneten insanlar topluluğu kol geziyor. Sinema dünyasındaki <u>gündelik kıpırdanışların</u> ürünü olmaktan öte gidemeyen bu ürünlerin yıllar sonra hatırlanmayacak olması da beni derinden etkiliyor. Teknolojik imkânların kullanılması ve farklı yapım tekniklerine yer verilmesi onları birer sanat ürünü hâline getirmeye yetmiyor hiçbir zaman. Sonunda ne mi olacak? Yalnızca insanların beğeni ve beklentilerini karşılayacak, onların o an görmek istediği ve gerçeklerden uzak bu niteliksiz yapıtlar zamanla unutulacak ve sinema dünyasının çöplüğündeki yerini alacak. İşte bu durum üzüyor beni.</p>";
+  "<p>Bugünün film senaryolarına bakıyorum da gerçek hayatla çok da bağlantısı olmayan, gerçekleşmesi neredeyse imkânsız kurgular üzerine oturtulmuş onlarca konu, kahraman ve mekân görüyorum. O an ne popülerse onu yazan, çizen, çeken, yöneten insanlar topluluğu kol geziyor. <u>Sinema dünyasındaki gündelik kıpırdanışların ürünü</u> olmaktan öte gidemeyen bu ürünlerin yıllar sonra hatırlanmayacak olması da beni derinden etkiliyor. Son teknolojik imkânların kullanılması ve farklı yapım tekniklerine yer verilmesi onları birer sanat ürünü hâline getirmeye yetmiyor hiçbir zaman. Sonunda ne mi olacak? Yalnızca insanların beğeni ve beklentilerini karşılayacak, onların o an görmek istediği ve gerçeklerden uzak bu niteliksiz yapıtlar zamanla unutulacak ve sinema dünyasının çöplüğündeki yerini alacak. İşte bu durum üzüyor beni.</p>";
 
 const CTX1B =
   "<p>Kolostrum (ağız sütü); doğumdan hemen sonra ilk 3-5 günde salgılanan, bileşim özellikleri ile yenidoğan bebeğin ilk günlerdeki gereksinimlerini karşılamak açısından büyük önem taşıyan anne sütüdür. Hastalıklardan koruyucu ve bağışıklık sistemini güçlendirici maddeler içerir. Kolostrum 5-10 gün arasında geçiş sütü şeklini alır. Genellikle 3. haftadan sonra anne sütü olgun süt özelliğini taşır. Anne sütünün protein içeriği 100 gramda %0,8-1,2 g arasındadır. Bu sütün enerjisinin yaklaşık yarısı yağlardan gelir. Kolostrumda daha fazla olmak üzere çoklu doymamış yağ asitleri yönünden anne sütünün zengin olması; sinir ve beyin hücrelerinin gelişimi, görme işlevinin daha etkin olması gibi pek çok vücut işlevinde önemli rol oynar.</p>";
@@ -13,13 +13,13 @@ const CTX1C =
   "<p>(I) Tarih bilimi; toplulukların geçmiş yaşantılarını, medeniyet ve kültürlerini, toplumlar arası ilişkileri, zaman ve yer göstererek, neden-sonuç ilişkileri çerçevesinde, yazılı belgelere dayandırarak tarafsız bir şekilde inceleyen bilimdir. (II) Bu bilimin ortaya çıkışındaki en önemli faktörlerden biri, bir olayın neden meydana geldiğini ortaya koymaya çalışmaktır. (III) Tarihî olayların ortaya çıkmasında yaşanan olayın gerçekleştiği bölgenin coğrafi koşullarının etkisi çok büyüktür. (IV) Bu koşulların gerçekleşen olaydaki etkisi göz önünde bulundurulmadan sadece somut kanıtlardan yararlanmak ve birtakım sonuçlara ulaşmak asla mümkün değildir. (V) Bu bakımdan tarih biliminin oluşmasında tarihî olaylar esnasındaki ekolojik etkenler kadar iklimsel etkenlerin de katkısı hiçbir zaman yadsınamaz.</p>";
 
 const CTX1D =
-  "<p>Etrafı ağaçlarla kaplı, mükemmel manzarası olan üç katlı bir dağ evi düşünün. Kış gelmiş ve her yer kara bürünmüş olsun. Dışarıda dondurucu bir soğuk var. Dağ evinin birinci katında bir şair kalıyor. Hemen üst katında bir aile var. Yeni doğmuş bebeklerini sıkıca sarıp sarmalamışlar. Bebek ağlıyor. En üst katta da yeni evli bir çift... Balkona çıkmış sarmaş dolaş doğanın güzelliğini mutlu gözlerle izliyor. Bu hikâyede geçen her birey dağ eviyle ilgili deneyimlerini farklı şekilde dile getirebilir. Şair, hayatının şiirini yazmak için beklediği anın geldiğini, ailenin bireyleri bebeklerinin üşüyüp hasta olacaklarından endişelendiklerini, mutlu çift ise hayatlarının en güzel günlerinden biri olduğunu ifade eder. Bir olgu karşısındaki tutumla insanları ortak noktada buluşturan dondurucu soğuktaki dağ evi ise olgudur. Bu örnek, olgu ile olay arasındaki farkı da ortaya koymaktadır.</p>";
+  "<p>Etrafı ağaçlarla kaplı, mükemmel manzarası olan üç katlı bir dağ evi düşünün. Kış gelmiş ve her yer kara bürünmüş olsun. Dışarıda dondurucu bir soğuk var. Dağ evinin birinci katında bir şair kalıyor. Hemen üst katında bir aile var. Yeni doğmuş bebeklerini sıkıca sarıp sarmalamışlar. Bebek ağlıyor. En üst katta da yeni evli bir çift... Balkona çıkmış sarmaş dolaş doğanın güzelliğini mutlu gözlerle izliyor. Bu hikâyede geçen her birey dağ eviyle ilgili deneyimlerini farklı şekilde dile getirebilir. Şair, hayatının şiirini yazmak için beklediği anın geldiğini, ailenin bireyleri bebeklerinin üşüyüp hasta olacaklarından endişelendiklerini, mutlu çift ise hayatlarının en güzel günlerinden biri olduğunu ifade eder. Bir olgu karşısındaki tutumların her biri olaydır. Onları ortak noktada buluşturan dondurucu soğuktaki dağ evi ise olgudur. Bu örnek, olgu ile olay arasındaki farkı da ortaya koymaktadır.</p>";
 
 const CTX1E =
   "<p>Sosyal hizmet uzmanı; maddi, sosyal ve kültürel yönden sıkıntı yaşayan birey, grup ya da topluluklara tanılar koyarak içlerinde bulundukları problemleri çözmelerinde onlara yardımcı olan kişidir. Bu uzmanlık alanı, toplumsal düzen açısından oldukça önemli bir alandır. Toplumda yardıma muhtaç olan her bir bireyin zaman içerisindeki değişimi ve gelişimi için toplumsal olarak çözüm üretmek, bu sorunların çözülmesi için gerekli kurumlar aracılığı ile çalışmalar yapmak sosyal hizmet uzmanının yükümlülükleri arasında yer alır. Bu nedenle sosyal hizmet uzmanının toplumun refahı, mutluluğu ve düzenini sağlamak açısından ne kadar önemli olduğu <u>su götürmez</u> bir gerçek olarak karşımıza çıkar.</p>";
 
 const CTX1F =
-  "<p>Üniversite sınavlarına hazırlanan öğrenciler arasından seçilen 900 öğrenciye bir araştırma ekibi tarafından hangi bölümü tercih edecekleri sorulmuştur. Araştırma sonucunda katılımcıların %65'i \"Bir üniversite kazanayım da hangi bölüm olursa olsun.\" dediği, %18'inin \"İstediğim bölüm olmazsa tercih yapmam.\" cevabını verdiği, %17'sinin ise \"Henüz kararsızım, alacağım puana göre karar vereceğim.\" tespit edilmiştir. Araştırma sonuçları, meslek seçimi konusunda kararsızlık ve belirsizlik yaşayan %82'lik dilimde yer alan öğrencilere destek olmak adına uzmanların nasıl bir yol haritası çizecekleri konusunda fikir sahibi olmalarını sağlamıştır.</p>";
+  "<p>Üniversite sınavlarına hazırlanan öğrenciler arasından seçilen 900 öğrenciye bir araştırma ekibi tarafından hangi bölümü tercih edecekleri sorulmuştur. Araştırma sonucunda katılımcıların %65'i \"Bir üniversite kazanayım da hangi bölüm olursa olsun.\" dediği, %18'inin \"İstediğim bölüm olmazsa tercih yapmam.\" cevabını verdiği, %17'sinin ise \"Henüz kararsızım, alacağım puana göre karar vereceğim.\" dediği tespit edilmiştir. Araştırma sonuçları, meslek seçimi konusunda kararsızlık ve belirsizlik yaşayan %82'lik dilimde yer alan öğrencilere destek olmak adına uzmanların nasıl bir yol haritası çizecekleri konusunda fikir sahibi olmalarını sağlamıştır.</p>";
 
 export const TUR_PARAGRAF_COKLU_SORULAR_TEST_1: McQ[] = [
   // --- 1. ve 2. Sorular (Senaryo A) ---
@@ -81,7 +81,7 @@ export const TUR_PARAGRAF_COKLU_SORULAR_TEST_1: McQ[] = [
       { text: "Tarihte yaşanan olayların çoğu birbirine benzer sonuçlar doğurur.", ok: false },
       { text: "Tarih biliminde bir olayın sonucu başka bir olayın nedenidir.", ok: false },
       { text: "Yaşanan tarihî olaylarda, coğrafi etkenler ön plandadır.", ok: true },
-      { text: "Tarih bilimi sadece kanıtlanabilir verileri baz almaktadır.", ok: false },
+      { text: "Tarih bilimi sadece kanıtlanabilir verileri baz almak durumundadır.", ok: false },
       { text: "Tarih biliminde tarafsız olabilmenin yolu yalnızca yazılı belgelere bağlılıktır.", ok: false }
     ]
   },
@@ -98,12 +98,12 @@ export const TUR_PARAGRAF_COKLU_SORULAR_TEST_1: McQ[] = [
   {
     text: CTX1D + "<p><b>7. Bu parçadan hareketle olgu, aşağıdakilerin hangisinde doğru tanımlanmıştır?</b></p>",
     diff: 2,
-    expl: "Metindeki dağ evi örneği, olaylar karşısında insanların takındığı genel tavır ve düşünceler bütününü yani 'olgu'yu temsil eder.",
+    expl: "Parçada kişilerin yaşadığı olaylardaki ortak nokta ve verdikleri cevapları ortaya çıkaran temel neden dondurucu soğuktaki dağ evidir; kişilerin tutumlarının her biri ise olaydır. Kişilerin deneyimlerini dile getirmelerini sağlayan durum dağ evi olduğuna göre olgu, birtakım durumların olası sonuçlarını ortaya çıkaran etkendir.",
     answers: [
-      { text: "Yaşananlar karşısında sergilenen tavır ve düşünceler bütünüdür.", ok: true },
+      { text: "Yaşananlar karşısında sergilenen tavır ve düşünceler bütünüdür.", ok: false },
       { text: "Kısa bir süre içinde gerçekleşen durumlardır.", ok: false },
       { text: "İlgi çekebilecek nitelikte olan şeylerdir.", ok: false },
-      { text: "Birtakım durumların olası sonuçlarını ortaya çıkaran etkendir.", ok: false },
+      { text: "Birtakım durumların olası sonuçlarını ortaya çıkaran etkendir.", ok: true },
       { text: "Bireyin gerçekleştirdiği veya gerçekleştirmek istediği eylemlerdir.", ok: false }
     ]
   },
@@ -137,8 +137,8 @@ export const TUR_PARAGRAF_COKLU_SORULAR_TEST_1: McQ[] = [
     diff: 2,
     expl: "'Su götürmez' ifadesi 'kesin, tartışmasız' anlamına gelir. C seçeneğindeki 'katî' sözcüğü bu anlamı karşılar.",
     answers: [
-      { text: "Bazı birleşik sözcükler ayrı yazılmasına karşın anlamsal açıdan ayrılmaz.", ok: false },
-      { text: "Bazı olaylara ve bu olayların oluşum şekillerine subjektif olarak yaklaşmak gerekir.", ok: false },
+      { text: "Bazı birleşik sözcükler ayrı yazılmasına karşın anlamsal açıdan ayrılmaz bir bütün olarak nitelendirilirler.", ok: false },
+      { text: "Bazı olaylara ve bu olayların oluşum şekillerine subjektif olarak da yaklaşmak gerekir.", ok: false },
       { text: "ÖSYM, sınavdaki sorularda hata olmadığını katî bir dille ifade etti.", ok: true },
       { text: "Yapılan kazılarda kesin olmayan bazı sonuçlara ulaşıldı.", ok: false },
       { text: "Meramını açıklarken tartışmaya açık yorumlardan kaçınmalısın.", ok: false }
@@ -158,7 +158,7 @@ export const TUR_PARAGRAF_COKLU_SORULAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: CTX1F + "<p><b>12. Bu parçanın anlatımında; I. açıklama, II. sayısal verilerden yararlanma, III. tartışma yöntemlerinin hangilerinden yararlanılmıştır?</b></p>",
+    text: CTX1F + "<p><b>12. Bu parçanın anlatımında;</b><br>I. açıklama,<br>II. sayısal verilerden yararlanma,<br>III. tartışma<br><b>anlatım biçim ve tekniklerinin hangilerinden yararlanılmıştır?</b></p>",
     diff: 2,
     expl: "Metinde bir araştırma sonucu açıklandığı için (Açıklama) ve %65, %18 gibi veriler kullanıldığı için (Sayısal Veriler) I ve II numaralı yöntemler kullanılmıştır.",
     answers: [
@@ -175,16 +175,16 @@ export const TUR_PARAGRAF_COKLU_SORULAR_TEST_1: McQ[] = [
 // PARAGRAFA BAĞLI ÇOKLU SORULAR - TEST 2
 // ============================================================================
 const CTX2A =
-  "<p>Mitomani, hiçbir şekilde sosyal çıkar gözetmeksizin yalan söyleyen kişilerin yakalandığı hastalığa verilen isimdir. Genel olarak toplum tarafından dışlanmış kişilerde bu hastalık görülür... Yalan söylemeyi alışkanlık hâline getiren mitomanlar, bir süre sonra kontrolü kaybederler. <u>Zihinsel imgelemin doğrusal yansımaları hayatlarına nükseder.</u> Yaşanmamış bir olayı yaşanmış gibi insanlara aktarırlar. İlerleyen zamanlarda ise anlattıkları bu yalanlara kendileri de gerçekmiş gibi inanmaya başlarlar.</p>";
+  "<p>Mitomani, hiçbir şekilde sosyal çıkar gözetmeksizin yalan söyleyen kişilerin yakalandığı hastalığa verilen isimdir. Genel olarak toplum tarafından dışlanmış kişilerde bu hastalık görülür. Bu hastalığa yakalanmış olan kişilere de 'mitoman' ismi verilir. Mitomanlar, toplumda dikkat çekmek ve yer edinmek için çeşitli yalanlar söyler; bu yalanların ortaya çıkmaması için tekrar yalana başvururlar. Bu yalanların devamı gelir ve sonunda işin içinden çıkılmaz bir durum oluşur. Yalan söylemeyi alışkanlık hâline getiren mitomanlar, bir süre sonra kontrolü kaybederler. <u>Zihinsel imgelemin doğrusal yansımaları hayatlarına nükseder.</u> Yaşanmamış bir olayı yaşanmış gibi insanlara aktarırlar. İlerleyen zamanlarda ise anlattıkları bu yalanlara kendileri de gerçekmiş gibi inanmaya başlarlar.</p>";
 
 const CTX2B =
-  "<p>Pfizer-BioNTech tarafından üretilen COVID-19 aşısı, 16 yaş ve üzeri bireylere yapılmak üzere, 11 Aralık 2020'de acil kullanım onayı alan bir aşıdır. BioNTech aşısı mrna (mesajcı rna) tabanlı aşıdır... BioNTech aşısı iki doz olmayı gerektirir ve tam etki için ideal olarak 6-8 hafta arayla iki doz olunur. Lancet'te yayımlanan 2021 tarihli bir araştırmaya göre... İkinci dozun almanın sonunda BioNTech aşısının koruyuculuğu yüzde 95.3 olarak açıklanmıştır.</p>";
+  "<p>Pfizer-BioNTech tarafından üretilen COVID-19 aşısı, 16 yaş ve üzeri bireylere yapılmak üzere, 11 Aralık 2020'de acil kullanım onayı alan bir aşıdır. BioNTech aşısı mrna (mesajcı rna) tabanlı aşıdır. Hücrelerinize koronavirüsün \"spike\" adı verilen proteininin nasıl yapılacağına dair talimatları verir. Bağışıklık sisteminiz bu proteini yabancı olarak algılar ve buna karşı antikorlar da dâhil olmak üzere bir tepki geliştirir. BioNTech aşısı iki doz olmayı gerektirir ve tam etki için ideal olarak 6-8 hafta arayla iki doz olunur. Lancet'te yayımlanan 2021 tarihli bir araştırmaya göre, aşının tek bir dozdan sonra yüzde 85'e kadar yüksek bir etkinlik oranına sahip olduğu belirtilmektedir. İngiltere Halk Sağlığı (PHE), daha önce New England Tıp dergisinde BioNTech aşısının etkinliği üzerine yayınlanmış bir çalışmayı yeniden analiz etmiştir. Bu analize göre, birinci dozdan sonra 15 ilâ 21. günler için ve 21. günde ikinci dozdan önce yüzde 89 etkinlik oranına sahip olduğunu belirlemiştir. İkinci dozu almanın sonunda BioNTech aşısının koruyuculuğu yüzde 95.3 olarak açıklanmıştır.</p>";
 
 const CTX2C =
-  "<p>(I) Bazı insanlar, çevresinde yaşayan ve düşman olarak gördüğü veya kendisine hata yapma potansiyeli olan kişileri eleştirdikleri için kendisinde gerçekten var olan hataların, yanlışlıkların farkına varamayabilir... (III) Her zaman başkaları suçludur o insanların gözünde. (IV) Bu nedenle aynayı kendisine çevirmeyi unutur böyleleri. (V) Kendi hatalarını görmez olur, ruhunun derinliklerinde kalır zayıflıkları. (VI) Bunlar kendini hep sütten çıkmış ak kaşık gibi hisseder ama durum maalesef böyle değildir.</p>";
+  "<p>(I) Bazı insanlar, çevresinde yaşayan ve düşman olarak gördüğü veya kendisine hata yapma potansiyeli olan kişileri eleştirdikleri için kendisinde gerçekten var olan hataların, yanlışlıkların farkına varamayabilir. (II) Sadece kendi doğruları üzerine hayatını şekillendiren bu bireyler, hep başkalarının kusurlarını yargılayacakları için hatayı kendilerinde aramaktan uzaklaşırlar. (III) Her zaman başkaları suçludur o insanların gözünde. (IV) Bu nedenle aynayı kendine çevirmeyi unutur böyleleri. (V) Kendi hatalarını görmez olur, ruhunun derinliklerinde kalır zayıflıkları. (VI) Bunlar kendini hep sütten çıkmış ak kaşık gibi hisseder ama durum maalesef böyle değildir.</p>";
 
 const CTX2D =
-  "<p>Osmanlı Devleti, Rumeli'de fetihler yapmaya başladıktan sonra Anadolu'dan bu bölgeye iskâna başlamıştır. (I) Zamanla genişleyen toprakların korunma ihtiyacı doğmuştur. (II) Bu sebeple yardımcı birlikler oluşturulmaya hız verilmiştir... (V) Bu oluşuma verilen \"Deli\" adı; aklını kaybetmiş, mecnun gibi anlamlara gelse de buradaki asıl manası; gözünü budaktan sakınmayan, ordunun en ön safında çarpışan, düşmanın üzerine vahşi haykırışlarla saldırarak onları korkutan heybetli askerdir...</p>";
+  "<p>Osmanlı Devleti, Rumeli'de fetihler yapmaya başladıktan sonra Anadolu'dan bu bölgeye iskâna başlamıştır. (I) Zamanla genişleyen toprakların korunma ihtiyacı doğmuştur. (II) Bu sebeple yardımcı birlikler oluşturulmaya hız verilmiştir. (III) Düşman topraklarına sızmak, istihbarat ve sınır güvenliği gibi faaliyetleri yürütebilmek için önce Akıncılar gibi cesur birlikler meydana getirilmiştir. (IV) 14. yüzyılın sonlarına gelindiğinde ise \"Deliler\" adıyla yeni bir askerî oluşum ihtiyacı baş göstermiştir. (V) Bu oluşuma verilen \"Deli\" adı; aklını kaybetmiş, mecnun gibi anlamlara gelse de buradaki asıl manası; gözünü budaktan sakınmayan, ordunun en ön safında çarpışan, düşmanın üzerine vahşi haykırışlarla saldırarak onları korkutan heybetli askerdir. (VI) Bu askerî birlikler; Rumeli topraklarında, Rumeli Beylerbeyleri veya Sancakbeylerinin komutasında görev almaktaydı. (VII) Barış zamanlarında bağlı bulundukları beylere yönelik herhangi bir suikast hareketine karşı onların güvenliğinden, kale muhafızlığından ve kendi dairelerinden sorumluydu. (VIII) Savaş zamanında ise ordunun en ön safında yer alırdı.</p>";
 
 export const TUR_PARAGRAF_COKLU_SORULAR_TEST_2: McQ[] = [
   // --- SENARYO 1 (1-3) ---
@@ -221,7 +221,7 @@ export const TUR_PARAGRAF_COKLU_SORULAR_TEST_2: McQ[] = [
       { text: "Sosyal hayatta belli bir konumda olmayı amaçlarlar.", ok: false },
       { text: "Söyledikleri yalanların birçoğu, bir yenisini ortaya çıkarır.", ok: false },
       { text: "Hayal güçleri gelişmiş, sosyal insanlardır.", ok: true },
-      { text: "Mitomanlar, söyledikleri yalanı bir süre sonra kanıksarlar.", ok: false }
+      { text: "Mitomanlar, söyledikleri yalanı bir süre sonra kanıksar.", ok: false }
     ],
   },
   // --- SENARYO 2 (4-6) ---
@@ -289,12 +289,12 @@ export const TUR_PARAGRAF_COKLU_SORULAR_TEST_2: McQ[] = [
   {
     text: CTX2C + "<p><b>9. Bu parçadaki numaralanmış cümlelerden hangileri kendinden sonraki durumun gerekçesidir?</b></p>",
     diff: 3,
-    expl: "III. cümledeki başkalarını suçlama durumu, IV. cümledeki aynayı kendine çevirmeyi unutmanın gerekçesidir. Benzer şekilde V. cümledeki zayıflıkların derinlerde kalması da sonucun gerekçesidir.",
+    expl: "IV. cümlede insanın aynayı kendine çevirmeyi unuttuğu ifade edilmiş, bunun gerekçesi ise III. cümlede her zaman başkalarının suçlu olduğu düşüncesini benimsemek olarak verilmiştir. VI. cümlede kişinin kendini sütten çıkmış ak kaşık gibi hissetmesinin gerekçesi de V. cümlede kişinin kendi hatalarını görmez olmasıdır. Bu nedenle III ve V numaralı cümleler kendinden sonraki durumun gerekçesidir.",
     answers: [
       { text: "II ve IV", ok: false },
       { text: "II ve V", ok: false },
-      { text: "III ve IV", ok: true },
-      { text: "III ve V", ok: false },
+      { text: "III ve IV", ok: false },
+      { text: "III ve V", ok: true },
       { text: "IV ve V", ok: false }
     ],
   },
@@ -347,10 +347,13 @@ const CTX3B =
   "<p>Kubat, 1974’te Belçika Antwerpen’de dünyaya geldi. İlk ve ortaöğrenimini Antwerpen’de tamamladı. Kubat’ın müziğe olan yeteneği, 5. doğum gününde babasının ona hediye ettiği cura ile ortaya çıktı. 8 yaşında sahnede mikrofonla tanıştı. Daha sonra aldığı klasik gitar ve solfej eğitimi ile müzik kariyerine yön verdi. Güçlü sesi ve özgün yorumuyla adından söz ettirmeye başlayan Kubat, 1995 yılında İstanbul’a gelerek kendi adını taşıyan ilk albümünü çıkardı. <u>Gönlünden geçenle diline düşenin bir olmadığı</u> sanatçıların aksine Kubat, eserlerini yüreğinden çıkan seslermişçesine okudu. Batı müziği eğitimi almasına rağmen Türk halk müziğine olan sevdasını modern bir yorumla birleştiren Kubat, bu mirası korumanın yanı sıra özgün çalışmalarıyla da gençleri peşinden sürüklemeyi başardı.</p>";
 
 const CTX3C =
-  "<p>(I) Sefiller, Victor Hugo tarafından yazılan ve 19. yüzyılın en popüler eserlerinden biri olarak kabul edilen tarihî romandır. (II) İngilizce konuşulan ülkelerde yapılan başarısız çeviriler yüzünden çoğunlukla Fransızca ismi olan Les Misérables ile anılır. (III) Hikâye 1815'te başlar ve 1832'deki Paris Haziran Ayaklanması'nda son bulur. (IV) Birkaç karakterin yaşamını ve birbirleriyle alakasını anlatan roman daha çok eski mahkûm Jean Valjean’ın kendi kefaretini ödemek için verdiği yaşam mücadelesine odaklanır. (V) Yasanın ve merhametin doğasının incelendiği romanda ayrıca Fransa tarihi, mimarisi ve kentsel tasarımı, siyaset, ahlak felsefesi, antimonarşizm, adalet, din; ailevi ve romantik sevginin türleri ve doğası gibi konular anlaşılır bir dille ve özenle ele alınır. (VI) Sefiller, aralarında bir müzikal ve müzikalden uyarlanan bir filmin de bulunduğu birçok tiyatro, televizyon ve sinema eserine uyarlanarak büyük popülarite elde etmiştir.</p>";
+  "<p>(I) Sefiller, Victor Hugo tarafından yazılan ve 19. yüzyılın en popüler eserlerinden biri olarak kabul edilen tarihî romandır. (II) İngilizce konuşulan ülkelerde yapılan başarısız çeviriler yüzünden çoğunlukla Fransızca ismi olan Les Misérables ile anılır. (III) Hikâye 1815'te başlar ve 1832'deki Paris Haziran Ayaklanması'nda son bulur. (IV) Birkaç karakterin yaşamını ve birbirleriyle alakasını anlatan roman daha çok eski mahkûm Jean Valjean’ın kendi kefaretini ödemek için verdiği yaşam mücadelesine odaklanır. (V) Yasanın ve merhametin doğasının incelendiği romanda ayrıca Fransa tarihi, Paris'in mimarisi ve kentsel tasarımı, siyaset, ahlak felsefesi, antimonarşizm, adalet, din; ailevi ve romantik sevginin türleri ve doğası gibi konular anlaşılır bir dille ve özenle ele alınır. (VI) Sefiller, aralarında bir müzikal ve müzikalden uyarlanan bir filmin de bulunduğu birçok tiyatro, televizyon ve sinema eserine uyarlanarak büyük popülarite elde etmiştir.</p>";
 
 const CTX3D =
   "<p>Son zamanlarda denizlerimizde görülen ve hem görüntüsü hem de etkileri yönüyle kaygı uyandıran müsilaj (deniz salyası), hemen hemen tüm bitkiler ve bazı mikroorganizmalar tarafından üretilen kalın, yapışkan bir maddedir. Sümüksü yapıya sahip olan müsilaj, deniz sıcaklığının yükselmesi ile artan bakteriler sonucunda oluşur. Ayrıca çevre kirliliğinin denizlere yansıması, denizlerdeki kirliliğin ve atıkların çoğalması deniz salyasının oluşmasındaki en önemli etkenlerden biridir. Ayrıca suyun çok uzun süre durgun olması da diğer oluşum faktörlerinden biridir. Denizlerdeki müsilaj özellikle balıkçıların kabusudur. Balıkçı ağlarına yapışan müsilaj, onların avlanmasını zorlaştırır. Oluşan kötü görünüm, ülke ekonomisine ve turizmine büyük zararlar verir. Deniz canlılarının beslenme, üreme ve göç etme faaliyetlerini olumsuz etkiler. Bitkilerdeki müsilaj ise su ve gıdanın depolanmasında, tohumun çimlenmesinde ve zar kalınlaşmasında rol oynar. Kaktüsler, sukulentler ve keten tohumları zengin müsilaj kaynaklarıdır.</p>";
+
+const CTX3E =
+  "<p>İdealizm, tinsel güçlerin evrendeki tüm süreçleri ya da olup bitenleri belirlediğini savunan tüm felsefe öğretilerini içerecek biçimde kullanılan terimdir. Var olan her şeyi \"düşünce\"ye bağlayıp ondan türeyen; düşünce dışında nesnel bir gerçekliğin var olmadığını, başka bir deyişle düşünceden bağımsız bir varlığın ya da maddi gerçekliğin bulunmadığını dile getiren felsefe akımını niteler. İdealizm, varlığın düşünceden bağımsız olarak var olduğunu kabul eden \"gerçekçilik\", \"maddecilik\" ve \"doğalcılık\" felsefe anlayışlarının tam karşı kutbunda yer almaktadır. İdealistler; doğadaki şeyleri ya da nesneleri, her şeyin özünü oluşturan tek bir gücün ya da enerjinin geçici görünümleri olarak görür. Varoluşu tek bir birlik olarak algılar. Aklın sağladıklarının dışında gerçekliğe ulaşmanın olanaksız olduğunu öne sürer. Gerçekliği \"idea\" olarak belirleyip maddeyi bunun bir yansıması sayar.</p>";
 
 export const TUR_PARAGRAFA_BAGLI_COKLU_SORULAR_TEST_3: McQ[] = [
   // --- SENARYO 1 (1-2) ---
@@ -392,7 +395,7 @@ export const TUR_PARAGRAFA_BAGLI_COKLU_SORULAR_TEST_3: McQ[] = [
     ],
   },
   {
-    text: CTX3B + "<p><b>4. Bu parçadan hareketle Kubat ile ilgili aşağıdaki-lerden hangisi <u>söylenemez</u>?</b></p>",
+    text: CTX3B + "<p><b>4. Bu parçadan hareketle Kubat ile ilgili aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
     diff: 2,
     expl: "Parçada Kubat'ın cura, gitar, solfej ve Batı müziği eğitimi aldığı belirtilmiştir ancak 'farklı müzik türlerinde (pop, rock vb.) ürünler verdiği'ne dair bir bilgi yoktur.",
     answers: [
@@ -405,7 +408,7 @@ export const TUR_PARAGRAFA_BAGLI_COKLU_SORULAR_TEST_3: McQ[] = [
   },
   // --- SENARYO 3 (5-6) ---
   {
-    text: CTX3C + "<p><b>5. Bu parçada Sefiller adlı romanla ilgili aşağıdaki-lerden hangisine <u>değinilmemiştir</u>?</b></p>",
+    text: CTX3C + "<p><b>5. Bu parçada Sefiller adlı romanla ilgili aşağıdakilerden hangisine <u>değinilmemiştir</u>?</b></p>",
     diff: 2,
     expl: "Parçada romanın içeriği, anılma nedenleri, yazarı ve uyarlamalarından bahsedilmiştir. Ancak 'yayımlandığı dönemin en önemli eseri' olduğu değil, 'en popüler eserlerinden biri' olduğu söylenmiştir.",
     answers: [
@@ -427,7 +430,7 @@ export const TUR_PARAGRAFA_BAGLI_COKLU_SORULAR_TEST_3: McQ[] = [
   },
   // --- SENARYO 4 (7-8) ---
   {
-    text: "<p>İdealizm, tinsel güçlerin evrendeki tüm süreçleri ya da olup bitenleri belirlediğini savunan tüm felsefe öğretilerini içerecek biçimde kullanılan terimdir... Gerçekliği \"idea\" olarak belirleyip maddeyi bunun bir yansıması sayar.</p><p><b>7. Bu parçaya göre idealizm ile ilgili aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
+    text: CTX3E + "<p><b>7. Bu parçaya göre idealizm ile ilgili aşağıdakilerden hangisi <u>söylenemez</u>?</b></p>",
     diff: 3,
     expl: "İdealizm belirli felsefi görüşlere (materyalizm, realizm vb.) karşıttır ancak 'tüm felsefi düşüncelerin birleşimi' olduğu bilgisi yanlıştır.",
     answers: [
@@ -439,7 +442,7 @@ export const TUR_PARAGRAFA_BAGLI_COKLU_SORULAR_TEST_3: McQ[] = [
     ],
   },
   {
-    text: "<p>İdealizm, tinsel güçlerin evrendeki tüm süreçleri... sayar.</p><p><b>8. Bu parçanın anlatımında aşağıdakilerden hangisi ağır basmaktadır?</b></p>",
+    text: CTX3E + "<p><b>8. Bu parçanın anlatımında aşağıdakilerden hangisi ağır basmaktadır?</b></p>",
     diff: 2,
     expl: "Metnin genelinde idealizm kavramı hakkında bilgi verildiği ve bir kavram açıklandığı için anlatım biçimi 'Açıklama'dır.",
     answers: [
