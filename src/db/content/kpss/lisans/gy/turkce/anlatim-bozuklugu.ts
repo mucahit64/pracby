@@ -92,7 +92,7 @@ export const TUR_ANLATIM_BOZUKLUGU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>9. Aşağıdaki cümlelerin hangisindeki altı çizili sözcüğün çıkarılması anlatım bozukluğuna yol <u>açmaz</u>?</b></p>",
+    text: "<p><b>Aşağıdaki cümlelerin hangisindeki altı çizili sözcüğün çıkarılması anlatım bozukluğuna yol <u>açmaz</u>?</b></p>",
     diff: 2,
     expl: "A seçeneğindeki 'süreyle' sözcüğü gereksizdir. 'Beş saat görüştüler' ifadesi zaten süreyi belirtir.",
     answers: [

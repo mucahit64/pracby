@@ -130,11 +130,11 @@ export const TUR_SOZCUKTE_YAPI_TEST_1: McQ[] = [
     diff: 3,
     expl: "A (bilin-ir), B (bulun-ur), C (yararlanıl-ır), E (fark edil-ir) seçeneklerinde fiilden isim (sıfat-fiil) yapım eki olarak kullanılmıştır. D seçeneğindeki 'gideriyor' sözcüğünde ise 'git-er' (fiilden fiil) yapım ekidir.",
     answers: [
-      { text: "Lezzetli yemekleri ve eşsiz atmosferiyle şehirdeki <u>bilinir</u> restoranlar, turistler arasında oldukça popülerdir.", ok: false },
-      { text: "Antik kalıntılarla dolu bu ormanda, zor <u>bulunur</u> bitkiler ve hayvan türleri keşfedilmeyi bekliyor.", ok: false },
-      { text: "Eski el yazmaları, tarihin derinliklerine inmek için sıkça <u>yararlanılır</u> kaynaklar arasında yerini alır.", ok: false },
-      { text: "Her ay ana baba ocağına gidip onlarla hem hasret <u>gideriyor</u> hem de ruhumu dinleyebiliyordum.", ok: true },
-      { text: "Projede yapılan küçük bir dikkatsizlik, raporun sonunda fark <u>edilir</u> bir hata olarak ortaya çıktı.", ok: false }
+      { text: "Lezzetli yemekleri ve eşsiz atmosferiyle şehirdeki bilinir restoranlar, turistler arasında oldukça popülerdir.", ok: false },
+      { text: "Antik kalıntılarla dolu bu ormanda, zor bulunur bitkiler ve hayvan türleri keşfedilmeyi bekliyor.", ok: false },
+      { text: "Eski el yazmaları, tarihin derinliklerine inmek için sıkça yararlanılır kaynaklar arasında yerini alır.", ok: false },
+      { text: "Her ay ana baba ocağına gidip onlarla hem hasret gideriyor hem de ruhumu dinleyebiliyordum.", ok: true },
+      { text: "Projede yapılan küçük bir dikkatsizlik, raporun sonunda fark edilir bir hata olarak ortaya çıktı.", ok: false }
     ]
   },
   {
