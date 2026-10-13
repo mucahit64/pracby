@@ -89,7 +89,7 @@
                 class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-extrabold shrink-0"
                 :class="getMcLetterClass(option.id)"
               >{{ optionLetters[i] }}</span>
-              <span class="text-sm font-bold flex-1">{{ option.answer_text }}</span>
+              <span class="text-sm font-bold flex-1" v-html="sanitizeHtml(option.answer_text)"/>
             </button>
           </div>
         </template>

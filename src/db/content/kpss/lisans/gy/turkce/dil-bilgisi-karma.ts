@@ -555,11 +555,11 @@ export const TUR_DIL_BILGISI_KARMA_TEST_4: McQ[] = [
     diff: 3,
     expl: "D seçeneğinde geçen fiiller basit veya türemiş yapılıdır, birleşik fiil (yardımcı eylem, deyimleşmiş veya kurallı birleşik) yoktur. Diğerlerinde 'yer etmedi', 'mutlu et', 'terk etmedi', 'memnun etmedi' birleşik fiillerdir.",
     answers: [
-      { text: "Girmem, girmedim mangalara / Yer etmedi adalet duygusu içimde benim.", ok: false },
-      { text: "Hayat, acıya değmez. / Sen mutlu et kendini.", ok: false },
-      { text: "Terk etmedi sevdan beni / Aç kaldım, susuz kaldım.", ok: false },
-      { text: "Başkalarının aşkıyla başlıyor / hayatımız, düşünceleriyle değil.", ok: true },
-      { text: "Kimseyi memnun etmedi oysa / Apansız bırakıp gidişin.", ok: false }
+      { text: "Girmem, girmedim mangalara<br>Yer etmedi adalet duygusu içimde benim.", ok: false },
+      { text: "Hayat, acıya değmez.<br>Sen mutlu et kendini.", ok: false },
+      { text: "Terk etmedi sevdan beni<br>Aç kaldım, susuz kaldım.", ok: false },
+      { text: "Başkalarının aşkıyla başlıyor<br>hayatımız, düşünceleriyle değil.", ok: true },
+      { text: "Kimseyi memnun etmedi oysa<br>Apansız bırakıp gidişin.", ok: false }
     ]
   },
   {

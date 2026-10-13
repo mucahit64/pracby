@@ -71,9 +71,9 @@ export const TUR_SIFAT_TEST_1: McQ[] = [
     answers: [
       { text: "Gözümde bir damla su deniz olup taşıyor, Çöllerde kalmış gibi yanıyor, yanıyorum.", ok: false },
       { text: "Bütün gemicilerin ruhu bende yaşıyor; Başımdaki gökleri bir deniz sanıyorum.", ok: false },
-      { text: "Nasıl yaşayacağım ey deniz, senden uzak? / Yanıp sönüyor gibi gözlerimde fenerin!", ok: true },
-      { text: "Uyuyor mu limanda her gece sallanarak / Altından çivilerle çakılmış gemilerin?", ok: false },
-      { text: "Sevmiyorum suyunda yıkanmamış rüzgârı; / Dalgaların gözümce tütüyor mavi, yeşil...", ok: false }
+      { text: "Nasıl yaşayacağım ey deniz, senden uzak?<br>Yanıp sönüyor gibi gözlerimde fenerin!", ok: true },
+      { text: "Uyuyor mu limanda her gece sallanarak<br>Altından çivilerle çakılmış gemilerin?", ok: false },
+      { text: "Sevmiyorum suyunda yıkanmamış rüzgârı;<br>Dalgaların gözümce tütüyor mavi, yeşil...", ok: false }
     ]
   },
   {

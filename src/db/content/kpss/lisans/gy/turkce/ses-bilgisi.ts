@@ -615,11 +615,11 @@ export const TUR_SES_BILGISI_TEST_4: McQ[] = [
     diff: 3,
     expl: "E'deki dizelerde 'sana' sözcüğünde kökte ünlü değişimi, 'git-en > giden' sözcüğünde ünsüz yumuşaması görülmektedir. A'da 'bulmaktan ve sevmekten' sözcüklerinde yalnızca ünsüz benzeşmesi, B'de 'tattım' sözcüğünde ünsüz benzeşmesi, C'de 'yüreğime' sözcüğünde ünsüz yumuşaması, D'de 'serinliyordu' sözcüğünde ünlü daralması vardır.",
     answers: [
-      { text: "Seni bulmaktan önce aramak isterim. / Seni sevmekten önce anlamak isterim.", ok: false },
-      { text: "Toprakların en bereketlisini sende sürdüm, / Senden tattım yemişlerin cümlesini.", ok: false },
-      { text: "Şaşırmış kalmışım birdenbire çaresiz. / Dökülmüş yüreğime gökyüzünden yıldızlar.", ok: false },
-      { text: "Gökler bulutlanıyor, rüzgâr serinliyordu. / Serpilmeye başladı bir yağmur ince ince.", ok: false },
-      { text: "Biliyorum sana giden yollar kapalı. / Üstelik sen de hiçbir zaman sevmedin beni.", ok: true }
+      { text: "Seni bulmaktan önce aramak isterim.<br>Seni sevmekten önce anlamak isterim.", ok: false },
+      { text: "Toprakların en bereketlisini sende sürdüm,<br>Senden tattım yemişlerin cümlesini.", ok: false },
+      { text: "Şaşırmış kalmışım birdenbire çaresiz.<br>Dökülmüş yüreğime gökyüzünden yıldızlar.", ok: false },
+      { text: "Gökler bulutlanıyor, rüzgâr serinliyordu.<br>Serpilmeye başladı bir yağmur ince ince.", ok: false },
+      { text: "Biliyorum sana giden yollar kapalı.<br>Üstelik sen de hiçbir zaman sevmedin beni.", ok: true }
     ]
   }
 ];

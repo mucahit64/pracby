@@ -117,11 +117,11 @@ export const TUR_ZAMIR_TEST_1: McQ[] = [
     diff: 3,
     expl: "Turgut Uyar'ın şiirinde 'sen/ben' (kişi zamiri), 'nereye' (soru zamiri) ve 'oraya' (işaret zamiri) vardır. B seçeneğindeki 'Ben nerede bir çift göz gördümse / Tuttum onu...' dizelerinde 'ben' (kişi zamiri), 'nerede' (soru zamiri) ve 'onu' (işaret zamiri) olarak üç tür de mevcuttur.",
     answers: [
-      { text: "Bir bir denemişim bütün kelimeleri, / Yeni sözler buldum seni görmeyeli.", ok: false },
-      { text: "Ben nerede bir çift göz gördümse / Tuttum onu, güzelce sana tamamladım.", ok: true },
-      { text: "Öyle büyümüş ki içimizdeki yalnızlık, / Sevilmeyi beklerken beklemeyi sevmişiz.", ok: false },
-      { text: "Kapanan evin kapısı değil, / Senin kapın olsun açılan.", ok: false },
-      { text: "Kuşlar toplanmışlar göçüyorlar, / Keşke yalnız bunun için sevseydim seni.", ok: false }
+      { text: "Bir bir denemişim bütün kelimeleri,<br>Yeni sözler buldum seni görmeyeli.", ok: false },
+      { text: "Ben nerede bir çift göz gördümse<br>Tuttum onu, güzelce sana tamamladım.", ok: true },
+      { text: "Öyle büyümüş ki içimizdeki yalnızlık,<br>Sevilmeyi beklerken beklemeyi sevmişiz.", ok: false },
+      { text: "Kapanan evin kapısı değil,<br>Senin kapın olsun açılan.", ok: false },
+      { text: "Kuşlar toplanmışlar göçüyorlar,<br>Keşke yalnız bunun için sevseydim seni.", ok: false }
     ]
   },
   {

@@ -417,11 +417,11 @@ export const TUR_SOZCUKTE_ANLAM_TEST_3: McQ[] = [
     diff: 2,
     expl: "B seçeneğindeki 'ağlayan sular' ifadesinde, insana ait olan ağlama eylemi doğadaki suya aktarılarak kişileştirme/deyim aktarması yapılmıştır.",
     answers: [
-      { text: "Ela gözlerini sevdiğim dilber / Ben güzel görmedim senden ziyade.", ok: false },
-      { text: "Bilsen bana neler hatırlatıyor / Bu ölmüş sulara ağlayan sular.", ok: true },
-      { text: "Kapalı avucunda sen neyi saklıyorsun / Kelebek kovalayan hâlâ dünkü çocuksun", ok: false },
-      { text: "Namluna dayanır, yola dalarsın / Duruşun, bakışın yaman be Ali!", ok: false },
-      { text: "Yokuşu yine benim bitmeyen yokuşların / Acısını ben duyarım aşklardan kopuşların", ok: false }
+      { text: "Ela gözlerini sevdiğim dilber<br>Ben güzel görmedim senden ziyade.", ok: false },
+      { text: "Bilsen bana neler hatırlatıyor<br>Bu ölmüş sulara ağlayan sular.", ok: true },
+      { text: "Kapalı avucunda sen neyi saklıyorsun<br>Kelebek kovalayan hâlâ dünkü çocuksun", ok: false },
+      { text: "Namluna dayanır, yola dalarsın<br>Duruşun, bakışın yaman be Ali!", ok: false },
+      { text: "Yokuşu yine benim bitmeyen yokuşların<br>Acısını ben duyarım aşklardan kopuşların", ok: false }
     ]
   },
   {

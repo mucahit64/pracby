@@ -106,11 +106,11 @@ export const TUR_SOZCUKTE_YAPI_TEST_1: McQ[] = [
     diff: 3,
     expl: "'tutukluğunda' sözcüğü tut-uk-luk (iki yapım eki) ve -un-da (iyelik ve bulunma: iki çekim eki) almıştır. Her iki koşulu da sağlar.",
     answers: [
-      { text: "<u>Uçurumdan</u> sana bir el uzarken / İttiğin yanına kalır sanma", ok: false },
-      { text: "Bir kalp <u>çarpıntısı</u> gitmek bilmeyen / Sana nasıl anlatayım bilmem ki", ok: false },
-      { text: "Kara gözlüm unutturdu kendini / Ardından <u>dökmedik</u> yaş bırakmadı", ok: false },
-      { text: "Yalnızlık kendi <u>tutukluğunda</u> özgür / Boyuna bekler dönsün diye", ok: true },
-      { text: "Dili çözülüyor <u>gecelerin</u> / Gölgeler kaçışıyor derine", ok: false }
+      { text: "<u>Uçurumdan</u> sana bir el uzarken<br>İttiğin yanına kalır sanma", ok: false },
+      { text: "Bir kalp <u>çarpıntısı</u> gitmek bilmeyen<br>Sana nasıl anlatayım bilmem ki", ok: false },
+      { text: "Kara gözlüm unutturdu kendini<br>Ardından <u>dökmedik</u> yaş bırakmadı", ok: false },
+      { text: "Yalnızlık kendi <u>tutukluğunda</u> özgür<br>Boyuna bekler dönsün diye", ok: true },
+      { text: "Dili çözülüyor <u>gecelerin</u><br>Gölgeler kaçışıyor derine", ok: false }
     ]
   },
   {
@@ -928,11 +928,11 @@ export const TUR_SOZCUKTE_YAPI_TEST_6: McQ[] = [
     diff: 3,
     expl: "I: Yaslı (yas isminden sıfat türetmiş). II: gürler (gür yansımasından fiil türetmiş). III: Sevgin (sevmek fiilinden sevgi ismini türetmiş).",
     answers: [
-      { text: "Geceler <u>uzun</u>, geceler korkulu / Ümitler savrulmada <u>köpük</u> köpük / <u>Zamanı</u> unutuyor insanoğlu", ok: false },
-      { text: "<u>Yaslı</u> bir kışa rehin düşse günler / İçimdeki fırtına sessizce <u>gürler</u> / <u>Sevgin</u> daima içimde bu duyguyu gizler", ok: true },
-      { text: "Düşler rıhtımında <u>sevecen</u> kuşlar / Pembe şafaklara yelken <u>açıyor</u> / Billûr kadehlerde renklenen <u>düşler</u>", ok: false },
-      { text: "Kuşlar vardır, cana <u>benzer</u> havalarda / <u>Soğuksa</u> kar, baharsa yaprak / Bir başına <u>büyür</u> toprakta ömrümüz", ok: false },
-      { text: "Seni <u>görmediğim</u> günler büyüyor gözümde / Bir çocuk ağlaması <u>başlıyor</u> kulaklarımda / <u>Ellerim</u> bir yerlere yapışıyor, kurtaramıyorum", ok: false }
+      { text: "Geceler <u>uzun</u>, geceler korkulu<br>Ümitler savrulmada <u>köpük</u> köpük<br><u>Zamanı</u> unutuyor insanoğlu", ok: false },
+      { text: "<u>Yaslı</u> bir kışa rehin düşse günler<br>İçimdeki fırtına sessizce <u>gürler</u><br><u>Sevgin</u> daima içimde bu duyguyu gizler", ok: true },
+      { text: "Düşler rıhtımında <u>sevecen</u> kuşlar<br>Pembe şafaklara yelken <u>açıyor</u><br>Billûr kadehlerde renklenen <u>düşler</u>", ok: false },
+      { text: "Kuşlar vardır, cana <u>benzer</u> havalarda<br><u>Soğuksa</u> kar, baharsa yaprak<br>Bir başına <u>büyür</u> toprakta ömrümüz", ok: false },
+      { text: "Seni <u>görmediğim</u> günler büyüyor gözümde<br>Bir çocuk ağlaması <u>başlıyor</u> kulaklarımda<br><u>Ellerim</u> bir yerlere yapışıyor, kurtaramıyorum", ok: false }
     ]
   },
   {
@@ -1204,11 +1204,11 @@ export const TUR_SOZCUKTE_YAPI_TEST_8: McQ[] = [
     diff: 3,
     expl: "B seçeneğindeki 'yıllardır' sözcüğünde '-dır' eki yüklem yapma (bildirme) işlevinde değil, süre bildirerek sözcüğü zarf yapma işlevindedir. Diğer seçeneklerdeki 'tilkidir, yumaktır', 'yanıktır, şifasızdır', 'neferdir', 'yoldaşımdır' sözcüklerinde ise ek, isim soylu sözcükleri yüklem yapan bildirme ekidir.",
     answers: [
-      { text: "Ufuk bir tilkidir, kaçak ve kurnaz / Yollar bir yumaktır, uzun dolaşık", ok: false },
-      { text: "Yıllardır kaybettim o tatlı sesi / Bir türlü içimde ötmez o bülbül", ok: true },
-      { text: "Ruhum ki yanıktır ve şifasızdır ezelden / Sormak dilesem, bir kara mendil neme yetmez?", ok: false },
-      { text: "Bir neferdir bu zafer mabedinin mimarı / Ulu mabet! Seni ancak bu sabah anlıyorum.", ok: false },
-      { text: "Bana yadigârın kaldı âlemde / Kırılmış bir ney ki son yoldaşımdır!", ok: false }
+      { text: "Ufuk bir tilkidir, kaçak ve kurnaz<br>Yollar bir yumaktır, uzun dolaşık", ok: false },
+      { text: "Yıllardır kaybettim o tatlı sesi<br>Bir türlü içimde ötmez o bülbül", ok: true },
+      { text: "Ruhum ki yanıktır ve şifasızdır ezelden<br>Sormak dilesem, bir kara mendil neme yetmez?", ok: false },
+      { text: "Bir neferdir bu zafer mabedinin mimarı<br>Ulu mabet! Seni ancak bu sabah anlıyorum.", ok: false },
+      { text: "Bana yadigârın kaldı âlemde<br>Kırılmış bir ney ki son yoldaşımdır!", ok: false }
     ]
   },
   {

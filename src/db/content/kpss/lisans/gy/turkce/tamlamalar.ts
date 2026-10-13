@@ -9,11 +9,11 @@ export const TUR_TAMLAMALAR_TEST_1: McQ[] = [
     diff: 2,
     expl: "A seçeneğindeki \"ipek gibi bir kar\" ifadesinde \"ipek gibi\" edat grubu sıfat görevinde olup \"kar\" ismini nitelemiştir. Yani \"kar\" sözcüğü sıfat tamlamasının tamlananıdır (unsurudur). Diğer seçeneklerde \"kar\" sözcüğü isim tamlamasının unsurudur (kızakların kar-ı, kar sesi-dir, kar yağış-ı-ndan, kar gecesi).",
     answers: [
-      { text: "İpek gibi bir kar yağdı üzerime / Bir kız gitti ipeğin üzerinden", ok: true },
-      { text: "Çıngırakların, kızakların karı / Yağdı her şeyin üstüne sessizce", ok: false },
-      { text: "Bin yıldan uzun bir gecenin bestesidir bu / Bin yıl sürecek zannedilen kar sesidir bu", ok: false },
-      { text: "Ey aşkı bilen, geçmedi üşümem! / Ben bir aşkın kar yağışından geliyorum.", ok: false },
-      { text: "Kar gecesi uyandırır tüm korkuları / Yalnızlık bir samanyoludur genişler.", ok: false }
+      { text: "İpek gibi bir kar yağdı üzerime<br>Bir kız gitti ipeğin üzerinden", ok: true },
+      { text: "Çıngırakların, kızakların karı<br>Yağdı her şeyin üstüne sessizce", ok: false },
+      { text: "Bin yıldan uzun bir gecenin bestesidir bu<br>Bin yıl sürecek zannedilen kar sesidir bu", ok: false },
+      { text: "Ey aşkı bilen, geçmedi üşümem!<br>Ben bir aşkın kar yağışından geliyorum.", ok: false },
+      { text: "Kar gecesi uyandırır tüm korkuları<br>Yalnızlık bir samanyoludur genişler.", ok: false }
     ]
   },
   {
