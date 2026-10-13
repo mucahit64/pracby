@@ -5,7 +5,7 @@ import type { McQ } from "../../../../types";
 // ============================================================================
 export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
   {
-    text: "<p>Hukuk öğrencisi Kadir, temel hak ve hürriyetlerin sınırlandırılması ile ilgili bir araştırma yapmaktadır. Olağan dönemlerde hak ve özgürlüklerin hangi ilkelere bağlı olarak sınırlandırılabileceğini öğrenmek ister.<br><br><b>1982 Anayasası'na göre, aşağıdakilerden hangisi, Kadir'in araştırması kapsamında ulaştığı sonuçlardan biri olamaz?</b></p>",
+    text: "<p>Hukuk öğrencisi Kadir, temel hak ve hürriyetlerin sınırlandırılması ile ilgili bir araştırma yapmaktadır. Olağan dönemlerde hak ve özgürlüklerin hangi ilkelere bağlı olarak sınırlandırılabileceğini öğrenmek ister.</p><p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi, Kadir'in araştırması kapsamında ulaştığı sonuçlardan biri <u>olamaz</u>?</b></p>",
     diff: 2,
     expl: "Temel hak ve hürriyetler, özlerine dokunulmaksızın yalnızca Anayasanın ilgili maddelerinde belirtilen sebeplere bağlı olarak ve ancak kanunla sınırlanabilir. Cumhurbaşkanlığı kararnamesi ile (olağan dönemlerde) temel haklar sınırlandırılamaz.",
     answers: [
@@ -17,7 +17,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Savaş<br>II. Sıkıyönetim<br>III. Olağanüstü hâl<br><br><b>1982 Anayasası'na göre, yukarıdakilerden hangileri temel hak ve hürriyetlerin kullanılmasının kısmen veya tamamen durdurulmasını gerektiren sebepler arasında yer alır?</b></p>",
+    text: "<p>I. Savaş<br>II. Sıkıyönetim<br>III. Olağanüstü hâl</p><p><b>1982 Anayasası'na göre, yukarıdakilerden hangileri temel hak ve hürriyetlerin kullanılmasının kısmen veya tamamen durdurulmasını gerektiren sebepler arasında yer alır?</b></p>",
     diff: 2,
     expl: "Savaş, seferberlik veya olağanüstü hâllerde, milletlerarası hukuktan doğan yükümlülükler ihlal edilmemek kaydıyla, durumun gerektirdiği ölçüde temel hak ve hürriyetlerin kullanılması kısmen veya tamamen durdurulabilir. (Not: 2017 değişikliği öncesi Sıkıyönetim de bu kapsamdaydı, soru bu tarihi yapıyı yansıtmaktadır).",
     answers: [
@@ -29,19 +29,19 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nda düzenlenen çekirdek alana dokunma yasağı ile ilgili olarak aşağıda verilen bilgilerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'nda düzenlenen çekirdek alana dokunma yasağı ile ilgili olarak aşağıda verilen bilgilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
-    expl: "Savaş, seferberlik ve olağanüstü hâllerde mutlak dokunulmaz haklar olan çekirdek haklar dışında diğer tüm temel hak ve hürriyetler kısmen veya tamamen durdurulabilir. Ancak 'İdare, kişi hürriyetinin kısıtlanması sonucunu doğuran bir müeyyide uygulayamaz' kuralı çekirdek haklardan biri değil, olağan dönem kanuni hakim güvencesinin bir parçasıdır.",
+    expl: "Savaş, seferberlik ve olağanüstü hâllerde mutlak dokunulmaz haklar olan çekirdek haklar dışında diğer tüm temel hak ve hürriyetler kısmen veya tamamen durdurulabilir. Çekirdek alan; savaş hukukuna uygun fiiller dışında yaşama hakkı, maddi ve manevi bütünlük, din, vicdan, düşünce ve kanaatlerini açıklamaya zorlanmama, suç ve cezaların geriye yürümezliği ve masumiyet karinesinden oluşur. 'İdare, kişi hürriyetinin kısıtlanması sonucunu doğuran bir müeyyide uygulayamaz' kuralı (m.38) bu çekirdek alanda sayılmaz.",
     answers: [
       { text: "Savaş hukukuna uygun fiiller sonucu meydana gelen ölümler dışında, kişinin yaşama hakkına dokunulamaz.", ok: false },
       { text: "İdare, kişi hürriyetinin kısıtlanması sonucunu doğuran bir müeyyide uygulayamaz.", ok: true },
       { text: "Kimsenin maddi ve manevi bütünlüğüne dokunulamaz, işkence yasaktır.", ok: false },
       { text: "Kimse din, vicdan, düşünce ve kanaatlerini açıklamaya zorlanamaz ve bunlardan dolayı suçlanamaz.", ok: false },
-      { text: "Suçluluğu mahkeme kararıyla saptanuncaya kadar kimse suçlu sayılamaz, masumiyet karinesi esastır.", ok: false }
+      { text: "Suçluluğu mahkeme kararıyla saptanıncaya kadar kimse suçlu sayılamaz, masumiyet karinesi esastır.", ok: false }
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, olağanüstü dönemlerde temel hak ve hürriyetlerin kullanılmasının durdurulmasıyla ilgili aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, olağanüstü dönemlerde temel hak ve hürriyetlerin kullanılmasının durdurulmasıyla ilgili aşağıdaki ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Temel hak ve hürriyetlerin kullanılması olağanüstü hâllerde durumun gerektirdiği ölçüde kısmen veya tamamen durdurulabilir. 'Tamamen durdurulamaz' ifadesi Anayasa'ya aykırıdır.",
     answers: [
@@ -53,7 +53,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, olağanüstü hâl ilan edilen yerde aşağıdaki tedbirlerden hangisinin alınması mümkün değildir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, olağanüstü hâl ilan edilen yerde aşağıdaki tedbirlerden hangisinin alınması mümkün <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Olağanüstü hâllerde bile çekirdek haklara dokunulamaz. Kişinin din, vicdan, düşünce ve kanaatlerini açıklamaya zorlanması çekirdek hak ihlalidir ve olağanüstü hâlde dahi mümkün değildir.",
     answers: [
@@ -65,7 +65,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, devletin hem olağan hem de olağanüstü durumlarda temel hak ve hürriyetleri sınırlandırmasının ortak sınırı;</b><br><br>I. ölçülülük ilkesi,<br>II. Anayasa'nın sözüne ve ruhuna uygunluk,<br>III. kanunla sınırlama<br><br><b>verilenlerden hangileridir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, devletin hem olağan hem de olağanüstü durumlarda temel hak ve hürriyetleri sınırlandırmasının ortak sınırı;</b></p><p>I. ölçülülük ilkesi,<br>II. Anayasa'nın sözüne ve ruhuna uygunluk,<br>III. kanunla sınırlama</p><p><b>verilenlerden hangileridir?</b></p>",
     diff: 3,
     expl: "Temel hak ve hürriyetlerin sınırlandırılmasında olağan dönemlerde kanunla sınırlama, anayasanın sözüne ve ruhuna uygunluk aranırken; olağanüstü hâllerde devlet kamu düzenini sağlamak amacıyla daha geniş şekilde sınırlayabilir. Ancak hangi dönem olursa olsun 'ölçülülük ilkesi' her iki rejim için de ortak sınır olarak kabul edilmiştir.",
     answers: [
@@ -89,7 +89,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi, 1982 Anayasası'nın \"Kişinin Hakları ve Ödevleri\" bölümünde yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi, 1982 Anayasası'nın</b> \"Kişinin Hakları ve Ödevleri\" <b>bölümünde <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Kıyılardan yararlanma hakkı, kamu yararı amacı güden sosyal ve ekonomik haklar başlığı altında düzenlenmiştir (Pozitif statü hakları). Diğer seçenekler kişinin temel hak ve ödevleri (Negatif statü) arasındadır.",
     answers: [
@@ -101,7 +101,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi \"Siyasi Hak ve Ödevler\" bölümünde düzenlenen haklardan değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi</b> \"Siyasi Hak ve Ödevler\" <b>bölümünde düzenlenen haklardan <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Toplantı ve gösteri yürüyüşü düzenleme hakkı kişi hak ve hürriyetleri (Negatif Statü Hakları) kapsamında düzenlenmiştir. Siyasi haklar arasında yer almaz.",
     answers: [
@@ -113,7 +113,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Mert, insan hakları dersinde Anayasa'da düzenlenen temel hak ve hürriyetleri aşağıdaki gibi not alıyor.<br><br><b>Kişi Hakları ve Ödevleri</b><br>• Toplantı ve gösteri yürüyüşü düzenleme hakkı<br>• İspat hakkı<br><br><b>Sosyal ve Ekonomik Hak ve Ödevler</b><br>• Mülkiyet hakkı<br>• Devletleştirme ve özelleştirme<br><br><b>Siyasi Hak ve Ödevler</b><br>• Vatan hizmeti<br>• Vergi ödevi<br><br><b>1982 Anayasası'na göre Mert, temel hak ve hürriyetlerden hangisini yanlış tarafa yazmıştır?</b></p>",
+    text: "<p>Mert, insan hakları dersinde Anayasa'da düzenlenen temel hak ve hürriyetleri aşağıdaki gibi not alıyor.</p><p><b>Kişi Hakları ve Ödevleri</b><br>• Toplantı ve gösteri yürüyüşü düzenleme hakkı<br>• İspat hakkı<br><b>Sosyal ve Ekonomik Hak ve Ödevler</b><br>• Mülkiyet hakkı<br>• Devletleştirme ve özelleştirme<br><b>Siyasi Hak ve Ödevler</b><br>• Vatan hizmeti<br>• Vergi ödevi</p><p><b>1982 Anayasası'na göre Mert, temel hak ve hürriyetlerden hangisini <u>yanlış</u> tarafa yazmıştır?</b></p>",
     diff: 2,
     expl: "Mülkiyet hakkı, Anayasa'da 'Kişi hak ve ödevleri' (Negatif statü) kapsamında düzenlenmiştir. Sosyal ve ekonomik haklar arasında değildir.",
     answers: [
@@ -125,7 +125,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nda kişinin yaşam hakkına Devletin müdahale edebilmesinin haklı gerekçeleri arasında aşağıdakilerden hangisi gösterilemez?</b></p>",
+    text: "<p><b>1982 Anayasası'nda kişinin yaşam hakkına Devletin müdahale edebilmesinin haklı gerekçeleri arasında aşağıdakilerden hangisi <u>gösterilemez</u>?</b></p>",
     diff: 2,
     expl: "Mahkemelerce verilen ölüm cezalarının infazı Anayasamızdan 2004 yılında tamamen çıkarılmıştır. Yaşam hakkına müdahale gerekçeleri arasında sayılamaz.",
     answers: [
@@ -137,7 +137,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi devletin kişileri zorla çalıştırabileceği durumlardan biri değildir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi devletin kişileri zorla çalıştırabileceği durumlardan biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Madde 18'e göre zorla çalıştırma (angarya) yasaktır. Ancak hükümlülük/tutukluluk süreleri içindeki çalışmalar, OHAL'de istenecek hizmetler ve vatandaşlık ödevi niteliğindeki çalışmalar angarya sayılmaz. Eğitim süreci içindeki çalışmalar bu istisnalar arasında anayasal olarak listelenmemiştir.",
     answers: [
@@ -149,7 +149,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>• Polis ekipleri, hırsızlık suçu şüphesiyle yakalanan bir kişiyi gözaltına alıyor.<br>• Benzer bir olayın organize suç çetesi tarafından gerçekleştirildiği tespit ediliyor ve sekiz kişi gözaltına alınıyor.<br><br><b>1982 Anayasası'na göre, bu kişilerin sırasıyla tutulma yerine en yakın mahkemeye gönderilmesi için gerekli süreler hariç en geç ne kadar süre içerisinde hâkim karşısına çıkarılmaları gerekir?</b></p>",
+    text: "<p>• Polis ekipleri, hırsızlık suçu şüphesiyle yakalanan bir kişiyi gözaltına alıyor.<br>• Benzer bir olayın organize suç çetesi tarafından gerçekleştirildiği tespit ediliyor ve sekiz kişi gözaltına alınıyor.</p><p><b>1982 Anayasası'na göre, bu kişilerin sırasıyla tutulma yerine <u>en yakın</u> mahkemeye gönderilmesi için gerekli süreler hariç <u>en geç</u> ne kadar süre içerisinde hâkim karşısına çıkarılmaları gerekir?</b></p>",
     diff: 3,
     expl: "Anayasa'nın 19. maddesine göre, yakalanan bir kişi en geç 48 saat içinde hâkim önüne çıkarılmalıdır. Eğer suç toplu olarak işlenmişse (organize), bu süre en fazla 4 güne kadar uzatılabilir.",
     answers: [
@@ -161,7 +161,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi, 1982 Anayasası'na göre tutuklamayı meşru kılan unsurlardan biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi, 1982 Anayasası'na göre tutuklamayı meşru kılan unsurlardan biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Suçluluğu hakkında kuvvetli belirti bulunan kişiler, ancak kaçmalarını, delillerin yok edilmesini veya değiştirilmesini önlemek maksadıyla hâkim kararıyla tutuklanabilir. Suçun cezasının 5 yıldan fazla olması Anayasal bir tutuklama kriteri değildir.",
     answers: [
@@ -173,7 +173,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi kişinin yerleşme hürriyetine müdahale edilmesinin haklı gerekçelerinden biri olamaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi kişinin yerleşme hürriyetine müdahale edilmesinin haklı gerekçelerinden biri <u>olamaz</u>?</b></p>",
     diff: 2,
     expl: "Yerleşme hürriyeti; suç işlenmesini önlemek, sosyal ve ekonomik gelişmeyi sağlamak, sağlıklı ve düzenli kentleşmeyi gerçekleştirmek ve kamu mallarını korumak amaçlarıyla sınırlanabilir. 'Genel ahlakı korumak' yerleşme hürriyetinin özel sınırlandırma sebepleri arasında yoktur.",
     answers: [
@@ -191,7 +191,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_1: McQ[] = [
 // ============================================================================
 export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
   {
-    text: "<p>İş insanı Erdem, yurt dışında bir toplantıya katılmak için havalimanına gelir. Ancak Erdem'in yurt dışına çıkışı yetkililerce engellenir. Bunun üzerine Erdem, yetkililere bu kararın hangi makam tarafından alındığını sorar.<br><br><b>1982 Anayasası'na göre, Erdem'in yurt dışına çıkışının sınırlandırılması suç soruşturması ve kovuşturması sebebiyle hangi merci tarafından karara bağlanmış olmalıdır?</b></p>",
+    text: "<p>İş insanı Erdem, yurt dışında bir toplantıya katılmak için havalimanına gelir. Ancak Erdem'in yurt dışına çıkışı yetkililerce engellenir. Bunun üzerine Erdem, yetkililere bu kararın hangi makam tarafından alındığını sorar.</p><p><b>1982 Anayasası'na göre, Erdem'in yurt dışına çıkışının sınırlandırılması suç soruşturması ve kovuşturması sebebiyle hangi merci tarafından karara bağlanmış olmalıdır?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'na göre, vatandaşın yurt dışına çıkma hürriyeti, ancak suç soruşturması veya kovuşturması sebebiyle hâkim kararına bağlı olarak sınırlanabilir. Vatandaş sınır dışı edilemez ve yurda girme hakkından yoksun bırakılamaz.",
     answers: [
@@ -203,7 +203,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, \"Hiç kimse, yalnızca sözleşmeden doğan bir yükümlülüğü yerine getirememesinden dolayı özgürlüğünden alıkonulamaz.\" güvencesi aşağıdaki başlıklardan hangisinin altında düzenlenmiştir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre,</b> \"Hiç kimse, yalnızca sözleşmeden doğan bir yükümlülüğü yerine getirememesinden dolayı özgürlüğünden alıkonulamaz.\" <b>güvencesi aşağıdaki başlıklardan hangisinin altında düzenlenmiştir?</b></p>",
     diff: 2,
     expl: "Anayasa'nın 38. maddesinde yer alan 'Hiç kimse, yalnızca sözleşmeden doğan bir yükümlülüğü yerine getirememesinden dolayı özgürlüğünden alıkonulamaz' hükmü, 'Suç ve cezalara ilişkin esaslar' başlığı altında düzenlenmiştir.",
     answers: [
@@ -215,7 +215,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'ndaki \"Kimseye işkence ve eziyet yapılamaz; kimse insan haysiyetiyle bağdaşmayan bir cezaya veya muameleye tabi tutulamaz.\" güvencesini içeren hüküm aşağıdaki başlıklardan hangisinin altında düzenlenmiştir?</b></p>",
+    text: "<p><b>1982 Anayasası'ndaki</b> \"Kimseye işkence ve eziyet yapılamaz; kimse insan haysiyetiyle bağdaşmayan bir cezaya veya muameleye tabi tutulamaz.\" <b>güvencesini içeren hüküm aşağıdaki başlıklardan hangisinin altında düzenlenmiştir?</b></p>",
     diff: 1,
     expl: "Anayasa madde 17'ye göre, herkes yaşama, maddi ve manevi varlığını koruma ve geliştirme hakkına sahiptir. Kimseye işkence ve eziyet yapılamaz. Bu hükümler 'Kişinin dokunulmazlığı, maddi ve manevi varlığı' başlığı altında yer alır.",
     answers: [
@@ -239,7 +239,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'ndaki \"Herkes, kendisiyle ilgili kişisel verilerin korunmasını isteme hakkına sahiptir.\" güvencesini içeren hüküm aşağıdaki başlıklardan hangisinin altında düzenlenmiştir?</b></p>",
+    text: "<p><b>1982 Anayasası'ndaki</b> \"Herkes, kendisiyle ilgili kişisel verilerin korunmasını isteme hakkına sahiptir.\" <b>güvencesini içeren hüküm aşağıdaki başlıklardan hangisinin altında düzenlenmiştir?</b></p>",
     diff: 2,
     expl: "Herkes, özel hayatına ve aile hayatına saygı gösterilmesini isteme hakkına sahiptir. Kişisel verilerin korunmasını isteme hakkı da 2010 değişikliği ile Anayasa'nın 'Özel hayatın gizliliği' maddesi kapsamına eklenmiştir.",
     answers: [
@@ -251,7 +251,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na aşağıdakilerden hangisi Anayasa'nın 1'inci, 2'nci ve 3'üncü maddeleri hükümlerinin değiştirilmesini sağlamak amacıyla kullanılamaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na aşağıdakilerden hangisi Anayasa'nın 1'inci, 2'nci ve 3'üncü maddeleri hükümlerinin değiştirilmesini sağlamak amacıyla <u>kullanılamaz</u>?</b></p>",
     diff: 3,
     expl: "Madde 27 - Herkes, bilim ve sanatı serbestçe öğrenme ve öğretme, açıklama, yayma ve bu alanlarda her türlü araştırma hakkına sahiptir. Yayma hakkı, Anayasa'nın 1'inci, 2'nci ve 3'üncü maddeleri hükümlerinin değiştirilmesini sağlamak amacıyla kullanılamaz.",
     answers: [
@@ -275,19 +275,19 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, suç ve cezalara ilişkin esaslar ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, suç ve cezalara ilişkin esaslar ile ilgili aşağıdaki ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 1,
     expl: "Anayasa madde 38'e göre; kanuna aykırı olarak elde edilmiş bulgular, delil olarak kabul edilemez.",
     answers: [
       { text: "İdare, kişi hürriyetinin kısıtlanması sonucunu doğuran bir müeyyide uygulayamaz.", ok: false },
-      { text: "Kimse yalnızca sözleşmeden doğan bir yükümlülüğü yerine getiremediği için hürriyetinden alıkonulamaz.", ok: false },
+      { text: "Kimse yalnızca sözleşmeden doğan bir yükümlülüğünü yerine getiremediği için hürriyetinden alıkonulamaz.", ok: false },
       { text: "Ceza ve ceza yerine geçen güvenlik tedbirleri ancak kanunla konur.", ok: false },
       { text: "Kanuna aykırı elde edilen bulgular delil olarak kabul edilebilir.", ok: true },
       { text: "Suçluluğu hükmen sabit oluncaya kadar, kimse suçlu sayılamaz.", ok: false }
     ]
   },
   {
-    text: "<p>I. Devlet<br>II. Vatandaşlar<br>III. Türkiye'de ikamet eden yabancılar<br><br><b>1982 Anayasası'na göre, çevreyi geliştirmek, çevre sağlığını korumak ve çevrenin kirlenmesini önlemek yukarıdakilerden hangilerinin ödevidir?</b></p>",
+    text: "<p>I. Devlet<br>II. Vatandaşlar<br>III. Türkiye'de ikamet eden yabancılar</p><p><b>1982 Anayasası'na göre, çevreyi geliştirmek, çevre sağlığını korumak ve çevrenin kirlenmesini önlemek yukarıdakilerden hangilerinin ödevidir?</b></p>",
     diff: 2,
     expl: "Madde 56 - Herkes, sağlıklı ve dengeli bir çevrede yaşama hakkına sahiptir. Çevreyi geliştirmek, çevre sağlığını korumak ve çevre kirlenmesini önlemek devletin ve vatandaşların ödevidir.",
     answers: [
@@ -299,7 +299,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nın 38. maddesinin son fıkrasında yer alan; \"--- taraf olmanın gerektirdiği yükümlülükler hariç olmak üzere, vatandaş, suç sebebiyle yabancı bir ülkeye verilemez.\" ifadesinde boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?</b></p>",
+    text: "<p><b>1982 Anayasası'nın 38. maddesinin son fıkrasında yer alan;</b> \"---- taraf olmanın gerektirdiği yükümlülükler hariç olmak üzere, vatandaş, suç sebebiyle yabancı bir ülkeye verilemez.\" <b>ifadesinde boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?</b></p>",
     diff: 3,
     expl: "Bu ifade, Türkiye'nin Roma Statüsü'ne taraf olması durumunda, Uluslararası Ceza Divanına (UCD/ICC) vatandaş iadesi yapılabileceğini öngörmektedir.",
     answers: [
@@ -323,7 +323,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Seyyar satıcı Osman, belediye zabıta ekipleri tarafından tutulur ve bir gün boyunca serbest bırakılmaz.<br><br><b>1982 Anayasası'na göre, belediyenin bu uygulaması aşağıdakilerden hangisine aykırıdır?</b></p>",
+    text: "<p>Seyyar satıcı Osman, belediye zabıta ekipleri tarafından tutulur ve bir gün boyunca serbest bırakılmaz.</p><p><b>1982 Anayasası'na göre, belediyenin bu uygulaması aşağıdakilerden hangisine aykırıdır?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'na göre, idare, kişi hürriyetinin kısıtlanması sonucunu doğuran bir müeyyide uygulayamaz. Kişi özgürlüğünü kısıtlayan müeyyideler yalnızca yargı kararlarıyla uygulanabilir.",
     answers: [
@@ -335,7 +335,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Ahmet, 2022 yılında işlediği bir fiilden dolayı 2024 yılında yürürlüğe giren yeni bir ceza yasasına göre yargılanmaktadır. Ancak avukatı, bu durumun Anayasa'ya aykırı olduğunu iddia ederek itiraz eder.<br><br><b>Bu itiraz, aşağıdaki anayasal ilkelerden hangisine dayanmaktadır?</b></p>",
+    text: "<p>Ahmet, 2022 yılında işlediği bir fiilden dolayı 2024 yılında yürürlüğe giren yeni bir ceza yasasına göre yargılanmaktadır. Ancak avukatı, bu durumun Anayasa'ya aykırı olduğunu iddia ederek itiraz eder.</p><p><b>Bu itiraz, aşağıdaki anayasal ilkelerden hangisine dayanmaktadır?</b></p>",
     diff: 1,
     expl: "Anayasa Md. 38/1'e göre, suçun işlendiği tarihte yürürlükte olmayan bir yasa, sanık aleyhine uygulanamaz. Cezaların geçmişe yürütülememesi ilkesi, hukukun temel prensiplerindendir.",
     answers: [
@@ -347,7 +347,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir kamu kurumunda çalışan Zeynep, zimmete para geçirme suçundan yargılanır ve soruşturma kapsamında görevden uzaklaştırılır. Sosyal medyada yapılan paylaşımlarda, \"Kişi devletin güvenini sarsacak bir suç işlediyse, ailesi de kamu kurumlarında çalışmamalı!\" diyerek tüm aile fertlerinin cezalandırılması gerektiği savunulur.<br><br><b>1982 Anayasası'na göre, bu ifade aşağıdaki anayasal ilkelerden hangisine aykırıdır?</b></p>",
+    text: "<p>Bir kamu kurumunda çalışan Zeynep, zimmete para geçirme suçundan yargılanır ve soruşturma kapsamında görevden uzaklaştırılır. Sosyal medyada yapılan paylaşımlarda, \"Kişi devletin güvenini sarsacak bir suç işlediyse, ailesi de kamu kurumlarında çalışmamalı!\" diyerek tüm aile fertlerinin cezalandırılması gerektiği savunulur.</p><p><b>1982 Anayasası'na göre, bu ifade aşağıdaki anayasal ilkelerden hangisine aykırıdır?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'nın 38. maddesi açıkça \"Ceza sorumluluğu şahsidir.\" ilkesini benimsemiştir. Bu ilkeye göre, bir kişinin işlediği suçtan yalnızca kendisi sorumlu tutulabilir; ailesi veya yakınları cezalandırılamaz.",
     answers: [
@@ -359,7 +359,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir cinayet davasında polis, sanığın evinde yetkili mercilerden izin almadan yaptığı aramada elde ettiği DNA örneklerini mahkemeye sunar. Hâkim, bu DNA örneklerini dikkate alarak sanık hakkında hüküm verir.<br><br><b>1982 Anayasası'na göre, hâkimin bu kararı, aşağıdakilerden hangisine aykırıdır?</b></p>",
+    text: "<p>Bir cinayet davasında polis, sanığın evinde yetkili mercilerden izin almadan yaptığı aramada elde ettiği DNA örneklerini mahkemeye sunar. Hâkim, bu DNA örneklerini dikkate alarak sanık hakkında hüküm verir.</p><p><b>1982 Anayasası'na göre, hâkimin bu kararı, aşağıdakilerden hangisine aykırıdır?</b></p>",
     diff: 2,
     expl: "1982 Anayasası m. 38'e göre, kanuna aykırı olarak elde edilmiş bulgular, delil olarak kabul edilemez. Hukuka aykırı elde edilen deliller, mahkemede delil olarak kullanılamaz.",
     answers: [
@@ -377,7 +377,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_2: McQ[] = [
 // ============================================================================
 export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
   {
-    text: "<p><b>1982 Anayasası'nın suç ve cezalara ilişkin esaslar bölümünde yer alan \"Ceza ve ceza yerine geçen güvenlik tedbirleri ancak kanunla konulur.\" ifadesi aşağıdakilerden hangisine ilişkindir?</b></p>",
+    text: "<p><b>1982 Anayasası'nın suç ve cezalara ilişkin esaslar bölümünde yer alan</b> \"Ceza ve ceza yerine geçen güvenlik tedbirleri ancak kanunla konulur.\" <b>ifadesi aşağıdakilerden hangisine ilişkindir?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'nın 38. maddesinde yer alan \"Ceza ve ceza yerine geçen güvenlik tedbirleri ancak kanunla konulur\" hükmü, kanunilik ilkesini ifade eder. Bu ilkeye göre, bir fiilin suç sayılabilmesi ve buna ceza uygulanabilmesi ancak önceden çıkarılmış bir kanunla mümkündür.",
     answers: [
@@ -389,7 +389,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir mahkemede, sanığa ağır suçlar nedeniyle ---- cezası verilmesi talep edilmiştir. Avukat, bu ceza türlerinin anayasaya aykırı olduğunu belirterek itirazda bulunur.<br><br><b>1982 Anayasa'nın 38. maddesinde yer alan hükümlere göre, yukarıda bırakılan boşluğa;</b><br><br>I. hapis cezası,<br>II. ölüm cezası,<br>III. para cezası,<br>IV. genel müsadere cezası<br><br><b>verilenlerden hangileri getirilebilir?</b></p>",
+    text: "<p>Bir mahkemede, sanığa ağır suçlar nedeniyle ---- cezası verilmesi talep edilmiştir. Avukat, bu ceza türlerinin anayasaya aykırı olduğunu belirterek itirazda bulunur.</p><p><b>1982 Anayasa'nın 38. maddesinde yer alan hükümlere göre, yukarıda bırakılan boşluğa;</b></p><p>I. hapis cezası,<br>II. ölüm cezası,<br>III. para cezası,<br>IV. genel müsadere cezası</p><p><b>verilenlerden hangileri getirilebilir?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'nda 2004 yılında yapılan Anayasa değişikliğiyle her ne sebeple olursa olsun sanık hakkında ölüm cezası ve genel müsadere cezası verilemez.",
     answers: [
@@ -401,7 +401,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi \"kanuni hâkim güvencesi\" ilkesini doğru tanımlar?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi</b> \"kanuni hâkim güvencesi\" <b>ilkesini doğru tanımlar?</b></p>",
     diff: 1,
     expl: "Kanuni hâkim güvencesi: Hiç kimse kanunen tabi olduğu mahkemeden başka bir merci önüne çıkarılamaz. Bir kimseyi kanunen tabi olduğu mahkemeden başka bir merci önüne çıkarma sonucunu doğuran yargı yetkisine sahip olağanüstü merciler kurulamaz.",
     answers: [
@@ -413,7 +413,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Murat ve arkadaşı Emre, bir kafede sohbet ederken, Emre, \"İdarenin mahkeme kararı olmadan bir kişiyi hürriyetinden yoksun bırakması Anayasa'ya aykırıdır.\" der. Ancak Murat, avukat olan arkadaşı Cem'e danıştığında, Cem ona Anayasa'da bunun bir istisnasının bulunduğunu söyler.<br><br><b>1982 Anayasası'na göre, bu istisna aşağıdakilerden hangisi için geçerlidir?</b></p>",
+    text: "<p>Murat ve arkadaşı Emre, bir kafede sohbet ederken, Emre, \"İdarenin mahkeme kararı olmadan bir kişiyi hürriyetinden yoksun bırakması Anayasa'ya aykırıdır.\" der. Ancak Murat, avukat olan arkadaşı Cem'e danıştığında, Cem ona Anayasa'da bunun bir istisnasının bulunduğunu söyler.</p><p><b>1982 Anayasası'na göre, bu istisna aşağıdakilerden hangisi için geçerlidir?</b></p>",
     diff: 3,
     expl: "Anayasa Md. 38/10'a göre, idare kişi özgürlüğünü doğrudan kısıtlayamaz. Bu kurala tek istisna, Türk Silahlı Kuvvetleri mensuplarına yönelik disiplin cezalarıdır.",
     answers: [
@@ -437,7 +437,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, sosyal güvenlik bakımından özel olarak korunması gerekenler arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, sosyal güvenlik bakımından özel olarak korunması gerekenler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Sosyal güvenlik bakımından özel olarak korunması gerekenler: Harp ve vazife şehitlerinin dul ve yetimleriyle, malül ve gaziler, sakatlar, yaşlılar ve korunmaya muhtaç çocuklardır. Yoksullar bu özel sayılan gruplar arasında Anayasa'da açıkça yer almaz.",
     answers: [
@@ -449,7 +449,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasa'nın 13. maddesinde yer alan ve temel hakların sınırlanmasında kullanılacak \"aracın amaca uygun, zorunlu ve orantılı olmasını gerektiren\" ilke aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><b>1982 Anayasa'nın 13. maddesinde yer alan ve temel hakların sınırlanmasında kullanılacak</b> \"aracın amaca uygun, zorunlu ve orantılı olmasını gerektiren\" <b>ilke aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'nın 13. maddesinde, temel hak ve özgürlüklerin sınırlanmasında \"ölçülülük\" ilkesine vurgu yapılmaktadır. Bu ilkeye göre, kullanılan sınırlama aracı, ulaşılmak istenen meşru amaç için gerekli, elverişli ve orantılı olmalıdır.",
     answers: [
@@ -461,7 +461,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>M işletmesinde, toplu iş sözleşmesi görüşmeleri sırasında, işçilerin üye olduğu sendika grev kararı alır. Ancak bu grev, genel sağlığı bozucu nitelikte olduğu gerekçesiyle ertelenir.<br><br><b>1982 Anayasası'na göre, erteleme süresi sonunda da taraflar arasında anlaşma sağlanamazsa uyuşmazlık aşağıdakilerden hangisi tarafından çözüme kavuşturulur?</b></p>",
+    text: "<p>M işletmesinde, toplu iş sözleşmesi görüşmeleri sırasında, işçilerin üye olduğu sendika grev kararı alır. Ancak bu grev, genel sağlığı bozucu nitelikte olduğu gerekçesiyle ertelenir.</p><p><b>1982 Anayasası'na göre, erteleme süresi sonunda da taraflar arasında anlaşma sağlanamazsa uyuşmazlık aşağıdakilerden hangisi tarafından çözüme kavuşturulur?</b></p>",
     diff: 2,
     expl: "Madde 54 - Grev ve lokavtın yasaklandığı hâllerde veya ertelendiği durumlarda ertelemenin sonunda, uyuşmazlık Yüksek Hakem Kurulunca çözülür. Uyuşmazlığın her safhasında taraflar da anlaşarak Yüksek Hakem Kuruluna başvurabilir. Yüksek Hakem Kurulunun kararları kesindir.",
     answers: [
@@ -473,7 +473,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'ndaki, \"kamu yararı\" başlığı altında aşağıdaki haklardan hangisi düzenlenmemiştir?</b></p>",
+    text: "<p><b>1982 Anayasası'ndaki,</b> \"kamu yararı\" <b>başlığı altında aşağıdaki haklardan hangisi <u>düzenlenmemiştir</u>?</b></p>",
     diff: 2,
     expl: "Kamu yararı alt başlığında düzenlenen haklar şunlardır: Kıyılardan yararlanma, Toprak mülkiyeti, Tarım, hayvancılık ve bu üretim dallarında çalışanların korunması, Kamulaştırma, Devletleştirme ve Özelleştirme. Grev hakkı ve lokavt ise çalışma ile ilgili haklar arasındadır.",
     answers: [
@@ -485,7 +485,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>1982 Anayasası'na göre, \"Devlet; işlemlerinde, ilgili kişilerin hangi kanun yolları ve mercilere başvuracağını ve süresini belirtmek zorundadır.\"<br><br><b>Bu hüküm, 1982 Anayasası'nda yer alan aşağıdaki başlıkların hangisinin altında düzenlenmiştir?</b></p>",
+    text: "<p>1982 Anayasası'na göre, \"Devlet; işlemlerinde, ilgili kişilerin hangi kanun yolları ve mercilere başvuracağını ve süresini belirtmek zorundadır.\"</p><p><b>Bu hüküm, 1982 Anayasası'nda yer alan aşağıdaki başlıkların hangisinin altında düzenlenmiştir?</b></p>",
     diff: 3,
     expl: "Madde 40 - Anayasa ile tanınmış hak ve hürriyetleri ihlal edilen herkes, yetkili makama geciktirilmeden başvurma imkanının sağlanmasını isteme hakkına sahiptir. (Temel hak ve hürriyetlerin korunması başlığı altındadır). Devlet, işlemlerinde, ilgili kişilerin hangi kanun yolları ve mercilere başvuracağını ve sürelerini belirtmek zorundadır.",
     answers: [
@@ -497,7 +497,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdaki gruplardan hangisi için 1982 Anayasası'nda devlet tarafından korunma sağlanacağı belirtilmemiştir?</b></p>",
+    text: "<p><b>Aşağıdaki gruplardan hangisi için 1982 Anayasası'nda devlet tarafından korunma sağlanacağı <u>belirtilmemiştir</u>?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'nda korunması gerekenler: Çocuklar, kadınlar, engelliler, yaşlılar, şehit dul ve yetimleri, gaziler, sporcular (sporun kitlelere yayılması), sanatçılar, çalışanlar ve işsizlerdir. Memurlar için özel bir korunma grubu belirtilmemiştir.",
     answers: [
@@ -509,7 +509,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıda verilen eşleştirmelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıda verilen eşleştirmelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 1,
     expl: "Kilit Bilgi: Memurlar ve sözleşmeli personeller siyasi partilere üye olamaz ancak işçiler siyasi partilere üye olabilir. Bu yüzden memurların siyasi partilere üye olma hakkı yoktur.",
     answers: [
@@ -521,7 +521,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye Futbol Federasyonu, 2025-2026 sezonu için klasman hakem listesini yayımlar. Mehmet, açıklanan klasman hakem listesinde adının yer almadığını fark eder ve bu duruma itiraz etmek ister.<br><br><b>1982 Anayasası'na göre, Mehmet'in başvurabileceği ve kararları kesin olan yetkili merci aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Türkiye Futbol Federasyonu, 2025-2026 sezonu için klasman hakem listesini yayımlar. Mehmet, açıklanan klasman hakem listesinde adının yer almadığını fark eder ve bu duruma itiraz etmek ister.</p><p><b>1982 Anayasası'na göre, Mehmet'in başvurabileceği ve kararları kesin olan yetkili merci aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Spor federasyonlarının spor faaliyetlerinin yönetimine ve disiplinine ilişkin kararlarına karşı ancak zorunlu tahkim yoluna başvurulabilir. Tahkim Kurulu kararları kesin olup bu kararlara karşı hiçbir yargı merciine başvurulamaz.",
     answers: [
@@ -533,7 +533,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Memurların ekonomik ve özlük haklarının iyileştirilmesi için memurlar tarafından kurulan ve üyesi oldukları Memurun Hakları Sendikası ile yapılan toplu sözleşme görüşmeleri neticesinde uyuşmazlık olur.<br><br><b>1982 Anayasası'na göre Memurun Hakları Grubu Sendikası, bu uyuşmazlığın çözümü ve yapılan görüşmelerin toplu sözleşme hükmünde olması için aşağıdakilerden hangisine başvurmalıdır?</b></p>",
+    text: "<p>Memurların ekonomik ve özlük haklarının iyileştirilmesi için memurlar tarafından kurulan ve üyesi oldukları Memurun Hakları Sendikası ile yapılan toplu sözleşme görüşmeleri neticesinde uyuşmazlık olur.</p><p><b>1982 Anayasası'na göre Memurun Hakları Grubu Sendikası, bu uyuşmazlığın çözümü ve yapılan görüşmelerin toplu sözleşme hükmünde olması için aşağıdakilerden hangisine başvurmalıdır?</b></p>",
     diff: 2,
     expl: "Memurlar ve diğer kamu görevlileri, toplu sözleşme yapma hakkına sahiptirler. Toplu sözleşme yapılması sırasında uyuşmazlık çıkması hâlinde taraflar Kamu Görevlileri Hakem Kuruluna başvurabilir. Kamu Görevlileri Hakem kurulu kararları kesindir ve toplu sözleşme hükmündedir.",
     answers: [
@@ -545,7 +545,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Türk vatandaşlığına ilişkin aşağıda verilen ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Türk vatandaşlığına ilişkin aşağıda verilen ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Vatandaşlıktan çıkarma işlemlerine karşı yargı yolunun açık olduğunu unutmayalım. Bu konu ile ilgili sorularda genellikle \"Yargı yolu kapatılamaz.\" ifadesi tuzak olarak \"Yargı yolu kapalıdır.\" şeklinde sorulmaktadır.",
     answers: [
@@ -563,7 +563,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_3: McQ[] = [
 // ============================================================================
 export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
   {
-    text: "<p>1982 Anayasası'na göre, seçimlere ilişkin ilkeler arasında;<br><br>I. genel oy,<br>II. çift dereceli seçim,<br>III. gizli oy açık sayım ve döküm,<br>IV. sınırlı oy,<br>V. yargı yönetim ve denetimi<br><br><b>verilenlerden hangileri yer almaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, seçimlere ilişkin ilkeler arasında;</b></p><p>I. genel oy,<br>II. çift dereceli seçim,<br>III. gizli oy açık sayım ve döküm,<br>IV. sınırlı oy,<br>V. yargı yönetim ve denetimi</p><p><b>verilenlerden hangileri <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Seçimler ve halk oylaması serbest, eşit, gizli, tek dereceli, genel oy, açık sayım ve döküm esaslarına göre, yargı yönetim ve denetimi altında yapılır. Çift dereceli seçim ve sınırlı oy sistemleri Anayasamıza göre uygulanamaz.",
     answers: [
@@ -575,7 +575,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre,</b><br><br>• servet, vergi, eğitim, ırk, cinsiyet ve benzeri sınırlamalar olmadan herkesin oy hakkına sahip olması,<br>• oy kullanan her vatandaşın oyunun, sonuç üzerinde aynı ağırlıkta etkili olması<br><br><b>sırasıyla aşağıdaki ilkelerden hangisine aittir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre,</b></p><p>• servet, vergi, eğitim, ırk, cinsiyet ve benzeri sınırlamalar olmadan herkesin oy hakkına sahip olması,<br>• oy kullanan her vatandaşın oyunun, sonuç üzerinde aynı ağırlıkta etkili olması</p><p><b>sırasıyla aşağıdaki ilkelerden hangisine aittir?</b></p>",
     diff: 1,
     expl: "Eğitim, servet veya cinsiyet gibi farklılıklar gözetilmeksizin herkesin oy kullanabilmesi 'genel oy' ilkesidir. Her vatandaşın oyunun seçim sonucuna eşit derecede etki etmesi ise 'eşit oy' ilkesine karşılık gelir.",
     answers: [
@@ -587,7 +587,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Siyaset bilimci Ahmet, M Vakfının düzenlediği bir söyleşide, siyasi partilere üye olamayacak kişiler hakkında bilgi vermektedir.<br><br><b>Buna göre Ahmet, aşağıdakilerden hangisi siyasi parti üyesi olabilir derse yanlış bilgi vermiş olur?</b></p>",
+    text: "<p>Siyaset bilimci Ahmet, M Vakfının düzenlediği bir söyleşide, siyasi partilere üye olamayacak kişiler hakkında bilgi vermektedir.</p><p><b>Buna göre Ahmet, aşağıdakilerden hangisi siyasi parti üyesi olabilir derse <u>yanlış</u> bilgi vermiş olur?</b></p>",
     diff: 3,
     expl: "Sözleşmeli kamu personeli 'kamu görevlisi' statüsünde olduğu için siyasi partilere üye olamaz. Oysa yükseköğretim elemanları, işçi statüsündeki kamu görevlileri, adalet meslek yüksekokulu öğrencileri, belediye başkanı ve meclis üyelerinin üyelikleri mümkündür.",
     answers: [
@@ -599,7 +599,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Anayasa madde 67'ye göre, seçim kanunları, ---- ve ---- ilkelerini bağdaştıracak biçimde düzenlenir.<br><br><b>1982 Anayasası'na göre, yukarıda boş bırakılan yerlere sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>Anayasa madde 67'ye göre, seçim kanunları, ---- ve ---- ilkelerini bağdaştıracak biçimde düzenlenir.</p><p><b>1982 Anayasası'na göre, yukarıda boş bırakılan yerlere sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 1,
     expl: "Anayasa m.67/son fıkra: 'Seçim kanunları, temsilde adalet ile yönetimde istikrar ilkelerini bağdaştıracak biçimde düzenlenir.' Az oy alan partilerin dışlanmaması (temsilde adalet) ile hükûmetin kurulabilir olması (yönetimde istikrar) arasında denge kurulması amaçlanır.",
     answers: [
@@ -623,7 +623,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>TBMM'de kabul edilen yeni seçim kanunu ile seçim barajı %7'ye düşürülür. Bu değişiklik Resmî Gazete'de yayımlanır.<br><br><b>1982 Anayasası'na göre, seçim kanunu değişikliği ne zaman uygulanacaktır?</b></p>",
+    text: "<p>TBMM'de kabul edilen yeni seçim kanunu ile seçim barajı %7'ye düşürülür. Bu değişiklik Resmî Gazete'de yayımlanır.</p><p><b>1982 Anayasası'na göre, seçim kanunu değişikliği ne zaman uygulanacaktır?</b></p>",
     diff: 1,
     expl: "Anayasa Md. 67'ye göre, seçim kanunlarıyla ilgili değişiklikler yürürlüğe girdikten sonra 1 yıl içinde yapılacak seçimlere uygulanamaz. Bu hüküm, seçim kurallarının aniden değiştirilerek seçmen iradesinin yönlendirilmesini engellemek içindir.",
     answers: [
@@ -635,7 +635,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>2820 sayılı Siyasi Partiler Kanunu'na göre, bir siyasi partinin kurulabilmesi için, siyasi partiye üye olma yeterliliğine sahip en az kaç Türk vatandaşı gereklidir?</b></p>",
+    text: "<p><b>2820 sayılı Siyasi Partiler Kanunu'na göre, bir siyasi partinin kurulabilmesi için, siyasi partiye üye olma yeterliliğine sahip <u>en az</u> kaç Türk vatandaşı gereklidir?</b></p>",
     diff: 1,
     expl: "2820 sayılı Siyasi Partiler Kanunu'nun 8. maddesine göre, bir siyasi partinin kurulabilmesi için, siyasi partiye üye olma yeterliliğine sahip en az 30 (otuz) Türk vatandaşı gereklidir.",
     answers: [
@@ -647,7 +647,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Hukuk fakültesi birinci sınıf Anayasa hukuku dersinde Özgür, arkadaşı Murat'a siyasi partilere üye olamayacakları sorar.<br><br><b>Buna göre Murat, aşağıdaki cevaplardan hangisini verirse 1982 Anayasası'na göre, yanlış olur?</b></p>",
+    text: "<p>Hukuk fakültesi birinci sınıf Anayasa hukuku dersinde Özgür, arkadaşı Murat'a siyasi partilere üye olamayacakları sorar.</p><p><b>Buna göre Murat, aşağıdaki cevaplardan hangisini verirse 1982 Anayasası'na göre, <u>yanlış</u> olur?</b></p>",
     diff: 2,
     expl: "18 yaşını doldurmuş yükseköğretim (üniversite) öğrencileri siyasi partilere üye olabilirler. Ancak yükseköğretim öncesi öğrencileri (lise öğrencileri vb.) üye olamaz. Bu nedenle 20 yaşındaki üniversite öğrencisinin üye olamayacağı bilgisi yanlıştır.",
     answers: [
@@ -659,7 +659,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir siyasi parti hakkında yapılan inceleme sonucunda partinin gelir kaynaklarını usule uygun bildirmediği anlaşılır.<br><br><b>1982 Anayasası'na göre, partinin mali denetimini aşağıdakilerden hangisi gerçekleştirmekle yükümlüdür?</b></p>",
+    text: "<p>Bir siyasi parti hakkında yapılan inceleme sonucunda partinin gelir kaynaklarını usule uygun bildirmediği anlaşılır.</p><p><b>1982 Anayasası'na göre, partinin mali denetimini aşağıdakilerden hangisi gerçekleştirmekle yükümlüdür?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'nın 69. maddesine göre, siyasi partilerin mali denetimi Sayıştay yardımıyla Anayasa Mahkemesi tarafından yapılır.",
     answers: [
@@ -671,7 +671,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir siyasi partinin;<br>• Ülke genelinde oyların % --- alması durumunda Hazine yardımı alması,<br>• Ülke genelinde oyların % --- alması durumunda milletvekili çıkararak TBMM'ye girmesi mümkündür.<br><br><b>Yukarıdaki boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>Bir siyasi partinin;<br>• Ülke genelinde oyların % --- alması durumunda Hazine yardımı alması,<br>• Ülke genelinde oyların % --- alması durumunda milletvekili çıkararak TBMM'ye girmesi mümkündür.</p><p><b>Yukarıdaki boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 2,
     expl: "2820 sayılı Siyasi Partiler Kanunu'na göre, genel seçimlerde %3 ve üzeri oy alan partilere Hazine yardımı yapılır. Milletvekili Seçimi Kanunu'na göre ise bir partinin Türkiye genelinde en az %7 oy alması, ülke barajını aşarak TBMM'ye girebilmesi için zorunludur.",
     answers: [
@@ -695,7 +695,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Suç işlenmesini teşvik etmek<br>II. Demokratik hukuk devleti ilkesine aykırı davranmak<br>III. Yurt dışında teşkilatlanıp faaliyette bulunmak<br>IV. Yabancı devletlerden maddi yardım almak<br><br><b>1982 Anayasası'na göre, yukarıdakilerden hangileri siyasi partilerin kapatılma sebepleri arasında yer almaz?</b></p>",
+    text: "<p>I. Suç işlenmesini teşvik etmek<br>II. Demokratik hukuk devleti ilkesine aykırı davranmak<br>III. Yurt dışında teşkilatlanıp faaliyette bulunmak<br>IV. Yabancı devletlerden maddi yardım almak</p><p><b>1982 Anayasası'na göre, yukarıdakilerden hangileri siyasi partilerin kapatılma sebepleri arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Suç işlenmesini teşvik etmek, demokratik hukuk devleti ilkesine aykırı davranmak ve yabancı devletlerden maddi yardım almak kapatılma sebebidir. Ancak yurt dışında teşkilatlanıp faaliyette bulunmak, kanunlara uygun olduğu sürece siyasi partiler için bir kapatılma sebebi değildir.",
     answers: [
@@ -707,7 +707,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre</b><br><br>• siyasi partiler hakkında resen kapatma davası açmaya,<br>• siyasi partilerin kapatılmasına, Devlet yardımından kısmen veya tamamen yoksun bırakılmasına<br><br><b>yetkili merciler sırasıyla aşağıdakilerden hangisi doğru verilmiştir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre</b></p><p>• siyasi partiler hakkında resen kapatma davası açmaya,<br>• siyasi partilerin kapatılmasına, Devlet yardımından kısmen veya tamamen yoksun bırakılmasına</p><p><b>yetkili merciler sırasıyla aşağıdakilerden hangisi doğru verilmiştir?</b></p>",
     diff: 1,
     expl: "Siyasi partilerin kapatılması davasını Yargıtay Cumhuriyet Başsavcısı açar, davayı kesin karara bağlayan merci ise Anayasa Mahkemesi'dir.",
     answers: [
@@ -719,7 +719,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>A Partisi, milletvekili B ve C'nin beyan ve eylemleri sebebiyle temelli kapatılır.<br><br><b>1982 Anayasası'na göre, aşağıdakilerden hangisi A Partisi'nin kapatılmasının sonuçlarından biri değildir?</b></p>",
+    text: "<p>A Partisi, milletvekili B ve C'nin beyan ve eylemleri sebebiyle temelli kapatılır.</p><p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi A Partisi'nin kapatılmasının sonuçlarından biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Partinin tüzel kişiliği sona erer, mal varlığı hazineye geçer. Kapatılmaya beyan ve eylemleriyle sebep olan üyeler 5 yıl süreyle başka partinin kurucusu, üyesi veya yöneticisi olamaz. Ancak 2010 yılında yapılan değişiklikle, kapatılmaya sebep olanlar da dâhil milletvekillerinin TBMM üyeliği sona ermez.",
     answers: [
@@ -761,7 +761,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türkiye'de ikamet eden yabancılarla ilgili aşağıdaki siyasi hak ve hürriyetlerden hangisinin kullanımının \"karşılıklılık esası gözetilmek kaydıyla\" olabileceği 1982 Anayasası'nda açıkça öngörülmüştür?</b></p>",
+    text: "<p><b>Türkiye'de ikamet eden yabancılarla ilgili aşağıdaki siyasi hak ve hürriyetlerden hangisinin kullanımının</b> \"karşılıklılık esası gözetilmek kaydıyla\" <b>olabileceği 1982 Anayasası'nda açıkça öngörülmüştür?</b></p>",
     diff: 2,
     expl: "Vatandaşlar ve karşılıklılık esası gözetilmek kaydıyla Türkiye'de ikamet eden yabancılar kendileriyle veya kamu ile ilgili dilek ve şikayetleri hakkında, yetkili makamlara ve Türkiye Büyük Millet Meclisine yazı ile başvurma hakkına (dilekçe hakkı) sahiptir.",
     answers: [
@@ -773,7 +773,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Milletvekili K, beyan ve eylemleri sebebiyle Anayasa Mahkemesince partisinin kapatılmasına neden olur.<br><br><b>1982 Anayasası'na göre K hakkında aşağıdakilerden hangisi doğrudur?</b></p>",
+    text: "<p>Milletvekili K, beyan ve eylemleri sebebiyle Anayasa Mahkemesince partisinin kapatılmasına neden olur.</p><p><b>1982 Anayasası'na göre K hakkında aşağıdakilerden hangisi doğrudur?</b></p>",
     diff: 3,
     expl: "Bir siyasi partinin temelli kapatılmasına beyan veya faaliyetleriyle sebep olan kurucuları dahil üyeleri, Anayasa Mahkemesinin temelli kapatmaya ilişkin kesin kararının Resmî Gazete'de gerekçeli olarak yayımlanmasından başlayarak beş yıl süreyle bir başka partinin kurucusu, üyesi, yöneticisi ve deneticisi olamazlar. (Milletvekilliği düşmez, bağımsız milletvekili olarak devam edebilir).",
     answers: [
@@ -785,7 +785,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, siyasal partilerle ilgili aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, siyasal partilerle ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Siyasi partiler önceden izin almadan kurulurlar, ticari faaliyette bulunamazlar ve temelli kapatılan bir parti, başka bir ad altında kurulamaz. Ancak 'siyasi partiler kadın ve gençlik kolları teşkilatı kuramazlar' ifadesi yanlıştır. Siyasi partilerin kadın ve gençlik kolları gibi yardımcı örgütlenmeler kurabileceği kabul edilmektedir.",
     answers: [
@@ -821,7 +821,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>1982 Anayasası'na göre, yabancıların dilekçe hakkından yararlanma şartları arasında;<br><br>I. Türkiye'de ikamet etmek,<br>II. karşılıklılık esası gözetilmek,<br>III. yalnızca Türkiye Büyük Millet Meclisine başvurabilmek<br><br><b>verilenlerden hangileri yer alır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, yabancıların dilekçe hakkından yararlanma şartları arasında;</b></p><p>I. Türkiye'de ikamet etmek,<br>II. karşılıklılık esası gözetilmek,<br>III. yalnızca Türkiye Büyük Millet Meclisine başvurabilmek</p><p><b>verilenlerden hangileri yer alır?</b></p>",
     diff: 2,
     expl: "Yabancılar, Türkiye'de ikamet etmek ve karşılıklılık esası gözetilmek şartıyla dilekçe hakkından yararlanabilir. Ancak sadece TBMM'ye değil, ilgili tüm yetkili makamlara başvurabilirler (III. öncül yanlıştır).",
     answers: [
@@ -833,7 +833,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>1982 Anayasası'na göre, bazı temel hak ve özgürlüklerin kullanımı, önceden izin alma şartına bağlanmamıştır. Bu hak ve özgürlükler ya doğrudan serbestçe kullanılır ya da yalnızca önceden bildirim yükümlülüğü ile sınırlandırılmıştır.<br><br><b>Buna göre aşağıdakilerden hangisi bu kapsamdaki haklardan biri değildir?</b></p>",
+    text: "<p>1982 Anayasası'na göre, bazı temel hak ve özgürlüklerin kullanımı, önceden izin alma şartına bağlanmamıştır. Bu hak ve özgürlükler ya doğrudan serbestçe kullanılır ya da yalnızca önceden bildirim yükümlülüğü ile sınırlandırılmıştır.</p><p><b>Buna göre aşağıdakilerden hangisi bu kapsamdaki haklardan biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Sendika kurma hakkı, süreli ve süresiz yayın hakkı, siyasi parti kurma hakkı ile toplantı ve gösteri yürüyüşü düzenleme hakkı önceden izin alınmaksızın kullanılan anayasal haklardandır. Ancak Anayasa'nın 26. maddesine göre radyo, televizyon, sinema veya benzeri yollarla yapılan yayımların izin sistemine bağlanmasına engel değildir.",
     answers: [
@@ -857,7 +857,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nda aşağıdakilerden hangisi \"sosyal ve ekonomik haklar ve ödevler\" arasında düzenlenmiştir?</b></p>",
+    text: "<p><b>1982 Anayasası'nda aşağıdakilerden hangisi</b> \"sosyal ve ekonomik haklar ve ödevler\" <b>arasında düzenlenmiştir?</b></p>",
     diff: 2,
     expl: "Eğitim ve öğrenim hakkı ve ödevi, Anayasa'nın sosyal devlet ilkesi doğrultusunda sosyal ve ekonomik haklar (pozitif statü hakları) sınıfına girer. Mülkiyet hakkı, süreli yayın hakkı ve dernek kurma kişi haklarıdır; dilekçe hakkı ise siyasi haktır.",
     answers: [
@@ -869,7 +869,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye Büyük Millet Meclisi Başkanlığına bağlı olarak kurulan Kamu Denetçiliği Kurumu idarenin işleyişiyle ilgili şikâyetleri inceler.<br><br><b>1982 Anayasası'na göre, Kamu Başdenetçisi aşağıdakilerden hangisi tarafından seçilir?</b></p>",
+    text: "<p>Türkiye Büyük Millet Meclisi Başkanlığına bağlı olarak kurulan Kamu Denetçiliği Kurumu idarenin işleyişiyle ilgili şikâyetleri inceler.</p><p><b>1982 Anayasası'na göre, Kamu Başdenetçisi aşağıdakilerden hangisi tarafından seçilir?</b></p>",
     diff: 1,
     expl: "Kamu Başdenetçisi Türkiye Büyük Millet Meclisi (TBMM) tarafından gizli oyla seçilir.",
     answers: [
@@ -881,7 +881,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Anayasa dersi sınavına hazırlanan Beril, seçim hukukuyla ilgili tekrar yaparken hocasının şu cümlesini not alır.<br><br><i>\"Seçimlere ilişkin bazı ilkeler Anayasa'da doğrudan düzenlenmiştir. Ancak teknik hükümler kanunla belirlenmiştir.\"</i><br><br><b>Buna göre Beril, aşağıdakilerden hangisinin kanunla belirlendiğini söylerse doğru olur?</b></p>",
+    text: "<p>Anayasa dersi sınavına hazırlanan Beril, seçim hukukuyla ilgili tekrar yaparken hocasının şu cümlesini not alır.</p><p>\"Seçimlere ilişkin bazı ilkeler Anayasa'da doğrudan düzenlenmiştir. Ancak teknik hükümler kanunla belirlenmiştir\"</p><p><b>Buna göre Beril, aşağıdakilerden hangisinin kanunla belirlendiğini, söylerse doğru olur?</b></p>",
     diff: 2,
     expl: "Seçimlerin genel, eşit, gizli oy, tek dereceli olması, yargı yönetiminde yapılması ve temsilde adalet-yönetimde istikrar ilkeleri doğrudan Anayasa'da yer alır. Ancak %7'lik ülke seçim barajı gibi teknik kurallar Milletvekili Seçimi Kanunu ile düzenlenmiştir.",
     answers: [
@@ -917,7 +917,7 @@ export const VAT_TEMEL_HAK_VE_OZGURLUKLER_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nda çalışma hakkının güvence altına alınmasına ilişkin hükümler arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>1982 Anayasası'nda çalışma hakkının güvence altına alınmasına ilişkin hükümler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "1982 Anayasası'nda çalışanlara ilişkin olarak angaryanın yasaklanması (m.18), adil ücret, çalışma ve dinlenme hakkı (m.49-50) ile sözleşme özgürlüğü (m.48) gibi hükümler yer alır. Konut hakkı (m.57) ise sosyal bir haktır ancak doğrudan çalışma hakkının veya çalışanların bir güvencesi olarak tasnif edilmemiştir.",
     answers: [

@@ -5,7 +5,7 @@ import { McQ } from "../../../../types";
 // ============================================================================
 export const VAT_YARGI_TEST_1: McQ[] = [
   {
-    text: "<p>Hâkimler ve savcılar azlolunamaz, kendileri istemedikçe Anayasa'da gösterilen yaştan önce emekliye ayrılamaz; bir mahkemenin veya kadronun kaldırılması sebebiyle de olsa, aylık, ödenek ve diğer özlük haklarından yoksun kılınamaz.<br><br><b>1982 Anayasası'na göre, hâkimlerin emekliye ayrılabilmeleri için \"Anayasa'da gösterilen yaş\" aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Hâkimler ve savcılar azlolunamaz, kendileri istemedikçe Anayasa'da gösterilen yaştan önce emekliye ayrılamaz; bir mahkemenin veya kadronun kaldırılması sebebiyle de olsa, aylık, ödenek ve diğer özlük haklarından yoksun kılınamaz.</p><p><b>1982 Anayasası'na göre, hâkimlerin emekliye ayrılabilmeleri için \"Anayasa'da gösterilen yaş\" aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Hâkimler ve savcılar 65 yaşını bitirinceye kadar hizmet görürler; askerî hâkimlerin yaş haddi, yükselme ve emeklilikleri kanunda gösterilir.",
     answers: [
@@ -17,7 +17,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Türk Silahlı Kuvvetlerinde görevli Teğmen Mehmet'e babası İbrahim askerî mahkemelerin kaldırıldığını, askerlerin bir durum dışında askerî mahkemelerde artık yargılanmayacaklarını söyler.<br><br><b>Teğmen Mehmet, askerî mahkemelerin Anayasa'ya göre sadece hangi durumda kurulabileceğini söylerse cevabı doğru olur?</b></p>",
+    text: "<p>Türk Silahlı Kuvvetlerinde görevli Teğmen Mehmet'e babası İbrahim askerî mahkemelerin kaldırıldığını, askerlerin bir durum dışında askerî mahkemelerde artık yargılanmayacaklarını söyler.</p><p><b>Teğmen Mehmet, askerî mahkemelerin Anayasa'ya göre sadece hangi durumda kurulabileceğini söylerse cevabı doğru olur?</b></p>",
     diff: 1,
     expl: "Disiplin mahkemeleri dışında askerî mahkemeler kurulamaz. Ancak savaş hâlinde, asker kişilerin görevleriyle ilgili olarak işledikleri suçlara ait davalara bakmakla görevli askerî mahkemeler kurulabilir.",
     answers: [
@@ -29,7 +29,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Hiçbir organ, makam, merci veya kişi, yargı yetkisinin kullanılmasında mahkemelere ve hâkimlere emir ve talimat veremez; genelge gönderemez; tavsiye ve telkinde bulunamaz.<br><br><b>1982 Anayasası'nın bu hükmü, aşağıdaki başlıkların hangisinde düzenlenmiştir?</b></p>",
+    text: "<p>Hiçbir organ, makam, merci veya kişi, yargı yetkisinin kullanılmasında mahkemelere ve hâkimlere emir ve talimat veremez; genelge gönderemez; tavsiye ve telkinde bulunamaz.</p><p><b>1982 Anayasası'nın bu hükmü, aşağıdaki başlıkların hangisinde düzenlenmiştir?</b></p>",
     diff: 2,
     expl: "Hâkimler, görevlerinde bağımsızdırlar; Anayasaya, kanuna ve hukuka uygun olarak vicdani kanaatlerine göre hüküm verirler. Hiçbir organ, makam, merci veya kişi, yargı yetkisinin kullanılmasında mahkemelere ve hâkimlere emir ve talimat veremez; genelge gönderemez; tavsiye ve telkinde bulunamaz. Bu durum \"Mahkemelerin bağımsızlığı\" ilkesiyle ilgilidir.",
     answers: [
@@ -41,7 +41,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi \"Yüksek Mahkemeler\" arasında yer almaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi \"Yüksek Mahkemeler\" arasında <u>yer almaz</u>?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'nda sayılan yüksek mahkemeler; Anayasa Mahkemesi, Yargıtay, Danıştay ve Uyuşmazlık Mahkemesidir. Sayıştay, Hâkimler ve Savcılar Kurulu ve Yüksek Seçim Kurulu birer yargı organı olmasına rağmen Anayasa'da yüksek mahkeme olarak belirtilmemiştir.",
     answers: [
@@ -53,7 +53,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Hâkimler ve savcılar azlolunamaz, kendileri istemedikçe Anayasa'da gösterilen yaştan önce emekliye ayrılamaz; bir mahkemenin veya kadronun kaldırılması sebebiyle de olsa, aylık, ödenek ve diğer özlük haklarından yoksun kılınamaz.<br><br><b>1982 Anayasası'nın bu hükmü, aşağıdaki başlıkların hangisinde düzenlenmiştir?</b></p>",
+    text: "<p>Hâkimler ve savcılar azlolunamaz, kendileri istemedikçe Anayasa'da gösterilen yaştan önce emekliye ayrılamaz; bir mahkemenin veya kadronun kaldırılması sebebiyle de olsa, aylık, ödenek ve diğer özlük haklarından yoksun kılınamaz.</p><p><b>1982 Anayasası'nın bu hükmü, aşağıdaki başlıkların hangisinde düzenlenmiştir?</b></p>",
     diff: 1,
     expl: "Belirtilen hükümler hâkim ve savcıların mesleki güvencelerini ifade ettiği için Anayasa'da \"Hâkimlik ve savcılık teminatı\" başlığı altında düzenlenmiştir.",
     answers: [
@@ -65,7 +65,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, \"hâkimlik ve savcılık mesleği\" ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, \"hâkimlik ve savcılık mesleği\" ile ilgili aşağıdaki ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Hâkimler ve savcılar idari görevleri yönünden Hâkimler ve Savcılar Kuruluna değil, Adalet Bakanlığına bağlıdırlar. Diğer tüm seçenekler 1982 Anayasası'ndaki hâkimlik ve savcılık mesleği esaslarına uygundur.",
     answers: [
@@ -77,7 +77,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Mahkemelerin kuruluşu, görev ve yetkileri, işleyişi ve yargılama usulleri kanunla düzenlenir.<br>II. Disiplin mahkemeleri dışında askerî mahkemeler kurulamaz.<br>III. Savaş hâlinde, asker kişilerin görevleriyle ilgili olarak işledikleri suçlara ait davalara bakmakla görevli askerî mahkemeler kurulabilir.<br><br><b>1982 Anayasası'na göre, mahkemelerin kuruluşuna ilişkin yukarıda verilen ifadelerden hangileri doğrudur?</b></p>",
+    text: "<p>I. Mahkemelerin kuruluşu, görev ve yetkileri, işleyişi ve yargılama usulleri kanunla düzenlenir.<br>II. Disiplin mahkemeleri dışında askerî mahkemeler kurulamaz.<br>III. Savaş hâlinde, asker kişilerin görevleriyle ilgili olarak işledikleri suçlara ait davalara bakmakla görevli askerî mahkemeler kurulabilir.</p><p><b>1982 Anayasası'na göre, mahkemelerin kuruluşuna ilişkin yukarıda verilen ifadelerden hangileri doğrudur?</b></p>",
     diff: 2,
     expl: "Mahkemelerin kuruluşu, görev ve yetkileri kanunla düzenlenir. Askeri mahkemeler sadece disiplin mahkemeleri olarak kurulabilir; ancak savaş halinde asker kişilerin görevleriyle ilgili suçlarına bakmak üzere istisnai olarak askeri mahkemeler kurulabilir. İfadelerin tümü Anayasa'ya uygundur.",
     answers: [
@@ -89,7 +89,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi idari yargı mahkemeleri arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi idari yargı mahkemeleri arasında <u>yer almaz</u>?</b></p>",
     diff: 1,
     expl: "İdare ve vergi mahkemeleri idari yargıda ilk derece mahkemeleridir. Bölge idare mahkemesi istinaf, Danıştay ise temyiz mahkemesidir. Ancak Kadastro mahkemesi adli yargıda yer alan bir mahkemedir.",
     answers: [
@@ -101,7 +101,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi yargı sistemimizde bulunan ilk derece mahkemelerinden biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi yargı sistemimizde bulunan ilk derece mahkemelerinden biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Türkiye'deki bölge adliye mahkemeleri, diğer adıyla istinaf mahkemeleri Türkiye'de adli yargı kolunun içinde yer alan ikinci derece (üst derece) mahkemelerinden biridir. Sulh, Asliye, İdare ve Vergi mahkemeleri ise ilk derece mahkemeleridir.",
     answers: [
@@ -113,7 +113,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi Türk yargı sisteminde yer alan mahkemelerden biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Türk yargı sisteminde yer alan mahkemelerden biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Türk adli yargı sisteminde İcra Mahkemesi (veya icra daireleri) bulunmakla birlikte, bağımsız bir \"İflas mahkemesi\" adıyla kurulan bir ilk derece mahkemesi türü bulunmamaktadır. Tüketici, Fikri ve Sınai Haklar, Çocuk Ceza ve Asliye Ticaret mahkemeleri mevcuttur.",
     answers: [
@@ -139,7 +139,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
   {
     text: "<p><b>Mahkemelerin verdiği kararların kesinleşmeden önce denetlenmesini sağlamak amacıyla üst derece mahkemelere yapılan, davanın taraflarına tanınmış hukuki yolun adı nedir?</b></p>",
     diff: 1,
-    expl: "Mahkeme tarafından verilen ara kararlar ile yargılamayı bitiren nihai kararların hukuka uygun olmadığını düşüneniz hâlinde kararın bir kere daha aynı mahkeme ya da üst mahkeme tarafından gözden geçirilmesi yollarına genel olarak \"Kanun yolu\" denilmektedir.",
+    expl: "Mahkeme tarafından verilen ara kararlar ile yargılamayı bitiren nihai kararların hukuka uygun olmadığını düşünmeniz hâlinde kararın bir kere daha aynı mahkeme ya da üst mahkeme tarafından gözden geçirilmesi yollarına genel olarak \"Kanun yolu\" denilmektedir.",
     answers: [
       { text: "Kanun yolu", ok: true },
       { text: "İç hukuk", ok: false },
@@ -161,7 +161,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Temyiz<br>II. İstinaf<br>III. İtiraz<br><br><b>Yukarıdakilerden hangileri Türk hukukunda \"olağan kanun yolları\" olarak adlandırılır?</b></p>",
+    text: "<p>I. Temyiz<br>II. İstinaf<br>III. İtiraz</p><p><b>Yukarıdakilerden hangileri Türk hukukunda \"olağan kanun yolları\" olarak adlandırılan mahkemelerdir?</b></p>",
     diff: 1,
     expl: "Olağan kanun yolları, henüz kesinleşmeyen hükümlere karşı başvurulan yasa yollarıdır. Olağan kanun yolları; itiraz, istinaf ve temyiz olmak üzere üçe ayrılmaktadır.",
     answers: [
@@ -173,7 +173,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. İstinaf<br>II. Temyiz<br>III. İlk derece<br><br><b>Yerel mahkemelerde aleyhine karar çıkan kişilerin başvurabileceği üst derece mahkemeler arasında yukarıdakilerden hangileri yer alır?</b></p>",
+    text: "<p>I. İstinaf<br>II. Temyiz<br>III. İlk derece</p><p><b>Yerel mahkemelerde aleyhine karar çıkan kişilerin başvurabileceği üst derece mahkemeler arasında yukarıdakilerden hangileri yer alır?</b></p>",
     diff: 1,
     expl: "İlk derece mahkemeleri (yerel mahkemeler) kararlarına karşı, Adli ve idari yargıda başvurulabilecek üst derece mahkemeleri \"İstinaf (Bölge Adliye/Bölge İdare Mahkemeleri)\" ve \"Temyiz (Yargıtay/Danıştay)\" mercileridir.",
     answers: [
@@ -185,7 +185,7 @@ export const VAT_YARGI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Kanun yararına bozma<br>II. Yargıtay Cumhuriyet Başsavcısı'nın itirazı<br>III. Yargılanmanın yenilenmesi<br><br><b>Yukarıdakilerden hangileri olağanüstü kanun yolları arasında yer alır?</b></p>",
+    text: "<p>I. Kanun yararına bozma<br>II. Yargıtay Cumhuriyet Başsavcısı'nın itirazı<br>III. Yargılanmanın yenilenmesi</p><p><b>Yukarıdakilerden hangileri olağanüstü kanun yolları arasında yer alır?</b></p>",
     diff: 2,
     expl: "Olağanüstü kanun yolları, kesinleşmiş mahkeme kararlarına karşı başvurulan kanun yoludur. Bunlar; Yargıtay Cumhuriyet Başsavcılığının itirazı, Kanun yararına bozma ve Yargılamanın yenilenmesi olmak üzere üçe ayrılmaktadır.",
     answers: [
@@ -239,7 +239,7 @@ export const VAT_YARGI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>I. A ve B, kira sözleşmesinden doğan alacak uyuşmazlığını dava açmadan önce bir uzman eşliğinde çözmeye çalışmıştır.<br>II. C, kendisine hakaret eden D ile ceza soruşturması sürecinde, Cumhuriyet savcılığı tarafından yönlendirilen bir süreçte anlaşmaya varmıştır.<br>III. E ve F şirketleri, sözleşmelerine koydukları hükme dayanarak uyuşmazlıklarını mahkemeye gitmeden, belirledikleri üç hakem önünde çözüme kavuşturmuşlardır.<br><br><b>Bu uyuşmazlık çözüm yolları aşağıdakilerden hangisinde doğru kavramlarla eşleştirilmiştir?</b></p>",
+    text: "<p>I. A ve B, kira sözleşmesinden doğan alacak uyuşmazlığını dava açmadan önce bir uzman eşliğinde çözmeye çalışmıştır.<br>II. C, kendisine hakaret eden D ile ceza soruşturması sürecinde, Cumhuriyet savcılığı tarafından yönlendirilen bir süreçte anlaşmaya varmıştır.<br>III. E ve F şirketleri, sözleşmelerine koydukları hükme dayanarak uyuşmazlıklarını mahkemeye gitmeden, belirledikleri üç hakem önünde çözüme kavuşturmuşlardır.</p><p><b>Bu uyuşmazlık çözüm yolları aşağıdakilerden hangisinde doğru kavramlarla eşleştirilmiştir?</b></p>",
     diff: 2,
     expl: "I. durumda, özel hukuk alanındaki bir uyuşmazlık, dava açmadan önce arabulucu eşliğinde çözülmeye çalışıldığı için ARA BULUCULUK'tur. II. durum, ceza muhakemesi kapsamında taksirle yaralama veya hakaret gibi suçta şüpheli ile mağdurun anlaştığı UZLAŞTIRMA sürecidir. III. durumda ise şirketler arasında hakemler önünde bağlayıcı karar alındığı için TAHKİM'dir.",
     answers: [
@@ -251,7 +251,7 @@ export const VAT_YARGI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Yargıtay<br>II. Cumhurbaşkanı<br>III. TBMM<br><br><b>1982 Anayasası'na göre, Anayasa Mahkemesi üyelerini seçme yetkisi yukarıdakilerden hangilerine aittir?</b></p>",
+    text: "<p>I. Yargıtay<br>II. Cumhurbaşkanı<br>III. TBMM</p><p><b>1982 Anayasası'na göre, Anayasa Mahkemesi üyelerini seçme yetkisi yukarıdakilerden hangilerine aittir?</b></p>",
     diff: 1,
     expl: "Anayasa Mahkemesi 15 üyeden kurulur. Üyelerin 12'sini Cumhurbaşkanı, 3'ünü ise Türkiye Büyük Millet Meclisi (TBMM) seçer. Yargıtay üye seçmez, ancak kendi içinden aday gösterip Cumhurbaşkanına sunar.",
     answers: [
@@ -263,7 +263,7 @@ export const VAT_YARGI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesi ile ilgili olarak;</b><br><br>I. 15 üyeden oluşur.<br>II. Üyelerin görev süresi 12 yıldır.<br>III. Bireysel başvuruları karara bağlar.<br><br><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesi ile ilgili olarak;</b></p><p>I. 15 üyeden oluşur.<br>II. Üyelerin görev süresi 12 yıldır.<br>III. Bireysel başvuruları karara bağlar.</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 1,
     expl: "Anayasa Mahkemesi 15 üyeden oluşur (I). Anayasa Mahkemesi üyeleri 12 yıl için seçilirler ve bir kimse iki defa Anayasa Mahkemesi üyesi seçilemez (II). 2010 anayasa değişikliği ile bireysel başvuruları karara bağlamak Anayasa Mahkemesinin görevleri arasına girmiştir (III).",
     answers: [
@@ -275,9 +275,9 @@ export const VAT_YARGI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesine aşağıdakilerden hangisinden üye seçilmez?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesine aşağıdakilerden hangisinden üye <u>seçilmez</u>?</b></p>",
     diff: 2,
-    expl: "Cumhurbaşkanı, Anayasa Mahkemesine üyeleri; Yargıtay, Danıştay, Yükseköğretim Kurulunun göstereceği adaylar (öğretim üyeleri) ile üst kademe yöneticileri, serbest avukatlar, birinci sınıf hâkim ve savcılar ile en az beş yıl raportörlük yapmış Anayasa Mahkemesi raportörleri arasından seçer. Ancak Sayıştay, TBMM'nin üye seçeceği bir kurumdur (TBMM Sayıştay'dan 2 üye seçer), Cumhurbaşkanının Sayıştay'dan doğrudan üye seçme hakkı yoktur. Yükseköğretim Kurulu (YÖK) ise Anayasa Mahkemesine doğrudan üye veremez, aday da gösteremez (YÖK genel kurulu değil, öğretim üyeleri arasından doğrudan CB seçer). [Kitap Çözüm Notu: YÖK kendi üyeleri arasından aday gösteremez, doğrudan CB öğretim üyeleri arasından seçer]. *Soru kökü ve seçenekler dikkate alındığında, Yükseköğretim Kurulu üye veremez.*",
+    expl: "Anayasa Mahkemesi 15 üyeden kurulur. TBMM; iki üyeyi Sayıştay Genel Kurulunun gösterdiği adaylar, bir üyeyi baro başkanlarının gösterdiği serbest avukatlar arasından seçer. Cumhurbaşkanı; üç üyeyi Yargıtay, iki üyeyi Danıştay, üç üyeyi Yükseköğretim Kurulunun gösterdiği adaylar, dört üyeyi ise üst kademe yöneticileri, serbest avukatlar, birinci sınıf hâkim ve savcılar ile en az beş yıl raportörlük yapmış Anayasa Mahkemesi raportörleri arasından seçer. Yükseköğretim Kurulunun kendi üyeleri Anayasa Mahkemesi üyeliği için aday gösterilemez; YÖK, kendi üyesi olmayan öğretim üyeleri arasından aday gösterir.",
     answers: [
       { text: "Danıştay", ok: false },
       { text: "Yükseköğretim Kurulu", ok: true },
@@ -287,7 +287,7 @@ export const VAT_YARGI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesi raportörlerinin Anayasa Mahkemesi üyesi seçilebilmeleri için kural olarak en az kaç yıl raportörlük görevinde bulunmuş olmaları gerekir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesi raportörlerinin Anayasa Mahkemesi üyesi seçilebilmeleri için kural olarak <u>en az</u> kaç yıl raportörlük görevinde bulunmuş olmaları gerekir?</b></p>",
     diff: 1,
     expl: "Cumhurbaşkanı; Anayasa Mahkemesine üyeleri seçerken, adayların üst kademe yöneticileri, serbest avukatlar, birinci sınıf hâkim ve savcılar ile en az beş (5) yıl raportörlük yapmış Anayasa Mahkemesi raportörleri arasından olmasını gözetir.",
     answers: [
@@ -299,7 +299,7 @@ export const VAT_YARGI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdaki görevlerden hangisine ikinci kez seçilmek anayasa gereği mümkün değildir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdaki görevlerden hangisine ikinci kez seçilmek anayasa gereği mümkün <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Anayasa Mahkemesi üyeliği, görev süresi 12 yıldır ve bir kimse ikinci kez Anayasa Mahkemesi üyesi olarak seçilemez (Anayasa m.147/2). Cumhurbaşkanlığı, Kamu Başdenetçiliği, HSK üyeliği ve Meclis Başkanlığı'na belirli şartlarda ikinci kez seçilmek mümkündür.",
     answers: [
@@ -311,7 +311,7 @@ export const VAT_YARGI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Anayasa Mahkemesi raportörleri<br>II. Üst kademe yöneticileri<br>III. Serbest avukatlar<br>IV. Hâkim ve savcılar<br><br><b>1982 Anayasası'na göre, Anayasa Mahkemesine üye seçileceklerden hangisi için ilgili alanda en az 20 yıl çalışmış olma şartı aranır?</b></p>",
+    text: "<p>I. Anayasa Mahkemesi raportörleri<br>II. Üst kademe yöneticileri<br>III. Serbest avukatlar<br>IV. Hâkim ve savcılar</p><p><b>1982 Anayasası'na göre, Anayasa Mahkemesine üye seçileceklerden hangisi için ilgili alanda <u>en az</u> 20 yıl çalışmış olma şartı aranır?</b></p>",
     diff: 3,
     expl: "Anayasa Mahkemesine üye seçilebilmek için, 45 yaşın doldurulmuş olması kaydıyla; avukatların en az 20 yıl fiilen avukatlık yapmış, üst kademe yöneticilerinin yükseköğrenim görmüş ve en az 20 yıl kamu hizmetinde fiilen çalışmış, birinci sınıf hâkim ve savcıların adaylık dâhil en az 20 yıl çalışmış olması şarttır. Anayasa Mahkemesi raportörlerinin ise en az 5 yıl raportörlük yapmış olmaları yeterlidir.",
     answers: [
@@ -335,7 +335,7 @@ export const VAT_YARGI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesinin görev ve yetkileri arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesinin görev ve yetkileri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Kanunların şekil/esas denetimi, siyasi partilerin mali denetimi ve kapatılması, Sayıştay başkan/üyelerini Yüce Divan sıfatıyla yargılamak Anayasa Mahkemesinin görevleridir. Ancak 1982 Anayasası'na göre, usulüne göre yürürlüğe giren milletlerarası antlaşmalara karşı Anayasa Mahkemesinde iptal davası açılamaz (yargı yolu kapalıdır). Dolayısıyla uygunluk denetimini yapamaz.",
     answers: [
@@ -347,7 +347,7 @@ export const VAT_YARGI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Anayasa Mahkemesi Genel Kurulu, milletvekili A'nın Meclis tarafından dokunulmazlığının kaldırılması kararına karşı yaptığı itirazı görüşmek üzere toplanmıştır.<br><br><b>1982 Anayasası'na göre, Anayasa Mahkemesi Genel Kurulu, Mahkeme Başkanı'nın veya başkanın belirleyeceği başkan vekilinin başkanlığında en az kaç üye ile toplanır?</b></p>",
+    text: "<p>Anayasa Mahkemesi Genel Kurulu, milletvekili A'nın Meclis tarafından dokunulmazlığının kaldırılması kararına karşı yaptığı itirazı görüşmek üzere toplanmıştır.</p><p><b>1982 Anayasası'na göre, Anayasa Mahkemesi Genel Kurulu, Mahkeme Başkanı'nın veya başkanın belirleyeceği başkan vekilinin başkanlığında <u>en az</u> kaç üye ile toplanır?</b></p>",
     diff: 2,
     expl: "Anayasa Mahkemesi, iki bölüm ve Genel Kurul hâlinde çalışır. Genel Kurul, Mahkeme Başkanının veya Başkanın belirleyeceği başkan vekilinin başkanlığında en az 10 üye ile toplanır.",
     answers: [
@@ -359,7 +359,7 @@ export const VAT_YARGI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>• Anayasa Mahkemesi üyeleri ---- yıl için seçilirler.<br>• Bir kimse ---- defa Anayasa Mahkemesi üyesi seçilemez.<br>• Anayasa Mahkemesi üyeleri ---- yaşını doldurunca emekliye ayrılırlar.<br>• Anayasa Mahkemesine üye seçilebilmek için ---- yaşın doldurulmuş olması gerekir.<br>• Anayasa Mahkemesi üyeleri arasından gizli oyla ve üye tam sayısının salt çoğunluğu ile ---- yıl için bir Başkan seçilir.<br><br><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Anayasa Mahkemesi üyeliği ile ilgili yukarıdaki tabloda bırakılan boşluklardan birine getirilemez?</b></p>",
+    text: "<p>• Anayasa Mahkemesi üyeleri ---- yıl için seçilirler.<br>• Bir kimse ---- defa Anayasa Mahkemesi üyesi seçilemez.<br>• Anayasa Mahkemesi üyeleri ---- yaşını doldurunca emekliye ayrılırlar.<br>• Anayasa Mahkemesine üye seçilebilmek için ---- yaşın doldurulmuş olması gerekir.<br>• Anayasa Mahkemesi üyeleri arasından gizli oyla ve üye tam sayısının salt çoğunluğu ile ---- yıl için bir Başkan seçilir.</p><p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Anayasa Mahkemesi üyeliği ile ilgili yukarıdaki tabloda bırakılan boşluklardan birine <u>getirilemez</u>?</b></p>",
     diff: 3,
     expl: "Anayasa Mahkemesi üyeleri 12 yıl için seçilirler. Bir kimse 2 defa üye seçilemez. Üyeler 65 yaşını doldurunca emekliye ayrılırlar. Üye seçilebilmek için 45 yaşın doldurulmuş olması gerekir. Kendi aralarından gizli oyla 4 yıl için bir Başkan seçilirler. Seçeneklerdeki 40 sayısı herhangi bir boşluğa getirilemez.",
     answers: [
@@ -383,7 +383,7 @@ export const VAT_YARGI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Anayasa Mahkemesi, başkan vekilinin başkanlığında 4 üyenin katılımıyla toplanıyor.<br><br><b>1982 Anayasası'na göre, Anayasa Mahkemesi aşağıdakilerden hangisi karar bağlanmak için toplanmış olabilir?</b></p>",
+    text: "<p>Anayasa Mahkemesi, başkan vekilinin başkanlığında 4 üyenin katılımıyla toplanıyor.</p><p><b>1982 Anayasası'na göre, Anayasa Mahkemesi aşağıdakilerden hangisi karar bağlanmak için toplanmış olabilir?</b></p>",
     diff: 2,
     expl: "Anayasa Mahkemesinin bölümleri (başkan vekili başkanlığında 4 üye ile toplanan), yalnızca 'bireysel başvurulara' ilişkin kararları verir. Siyasi parti kapatma, Yüce Divan yargılamaları ve iptal davaları gibi konular en az 10 üye ile toplanan Genel Kurulun görevidir.",
     answers: [
@@ -401,7 +401,7 @@ export const VAT_YARGI_TEST_2: McQ[] = [
 // ============================================================================
 export const VAT_YARGI_TEST_3: McQ[] = [
   {
-    text: "<p>1982 Anayasası'na göre,<br><br>I. bir Anayasa değişikliğinin iptali,<br>II. Yüce Divan yargılaması,<br>III. bir siyasi partinin kapatılması veya Devlet yardımından yoksun bırakılması<br><br><b>için 12 üye ile toplanan Anayasa Mahkemesi her bir dava için hangi sayılar ile karar alabilir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre,</b></p><p>I. bir Anayasa değişikliğinin iptali,<br>II. Yüce Divan yargılaması,<br>III. bir siyasi partinin kapatılması veya Devlet yardımından yoksun bırakılması</p><p><b>için 12 üye ile toplanan Anayasa Mahkemesi her bir dava için hangi sayılar ile karar alabilir?</b></p>",
     diff: 3,
     expl: "Anayasa Mahkemesi Genel Kurulu kural olarak salt çoğunlukla karar alır. Ancak Anayasa değişikliğinde iptale ve siyasi partilerin kapatılmasına ya da devlet yardımından yoksun bırakılmasına karar verilebilmesi için toplantıya katılan üyelerin üçte iki (2/3) oy çokluğu şarttır. Yüce Divan yargılamasında ise salt çoğunluk yeterlidir. 12 üye katıldığına göre; Anayasa değişikliği iptali için 12'nin 2/3'ü olan 8 oy, Yüce Divan için 12'nin salt çoğunluğu olan 7 oy, parti kapatma için 12'nin 2/3'ü olan 8 oy gerekir.",
     answers: [
@@ -413,7 +413,7 @@ export const VAT_YARGI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir bakan hakkında görev suçu işlediği iddiasıyla meclis soruşturması açılmış, yapılan soruşturma sonucunda bakanın dosyası yargılanmak üzere Anayasa Mahkemesine gönderilmiştir.<br><br><b>1982 Anayasası'na göre bakanı görev suçu nedeniyle yargılayan Anayasa Mahkemesi organı aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Bir bakan hakkında görev suçu işlediği iddiasıyla meclis soruşturması açılmış, yapılan soruşturma sonucunda bakanın dosyası yargılanmak üzere Anayasa Mahkemesine gönderilmiştir.</p><p><b>1982 Anayasası'na göre bakanı görev suçu nedeniyle yargılayan Anayasa Mahkemesi organı aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Anayasa Mahkemesi; Cumhurbaşkanını, Türkiye Büyük Millet Meclisi Başkanını, Cumhurbaşkanı yardımcılarını ve bakanları görevleriyle ilgili suçlardan dolayı Yüce Divan sıfatıyla yargılar.",
     answers: [
@@ -425,7 +425,7 @@ export const VAT_YARGI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Yüce Divan yargılamasına ilişkin aşağıdaki eşleştirmelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Yüce Divan yargılamasına ilişkin aşağıdaki eşleştirmelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Yüce Divan kararlarına karşı yeniden inceleme başvurusu yapılabilir ve bu başvuru sonucunda verilen karar kesindir. Ancak Yüce Divan kararlarına karşı \"temyiz\" yolu öngörülmemiştir. Dolayısıyla kararlarına karşı temyiz yolunun açık olduğu ifadesi Anayasa'ya aykırıdır.",
     answers: [
@@ -461,7 +461,7 @@ export const VAT_YARGI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>7528 sayılı Öğretmenlik Mesleği Kanunu'nun belirli maddelerinin esas bakımından Anayasa'ya aykırı olduğu iddiasıyla, Türkiye Büyük Millet Meclisinde en fazla üyeye sahip ikinci parti grubu, Anayasa Mahkemesi'ne dava açıyor.<br><br><b>1982 Anayasası'na göre, yukarıdaki açıklamada belirtilen dava aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>7528 sayılı Öğretmenlik Mesleği Kanunu'nun belirli maddelerinin esas bakımından Anayasa'ya aykırı olduğu iddiasıyla, Türkiye Büyük Millet Meclisinde en fazla üyeye sahip ikinci parti grubu, Anayasa Mahkemesi'ne dava açıyor.</p><p><b>1982 Anayasası'na göre, yukarıdaki açıklamada belirtilen dava aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Kanunların, Cumhurbaşkanlığı Kararnamelerinin veya TBMM İç Tüzüğü'nün, yürürlüğe girdikten sonra doğrudan Anayasa'ya uygunluk açısından iptali talebiyle dava açılması 'Soyut Norm Denetimi' (İptal Davası) kapsamındadır. Bu davayı belli organlar ve milletvekilleri açabilir.",
     answers: [
@@ -473,7 +473,7 @@ export const VAT_YARGI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>İstanbul 5. İş Mahkemesi Hâkimi Ferhat Bey, önündeki davada uygulanan bazı kanun hükmünün Anayasa'daki eşitlik ilkesine aykırı olabileceğini değerlendirmiştir. Davalı avukatı Nilay Hanım da aynı yönde itirazda bulunmuş, hâkim bu itirazı ciddi bularak yargılamayı durdurmuş ve durumu Anayasa Mahkemesine iletmiştir.<br><br><b>1982 Anayasası'nda \"Anayasa'ya aykırılığın diğer mahkemelerce ileri sürülmesi\" aşağıdaki kavramlardan hangisiyle adlandırılır?</b></p>",
+    text: "<p>İstanbul 5. İş Mahkemesi Hâkimi Ferhat Bey, önündeki davada uygulanması gereken bir kanun hükmünün Anayasa'daki eşitlik ilkesine aykırı olabileceğini değerlendirmiştir. Davalı avukatı Nilay Hanım da aynı yönde itirazda bulunmuş, hâkim bu itirazı ciddi bularak yargılamayı durdurmuş ve durumu Anayasa Mahkemesine iletmiştir.</p><p><b>1982 Anayasası'nda \"Anayasa'ya aykırılığın diğer mahkemelerce ileri sürülmesi\" aşağıdaki kavramlardan hangisiyle adlandırılır?</b></p>",
     diff: 2,
     expl: "Bir davaya bakmakta olan mahkemenin uygulayacağı kanun veya CBK hükümlerini Anayasa'ya aykırı görmesi veya taraflardan birinin ileri sürdüğü aykırılık iddiasının ciddi olduğu kanısına varması durumunda dosyayı Anayasa Mahkemesine göndermesine 'somut norm denetimi' (itiraz yolu) denir.",
     answers: [
@@ -485,7 +485,7 @@ export const VAT_YARGI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesine açılacak iptal davası ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesine açılacak iptal davası ile ilgili aşağıda verilen bilgilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "Kanunların 'esas' bakımından iptali için dava açmaya yetkili olanlar; Cumhurbaşkanı, TBMM üye tam sayısının en az beşte biri (1/5) tutarındaki milletvekili ve TBMM'de en yüksek üyeye sahip İKİ PARTİ GRUBUDUR. B seçeneğinde eksik bilgi verilmiş, parti gruplarının dava açma yetkisi belirtilmemiştir.",
     answers: [
@@ -497,7 +497,7 @@ export const VAT_YARGI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Aşağıda Anayasa Mahkemesinin soyut norm denetimi (iptal davası) yetkisine ilişkin normlar ile bu normlara yönelik denetim türü ve normun yayımından itibaren başvuru süreleri verilmiştir.<br><br>I. Kanun - Şekil - 10 gün<br>II. Kanun - Esas - 60 gün<br>III. Cumhurbaşkanlığı Kararnamesi - Şekil ve esas - 10 gün<br>IV. TBMM İç Tüzüğü - Şekil ve esas - 60 gün<br>V. Anayasa değişikliği - Şekil - 10 gün<br><br><b>1982 Anayasası'na yukarıda verilen bilgilerden hangisi yanlıştır?</b></p>",
+    text: "<p>Aşağıda Anayasa Mahkemesinin soyut norm denetimi (iptal davası) yetkisine ilişkin normlar ile bu normlara yönelik denetim türü ve normun yayımından itibaren başvuru süreleri eşleştirilmiştir.</p><p>I. Kanun - Şekil - 10 gün<br>II. Kanun - Esas - 60 gün<br>III. Cumhurbaşkanlığı Kararnamesi - Şekil ve esas - 10 gün<br>IV. TBMM İç Tüzüğü - Şekil ve esas - 60 gün<br>V. Anayasa değişikliği - Şekil - 10 gün</p><p><b>1982 Anayasası'na yukarıda verilen bilgilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "Cumhurbaşkanlığı Kararnameleri için hem şekil hem de esas bakımından iptal davası açma süresi Resmî Gazete'de yayımını izleyen 60 gündür. 10 günlük süre sadece kanunların ve anayasa değişikliklerinin 'şekil' yönünden iptal davaları için geçerlidir.",
     answers: [
@@ -509,7 +509,7 @@ export const VAT_YARGI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>TBMM'de kabul edilen \"Kişisel Verileri Koruma Kanunu\" 5 Temmuz'da Resmî Gazete'de yayımlanmıştır. 120 milletvekili, şekil yönünden Anayasa'ya aykırı olduğunu düşünerek iptal davası açmak istemektedir.<br><br><b>1982 Anayasası'na göre milletvekillerinin iptal davası açabileceği son gün aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>TBMM'de kabul edilen \"Kişisel Verileri Koruma Kanunu\" 5 Temmuz'da Resmî Gazete'de yayımlanmıştır. 120 milletvekili, şekil yönünden Anayasa'ya aykırı olduğunu düşünerek iptal davası açmak istemektedir.</p><p><b>1982 Anayasası'na göre milletvekillerinin iptal davası açabileceği <u>son</u> gün aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Kanunların şekil bakımından iptali için Anayasa Mahkemesine, Resmî Gazete'de yayımlanmasından itibaren 10 gün içinde dava açılmalıdır. 5 Temmuz'da yayımlandığına göre son gün 15 Temmuz'dur.",
     answers: [
@@ -521,7 +521,7 @@ export const VAT_YARGI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Milletlerarası antlaşmalar<br>II. İnkılap kanunları<br>III. Olağanüstü hâl Cumhurbaşkanı kararnameleri<br><br><b>1982 Anayasası'na göre, yukarıdakilerden hangileri için Anayasa Mahkemesine iptal davası açılamaz?</b></p>",
+    text: "<p>I. Milletlerarası antlaşmalar<br>II. İnkılap kanunları<br>III. Olağanüstü hâl Cumhurbaşkanı kararnameleri</p><p><b>1982 Anayasası'na göre, yukarıdakilerden hangileri için Anayasa Mahkemesine iptal davası <u>açılamaz</u>?</b></p>",
     diff: 1,
     expl: "Anayasa Mahkemesinin denetimine tabi olmayan ve yargı yolu tamamen kapalı olan normlar şunlardır: Usulüne göre yürürlüğe giren milletlerarası antlaşmalar, Olağanüstü hâl Cumhurbaşkanlığı kararnameleri ve İnkılap Kanunları.",
     answers: [
@@ -533,7 +533,7 @@ export const VAT_YARGI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesi aşağıdakilerden hangisi için açılan iptal davalarında esas (içerik) denetimi yapamaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesi aşağıdakilerden hangisi için açılan iptal davalarında esas (içerik) denetimi <u>yapamaz</u>?</b></p>",
     diff: 1,
     expl: "Anayasa Mahkemesi kanunların, Cumhurbaşkanı kararnamelerinin ve TBMM İç Tüzüğü'nün Anayasa'ya hem esas hem şekil yönünden uygunluğunu denetler. Ancak Anayasa değişikliklerini sadece \"şekil\" bakımından denetleyebilir, esas (içerik) denetimi yapamaz.",
     answers: [
@@ -557,7 +557,7 @@ export const VAT_YARGI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi anayasada belirtilen \"İnkılap Kanunları\" arasında yer almaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi anayasada belirtilen \"İnkılap Kanunları\" arasında <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "1982 Anayasası madde 174'te 8 adet inkılap kanunu koruma altına alınmıştır. Şapka Kanunu, Tekke ve Zaviyeler, Tevhid-i Tedrisat ve Türk Kanunu Medenisinin evlenme maddesi bunlardandır. Ancak \"Şeriye ve Evkâf Vekâletinin İlgasına Dair Kanun\" Anayasa'da özel olarak korunan inkılap kanunları listesinde yer almaz.",
     answers: [
@@ -575,7 +575,7 @@ export const VAT_YARGI_TEST_3: McQ[] = [
 // ============================================================================
 export const VAT_YARGI_TEST_4: McQ[] = [
   {
-    text: "<p>Elif: Sayın hâkim, davaya uygulanacak kanun hükmünün Anayasa'ya aykırılığı iddiasıyla Anayasa Mahkemesine başvurdunuz, peki bu sürecin sonlanması ne kadar sürer?<br><br>Hâkim: Anayasaya göre Mahkemenin önünde belirli bir süre var.<br><br><b>1982 Anayasası'na göre, yukarıda yer alan ifadeler dikkate alındığında, mahkemenin Anayasa Mahkemesine yaptığı somut norm denetimi başvurusunda, Anayasa Mahkemesinin kararını en geç ne kadar süre içinde vermesi gerekir?</b></p>",
+    text: "<p><b>Elif:</b> Sayın hâkim, davaya uygulanacak kanun hükmünün Anayasa'ya aykırılığı iddiasıyla Anayasa Mahkemesine başvurdunuz, peki bu sürecin sonlanması ne kadar sürer?</p><p><b>Hâkim:</b> Anayasaya göre Mahkemenin önünde belirli bir süre var.</p><p><b>1982 Anayasası'na göre, yukarıda yer alan ifadeler dikkate alındığında, mahkemenin Anayasa Mahkemesine yaptığı somut norm denetimi başvurusunda, Anayasa Mahkemesinin kararını <u>en geç</u> ne kadar süre içinde vermesi gerekir?</b></p>",
     diff: 1,
     expl: "Anayasa Mahkemesi, işin kendisine gelişinden başlamak üzere 5 ay içinde kararını verir ve açıklar. Bu süre içinde karar verilmezse mahkeme davayı yürürlükteki kanun hükümlerine göre sonuçlandırır.",
     answers: [
@@ -587,7 +587,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir somut norm denetiminde Anayasa Mahkemesi, işin kendisine gelmesinden itibaren beş ay içinde kararını vermiyor.<br><br><b>1982 Anayasası'na göre, bu durumda, mahkeme aşağıdaki işlemlerden hangisini yapmak zorundadır?</b></p>",
+    text: "<p>Bir somut norm denetiminde Anayasa Mahkemesi, işin kendisine gelmesinden itibaren beş ay içinde kararını vermiyor.</p><p><b>1982 Anayasası'na göre, bu durumda, mahkeme aşağıdaki işlemlerden hangisini yapmak zorundadır?</b></p>",
     diff: 2,
     expl: "Anayasa Mahkemesi, işin kendisine gelişinden başlamak üzere beş ay içinde kararını verir ve açıklar. Bu süre içinde karar verilmezse mahkeme davayı yürürlükteki kanun hükümlerine göre sonuçlandırır. Ancak, Anayasa Mahkemesinin kararı, esas hakkındaki karar kesinleşinceye kadar gelirse, mahkeme buna uymak zorundadır.",
     answers: [
@@ -599,7 +599,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Ahmet Bey, ceza davasının uzun sürmesi nedeniyle Anayasa'da ve Avrupa İnsan Hakları Sözleşmesi'nde güvence altına alınan makul sürede yargılanma hakkı ile diğer hak ve özgürlüklerin ihlal edildiği iddiasıyla Anayasa Mahkemesine başvurmuştur.<br><br><b>Anayasa hukukunda \"Anayasa Şikâyeti\" olarak da ifade edilen bu dava aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Ahmet Bey, ceza davasının uzun sürmesi nedeniyle Anayasa'da ve Avrupa İnsan Hakları Sözleşmesi'nde güvence altına alınan makul sürede yargılanma hakkı ile diğer hak ve özgürlüklerin ihlal edildiği iddiasıyla Anayasa Mahkemesine başvurmuştur.</p><p><b>Anayasa hukukunda \"Anayasa Şikâyeti\" olarak da ifade edilen bu dava aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Anayasa Mahkemesine bireysel başvuru, anayasada tanımlanan ve aynı zamanda Avrupa İnsan Hakları Sözleşmesi (AİHS) ile ek protokollerde koruma altına alınmış temel hak ve özgürlüklerden herhangi birinin ihlali hâlinde başvurulan bir yargı yoludur. Bu hak arama yoluna anayasa hukukunda 'Bireysel Başvuru (Anayasa Şikâyeti)' adı verilir.",
     answers: [
@@ -611,7 +611,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Anayasa Mahkemesi somut norm denetimi yoluyla bir kanunun iptali için davada ret kararı verir.<br><br><b>1982 Anayasası'na göre, bu ret kararının Resmî Gazete'de yayımlanmasından itibaren kaç yıl geçmedikçe aynı norm hakkında anayasaya aykırılık iddiasıyla Anayasa Mahkemesine başvurulamaz?</b></p>",
+    text: "<p>Anayasa Mahkemesi somut norm denetimi yoluyla bir kanunun iptali için davada ret kararı verir.</p><p><b>1982 Anayasası'na göre, bu ret kararının Resmî Gazete'de yayımlanmasından itibaren kaç yıl geçmedikçe aynı norm hakkında anayasaya aykırılık iddiasıyla Anayasa Mahkemesine <u>başvurulamaz</u>?</b></p>",
     diff: 1,
     expl: "Anayasa Mahkemesinin işin esasına girerek verdiği ret kararının Resmî Gazete'de yayımlanmasından sonra 10 yıl geçmedikçe aynı kanun hükmünün Anayasa'ya aykırılığı iddiasıyla tekrar başvuruda bulunulamaz.",
     answers: [
@@ -623,7 +623,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Anayasa'nın 148. maddesine göre; herkes, Anayasada güvence altına alınmış temel hak ve özgürlüklerinden, ---- kapsamındaki herhangi birinin kamu gücü tarafından ihlal edildiği iddiasıyla, Anayasa Mahkemesine bireysel başvuru yapabilir.<br><br><b>1982 Anayasası'na göre, yukarıda bırakılan boşluğa hangisi getirilmelidir?</b></p>",
+    text: "<p>Anayasa'nın 148. maddesine göre; herkes, Anayasada güvence altına alınmış temel hak ve özgürlüklerinden, ---- kapsamındaki herhangi birinin kamu gücü tarafından ihlal edildiği iddiasıyla, Anayasa Mahkemesine bireysel başvuru yapabilir.</p><p><b>1982 Anayasası'na göre, yukarıda bırakılan boşluğa hangisi getirilmelidir?</b></p>",
     diff: 1,
     expl: "Anayasa'nın 148. maddesinin 3. fıkrası, bireysel başvuru hakkının kapsamını hem iç hukukta anayasal güvence altına alınmış temel haklar, hem de Avrupa İnsan Hakları Sözleşmesi (AİHS) kapsamında tanınan haklarla sınırlandırmıştır.",
     answers: [
@@ -635,7 +635,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Anayasa'da \"Yargı\" başlığı altında düzenlenmemiştir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Anayasa'da \"Yargı\" başlığı altında <u>düzenlenmemiştir</u>?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'nın \"Yargı\" başlıklı kısmı; mahkemelerin bağımsızlığı, Hâkimler ve Savcılar Kurulu, Anayasa Mahkemesi, Yargıtay, Danıştay, Uyuşmazlık Mahkemesi ve Sayıştay gibi yargı organlarını bu bölüm altında düzenler. Ancak Yüksek Seçim Kurulu (YSK) bu bölümde değil seçimler ve halkoylamaları başlıklı \"Yasama\" bölümünde düzenlenmiştir.",
     answers: [
@@ -647,7 +647,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesine bireysel başvuru hakkı ile ilgili aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesine bireysel başvuru hakkı ile ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Anayasa Mahkemesi, bireysel başvuruda sadece hak ihlali olup olmadığına karar verir; mahkeme kararlarını değiştirip yerine geçecek yeni bir karar (hüküm) veremez. İhlali ve sonuçlarını ortadan kaldırmak için yapılması gerekenlere hükmeder ancak kendisi yargı mercinin yerine geçip karar veremez.",
     answers: [
@@ -659,7 +659,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Anayasa Mahkemesi, bir kanun hükmünü Anayasa'ya aykırı bularak iptal etmiştir. Ancak hükmün yürürlükten hemen kaldırılmasının ciddi hukuki boşluklara yol açabileceğini dikkate alarak, iptal kararının yürürlüğe gireceği tarihi ileri bir tarihe bırakmıştır.<br><br><b>1982 Anayasası'na göre, bu tarih kararın Resmî Gazete'de yayımlandığı günden başlayarak en fazla ne kadar olabilir?</b></p>",
+    text: "<p>Anayasa Mahkemesi, bir kanun hükmünü Anayasa'ya aykırı bularak iptal etmiştir. Ancak hükmün yürürlükten hemen kaldırılmasının ciddi hukuki boşluklara yol açabileceğini dikkate alarak, iptal kararının yürürlüğe gireceği tarihi ileri bir tarihe bırakmıştır.</p><p><b>1982 Anayasası'na göre, bu tarih kararın Resmî Gazete'de yayımlandığı günden başlayarak <u>en fazla</u> ne kadar olabilir?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'nın 153. maddesine göre, Anayasa Mahkemesi, gereken hâllerde iptal kararının yürürlüğe gireceği tarihi ayrıca kararlaştırabilir. Bu tarih, kararın Resmî Gazete'de yayımlandığı günden başlayarak en fazla 1 yıl olabilir.",
     answers: [
@@ -671,7 +671,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesi'nin kararlarına ilişkin aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Anayasa Mahkemesi'nin kararlarına ilişkin aşağıdaki ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Anayasa Mahkemesi iptal kararlarının yürürlüğe giriş tarihini erteleyebilir (en fazla bir yıl) ancak iptal kararları geçmişe yürüyemez (geçmişe etkili uygulanmaz). İptal edilen kanun maddesi uyarınca geçmişte doğmuş hukuki sonuçlar kural olarak etkilenmez.",
     answers: [
@@ -683,7 +683,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Hâkimler ve Savcılar Kurulu<br>II. Türkiye Büyük Millet Meclisi<br>III. Cumhurbaşkanı<br><br><b>Yargıtay üyeleri yukarıdakilerden hangileri tarafından seçilir?</b></p>",
+    text: "<p>I. Hâkimler ve Savcılar Kurulu<br>II. Türkiye Büyük Millet Meclisi<br>III. Cumhurbaşkanı</p><p><b>Yargıtay üyeleri yukarıdakilerden hangileri tarafından seçilir?</b></p>",
     diff: 2,
     expl: "Yargıtay üyeleri, birinci sınıfa ayrılmış adli yargı hâkim ve Cumhuriyet savcıları ile bu meslekten sayılanlar arasından Hâkimler ve Savcılar Kurulu (HSK) üye tam sayısının salt çoğunluğu ile ve gizli oyla seçilir. Cumhurbaşkanı ve TBMM, Yargıtay'a üye seçmez.",
     answers: [
@@ -707,7 +707,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Yargıtay Cumhuriyet Başsavcısı, Yargıtay Genel Kurulu tarafından gizli oyla belirlenen ---- aday arasından, ---- tarafından 4 yıl için seçilir.<br><br><b>1982 Anayasası'na göre, yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>Yargıtay Cumhuriyet Başsavcısı, Yargıtay Genel Kurulu tarafından gizli oyla belirlenen ---- aday arasından, ---- tarafından 4 yıl için seçilir.</p><p><b>1982 Anayasası'na göre, yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 2,
     expl: "Yargıtay Cumhuriyet Başsavcısı ve Cumhuriyet Başsavcıvekili, Yargıtay Genel Kurulunun kendi üyeleri arasından gizli oyla belirleyeceği beşer aday arasından Cumhurbaşkanı tarafından dört yıl için seçilirler.",
     answers: [
@@ -719,7 +719,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Danıştayın görev ve yetkileri arasında;</b><br><br>I. idari davaları karara bağlamak,<br>II. TBMM'ye sunulan kanun teklifleri hakkında görüş vermek,<br>III. idari uyuşmazlıklara çözüm getirmek,<br>IV. kamu hizmeti imtiyaz sözleşmeleri hakkında görüş vermek<br><br><b>ifadelerinden hangileri yer alır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Danıştayın görev ve yetkileri arasında;</b></p><p>I. idari davaları karara bağlamak,<br>II. TBMM'ye sunulan kanun teklifleri hakkında görüş vermek,<br>III. idari uyuşmazlıklara çözüm getirmek,<br>IV. kamu hizmeti imtiyaz sözleşmeleri hakkında görüş vermek</p><p><b>ifadelerinden hangileri yer alır?</b></p>",
     diff: 2,
     expl: "Danıştay, idari mahkemelerce verilen ve kanunun başka bir idari yargı merciine bırakmadığı karar ve hükümlerin son inceleme merciidir. Danıştay; idari davaları görmek (I), idari uyuşmazlıkları çözmek (III) ve kamu hizmetleri ile ilgili imtiyaz şartlaşma ve sözleşmeleri hakkında iki ay içinde düşüncesini bildirmek (IV) ile görevlidir. Kanun teklifleri hakkında görüş vermek görevleri arasında değildir.",
     answers: [
@@ -743,7 +743,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Yargıtay ile ilgili aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Yargıtay ile ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Yargıtay üyelerinin tamamı Hâkimler ve Savcılar Kurulu (HSK) tarafından seçilir. Cumhurbaşkanı, Yargıtay üyelerini seçmez (Sadece Yargıtay Cumhuriyet Başsavcısı ve vekilini 5 aday arasından seçer).",
     answers: [
@@ -755,7 +755,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Anayasa hukuku dersinde bir öğrenci;<br><br>• İdari mahkemelerce verilen ve kanunun başka bir idari yargı merciine bırakmadığı karar ve hükümlerin son inceleme merciidir.<br>• Üyelerinin 1/4'ünü Cumhurbaşkanı, 3/4'ünü Hâkimler ve Savcılar Kurulu seçer.<br><br>şeklinde notlar almışsa bu ifadeler 1982 Anayasası'na göre aşağıdakilerden hangisiyle ilgilidir?<br><b> </b></p>",
+    text: "<p><b>Anayasa hukuku dersinde bir öğrenci;</b></p><p>• İdari mahkemelerce verilen ve kanunun başka bir idari yargı merciine bırakmadığı karar ve hükümlerin son inceleme merciidir.<br>• Üyelerinin 1/4'ünü Cumhurbaşkanı, 3/4'ünü Hâkimler ve Savcılar Kurulu seçer.</p><p><b>şeklinde notlar almışsa bu ifadeler 1982 Anayasası'na göre aşağıdakilerden hangisiyle ilgilidir?</b></p>",
     diff: 1,
     expl: "Verilen özellikler Danıştay'a aittir. Danıştay, idari yargının en üst derece mahkemesidir. Üyelerinin dörtte birini Cumhurbaşkanı, dörtte üçünü Hâkimler ve Savcılar Kurulu (HSK) seçer.",
     answers: [
@@ -773,7 +773,7 @@ export const VAT_YARGI_TEST_4: McQ[] = [
 // ============================================================================
 export const VAT_YARGI_TEST_5: McQ[] = [
   {
-    text: "<p>Mahkeme verdiği bir kararında \"....5490 sayılı Nüfus Hizmetleri Kanunu uyarınca verilen idari para cezasının iptali istemiyle açılan davanın, adli yargı yerinde çözümlenmesi gerektiğini.....\" belirtilmiştir.<br><br><b>1982 Anayasası'ndaki görevi \"Adli ve idari yargı mercileri arasındaki görev ve hüküm uyuşmazlıklarını kesin olarak çözümlemeye yetkilidir.\" şeklinde düzenlenen mahkeme aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Mahkeme verdiği bir kararında \"....5490 sayılı Nüfus Hizmetleri Kanunu uyarınca verilen idari para cezasının iptali istemiyle açılan davanın, adli yargı yerinde çözümlenmesi gerektiğini.....\" belirtilmiştir.</p><p><b>1982 Anayasası'ndaki görevi \"Adli ve idari yargı mercileri arasındaki görev ve hüküm uyuşmazlıklarını kesin olarak çözümlemeye yetkilidir.\" şeklinde düzenlenen mahkeme aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Uyuşmazlık Mahkemesi, adli ve idari yargı mercileri arasındaki görev ve hüküm uyuşmazlıklarını kesin olarak çözümlemeye yetkilidir.",
     answers: [
@@ -797,7 +797,7 @@ export const VAT_YARGI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Olay ve Başvuru Yeri eşleştirmeleri:<br><br>I. Cumhurbaşkanlığı yönetmeliği hakkında açılan iptal davası → Danıştay<br>II. Bir kamu görevlisine verilen mahkûmiyet kararına karşı yapılan temyiz başvurusu → Yargıtay<br>III. Bir kamu idaresinin yaptığı usulsüz ödeme hakkında yapılan denetim → Sayıştay<br>IV. Adli ve idari yargı mercileri arasındaki görev ve hüküm uyuşmazlığının giderilmesi → Hâkimler ve Savcılar Kurulu<br>V. İfade özgürlüğünün ihlal edildiği gerekçesiyle yapılan bireysel başvuru → Anayasa Mahkemesi<br><br><b>Yukarıdaki tabloda verilen olay ve başvuru eşleştirmelerinden hangisi yanlıştır?</b></p>",
+    text: "<p><b>Olay → Başvuru Yeri</b><br>I. Cumhurbaşkanlığı yönetmeliği hakkında açılan iptal davası → Danıştay<br>II. Bir kamu görevlisine verilen mahkûmiyet kararına karşı yapılan temyiz başvurusu → Yargıtay<br>III. Bir kamu idaresinin yaptığı usulsüz ödeme hakkında yapılan denetim → Sayıştay<br>IV. Adli ve idari yargı mercileri arasındaki görev ve hüküm uyuşmazlığının giderilmesi → Hâkimler ve Savcılar Kurulu<br>V. İfade özgürlüğünün ihlal edildiği gerekçesiyle yapılan bireysel başvuru → Anayasa Mahkemesi</p><p><b>Yukarıdaki tabloda verilen olay ve başvuru eşleştirmelerinden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Adli ve idari yargı mercileri arasındaki görev ve hüküm uyuşmazlıklarını kesin olarak çözmeye yetkili organ 'Uyuşmazlık Mahkemesi'dir. 'Hâkimler ve Savcılar Kurulu' bir yargı organı veya mahkeme değildir, hâkim ve savcıların özlük işlerini yürüten bir kuruldur. Dolayısıyla IV. eşleştirme yanlıştır.",
     answers: [
@@ -809,7 +809,7 @@ export const VAT_YARGI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Uyuşmazlık Mahkemesinin başkanlığı, ---- tarafından ---- üyeleri arasından görevlendirilen bir üye tarafından yürütülür.<br><br><b>1982 Anayasası'na göre yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>Uyuşmazlık Mahkemesinin başkanlığı, ---- tarafından ---- üyeleri arasından görevlendirilen bir üye tarafından yürütülür.</p><p><b>1982 Anayasası'na göre yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 1,
     expl: "Uyuşmazlık Mahkemesinin Başkanlığını Anayasa Mahkemesince, kendi üyeleri arasından görevlendirilen üye yapar.",
     answers: [
@@ -821,7 +821,7 @@ export const VAT_YARGI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Hâkimler ve Savcılar Kurulu hakkında aşağıda verilen ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Hâkimler ve Savcılar Kurulu hakkında aşağıda verilen ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Hâkimler ve Savcılar Kurulu kararlarına karşı kural olarak yargı mercilerine başvurulamaz. Ancak bu kuralın istisnası vardır: Kurulun 'meslekten çıkarma' cezasına ilişkin kararlarına karşı yargı mercilerine başvurulabilir. Bu nedenle \"Kurulun tüm kararlarına karşı yargı yolu kapalıdır\" ifadesi yanlıştır.",
     answers: [
@@ -833,7 +833,7 @@ export const VAT_YARGI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Aşağıda Hâkimler ve Savcılar Kurulunun bazı işlemleri verilmiştir:<br><br>I. Hâkimlerin mesleğe kabul edilmesi<br>II. Hâkim ve savcılara disiplin cezası verilmesi<br>III. Hâkim ve savcıların kadro dağılımının yapılması<br>IV. Hâkim ve savcıların hakkında meslekten çıkarma kararı verilmesi<br>V. Hâkim ve savcıların yer değiştirme işlemi<br><br><b>1982 Anayasası'na göre, bu işlemlerden hangilerine karşı yargı yolu açıktır?</b></p>",
+    text: "<p>Aşağıda Hâkimler ve Savcılar Kurulunun bazı işlemleri verilmiştir:</p><p>I. Hâkimlerin mesleğe kabul edilmesi<br>II. Hâkim ve savcılara disiplin cezası verilmesi<br>III. Hâkim ve savcıların kadro dağılımının yapılması<br>IV. Hâkim ve savcıların hakkında meslekten çıkarma kararı verilmesi<br>V. Hâkim ve savcıların yer değiştirme işlemi</p><p><b>1982 Anayasası'na göre, bu işlemlerden hangilerine karşı yargı yolu açıktır?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'na göre Hâkimler ve Savcılar Kurulunun kararlarına karşı genel kural olarak yargı yolu kapalıdır. Ancak bu kuralın istisnası, yalnızca \"meslekten çıkarma\" cezasına ilişkin kararlardır. Diğer işlemlere (mesleğe kabul, yer değiştirme vb.) karşı yargı yolu kapalıdır.",
     answers: [
@@ -857,7 +857,7 @@ export const VAT_YARGI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir hukuk dersinde öğrenci;<br><br>• Üyeleri Hâkimler ve Savcılar Kurulu tarafından seçilir.<br>• Adli yargı alanında temyiz merci olarak görev yapar.<br>• Belli davalara da ilk ve son derece mahkemesi olarak bakar.<br><br><b>şeklinde notlar almışsa bu ifadeler 1982 Anayasası'na göre, aşağıdakilerden hangisi ile ilgilidir?</b></p>",
+    text: "<p><b>Bir hukuk dersinde öğrenci;</b></p><p>• Üyeleri Hâkimler ve Savcılar Kurulu tarafından seçilir.<br>• Adli yargı alanında temyiz merci olarak görev yapar.<br>• Belli davalara da ilk ve son derece mahkemesi olarak bakar.</p><p><b>şeklinde notlar almışsa bu ifadeler 1982 Anayasası'na göre, aşağıdakilerden hangisi ile ilgilidir?</b></p>",
     diff: 1,
     expl: "Yargıtay, adliye mahkemelerince verilen ve kanunun başka bir adli yargı merciine bırakmadığı karar ve hükümlerin son inceleme (temyiz) merciidir. Yargıtay üyeleri, Hâkimler ve Savcılar Kurulu tarafından seçilir.",
     answers: [
@@ -893,7 +893,7 @@ export const VAT_YARGI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre vergi, benzeri mali yükümlülükler ve ödevler hakkında Danıştay ile Sayıştay kararları arasındaki uyuşmazlıklarda aşağıdakilerden hangisi doğrudur?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre vergi, benzeri mali yükümlülükler ve ödevler hakkında Danıştay ile Sayıştay kararları arasındaki uyuşmazlıkların nasıl giderileceği ile ilgili aşağıdaki ifadelerden hangisi doğrudur?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'na göre, vergi, benzeri mali yükümlülükler ve ödevler hakkında Danıştay ile Sayıştay kararları arasındaki uyuşmazlıklarda Danıştay kararları esas alınır. Çünkü Danıştay bir yüksek mahkemedir (Sayıştay ise yüksek mahkeme olarak sayılmamıştır).",
     answers: [
@@ -917,7 +917,7 @@ export const VAT_YARGI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Hâkimler ve Savcılar Kurulu,<br>II. Anayasa Mahkemesi,<br>III. Yüksek Seçim Kurulu<br><br><b>hangilerinin üye sayısı 1982 Anayasası ile belirlenmiştir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre</b></p><p>I. Hâkimler ve Savcılar Kurulu,<br>II. Anayasa Mahkemesi,<br>III. Yüksek Seçim Kurulu</p><p><b>hangilerinin üye sayısı 1982 Anayasası ile belirlenmiştir?</b></p>",
     diff: 3,
     expl: "1982 Anayasası'na göre; Hâkimler ve Savcılar Kurulu 13 üyeden, Anayasa Mahkemesi 15 üyeden, Yüksek Seçim Kurulu 7 asıl 4 yedek olmak üzere 11 üyeden oluşur. Yargıtay, Danıştay, Uyuşmazlık Mahkemesi ve Sayıştay'ın kaç üyeden oluştuğu Anayasa'da belirtilmemiş, kanuna bırakılmıştır.",
     answers: [

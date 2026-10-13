@@ -29,7 +29,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Nispi temsil sistemi<br>II. d'Hont usulü<br>III. %7 ülke barajı<br><br><b>Yukarıdakilerden hangileri ülkemizdeki milletvekili genel seçim sisteminde benimsenmiş ilkelerdir?</b></p>",
+    text: "<p>I. Nispi temsil sistemi<br>II. d'Hont usulü<br>III. %7 ülke barajı</p><p><b>Yukarıdakilerden hangileri ülkemizdeki milletvekili genel seçim sisteminde benimsenmiş ilkelerdir?</b></p>",
     diff: 1,
     expl: "Türkiye'de yüzde 7 ülke barajlı, nispi temsil sistemine dayanan d'Hont sistemi uygulanmaktadır. Her üç öncül de ülkemizde milletvekili seçimlerinde kullanılan sistemin temel ilkeleridir.",
     answers: [
@@ -41,7 +41,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, TBMM seçimleriyle ilgili olarak aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, TBMM seçimleriyle ilgili olarak aşağıdaki ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 1,
     expl: "Seçimler, Yüksek Seçim Kurulunun genel yönetim ve denetimi altında yapılır. Ancak Anayasa m.67'ye göre, seçimler tek derecelidir, yani halk doğrudan oy kullanır; \"çift dereceli\" (örneğin önce delegeler, sonra temsilciler) bir sistem söz konusu değildir.",
     answers: [
@@ -53,7 +53,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Türkiye Büyük Millet Meclisi<br>II. Cumhurbaşkanı<br>III. Yüksek Seçim Kurulu<br><br><b>1982 Anayasası'na göre, yukarıdakilerden hangileri Türkiye Büyük Millet Meclisi seçimlerinin yenilenmesine karar verebilir?</b></p>",
+    text: "<p>I. Türkiye Büyük Millet Meclisi<br>II. Cumhurbaşkanı<br>III. Yüksek Seçim Kurulu</p><p><b>1982 Anayasası'na göre, yukarıdakilerden hangileri Türkiye Büyük Millet Meclisi seçimlerinin yenilenmesine karar verebilir?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'na göre TBMM seçimlerini yenileme yetkisi yalnızca 'TBMM' ve 'Cumhurbaşkanı'na aittir. Yüksek Seçim Kurulunun seçimleri yenileme yetkisi yoktur, sadece seçimleri yönetir ve denetler.",
     answers: [
@@ -77,7 +77,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisi seçimleri hangi gerekçeyle ve bir seferde en fazla ne kadar süreyle geriye bırakılabilir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisi seçimleri hangi gerekçeyle ve bir seferde <u>en fazla</u> ne kadar süreyle geriye bırakılabilir?</b></p>",
     diff: 1,
     expl: "Savaş sebebiyle yeni seçimlerin yapılmasına imkân görülmezse, Türkiye Büyük Millet Meclisi, seçimlerin 1 yıl geriye bırakılmasına karar verebilir. Geri bırakma sebebi ortadan kalkmamışsa, erteleme kararındaki usule göre bu işlem tekrarlanabilir.",
     answers: [
@@ -89,7 +89,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye Büyük Millet Meclisi 240 milletvekili ile toplantıyı açmıştır.<br><br><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisi seçimlerinin yenilenmesi için gereken karar yeter sayısı aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Türkiye Büyük Millet Meclisi 240 milletvekili ile toplantıyı açmıştır.</p><p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisi seçimlerinin yenilenmesi için gereken karar yeter sayısı aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Türkiye Büyük Millet Meclisi, üye tam sayısının beşte üç çoğunluğu (360) ile seçimlerin yenilenmesine karar verebilir. Bu kararın alınabilmesi için toplantıda bulunanların değil, üye tam sayısının beşte üçü gerekir.",
     answers: [
@@ -101,7 +101,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>İzmir milletvekili A'nın vefatı ve Batman milletvekili B'nin milletvekilliğinin düşürülmesi üzerine bu iki seçim çevresinde boşalan milletvekillikleri için seçim karar alınır.<br><br><b>Buna göre Türkiye Büyük Millet Meclisi üyeliklerinde boşalma olması durumunda yapılan seçime ne ad verilir?</b></p>",
+    text: "<p>İzmir milletvekili A'nın vefatı ve Batman milletvekili B'nin milletvekilliğinin düşürülmesi üzerine bu iki seçim çevresinde boşalan milletvekillikleri için seçim karar alınır.</p><p><b>Buna göre Türkiye Büyük Millet Meclisi üyeliklerinde boşalma olması durumunda yapılan seçime ne ad verilir?</b></p>",
     diff: 1,
     expl: "Türkiye Büyük Millet Meclisi üyeliklerinde boşalma olması hâlinde gidilen seçime ARA SEÇİM adı verilir. Ara seçim, her seçim döneminde 1 defa yapılır ve genel seçimden 30 ay geçmedikçe ara seçime gidilemez.",
     answers: [
@@ -125,7 +125,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Cumhurbaşkanı hangi durumda Türkiye Büyük Millet Meclisi seçimlerinin yenilenmesine karar veremez?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Cumhurbaşkanı hangi durumda Türkiye Büyük Millet Meclisi seçimlerinin yenilenmesine karar <u>veremez</u>?</b></p>",
     diff: 3,
     expl: "1982 Anayasası'na göre, Cumhurbaşkanı seçimlerinin yenilenmesine karar verebilir. Bu durumun tek istisnası Cumhurbaşkanı hakkında Türkiye Büyük Millet Meclisi tarafından soruşturma açılmasına karar verilmesidir. Anayasaya göre, böyle bir durumda Cumhurbaşkanı seçimleri yenileme kararı veremez.",
     answers: [
@@ -137,7 +137,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisi seçimlerinin geriye bırakılması ile ilgili;</b><br><br>I. Seçimler 1 yıl süreyle geriye bırakılabilir.<br>II. Yalnızca savaş sebebiyle seçimler geriye bırakılabilir.<br>III. Geriye bırakılma kararını Türkiye Büyük Millet Meclisi verebilir.<br><br><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisi seçimlerinin geriye bırakılması ile ilgili;</b></p><p>I. Seçimler 1 yıl süreyle geriye bırakılabilir.<br>II. Yalnızca savaş sebebiyle seçimler geriye bırakılabilir.<br>III. Geriye bırakılma kararını Türkiye Büyük Millet Meclisi verebilir.</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 2,
     expl: "Anayasa'ya göre, sadece SAVAŞ SEBEBİYLE yeni seçimlerin yapılmasına imkân görülmezse, Türkiye Büyük Millet Meclisi, seçimlerin 1 YIL GERİYE BIRAKILMASINA karar verebilir. Dolayısıyla verilen ifadelerin üçü de doğrudur.",
     answers: [
@@ -149,7 +149,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Nüfusu azalan Yozgat ilinin çıkaracağı milletvekili sayısı azaltılırken, Antalya ilinin çıkaracağı milletvekili sayısı artırılır.<br><br><b>Buna göre seçim çevreleri ve her seçim çevresinin çıkaracağı milletvekili sayısını belirleme yetkisi aşağıdakilerden hangisine aittir?</b></p>",
+    text: "<p>Nüfusu azalan Yozgat ilinin çıkaracağı milletvekili sayısı azaltılırken, Antalya ilinin çıkaracağı milletvekili sayısı artırılır.</p><p><b>Buna göre seçim çevreleri ve her seçim çevresinin çıkaracağı milletvekili sayısını belirleme yetkisi aşağıdakilerden hangisine aittir?</b></p>",
     diff: 1,
     expl: "Seçim çevrelerini ve seçim çevrelerinin çıkaracağı milletvekili sayısını belirleme yetkisi Yüksek Seçim Kurulunun görevidir. Yüksek Seçim Kurulu bu durumu o ilin nüfusuna göre belirler.",
     answers: [
@@ -161,7 +161,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Genel seçimlere 9 ay kala A ilinin Türkiye Büyük Millet Meclisindeki son üyesi istifa ediyor ve istifası Meclis tarafından kabul ediliyor.<br><br><b>1982 Anayasası'na göre, milletvekilinin istifa etmesi üzerine kural olarak üyelikten boşalmayı takip eden kaç gün sonraki ilk pazar günü ara seçim yapılmalıdır?</b></p>",
+    text: "<p>Genel seçimlere 9 ay kala A ilinin Türkiye Büyük Millet Meclisindeki son üyesi istifa ediyor ve istifası Meclis tarafından kabul ediliyor.</p><p><b>1982 Anayasası'na göre, milletvekilinin istifa etmesi üzerine kural olarak üyelikten boşalmayı takip eden kaç gün sonraki ilk pazar günü ara seçim yapılmalıdır?</b></p>",
     diff: 2,
     expl: "Bir ilin veya seçim çevresinin, Türkiye Büyük Millet Meclisinde üyesinin kalmaması hâlinde, boşalmayı takip eden 90 günden sonraki ilk pazar günü ara seçim yapılır. Bu durumda genel seçime 1 yıl kala ara seçim yapılamaz kuralı uygulanmaz, her şekilde ara seçim yapılması zorunludur.",
     answers: [
@@ -185,7 +185,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Yüksek Seçim Kurulu üyeleri;</b><br><br>I. Danıştay,<br>II. Hâkimler ve Savcılar Kurulu,<br>III. Yargıtay<br><br><b>verilenlerden hangileri tarafından seçilir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Yüksek Seçim Kurulu üyeleri;</b></p><p>I. Danıştay,<br>II. Hâkimler ve Savcılar Kurulu,<br>III. Yargıtay</p><p><b>verilenlerden hangileri tarafından seçilir?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'na göre, Yüksek Seçim Kurulu 7 asıl 4 yedek üyeden oluşur. Üyelerinin 6'sını Yargıtay, 5'ini Danıştay seçer. Hâkimler ve Savcılar Kurulu üye seçmez. YSK Başkanı'nı ise üyeler kendi içlerinden gizli oyla seçerler.",
     answers: [
@@ -203,7 +203,7 @@ export const VAT_YASAMA_TEST_1: McQ[] = [
 // ============================================================================
 export const VAT_YASAMA_TEST_2: McQ[] = [
   {
-    text: "<p><b>1982 Anayasası'na göre, Yüksek Seçim Kurulu ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Yüksek Seçim Kurulu ile ilgili aşağıdaki ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 1,
     expl: "Yüksek Seçim Kurulu bir yargı organı olmasına rağmen Anayasa'da yasama bölümünde düzenlenmiştir. Anayasa'da yüksek mahkemeler arasında sayılmamıştır. 7 asıl 4 yedek üyesi vardır. Üyeleri Yargıtay (6 üye) ve Danıştay (5 üye) Genel Kurulları tarafından seçilir. Başkanı Cumhurbaşkanı tarafından seçilmez, Yüksek Seçim Kurulu üyeleri kendi üyeleri içerisinden gizli oyla seçer.",
     answers: [
@@ -215,23 +215,23 @@ export const VAT_YASAMA_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Milletvekili adayı Murat, okuma-yazma bilmeyen seçmenlere yakınları tarafından yardım edilmesi nedeniyle seçimin iptali için ilçe seçim kuruluna başvurmuş ancak başvurusu reddedilmiştir. Daha sonra bu karara karşı il seçim kuruluna başvurmuş aynı şekilde ret cevabı almıştır. Son olarak Yüksek Seçim Kuruluna başvurmuş ve Yüksek Seçim Kurulu da Murat'ın yaptığı iptal başvurusunu reddetmiştir.<br><br><b>1982 Anayasası'na göre, Murat'ın bu aşamada Yüksek Seçim Kurulu kararlarına karşı başvurabileceği hukuki yola ilişkin aşağıdaki ifadelerden hangisi doğrudur?</b></p>",
+    text: "<p>Milletvekili adayı Murat, okuma-yazma bilmeyen seçmenlere yakınları tarafından yardım edilmesi nedeniyle seçimin iptali için ilçe seçim kuruluna başvurmuş ancak başvurusu reddedilmiştir. Daha sonra bu karara karşı il seçim kuruluna başvurmuş aynı şekilde ret cevabı almıştır. Son olarak Yüksek Seçim Kuruluna başvurmuş ve Yüksek Seçim Kurulu da Murat'ın yaptığı iptal başvurusunu reddetmiştir.</p><p><b>1982 Anayasası'na göre, Murat'ın bu aşamada Yüksek Seçim Kurulu kararlarına karşı başvurabileceği hukuki yola ilişkin aşağıdaki ifadelerden hangisi doğrudur?</b></p>",
     diff: 2,
     expl: "Seçimler, yargı organlarının genel yönetim ve denetimi altında yapılır. Seçim tutanaklarını kabul etme görevi Yüksek Seçim Kurulunundur. Yüksek Seçim Kurulunun kararları aleyhine başka bir mercie başvurulamaz, yani yargı yolu kapalıdır.",
     answers: [
       { text: "Kararları kesin olduğundan bu karar aleyhine hiçbir mercie başvurulamaz.", ok: true },
       { text: "Kararları idari işlem niteliğinde olduğundan Danıştaya iptal davası açılabilir.", ok: false },
       { text: "Kararlar aleyhine Avrupa İnsan Hakları Mahkemesine başvurulur.", ok: false },
-      { text: "Kararlar aleyhine Uyuşmazlık Mahkemesini başvurulur.", ok: false },
+      { text: "Kararlar aleyhine Uyuşmazlık Mahkemesine başvurulur.", ok: false },
       { text: "Kararlar aleyhine Anayasa Mahkemesine başvurulur.", ok: false }
     ]
   },
   {
-    text: "<p>Defne, hukuk fakültesi öğrencisi olan arkadaşı Ali'ye milletvekili seçilebilme şartlarını soruyor.<br><br><b>Ali arkadaşı Defne'ye 1982 Anayasası'nda yer alan milletvekili seçilme şartlarından hangisini söylerse yanlış bir bilgi vermiş olur?</b></p>",
+    text: "<p>Defne, hukuk fakültesi öğrencisi olan arkadaşı Ali'ye milletvekili seçilebilme şartlarını soruyor.</p><p><b>Ali arkadaşı Defne'ye 1982 Anayasası'nda yer alan milletvekili seçilme şartlarından hangisini söylerse <u>yanlış</u> bir bilgi vermiş olur?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'na göre milletvekili seçilebilmek için taksirli suçlar hariç toplam bir yıl veya daha fazla hapis ile ağır hapis cezasına hüküm giymemiş olmak gerekir. Ancak herhangi bir suçtan bir yıl ve üzeri hüküm giymemiş olmak ifadesi yanlıştır, çünkü taksirli suçlardan hüküm giymek milletvekili seçilmeye engel değildir.",
     answers: [
-      { text: "Milletvekili seçilebilmek en az on sekiz yaşı doldurmuş olmak gerekir.", ok: false },
+      { text: "Milletvekili seçilebilmek için en az on sekiz yaşı doldurmuş olmak gerekir.", ok: false },
       { text: "Milletvekili seçilebilmek için kamu hizmetlerinden yasaklı olmamak gerekir.", ok: false },
       { text: "Milletvekili seçilmek için herhangi bir suçtan bir yıl ve üzeri hüküm giymemiş olmak gerekir.", ok: true },
       { text: "Milletvekili seçilmek için en az ilkokul mezunu olmak gerekir.", ok: false },
@@ -251,7 +251,7 @@ export const VAT_YASAMA_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, milletvekili adaylığı için aşağıdakilerden hangisinin belirtilen görevinden çekilmesi gerekmez?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, milletvekili adaylığı için aşağıdakilerden hangisinin belirtilen görevinden çekilmesi <u>gerekmez</u>?</b></p>",
     diff: 3,
     expl: "Hâkimler ve savcılar, yüksek yargı organları mensupları, yükseköğretim kurumlarındaki öğretim elemanları, Yükseköğretim Kurulu üyeleri, kamu kurum ve kuruluşlarının memur statüsündeki görevlileri ile yaptıkları hizmet bakımından işçi niteliği taşımayan diğer kamu görevlileri ve Silahlı Kuvvetler mensupları görevlerinden çekilmedikçe aday olamazlar. Ancak Kars Belediyesinde İŞÇİ STATÜSÜNDE görev yapan Mehtap'ın çekilmesi gerekmez.",
     answers: [
@@ -275,7 +275,7 @@ export const VAT_YASAMA_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Yargıtay üyesi A<br>II. Marmara Üniversitesi'nde profesör olarak görev yapan B<br>III. Isparta İl Emniyet Müdürlüğünde görevli başkomiser C<br>IV. Ordu Cumhuriyet savcısı D<br>V. Kara Kuvvetleri Komutanlığında astsubay olan E<br><br><b>Yukarıdakilerden hangileri milletvekili seçilemediklerinde görevine geri dönemeyenler arasında yer almaz?</b></p>",
+    text: "<p>I. Yargıtay üyesi A<br>II. Marmara Üniversitesi'nde profesör olarak görev yapan B<br>III. Isparta İl Emniyet Müdürlüğünde görevli başkomiser C<br>IV. Ordu Cumhuriyet savcısı D<br>V. Kara Kuvvetleri Komutanlığında astsubay olan E</p><p><b>Yukarıdakilerden hangileri milletvekili seçilemediklerinde görevine geri dönemeyenler arasında <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "Seçimlerin Temel Hükümleri ve Seçmen Kütükleri Hakkında Kanun'a göre; \"Yüksek mahkeme üyeleri, hâkimler, savcılar ve bu meslekten sayılanlar ile Subay ve Astsubaylar hariç olmak üzere; milletvekili ve mahalli idareler genel ve ara seçimlerinde aday ve aday adayı olan Devlet memurları seçimi kaybetmeleri hâlinde eski görevlerine dönebilirler.\" Bu kurala göre Profesör (II) ve Başkomiser (III) görevine dönebilir.",
     answers: [
@@ -311,7 +311,7 @@ export const VAT_YASAMA_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi göreve başlarken Türkiye Büyük Millet Meclisi önünde ant içecekler arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi göreve başlarken Türkiye Büyük Millet Meclisi önünde ant içecekler arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'na göre, Milletvekilliği statüsünü kazananlar, Kamu Başdenetçisi, Cumhurbaşkanı, Cumhurbaşkanı yardımcıları ve Bakanlar göreve başlarken Mecliste yemin eder. Ancak TBMM genel sekreteri göreve başlarken Mecliste yemin etmez.",
     answers: [
@@ -359,7 +359,7 @@ export const VAT_YASAMA_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, yasama dokunulmazlığı milletvekilini aşağıdakilerden hangisine karşı korumaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, yasama dokunulmazlığı milletvekilini aşağıdakilerden hangisine karşı <u>korumaz</u>?</b></p>",
     diff: 2,
     expl: "Seçimden önce veya sonra bir suç işlediği ileri sürülen bir milletvekili, Meclisin kararı olmadıkça tutulamaz, sorguya çekilemez, tutuklanamaz ve yargılanamaz. Ancak yasama dokunulmazlığı 'delil toplama' işlemlerine karşı koruma sağlamaz; milletvekili aleyhine delil toplanabilir.",
     answers: [
@@ -401,7 +401,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, yasama dokunulmazlığı ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, yasama dokunulmazlığı ile ilgili aşağıdaki ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Yasama dokunulmazlığı yalnızca TBMM Genel Kurulu tarafından kaldırılabilir. Anayasa Mahkemesinin yasama dokunulmazlığını kaldırma yetkisi yoktur, ancak TBMM'nin kararına karşı yapılan itirazları inceleyip iptal edebilir.",
     answers: [
@@ -413,7 +413,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Milletvekili A'nın yasama dokunulmazlığı Türkiye Büyük Millet Meclisinde katılanların salt çoğunluğunun oyu ile kaldırılıyor.<br><br><b>1982 Anayasası'na göre, kararının alındığı tarihten başlayarak kaç gün içerisinde ilgili milletvekili veya bir diğer milletvekili, kararın iptali için Anayasa Mahkemesine başvurabilir?</b></p>",
+    text: "<p>Milletvekili A'nın yasama dokunulmazlığı Türkiye Büyük Millet Meclisinde katılanların salt çoğunluğunun oyu ile kaldırılıyor.</p><p><b>1982 Anayasası'na göre, kararının alındığı tarihten başlayarak kaç gün içerisinde ilgili milletvekili veya bir diğer milletvekili, kararın iptali için Anayasa Mahkemesine başvurabilir?</b></p>",
     diff: 1,
     expl: "Yasama dokunulmazlığının kaldırılmasına veya milletvekilliğinin düşmesine karar verilmesi hâllerinde, Meclis Genel Kurulu kararının alındığı tarihten başlayarak 7 gün içerisinde ilgili milletvekili veya bir diğer milletvekili iptal istemiyle Anayasa Mahkemesine başvurabilir.",
     answers: [
@@ -425,7 +425,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Dokunulmazlığı kaldırılan milletvekili F, kararın iptali için Anayasa Mahkemesine itiraz ediyor.<br><br><b>1982 Anayasası'na göre, Anayasa Mahkemesi bu iptal istemini en geç ne kadar süre içinde sonuçlandırmalıdır?</b></p>",
+    text: "<p>Dokunulmazlığı kaldırılan milletvekili F, kararın iptali için Anayasa Mahkemesine itiraz ediyor.</p><p><b>1982 Anayasası'na göre, Anayasa Mahkemesi bu iptal istemini <u>en geç</u> ne kadar süre içinde sonuçlandırmalıdır?</b></p>",
     diff: 1,
     expl: "Yasama dokunulmazlığının kaldırılması veya milletvekilliğinin düşmesi kararlarına karşı yapılan iptal başvurularını, Anayasa Mahkemesi 15 gün içerisinde kesin karara bağlar.",
     answers: [
@@ -449,7 +449,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, milletvekilliğinin sona ermesine ilişkin;</b><br><br>I. devamsızlık,<br>II. mahkeme kararı ile kısıtlanma,<br>III. milletvekilliğinden istifa,<br>IV. Cumhurbaşkanı yardımcısı seçilme<br><br><b>ifadelerinin hangilerinde milletvekilliği Meclis kararına gerek kalmadan sona erer?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, milletvekilliğinin sona ermesine ilişkin;</b></p><p>I. devamsızlık,<br>II. mahkeme kararı ile kısıtlanma,<br>III. milletvekilliğinden istifa,<br>IV. Cumhurbaşkanı yardımcısı seçilme</p><p><b>ifadelerinin hangilerinde milletvekilliği Meclis kararına gerek kalmadan sona erer?</b></p>",
     diff: 3,
     expl: "Milletvekilliğinin kesin hüküm giyme veya kısıtlanma hâlinde düşmesi, kesin mahkeme kararının Genel Kurula bildirilmesiyle olur (Meclis kararı gerekmez). Bakan veya Cumhurbaşkanı Yardımcısı seçilme durumunda da milletvekilliği kendiliğinden sona erer. Ancak istifa, devamsızlık ve bağdaşmayan işi sürdürmekte ısrar durumlarında vekilliğin düşmesi için TBMM'nin oylama yapıp karar vermesi (Meclis kararı) gerekir.",
     answers: [
@@ -461,7 +461,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Milletvekili A'nın Türkiye Büyük Millet Meclisi toplantılarına uzun bir süredir izinsiz ve mazeretsiz katılmadığı meclis başkanlık divanınca tespit edilir.<br><br><b>1982 Anayasası'na göre, milletvekilinin TBMM çalışmalarına özürsüz veya izinsiz olarak bir ay içinde toplam kaç birleşim günü katılmaması durumunda devamsızlık nedeniyle vekilliği sonlandırılabilir?</b></p>",
+    text: "<p>Milletvekili A'nın Türkiye Büyük Millet Meclisi toplantılarına uzun bir süredir izinsiz ve mazeretsiz katılmadığı meclis başkanlık divanınca tespit edilir.</p><p><b>1982 Anayasası'na göre, milletvekilinin TBMM çalışmalarına özürsüz veya izinsiz olarak bir ay içinde toplam kaç birleşim günü katılmaması durumunda devamsızlık nedeniyle vekilliği sonlandırılabilir?</b></p>",
     diff: 1,
     expl: "Meclis çalışmalarına özürsüz veya izinsiz olarak bir ay içerisinde toplam beş (5) birleşim günü katılmayan milletvekilinin milletvekilliğinin düşmesine, Genel Kurulca üye tam sayısının salt çoğunluğunun oyuyla karar verilebilir.",
     answers: [
@@ -473,7 +473,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, milletvekillerinin yapamayacakları işler arasında;</b><br><br>I. ticari faaliyetlerde bulunmak,<br>II. kamuya yararlı derneklerde denetçi olmak,<br>III. kamu tüzel kişilerinde görev almak<br><br><b>verilenlerden hangileri yer almaktadır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, milletvekillerinin yapamayacakları işler arasında;</b></p><p>I. ticari faaliyetlerde bulunmak,<br>II. kamuya yararlı derneklerde denetçi olmak,<br>III. kamu tüzel kişilerinde görev almak</p><p><b>verilenlerden hangileri yer almaktadır?</b></p>",
     diff: 3,
     expl: "Anayasa TBMM üyelerinin ticari faaliyette bulunmalarını (I. öncül) veya serbest mesleklerini icra etmelerini yasaklamamıştır. Ancak milletvekilleri devlet kurumlarında (kamu tüzel kişilerinde) veya kamuya yararlı derneklerin yönetim/denetim kurullarında görev alamazlar (II ve III yasaktır).",
     answers: [
@@ -485,7 +485,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Meclis, kanun yapma dışında kendi iç işleyişi, yürütme ve yargı ile olan ilişkileri konusunda da kararlar alır.<br><br><b>Türkiye Büyük Millet Meclisinin kanun dışında yaptığı işlemlere ne ad verilir?</b></p>",
+    text: "<p>Meclis, kanun yapma dışında kendi iç işleyişi, yürütme ve yargı ile olan ilişkileri konusunda da kararlar alır.</p><p><b>Türkiye Büyük Millet Meclisinin kanun dışında yaptığı işlemlere ne ad verilir?</b></p>",
     diff: 1,
     expl: "TBMM'nin kanun dışında yaptığı işlemlere, yani Meclisin iç işleyişine, yürütme ve yargı organı ile olan ilişkilerine yönelik kararlara 'Parlamento Kararları' adı verilir. Kural olarak bunlara karşı yargı yolu kapalıdır.",
     answers: [
@@ -497,7 +497,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisinin görevlerine ilişkin;</b><br><br>I. savaş ilanına karar vermek,<br>II. para basılmasına karar vermek,<br>III. milletlerarası antlaşmaların onaylanmasını uygun bulmak,<br>IV. genel ve özel af ilanına karar vermek<br><br><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisinin görevlerine ilişkin;</b></p><p>I. savaş ilanına karar vermek,<br>II. para basılmasına karar vermek,<br>III. milletlerarası antlaşmaların onaylanmasını uygun bulmak,<br>IV. genel ve özel af ilanına karar vermek</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 1,
     expl: "Savaş ilanı, para basılması, milletlerarası antlaşmaların onaylanmasının uygun bulunması ve genel-özel af ilanına karar vermek TBMM'nin anayasal görev ve yetkileri arasındadır. Tüm ifadeler doğrudur.",
     answers: [
@@ -509,7 +509,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Hukuk fakültesi öğrencisi Bayram, Türkiye Büyük Millet Meclisinin ve Cumhurbaşkanı'nın görevlerini aşağıdaki gibi not alıyor.<br><br><b>Türkiye Büyük Millet Meclisi</b><br>• Genel ve özel af ilan etmek<br>• Kamu Başdenetçisi'ni seçmek<br>• Savaş ilan etmek<br>• Kalkınma planlarını onaylamak<br><br><b>Cumhurbaşkanı</b><br>• Kanunları yayımlamak<br>• Bütçe kanun teklifi vermek<br>• Olağanüstü hâl ilan kararını onaylamak<br>• Millî güvenlik politikalarını belirlemek<br><br><b>1982 Anayasası'na göre Bayram, yukarıdakilerden hangisini yanlış tarafa yazmıştır?</b></p>",
+    text: "<p>Hukuk fakültesi öğrencisi Bayram, Türkiye Büyük Millet Meclisinin ve Cumhurbaşkanı'nın görevlerini aşağıdaki gibi not alıyor.</p><p><b>Türkiye Büyük Millet Meclisi</b><br>• Genel ve özel af ilan etmek<br>• Kamu Başdenetçisi'ni seçmek<br>• Savaş ilan etmek<br>• Kalkınma planlarını onaylamak</p><p><b>Cumhurbaşkanı</b><br>• Kanunları yayımlamak<br>• Bütçe kanun teklifi vermek<br>• Olağanüstü hâl ilan kararını onaylamak<br>• Millî güvenlik politikalarını belirlemek</p><p><b>1982 Anayasası'na göre Bayram, yukarıdakilerden hangisini <u>yanlış</u> tarafa yazmıştır?</b></p>",
     diff: 3,
     expl: "Olağanüstü hâl ilan etme yetkisi Cumhurbaşkanına aittir. Ancak Cumhurbaşkanının verdiği bu 'olağanüstü hâl ilan kararını onaylamak', süresini uzatmak veya kaldırmak TBMM'nin görevidir. Bu yüzden 'OHAL ilan kararını onaylamak' Cumhurbaşkanının değil, TBMM'nin yetkileri arasında olmalıydı.",
     answers: [
@@ -533,7 +533,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Seçimlerin yenilenmesi kararı<br>II. Savaş ilan etme<br>III. İç tüzük değişiklikleri<br>IV. Milletvekilliğinin düşürülmesi<br>V. Milletvekili dokunulmazlığının kaldırılması<br><br><b>Yukarıda verilen parlamento kararlarının hangilerinin iptali için Anayasa Mahkemesine dava açılabilir?</b></p>",
+    text: "<p>I. Seçimlerin yenilenmesi kararı<br>II. Savaş ilan etme<br>III. İç tüzük değişiklikleri<br>IV. Milletvekilliğinin düşürülmesi<br>V. Milletvekili dokunulmazlığının kaldırılması</p><p><b>Yukarıda verilen parlamento kararlarının hangilerinin iptali için Anayasa Mahkemesine dava açılabilir?</b></p>",
     diff: 3,
     expl: "Kural olarak parlamento kararları anayasal denetime tabi değildir, yargı yolu kapalıdır. Bunun yalnızca 3 istisnası vardır: TBMM İç Tüzüğü değişiklikleri (III), Milletvekilliği dokunulmazlığının kaldırılması (V) ve Milletvekilliği sıfatının düşürülmesi kararı (IV).",
     answers: [
@@ -545,7 +545,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye Büyük Millet Meclisi Başkanlığına \"Özel Tüketim Vergisi Kanununda Değişiklik Yapılması Hakkında\" kanun teklifi veriliyor.<br><br><b>1982 Anayasası'na göre bu kanun teklifini;</b><br><br>I. Hazine ve Maliye Bakanı A,<br>II. Cumhurbaşkanı B,<br>III. İzmir Milletvekili C,<br>IV. Cumhurbaşkanı yardımcısı D<br><br><b>verilenlerden hangileri yapmış olabilir?</b></p>",
+    text: "<p>Türkiye Büyük Millet Meclisi Başkanlığına \"Özel Tüketim Vergisi Kanununda Değişiklik Yapılması Hakkında\" kanun teklifi veriliyor.</p><p><b>1982 Anayasası'na göre bu kanun teklifini;</b></p><p>I. Hazine ve Maliye Bakanı A,<br>II. Cumhurbaşkanı B,<br>III. İzmir Milletvekili C,<br>IV. Cumhurbaşkanı yardımcısı D</p><p><b>verilenlerden hangileri yapmış olabilir?</b></p>",
     diff: 2,
     expl: "1982 Anayasası m. 88'e göre (bütçe kanunu hariç) kanun teklif etmeye yalnızca milletvekilleri yetkilidir. Cumhurbaşkanı, yardımcıları veya bakanların (örneğin vergi kanunu) teklif etme yetkisi yoktur. Bu yüzden teklifi sadece İzmir Milletvekili C (III) vermiş olabilir.",
     answers: [
@@ -557,7 +557,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Milletvekili A, Türkiye Büyük Millet Meclisi Başkanlığına kanun teklifi yapıyor.<br><br><b>1982 Anayasası'na göre, Milletvekili A,</b><br><br>I. Bütçe Kanunu,<br>II. Türk Ceza Kanunu,<br>III. Kesin Hesap Kanunu,<br>IV. Genel ve Özel Af Kanunu<br><br><b>verilenlerden hangileri için kanun teklifi veremez?</b></p>",
+    text: "<p>Milletvekili A, Türkiye Büyük Millet Meclisi Başkanlığına kanun teklifi yapıyor.</p><p><b>1982 Anayasası'na göre, Milletvekili A,</b></p><p>I. Bütçe Kanunu,<br>II. Türk Ceza Kanunu,<br>III. Kesin Hesap Kanunu,<br>IV. Genel ve Özel Af Kanunu</p><p><b>verilenlerden hangileri için kanun teklifi <u>veremez</u>?</b></p>",
     diff: 3,
     expl: "1982 Anayasası'na göre genel olarak kanun teklif etmeye milletvekilleri yetkilidir. Ancak 'Bütçe Kanunu' (I) ve 'Kesin Hesap Kanunu' (III) teklifleri istisnai olarak milletvekilleri tarafından değil, doğrudan Cumhurbaşkanı tarafından Meclise sunulur.",
     answers: [
@@ -575,7 +575,7 @@ export const VAT_YASAMA_TEST_3: McQ[] = [
 // ============================================================================
 export const VAT_YASAMA_TEST_4: McQ[] = [
   {
-    text: "<p>Cumhurbaşkanı, yayımlanmasını kısmen veya tamamen uygun bulmadığı kanunları, bir daha görüşülmek üzere, bu hususta gösterdiği gerekçe ile birlikte aynı süre içinde, Türkiye Büyük Millet Meclisine geri gönderir.<br><br><b>1982 Anayasası'na göre,</b><br><br>I. Genel ve Özel Af Kanunu,<br>II. Bütçe Kanunu,<br>III. Seçim Kanunu,<br>IV. Anayasa değişikliğine ilişkin kanunlar<br><br><b>hangileri bu hükme tabi değildir?</b></p>",
+    text: "<p>Cumhurbaşkanı, yayımlanmasını kısmen veya tamamen uygun bulmadığı kanunları, bir daha görüşülmek üzere, bu hususta gösterdiği gerekçe ile birlikte aynı süre içinde, Türkiye Büyük Millet Meclisine geri gönderir.</p><p><b>1982 Anayasası'na göre,</b></p><p>I. Genel ve Özel Af Kanunu,<br>II. Bütçe Kanunu,<br>III. Seçim Kanunu,<br>IV. Anayasa değişikliğine ilişkin kanunlar</p><p><b>hangileri bu hükme tabi <u>değildir</u>?</b></p>",
     diff: 1,
     expl: "Cumhurbaşkanı yayımlanmasını uygun bulmadığı kanunları tekrar görüşülmek üzere Meclis'e geri gönderebilir (Veto hakkı). Ancak 'Bütçe Kanunları' bu hükme tabi değildir. Cumhurbaşkanı Bütçe Kanunu'nu tekrar görüşülmek üzere TBMM'ye geri gönderemez.",
     answers: [
@@ -611,7 +611,7 @@ export const VAT_YASAMA_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>TBMM tarafından kabul edilen bir kanun, Cumhurbaşkanı tarafından bir kez daha görüşülmek üzere Meclise geri gönderilmiştir.<br><br><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisinin bu kanunu hangi çoğunlukla aynen kabul ederse bu kanunun Cumhurbaşkanı tarafından yayımlanması zorunludur?</b></p>",
+    text: "<p>TBMM tarafından kabul edilen bir kanun, Cumhurbaşkanı tarafından bir kez daha görüşülmek üzere Meclise geri gönderilmiştir.</p><p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisinin bu kanunu hangi çoğunlukla aynen kabul ederse bu kanunun Cumhurbaşkanı tarafından yayımlanması zorunludur?</b></p>",
     diff: 3,
     expl: "Türkiye Büyük Millet Meclisi, geri gönderilen kanunu üye tam sayısının salt çoğunluğuyla (en az 301 milletvekili) aynen kabul ederse, kanun Cumhurbaşkanı tarafından yayımlanır; Meclis, geri gönderilen kanunda yeni bir değişiklik yaparsa, Cumhurbaşkanı değiştirilen kanunu tekrar Meclise geri gönderebilir.",
     answers: [
@@ -635,7 +635,7 @@ export const VAT_YASAMA_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye Büyük Millet Meclisi tarafından Siber Güvenlik Kanunu kabul edilmiştir.<br><br><b>1982 Anayasası'na göre, meclis tarafından kabul edilen kanunları Cumhurbaşkanı kaç gün içinde yayımlamak veya Türkiye Büyük Millet Meclisine geri göndermek zorundadır?</b></p>",
+    text: "<p>Türkiye Büyük Millet Meclisi tarafından Siber Güvenlik Kanunu kabul edilmiştir.</p><p><b>1982 Anayasası'na göre, meclis tarafından kabul edilen kanunları Cumhurbaşkanı kaç gün içinde yayımlamak veya Türkiye Büyük Millet Meclisine geri göndermek zorundadır?</b></p>",
     diff: 1,
     expl: "Kanunların Cumhurbaşkanı'na Gönderilmesi ve Yayımlanması: Cumhurbaşkanı, Türkiye Büyük Millet Meclisince kabul edilen kanunları 15 gün içinde yayımlar veya aynı süre içinde bir daha görüşülmek üzere TBMM'ye geri gönderir.",
     answers: [
@@ -659,7 +659,7 @@ export const VAT_YASAMA_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Cumhurbaşkanı Bütçe Kanun teklifini, mali yılbaşından en az kaç gün önce, Türkiye Büyük Millet Meclisine sunar?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Cumhurbaşkanı Bütçe Kanun teklifini, mali yılbaşından <u>en az</u> kaç gün önce, Türkiye Büyük Millet Meclisine sunar?</b></p>",
     diff: 1,
     expl: "Cumhurbaşkanı Bütçe Kanun teklifini, malî yılbaşından en az 75 gün önce, Türkiye Büyük Millet Meclisine sunar. Bütçe teklifi Bütçe Komisyonunda görüşülür.",
     answers: [
@@ -671,7 +671,7 @@ export const VAT_YASAMA_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Cumhurbaşkanınca sunulan bütçe kanun teklifi, TBMM Plan ve Bütçe Komisyonu tarafından en geç kaç gün içinde karara bağlanmalıdır?</b></p>",
+    text: "<p><b>Cumhurbaşkanınca sunulan bütçe kanun teklifi, TBMM Plan ve Bütçe Komisyonu tarafından <u>en geç</u> kaç gün içinde karara bağlanmalıdır?</b></p>",
     diff: 2,
     expl: "Cumhurbaşkanı tarafından sunulan bütçe teklifi, Bütçe Komisyonunda görüşülür. Komisyonun 55 gün içinde kabul edeceği metin Genel Kurulda görüşülür ve malî yılbaşına kadar karara bağlanır.",
     answers: [
@@ -707,7 +707,7 @@ export const VAT_YASAMA_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nda ismen belirtilen kanunlar arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>1982 Anayasası'nda ismen belirtilen kanunlar arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "1982 Anayasası'nda ismen adı geçen kanunlar şunlardır: Bütçe ve Kesin Hesap Kanunları, İnkılap Kanunları, Seçim Kanunları, Anayasa değişikliğine ilişkin kanunlar. Ancak Ticaret Kanunu Anayasa'da ismen (özel bir ad olarak) belirtilmemiştir.",
     answers: [
@@ -719,7 +719,7 @@ export const VAT_YASAMA_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Milletvekili A'nın Türkiye Büyük Millet Meclisine sunduğu kanun teklifinin yasallaşması ile ilgili olarak;<br><br>I. Kanun teklifinin mecliste görüşülebilmesi için toplantı yeter sayısı hazır olmalıdır.<br>II. Meclisçe kabul edilen kanunları Meclis Başkanı yayımlar.<br>III. Yürürlük tarihi metninde belirtilmeyen kanun yayımlandığı gün yürürlüğe girer.<br><br><b>verilenlerden hangileri doğrudur?</b></p>",
+    text: "<p><b>Milletvekili A'nın Türkiye Büyük Millet Meclisine sunduğu kanun teklifinin yasallaşması ile ilgili olarak;</b></p><p>I. Kanun teklifinin mecliste görüşülebilmesi için toplantı yeter sayısı hazır olmalıdır.<br>II. Meclisçe kabul edilen kanunları Meclis Başkanı yayımlar.<br>III. Yürürlük tarihi metninde belirtilmeyen kanun yayımlandığı gün yürürlüğe girer.</p><p><b>verilenlerden hangileri doğrudur?</b></p>",
     diff: 2,
     expl: "Kanun teklifinin görüşülebilmesi için TBMM üye tam sayısının en az 1/3'ünün (200 milletvekili) hazır olması gerekir (Toplantı yeter sayısı). Yürürlük tarihi belirtilmeyen kanunlar Resmî Gazete'de yayımlandığı gün yürürlüğe girer. Ancak kanunları yayımlama görevi Meclis Başkanına değil, Cumhurbaşkanına aittir (II yanlış).",
     answers: [
@@ -773,7 +773,7 @@ export const VAT_YASAMA_TEST_4: McQ[] = [
 // ============================================================================
 export const VAT_YASAMA_TEST_5: McQ[] = [
   {
-    text: "<p>Bir adam, orman arazisinde kasten yangın çıkarır ve büyük bir orman alanının yok olmasına sebep olur. Ardından Meclis tarafından Af Kanunu çıkarılır.<br><br><b>1982 Anayasası'na göre, bu durumda aşağıdakilerden hangisi doğrudur?</b></p>",
+    text: "<p>Bir adam, orman arazisinde kasten yangın çıkarır ve büyük bir orman alanının yok olmasına sebep olur. Ardından Meclis tarafından Af Kanunu çıkarılır.</p><p><b>1982 Anayasası'na göre, bu durumda aşağıdakilerden hangisi doğrudur?</b></p>",
     diff: 1,
     expl: "Ormanlara zarar verebilecek hiçbir faaliyet ve eyleme müsaade edilemez. Ormanları yakmak, ormanı yok etmek veya daraltmak amacıyla işlenen suçlar genel ve özel af kapsamına alınamaz.",
     answers: [
@@ -785,7 +785,7 @@ export const VAT_YASAMA_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye Büyük Millet Meclisi Genel Af Kanunu'nu oylamak üzere 500 milletvekili ile toplanmıştır.<br><br><b>1982 Anayasası'na göre, genel ve özel af kanununun Mecliste kabul edilebilmesi için en az kaç üyenin oyu gereklidir?</b></p>",
+    text: "<p>Türkiye Büyük Millet Meclisi Genel Af Kanunu'nu oylamak üzere 500 milletvekili ile toplanmıştır.</p><p><b>1982 Anayasası'na göre, genel ve özel af kanununun Mecliste kabul edilebilmesi için <u>en az</u> kaç üyenin oyu gereklidir?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'na göre, TBMM'nin genel af ilanı kanun ile yaptığı işlemlerden biridir. Bunun için TBMM üye tam sayısının (600) 3/5'inin (360) kabul oyu ile mümkün olur. Toplantıya katılanların sayısı önemli değildir, üye tam sayısının 3/5'i şarttır.",
     answers: [
@@ -833,7 +833,7 @@ export const VAT_YASAMA_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir televizyon kanalında tartışma programı sunan Mehmet, izleyicilere \"Anayasa değişikliği teklifinde bulunma yetkisi kime aittir?\" diye soruyor.<br><br><b>1982 Anayasası'na göre, Mehmet'in sorduğu soruya verilen aşağıdaki yanıtlardan hangisi doğrudur?</b></p>",
+    text: "<p>Bir televizyon kanalında tartışma programı sunan Mehmet, izleyicilere \"Anayasa değişikliği teklifinde bulunma yetkisi kime aittir?\" diye soruyor.</p><p><b>1982 Anayasası'na göre, Mehmet'in sorduğu soruya verilen aşağıdaki yanıtlardan hangisi doğrudur?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'nın 175. maddesine göre, Anayasa değişikliği teklif etme yetkisi yalnızca Türkiye Büyük Millet Meclisi üye tam sayısının en az üçte biri olan 200 milletvekiline aittir. Cumhurbaşkanı, Adalet Bakanı veya siyasi partiler (gruplar) Anayasa değişikliği teklif edemez.",
     answers: [
@@ -845,7 +845,7 @@ export const VAT_YASAMA_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Anayasa'nın değiştirilmesi ile ilgili aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Anayasa'nın değiştirilmesi ile ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Teklif, TBMM'nin en az 2/3 (400) üyesinin onayı ile kabul edilirse Cumhurbaşkanı görüşülmek üzere Meclise iade EDEBİLİR. (İster iade eder, ister halkoyuna sunar, isterse de onaylar.) İade edemez ifadesi yanlıştır.",
     answers: [
@@ -881,9 +881,9 @@ export const VAT_YASAMA_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Üç farklı anayasa değişikliği kanununun son oylamasında aldıkları kabul ve ret oyları şöyledir:<br><br>1: 360/127<br>2: 403/98<br>3: 379/18<br><br><b>1982 Anayasası'na göre, söz konusu kanunlar üzerinde Cumhurbaşkanı'nın kullanabileceği yetkilere ilişkin olarak aşağıdakilerden hangisinde sırasıyla doğru ifadelere yer verilmiştir?</b></p>",
+    text: "<p>Üç farklı anayasa değişikliği kanununun son oylamasında aldıkları kabul ve ret oyları şöyledir:</p><p>1: 360/127<br>2: 403/98<br>3: 379/18</p><p><b>1982 Anayasası'na göre, söz konusu kanunlar üzerinde Cumhurbaşkanı'nın kullanabileceği yetkilere ilişkin olarak aşağıdakilerden hangisinde sırasıyla doğru ifadelere yer verilmiştir?</b></p>",
     diff: 3,
-    expl: "Oylamada 360-400 arası oy alınırsa (1. ve 3. durum), Cumhurbaşkanı ya geri gönderir ya da halkoyuna sunar (Zorunlu halk oylaması). Onaylama yetkisi yoktur. 400 ve üzeri (403) oy alınırsa (2. durum), Cumhurbaşkanı onaylayabilir, geri gönderebilir veya halkoyuna sunabilir (İhtiyari halk oylaması). Bu nedenle sırasıyla: Zorunlu - İhtiyari - Zorunlu şeklindedir. Verilen seçenekler arasında buna uygun olanı C şıkkıdır.",
+    expl: "Anayasa değişikliği teklifi 360–399 oyla kabul edilirse Cumhurbaşkanı onaylayamaz; ya Meclise geri gönderir ya da halkoyuna sunar (zorunlu halk oylaması). 400 ve üzeri oyla kabul edilirse Cumhurbaşkanı onaylayabilir, geri gönderebilir veya halkoyuna sunabilir (ihtiyari halk oylaması). Buna göre 1. kanun (360) geri gönderilebilir, 2. kanun (403) onaylanabilir, 3. kanun (379) ise zorunlu halk oylamasına sunulabilir.",
     answers: [
       { text: "1: İhtiyari halk oylaması, 2: Geri gönderme, 3: Onay", ok: false },
       { text: "1: Onay, 2: İhtiyari halk oylaması, 3: Geri gönderme", ok: false },
@@ -893,7 +893,7 @@ export const VAT_YASAMA_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, bir milletvekili;</b><br><br>I. kanun teklif etme,<br>II. yazılı soru önergesi verme,<br>III. Meclis başkanlığı için adaylık başvurusu yapma<br><br><b>işlemlerinden hangilerini yapabilir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, bir milletvekili;</b></p><p>I. kanun teklif etme,<br>II. yazılı soru önergesi verme,<br>III. Meclis başkanlığı için adaylık başvurusu yapma</p><p><b>işlemlerinden hangilerini yapabilir?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'na göre bir milletvekili; kanun teklifi sunabilir, yazılı soru önergesi verebilir, Meclis Başkanlığı için adaylık başvurusu yapabilir. (Ayrıca dokunulmazlığı kaldırılan veya vekilliği düşürülen milletvekili için 7 gün içinde Anayasa Mahkemesine itiraz edebilir.)",
     answers: [
@@ -905,7 +905,7 @@ export const VAT_YASAMA_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Cumhurbaşkanı'nın anayasaya aykırı olduğunu düşündüğü bir kanunu meclise geri göndermesi<br>II. Cumhurbaşkanı'nın anayasaya aykırı olduğunu düşündüğü bir kanun hakkında Anayasa Mahkemesinde iptal davası açması<br>III. Kanun teklifinin görüşüldüğü komisyonda yapılan anayasaya uygunluk denetimi<br><br><b>Yukarıdakilerden hangileri Türk hukukunda kanunların anayasa uygunluğunun siyasal denetimi yöntemlerinden biri değildir?</b></p>",
+    text: "<p>I. Cumhurbaşkanı'nın anayasaya aykırı olduğunu düşündüğü bir kanunu meclise geri göndermesi<br>II. Cumhurbaşkanı'nın anayasaya aykırı olduğunu düşündüğü bir kanun hakkında Anayasa Mahkemesinde iptal davası açması<br>III. Kanun teklifinin görüşüldüğü komisyonda yapılan anayasaya uygunluk denetimi</p><p><b>Yukarıdakilerden hangileri Türk hukukunda kanunların anayasa uygunluğunun siyasal denetimi yöntemlerinden biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Türk hukukunda kanunların anayasa uygunluk denetimi siyasi ve yargısal olmak üzere iki türlüdür. Siyasi denetim kanunun teklif olarak parlamentoya sunulmasıyla başlar (komisyonlar, genel kurul, Cumhurbaşkanının geri göndermesi). Yürürlüğe girdikten sonra Anayasa Mahkemesine iptal davası açılması ise yargısal denetimdir. Yani II. öncül (iptal davası açması) siyasal denetim yöntemi değildir.",
     answers: [
@@ -917,7 +917,7 @@ export const VAT_YASAMA_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye Büyük Millet Meclisi, her yıl ---- ayının ilk günü ---- toplanır.<br><br><b>1982 Anayasası'na göre, yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>Türkiye Büyük Millet Meclisi, her yıl ---- ayının ilk günü ---- toplanır.</p><p><b>1982 Anayasası'na göre, yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 1,
     expl: "Türkiye Büyük Millet Meclisi, her yıl Ekim ayının ilk günü kendiliğinden toplanır. Meclis, bir yasama yılında en çok üç ay tatil yapabilir.",
     answers: [
@@ -929,7 +929,7 @@ export const VAT_YASAMA_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Mecliste kanunların olgunlaştığı ve kanunlara son şeklinin verildiği yer komisyonlardır.<br><br><b>Türkiye Büyük Millet Meclisinde yer alan komisyonlar arasında aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p>Mecliste kanunların olgunlaştığı ve kanunlara son şeklinin verildiği yer komisyonlardır.</p><p><b>Türkiye Büyük Millet Meclisinde yer alan komisyonlar arasında aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 2,
     expl: "TBMM İç Tüzüğü'ne göre Anayasa Komisyonu, Adalet Komisyonu, İçişleri Komisyonu ve Dilekçe Komisyonu mevcuttur. Ancak TBMM bünyesinde daimi bir 'Olağanüstü Hâl Komisyonu' bulunmamaktadır.",
     answers: [
@@ -971,7 +971,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Meclis bir yasama yılında en çok ne kadar süre tatil yapar?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Meclis bir yasama yılında <u>en çok</u> ne kadar süre tatil yapar?</b></p>",
     diff: 1,
     expl: "Türkiye Büyük Millet Meclisi, her yıl ekim ayının ilk günü kendiliğinden toplanır. Meclis, bir yasama yılında en çok üç ay tatil yapabilir.",
     answers: [
@@ -983,7 +983,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye Büyük Millet Meclisi İç Tüzüğü'ne göre, ara verme; Meclisin, çalışmalarını tek seferde en fazla kaç gün süreyle ertelemesidir?<br><br><b> </b></p>",
+    text: "<p><b>Türkiye Büyük Millet Meclisi İç Tüzüğü'ne göre, ara verme; Meclisin, çalışmalarını tek seferde <u>en fazla</u> kaç gün süreyle ertelemesidir?</b></p>",
     diff: 2,
     expl: "Tatil, Türkiye Büyük Millet Meclisinin çalışmalarının belli bir süre ertelenmesidir. Ara verme ise, Türkiye Büyük Millet Meclisinin 15 günü geçmemek üzere çalışmalarını ertelemesidir.",
     answers: [
@@ -995,7 +995,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Türkiye Büyük Millet Meclisi başkanı<br>II. Cumhurbaşkanı<br>III. Türkiye Büyük Millet Meclisi üyelerinin 1/5'i<br><br><b>1982 Anayasası'na göre, yukarıdakilerden hangileri ara verme veya tatil sırasında Türkiye Büyük Millet Meclisini doğrudan doğruya toplantıya çağırabilir?</b></p>",
+    text: "<p>I. Türkiye Büyük Millet Meclisi başkanı<br>II. Cumhurbaşkanı<br>III. Türkiye Büyük Millet Meclisi üyelerinin 1/5'i</p><p><b>1982 Anayasası'na göre, yukarıdakilerden hangileri ara verme veya tatil sırasında Türkiye Büyük Millet Meclisini doğrudan doğruya toplantıya çağırabilir?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'na göre, TBMM tatildeyken Cumhurbaşkanı ve TBMM Başkanı doğrudan; TBMM üye tam sayısının en az beşte birinin (120 Milletvekili) yazılı istemi ile de TBMM Başkanı dolaylı olarak TBMM'yi toplantıya çağırmaya yetkilidir.",
     answers: [
@@ -1007,7 +1007,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, TBMM Başkanı en az kaç milletvekilinin yazılı istemiyle Türkiye Büyük Millet Meclisini toplantıya çağırabilir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, TBMM Başkanı <u>en az</u> kaç milletvekilinin yazılı istemiyle Türkiye Büyük Millet Meclisini toplantıya çağırabilir?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'na göre, TBMM tatildeyken Cumhurbaşkanı ve TBMM Başkanı doğrudan ve TBMM üye tam sayısının en az beşte birinin (600 / 5 = 120 Milletvekili) yazılı istemi ile de TBMM Başkanı dolaylı olarak TBMM'yi toplantıya çağırmaya yetkilidir.",
     answers: [
@@ -1019,7 +1019,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Meclis Başkanlık Divanı kurulmadan Meclis, çalışmalarını sürdüremez.<br><br><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Meclis Başkanlık Divanında yer almaz?</b></p>",
+    text: "<p>Meclis Başkanlık Divanı kurulmadan Meclis, çalışmalarını sürdüremez.</p><p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Meclis Başkanlık Divanında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Türkiye Büyük Millet Meclisinin Başkanlık Divanı, Meclis üyeleri arasından seçilen Meclis Başkanı, Başkanvekilleri, kâtip üyeler ve idare amirlerinden oluşur. Meclis genel sekreteri Başkanlık Divanı üyesi değildir.",
     answers: [
@@ -1031,7 +1031,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye Büyük Millet Meclisi İç Tüzüğü'ne göre, yasama döneminin birinci birleşiminin ilk oturumundan başlayarak Türkiye Büyük Millet Meclisi başkanı seçilinceye kadar, aşağıdakilerden hangisi geçici başkanlık görevini yürütür?<br><br><b> </b></p>",
+    text: "<p><b>Türkiye Büyük Millet Meclisi İç Tüzüğü'ne göre, yasama döneminin birinci birleşiminin ilk oturumundan başlayarak Türkiye Büyük Millet Meclisi başkanı seçilinceye kadar, aşağıdakilerden hangisi geçici başkanlık görevini yürütür?</b></p>",
     diff: 1,
     expl: "Yasama döneminin birinci birleşiminin ilk oturumundan başlayarak Başkan seçilinceye kadar, en yaşlı milletvekili, \"Geçici Başkanlık\" görevini yürütür. İkinci derecede en yaşlı üye, başkanvekilliği görevini yerine getirir. En genç altı milletvekili de geçici olarak kâtip üyelik yaparlar.",
     answers: [
@@ -1043,7 +1043,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisinin seçiminde milletvekilleri etkili değildir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisinin seçiminde milletvekilleri etkili <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Kamu Başdenetçisi'ni, TBMM Başkanı'nı, Anayasa Mahkemesinin üç üyesini, Hâkimler ve Savcılar Kurulunun yedi üyesini TBMM (milletvekilleri) seçer. Cumhurbaşkanı yardımcıları ise doğrudan Cumhurbaşkanınca seçilir ve atanır.",
     answers: [
@@ -1067,7 +1067,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Milletvekili M, Türkiye Büyük Millet Meclisi Başkanlığı için aday olmak istiyor.<br><br><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisi başkanı ile ilgili aşağıda verilen ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p>Milletvekili M, Türkiye Büyük Millet Meclisi Başkanlığı için aday olmak istiyor.</p><p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisi başkanı ile ilgili aşağıda verilen ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "Meclis Başkanı ve diğer başkanlık divanı üyeleri, başkanlık divanına seçildikten sonra da partilerinin üyesi ve milletvekili olarak kalmaya devam ederler. Yani Meclis Başkanı seçilen kişinin siyasi partisi ile ilişiği sona ermez. Sadece siyasi parti faaliyetlerine katılamaz.",
     answers: [
@@ -1079,12 +1079,12 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>TBMM Başkanlık Divanının görev süresi sona erdiği için yeni seçimler yapılacaktır.<br><br><b>1982 Anayasası'na göre, TBMM Başkanlık Divanı seçimi hakkında aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>TBMM Başkanlık Divanının görev süresi sona erdiği için yeni seçimler yapılacaktır.</p><p><b>1982 Anayasası'na göre, TBMM Başkanlık Divanı seçimi hakkında aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Başkanlık divanına seçilecek tüm üyeler milletvekili olmak zorundadır. Ancak TBMM Başkanlık Divanı seçimlerinde siyasi parti grupları aday gösteremez, adaylar bireysel başvuru yapar.",
     answers: [
       { text: "Meclis Başkanlık Divanı üyeleri milletvekili olmak zorundadır.", ok: false },
-      { text: "İkinci dönem seçilenler yasama döneminin sonuna kadar göre yapar.", ok: false },
+      { text: "İkinci dönem seçilenler yasama döneminin sonuna kadar görev yapar.", ok: false },
       { text: "Meclis Başkanı seçilen kişinin milletvekilliği devam eder.", ok: false },
       { text: "Meclis Başkanı meclisteki oylamalara katılamaz.", ok: false },
       { text: "Siyasi parti grupları meclis başkanlığı için aday gösterebilir.", ok: true }
@@ -1103,7 +1103,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye Büyük Millet Meclisi, yapacağı seçimler dahil bütün işlerinde üye tam sayısının en az ---- ile toplanır. Türkiye Büyük Millet Meclisi, Anayasada başkaca bir hüküm yoksa toplantıya katılanların ---- ile karar verir.<br><br><b>1982 Anayasası'na yukarıda boş bırakılan yerlere sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>Türkiye Büyük Millet Meclisi, yapacağı seçimler dahil bütün işlerinde üye tam sayısının en az ---- ile toplanır. Türkiye Büyük Millet Meclisi, Anayasada başkaca bir hüküm yoksa toplantıya katılanların ---- ile karar verir.</p><p><b>1982 Anayasası'na yukarıda boş bırakılan yerlere sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 1,
     expl: "Türkiye Büyük Millet Meclisi, yapacağı seçimler dahil bütün işlerinde üye tam sayısının en az üçte biri (200 milletvekili) ile toplanır. Türkiye Büyük Millet Meclisi, Anayasada başkaca bir hüküm yoksa toplantıya katılanların salt çoğunluğu ile karar verir; ancak karar yeter sayısı hiçbir şekilde üye tam sayısının dörtte birinin bir fazlasından az olamaz.",
     answers: [
@@ -1115,7 +1115,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, özel bir karar yeter sayısı getirilmemişse Türkiye Büyük Millet Meclisinin bir konuda karara varabilmesi için en az karar yeter sayısı aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, özel bir karar yeter sayısı getirilmemişse Türkiye Büyük Millet Meclisinin bir konuda karara varabilmesi için <u>en az</u> karar yeter sayısı aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Meclisin herhangi bir toplantıyı açması için en az 200 milletvekili hazır olmalıdır. Meclis karar alırken özel bir çoğunluk aranmamışsa toplantıya katılanların yarısından bir fazlası yeterlidir. Ancak bu sayı (karar yeter sayısı) hiçbir zaman üye tam sayısının dörtte birinin bir fazlasından (600 / 4 + 1 = 151) az olamaz.",
     answers: [
@@ -1139,7 +1139,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Türkiye Büyük Millet Meclisi üyeleri arasından seçilemez?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Türkiye Büyük Millet Meclisi üyeleri arasından <u>seçilemez</u>?</b></p>",
     diff: 2,
     expl: "TBMM Başkanı ve Başkanvekilleri milletvekilleri arasından seçilir. Bakanlar ve Cumhurbaşkanı yardımcıları milletvekili olabilir ancak atandıkları an milletvekilliği sıfatları sona erer (yani başlangıçta milletvekili olabilirler). Ancak TBMM Genel Sekreteri, TBMM üyesi olmayan, kariyer memurluğu esasına göre atanan bir kamu görevlisidir.",
     answers: [
@@ -1169,7 +1169,7 @@ export const VAT_YASAMA_TEST_6: McQ[] = [
 // ============================================================================
 export const VAT_YASAMA_TEST_7: McQ[] = [
   {
-    text: "<p><b>1982 Anayasası'na göre, TBMM'nin aşağıda verilen kararlarından hangisi için nitelikli çoğunluk aranmaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, TBMM'nin aşağıda verilen kararlarından hangisi için nitelikli çoğunluk <u>aranmaz</u>?</b></p>",
     diff: 2,
     expl: "Anayasa'nın değiştirilmesi (3/5 veya 2/3), Genel ve özel af ilanı (3/5), Seçimlerin yenilenmesine karar vermek (3/5) ve Meclis Başkanı/Kamu Başdenetçisi seçimi (ilk iki turda 2/3, üçüncü turda salt çoğunluk) gibi konularda nitelikli çoğunluk aranır. Ancak yasama dokunulmazlığının kaldırılması için basit çoğunluk (toplantıya katılanların salt çoğunluğu, en az 151) yeterlidir.",
     answers: [
@@ -1181,7 +1181,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, TBMM'nin aşağıda verilen kararlarından hangisi için gizli oylama aranmaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, TBMM'nin aşağıda verilen kararlarından hangisi için gizli oylama <u>aranmaz</u>?</b></p>",
     diff: 1,
     expl: "Anayasa değişikliği kabulü, Kamu Başdenetçisi seçimi, TBMM Başkanı seçimi, HSK ve Anayasa Mahkemesine üye seçimi, Yüce Divana sevk gibi işlemlerde gizli oylama zorunludur. Ancak savaş ilan etme kararı gibi konularda gizli oylama şartı yoktur.",
     answers: [
@@ -1193,7 +1193,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>A partisinde ayrılan 5 milletvekili B partisine geçer. Ancak B partisinin mecliste grup oluşturmak için milletvekili sayısı yeterli değildir.<br><br><b>1982 Anayasası'na göre, B partisinin mecliste grup kurmak amacıyla yeterli sayıya ulaşması için en az kaç milletvekiline daha ihtiyacı vardır?</b></p>",
+    text: "<p>A partisinden ayrılan 5 milletvekili B partisine geçer. Ancak B partisinin mecliste grup oluşturmak için milletvekili sayısı yeterli değildir.</p><p><b>1982 Anayasası'na göre, B partisinin mecliste grup kurmak amacıyla yeterli sayıya ulaşması için <u>en az</u> kaç milletvekiline daha ihtiyacı vardır?</b></p>",
     diff: 2,
     expl: "Siyasi parti grupları, en az 20 milletvekilinden meydana gelir. B partisinin 5 milletvekili olduğuna göre, grup oluşturmak için 15 milletvekiline daha ihtiyacı vardır.",
     answers: [
@@ -1205,7 +1205,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisindeki siyasi parti gruplarına yasaklanmış işler arasında;</b><br><br>I. Cumhurbaşkanlığına aday göstermek,<br>II. yasama dokunulmazlığının kaldırılması için görüşme yapmak ve karar almak,<br>III. Meclis Başkanlığına aday göstermek<br><br><b>hangileri yer alır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisindeki siyasi parti gruplarına yasaklanmış işler arasında;</b></p><p>I. Cumhurbaşkanlığına aday göstermek,<br>II. yasama dokunulmazlığının kaldırılması için görüşme yapmak ve karar almak,<br>III. Meclis Başkanlığına aday göstermek</p><p><b>hangileri yer alır?</b></p>",
     diff: 2,
     expl: "Türkiye Büyük Millet Meclisindeki siyasi parti gruplarınca, yasama dokunulmazlığı ve meclis soruşturması ile ilgili görüşme yapılamaz ve karar alınamaz (II). Yine siyasi parti gruplarınca Meclis Başkanlığı için aday gösterilemez (III). Ancak siyasi parti grupları Cumhurbaşkanı adayı gösterebilir.",
     answers: [
@@ -1217,7 +1217,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>A Partisi: 270 milletvekili<br>B Partisi: 30 milletvekili<br>C Partisi: 98 milletvekili<br>D Partisi: 140 milletvekili<br>E Partisi: 19 milletvekili<br>Bağımsızlar: 43 milletvekili<br><br><b>1982 Anayasası'na göre, yukarıdaki sayısal verilerden yola çıkılarak mecliste kaç adet siyasi parti grubu kurulabilir?</b></p>",
+    text: "<p>A Partisi: 270 milletvekili<br>B Partisi: 30 milletvekili<br>C Partisi: 98 milletvekili<br>D Partisi: 140 milletvekili<br>E Partisi: 19 milletvekili<br>Bağımsızlar: 43 milletvekili</p><p><b>1982 Anayasası'na göre, yukarıdaki sayısal verilerden yola çıkılarak mecliste kaç adet siyasi parti grubu kurulabilir?</b></p>",
     diff: 3,
     expl: "Bir siyasi partinin mecliste grup oluşturabilmesi için en az 20 milletvekili gereklidir. Her partinin mecliste en az bir grubu olabilir, bir partinin birden çok grubu olamaz. Bağımsız milletvekilleri ise partileşmeden grup kuramazlar. A (270), B (30), C (98) ve D (140) partileri 20'yi geçtiği için birer grup kurabilir (Toplam 4 grup). E partisi (19) ve Bağımsızlar grup kuramaz.",
     answers: [
@@ -1229,7 +1229,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Öğretmenlik Meslek Kanunu teklifi TBMM Genel Kurulunda oylamaya sunulur.<br><br><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Türkiye Büyük Millet Meclisinde yapılan oylamalara katılabilir?</b></p>",
+    text: "<p>Öğretmenlik Meslek Kanunu teklifi TBMM Genel Kurulunda oylamaya sunulur.</p><p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Türkiye Büyük Millet Meclisinde yapılan oylamalara katılabilir?</b></p>",
     diff: 2,
     expl: "Bağımsız milletvekilleri, seçilmiş ve ant içmiş olmak kaydıyla Meclis çalışmalarına ve oylamalara tam olarak katılabilirler. Ancak TBMM Başkanı, oturumu yöneten Başkanvekili, ant içmeyen milletvekilleri ve milletvekili olmayan Cumhurbaşkanı yardımcıları/bakanlar oylamalara katılamaz.",
     answers: [
@@ -1241,7 +1241,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisi üyelerine ödenecek ödenek ve yollukların en geç kaç aylığı önceden ödenebilir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Türkiye Büyük Millet Meclisi üyelerine ödenecek ödenek ve yollukların <u>en geç</u> kaç aylığı önceden ödenebilir?</b></p>",
     diff: 1,
     expl: "Türkiye Büyük Millet Meclisi üyelerine ödenecek ödenek ve yollukların en çok 3 aylığı önceden ödenebilir.",
     answers: [
@@ -1253,7 +1253,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türkiye Büyük Millet Meclisi İç Tüzüğü ile ilgili olarak;</b><br><br>I. Parlamento kararıdır.<br>II. İç tüzük yapmak Meclisin yöntemsel bağımsızlığının bir sonucudur.<br>III. İç tüzük değişiklikleri Anayasa Mahkemesinin denetimine tabi değildir.<br>IV. İç tüzük değişikliklerini Cumhurbaşkanı yayımlar.<br><br><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p><b>Türkiye Büyük Millet Meclisi İç Tüzüğü ile ilgili olarak;</b></p><p>I. Parlamento kararıdır.<br>II. İç tüzük yapmak Meclisin yöntemsel bağımsızlığının bir sonucudur.<br>III. İç tüzük değişiklikleri Anayasa Mahkemesinin denetimine tabi değildir.<br>IV. İç tüzük değişikliklerini Cumhurbaşkanı yayımlar.</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 3,
     expl: "İç tüzük, meclisin kendi çalışma kurallarını belirlediği yöntemsel bağımsızlığının sonucudur ve bir parlamento kararıdır (I ve II doğru). Parlamento kararı olduğu için Cumhurbaşkanına gitmez, TBMM Başkanı tarafından Resmî Gazete'de yayımlanır (IV yanlış). Parlamento kararı olmasına rağmen anayasal bir istisna olarak Anayasa Mahkemesinin yargısal denetimine tabidir (III yanlış).",
     answers: [
@@ -1289,7 +1289,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre,</b><br><br>• belli bir konuda bilgi edinmek için yapılan inceleme,<br>• toplumu ve devlet faaliyetlerini ilgilendiren belli bir konunun Meclis Genel Kurulunda görüşülmesi<br><br><b>sırasıyla Meclisin hangi bilgi edinme ve denetim yollarını tanımlamaktadır?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre,</b></p><p>• belli bir konuda bilgi edinmek için yapılan inceleme,<br>• toplumu ve devlet faaliyetlerini ilgilendiren belli bir konunun Meclis Genel Kurulunda görüşülmesi</p><p><b>sırasıyla Meclisin hangi bilgi edinme ve denetim yollarını tanımlamaktadır?</b></p>",
     diff: 1,
     expl: "Belli bir konuda bilgi edinmek için yapılan inceleme 'Meclis araştırması'dır. Toplumu ve Devlet faaliyetlerini ilgilendiren belli bir konunun Türkiye Büyük Millet Meclisi Genel Kurulunda görüşülmesi ise 'Genel görüşme'dir.",
     answers: [
@@ -1301,7 +1301,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Bakan A'nın, görevi sırasında yolsuzluk yaptığı iddia ediliyor.<br><br><b>1982 Anayasası'na göre, Bakan A'nın görevi ile ilgili suçlardan dolayı Yüce Divanda yargılanabilmesi için aşağıdaki denetim yollarından hangisi işletilmelidir?</b></p>",
+    text: "<p>Bakan A'nın, görevi sırasında yolsuzluk yaptığı iddia ediliyor.</p><p><b>1982 Anayasası'na göre, Bakan A'nın görevi ile ilgili suçlardan dolayı Yüce Divanda yargılanabilmesi için aşağıdaki denetim yollarından hangisi işletilmelidir?</b></p>",
     diff: 1,
     expl: "Meclis soruşturması, Cumhurbaşkanı yardımcıları ve bakanların görevleriyle ilgili suç işledikleri iddiasıyla TBMM tarafından yargısal amaçlı denetlenmesidir. Cumhurbaşkanı yardımcıları ve bakanları Yüce Divana Meclis gönderir. Bu işlem 'Meclis Soruşturması' yoluyla gerçekleştirilir.",
     answers: [
@@ -1313,7 +1313,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Milletvekili K, özel hastanelerdeki bebek ölümleri ile ilgili Sağlık Bakanı'na yönelik yazılı sorusunu Meclis Başkanlığına iletiyor.<br><br><b>1982 Anayasası'na göre, Meclis Başkanlığınca gönderilen bu yazılı soruyu Sağlık Bakanı en geç kaç gün içinde cevaplandırmalıdır?</b></p>",
+    text: "<p>Milletvekili K, özel hastanelerdeki bebek ölümleri ile ilgili Sağlık Bakanı'na yönelik yazılı sorusunu Meclis Başkanlığına iletiyor.</p><p><b>1982 Anayasası'na göre, Meclis Başkanlığınca gönderilen bu yazılı soruyu Sağlık Bakanı <u>en geç</u> kaç gün içinde cevaplandırmalıdır?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'na göre yazılı soru, yazılı olarak en geç 15 gün içinde cevaplanmak üzere milletvekillerinin, Cumhurbaşkanı yardımcıları ve bakanlara yazılı olarak soru sormalarından ibarettir.",
     answers: [
@@ -1325,7 +1325,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Bakan A hakkında \"görevi kötüye kullanma\", \"kamu görevlisinin suçu bildirmemesi\", gibi suçlardan dolayı meclis soruşturması açılmak isteniyor.<br><br><b>1982 Anayasası'na göre, Bakan A hakkında göreviyle ilgili işlediği iddia edilen suçlardan dolayı en az kaç milletvekilinin yazılı istemi ile meclis soruşturması açılması istenebilir?</b></p>",
+    text: "<p>Bakan A hakkında \"görevi kötüye kullanma\", \"kamu görevlisinin suçu bildirmemesi\", gibi suçlardan dolayı meclis soruşturması açılmak isteniyor.</p><p><b>1982 Anayasası'na göre, Bakan A hakkında göreviyle ilgili işlediği iddia edilen suçlardan dolayı <u>en az</u> kaç milletvekilinin yazılı istemi ile meclis soruşturması açılması istenebilir?</b></p>",
     diff: 2,
     expl: "Cumhurbaşkanı yardımcıları ve bakanlar hakkında görevleriyle ilgili suç işledikleri iddiasıyla, Türkiye Büyük Millet Meclisi üye tam sayısının salt çoğunluğunun (301 milletvekili) vereceği önergeyle soruşturma açılması istenebilir.",
     answers: [
@@ -1337,7 +1337,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>I. En geç 10 gün içinde cevaplandırılır.<br>II. Yazılı soru bir milletvekili tarafından verilir.<br>III. Cumhurbaşkanı ve bakanlara soru sormaktan ibarettir.<br><br><b>1982 Anayasası'na göre, 'yazılı soru' ile ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
+    text: "<p>I. En geç 10 gün içinde cevaplandırılır.<br>II. Yazılı soru bir milletvekili tarafından verilir.<br>III. Cumhurbaşkanı ve bakanlara soru sormaktan ibarettir.</p><p><b>1982 Anayasası'na göre, 'yazılı soru' ile ilgili yukarıdaki ifadelerden hangileri doğrudur?</b></p>",
     diff: 2,
     expl: "Yazılı soru, en geç 15 gün içinde cevaplanmak (I yanlış) üzere milletvekillerinin (II doğru), Cumhurbaşkanı yardımcıları ve bakanlara (III yanlış - Cumhurbaşkanına yazılı soru sorulamaz) soru sormalarından ibarettir.",
     answers: [
@@ -1349,7 +1349,7 @@ export const VAT_YASAMA_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Bakan M hakkında meclis soruşturması açılıyor ve Yüce Divana sevk kararı alınıyor.<br><br><b>1982 Anayasası'na göre, bu durumla ilgili aşağıdakilerden hangisi yanlıştır?</b></p>",
+    text: "<p>Bakan M hakkında meclis soruşturması açılıyor ve Yüce Divana sevk kararı alınıyor.</p><p><b>1982 Anayasası'na göre, bu durumla ilgili aşağıdakilerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "Yüce Divana gönderilmek tek başına görevi sona erdirmez. Anayasa'ya göre Cumhurbaşkanı yardımcıları ve bakanlar Yüce Divan'da seçilmeye engel bir suçtan hüküm giyerse ancak o zaman görevleri sona erer. Yüce Divana sevk edilen M'nin görevinin hemen sona ereceği bilgisi yanlıştır.",
     answers: [

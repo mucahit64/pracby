@@ -17,7 +17,7 @@ export const VAT_ANAYASA_TARIHI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir öğrenci Türkiye'deki anayasaların yapısı hakkında aşağıdaki notları oluşturur:</p><ul><li><b>Çerçeve:</b> 1921 Anayasası</li><li><b>Kazuistik:</b> 1924, 1961 ve 1982 Anayasası</li><li><b>Yumuşak:</b> 1921 Anayasası</li><li><b>Sert:</b> 1924, 1961 ve 1982 Anayasası</li></ul><p><b>Bu bilgilere göre aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p>Bir öğrenci Türkiye'deki anayasaların yapısı hakkında aşağıdaki tabloyu oluşturur:</p><p><b>Anayasa Türü – Anayasalar</b><br>Çerçeve – 1921 Anayasası<br>Kazuistik – 1924, 1961 ve 1982 Anayasası<br>Yumuşak – 1921 Anayasası<br>Sert – 1924, 1961 ve 1982 Anayasası</p><p><b>Bu tabloya göre aşağıdaki ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "1921 Anayasası olağanüstü dönemde hazırlanmış 23 maddelik kısa bir anayasadır (çerçeve) ve değiştirilmesi için özel, zorlaştırıcı bir usul öngörülmemiştir (yumuşak). Bu nedenle E seçeneğindeki 'değiştirilmesi zorlaştırılmıştır' ifadesi yanlıştır, aksine normal kanunlar gibi kolayca değiştirilebilir.",
     answers: [
@@ -29,7 +29,7 @@ export const VAT_ANAYASA_TARIHI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Her federe devletin kendine ait yasama organı ve anayasası vardır.</li><li>Merkezî yönetim ile federe birimler arasında yetki paylaşımı anayasa ile yapılır.</li><li>Federe devletler, kendi iç işlerinde geniş bir özerkliğe sahiptir.</li></ul></p><p><b>Bu bilgilere göre, aşağıdaki devletlerden hangisi federal bir devlet olarak değerlendirilemez?</b></p>",
+    text: "<p>• Her federe devletin kendine ait yasama organı ve anayasası vardır.<br>• Merkezî yönetim ile federe birimler arasında yetki paylaşımı anayasa ile yapılır.<br>• Federe devletler, kendi iç işlerinde geniş bir özerkliğe sahiptir.</p><p><b>Bu bilgilere göre, aşağıdaki devletlerden hangisi federal bir devlet olarak <u>değerlendirilemez</u>?</b></p>",
     diff: 2,
     expl: "Brezilya, İsviçre, Almanya ve ABD eyaletlerden/kantonlardan oluşan federal yapıya sahip devletlerdir. Ancak Fransa eyaletlerden oluşmayan, merkezden yönetilen (üniter) bir devlettir.",
     answers: [
@@ -41,7 +41,7 @@ export const VAT_ANAYASA_TARIHI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi sert anayasa özelliklerinden biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi sert anayasa özelliklerinden biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Sert anayasalar, normal (sıradan) kanunlardan daha zor usullerle değiştirilebilen anayasalardır. Nitelikli çoğunluk aranması, referandum zorunluluğu, değiştirilemez maddelerin varlığı sertlik göstergesidir. Ancak 'kanunlarla aynı usulle değiştirilebilmesi' yumuşak anayasa (örn: 1921 Anayasası) özelliğidir.",
     answers: [
@@ -53,7 +53,7 @@ export const VAT_ANAYASA_TARIHI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Ahmet, derste anlatılanları şu şekilde not alıyor:</p><ul><li><b>Üniter Devletler:</b> Fransa, Yunanistan, Türkiye</li><li><b>Federal Devletler:</b> İngiltere, Rusya, ABD</li><li><b>Bölgeli Devlet:</b> İspanya</li></ul><p><b>Buna göre Ahmet'in notlarını aldığı devlet çeşitlerinden hangisi yanlış yere yazılmıştır?</b></p>",
+    text: "<p>Ahmet, derste anlatılanları şu şekilde not alıyor.</p><p><b>Üniter Devletler:</b> Fransa, Yunanistan, Türkiye<br><b>Federal Devletler:</b> İngiltere, Rusya, ABD<br><b>Bölgeli Devlet:</b> İspanya</p><p><b>Buna göre Ahmet'in notlarını aldığı devlet çeşitlerinden hangisi <u>yanlış</u> yere yazılmıştır?</b></p>",
     diff: 2,
     expl: "İngiltere; İskoçya, Galler gibi farklı bileşenlere sahip olsa da federal bir devlet değil, 'Üniter' bir devlettir. Federal devletler; ABD, Rusya, Almanya gibi eyalet sistemli devletlerdir.",
     answers: [
@@ -65,7 +65,7 @@ export const VAT_ANAYASA_TARIHI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>\"Kanunların Ruhu Üzerine\" adlı eserinde yasama, yürütme ve yargı erklerinin birbirinden bağımsız olması gerektiğini savunarak modern anlamda kuvvetler ayrılığı ilkesini sistemleştiren ilk düşünür aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><b>\"Kanunların Ruhu Üzerine\" adlı eserinde yasama, yürütme ve yargı erklerinin birbirinden bağımsız olması gerektiğini savunarak modern anlamda kuvvetler ayrılığı ilkesini sistemleştiren <u>ilk</u> düşünür aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Yasama, yürütme ve yargı güçlerinin ayrı organlarda toplanması gerektiğini 'Kanunların Ruhu Üzerine' eserinde sistemleştiren Fransız aydınlatmacı düşünür Montesquieu'dür.",
     answers: [
@@ -77,7 +77,7 @@ export const VAT_ANAYASA_TARIHI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. Başkanlık sistemi</li><li>II. Yarı başkanlık sistemi</li><li>III. Parlamenter sistem</li></ul></p><p><b>Yukarıda verilen hükûmet sistemlerinden hangilerinde yürütme organı, yetki ve görev paylaşımı bakımından iki başlı bir yapıdadır?</b></p>",
+    text: "<p>I. Başkanlık sistemi<br>II. Yarı başkanlık sistemi<br>III. Parlamenter sistem</p><p><b>Yukarıda verilen hükûmet sistemlerinden hangilerinde yürütme organı, yetki ve görev paylaşımı bakımından iki başlı bir yapıdadır?</b></p>",
     diff: 3,
     expl: "Başkanlık sisteminde yürütme organı tek başlıdır (Sadece Başkan vardır). Yarı başkanlık ve parlamenter sistemlerde ise yürütme organı iki başlıdır; biri Devlet Başkanı (Cumhurbaşkanı/Kral), diğeri Hükûmet Başkanı (Başbakan/Bakanlar Kurulu)'dır.",
     answers: [
@@ -125,7 +125,7 @@ export const VAT_ANAYASA_TARIHI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Türk hukuk sisteminde yer alan,</p><ul><li>I. 1921 Anayasası - meclis hükûmeti sistemi</li><li>II. 1924 Anayasası - karma hükûmet sistemi</li><li>III. 1961 Anayasası - parlamenter hükûmet sistemi</li></ul><p><b>anayasaların hangilerinde verilen hükûmet sistemi doğrudur?</b></p>",
+    text: "<p><b>Türk hukuk sisteminde yer alan</b></p><p>I. 1921 Anayasası - meclis hükûmeti sistemi<br>II. 1924 Anayasası - karma hükûmet sistemi<br>III. 1961 Anayasası - parlamenter hükûmet sistemi</p><p><b>anayasaların hangilerinde verilen hükûmet sistemi doğrudur?</b></p>",
     diff: 2,
     expl: "Türkiye'de anayasaların benimsediği sistemler: 1921 (Meclis Hükûmeti), 1924 (Karma sistem - güçler birliği/görevler ayrılığı), 1961 ve 1982 (2017'ye kadar Parlamenter), 2017 sonrası ise Cumhurbaşkanlığı Hükûmet Sistemi'dir. Öncüllerin üçü de doğrudur.",
     answers: [
@@ -149,7 +149,7 @@ export const VAT_ANAYASA_TARIHI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi demokrasinin dayandığı temel ilkeler arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi demokrasinin dayandığı temel ilkeler arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Demokrasinin temel unsurları; millî egemenlik, özgürlük, insan haklarının korunması, hukuk devleti ve çok partili siyasi hayattır. Ancak muhalefetin olmadığı 'Tek partili siyasal sistem', demokratik bir rejimin değil, otoriter/totaliter rejimlerin özelliğidir.",
     answers: [
@@ -161,7 +161,7 @@ export const VAT_ANAYASA_TARIHI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Yarı doğrudan demokrasinin araçları arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>Yarı doğrudan demokrasinin araçları arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Halk vetosu, halk girişimi, geri çağırma (recall) ve referandum yarı doğrudan demokrasinin araçlarıdır. Ancak yöneticilerin atanması antidemokratiktir; demokraside temsilciler atanmaz, doğrudan halk tarafından seçilir.",
     answers: [
@@ -191,7 +191,7 @@ export const VAT_ANAYASA_TARIHI_TEST_1: McQ[] = [
 // ============================================================================
 export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
   {
-    text: "<p><b>Türk hukuk tarihinde aşağıdakilerden hangisi için halk oylaması yapılmamıştır?</b></p>",
+    text: "<p><b>Türk hukuk tarihinde aşağıdakilerden hangisi için halk oylaması <u>yapılmamıştır</u>?</b></p>",
     diff: 3,
     expl: "Türkiye'de anayasal referandumlar 1961, 1982, 1987, 1988, 2007, 2010 ve 2017 yıllarında yapılmıştır. Ancak 2004 yılında yapılan anayasa değişiklikleri referanduma gidilmeden TBMM'de kabul edilerek yürürlüğe girmiştir.",
     answers: [
@@ -203,7 +203,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi, Tanzimat Fermanı'nda yer alan ilkelerden biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi, Tanzimat Fermanı'nda yer alan ilkelerden biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "1839 Tanzimat Fermanı hukuki eşitliğe ve can/mal güvenliğine yer verir. Ferman, padişahın kendi lütfuyla yetkilerini sınırlamasıdır; bir anayasa değildir. Dolayısıyla 'Padişahın yetkilerinin anayasa ile sınırlandırılması' ilkesi Tanzimat Fermanında değil, daha sonraki 1876 Kanunuesasi döneminde gerçekleşmiştir.",
     answers: [
@@ -215,7 +215,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1876 tarihli Kanunuesasi'nin özellikleri arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>1876 tarihli Kanunuesasi'nin özellikleri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "1876 Kanunuesasi'nde çift meclisli yapı vardır ve yürütme organı olan Hükûmet (Bakanlar), Meclise karşı değil, doğrudan Padişaha karşı siyasal olarak sorumludur. 'Hükûmetin meclise karşı sorumlu olması' ifadesi bu anayasanın değil, modern parlamenter sistemin (Örn: 1909 Değişiklikleri) özelliğidir.",
     answers: [
@@ -227,7 +227,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Anayasalarda yer alan meclisler:</p><ul><li>I. Meclisi Âyan</li><li>II. Millet Meclisi</li><li>III. Meclisi Mebusan</li><li>IV. Cumhuriyet Senatosu</li></ul><p><b>1876 Kanunuesasi ve 1961 Anayasası'nda yer alan meclisler, aşağıdaki eşleştirmelerin hangisinde doğru olarak verilmiştir?</b></p>",
+    text: "<p>I. Meclisi Âyan<br>II. Millet Meclisi<br>III. Meclisi Mebusan<br>IV. Cumhuriyet Senatosu</p><p><b>1876 Kanunuesasi ve 1961 Anayasası'nda yer alan meclisler, aşağıdaki eşleştirmelerin hangisinde doğru olarak verilmiştir?</b></p>",
     diff: 3,
     expl: "Çift kanatlı meclis olan 1876 Kanunuesasi'nde Meclis-i Umumi, 'Meclis-i Âyan' (I) ve 'Meclis-i Mebusan' (III) olarak ikiye ayrılır. Çift kanatlı meclis olan 1961 Anayasasında ise TBMM, 'Millet Meclisi' (II) ve 'Cumhuriyet Senatosu' (IV) olarak ikiye ayrılmıştır.",
     answers: [
@@ -251,7 +251,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Kanunuesasi'de 1909 yılında yapılan değişiklikler arasında aşağıdakilerden hangisi gösterilemez?</b></p>",
+    text: "<p><b>Kanunuesasi'de 1909 yılında yapılan değişiklikler arasında aşağıdakilerden hangisi <u>gösterilemez</u>?</b></p>",
     diff: 3,
     expl: "1909 Değişiklikleri ile padişahın yetkileri daraltılmış, meclis güçlendirilmiştir (sürgün yetkisi kalkmış, hükümet meclise sorumlu olmuştur vb). Ancak Devletin rejiminin 'Cumhuriyet' olduğu kararı, 1921 Anayasasına 1923 yılında yapılan değişiklikle eklenmiştir. 1909'da Osmanlı halen monarşiydi.",
     answers: [
@@ -263,7 +263,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>20 Ocak 1921'de yürürlüğe giren Teşkilat-ı Esasiye Kanunu'nda düzenlenen konular arasında aşağıdakilerden hangisi bulunmaz?</b></p>",
+    text: "<p><b>20 Ocak 1921'de yürürlüğe giren Teşkilat-ı Esasiye Kanunu'nda düzenlenen konular arasında aşağıdakilerden hangisi <u>bulunmaz</u>?</b></p>",
     diff: 3,
     expl: "1921 Anayasası savaş (Kurtuluş Savaşı) döneminde hazırlandığı için yalnızca 23 maddelik en temel devlet işleyişini belirler. Bu nedenle 'Temel Hak ve Hürriyetler' (Kamu özgürlükleri) ile yargı bu anayasada hiç düzenlenmemiştir.",
     answers: [
@@ -275,7 +275,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi 1921 Anayasası'nın 1923 değişikliklerinden biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi 1921 Anayasası'nın 1923 değişikliklerinden biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "1923'teki tarihi değişikliklerle 'Devletin şekli Cumhuriyettir', 'Dini İslamdır', 'Resmi dili Türkçedir' ve 'Devlet başkanı Cumhurbaşkanıdır' hükümleri eklenmiştir. 'İstiklal Marşı' ise 1921'de kanunla kabul edilse de anayasal bir hüküm olarak metne ilk kez 1982 Anayasası ile girmiştir.",
     answers: [
@@ -311,7 +311,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Ufuk:</b> \"Nüfusun yarısını oluşturan kadınların karar alma süreçlerine katılamaması, siyasette eşit oranda temsil edilememesi, her şeyden önce bir demokrasi meselesidir.\"</p><p><b>Beril:</b> \"Hâlbuki birçok Avrupa ülkesinden önce ülkemizde kadınlara milletvekili seçme ve seçilme hakkı Anayasa ile tanınmıştır\".</p><p><b>Buna göre Beril, kadınlara ülkemizde milletvekili seçme ve seçilme hakkının ilk kez hangi yıl yapılan anayasa değişikliği ile verildiğini söylerse doğru bilgi vermiş olur?</b></p>",
+    text: "<p><b>Ufuk:</b> \"Nüfusun yarısını oluşturan kadınların karar alma süreçlerine katılamaması, siyasette eşit oranda temsil edilememesi, her şeyden önce bir demokrasi meselesidir.\"</p><p><b>Beril:</b> \"Hâlbuki birçok Avrupa ülkesinden önce ülkemizde kadınlara milletvekili seçme ve seçilme hakkı Anayasa ile tanınmıştır\".</p><p><b>Buna göre Beril, kadınlara ülkemizde milletvekili seçme ve seçilme hakkının <u>ilk kez</u> hangi yıl yapılan anayasa değişikliği ile verildiğini söylerse doğru bilgi vermiş olur?</b></p>",
     diff: 2,
     expl: "Türkiye'de kadınlara siyasi haklar sırasıyla 1930'da Belediye, 1933'te Muhtar, 1934'te ise Milletvekili seçme ve seçilme hakkı olarak verilmiştir (034 - BMW kısaltması olarak da bilinir).",
     answers: [
@@ -323,7 +323,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. 1921 Anayasası</li><li>II. 1924 Anayasası</li><li>III. 1961 Anayasası</li></ul></p><p><b>Yukarıdaki anayasalardan hangilerinde yasama ve yürütme yetkileri mecliste toplanmıştır?</b></p>",
+    text: "<p>I. 1921 Anayasası<br>II. 1924 Anayasası<br>III. 1961 Anayasası</p><p><b>Yukarıdaki anayasalardan hangilerinde yasama ve yürütme yetkileri mecliste toplanmıştır?</b></p>",
     diff: 3,
     expl: "Yasama ve yürütme yetkisinin Mecliste toplandığı sistem 'Güçler (kuvvetler) birliği' sistemidir. 1921 Anayasasında tam güçler birliği (Meclis hükûmeti), 1924 Anayasasında ise güçler birliği görevler ayrılığı (karma sistem) vardır. 1961 Anayasası'nda ise kuvvetler ayrılığı sistemine (parlamenter rejim) geçilmiştir.",
     answers: [
@@ -335,7 +335,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1924 Anayasası'nda yapılan değişiklikler arasında aşağıdakilerden hangisi yoktur?</b></p>",
+    text: "<p><b>1924 Anayasası'nda yapılan değişiklikler arasında aşağıdakilerden hangisi <u>yoktur</u>?</b></p>",
     diff: 3,
     expl: "Şeriye ve Evkaf Vekâletinin (Din işleri bakanlığı) kaldırılması işlemi 3 Mart 1924'te çıkarılan kanunla gerçekleşmiştir. 1924 Anayasası ise 20 Nisan 1924'te kabul edilmiştir. Bu yüzden vekaletin kaldırılması işlemi bir 'anayasa değişikliği' değil, sıradan bir kanundur.",
     answers: [
@@ -359,7 +359,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1961 Anayasası ve 1982 Anayasası'nın hazırlanmasında asli kurucu iktidar olarak;</b></p><ul><li>I. Temsilciler Meclisi</li><li>II. Danışma Meclisi</li><li>III. Millî Güvenlik Konseyi</li><li>IV. Millî Birlik Komitesi</li></ul><p><b>organlarından hangileri yer almıştır?</b></p>",
+    text: "<p><b>1961 Anayasası ve 1982 Anayasası'nın hazırlanmasında asli kurucu iktidar olarak;</b></p><p>I. Temsilciler Meclisi,<br>II. Danışma Meclisi,<br>III. Millî Güvenlik Konseyi,<br>IV. Millî Birlik Komitesi</p><p><b>organlarından hangileri yer almıştır?</b></p>",
     diff: 3,
     expl: "1961 Anayasası darbe sonrasında askerî kanat (Millî Birlik Komitesi - IV) ve sivil kanat (Temsilciler Meclisi - I) tarafından; 1982 Anayasası ise askerî kanat (Millî Güvenlik Konseyi - III) ve sivil kanat (Danışma Meclisi - II) tarafından hazırlanmıştır.",
     answers: [
@@ -371,7 +371,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Kuvvetler ayrılığını <i>\"Türk milleti, egemenliğini, anayasanın koyduğu esaslara göre, yetkili organları eliyle kullanır.\"</i> şeklinde düzenleyerek <b>güçler ayrılığı ilkesini benimseyen ilk anayasa aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><b>Kuvvetler ayrılığını \"Türk milleti, egemenliğini, anayasanın koyduğu esaslara göre, yetkili organları eliyle kullanır.\" şeklinde düzenleyerek güçler ayrılığı ilkesini benimseyen <u>ilk</u> anayasa aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Türkiye'de kuvvetler ayrılığı prensibi (yasama, yürütme ve yargının katı bir biçimde birbirinden ayrıldığı parlamenter sistem) ilk kez 1961 Anayasası ile benimsenmiştir.",
     answers: [
@@ -389,7 +389,7 @@ export const VAT_ANAYASA_TARIHI_TEST_2: McQ[] = [
 // ============================================================================
 export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
   {
-    text: "<p><b>1961 Anayasası ile ilk kez hukukumuza giren kurum ve kavramlar arasında;</b></p><ul><li>I. insan hakları,</li><li>II. Anayasa Mahkemesi,</li><li>III. kuvvetler ayrılığı,</li><li>IV. Millî Güvenlik Kurulu,</li><li>V. sosyal devlet</li></ul><p><b>verilenlerden hangileri yer almaktadır?</b></p>",
+    text: "<p><b>1961 Anayasası ile <u>ilk kez</u> hukukumuza giren kurum ve kavramlar arasında;</b></p><p>I. insan hakları,<br>II. Anayasa Mahkemesi,<br>III. kuvvetler ayrılığı,<br>IV. Millî Güvenlik Kurulu,<br>V. sosyal devlet</p><p><b>verilenlerden hangileri yer almaktadır?</b></p>",
     diff: 3,
     expl: "1961 Anayasası ile hukukumuza birçok yenilik girmiştir: Anayasa Mahkemesi, Sosyal Devlet, Hukuk Devleti, İnsan Haklarına Dayalı Devlet, Kuvvetler Ayrılığı, Millî Güvenlik Kurulu, Yüksek Seçim Kurulu, Diyanet İşleri Başkanlığı ve Başlangıç Hükümleri ilk kez bu anayasada düzenlenmiştir. (Öncüllerdeki 'insan hakları' ifadesi ile kastedilen 'insan haklarına dayalı devlet' ilkesidir).",
     answers: [
@@ -401,7 +401,7 @@ export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1961 Anayasası'nda yapılan 1971 - 1973 değişiklikleri arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>1961 Anayasası'nda yapılan 1971 - 1973 değişiklikleri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "Bakanlar Kuruluna KHK çıkarma yetkisi verilmesi, TRT ve üniversite özerkliklerinin zayıflatılması, Devlet Güvenlik Mahkemelerinin (DGM) kurulması ve memurlara verilen sendikal hakların kaldırılması 1971-1973 muhtıra değişikliklerindendir. Ancak Millî Güvenlik Kurulu (MGK) zaten 1961 Anayasası'nın ilk (orijinal) hâlinde kurulmuştur, bir değişiklik maddesi değildir.",
     answers: [
@@ -413,7 +413,7 @@ export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi 1982 Anayasası'nın özelliklerinden biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi 1982 Anayasası'nın özelliklerinden biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "1982 Anayasası sert ve kazuistik (ayrıntılı) bir anayasadır. İlk üç maddesi değiştirilemez, halk oylaması ile kabul edilmiş ve başlangıç metnine sahiptir. Ancak 'Çift meclis sistemi' sadece 1876 Kanunuesasi'nde (Ayan-Mebusan) ve 1961 Anayasası'nda (Millet Meclisi-Senato) uygulanmıştır; 1982'de sadece TBMM vardır.",
     answers: [
@@ -425,7 +425,7 @@ export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nda ilk kez yer almış kurum ve yargı organları arasında;</b></p><ul><li>I. Anayasa Mahkemesi,</li><li>II. Atatürk Kültür, Dil ve Tarih Yüksek Kurumu,</li><li>III. Devlet Denetleme Kurulu,</li><li>IV. Yükseköğretim Kurulu</li></ul><p><b>verilenlerden hangileri yer almaktadır?</b></p>",
+    text: "<p><b>1982 Anayasası'nda <u>ilk kez</u> yer almış kurum ve yargı organları arasında;</b></p><p>I. Anayasa Mahkemesi,<br>II. Atatürk Kültür, Dil ve Tarih Yüksek Kurumu,<br>III. Devlet Denetleme Kurulu,<br>IV. Yükseköğretim Kurulu</p><p><b>verilenlerden hangileri yer almaktadır?</b></p>",
     diff: 3,
     expl: "Atatürk Kültür, Dil ve Tarih Yüksek Kurumu (AKDTYK), Devlet Denetleme Kurulu (DDK) ve Yükseköğretim Kurulu (YÖK) ilk kez 1982 Anayasası ile kurulmuştur. Anayasa Mahkemesi (I) ise ilk kez 1961 Anayasası'nda yer almıştır.",
     answers: [
@@ -437,7 +437,7 @@ export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. 1924 Anayasası</li><li>II. 1961 Anayasası</li><li>III. 1982 Anayasası</li></ul></p><p><b>Yukarıdaki anayasalardan hangilerinde başlangıç metnine yer verilmiştir?</b></p>",
+    text: "<p>I. 1924 Anayasası<br>II. 1961 Anayasası<br>III. 1982 Anayasası</p><p><b>Yukarıdaki anayasalardan hangilerinde başlangıç metnine yer verilmiştir?</b></p>",
     diff: 2,
     expl: "Anayasanın dayandığı felsefeyi ve temel ilkeleri özetleyen 'Başlangıç Metni', Türk anayasa tarihinde ilk kez 1961 Anayasası'nda yer almış, ardından 1982 Anayasası'nda da korunarak anayasa metnine dâhil edilmiştir.",
     answers: [
@@ -461,7 +461,7 @@ export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Ülkemizde, Cumhuriyet'in ilan edildiği 29 Ekim 1923 tarihinde yürürlükte bulunan 1921 Anayasası da göz önüne tutulacak olursa o günden bu yana kaç farklı Anayasal rejim uygulanmıştır?</b></p>",
+    text: "<p><b>Ülkemizde, Cumhuriyet'in ilan edildiği 29 Ekim 1923 tarihinde yürürlükte bulunan 1921 Anayasası da göz önünde tutulacak olursa o günden bu yana kaç farklı Anayasal rejim uygulanmıştır?</b></p>",
     diff: 2,
     expl: "Cumhuriyetin ilanı (1923) sırasında yürürlükte olan 1921 Anayasası dâhil olmak üzere sırasıyla; 1921, 1924, 1961 ve 1982 anayasaları uygulanmıştır. Toplamda 4 farklı anayasal rejim vardır.",
     answers: [
@@ -473,7 +473,7 @@ export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. 1924 Anayasası - TBMM kararı</li><li>II. 1961 Anayasası - Halk oylaması (referandum)</li><li>III. 1982 Anayasası - Halk oylaması (referandum)</li></ul></p><p><b>Yukarıdaki anayasalardan hangilerinin kabul yöntemleri doğru verilmiştir?</b></p>",
+    text: "<p>I. 1924 Anayasası - TBMM kararı<br>II. 1961 Anayasası - Halk oylaması (referandum)<br>III. 1982 Anayasası - Halk oylaması (referandum)</p><p><b>Yukarıdaki anayasalardan hangilerinin kabul yöntemleri doğru verilmiştir?</b></p>",
     diff: 2,
     expl: "1924 Anayasası mecliste vekillerin oylamasıyla (TBMM kararı) yürürlüğe girmiştir. 1961 ve 1982 Anayasaları ise askerî müdahaleler sonrası kurucu meclislerce hazırlanmış ve doğrudan halk oylaması (referandum) ile kabul edilmiştir. Üç eşleştirme de doğrudur.",
     answers: [
@@ -485,7 +485,7 @@ export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Devletin şekli Cumhuriyet olacak ve bu madde değiştirilemeyecektir.</li><li>Yasama ve yürütme yetkisi mecliste toplanacaktır.</li><li>Milletvekilleri genel oyla seçilecektir.</li><li>Devletin başkenti açıkça belirtilmiştir.</li></ul></p><p><b>Bu esaslar aşağıdaki anayasalardan hangisinin yapısal özellikleriyle en çok benzerlik göstermektedir?</b></p>",
+    text: "<p>• Devletin şekli Cumhuriyet olacak ve bu madde değiştirilemeyecektir.<br>• Yasama ve yürütme yetkisi mecliste toplanacaktır.<br>• Milletvekilleri genel oyla seçilecektir.<br>• Devletin başkenti açıkça belirtilmiştir.</p><p><b>Bu esaslar aşağıdaki anayasalardan hangisinin yapısal özellikleriyle <u>en çok</u> benzerlik göstermektedir?</b></p>",
     diff: 3,
     expl: "Devletin şeklinin Cumhuriyet olduğunun değiştirilemez madde yapılması, başkentin anayasada belirtilmesi ve yasama ile yürütme yetkilerinin (kuvvetler birliği - görevler ayrılığı) mecliste toplanması 1924 Anayasası'nın temel özellikleridir.",
     answers: [
@@ -497,7 +497,7 @@ export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Yasama organı çift meclisli yapıdadır.</li><li>Anayasa Mahkemesi kurulmuştur.</li><li>Sosyal ve ekonomik haklara ilk kez sistematik şekilde yer verilmiştir.</li><li>Kuvvetler ayrılığı açıkça benimsenmiştir.</li><li>Anayasaya ilk kez başlangıç metni konulmuştur.</li></ul></p><p><b>Yukarıda bilgileri verilen anayasa aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>• Yasama organı çift meclisli yapıdadır.<br>• Anayasa Mahkemesi kurulmuştur.<br>• Sosyal ve ekonomik haklara ilk kez sistematik şekilde yer verilmiştir.<br>• Kuvvetler ayrılığı açıkça benimsenmiştir.<br>• Anayasaya ilk kez başlangıç metni konulmuştur.</p><p><b>Yukarıda bilgileri verilen anayasa aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Sayılan özellikler (Çift meclis, Anayasa Mahkemesi, kuvvetler ayrılığı, sosyal devlet ve başlangıç metni) tamamen özgürlükçü yapısıyla bilinen 1961 Anayasası'nın kurumsal yenilikleridir.",
     answers: [
@@ -509,7 +509,7 @@ export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi 1982 Anayasası ile birlikte ilk kez kurulan bir kurumdur?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi 1982 Anayasası ile birlikte <u>ilk kez</u> kurulan bir kurumdur?</b></p>",
     diff: 2,
     expl: "Anayasa Mahkemesi, Yüksek Seçim Kurulu ve Millî Güvenlik Kurulu 1961'de; Diyanet İşleri Başkanlığı ise 1924'te kurulmuştur. Cumhurbaşkanlığına bağlı çalışan 'Devlet Denetleme Kurulu (DDK)' ise ilk kez 1982 Anayasası ile kurulmuştur.",
     answers: [
@@ -521,7 +521,7 @@ export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1961 Anayasası ve 1982 Anayasası'nda birlikte düzenlenen kurumlar arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>1961 Anayasası ve 1982 Anayasası'nda birlikte düzenlenen kurumlar arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "Anayasa Mahkemesi, MGK, Yüksek Seçim Kurulu ve Sayıştay her iki anayasada da yer almıştır. Ancak 'Atatürk Kültür, Dil ve Tarih Yüksek Kurumu' ilk ve tek olarak 1982 Anayasası'nda düzenlenmiştir; 1961 Anayasası'nda yoktur.",
     answers: [
@@ -557,7 +557,7 @@ export const VAT_ANAYASA_TARIHI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdaki anayasal ilkeler ile ilk kez açıkça yer aldıkları anayasa eşleştirmelerinden hangisi yanlıştır?</b></p>",
+    text: "<p><b>Aşağıdaki anayasal ilkeler ile <u>ilk kez</u> açıkça yer aldıkları anayasa eşleştirmelerinden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "Kuvvetler ayrılığı ve sosyal devlet 1961'de, laiklik 1937 değişikliğiyle 1924'te, egemenliğin millete ait olması 1921'de anayasaya girmiştir. Ancak 'Hukuk devleti' ilkesi 1982'de değil, ilk kez 1961 Anayasası'nda düzenlenmiştir.",
     answers: [

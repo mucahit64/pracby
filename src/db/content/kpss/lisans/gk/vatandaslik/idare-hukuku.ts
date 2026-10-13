@@ -5,7 +5,7 @@ import { McQ } from "../../../../types";
 // ============================================================================
 export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
   {
-    text: "<p>Bir hukuk dersinde, öğretim görevlisi şu örneği verir:<br><br>\"Ayşe henüz 19 yaşındadır ve üniversite öğrencisidir. Her ne kadar kendi isteğiyle kayıt yaptırmış olsa da öğrenci olmanın getirdiği hak ve yükümlülükler yasa ile belirlenmiştir\".<br><br><b>Bu ifadede idare hukukunun hangi özelliği vurgulanmıştır?</b></p>",
+    text: "<p>Bir hukuk dersinde, öğretim görevlisi şu örneği verir:</p><p>\"Ayşe henüz 19 yaşındadır ve üniversite öğrencisidir. Her ne kadar kendi isteğiyle kayıt yaptırmış olsa da öğrenci olmanın getirdiği hak ve yükümlülükler yasa ile belirlenmiştir\".</p><p><b>Bu ifadede idare hukukunun hangi özelliği vurgulanmıştır?</b></p>",
     diff: 1,
     expl: "İdare hukuku, bireylerin toplum içindeki konumlarını (memuriyet, öğrencilik, askerlik gibi) önceden tanımlayan ve bu statüye bağlı hak ve yükümlülükleri düzenleyen statü hukukudur. Bu statüler soyut, kişilik dışı ve süreklidir.",
     answers: [
@@ -17,7 +17,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>İdare hukukunun doğuşunda, Fransız Danıştayı Conseil d'État'nın kararları belirleyici rol oynamıştır. Uzun yıllar boyunca verilen bu kararlar, idare hukukunun temel ilkelerini şekillendirmiş ve birçok ülkede kanunlara yön vermiştir.<br><br><b>Bu durum idare hukukunun hangi özelliğinin bir sonucudur?</b></p>",
+    text: "<p>İdare hukukunun doğuşunda, Fransız Danıştayı Conseil d'État'nın kararları belirleyici rol oynamıştır. Uzun yıllar boyunca verilen bu kararlar, idare hukukunun temel ilkelerini şekillendirmiş ve birçok ülkede kanunlara yön vermiştir.</p><p><b>Bu durum idare hukukunun hangi özelliğinin bir sonucudur?</b></p>",
     diff: 1,
     expl: "İdare hukukunun var oluşu yargı kararlarına dayanması nedeniyle idare hukukunun içtihatlardan doğan bir hukuk dalı olduğu ifade edilmektedir. İdare hukukunun ortaya çıktığı ve geliştiği ülke olan Fransa'da Conseil d'etat (Fransız Danıştayı) tarafından verilen kararların idare hukukunun doğuşu ve gelişmesinde temel etken olduğu bilinmektedir.",
     answers: [
@@ -29,7 +29,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Medeni hukuk alanında Medeni Kanun veya ceza hukuku alanında Ceza Kanunu gibi kanunlar varken; idare hukukunda \"idare kanunu\" diye genel bir kanun yoktur.<br><br><b>Bu durum idare hukukunun hangi özelliğinin bir sonucudur?</b></p>",
+    text: "<p>Medeni hukuk alanında Medeni Kanun veya ceza hukuku alanında Ceza Kanunu gibi kanunlar varken; idare hukukunda \"idare kanunu\" diye genel bir kanun yoktur.</p><p><b>Bu durum idare hukukunun hangi özelliğinin bir sonucudur?</b></p>",
     diff: 1,
     expl: "İdare hukuku kuralları özel hukuk dallarında hatta ceza hukukunda olduğu gibi tek bir metin hâlinde değildir. Keza bu hukuk dallarını düzenleyen metinler de dahi idare hukukuna ilişkin hükümlere rastlamak mümkündür. Dolayısıyla idare hukuku dağınık bir hukuk dalı olarak nitelendirilmektedir. Bu durum idare hukukunun tedvin edilmemiş (kodifiye edilmemiş, derlenmemiş) olmasının bir sonucudur.",
     answers: [
@@ -41,7 +41,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Millî güvenliğin sağlanması<br>II. Kamu hizmetleri<br>III. Kolluk faaliyetleri<br>IV. Özendirme ve destekleme faaliyetleri<br><br><b>Yukarıdakilerden hangileri Türkiye idaresinin görevleri arasında yer alır?</b></p>",
+    text: "<p>I. Millî güvenliğin sağlanması<br>II. Kamu hizmetleri<br>III. Kolluk faaliyetleri<br>IV. Özendirme ve destekleme faaliyetleri</p><p><b>Yukarıdakilerden hangileri Türkiye idaresinin görevleri arasında yer alır?</b></p>",
     diff: 1,
     expl: "İdarenin, toplumun gündelik ve ortak ihtiyaçlarını karşılamak ve böylece kamu yararını gerçekleştirmek için yürüttüğü faaliyetlerin tümü idarenin görevlerini oluşturur. Millî güvenliğin korunması, kolluk faaliyetleri, kamu hizmetleri, özendirme ve teşvik faaliyetleri, iç düzen faaliyetleri ve planlama faaliyetleri idarenin görevleri arasındadır.",
     answers: [
@@ -53,7 +53,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>• İdari birimlerin kuruluşu ve teşkilatlanmasının kanunla belirlenmesi<br>• İdarenin ancak yasaların verdiği yetkilerle işlem yapabilmesi<br>• İdarenin keyfi davranmasının önlenmesi<br><br><b>Yukarıdaki ifadeler idare hukuku ilkelerinden hangisinin kapsamına girmektedir?</b></p>",
+    text: "<p>• İdari birimlerin kuruluşu ve teşkilatlanmasının kanunla belirlenmesi<br>• İdarenin ancak yasaların verdiği yetkilerle işlem yapabilmesi<br>• İdarenin keyfi davranmasının önlenmesi</p><p><b>Yukarıdaki ifadeler idare hukuku ilkelerinden hangisinin kapsamına girmektedir?</b></p>",
     diff: 2,
     expl: "Anayasa'nın 123. maddesine göre; idare, kuruluş ve görevleriyle bir bütündür ve kanunla düzenlenir. İdarenin kuruluşu ve görevleri kanunla düzenlenir. Bu ifadeden yola çıkarak idarenin kanuna dayanması gerektiği, diğer bir deyişle idareyi düzenleme yetkisinin TBMM'ye ait olduğunu söylemek gerekir. Bu ilkeye \"idarenin kanuniliği\" ilkesi denir.",
     answers: [
@@ -65,7 +65,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi, merkezden yönetim ilkesinin sonucu değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi, merkezden yönetim ilkesinin sonucu <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Merkezden yönetim, kamu hizmetlerinin merkezî otorite tarafından yürütüldüğü ve taşradaki kamu görevlilerinin merkeze bağlı olarak faaliyet gösterdiği bir idari örgütlenme biçimidir. A, B, D ve E seçenekleri, merkezî yönetimin taşra uzantıları olan kurum ve görevliler aracılığıyla yürütülen hizmetlere örnektir. C seçeneği ise, yerel yönetim olan belediye meclisinin aldığı karara ilişkindir ve merkezî hiyerarşiye tabi değildir.",
     answers: [
@@ -77,7 +77,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Mali denetimi güçleştirmesi<br>II. Bürokrasi ve kırtasiyeciliğe neden olması<br>III. Bölgeler arası eşitsizlikleri artırması<br>IV. Demokratik ilkelere uygun olmaması<br><br><b>Yukarıdakilerden hangileri idare hukukunda yerinden yönetimin sakıncaları arasında yer alır?</b></p>",
+    text: "<p>I. Mali denetimi güçleştirmesi<br>II. Bürokrasi ve kırtasiyeciliğe neden olması<br>III. Bölgeler arası eşitsizlikleri artırması<br>IV. Demokratik ilkelere uygun olmaması</p><p><b>Yukarıdakilerden hangileri idare hukukunda yerinden yönetimin sakıncaları arasında yer alır?</b></p>",
     diff: 2,
     expl: "Yerinden yönetimin sakıncaları: Ülke bütünlüğünün sarsılması tehlikesi vardır. Hizmetlerin tüm ülke çapında standart yürütülmesi güçleşir (bölgeler arası eşitsizlikleri artırır). Partizanca uygulamalar yüzünden kamu görevlileri yerel etki altında kalırlar. Mali denetiminde güçlükler yaşanabilir. Bürokrasiye neden olması ve demokratik ilkelere uygun olmaması ise 'merkezden yönetimin' sakıncalarıdır.",
     answers: [
@@ -89,7 +89,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Hiyerarşi<br>II. İdari vesayet<br>III. Yetki genişliği<br>IV. Kanuni idare<br><br><b>İdarenin bütünlüğü yukarıdaki hukuki araçlardan hangileri ile sağlanır?</b></p>",
+    text: "<p>I. Hiyerarşi<br>II. İdari vesayet<br>III. Yetki genişliği<br>IV. Kanuni idare</p><p><b>İdarenin bütünlüğü yukarıdaki hukuki araçlardan hangileri ile sağlanır?</b></p>",
     diff: 1,
     expl: "İdareyi oluşturan örgütlerin görevleri yönüyle de bir bütünlük göstermeleri gerekmektedir. İdarenin gerek kuruluş ve gerek görevleri yönünden bütünlüğü, hiyerarşi ve idari vesayet olarak adlandırılan belli başlı iki hukuki araç ile gerçekleştirilmektedir.",
     answers: [
@@ -101,7 +101,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Danıştay bir kararında \"Silsile-i meratip gereği üst, astın işlemlerini yerindelik ve hukukilik bakımından denetleyerek işlemi iptal edebilir, geri alabilir, düzeltebilir, ancak astın yerine geçerek karar alamaz, ast da yargısal başvuru hakkına sahip değildir.\" demiştir.<br><br><b>Bu ifadede belirtilen dava açma yasağı, aşağıdaki idare hukukuna ilişkin kavramlardan hangisinin bir gereğidir?</b></p>",
+    text: "<p>Danıştay bir kararında \"Silsile-i meratip gereği üst, astın işlemlerini yerindelik ve hukukilik bakımından denetleyerek işlemi iptal edebilir, geri alabilir, düzeltebilir, ancak astın yerine geçerek karar alamaz, ast da yargısal başvuru hakkına sahip değildir.\" demiştir.</p><p><b>Bu ifadede belirtilen dava açma yasağı, aşağıdaki idare hukukuna ilişkin kavramlardan hangisinin bir gereğidir?</b></p>",
     diff: 2,
     expl: "Danıştayın bu kararında açıklanan yapı, aynı kamu tüzel kişiliği içinde üst-ast ilişkisini düzenleyen ve astın işlemlerini denetleme yetkisi veren \"hiyerarşi\" kavramına özgüdür. Hiyerarşide ast, idari makamlar üstlerinin kararlarına karşı dava açamaz, çünkü aynı kamu tüzel kişiliği içindedirler ve meşru menfaat ilişkisi yoktur.",
     answers: [
@@ -113,7 +113,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Danıştay kararında; \"---- Anayasamıza göre sadece il idaresinde uygulanabilmekte ve merkeze ait olan karar alma yetkisinin illerde Valiler tarafından kullanılması sonucunu yaratmakta, sonuçta merkezî idarenin ortaya çıkardığı sorunların kısmen de olsa giderilmesini amaçlamaktadır.\" şeklinde açıkladığı idare hukukuna ilişkin anayasal ilke aşağıdakilerden hangisidir?</p>",
+    text: "<p>Danıştay kararında; \"---- Anayasamıza göre sadece il idaresinde uygulanabilmekte ve merkeze ait olan karar alma yetkisinin illerde Valiler tarafından kullanılması sonucunu yaratmakta, sonuçta merkezî idarenin ortaya çıkardığı sorunların kısmen de olsa giderilmesini amaçlamaktadır.\" <b>şeklinde açıkladığı idare hukukuna ilişkin anayasal ilke aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Danıştay kararında tanımlanan bu yapı, 1982 Anayasası'nın 126. maddesi ile bağlantılı olan 'yetki genişliği' ilkesine işaret etmektedir. Sadece valiler için geçerli olan bu anayasal ilkeye göre, valiler merkezî idare adına illerde görev yapar ve bazı konularda merkeze danışmadan karar alabilir.",
     answers: [
@@ -137,7 +137,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi \"yetki genişliği ilkesi\" ile ilgili doğru bir ifade değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi \"yetki genişliği ilkesi\" ile ilgili doğru bir ifade <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Yetki genişliği ilkesi, 1982 Anayasası'nın 126. maddesinde düzenlenmiş olup, sadece illerde görev yapan valilere tanınmış anayasal bir esneklik ilkesidir. Bu yetki merkezî idarenin taşra temsilcisi olan valilere özgüdür. \"Yerel yönetimlerin hizmet alanlarını genişletir.\" ifadesi yanlıştır; çünkü yetki genişliği yerel yönetimlerle değil, merkezî idarenin taşra teşkilatıyla ilgilidir.",
     answers: [
@@ -149,7 +149,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Kamu görevlileri, kendilerine verilmiş olan görevleri, kendi görüş ve anlayışlarına göre değil, amirlerinin istediği şekilde ve yönde yerine getirmek zorundadırlar.<br><br><b>Memurun, amirinin vermiş olduğu emirlere uyma zorunluluğunun istisnası aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Kamu görevlileri, kendilerine verilmiş olan görevleri, kendi görüş ve anlayışlarına göre değil, amirlerinin istediği şekilde ve yönde yerine getirmek zorundadırlar.</p><p><b>Memurun, amirinin vermiş olduğu emirlere uyma zorunluluğunun istisnası aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Hiyerarşik amir, astın işlemlerini değiştirebilir. Ancak astın yerine geçerek işlem tesis edemez. Yine hiyerarşide üst asta emir verebilir ancak KANUNSUZ EMİR bu durumun istisnasıdır.",
     answers: [
@@ -161,19 +161,19 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Sabri, bir kamu kurumunda çalışan memurdur. Bir gün, amirinden, kurumun iç düzenlemelerine aykırı bir şekilde bazı dosyaların gizlenmesi talimatı alır. Sabri, bu durumun suç olduğunu fark eder ve hemen amirine durumu bildirir. Ancak, amiri, Sabri'nin itirazını dinlemeden aynı talimatı yazılı olarak yeniden verir.<br><br><b>1982 Anayasası'na göre, yukarıdaki olay ile ilgili verilenlerden hangisi yanlıştır?</b></p>",
+    text: "<p>Sabri, bir kamu kurumunda çalışan memurdur. Bir gün, amirinden, kurumun iç düzenlemelerine aykırı bir şekilde bazı dosyaların gizlenmesi talimatı alır. Sabri, bu durumun suç olduğunu fark eder ve hemen amirine durumu bildirir. Ancak, amiri, Sabri'nin itirazını dinlemeden aynı talimatı yazılı olarak yeniden verir.</p><p><b>1982 Anayasası'na göre, yukarıdaki olay ile ilgili verilenlerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
-    expl: "Kanunsuz emir kurallarına göre konusu suç teşkil eden emir, hiçbir suretle yerine getirilmez; yerine getiren kimse sorumluluktan kurtulamaz (B doğru, A doğru, E doğru). Amir emri yazılı olarak yenilese bile konusu suç ise yerine getirilmez (C doğru). Ancak 'Yazılı olarak yenilenen hukuka aykırı bir emir, suç teşkil etmiyorsa yerine getirilir ve sorumluluk emri verene aittir' kuralı geçerlidir. Olayda emir 'suç teşkil ettiği' için Sabri yazılı yenilense bile emri yerine getirmemelidir.",
+    expl: "Anayasa'ya göre üstü emrinde ısrar eder ve emri yazı ile yenilerse emir yerine getirilir ve sorumluluk emri verene aittir (D doğru). Ancak konusu suç teşkil eden emir hiçbir suretle yerine getirilmez; yerine getiren kimse sorumluluktan kurtulamaz (A, B ve C doğru). Bu nedenle konusu suç teşkil eden yazılı emri yerine getiren de sorumlu olur; \"yalnızca emri veren sorumlu olur\" ifadesi yanlıştır.",
     answers: [
       { text: "Sabri, konusu suç teşkil ettiği için bu emri hiçbir şekilde yerine getiremez.", ok: false },
       { text: "Konusu suç teşkil eden emri yerine getiren kişi sorumluluktan kurtulamaz.", ok: false },
       { text: "Talimat yazılı olarak yenilense bile Sabri'nin bu talimatı uygulamaması gerekir.", ok: false },
-      { text: "Yazılı olarak yenilenen hukuka aykırı bir emir, suç teşkil etmiyorsa yerine getirilir ve sorumluluk emri verene aittir.", ok: true },
-      { text: "Konusu suç teşkil eden yazılı emir yerine getirilirse yalnızca emri veren sorumlu olur.", ok: false }
+      { text: "Yazılı olarak yenilenen hukuka aykırı bir emir, suç teşkil etmiyorsa yerine getirilir ve sorumluluk emri verene aittir.", ok: false },
+      { text: "Konusu suç teşkil eden yazılı emir yerine getirilirse yalnızca emri veren sorumlu olur.", ok: true }
     ]
   },
   {
-    text: "<p>Danıştay bir kararında \"---- Kamu düzenini ve idarede bütünlüğü sağlamak için kamu yararı amacıyla, kanunların verdiği yetkiye dayanarak, merkezî idarenin, yerel yönetim organları ve bunların bazı işlemleri ile harcamaları üzerinde, kamu hizmetlerinin gereklerine uygun olarak kullanılan bir denetim şeklidir.\" şeklinde ifade etmiştir.<br><br><b>Buna göre yukarıda ifade edilen idare hukuku terimi aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Danıştay bir kararında \"---- Kamu düzenini ve idarede bütünlüğü sağlamak için kamu yararı amacıyla, kanunların verdiği yetkiye dayanarak, merkezî idarenin, yerel yönetim organları ve bunların bazı işlemleri ile harcamaları üzerinde, kamu hizmetlerinin gereklerine uygun olarak kullanılan bir denetim şeklidir.\" şeklinde ifade etmiştir.</p><p><b>Buna göre yukarıda ifade edilen idare hukuku terimi aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Bu tanım idari vesayet kavramını birebir karşılamaktadır. İdari vesayet, merkezî idarenin yerinden yönetim kuruluşları (örneğin belediyeler, il özel idareleri, üniversiteler, meslek kuruluşları) üzerinde kanunla sınırlı şekilde ve kamu yararı amacıyla yaptığı hukuka uygunluk denetimidir.",
     answers: [
@@ -191,7 +191,7 @@ export const VAT_IDARE_HUKUKU_TEST_1: McQ[] = [
 // ============================================================================
 export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
   {
-    text: "<p>Köy Kanunu m. 40'ta yer alan, \"Köy muhtarının köylü faydasına olmayan kararlarını kaymakam bozabilir. Fakat, onun yerine kaymakam kendiliğinden karar veremez.\" ifadesi aşağıdakilerden hangisi ile ilişkilidir?<br><br><b> </b></p>",
+    text: "<p><b>Köy Kanunu m. 40'ta yer alan,</b> \"Köy muhtarının köylü faydasına olmayan kararlarını kaymakam bozabilir. Fakat, onun yerine kaymakam kendiliğinden karar veremez.\" <b>ifadesi aşağıdakilerden hangisi ile ilişkilidir?</b></p>",
     diff: 2,
     expl: "Köy Kanunu m. 40'ta geçen \"kaymakamın muhtarın kararını bozabileceği ancak yerine geçip karar veremeyeceği\" düzenlemesi, idari vesayet ilkesinin temel özelliğini yansıtır. Merkezî idarenin yerinden yönetim kuruluşları (köy idaresi) üzerindeki sınırlı ve istisnai nitelikteki denetimi idari vesayettir.",
     answers: [
@@ -203,7 +203,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Belediye Kanunu madde 6'ya göre, \"Belediye sınırları, belediye meclisinin kararı ve kaymakamın görüşü üzerine valinin onayı ile kesinleşir.\" ifadesinde belediye kararının merkezden yönetimin görevlilerinin onamasına sunulması idare hukukuna ilişkin aşağıdaki ilkelerden hangisinin bir sonucudur?<br><br><b> </b></p>",
+    text: "<p><b>Belediye Kanunu madde 6'ya göre,</b> \"Belediye sınırları, belediye meclisinin kararı ve kaymakamın görüşü üzerine valinin onayı ile kesinleşir.\" <b>ifadesinde belediye kararının merkezden yönetimin görevlilerinin onamasına sunulması idare hukukuna ilişkin aşağıdaki ilkelerden hangisinin bir sonucudur?</b></p>",
     diff: 1,
     expl: "Devlet tüzel kişiliğini temsil eden merkezî yönetimin (kaymakam ve vali), yerinden yönetim kuruluşları (belediye) üzerinde sahip olduğu denetim yetkisine idari vesayet denir.",
     answers: [
@@ -215,7 +215,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>İdari vesayet, özellikle üniter yapılı devletlerde merkezden yönetim ile yerinden yönetim alanı arasında idari açıdan bütünlük sağlamaya yarayan denetim mekanizmasıdır.<br><br><b>Aşağıdakilerden hangisi idari vesayet ile denetlenemez?</b></p>",
+    text: "<p>İdari vesayet, özellikle üniter yapılı devletlerde merkezden yönetim ile yerinden yönetim alanı arasında idari açıdan bütünlük sağlamaya yarayan denetim mekanizmasıdır.</p><p><b>Aşağıdakilerden hangisi idari vesayet ile <u>denetlenemez</u>?</b></p>",
     diff: 2,
     expl: "İl Emniyet Müdürü, doğrudan merkezden yönetimin taşra teşkilatı içinde (Devlet tüzel kişiliği içinde) yer alır. Dolayısıyla İl Emniyet Müdürü üzerindeki denetim idari vesayet değil, hiyerarşik denetimdir.",
     answers: [
@@ -227,7 +227,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangileri arasındaki ilişki \"hiyerarşi\" ilişkisi değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangileri arasındaki ilişki \"hiyerarşi\" ilişkisi <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Hiyerarşi, tüzel kişinin kendi içindeki astlık-üstlük ilişkisidir. Bakan-vali, vali-il millî eğitim müdürü, kaymakam-ilçe nüfus müdürü aynı tüzel kişilik (Devlet) içindedir ve aralarında hiyerarşi vardır. Belediye başkanı-belediye zabıta müdürü de aynı tüzel kişilik (Belediye) içindedir ve hiyerarşi vardır. Ancak vali (Devlet) ile belediye başkanı (Belediye) ayrı kamu tüzel kişilikleri oldukları için aralarındaki ilişki idari vesayettir, hiyerarşi değildir.",
     answers: [
@@ -239,7 +239,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangi ikisi arasında \"idari vesayet\" ilişkisi yoktur?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangi ikisi arasında \"idari vesayet\" ilişkisi <u>yoktur</u>?</b></p>",
     diff: 2,
     expl: "İdari vesayet farklı kamu tüzel kişilikleri arasında (Devletin yerinden yönetimleri denetlemesi veya bir yerinden yönetimin diğerini denetlemesi) olur. Kaymakam ve İlçe Millî Eğitim Müdürü ikisi de 'Devlet Tüzel Kişiliği' içinde yer aldıkları için aralarındaki ilişki idari vesayet değil, 'hiyerarşi' ilişkisidir.",
     answers: [
@@ -251,7 +251,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Kanun<br>II. Cumhurbaşkanı Kararnamesi<br>III. Yönetmelik<br><br><b>1982 Anayasası'na göre, kamu tüzel kişiliği yukarıdakilerden hangileri ile kurulur?</b></p>",
+    text: "<p>I. Kanun<br>II. Cumhurbaşkanı Kararnamesi<br>III. Yönetmelik</p><p><b>1982 Anayasası'na göre, kamu tüzel kişiliği yukarıdakilerden hangileri ile kurulur?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'na göre (m.123), kamu tüzel kişiliği kanunla veya Cumhurbaşkanlığı Kararnamesi ile kurulur. Yönetmelikle kamu tüzel kişiliği kurulamaz.",
     answers: [
@@ -263,7 +263,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisinin kamu tüzel kişiliği Anayasa'da belirtilmemiştir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisinin kamu tüzel kişiliği Anayasa'da <u>belirtilmemiştir</u>?</b></p>",
     diff: 3,
     expl: "Anayasa'da bizzat kamu tüzel kişiliği düzenlenmiş kurumlar: Devlet, il özel idaresi, belediyeler, köyler, üniversiteler, TRT, Atatürk Kültür, Dil ve Tarih Yüksek Kurumu ve kamu kurumu niteliğindeki meslek kuruluşlarıdır. Yükseköğretim Kurulu (YÖK), Anayasa'da düzenlenen bir kuruluş olmakla birlikte, tüzel kişiliğini Anayasa'dan alan bir kurum değildir (kanunla kurulur).",
     answers: [
@@ -275,7 +275,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Belediye idaresi<br>II. Büyükşehir belediye idaresi<br>III. İl özel idaresi<br>IV. Diyanet İşleri Başkanlığı<br>V. Emniyet Genel Müdürlüğü<br><br><b>Yukarıdaki idare organlarından hangilerinin kamu tüzel kişiliği yoktur?</b></p>",
+    text: "<p>I. Belediye idaresi<br>II. Büyükşehir belediye idaresi<br>III. İl özel idaresi<br>IV. Diyanet İşleri Başkanlığı<br>V. Emniyet Genel Müdürlüğü</p><p><b>Yukarıdaki idare organlarından hangilerinin kamu tüzel kişiliği <u>yoktur</u>?</b></p>",
     diff: 2,
     expl: "Belediye idaresi, büyükşehir belediye idaresi ve il özel idaresi birer kamu tüzel kişisidir (Mahalli idareler). Ancak Diyanet İşleri Başkanlığı ve Emniyet Genel Müdürlüğü doğrudan Devlet tüzel kişiliği içinde yer alırlar, kendilerine ait ayrı bir kamu tüzel kişilikleri yoktur.",
     answers: [
@@ -287,7 +287,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Yargıtay içtihadına göre \"Hukuk devleti ilkesinin idare bakımından diğer bir gereği de idari faaliyetlerin belirliliği ilkesidir. Hukuk devletinde idarenin eylem ve işlemlerinin nitelikleri ve sonuçları önceden tahmin edilebilir olması gerekir. İdare takdir yetkisine sahip olduğu durumlarda dahi tam bir serbestiye sahip değildir. İdare bu yetkisini tüzük ve yönetmelik gibi genel kurallarla düzenlemek ve bu düzenlemelere kendi de uymak zorundadır.\"<br><br><b>Buna göre yukarıda ifade edilen idare hukuku terimi aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Yargıtay içtihadına göre \"Hukuk devleti ilkesinin idare bakımından diğer bir gereği de idari faaliyetlerin belirliliği ilkesidir. Hukuk devletinde idarenin eylem ve işlemlerinin idare tarafından önceden tahmin edilebilir olması gerekir. İdare takdir yetkisine sahip olduğu durumlarda dahi tam bir serbestiye sahip değildir. İdare bu yetkisini tüzük ve yönetmelik gibi genel kurallarla düzenlemek ve bu düzenlemelere kendi de uymak zorundadır.\"</p><p><b>Buna göre yukarıda ifade edilen idare hukuku terimi aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Bu içtihat, hukuk devleti ilkesinin idare hukukuna yansıması olan \"düzenli idare ilkesi\"ni (belirlilik ilkesi) açıkça ifade etmektedir. Bu ilke uyarınca idare keyfi davranamaz, kurallara uymalı, işlemleri öngörülebilir ve istikrarlı olmalıdır.",
     answers: [
@@ -299,7 +299,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1 sayılı Cumhurbaşkanlığı Kararnamesi'ne göre, en yüksek dereceli devlet memuru olan kişi aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><b>1 sayılı Cumhurbaşkanlığı Kararnamesi'ne göre, <u>en yüksek dereceli</u> devlet memuru olan kişi aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "1 sayılı Cumhurbaşkanlığı Kararnamesi'ne göre (m.12), en yüksek dereceli devlet memuru Cumhurbaşkanlığı İdari İşler Başkanı'dır (eski adıyla Cumhurbaşkanlığı Genel Sekreteri).",
     answers: [
@@ -311,7 +311,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi Yüksek Askerî Şûranın üyeleri arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Yüksek Askerî Şûranın üyeleri arasında <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "Yüksek Askerî Şûranın üyeleri; Cumhurbaşkanı yardımcıları, Adalet Bakanı, Dışişleri Bakanı, İçişleri Bakanı, Hazine ve Maliye Bakanı, Millî Eğitim Bakanı, Millî Savunma Bakanı ve Genelkurmay Başkanı ile Kuvvet Komutanlarıdır. Sağlık Bakanı bu kurulun üyesi değildir.",
     answers: [
@@ -323,7 +323,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1 sayılı Cumhurbaşkanlığı Kararnamesi'ne göre, Cumhurbaşkanlığına bağlı, özel bütçeli, kamu tüzel kişiliğini haiz, idarî ve malî özerkliğe sahip ofis aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><b>1 sayılı Cumhurbaşkanı Kararnamesi'ne göre, Cumhurbaşkanlığına bağlı, özel bütçeli, kamu tüzel kişiliğini haiz, idarî ve malî özerkliğe sahip ofis aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Cumhurbaşkanlığı Kararnamesi'ne göre Cumhurbaşkanlığına bağlı olarak İletişim Ofisi (Başkanlığı değil), Yatırım ve Finans Ofisi, Dijital Dönüşüm Ofisi, İnsan Kaynakları Ofisi gibi kurumlar kurulmuştur. Bunlar arasında kamu tüzel kişiliğine ve özel bütçeye sahip olarak tanımlanan ofis \"Yatırım ve Finans Ofisi\"dir.",
     answers: [
@@ -335,19 +335,19 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi Cumhurbaşkanlığına bağlı kurum ve kuruluşlar arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Cumhurbaşkanlığına bağlı kurum ve kuruluşlar arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
-    expl: "Devlet Arşivleri Başkanlığı, Strateji ve Bütçe Başkanlığı, Millî Saraylar İdaresi Başkanlığı, Millî İstihbarat Teşkilatı vb. doğrudan Cumhurbaşkanlığına bağlı kurumlardır. Avrupa Birliği Başkanlığı da bağlıdır. Ancak 'Siber Güvenlik Başkanlığı' adında doğrudan Cumhurbaşkanlığına bağlı bir başkanlık bulunmamaktadır (Siber Güvenlik Kurulu vardır).",
+    expl: "Cumhurbaşkanlığına bağlı kurum ve kuruluşlar arasında Devlet Arşivleri Başkanlığı, Devlet Denetleme Kurulu, Diyanet İşleri Başkanlığı, İletişim Başkanlığı, Millî Güvenlik Kurulu Genel Sekreterliği, Millî İstihbarat Teşkilatı Başkanlığı, Millî Saraylar İdaresi Başkanlığı, Savunma Sanayii Başkanlığı, Siber Güvenlik Başkanlığı, Strateji ve Bütçe Başkanlığı ve Türkiye Varlık Fonu yer alır. Avrupa Birliği Başkanlığı ise Dışişleri Bakanlığına bağlıdır.",
     answers: [
       { text: "Devlet Arşivleri Başkanlığı", ok: false },
       { text: "Strateji ve Bütçe Başkanlığı", ok: false },
-      { text: "Avrupa Birliği Başkanlığı", ok: false },
-      { text: "Siber Güvenlik Başkanlığı", ok: true },
+      { text: "Avrupa Birliği Başkanlığı", ok: true },
+      { text: "Siber Güvenlik Başkanlığı", ok: false },
       { text: "Millî Saraylar İdaresi Başkanlığı", ok: false }
     ]
   },
   {
-    text: "<p>I. Kurullar, en az üç üyeden oluşur.<br>II. Cumhurbaşkanı, kurulların başkanıdır.<br>III. Kurul üyeleri, Cumhurbaşkanı tarafından atanır.<br><br><b>Cumhurbaşkanlığına bağlı politika kurulları hakkında yukarıda verilen ifadelerden hangileri doğrudur?</b></p>",
+    text: "<p>I. Kurullar, en az üç üyeden oluşur.<br>II. Cumhurbaşkanı, kurulların başkanıdır.<br>III. Kurul üyeleri, Cumhurbaşkanı tarafından atanır.</p><p><b>Cumhurbaşkanlığına bağlı politika kurulları hakkında yukarıda verilen ifadelerden hangileri doğrudur?</b></p>",
     diff: 1,
     expl: "Cumhurbaşkanlığı politika kurulları en az 3 üyeden oluşur. Kurul üyeleri Cumhurbaşkanınca atanır ve kurulların başkanı Cumhurbaşkanı'dır. (Cumhurbaşkanı kurul üyelerinden birini başkan vekili olarak görevlendirir). Her üç ifade de doğrudur.",
     answers: [
@@ -359,7 +359,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Başkente yardımcı kuruluşlar, Cumhurbaşkanı ve bakanlıklara görevlerinde yardımcı olmak, görüş bildirmek üzere teşkil edilmiş olan kurul ve kuruluşlardır.<br><br><b>Aşağıdaki kurumlardan hangisi bu kuruluşlar arasında yer almaz?</b></p>",
+    text: "<p>Merkezî idarenin başkent teşkilatına yardımcı kuruluşlar; yürütmeye denetim, görüş veya koordinasyon yönüyle katkı sağlar.</p><p><b>Aşağıdaki kurumlardan hangisi bu kuruluşlar arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Danıştay, Sayıştay, Millî Güvenlik Kurulu ve Ekonomik ve Sosyal Konsey merkezî idareye yardımcı kuruluşlardır. Ancak Yüksek Seçim Kurulu (YSK) anayasal bir yargı ve seçim merciidir, yürütmeye/idareye yardımcı kuruluş statüsünde değildir.",
     answers: [
@@ -389,7 +389,7 @@ export const VAT_IDARE_HUKUKU_TEST_2: McQ[] = [
 // ============================================================================
 export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
   {
-    text: "<p>İdare hukuku açısından devlet tüzel kişiliğine \"merkezî idare\" veya \"genel idare\" denilmektedir. Merkezî idare ise başkent ve taşra olmak üzere ikiye ayrılmıştır.<br><br><b>Buna göre merkezî idare içinde aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p>İdare hukuku açısından devlet tüzel kişiliğine \"merkezî idare\" veya \"genel idare\" denilmektedir. Merkezî idare ise başkent ve taşra olmak üzere ikiye ayrılmıştır.</p><p><b>Buna göre merkezî idare içinde aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 1,
     expl: "Devlet tüzel kişiliği, merkezî idare olarak adlandırılır ve başkent (Bakanlıklar, Genel Müdürlükler) ile taşra (Valilik, Kaymakamlık) teşkilatından oluşur. Adalet Bakanlığı, Emniyet Genel Müdürlüğü, Ankara Valiliği ve Buca Kaymakamlığı merkezî idarenin parçalarıdır. Ege Üniversitesi ise özerk bir kamu tüzel kişiliğine sahip olan yerinden yönetim kuruluşudur.",
     answers: [
@@ -401,7 +401,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Yönetim reformu kapsamında İçişleri Bakanlığı,<br>• Bazı ilçelerin il yapılmasını,<br>• Bazı illerin adlarının değiştirilmesini,<br>• Bazı ilçelerin başka bir ile bağlanmasını<br>• Bazı illerin merkezlerinin değiştirilmesini<br>önermiştir.<br><br><b>5442 sayılı İl İdare Kanunu'na göre, bu önerinin gerçekleşmesi aşağıdakilerden hangisine bağlıdır?</b></p>",
+    text: "<p>Yönetim reformu kapsamında İçişleri Bakanlığı,<br>• Bazı ilçelerin il yapılmasını,<br>• Bazı illerin adlarının değiştirilmesini,<br>• Bazı ilçelerin başka bir ile bağlanmasını<br>• Bazı illerin merkezlerinin değiştirilmesini<br>önermiştir.</p><p><b>5442 sayılı İl İdare Kanunu'na göre, bu önerinin gerçekleşmesi aşağıdakilerden hangisine bağlıdır?</b></p>",
     diff: 2,
     expl: "İl İdaresi Kanunu'na göre; yeni bir ilin kurulması, mevcut bir ilin adının değiştirilmesi, bir ilçenin il yapılması, il merkezinin değiştirilmesi gibi idari statüyü etkileyen işlemler ancak kanunla yapılabilir. İçişleri Bakanlığı öneride bulunabilir ancak bu değişikliklerin hayata geçmesi için TBMM tarafından bir kanun kabul edilmesi gerekir.",
     answers: [
@@ -413,7 +413,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Adliye teşkilatı<br>II. Emniyet teşkilatı<br>III. Askerî teşkilat<br><br><b>5442 sayılı İl İdare Kanunu'na göre, yukarıdakilerden hangileri valinin idari denetim ve gözetim yetkisi kapsamında olan birimlerden biri değildir?</b></p>",
+    text: "<p>I. Adliye teşkilatı<br>II. Emniyet teşkilatı<br>III. Askerî teşkilat</p><p><b>5442 sayılı İl İdare Kanunu'na göre, yukarıdakilerden hangileri valinin idari denetim ve gözetim yetkisi kapsamında olan birimlerden biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "İlgili kanunun 9. maddesine göre, vali ve kaymakam 'adli ve askerî teşkilat dışında' kalan bütün devlet daire, müessese ve işletmelerini, özel iş yerlerini, özel idare, belediye, köy idareleriyle bunlara bağlı tekmil müesseseleri denetler, teftiş eder. Adliye (I) ve Askerî (III) teşkilat denetim dışıdır.",
     answers: [
@@ -425,7 +425,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türk idare hukukunda \"il genel idaresi\" ile ilgili olarak;</b><br><br>I. İllerin idaresi yetki genişliğine dayanır.<br>II. Türkiye illere, iller de kademeli bölümlere ayrılır.<br>III. Vali, ilin mülki amiridir.<br><br><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p><b>Türk idare hukukunda \"il genel idaresi\" ile ilgili olarak;</b></p><p>I. İllerin idaresi yetki genişliğine dayanır.<br>II. Türkiye illere, iller de kademeli bölümlere ayrılır.<br>III. Vali, ilin mülki amiridir.</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 1,
     expl: "Türkiye illere, iller de diğer kademeli bölümlere (ilçe, bucak vb.) ayrılır. İllerin idaresi anayasal bir ilke olan 'yetki genişliği' esasına dayanır. İlin en yüksek hiyerarşik (mülki) amiri validir. Her üç ifade de doğrudur.",
     answers: [
@@ -437,7 +437,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>5442 sayılı İl İdare Kanunu'na göre, vali hakkında aşağıda verilen ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>5442 sayılı İl İdare Kanunu'na göre, vali hakkında aşağıda verilen ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Vali, ilde Cumhurbaşkanı'nın temsilcisi olup, idari yürütme vasıtasıdır. Ataması Cumhurbaşkanı kararıyla yapılır ve istisnai memuriyet statüsündedir. Cumhurbaşkanı yardımcıları ve bakanlar, valilere doğrudan emir ve talimat verebilirler. Ancak valinin mahallî idareler (belediye, il özel idaresi, köy idaresi) üzerindeki yetkisi hiyerarşi değil, 'idari vesayet' yetkisidir. Hiyerarşi yalnızca aynı tüzel kişilik (Devlet) içinde geçerlidir.",
     answers: [
@@ -449,7 +449,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>5442 sayılı İl İdaresi Kanunu'na göre, kaymakamlık mesleğiyle ilgili aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>5442 sayılı İl İdaresi Kanunu'na göre, kaymakamlık mesleğiyle ilgili aşağıdaki ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Kaymakam, ilçede Cumhurbaşkanı'nın ve devletin temsilcisidir. Ataması Cumhurbaşkanı onayıyla yapılır. Ancak kaymakamlık, valilik gibi 'istisnai memuriyet' değil; sınav, staj gibi aşamalardan geçilerek girilen bir kariyer (güvenceli) mesleğidir.",
     answers: [
@@ -461,7 +461,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>5442 sayılı İl İdare Kanunu'na göre, aşağıdakilerden hangisi il idare kurulu üyeleri arasında yer almaz?</b></p>",
+    text: "<p><b>5442 sayılı İl İdare Kanunu'na göre, aşağıdakilerden hangisi il idare kurulu üyeleri arasında <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "İl idare kurulu, valinin başkanlığı altında; hukuk işleri müdürü, defterdar, millî eğitim müdürü, bayındırlık müdürü (çevre ve şehircilik), sağlık ve sosyal yardım müdürü, tarım ve veteriner müdürlerinden teşekkül eder. Emniyet müdürü bu kurulun bir üyesi değildir.",
     answers: [
@@ -473,7 +473,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>5442 sayılı İl İdare Kanunu'na göre,<br>• bir ilin sınırlarının değiştirilmesi,<br>• bir ilin kurulması,<br>• bir ilçenin adının değiştirilmesi<br><br><b>sırasıyla aşağıdaki işlemlerden hangisi ile olur?</b></p>",
+    text: "<p>5442 sayılı İl İdare Kanunu'na göre,<br>• bir ilin sınırlarının değiştirilmesi,<br>• bir ilin kurulması,<br>• bir ilçenin adının değiştirilmesi</p><p><b>sırasıyla aşağıdaki işlemlerden hangisi ile olur?</b></p>",
     diff: 3,
     expl: "İllerin kurulması, kaldırılması, adlarının değiştirilmesi KANUN ile olur. İlçelerin kurulması, kaldırılması, adlarının değiştirilmesi KANUN ile olur. Bir ilin veya ilçenin sınırlarının değiştirilmesi (başka bir ile bağlanması vb.) ise CUMHURBAŞKANI ONAYI ile olur. Sırasıyla: İl sınırı (CB Onayı) - İl kurulması (Kanun) - İlçe adının değiştirilmesi (Kanun).",
     answers: [
@@ -485,7 +485,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Demir arkadaşı Mehmet'e merkezden yönetim içerisinde bir kadroya memur olarak atandığını söylemiştir.<br><br><b>Buna göre Demir, aşağıdakilerden hangisinde görev yapıyor olamaz?</b></p>",
+    text: "<p>Demir arkadaşı Mehmet'e merkezden yönetim içerisinde bir kadroya memur olarak atandığını söylemiştir.</p><p><b>Buna göre Demir, aşağıdakilerden hangisinde görev yapıyor <u>olamaz</u>?</b></p>",
     diff: 2,
     expl: "Merkezden yönetim (Devlet tüzel kişiliği), başkent ve taşra teşkilatlarından oluşur. Valilik, Kaymakamlık, İl Millî Eğitim Müdürlüğü, İlçe Emniyet Müdürlüğü devletin taşra teşkilatı (merkezden yönetim) içindedir. Ancak Belediye, yerinden yönetim kuruluşudur (ayrı bir kamu tüzel kişiliğidir). Demir, Tunceli Belediyesi'nde görev yapıyor olamaz.",
     answers: [
@@ -497,7 +497,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Mahallî idareler; ----, ---- ve ---- olmak üzere üç ana birimden oluşur ve her biri kamu tüzel kişiliğine sahiptir.<br><br><b>1982 Anayasası m. 127'ye göre, yukarıdaki boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>Mahallî idareler; ----, ---- ve ---- olmak üzere üç ana birimden oluşur ve her biri kamu tüzel kişiliğine sahiptir.</p><p><b>1982 Anayasası m. 127'ye göre, yukarıdaki boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 1,
     expl: "1982 Anayasası'nın 127. maddesine göre mahallî idareler; il özel idaresi, belediye ve köy halkının mahallî müşterek ihtiyaçlarını karşılamak üzere kurulan kamu tüzel kişileridir. Valilik ve Kaymakamlık taşra teşkilatıdır (merkezden yönetim). Mahalle ise tüzel kişiliği olmayan bir birimdir.",
     answers: [
@@ -509,7 +509,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, mahallî idareler ile ilgili;</b><br><br>I. Seçimleri 5 yılda bir yapılır.<br>II. Birer kamu tüzel kişisidir.<br>III. Seçilmiş organlarının organlık sıfatına İçişleri Bakanı son verir.<br><br><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, mahallî idareler ile ilgili;</b></p><p>I. Seçimleri 5 yılda bir yapılır.<br>II. Birer kamu tüzel kişisidir.<br>III. Seçilmiş organlarının organlık sıfatına İçişleri Bakanı son verir.</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 2,
     expl: "Mahalli idarelerin seçimleri 5 yılda bir yapılır (I doğru) ve her biri birer kamu tüzel kişisidir (II doğru). Ancak mahalli idarelerin seçilmiş organlarının organlık sıfatını kaybetmeleri yargı yoluyla (Danıştay kararıyla) olur. İçişleri Bakanı sadece geçici olarak görevden uzaklaştırabilir, sıfata son veremez (III yanlış).",
     answers: [
@@ -521,7 +521,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Isparta Ticaret Odası<br>II. Kutlu Mahallesi<br>III. Erzurum Büyükşehir Belediyesi<br><br><b>Yukarıdakilerden hangileri mahallî idare kuruluşları arasında yer almaz?</b></p>",
+    text: "<p>I. Isparta Ticaret Odası<br>II. Kutlu Mahallesi<br>III. Erzurum Büyükşehir Belediyesi</p><p><b>Yukarıdakilerden hangileri mahallî idare kuruluşları arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Mahallî idareler; il özel idaresi, belediye (büyükşehir dahil) ve köyden oluşur. Ticaret Odası, kamu kurumu niteliğinde meslek kuruluşudur, mahallî idare değildir. Mahalle ise, belediye sınırları içinde tüzel kişiliği olmayan bir birimdir, ayrı bir mahallî idare değildir. Dolayısıyla Ticaret Odası (I) ve Mahalle (II) mahallî idare sayılmaz.",
     answers: [
@@ -569,7 +569,7 @@ export const VAT_IDARE_HUKUKU_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Tüzel kişiliğinin temsilcisi, idari yürütme vasıtası validir.<br>II. Karar organı il genel meclisidir.<br>III. Görev alanı il sınırlarını kapsar.<br><br><b>Yukarıda verilen bilgiler aşağıdaki idarelerden hangisine ilişkindir?</b></p>",
+    text: "<p>I. Tüzel kişiliğinin temsilcisi, idari yürütme vasıtası validir.<br>II. Karar organı il genel meclisidir.<br>III. Görev alanı il sınırlarını kapsar.</p><p><b>Yukarıda verilen bilgiler aşağıdaki idarelerden hangisine ilişkindir?</b></p>",
     diff: 1,
     expl: "Verilen özellikler \"İl Özel İdaresi\"ne aittir. İl özel idaresinin temsilcisi ve yürütme organı validir. Karar organı il genel meclisi, danışma organı il encümenidir. Görev alanı ise tüm il sınırlarını kapsar.",
     answers: [
@@ -611,7 +611,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Aşağıdaki tabloda, il özel idaresi, belediye ve köy idaresine ait organlar verilmiştir.<br><br>• İl Özel İdaresi / Karar Organı: İl genel meclisi / Yürütme Organı: Genel sekreter / Danışma Organı: İl encümeni<br>• Belediye / Karar Organı: Belediye meclisi / Yürütme Organı: Belediye başkanı / Danışma Organı: Belediye encümeni<br>• Köy / Karar Organı: İhtiyar meclisi / Yürütme Organı: Muhtar / Danışma Organı: Köy encümeni<br><br><b>Yukarıda verilen organlardan hangi ikisi hatalı yazılmıştır?</b></p>",
+    text: "<p>Aşağıdaki tabloda, il özel idaresi, belediye ve köy idaresine ait organlar verilmiştir.</p><p>• İl Özel İdaresi / Karar Organı: İl genel meclisi / Yürütme Organı: Genel sekreter / Danışma Organı: İl encümeni<br>• Belediye / Karar Organı: Belediye meclisi / Yürütme Organı: Belediye başkanı / Danışma Organı: Belediye encümeni<br>• Köy / Karar Organı: İhtiyar meclisi / Yürütme Organı: Muhtar / Danışma Organı: Köy encümeni</p><p><b>Yukarıda verilen organlardan hangi ikisi hatalı yazılmıştır?</b></p>",
     diff: 3,
     expl: "İl özel idaresinin yürütme organı validir (Genel sekreter değildir). Köy idaresinin danışma organı ise köy derneğidir (Köy encümeni diye bir organ yoktur). Diğer organlar (Belediye meclisi, ihtiyar meclisi, belediye encümeni vb.) doğru eşleştirilmiştir.",
     answers: [
@@ -623,7 +623,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Çankırı'nın Orta ilçesine bağlı Dodurga Köyü 28 Nisan 2022'de belde olmuştur.<br><br><b>5393 sayılı Belediye Kanunu m. 4'e göre, bir yerleşim yerinde belediye kurulabilmesi için asgari nüfus aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Çankırı'nın Orta ilçesine bağlı Dodurga Köyü 28 Nisan 2022'de belde olmuştur.</p><p><b>5393 sayılı Belediye Kanunu m. 4'e göre, bir yerleşim yerinde belediye kurulabilmesi için asgari nüfus aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Nüfusu 5.000 ve üzerinde olan yerleşim birimlerinde belediye kurulabilir. İl ve ilçe merkezlerinde belediye kurulması zorunludur.",
     answers: [
@@ -647,7 +647,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>5393 sayılı Belediye Kanunu m. 4'e göre,</b><br><br>I. il merkezlerinde,<br>II. büyük köy merkezlerinde,<br>III. ilçe merkezlerinde<br><br><b>hangilerinde belediye kurulması zorunludur?</b></p>",
+    text: "<p><b>5393 sayılı Belediye Kanunu m. 4'e göre,</b></p><p>I. il merkezlerinde,<br>II. büyük köy merkezlerinde,<br>III. ilçe merkezlerinde</p><p><b>hangilerinde belediye kurulması zorunludur?</b></p>",
     diff: 1,
     expl: "Nüfusu 5.000 ve üzerinde olan yerleşim birimlerinde belediye kurulabilir. Ancak nüfusa bakılmaksızın \"İl ve ilçe merkezlerinde\" belediye kurulması zorunludur.",
     answers: [
@@ -659,7 +659,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>5216 sayılı Büyükşehir Belediye Kanunu'na göre büyükşehir belediyeleri ile ilgili olarak;</b><br><br>I. Kanunla kurulur.<br>II. Sınırları il mülki sınırlarıdır.<br>III. Toplam nüfusu 750.000'den fazla olan illerde kurulabilir.<br><br><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p><b>5216 sayılı Büyükşehir Belediye Kanunu'na göre büyükşehir belediyeleri ile ilgili olarak;</b></p><p>I. Kanunla kurulur.<br>II. Sınırları il mülki sınırlarıdır.<br>III. Toplam nüfusu 750.000'den fazla olan illerde kurulabilir.</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 1,
     expl: "Toplam nüfusu 750.000'den fazla olan illerin il belediyeleri KANUNLA büyükşehir belediyesine dönüştürülebilir. Büyükşehir belediyelerinin sınırları, il mülki sınırlarıdır. Her üç ifade de doğrudur.",
     answers: [
@@ -671,7 +671,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>I. İl özel idaresi<br>II. Köy<br>III. Mahalle<br><br>Ali, arkadaşı Murat'a, büyükşehir belediyesi olan illerdeki idari birimleri merak ederek, \"Peki Murat, bu tür bir şehirde hangi idari birimler yoktur?\" diye soruyor.<br><br><b>Murat, yukarıdaki idari birimlerden hangileri söylerse doğru cevabı vermiş olur?</b></p>",
+    text: "<p>I. İl özel idaresi<br>II. Köy<br>III. Mahalle</p><p>Ali, arkadaşı Murat'a, büyükşehir belediyesi olan illerdeki idari birimleri merak ederek, \"Peki Murat, bu tür bir şehirde hangi idari birimler yoktur?\" diye soruyor.</p><p><b>Murat, yukarıdaki idari birimlerden hangileri söylerse doğru cevabı vermiş olur?</b></p>",
     diff: 3,
     expl: "Büyükşehir belediyesi kurulan illerde (örneğin İstanbul, Ankara vb.), il özel idaresi ve köy tüzel kişilikleri tamamen kaldırılmıştır. Köyler mahalleye dönüştürülmüştür. Ancak Mahalle, büyükşehir belediyesi sisteminde varlığını devam ettiren en küçük yerel idari birimdir. Yani \"İl Özel İdaresi\" ve \"Köy\" yoktur.",
     answers: [
@@ -683,7 +683,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>I. İstanbul İl Özel İdaresi<br>II. Ağva Beldesi<br>III. Kadıköy Belediyesi<br>IV. İshaklı Köyü<br>V. Çanakçı Mahallesi<br><br><b>5216 sayılı Büyükşehir Belediyesi Kanunu dikkate alındığında İstanbul sınırları içerisinde görev yapan vergi memuru Derya, yukarıdaki idari birimlerden hangilerinde denetim yapmış olamaz?</b></p>",
+    text: "<p>I. İstanbul İl Özel İdaresi<br>II. Ağva Beldesi<br>III. Kadıköy Belediyesi<br>IV. İshaklı Köyü<br>V. Çanakçı Mahallesi</p><p><b>5216 sayılı Büyükşehir Belediyesi Kanunu dikkate alındığında İstanbul sınırları içerisinde görev yapan vergi memuru Derya, yukarıdaki idari birimlerden hangilerinde denetim yapmış <u>olamaz</u>?</b></p>",
     diff: 3,
     expl: "İstanbul bir Büyükşehir Belediyesidir. Büyükşehir belediyesi olan tüm illerde; il özel idareleri, belde belediyeleri ve köylerin tüzel kişiliği kaldırılmış, belde ve köyler mahalleye dönüştürülmüştür. Dolayısıyla İstanbul'da İl Özel İdaresi (I), Belde (II) ve Köy (IV) bulunmaz. Sadece büyükşehir belediyesi, ilçe belediyesi ve mahalleler vardır.",
     answers: [
@@ -695,7 +695,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Eşref, iş arkadaşı Rüya'ya bundan sonraki memurluk hizmetini büyükşehir belediyesi olan bir ilde yapmak istediğini söyler. Rüya, arkadaşı Eşref'e, \"Türkiye'de kaç büyükşehir belediyesi olan il var biliyor musun?\" diye sorar.<br><br><b>Eşref aşağıdaki cevaplardan hangisini verirse doğru olur?</b></p>",
+    text: "<p>Eşref, iş arkadaşı Rüya'ya bundan sonraki memurluk hizmetini büyükşehir belediyesi olan bir ilde yapmak istediğini söyler. Rüya, arkadaşı Eşref'e, \"Türkiye'de kaç büyükşehir belediyesi olan il var biliyor musun?\" diye sorar.</p><p><b>Eşref aşağıdaki cevaplardan hangisini verirse doğru olur?</b></p>",
     diff: 1,
     expl: "Türkiye'de şu anda 30 ilde büyükşehir belediyesi bulunmaktadır. (En son büyükşehir belediyesi olan il Ordu'dur).",
     answers: [
@@ -707,7 +707,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>5393 sayılı Belediye Kanunu'na göre, \"Belediye sınırları içinde ihtiyaç ve öncelikleri benzer özellikler gösteren ve sakinleri arasında komşuluk ilişkisi bulunan idari birim\" aşağıdakilerden hangisidir?</b></p>",
+    text: "<p><b>5393 sayılı Belediye Kanunu'na göre,</b> \"Belediye sınırları içinde ihtiyaç ve öncelikleri benzer özellikler gösteren ve sakinleri arasında komşuluk ilişkisi bulunan idari birim\" <b>aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Belediye sınırları içinde, ihtiyaç ve öncelikleri benzer özellikler gösteren ve sakinleri arasında komşuluk ilişkisi bulunan idarî birimi ifade eden kavram 'Mahalle'dir.",
     answers: [
@@ -719,7 +719,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>M belediyesinde, belediye başkanı A ile belediye meclisi üyeleri B ve C'nin belediye kaynaklarını usulsüz kullandığına ilişkin savcılığa yapılan ihbar üzerine haklarında soruşturma başlatılmıştır. Soruşturma süreci devam ederken, bu kişilerin görevde kalmalarının kamu yararına aykırı olabileceği değerlendirilmiştir.<br><br><b>5393 sayılı Belediye Kanunu'na göre, hakkında soruşturma veya kovuşturma açılan belediye başkanı ve meclis üyelerini kesin hükme kadar aşağıdakilerden hangisi geçici olarak görevden uzaklaştırabilir?</b></p>",
+    text: "<p>M belediyesinde, belediye başkanı A ile belediye meclisi üyeleri B ve C'nin belediye kaynaklarını usulsüz kullandığına ilişkin savcılığa yapılan ihbar üzerine haklarında soruşturma başlatılmıştır. Soruşturma süreci devam ederken, bu kişilerin görevde kalmalarının kamu yararına aykırı olabileceği değerlendirilmiştir.</p><p><b>5393 sayılı Belediye Kanunu'na göre, hakkında soruşturma veya kovuşturma açılan belediye başkanı ve meclis üyelerini kesin hükme kadar aşağıdakilerden hangisi geçici olarak görevden uzaklaştırabilir?</b></p>",
     diff: 2,
     expl: "Belediye Kanunu m.47 ve Anayasa m.127 uyarınca, belediye başkanları ve meclis üyeleri hakkında görevleriyle ilgili soruşturma veya kovuşturma açılması durumunda, İçişleri Bakanı tarafından geçici olarak görevden uzaklaştırılabilirler (İdari vesayet yetkisinin bir yansımasıdır). Kesin olarak görevden alma (görevine son verme) yetkisi ise Danıştay'a aittir.",
     answers: [
@@ -731,7 +731,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Belediye sınırları içinde mahalle kurulması, kaldırılması, birleştirilmesi, bölünmesi, adlarıyla sınırlarının tespiti ve değiştirilmesi, belediye meclisinin kararı ve kaymakamın görüşü üzerine valinin onayı ile olur.<br><br><b>5393 sayılı Belediye Kanunu'na göre, belediye sınırları içinde nüfusu hangi sayının altında olan yerlerde mahalle kurulamaz?</b></p>",
+    text: "<p>Belediye sınırları içinde mahalle kurulması, kaldırılması, birleştirilmesi, bölünmesi, adlarıyla sınırlarının tespiti ve değiştirilmesi, belediye meclisinin kararı ve kaymakamın görüşü üzerine valinin onayı ile olur.</p><p><b>5393 sayılı Belediye Kanunu'na göre, belediye sınırları içinde nüfusu hangi sayının altında olan yerlerde mahalle <u>kurulamaz</u>?</b></p>",
     diff: 1,
     expl: "5393 sayılı Belediye Kanunu'na göre, belediye sınırları içinde nüfusu 500'ün altında mahalle kurulamaz.",
     answers: [
@@ -743,7 +743,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Nevzat Bey, A ilçesinin belediye başkanıdır. Belediye meclisi, son bir yıl içinde ısrarla mevzuata aykırı kararlar almış, bu gerekçeyle meclisin feshine karar verilmiştir. Ancak yapılan denetimlerde, alınan bu kararların çoğunun Nevzat Bey'in bilgisi ve yönlendirmesiyle gerçekleştiği ve başkanın toplantılarda aktif rol oynadığı tespit edilmiştir.<br><br><b>Bu durumda, İçişleri Bakanlığının başvurusu ile Belediye Başkanı Nevzat Bey'in başkanlık sıfatına son verilmesi aşağıdakilerden hangisinin kararıyla mümkün olur?</b></p>",
+    text: "<p>Nevzat Bey, A ilçesinin belediye başkanıdır. Belediye meclisi, son bir yıl içinde ısrarla mevzuata aykırı kararlar almış, bu gerekçeyle meclisin feshine karar verilmiştir. Ancak yapılan denetimlerde, alınan bu kararların çoğunun Nevzat Bey'in bilgisi ve yönlendirmesiyle gerçekleştiği ve başkanın toplantılarda aktif rol oynadığı tespit edilmiştir.</p><p><b>Bu durumda, İçişleri Bakanlığının başvurusu ile Belediye Başkanı Nevzat Bey'in başkanlık sıfatına son verilmesi aşağıdakilerden hangisinin kararıyla mümkün olur?</b></p>",
     diff: 2,
     expl: "Belediye başkanının mazeretsiz görevi terk etmesi, seçilme yeterliğini kaybetmesi veya meclisin feshine neden olan eylem ve işlemlere katılması hâllerinden birinin meydana gelmesi durumunda İçişleri Bakanlığının başvurusu üzerine 'Danıştay kararıyla' başkanlık sıfatı sona erer.",
     answers: [
@@ -755,7 +755,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Cami, mektep, otlak, yaylak, baltalık gibi orta malları bulunan ve toplu veya dağınık evlerde oturan insanlar bağ ve bahçe ve tarlalarıyla birlikte bir köy teşkil ederler.<br><br><b>442 sayılı Köy Kanunu'nun 1. maddesine göre, nüfusu kaçtan aşağı olan yurtlara köy adı verilir?</b></p>",
+    text: "<p>Cami, mektep, otlak, yaylak, baltalık gibi orta malları bulunan ve toplu veya dağınık evlerde oturan insanlar bağ ve bahçe ve tarlalarıyla birlikte bir köy teşkil ederler.</p><p><b>442 sayılı Köy Kanunu'nun 1. maddesine göre, nüfusu kaçtan aşağı olan yurtlara köy adı verilir?</b></p>",
     diff: 1,
     expl: "Köy Kanunu'na göre, nüfusu 2000'den aşağı olan yerlere köy denir.",
     answers: [
@@ -767,7 +767,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>İdare hukuku dersinde \"Köyün kurulması ve adının değiştirilmesi hangi işlem ile olur?\" sorusuna aşağıdaki öğrencilerden hangisi doğru cevap vermiştir?<br><br><b> </b></p>",
+    text: "<p><b>İdare hukuku dersinde</b> \"Köyün kurulması ve adının değiştirilmesi hangi işlem ile olur?\" <b>sorusuna aşağıdaki öğrencilerden hangisi doğru cevap vermiştir?</b></p>",
     diff: 2,
     expl: "Köy Kanunu'na göre, nüfusu 2000'den aşağı olan yerleşim birimlerine köy adı verilir. Bir yerleşim yerinde yeniden köy kurulması, kaldırılması, isminin değiştirilmesi 'İçişleri Bakanının kararı' ile olur.",
     answers: [
@@ -785,7 +785,7 @@ export const VAT_IDARE_HUKUKU_TEST_4: McQ[] = [
 // ============================================================================
 export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
   {
-    text: "<p>Murat, son 6 aydan beri köyde ikamet eden, okuma yazma bilen bir köy sakinidir. 2029'da yapılacak yerel seçimlerde köy muhtarı olmak için aday olmuştur.<br><br><b>442 sayılı Köy Kanunu'na göre, köy muhtarı ve ihtiyar meclisinin seçimle gelen üyeleri aşağıdakilerden hangisi tarafından seçilir?</b></p>",
+    text: "<p>Murat, son 6 aydan beri köyde ikamet eden, okuma yazma bilen bir köy sakinidir. 2029'da yapılacak yerel seçimlerde köy muhtarı olmak için aday olmuştur.</p><p><b>442 sayılı Köy Kanunu'na göre, köy muhtarı ve ihtiyar meclisinin seçimle gelen üyeleri aşağıdakilerden hangisi tarafından seçilir?</b></p>",
     diff: 1,
     expl: "Köy idaresinin başı muhtardır. Köy derneği tarafından seçilir. Muhtar olmak için siyasi partiler aday gösteremez. Okuma yazma bilmesi ve son 6 aydan beridir köyde ikamet etmesi yeterlidir.",
     answers: [
@@ -797,7 +797,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Mülki idare amirleri muhtarın köy işlerini ve kanunlarla verilen diğer görevlerini yapmadığını görürlerse muhtara yazılı ihtarda bulunurlar.<br><br><b>Buna rağmen iş görmeyen muhtar, aşağıdakilerden hangisinin kararıyla görevinden uzaklaştırılır?</b></p>",
+    text: "<p>Mülki idare amirleri muhtarın köy işlerini ve kanunlarla verilen diğer görevlerini yapmadığını görürlerse muhtara yazılı ihtarda bulunurlar.</p><p><b>Buna rağmen iş görmeyen muhtar, aşağıdakilerden hangisinin kararıyla görevinden uzaklaştırılır?</b></p>",
     diff: 2,
     expl: "Muhtarın görevden alınması diğer mahalli idare organlarından farklıdır. Muhtar, bağlı olduğu il veya ilçe idare kurulları tarafından görevden alınır.",
     answers: [
@@ -821,7 +821,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Köy imamı<br>II. Köy öğretmeni<br>III. Köy korucuları<br>IV. Köy kâtibi<br><br><b>442 sayılı Köy Kanunu'na göre, yukarıdakilerden hangileri köy ihtiyar meclisinin doğal üyeleridir?</b></p>",
+    text: "<p>I. Köy imamı<br>II. Köy öğretmeni<br>III. Köy korucuları<br>IV. Köy kâtibi</p><p><b>442 sayılı Köy Kanunu'na göre, yukarıdakilerden hangileri köy ihtiyar meclisinin doğal üyeleridir?</b></p>",
     diff: 1,
     expl: "Köy muhtarlığı ve köy ihtiyar meclisi üyeliği seçimlerinde adaylık usulü yoktur. Köyün imamı ile öğretmeni veya başöğretmeni ihtiyar meclisinin doğal üyesidir.",
     answers: [
@@ -833,7 +833,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Köydeki dere üstüne köprü yapılması, yolun onarılması ve mezarlık etrafına duvar çekilmesi gibi işler için köy ihtiyar heyeti bir karar alır.<br><br><b>442 sayılı Köy Kanunu'na göre, köylünün birleşerek köy işlerini birlikte yaptığı bu uygulama aşağıdaki kavramlardan hangisiyle ifade edilir?</b></p>",
+    text: "<p>Köydeki dere üstüne köprü yapılması, yolun onarılması ve mezarlık etrafına duvar çekilmesi gibi işler için köy ihtiyar heyeti bir karar alır.</p><p><b>442 sayılı Köy Kanunu'na göre, köylünün birleşerek köy işlerini birlikte yaptığı bu uygulama aşağıdaki kavramlardan hangisiyle ifade edilir?</b></p>",
     diff: 1,
     expl: "İmece, 442 sayılı Köy Kanunu'na göre köy yararına yapılacak işlerde tüm köy halkının bir araya gelerek ortaklaşa çalışması anlamına gelir. Bu usul, özellikle altyapı, bakım ve onarım gibi kamusal işlerde uygulanır ve köy dayanışmasının bir parçasıdır.",
     answers: [
@@ -845,7 +845,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Kavaklı köyünde su deposunun bakım giderlerinin karşılanması amacıyla köy ihtiyar meclisi bir karar alır. Karara göre, köyde oturan veya köyde toprağı, bağı ya da dükkânı bulunan kişilerden, hâl ve gelir durumlarına göre belirli bir miktarda para alınacaktır.<br><br><b>442 sayılı Köy Kanunu'na göre, bu uygulama aşağıdaki kavramlardan hangisiyle adlandırılır?</b></p>",
+    text: "<p>Kavaklı köyünde su deposunun bakım giderlerinin karşılanması amacıyla köy ihtiyar meclisi bir karar alır. Karara göre, köyde oturan veya köyde toprağı, bağı ya da dükkânı bulunan kişilerden, hâl ve gelir durumlarına göre belirli bir miktarda para alınacaktır.</p><p><b>442 sayılı Köy Kanunu'na göre, bu uygulama aşağıdaki kavramlardan hangisiyle adlandırılır?</b></p>",
     diff: 1,
     expl: "Salma, 442 sayılı Köy Kanunu'nda, köyün kamu yararına yapacağı küçük işlerde kullanılmak üzere köyde oturanlardan veya köyde maddi bağı bulunanlardan, herkesin hâline göre alınan parasal katkıyı ifade eder.",
     answers: [
@@ -857,7 +857,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Hüseyin, arkadaşı İsa'ya Türkiye'de bazı idari birimlerin kanunlar revize edilmediği için hukukumuzda var olsa da uygulamada yeri olmadığını belirtmiştir.<br><br><b>Hüseyin'in bu ifadesini;</b><br><br>I. bucak,<br>II. kasaba,<br>III. belde<br><br><b>kanunlarımızda yer alan idari birimlerden hangileri doğrulamaktadır?</b></p>",
+    text: "<p>Hüseyin, arkadaşı İsa'ya Türkiye'de bazı idari birimlerin kanunlar revize edilmediği için hukukumuzda var olsa da uygulamada yeri olmadığını belirtmiştir.</p><p><b>Hüseyin'in bu ifadesini;</b></p><p>I. bucak,<br>II. kasaba,<br>III. belde</p><p><b>kanunlarımızda yer alan idari birimlerden hangileri doğrulamaktadır?</b></p>",
     diff: 3,
     expl: "1924 kabul tarihli ve hâlen yürürlükte olan Köy Kanunu'nda kasabanın ne olduğu tanımlansa da hukukumuzda 'kasaba' diye bir kamu tüzel kişisi bulunmamaktadır. 1949'da kabul edilen 5442 sayılı İl İdaresi Kanunu'na göre bucaklar tanımlanmıştır; ancak 2012 ve 2014 yıllarında çıkarılan kanunlarla tüm bucak tüzel kişilikleri ve teşkilatları resmî olarak kaldırılmıştır. Beldeler ise belediye kanununa göre 5000 ve üzeri olan yerleşim birimlerinde kurulabilir ve büyükşehir olmayan illerimizde hâlen varlığını sürdürmektedir.",
     answers: [
@@ -881,7 +881,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Milletvekili F'nin Türkiye Büyük Millet Meclisine sunacağı kanun teklifi ile;<br><br>I. il,<br>II. büyükşehir belediyesi,<br>III. üniversite,<br>IV. ilçe<br><br><b>verilenlerden hangileri kurulabilir?</b></p>",
+    text: "<p><b>Milletvekili F'nin Türkiye Büyük Millet Meclisine sunacağı kanun teklifi ile;</b></p><p>I. il,<br>II. büyükşehir belediyesi,<br>III. üniversite,<br>IV. ilçe</p><p><b>verilenlerden hangileri kurulabilir?</b></p>",
     diff: 2,
     expl: "İl ve ilçeler, kanunla kurulur, kaldırılır, ismi değiştirilir. Büyükşehir belediyesi kurulması kanunla olur. Üniversiteler de kanunla kurulur.",
     answers: [
@@ -893,7 +893,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Mert, arkadaşı Elif'e Türk idare yapılanmasında yer alan idarelerin kuruluşu hakkında aşağıdaki bilgileri vermiştir.<br><br>I. İl, ilçe ve büyükşehir belediyeleri kanunla kurulur.<br>II. Köyler, İçişleri Bakanı kararı ile kurulur.<br>III. Bakanlıklar, Cumhurbaşkanı Kararnamesi ile kurulur.<br>IV. İl ve ilçelerde belediye kurulması zorunludur.<br><br><b>Buna göre yukarıda verilen ifadelerden hangileri doğrudur?</b></p>",
+    text: "<p>Mert, arkadaşı Elif'e Türk idare yapılanmasında yer alan idarelerin kuruluşu hakkında aşağıdaki bilgileri vermiştir.<br><br>I. İl, ilçe ve büyükşehir belediyeleri kanunla kurulur.<br>II. Köyler, İçişleri Bakanı kararı ile kurulur.<br>III. Bakanlıklar, Cumhurbaşkanı Kararnamesi ile kurulur.<br>IV. İl ve ilçelerde belediye kurulması zorunludur.</p><p><b>Buna göre yukarıda verilen ifadelerden hangileri doğrudur?</b></p>",
     diff: 2,
     expl: "Köy Kanunu'na göre, nüfusu 150 ile 2000 arası yerleşim yerlerinde İçişleri bakanı kararıyla köy kurulabilir. Belediye Kanunu'na göre il ve ilçe merkezlerinde belediye kurulması zorunludur. Büyükşehir Belediye Kanunu'na göre büyükşehir belediyesi kanunla kurulur. İl İdaresi Kanunu'na göre il ve ilçeler kanunla kurulur. Bakanlıklar Cumhurbaşkanı Kararnamesi ile kurulur. İfadelerin tümü doğrudur.",
     answers: [
@@ -905,7 +905,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>2972 sayılı Mahallî İdareler Seçimi Kanunu'na göre,</b><br><br>I. belediye başkanı,<br>II. il genel meclisi üyeleri,<br>III. muhtar ve ihtiyar heyeti üyeleri<br><br><b>verilenlerden hangilerinin seçimlerinde siyasi parti adaylığı yoktur?</b></p>",
+    text: "<p><b>2972 sayılı Mahallî İdareler Seçimi Kanunu'na göre,</b></p><p>I. belediye başkanı,<br>II. il genel meclisi üyeleri,<br>III. muhtar ve ihtiyar heyeti üyeleri</p><p><b>verilenlerden hangilerinin seçimlerinde siyasi parti adaylığı <u>yoktur</u>?</b></p>",
     diff: 1,
     expl: "Anayasa ve kanunlarda yazılı şartlara uygun olarak, seçilme yeterliğine sahip olan her vatandaş, bir siyasi parti listesinden veya bağımsız olarak il genel meclisi, belediye başkanlığı veya belediye meclisi üyeliğine adaylığını koyabilir. Ancak köy muhtarlığı ve köy ihtiyar meclisi üyeliği, mahalle muhtarlığı ve mahalle ihtiyar heyeti üyeliği seçimlerinde siyasi parti adaylık usulü yoktur.",
     answers: [
@@ -929,7 +929,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Belediye başkanı, belediye meclisi ve il genel meclisi üyeliklerine aday olabilmek için en az ---- olmak gerekirken; köy ve mahalle muhtarlığı ile ihtiyar heyeti üyeliğine adaylık için yalnızca ---- olmak yeterlidir.<br><br><b>2972 sayılı Mahallî İdareler ile Mahalle Muhtarlıkları ve İhtiyar Heyetleri Seçimi Hakkında Kanun'a göre, yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>Belediye başkanı, belediye meclisi ve il genel meclisi üyeliklerine aday olabilmek için en az ---- olmak gerekirken; köy ve mahalle muhtarlığı ile ihtiyar heyeti üyeliğine adaylık için yalnızca ---- olmak yeterlidir.</p><p><b>2972 sayılı Mahallî İdareler ile Mahalle Muhtarlıkları ve İhtiyar Heyetleri Seçimi Hakkında Kanun'a göre, yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 2,
     expl: "Belediye başkanlığı, il genel meclisi, belediye meclisi ve büyükşehir belediye başkanlığı gibi mahallî idare organlarına aday olabilmek için en az ilkokul mezunu olmak şarttır. Ancak köy ve mahalle muhtarlığı ile ihtiyar heyeti üyeliklerine aday olmak için yalnızca okuryazar olmak yeterlidir.",
     answers: [
@@ -941,7 +941,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Mercan, bir mahallî idare kuruluşunda memur olarak görev yapmaktadır.<br><br><b>Buna göre Mercan, aşağıdaki idari birimlerden hangisinde görevli olabilir?</b></p>",
+    text: "<p>Mercan, bir mahallî idare kuruluşunda memur olarak görev yapmaktadır.</p><p><b>Buna göre Mercan, aşağıdaki idari birimlerden hangisinde görevli olabilir?</b></p>",
     diff: 1,
     expl: "Mahallî idareler; il (il özel idaresi), belediye veya köy halkının mahallî müşterek ihtiyaçlarını karşılamak üzere kuruluş esasları kanunla belirtilen ve karar organları seçmenler tarafından seçilerek oluşturulan kamu tüzel kişileridir. Buna göre, Artvin İl Özel İdaresi bir mahallî idare kuruluşudur.",
     answers: [
@@ -953,7 +953,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Erdem, merkezî idarenin taşra örgütünde görev yapan çalışandan biridir.<br><br><b>Buna göre Erdem, aşağıdaki kamu görevlilerinden hangisi olabilir?</b></p>",
+    text: "<p>Erdem, merkezî idarenin taşra örgütünde görev yapan çalışandan biridir.</p><p><b>Buna göre Erdem, aşağıdaki kamu görevlilerinden hangisi olabilir?</b></p>",
     diff: 2,
     expl: "Merkezî idare, genel bütçeli bakanlıklar ve bunların taşra teşkilatlarından oluşur. Bu taşra teşkilatları il (valilik), ilçe (kaymakamlık) ve bölge düzeyinde örgütlenmiştir. İl millî eğitim müdürlükleri, Millî Eğitim Bakanlığının il düzeyindeki taşra birimleridir ve bu yapıda görev yapan şube müdürleri, merkezî idarenin taşra teşkilatında görevli memurlardır.",
     answers: [
@@ -965,7 +965,7 @@ export const VAT_IDARE_HUKUKU_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Mahallî idarelerde \"encümen\" ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>Mahallî idarelerde \"encümen\" ile ilgili aşağıdaki ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Encümen, mahallî idarelerde (belediye ve il özel idaresi) karar organı değildir, yardımcı ve danışma organıdır. Mahallî idarelerin ana karar organları il özel idaresinde il genel meclisi, belediyede ise belediye meclisidir.",
     answers: [
@@ -995,7 +995,7 @@ export const VAT_IDARE_HUKUKU_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Mülkiye müfettişi M, sırasıyla Konya, Aksaray ve Kayseri illerinde denetimde bulunur.<br><br><b>Buna göre aşağıdakilerden hangisi M'nin denetlediği idari kuruluşlar arasında yer almaz?</b></p>",
+    text: "<p>Mülkiye müfettişi M, sırasıyla Konya, Aksaray ve Kayseri illerinde denetimde bulunur.</p><p><b>Buna göre aşağıdakilerden hangisi M'nin denetlediği idari kuruluşlar arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Kayseri bir büyükşehir belediyesidir. Büyükşehir belediyesi kurulan tüm 30 ilde il özel idaresi teşkilatı kaldırılmıştır. Dolayısıyla Kayseri'de 'İl Özel İdaresi' bulunmaz ve denetlenemez. (Aksaray büyükşehir olmadığı için İl Özel İdaresi vardır).",
     answers: [
@@ -1019,7 +1019,7 @@ export const VAT_IDARE_HUKUKU_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi hizmet bakımından yerinden yönetim kuruluşu değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi hizmet bakımından yerinden yönetim kuruluşu <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Yerinden yönetimler ikiye ayrılır: Yer yönünden (mahallî) idareler (il özel idaresi, belediye, köy) ve hizmet yönünden (hizmet yerinden) yönetimler (üniversiteler, KİT'ler, SGK, Karayolları Gn. Md. vb.). İstanbul Büyükşehir Belediyesi 'yer (mahallî) bakımından' yerinden yönetim kuruluşudur, hizmet bakımından değildir.",
     answers: [
@@ -1043,7 +1043,7 @@ export const VAT_IDARE_HUKUKU_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Kanunun belirlediği usul ve esaslara göre; rektörler ----, dekanlar ise ---- seçilir ve atanır.<br><br><b>1982 Anayasası'na göre, yukarıdaki bırakılan boşluğa sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>Kanunun belirlediği usul ve esaslara göre; rektörler ----, dekanlar ise ---- seçilir ve atanır.</p><p><b>1982 Anayasası'na göre, yukarıdaki bırakılan boşluğa sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'nın 130. maddesine göre; Rektörler, Yükseköğretim Kurulunun önerdiği adaylar arasından Cumhurbaşkanı tarafından atanır. Dekanlar ise, üniversitelerde Yükseköğretim Kurulu tarafından seçilir ve yine YÖK tarafından atanır.",
     answers: [
@@ -1067,7 +1067,7 @@ export const VAT_IDARE_HUKUKU_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Kamu düzeni, idarenin korumak ve sağlamakla görevli olduğu maddi düzendir ve idarenin kolluk faaliyetinin nihai amacını oluşturur.<br><br><b>Buna göre aşağıdakilerden hangisi, kamu düzeni ögelerinden biri değildir?</b></p>",
+    text: "<p>Kamu düzeni, idarenin korumak ve sağlamakla görevli olduğu maddi düzendir ve idarenin kolluk faaliyetinin nihai amacını oluşturur.</p><p><b>Buna göre aşağıdakilerden hangisi, kamu düzeni ögelerinden biri <u>değildir</u>?</b></p>",
     diff: 1,
     expl: "Kamu düzeninin unsurları: Güvenlik, dirlik ve esenlik, genel sağlık, genel ahlakın korunmasıdır. Laik devletin gereği olarak \"inanç (din)\" kamu düzeninin bir unsuru (kolluğun korumakla görevli olduğu bir öge) olarak kabul edilmez, devletin müdahale alanı dışındadır.",
     answers: [
@@ -1091,7 +1091,7 @@ export const VAT_IDARE_HUKUKU_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi idari kolluk faaliyeti değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi idari kolluk faaliyeti <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Kamu düzeni bozulmadan önce (olaydan önce) yürütülen kolluk faaliyeti 'idari kolluk', kamu düzeni bozulduktan sonra (olaydan sonra, suç oluştuktan sonra) yürütülen kolluk faaliyeti ise 'adli kolluk'tur. Cinayet sonrası polisin evde delil toplaması bir suç şüphesi üzerine yapılan 'adli kolluk' işlemidir.",
     answers: [
@@ -1103,7 +1103,7 @@ export const VAT_IDARE_HUKUKU_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Emniyet Genel Müdürlüğü<br>II. Jandarma Genel Komutanlığı<br>III. Sahil Güvenlik Komutanlığı<br><br><b>Yukarıdakilerden hangileri İçişleri Bakanlığına bağlıdır?</b></p>",
+    text: "<p>I. Emniyet Genel Müdürlüğü<br>II. Jandarma Genel Komutanlığı<br>III. Sahil Güvenlik Komutanlığı</p><p><b>Yukarıdakilerden hangileri İçişleri Bakanlığına bağlıdır?</b></p>",
     diff: 1,
     expl: "Emniyet Genel Müdürlüğü, Sahil Güvenlik Komutanlığı ve Jandarma Genel Komutanlığı İçişleri Bakanlığına bağlı kuruluşlardır.",
     answers: [
@@ -1115,7 +1115,7 @@ export const VAT_IDARE_HUKUKU_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi genel idare kolluk personeli değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi genel idare kolluk personeli <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Genel idari kolluk, merkezden yönetimin (Devlet tüzel kişiliğinin) kolluğudur ve personeli polis, jandarma, sahil güvenlik personeli ve mahalle bekçileridir. Zabıta ise mahallî idare (Belediye) kolluğu olduğundan 'özel idare kolluk' personelidir.",
     answers: [
@@ -1127,7 +1127,7 @@ export const VAT_IDARE_HUKUKU_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Devletin millî güvenliği için oluşturulan ve bu sebeple siyasi kolluk faaliyetleri yürüten Millî İstihbarat Teşkilatı Başkanlığı aşağıdakilerden hangisinin bağlı kuruluşudur?</b></p>",
+    text: "<p><b>Devletin millî güvenliği için oluşturulan ve bu sebeple siyasi kolluk faaliyetleri yürüten Millî İstihbarat Teşkilat Başkanlığı aşağıdakilerden hangisinin bağlı kuruluşudur?</b></p>",
     diff: 1,
     expl: "Millî İstihbarat Teşkilatı (MİT), Türkiye'nin Cumhurbaşkanlığına bağlı resmî istihbarat örgütüdür.",
     answers: [
@@ -1151,7 +1151,7 @@ export const VAT_IDARE_HUKUKU_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p>Kamu tüzel kişilerinin kamunun yararlanmasına bırakılmış mallara kamu malları adı verilir.<br><br><b>Buna göre aşağıdakilerden hangisi hizmet malları statüsündeki kamu malları sınıflandırmasına dâhil değildir?</b></p>",
+    text: "<p>Kamu tüzel kişilerinin kamunun yararlanmasına bırakılmış mallara kamu malları adı verilir.</p><p><b>Buna göre aşağıdakilerden hangisi hizmet malları statüsündeki kamu malları sınıflandırmasına dâhil <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Kamu malları üçe ayrılır: Sahipsiz mallar, Orta malları, Hizmet malları. Hastane, okul, adliye, belediye binası, müze, kütüphane bir kamu hizmetine tahsis edilmiş 'Hizmet Malları'dır. Pazar yerleri, meydanlar, parklar, yollar ise kamunun doğrudan yararlanmasına bırakılan 'Orta Malları'dır.",
     answers: [
@@ -1163,14 +1163,14 @@ export const VAT_IDARE_HUKUKU_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>İdarenin mal edinme yetkileri ile ilgili olarak;</b><br><br>I. idarenin olağanüstü durumlarda taşınır malların kullanım hakkını elde etmesi,<br>II. devletin ya da diğer kamu tüzel kişilerinin, kamu yararı amacıyla özel mülkiyetteki bir taşınmaza, bedeli peşin ödenerek el koyması,<br>III. devletin kamu hizmeti niteliği taşıyan özel teşebbüslere ait işletmeleri, kamu yararı amacıyla mülkiyetine geçirmesi<br><br><b>verilen tanımlar sırasıyla hangilerine karşılık gelmektedir?</b></p>",
+    text: "<p><b>İdarenin mal edinme yetkileri ile ilgili olarak;</b><br>I. idarenin olağanüstü durumlarda taşınır malların kullanım hakkını elde etmesi,<br>II. devletin ya da diğer kamu tüzel kişilerinin, kamu yararı amacıyla özel mülkiyetteki bir taşınmaza, bedeli peşin ödenerek el koyması,<br>III. devletin kamu hizmeti niteliği taşıyan özel teşebbüslere ait işletmeleri, kamu yararı amacıyla mülkiyetine geçirmesi</p><p><b>verilen tanımlar sırasıyla hangilerine karşılık gelmektedir?</b></p>",
     diff: 2,
-    expl: "I. İdarenin olağanüstü durumlarda (savaş vb.) TAŞINIR malların kullanım hakkını elde etmesi 'İstimval'dir. II. Özel mülkiyetteki bir TAŞINMAZA kamu yararı amacıyla bedeli peşin ödenerek el konulması 'Kamulaştırma'dır. III. Kamu hizmeti niteliği taşıyan özel teşebbüslere ait İŞLETMELERİN mülkiyete geçirilmesi 'Devletleştirme'dir. Sırasıyla: İstimval - Kamulaştırma - Devletleştirme. Doğru eşleştirme tablosu Kamulaştırma(II), Devletleştirme(III), İstimval(I) şeklindedir.",
+    expl: "I. İdarenin olağanüstü durumlarda (savaş vb.) TAŞINIR malların kullanım hakkını elde etmesi 'İstimval'dir. II. Özel mülkiyetteki bir TAŞINMAZA kamu yararı amacıyla bedeli peşin ödenerek el konulması 'Kamulaştırma'dır. III. Kamu hizmeti niteliği taşıyan özel teşebbüslere ait İŞLETMELERİN mülkiyete geçirilmesi 'Devletleştirme'dir. Buna göre doğru eşleştirme Kamulaştırma: II, Devletleştirme: III, İstimval: I şeklindedir.",
     answers: [
       { text: "Kamulaştırma: I, Devletleştirme: II, İstimval: III", ok: false },
       { text: "Kamulaştırma: III, Devletleştirme: II, İstimval: I", ok: false },
-      { text: "Kamulaştırma: II, Devletleştirme: III, İstimval: I", ok: true },
       { text: "Kamulaştırma: II, Devletleştirme: I, İstimval: III", ok: false },
+      { text: "Kamulaştırma: II, Devletleştirme: III, İstimval: I", ok: true },
       { text: "Kamulaştırma: III, Devletleştirme: I, İstimval: II", ok: false }
     ]
   }
@@ -1181,7 +1181,7 @@ export const VAT_IDARE_HUKUKU_TEST_6: McQ[] = [
 // ============================================================================
 export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
   {
-    text: "<p><b>1982 Anayasası'na göre, istisnai hâllerde kamulaştırma bedeli en fazla kaç yılda eşit taksitler ile ödenir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, istisnai hâllerde kamulaştırma bedeli <u>en fazla</u> kaç yılda eşit taksitler ile ödenir?</b></p>",
     diff: 1,
     expl: "Kamulaştırma bedeli ile kesin hükme bağlanan artırım bedeli nakden ve peşin olarak ödenir. Ancak, tarım reformunun uygulanması, büyük enerji ve sulama projeleri ile iskân projelerinin gerçekleştirilmesi, yeni ormanların yetiştirilmesi, kıyıların korunması ve turizm amacıyla kamulaştırılan toprakların bedellerinin ödenme şekli kanunla gösterilir. Kanunun taksitle ödemeyi öngörebileceği bu hâllerde, taksitlendirme süresi 5 yılı aşamaz; bu takdirde taksitler eşit olarak ödenir.",
     answers: [
@@ -1193,7 +1193,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisinde kamulaştırma bedeli taksitle ödenmez?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisinde kamulaştırma bedeli taksitle <u>ödenmez</u>?</b></p>",
     diff: 2,
     expl: "Kamulaştırılan topraktan, o toprağı doğrudan doğruya işleten küçük çiftçiye ait olanlarının bedeli, her hâlde (istisnai projeler kapsamında olsa dahi) peşin ödenir. Taksitlendirme yapılamaz.",
     answers: [
@@ -1201,7 +1201,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
       { text: "Büyük enerji ve sulama projeleri ile iskân projelerinin gerçekleştirilmesi amacıyla yapılan kamulaştırma", ok: false },
       { text: "Küçük çiftçiye ait topraktan kara yolu yapımcıları lehine yapılan kamulaştırma", ok: true },
       { text: "Yeni ormanların yetiştirilmesi amacıyla yapılan kamulaştırma", ok: false },
-      { text: "Kıyılanın korunması ve turizm amacıyla yapılan kamulaştırma", ok: false }
+      { text: "Kıyıların korunması ve turizm amacıyla yapılan kamulaştırma", ok: false }
     ]
   },
   {
@@ -1217,7 +1217,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir bölgede uzun süren doğal afet nedeniyle olağanüstü hâl ilan edilmiştir. Afetten etkilenen vatandaşlara yardım ulaştırmak isteyen idare, yeterli aracı bulunmadığı için bölgede faaliyet gösteren iki özel şirkete ait iş makinelerine, görev belgesi düzenleyerek geçici olarak el koymuştur.<br><br><b>İdarenin gerçekleştirdiği bu işlem aşağıdaki idarenin mal edinme yetkilerinden hangisinin kapsamındadır?</b></p>",
+    text: "<p>Bir bölgede uzun süren doğal afet nedeniyle olağanüstü hâl ilan edilmiştir. Afetten etkilenen vatandaşlara yardım ulaştırmak isteyen idare, yeterli aracı bulunmadığı için bölgede faaliyet gösteren iki özel şirkete ait iş makinelerine, görev belgesi düzenleyerek geçici olarak el koymuştur.</p><p><b>İdarenin gerçekleştirdiği bu işlem aşağıdaki idarenin mal edinme yetkilerinden hangisinin kapsamındadır?</b></p>",
     diff: 1,
     expl: "İstimval, olağanüstü durumlarda (savaş, seferberlik, olağanüstü hâl vb.) taşınır malların (araç, iş makinesi vb.) kamu hizmetinde geçici kullanımı amacıyla idare tarafından (bedeli ödenerek) alınmasıdır.",
     answers: [
@@ -1229,7 +1229,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Danıştay bir kararında \"Bilindiği üzere umuma arz edilen, sürekli ve kesintisiz bir biçimde işlemesi zorunlu, toplumun genel ve ortak gereksinimlerini karşılamak amacıyla kanunla kurulan idarenin, doğrudan ya da yakın gözetim ve sorumluluğu altında kamusal yetki ve usuller kullanarak yürüttüğü faaliyetlerdir.\"<br><br><b>şeklinde tanımını yaptığı idare hukuk terimi aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Danıştay bir kararında \"Bilindiği üzere umuma arz edilen, sürekli ve kesintisiz bir biçimde işlemesi zorunlu, toplumun genel ve ortak gereksinimlerini karşılamak amacıyla kanunla kurulan idarenin, doğrudan ya da yakın gözetim ve sorumluluğu altında kamusal yetki ve usuller kullanarak yürüttüğü faaliyetlerdir.\"</p><p><b>şeklinde tanımını yaptığı idare hukuk terimi aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Danıştayın bu tanımı, idare hukukunun temel kavramlarından biri olan \"kamu hizmeti\" ilkesine yöneliktir. Toplumsal gereksinimi karşılar, süreklilik arz eder, kamusal usullerle yürütülür ve kamu otoritesinin sorumluluğu altındadır.",
     answers: [
@@ -1241,7 +1241,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>• Eğitim müfredatının çağdaş gelişmelere göre güncellenmesi<br>• Öğretmenlere grev yasağının uygulanması<br>• Eğitimde hiçbir kişiye, aileye, zümreye veya sınıfa imtiyaz tanınmaması<br><br><b>Bu uygulamalar sırasıyla aşağıdaki kamu hizmeti ilkelerinden hangileridir?</b></p>",
+    text: "<p>• Eğitim müfredatının çağdaş gelişmelere göre güncellenmesi<br>• Öğretmenlere grev yasağının uygulanması<br>• Eğitimde hiçbir kişiye, aileye, zümreye veya sınıfa imtiyaz tanınmaması</p><p><b>Bu uygulamalar sırasıyla aşağıdaki kamu hizmeti ilkelerinden hangileridir?</b></p>",
     diff: 2,
     expl: "Müfredatın gelişmelere göre güncellenmesi idarenin değişen şartlara 'uyarlanabilirliği' (değişkenlik) ilkesidir. Grev yasağı, hizmetin kesintiye uğramaması yani 'süreklilik' ilkesinin bir sonucudur. Hiçbir zümreye imtiyaz tanınmaması ise kamu hizmetinden yararlanmada 'eşitlik' (tarafsızlık) ilkesidir.",
     answers: [
@@ -1253,7 +1253,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>• Arızalanan içme suyu hattının birkaç saat içinde onarılması<br>• Nüfus cüzdanı başvurularında başvuru sahibinin kimliğine göre farklı muamele yapılmaması<br>• Devlet okullarında kayıt ücreti alınmadan eğitim hizmeti sunulması<br><br><b>Bu uygulamalar sırasıyla aşağıdaki kamu hizmeti ilkelerinden hangilerini ifade etmektedir?</b></p>",
+    text: "<p>• Arızalanan içme suyu hattının birkaç saat içinde onarılması<br>• Nüfus cüzdanı başvurularında başvuru sahibinin kimliğine göre farklı muamele yapılmaması<br>• Devlet okullarında kayıt ücreti alınmadan eğitim hizmeti sunulması</p><p><b>Bu uygulamalar sırasıyla aşağıdaki kamu hizmeti ilkelerinden hangilerini ifade etmektedir?</b></p>",
     diff: 1,
     expl: "Su hattının hızla onarılması, hizmetin kesintisiz yürütülmesi gerektiğini (süreklilik) gösterir. Kimliğe göre ayrım yapılmaması işlemin tarafsızlığını (eşitlik) yansıtır. Devlet okulunda kayıt ücreti alınmaması, bazı hizmetlerin karşılıksız (bedelsizlik) sunulabileceğini gösterir. Sırasıyla: süreklilik - tarafsızlık - bedelsizlik.",
     answers: [
@@ -1265,7 +1265,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Danıştayın bir kararında \"İdari bir makam tarafından bir kamu hizmetinin yürütülmesi amacıyla idare hukukunun kendisine tanımış olduğu kamu gücünü kullanarak ve tek yönlü irade açıklamasıyla yapılan kesin ve yürütülmesi zorunlu işlemlerdir\"<br><br><b>şeklinde ifade ettiği idare hukuk terimi aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Danıştayın bir kararında \"İdari bir makam tarafından bir kamu hizmetinin yürütülmesi amacıyla idare hukukunun kendisine tanımış olduğu kamu gücünü kullanarak ve tek yönlü irade açıklamasıyla yapılan kesin ve yürütülmesi zorunlu işlemlerdir\"</p><p><b>şeklinde ifade ettiği idare hukuk terimi aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Danıştayın tanımında geçen tüm unsurlar (idari makamlarca, kamu gücü kullanılarak, tek taraflı irade beyanı ile, kesin ve yürütülmesi zorunlu), \"İdari İşlem\" kavramının klasik ögelerini yansıtmaktadır.",
     answers: [
@@ -1277,7 +1277,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>İdari işlemlerin unsurları arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>İdari işlemlerin unsurları arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 1,
     expl: "İdari işlemler, idarenin tek taraflı iradesiyle hukuki sonuç doğurmak amacıyla yaptığı işlemlerdir. Bu işlemler beş temel unsurla değerlendirilir: Yetki, Şekil, Sebep, Konu, Amaç. 'Öneri' idari işlemin bir unsuru değildir.",
     answers: [
@@ -1289,7 +1289,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>İdareler tarafından yapılan idari işlemlerde iradenin açıklanması keyfîlikten uzak olup, kendine özgü kural ve usullere bağlanmıştır.<br><br><b>Buna göre idarenin yaptığı işlemlerin aksi kanıtlanıncaya kadar hukuka uygun kabul edilmesine ne ad verilir?</b></p>",
+    text: "<p>İdareler tarafından yapılan idari işlemlerde iradenin açıklanması bir devlet yetkisi olup, kendine özgü kural ve usullere bağlanmıştır.</p><p><b>Buna göre idarenin yaptığı işlemlerin aksi kanıtlanıncaya kadar hukuka uygun kabul edilmesine ne ad verilir?</b></p>",
     diff: 1,
     expl: "İdari işlemler, tesis edildikleri an itibarıyla herhangi bir yargı organının onayına ihtiyaç duymaksızın resen etkilerini doğurduklarından, mahkeme kararıyla iptal edilene veya idarece geri alınana/kaldırılana kadar hukuka uygun sayılırlar. Buna 'hukuka uygunluk karinesi' denir.",
     answers: [
@@ -1313,7 +1313,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Danıştay bir kararında; \"Bir işlemi ilk kez hangi organ veya makam yapmışsa, o işlemi geri almaya, değiştirmeye, kaldırmaya, düzeltmeye de kanunda aksi öngörülmedikçe aynı organ veya makam yetkilidir.\" demiştir.<br><br><b>Buna göre Danıştay kararında belirtilen idare hukuku ilkesi aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Danıştay bir kararında; \"Bir işlemi ilk kez hangi organ veya makam yapmışsa, o işlemi geri almaya, değiştirmeye, kaldırmaya, düzeltmeye de kanunda aksi öngörülmedikçe aynı organ veya makam yetkilidir.\" demiştir.</p><p><b>Buna göre Danıştay kararında belirtilen idare hukuku ilkesi aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Danıştayın tanımında, bir idari işlemin tesis edildiği makamın, o işlemi geri alma, değiştirme veya kaldırma yetkisinin de kendisinde olduğu belirtilmektedir. Bu ilke idare hukukunda \"yetkide paralellik ilkesi\" olarak bilinir.",
     answers: [
@@ -1337,7 +1337,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Danıştay bir kararında \"Resmî Gazete'de yayımlanarak yürürlüğe giren düzenleyici işlemlerin tesisinde izlenen yöntemin bu işlemlerin değiştirilmesinde de aynen uygulanması zorunlu olup ... bu zorunluluk yerine getirilmeksizin Genelge ile yapılan değişikliğin şekil yönünden hukuka aykırı olduğunu....\" kabul etmiştir.<br><br><b>Bu durum idare hukukundaki aşağıdaki ilkelerden hangisinin bir sonucudur?</b></p>",
+    text: "<p>Danıştay bir kararında \"Resmî Gazete'de yayımlanarak yürürlüğe giren düzenleyici işlemlerin tesisinde izlenen yöntemin bu işlemlerin değiştirilmesinde de aynen uygulanması zorunlu olup ... bu zorunluluk yerine getirilmeksizin Genelge ile yapılan değişikliğin şekil yönünden hukuka aykırı olduğunu....\" kabul etmiştir.</p><p><b>Bu durum idare hukukundaki aşağıdaki ilkelerden hangisinin bir sonucudur?</b></p>",
     diff: 2,
     expl: "Usulde paralellik; bir idari işlemin geri alınmasının, kaldırılmasının ya da değiştirilmesinin, o işlemin tesisinde izlenen yönteme (usule) göre yapılması gerekliliğini ifade eder. Yani Resmî Gazete'de yayımlanarak (belli bir usulle) yürürlüğe giren bir işlemin, genelge gibi daha basit bir usulle değiştirilememesi 'usulde paralellik' ilkesinin sonucudur.",
     answers: [
@@ -1349,7 +1349,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Kaymakam A, kendisine yapılan başvuru neticesinde Elif ve Hakan hakkında boşanma kararı verir.<br><br><b>Buna göre idarenin yargı organının yerine geçerek onun yapması gereken bir işlemi yapması şeklinde ortaya çıkan ve idari işlemi hukuka aykırı hâle getiren sakatlık hâli aşağıdakilerden hangisi ile ifade edilir?</b></p>",
+    text: "<p>Kaymakam A, kendisine yapılan başvuru neticesinde Elif ve Hakan hakkında boşanma kararı verir.</p><p><b>Buna göre idarenin yargı organının yerine geçerek onun yapması gereken bir işlemi yapması şeklinde ortaya çıkan ve idari işlemi hukuka aykırı hâle getiren sakatlık hâli aşağıdakilerden hangisi ile ifade edilir?</b></p>",
     diff: 2,
     expl: "Fonksiyon gaspı, bir idari makamın (örn. kaymakam), kendi görev alanı dışında kalan ve başka bir erk (yasama veya yargı) tarafından kullanılması gereken bir yetkiyi (örn. boşanma kararı vermek) kullanmasıdır. Bu tür işlemler 'yok hükmündedir'.",
     answers: [
@@ -1361,7 +1361,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir belediye, imar planına uygun şekilde düzenlenmiş ve ruhsatı yasal olarak alınmış bir otelin işletme ruhsatını, otel sahibinin belediye başkanı hakkında açtığı tazminat davasına tepki olarak iptal etmiştir. Ruhsat iptal gerekçesi olarak \"çevre düzenine aykırılık\" gösterilmiş, ancak denetim raporlarında bu duruma rastlanmamıştır.<br><br><b>Yukarıdaki olayda idari işlemin hangi sakatlık türü vurgulanmıştır?</b></p>",
+    text: "<p>Bir belediye, imar planına uygun şekilde düzenlenmiş ve ruhsatı yasal olarak alınmış bir otelin işletme ruhsatını, otel sahibinin belediye başkanı hakkında açtığı tazminat davasına tepki olarak iptal etmiştir. Ruhsat iptal gerekçesi olarak \"çevre düzenine aykırılık\" gösterilmiş, ancak denetim raporlarında bu duruma rastlanmamıştır.</p><p><b>Yukarıdaki olayda idari işlemin hangi sakatlık türü vurgulanmıştır?</b></p>",
     diff: 3,
     expl: "Yetki saptırması, idarenin sahip olduğu yetkiyi kanunda öngörülen amaca aykırı, kamu yararı gözetilmeden gizli bir amaç için (kin, garez, intikam, siyasi amaç vb.) kullanmasıdır. Olayda belediyenin ruhsat iptal yetkisi var, ancak bu yetkiyi kamu yararı için değil, 'intikam almak' amacıyla kullanmıştır.",
     answers: [
@@ -1379,7 +1379,7 @@ export const VAT_IDARE_HUKUKU_TEST_7: McQ[] = [
 // ============================================================================
 export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
   {
-    text: "<p>Bir üniversitede dekan tarafından alınması gereken kararı rektör veriyor.<br><br><b>Bu durumda ortaya çıkan yetki sakatlığı aşağıdakilerden hangisi ile ifade edilir?</b></p>",
+    text: "<p>Bir üniversitede dekan tarafından alınması gereken kararı rektör veriyor.</p><p><b>Bu durumda ortaya çıkan yetki sakatlığı aşağıdakilerden hangisi ile ifade edilir?</b></p>",
     diff: 2,
     expl: "İdarenin kendi içinde üstün ast yerine astın üst yerine veya bir makamın başka bir makam yerine karar alması 'yetki tecavüzü'dür. Örneğin üniversitede dekanın alması gereken bir kararı rektörün (üstün astın yerine geçerek) alması yetki tecavüzü sayılır.",
     answers: [
@@ -1391,7 +1391,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>İdare hukuku doktrininde \"İdarenin icraya ilişkin maddi faaliyet ve hareketleri sırasında ağır bir surette usulsüz hareketleriyle, bir başka deyişle, usul dışı sayılacak maddi fiil ve hareketleriyle bireyin mülkiyet hakkını veya kamu özgürlüklerini ihlal etmesi\" olarak tanımlanan kavram aşağıdakilerden hangisidir?<br><br><b> </b></p>",
+    text: "<p>İdare hukuku doktrininde \"İdarenin icraya ilişkin maddi faaliyet ve hareketleri sırasında ağır bir surette usulsüz hareketleriyle, bir başka deyişle, usul dışı sayılacak maddi fiil ve hareketleriyle bireyin mülkiyet hakkını veya kamu özgürlüklerini ihlal etmesi\"</p><p><b>olarak tanımlanan kavram aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Fiilî yol (Sıddık Sami Onar'ın tanımıyla), idarenin icraya ilişkin maddi faaliyet ve hareketleri sırasında ağır bir surette usulsüz hareketleriyle (örneğin kamulaştırmasız el atma, gözaltındaki birine işkence edilmesi) bireyin mülkiyet hakkına veya temel hak ve hürriyetlerine hukuk dışı müdahalesidir.",
     answers: [
@@ -1403,7 +1403,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>Bazı durumlarda, devlet memuru olmayan, idari hiyerarşinin tamamen dışında bulunan kişilerin idare adına giriştikleri eylem ve işlemler, idareden çıkmış gibi geçerli kabul edilmektedir.<br><br><b>İdare hukukunda bu kavrama ne ad verilir?</b></p>",
+    text: "<p>Bazı durumlarda, devlet memuru olmayan, idari hiyerarşinin tamamen dışında bulunan kişilerin idare adına giriştikleri eylem ve işlemler, idareden çıkmış gibi geçerli kabul edilmektedir.</p><p><b>İdare hukukunda bu kavrama ne ad verilir?</b></p>",
     diff: 1,
     expl: "Bazen, devlet memuru olmayan, idari hiyerarşinin tamamen dışında bulunan kişilerin idare adına giriştikleri eylem ve işlemler idareden çıkmış gibi geçerli kabul edilmektedir (örneğin yangını söndürmeye çalışan vatandaşın eylemleri). Bu kişilere fiili memur statüsü tanınarak işlemleri geçerli kabul edilir. Buna 'fiili memur teorisi' denir.",
     answers: [
@@ -1415,7 +1415,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>657 sayılı Devlet Memurları Kanunu'nun 57'nci maddesine göre \"Adaylık süresi içinde aylıktan kesme veya kademe ilerlemesinin durdurulması cezası almış olanların disiplin amirlerinin teklifi ve atamaya yetkili amirin onayı ile ilişikleri kesilir.\"<br><br><b>hükmünde de görüleceği üzere idareye bazı konularda takdir hakkı tanınmaması idare hukukunun hangi kavramı ile ilgilidir?</b></p>",
+    text: "<p>657 sayılı Devlet Memurları Kanunu'nun 57'nci maddesine göre \"Adaylık süresi içinde aylıktan kesme veya kademe ilerlemesinin durdurulması cezası almış olanların disiplin amirlerinin teklifi ve atamaya yetkili amirin onayı ile ilişikleri kesilir.\"</p><p><b>hükmünde de görüleceği üzere idareye bazı konularda takdir hakkı tanınmaması idare hukukunun hangi kavramı ile ilgilidir?</b></p>",
     diff: 2,
     expl: "İdareye bir tercih imkânı sağlanmamış, belirli şartların gerçekleşmesi hâlinde belli bir çözüm şeklini uygulama ödevi yüklenmişse idarenin 'bağlı yetkisi' söz konusudur. Kanun hükmünde 'ilişikleri kesilir' denilerek idareye takdir hakkı tanınmamıştır, bu açık bir 'bağlı yetki'dir.",
     answers: [
@@ -1427,7 +1427,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>• İdari işlemin hukuka aykırılığı sebebiyle geçmişe etkili olarak ortadan kaldırmak amacıyla açılan davadır.<br>• İdarenin işlem veya eylemi nedeniyle kişisel zararın tazmini amacıyla açılan davadır.<br><br><b>Bu açıklamalar sırasıyla aşağıdaki idari dava türlerinden hangilerine karşılık gelir?</b></p>",
+    text: "<p>• İdari işlemin hukuka aykırılığı sebebiyle geçmişe etkili olarak ortadan kaldırmak amacıyla açılan davadır.<br>• İdarenin işlem veya eylemi nedeniyle kişisel zararın tazmini amacıyla açılan davadır.</p><p><b>Bu açıklamalar sırasıyla aşağıdaki idari dava türlerinden hangilerine karşılık gelir?</b></p>",
     diff: 1,
     expl: "İlk açıklamada hukuka aykırı olduğu iddia edilen işlemin iptal edilmesi (geçmişe etkili ortadan kaldırılması) talep edilmektedir; bu 'İptal davası'dır. İkinci açıklamada ise idarenin işlemi/eylemi sonucu doğan kişisel zararın tazmini (maddi/manevi) istenmektedir; bu 'Tam yargı davası'dır. Sırasıyla İptal davası - Tam yargı davası.",
     answers: [
@@ -1439,7 +1439,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Bir idari işlemin, yetkili idari yargı organı tarafından hukuka aykırılığı nedeniyle geçmişe etkili olarak ortadan kaldırılmasıdır.<br>II. Bir idari işlemin, idarenin kendi iradesiyle geçmişe etkili olarak ortadan kaldırılmasıdır.<br><br><b>Bu durumlar aşağıdaki idare hukukuna özgü yaptırımlarla eşleştirildiğinde hangisi doğrudur?</b></p>",
+    text: "<p>I. Bir idari işlemin, yetkili idari yargı organı tarafından hukuka aykırılığı nedeniyle geçmişe etkili olarak ortadan kaldırılmasıdır.<br>II. Bir idari işlemin, idarenin kendi iradesiyle geçmişe etkili olarak ortadan kaldırılmasıdır.</p><p><b>Bu durumlar aşağıdaki idare hukukuna özgü yaptırımlarla eşleştirildiğinde hangisi doğrudur?</b></p>",
     diff: 2,
     expl: "İlk cümlede idari yargı organı (mahkeme) tarafından işlemin hukuka aykırılık nedeniyle geçmişe etkili ortadan kaldırılması anlatılmaktadır, bu 'İptal'dir. İkinci cümlede idarenin 'kendi iradesiyle' (mahkeme kararı olmadan) hukuka aykırı işlemi geçmişe etkili ortadan kaldırması anlatılmaktadır, bu da 'Geri alma'dır.",
     answers: [
@@ -1475,7 +1475,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Eşitlik<br>II. Serbestlik<br>III. Görevin gerektirdiği nitelikleri taşıma<br><br>1982 Anayasası m. 70'e göre, \"Her Türk, kamu hizmetlerine girme hakkına sahiptir. Hizmete alınmada, görevin gerektirdiği niteliklerden başka hiçbir ayırım gözetilemez.\"<br><br><b>ifadesi kamu hizmetine girmede yukarıdaki ilkelerden hangilerinin geçerli olduğunu gösterir?</b></p>",
+    text: "<p>I. Eşitlik<br>II. Serbestlik<br>III. Görevin gerektirdiği nitelikleri taşıma</p><p>1982 Anayasası m. 70'e göre, \"Her Türk, kamu hizmetlerine girme hakkına sahiptir. Hizmete alınmada, görevin gerektirdiği niteliklerden başka hiçbir ayırım gözetilemez.\"</p><p><b>ifadesi kamu hizmetine girmede yukarıdaki ilkelerden hangilerinin geçerli olduğunu gösterir?</b></p>",
     diff: 2,
     expl: "Anayasa m.70'te belirtilen \"her Türk girme hakkına sahiptir\" (eşitlik), \"görevin gerektirdiği niteliklerden başka hiçbir ayrım gözetilemez\" (görevin gerektirdiği nitelikleri taşıma/liyakat) ilkeleridir. Ayrıca \"kimse memur olmaya zorlanamaz\" kuralı (serbestlik) de memurluğa girişte geçerli anayasal bir ilkedir. Metin tüm bu ilkeleri (serbestlik, eşitlik, görevin niteliği) kapsar.",
     answers: [
@@ -1499,7 +1499,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>Demet, Millî Eğitim Bakanlığında veri hazırlama memuru kadrosuna aday memur olarak atanır.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre, Demet'in aday memurluk süresi aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Demet, Millî Eğitim Bakanlığında veri hazırlama memuru kadrosuna aday memur olarak atanır.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre, Demet'in aday memurluk süresi aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Memurluk sınavını kazanan kişiler sıraya göre ilan edilen kadrolara ilgili kurumca önce aday memur olarak alınırlar. Adaylık süresi en az 1 yıl, en çok 2 yıldır.",
     answers: [
@@ -1511,7 +1511,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>657 sayılı Devlet Memurları Kanunu'na göre, \"Devlet memurlarına, yaptıkları hizmetler için lüzumlu bilgilere ve yetişme şartlarına uygun şekilde, sınıfları içinde en yüksek derecelere kadar ilerleme imkânını sağlamaktır.\" ifadesi aşağıdaki temel ilkelerden hangisini vurgulamaktadır?<br><br><b> </b></p>",
+    text: "<p>657 sayılı Devlet Memurları Kanunu'na göre, \"Devlet memurlarına, yaptıkları hizmetler için lüzumlu bilgilere ve yetişme şartlarına uygun şekilde, sınıfları içinde en yüksek derecelere kadar ilerleme imkânını sağlamaktır.\"</p><p><b>ifadesi aşağıdaki temel ilkelerden hangisini vurgulamaktadır?</b></p>",
     diff: 1,
     expl: "657 sayılı Kanunun temel ilkelerinden olan Kariyere göre: Devlet memurlarına, yaptıkları hizmetler için lüzumlu bilgilere ve yetişme şartlarına uygun şekilde, sınıfları içinde en yüksek derecelere kadar ilerleme imkânı sağlanmasıdır.",
     answers: [
@@ -1523,7 +1523,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre, aşağıdakilerden hangisi memur olmanın genel şartları arasında yer almaz?</b></p>",
+    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre, aşağıdakilerden hangisi memur olmanın genel şartları arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Memur olmanın genel şartları arasında 'kasten işlenen bir suçtan dolayı 1 yıl veya daha fazla süreyle hapis cezasına mahkûm olmamak' vardır. Taksirli suçlardan (süre ne olursa olsun, örneğin trafik kazası) hüküm giymiş olmak devlet memuru olmaya engel değildir.",
     answers: [
@@ -1535,7 +1535,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>Kars'ın Digor ilçesinde görev yapan memur Furkan, yer değiştirme suretiyle Iğdır'ın Tuzluca ilçesindeki bir göreve atanır.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre memur Furkan, atama emrinin kendisine tebliğ tarihinden itibaren kural olarak en fazla ne kadar süre içinde Tuzluca'ya hareket ederek belli yol süresini izleyen iş günü içinde işe başlamak zorundadır?</b></p>",
+    text: "<p>Kars'ın Digor ilçesinde görev yapan memur Furkan, yer değiştirme suretiyle Iğdır'ın Tuzluca ilçesindeki bir göreve atanır.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre memur Furkan, atama emrinin kendisine tebliğ tarihinden itibaren kural olarak <u>en fazla</u> ne kadar süre içinde Tuzluca'ya hareket ederek belli yol süresini izleyen iş günü içinde işe başlamak zorundadır?</b></p>",
     diff: 2,
     expl: "Başka yerdeki görevlere atanan memurlar, atama emirlerinin kendilerine tebliğ tarihinden itibaren 15 gün içerisinde o yere hareket ederek belli yol süresini izleyen iş günü içinde işe başlamak zorundadırlar.",
     answers: [
@@ -1547,7 +1547,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre, bir göreve ilk defa veya yeniden atananlardan belge ile ispatı mümkün zorlayıcı sebepler olmaksızın kanunda belirtilen süre içinde işe başlamayanların atanmaları iptal edilir ve bunlar ne kadar süreyle Devlet memuru olarak istihdam edilemezler?</b></p>",
+    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre, bir göreve ilk defa veya yeniden atananlardan belge ile ispatı mümkün zorlayıcı sebepler olmaksızın kanunda belirtilen süre içinde işe başlamayanların atanmaları iptal edilir ve bunlar ne kadar süreyle Devlet memuru olarak istihdam <u>edilemezler</u>?</b></p>",
     diff: 1,
     expl: "Bir göreve ilk defa veya yeniden atananlardan belge ile ispatı mümkün zorlayıcı sebepler olmaksızın yasal süre içinde işe başlamayanların atanmaları iptal edilir ve bunlar 1 yıl süreyle Devlet memuru olarak istihdam edilemezler.",
     answers: [
@@ -1565,7 +1565,7 @@ export const VAT_IDARE_HUKUKU_TEST_8: McQ[] = [
 // ============================================================================
 export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
   {
-    text: "<p>I. Kınama<br>II. Aylıktan kesme<br>III. Kademe ilerlemesinin durdurulması<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre, Sağlık Bakanlığına büro personeli atanan Burcu, adaylık süresi içinde yukarıdaki disiplin cezalarından hangilerini alırsa, disiplin amirinin teklifi ve atamaya yetkili amirinin onayı ile memurluk ile ilişiği kesilir?</b></p>",
+    text: "<p>I. Kınama<br>II. Aylıktan kesme<br>III. Kademe ilerlemesinin durdurulması</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre, Sağlık Bakanlığına büro personeli atanan Burcu, adaylık süresi içinde yukarıdaki disiplin cezalarından hangilerini alırsa, disiplin amirinin teklifi ve atamaya yetkili amirinin onayı ile memurluk ile ilişiği kesilir?</b></p>",
     diff: 2,
     expl: "Adaylık süresi sonunda başarısızlık: Adaylık süresi içinde aylıktan kesme veya kademe ilerlemesinin durdurulması cezası almış olanların disiplin amirlerinin teklifi ve atamaya yetkili amirin onayı ile ilişikleri kesilir.",
     answers: [
@@ -1589,7 +1589,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p>Aday olarak atanan memurların önce bütün memurların ortak vasıfları ile ilgili temel eğitime, daha sonra sınıfları ile ilgili hazırlayıcı eğitime ve staja tabi tutulmaları ve devlet memuru olarak atanabilmeleri için başarılı olmaları şarttır.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre, adaylık sürecinde başarısızlığı nedeniyle memurlukla ilişiği kesilen bir memur (sağlık nedenleri hariç) kaç yıl boyunca memurluğa tekrar alınamaz?</b></p>",
+    text: "<p>Aday olarak atanan memurların önce bütün memurların ortak vasıfları ile ilgili temel eğitime, daha sonra sınıfları ile ilgili hazırlayıcı eğitime ve staja tabi tutulmaları ve devlet memuru olarak atanabilmeleri için başarılı olmaları şarttır.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre, adaylık sürecinde başarısızlığı nedeniyle memurlukla ilişiği kesilen bir memur (sağlık nedenleri hariç) kaç yıl boyunca memurluğa tekrar <u>alınamaz</u>?</b></p>",
     diff: 2,
     expl: "Adaylık süresi içinde temel ve hazırlayıcı eğitim ve staj devrelerinin her birinde başarısız olanlarla adaylık süresi içinde hâl ve hareketlerinde memuriyetle bağdaşmayacak durumları, göreve devamsızlıkları tespit edilenlerin disiplin amirlerinin teklifi ve atamaya yetkili amirin onayı ile ilişikleri kesilir. Adaylık devresi içinde veya sonunda, 56'ncı ve bu madde hükümlerine göre ilişikleri kesilenler (sağlık nedenleri hariç) 3 yıl süre ile devlet memurluğuna alınmazlar.",
     answers: [
@@ -1601,7 +1601,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p>Devlet memurları \"Asli Devlet Memurluğuna\" atandıktan sonra en geç bir ay içinde kurumlarınca düzenlenecek merasimle yetkili amirlerin huzurunda yemin ederler ve özlük dosyalarına \"Yemin Belgesi\" ni imzalayarak göreve başlarlar.<br><br><b>Yukarıda verilen ifade 657 sayılı Devlet Memurları Kanunu'nda yer alan ödev ve sorumluluklardan hangisinin gereğidir?</b></p>",
+    text: "<p>Devlet memurları \"Asli Devlet Memurluğuna\" atandıktan sonra en geç bir ay içinde kurumlarınca düzenlenecek merasimle yetkili amirlerin huzurunda yemin ederler ve özlük dosyalarına \"Yemin Belgesi\" ni imzalayarak göreve başlarlar.</p><p><b>Yukarıda verilen ifade 657 sayılı Devlet Memurları Kanunu'nda yer alan ödev ve sorumluluklardan hangisinin gereğidir?</b></p>",
     diff: 1,
     expl: "Sadakat. Devlet memurları, Türkiye Cumhuriyeti Anayasası'na ve kanunlarına sadakatle bağlı kalmak ve milletin hizmetinde Türkiye Cumhuriyeti kanunlarını sadakatle uygulamak zorundadırlar. Devlet memurları bu hususu \"Asli Devlet Memurluğuna\" atandıktan sonra en geç bir ay içinde kurumlarınca düzenlenecek merasimle yetkili amirlerin huzurunda yapacakları yeminle belirtirler ve özlük dosyalarına konulacak \"Yemin Belgesi\"ni imzalayarak göreve başlarlar.",
     answers: [
@@ -1613,7 +1613,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre \"Kanunlarda yazılı haller dışında Devlet memurunun memurluğuna son verilmez, aylık ve başka hakları elinden alınamaz.\" hükmü aşağıdaki memurun genel haklarından hangisi kapsamında düzenlenmiştir?</b></p>",
+    text: "<p>657 sayılı Devlet Memurları Kanunu'na göre \"Kanunlarda yazılı haller dışında Devlet memurunun memurluğuna son verilmez, aylık ve başka hakları elinden alınamaz.\"</p><p><b>hükmü aşağıdaki memurun genel haklarından hangisi kapsamında düzenlenmiştir?</b></p>",
     diff: 1,
     expl: "Güvenlik: Madde 18 – Kanunlarda yazılı haller dışında Devlet memurunun memurluğuna son verilmez, aylık ve başka hakları elinden alınamaz.",
     answers: [
@@ -1625,7 +1625,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p>• Devlet memurları herhangi bir siyasi parti, kişi veya zümrenin yararını veya zararını hedef tutan bir davranışta bulunamazlar, hiçbir şekilde siyasi ve ideolojik amaçlı beyanda ve eylemde bulunamazlar.<br>• Devlet memurları Türkiye Cumhuriyeti Anayasası'na ve kanunlarına aykırı olan, memleketin bağımsızlığını ve bütünlüğünü bozan Türkiye Cumhuriyeti'nin güvenliğini tehlikeye düşüren herhangi bir faaliyette bulunamazlar.<br><br><b>657 sayılı Devlet Memurları Kanunu'nun bu hükümleri aşağıdaki ödev ve sorumluluklardan hangisi kapsamında düzenlenmiştir?</b></p>",
+    text: "<p>• Devlet memurları herhangi bir siyasi parti, kişi veya zümrenin yararını veya zararını hedef tutan bir davranışta bulunamazlar, hiçbir şekilde siyasi ve ideolojik amaçlı beyanda ve eylemde bulunamazlar.<br>• Devlet memurları Türkiye Cumhuriyeti Anayasası'na ve kanunlarına aykırı olan, memleketin bağımsızlığını ve bütünlüğünü bozan Türkiye Cumhuriyeti'nin güvenliğini tehlikeye düşüren herhangi bir faaliyette bulunamazlar.</p><p><b>657 sayılı Devlet Memurları Kanunu'nun bu hükümleri aşağıdaki ödev ve sorumluluklardan hangisi kapsamında düzenlenmiştir?</b></p>",
     diff: 1,
     expl: "Tarafsızlık ve devlete bağlılık: Madde 7 - Devlet memurları siyasi partiye üye olamazlar, herhangi bir siyasi parti, kişi veya zümrenin yararını veya zararını hedef tutan bir davranışta bulunamazlar; görevlerini yerine getirirlerken dil, ırk, cinsiyet, siyasi düşünce, felsefi inanç, din ve mezhep gibi ayırım yapamazlar; hiçbir şekilde siyasi ve ideolojik amaçlı beyanda ve eylemde bulunamazlar ve bu eylemlere katılamazlar. Devlet memurları her durumda Devletin menfaatlerini korumak mecburiyetindedirler.",
     answers: [
@@ -1637,7 +1637,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p>Zeynep, bir kamu hastanesinde hemşire olarak çalışmaktadır. Görev yaptığı bir gün, ilaç dağıtımı sırasında karışıklık yaşanır ve bir hasta yanlış ilaç aldığı için zarar görür. Hasta ve ailesi, zararın tazmini için dava açmaya karar verir.<br><br><b>1982 Anayasası'na göre, bu dava;</b><br><br>I. Hemşire Zeynep,<br>II. Hastanenin bağlı olduğu idare,<br>III. Zeynep'in en üst amiri<br><br><b>verilenlerden hangileri aleyhine açılabilir?</b></p>",
+    text: "<p>Zeynep, bir kamu hastanesinde hemşire olarak çalışmaktadır. Görev yaptığı bir gün, ilaç dağıtımı sırasında karışıklık yaşanır ve bir hasta yanlış ilaç aldığı için zarar görür. Hasta ve ailesi, zararın tazmini için dava açmaya karar verir.</p><p><b>1982 Anayasası'na göre, bu dava;</b><br>I. Hemşire Zeynep,<br>II. hastanenin bağlı olduğu idare,<br>III. Zeynep'in en üst amiri</p><p><b>verilenlerden hangileri aleyhine açılabilir?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'nın 129. maddesinin 5. fıkrası, kamu görevlilerinin görevlerinden doğan zararlardan dolayı doğrudan dava açılacak kişi veya kurumu şu şekilde düzenler: \"Memurlar ve diğer kamu görevlilerinin yetkilerini kullanırken işledikleri kusurlardan doğan tazminatlar, ancak idare aleyhine açılacak davayla istenebilir. İdare, ilgiliye rücu eder\".",
     answers: [
@@ -1649,7 +1649,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre, \"memurun yasakları\" başlığı altında düzenlenen konular arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre, \"memurun yasakları\" başlığı altında düzenlenen konular arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Memurun Yasakları şunlardır: Toplu eylem ve hareketlerde bulunma yasağı, Grev yasağı, Ticaret ve diğer kazanç getirici faaliyetlerde bulunma yasağı, Hediye alma, menfaat sağlama yasağı, Gizli bilgileri açıklama yasağı, Denetimindeki teşebbüsten menfaat sağlama yasağı, Siyasi partilere üye olma yasağı. Müracaat, şikâyet ve dava açma ise \"memurun hakları\" başlığı altında düzenlenmiştir.",
     answers: [
@@ -1673,7 +1673,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi Devlet Memurları Kanunu'nda öngörülen hizmet sınıflarından biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Devlet Memurları Kanunu'nda öngörülen hizmet sınıflarından biri <u>değildir</u>?</b></p>",
     diff: 1,
     expl: "Devlet Memurları Kanunu'na tabi kurumlarda çalıştırılan 12 hizmet sınıfı vardır. Bunlar: Genel idare hizmetleri sınıfı, Teknik hizmetler sınıfı, Sağlık ve yardımcı sağlık hizmetleri sınıfı, Eğitim ve öğretim hizmetleri sınıfı, Yardımcı hizmetler sınıfı, Emniyet hizmetleri sınıfı, Din hizmetleri sınıfı, Avukatlık hizmetleri sınıfı, Mülki idare hizmetleri sınıfı, Millî istihbarat hizmetleri sınıfı, Jandarma hizmetleri sınıfı (2016), Sahil güvenlik hizmetleri sınıfı (2016). Hâkimlik hizmetleri sınıfı diye bir sınıf yoktur.",
     answers: [
@@ -1685,7 +1685,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p>Dışişleri Bakanlığında memur olan Ahmet'e arkadaşı Gamze 657 sayılı Kanun'a tabi hizmet sınıflarından hangisinin içinde görev yaptığını soruyor. Ahmet, Gamze'ye cevap olarak benim sınıfım kanunda yönetim, icra, büro ve benzeri hizmetler olarak geçiyor diyor.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre, Ahmet'in görev yaptığı hizmet sınıfı bu Kanun'a tabi aşağıdaki hizmet sınıflarından hangisidir?</b></p>",
+    text: "<p>Dışişleri Bakanlığında memur olan Ahmet'e arkadaşı Gamze 657 sayılı Kanun'a tabi hizmet sınıflarından hangisinin içinde görev yaptığını soruyor. Ahmet, Gamze'ye cevap olarak benim sınıfım kanunda yönetim, icra, büro ve benzeri hizmetler olarak geçiyor diyor.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre, Ahmet'in görev yaptığı hizmet sınıfı bu Kanun'a tabi aşağıdaki hizmet sınıflarından hangisidir?</b></p>",
     diff: 1,
     expl: "Genel İdare Hizmetleri Sınıfı: Bu Kanunun kapsamına dahil kurumlarda yönetim, icra, büro ve benzeri hizmetleri gören ve bu Kanunla tespit edilen diğer sınıflara girmeyen memurlar Genel İdare Hizmetleri sınıfını teşkil eder.",
     answers: [
@@ -1697,7 +1697,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre, aşağıdakilerden hangisi istisnai memurlardan biri değildir?</b></p>",
+    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre, aşağıdakilerden hangisi istisnai memurlardan biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Kaymakamlık meslek memurluğudur. Kaymakam olmak için yazılı sınava girme şartı vardır ve kaymakamlık güvenceli memuriyettir. Valiler, büyükelçiler, TBMM memurları, Cumhurbaşkanlığı memurları, MİT memurları, bakan yardımcıları istisnai memur kadrolarıdır.",
     answers: [
@@ -1709,7 +1709,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p>Çekilen devlet memurlarından devir ve teslim ile yükümlü olanlar, bu işlemlerin sonuna kadar görevlerini bırakamazlar.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre, bu kurala aykırı davrananlar ne kadar süre geçmeden Devlet memurluğuna yeniden alınamazlar?</b></p>",
+    text: "<p>Çekilen devlet memurlarından devir ve teslim ile yükümlü olanlar, bu işlemlerin sonuna kadar görevlerini bırakamazlar.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre, bu kurala aykırı davrananlar ne kadar süre geçmeden Devlet memurluğuna yeniden <u>alınamazlar</u>?</b></p>",
     diff: 2,
     expl: "Çekilen devlet memurlarından devir ve teslim ile yükümlü olanlar, bu işlemlerin sonuna kadar görevlerini bırakamazlar. Bu maddede yazılı zorunluluklara uymayanlar 3 yıl geçmeden devlet memurluğuna alınamazlar.",
     answers: [
@@ -1721,7 +1721,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre, \"yıllık izinlerin kullanılması\" ile ilgili aşağıda verilen ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre, \"yıllık izinlerin kullanılması\" ile ilgili aşağıda verilen ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Yıllık izinler, amirin uygun bulacağı zamanlarda, toptan veya ihtiyaca göre kısım kısım kullanılabilir. Birbirini izleyen iki yılın izni bir arada kullanılabilir. Cari yıl ile bir önceki yıl hariç, önceki yıllara ait kullanılmayan izin hakları düşer. Dolayısıyla kullanılmayan izinlerin hiçbir şekilde devredilemeyeceği ifadesi yanlıştır, bir önceki yılın izni cari yıla devredilebilir.",
     answers: [
@@ -1733,7 +1733,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p>Millî Eğitim Bakanlığında öğretmen olarak görev yapan Fatma, analık iznine ayrılır. Ancak analık izninin bitmesine iki hafta kala erken doğum yapar.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre Fatma, doğumdan sonra ne kadar süre analık izni kullanabilir?</b></p>",
+    text: "<p>Millî Eğitim Bakanlığında öğretmen olarak görev yapan Fatma, analık iznine ayrılır. Ancak analık izninin bitmesine iki hafta kala erken doğum yapar.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre Fatma, doğumdan sonra ne kadar süre analık izni kullanabilir?</b></p>",
     diff: 3,
     expl: "Kadın memura; doğumdan önce 8, doğumdan sonra 8 hafta olmak üzere toplam 16 hafta süreyle analık izni verilir. Doğumun erken gerçekleşmesi sebebiyle, doğum öncesi analık izninin kullanılamayan bölümü de doğum sonrası analık izni süresine ilave edilir. Doğumdan önce kullanılamayan 2 hafta, doğum sonrası 8 haftaya ekleneceğinden toplam 10 hafta analık izni kullanabilir.",
     answers: [
@@ -1763,7 +1763,7 @@ export const VAT_IDARE_HUKUKU_TEST_9: McQ[] = [
 // ============================================================================
 export const VAT_IDARE_HUKUKU_TEST_10: McQ[] = [
   {
-    text: "<p>06.11.2025'te Millî Eğitim Bakanlığına öğretmen olarak atanan Fuat, göreve başlarken mal bildiriminde bulunur.<br><br><b>3628 sayılı Mal Bildirimi ve Yolsuzlukla Mücadele Kanunu'na göre, Fuat'ın bu süreç içerisinde mal varlığında önemli bir değişiklik olmadığı düşünüldüğünde, mal bildirimini en geç aşağıdaki tarihlerden hangisinde yenilemesi gerekir?</b></p>",
+    text: "<p>06.11.2025'te Millî Eğitim Bakanlığına öğretmen olarak atanan Fuat, göreve başlarken mal bildiriminde bulunur.</p><p><b>3628 sayılı Mal Bildirimi ve Yolsuzlukla Mücadele Kanunu'na göre, Fuat'ın bu süreç içerisinde mal varlığında önemli bir değişiklik olmadığı düşünüldüğünde, mal bildirimini <u>en geç</u> aşağıdaki tarihlerden hangisinde yenilemesi gerekir?</b></p>",
     diff: 2,
     expl: "Bu kanun kapsamındaki görevlere devam edenler, sonu (0) ve (5) ile biten yılların en geç şubat ayı sonuna kadar bildirimlerini yenilerler. 06.11.2025 tarihinde mal bildiriminde bulunan Fuat, sonu 0 veya 5 ile biten bir tarihte mal beyanında bulunacaktır. Bu tarih de sonu 0 ile biten 2030 yılının şubat ayı sonu, yani 25.02.2030'dur.",
     answers: [
@@ -1775,7 +1775,7 @@ export const VAT_IDARE_HUKUKU_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>Denizli Valiliğinde nüfus memuru olarak görev yapan M'nin 12 gün boyunca kesintisiz ve özürsüz olarak göreve gelmediği tespit edilir.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre memur M için aşağıdakilerden hangisi doğrudur?</b></p>",
+    text: "<p>Denizli Valiliğinde nüfus memuru olarak görev yapan M'nin 12 gün boyunca kesintisiz ve özürsüz olarak göreve gelmediği tespit edilir.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre memur M için aşağıdakilerden hangisi doğrudur?</b></p>",
     diff: 2,
     expl: "657 sayılı DMK'ya göre bir memur; 1 ila 2 gün göreve mazeretsiz gelmez ise aylıktan kesme disiplin cezası, 3 ila 9 gün göreve gelmez ise kademe ilerlemesinin durdurulması disiplin cezası alır. Mazeretsiz veya kurumlarınca kabul edilen mazereti olmaksızın görevin terk edilmesi ve bu terkin kesintisiz 10 gün devam etmesi hâlinde, yazılı müracaat şartı aranmaksızın çekilmiş sayılır. 12 gün kesintisiz ve özürsüz göreve gelmeyen M, çekilmiş sayılır.",
     answers: [
@@ -1787,7 +1787,7 @@ export const VAT_IDARE_HUKUKU_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>Özel bir iş yerinde çalışan Ali, arkadaşı Mert'e devlet memurluğunun haftalık çalışma süresi bakımından kendi çalışma koşullarından daha avantajlı olduğunu söyler.<br><br><b>Devlet Memurları Kanunu'na göre, memurların haftalık çalışma süresi genel olarak kaç saattir?</b></p>",
+    text: "<p>Özel bir iş yerinde çalışan Ali, arkadaşı Mert'e devlet memurluğunun haftalık çalışma süresi bakımından kendi çalışma koşullarından daha avantajlı olduğunu söyler.</p><p><b>Devlet Memurları Kanunu'na göre, memurların haftalık çalışma süresi genel olarak kaç saattir?</b></p>",
     diff: 1,
     expl: "Memurların haftalık çalışma süresi genel olarak 40 saattir. Bu süre cumartesi ve pazar günleri tatil olmak üzere düzenlenir.",
     answers: [
@@ -1811,7 +1811,7 @@ export const VAT_IDARE_HUKUKU_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>Fikret, memura verilen disiplin cezalarını aşağıdaki gibi deftere not alıyor.<br><br><i>(Not defteri: 657 sayılı Devlet Memurları Kanunu'na göre, memura verilebilecek disiplin cezaları: Görevden uzaklaştırma, Sürgün, Yer değiştirme, Alt düzeydeki bir göreve atanma, Kademe ilerlemesinin durdurulması)</i><br><br><b>Buna göre Fikret, 657 sayılı Devlet Memurları Kanunu'nda yer alan disiplin cezalarından hangisini doğru yazmıştır?</b></p>",
+    text: "<p>Fikret, memura verilen disiplin cezalarını aşağıdaki gibi deftere not alıyor.</p><p>657 sayılı Devlet Memurları Kanunu'na göre, memura verilebilecek disiplin cezaları aşağıdaki gibidir.<br>• Görevden uzaklaştırma<br>• Sürgün<br>• Yer değiştirme<br>• Alt düzeydeki bir göreve atanma<br>• Kademe ilerlemesinin durdurulması</p><p><b>Buna göre Fikret, 657 sayılı Devlet Memurları Kanunu'nda yer alan disiplin cezalarından hangisini doğru yazmıştır?</b></p>",
     diff: 2,
     expl: "657 sayılı DMK'ya göre memurlara verilebilecek disiplin cezaları beş tanedir: uyarma, kınama, aylıktan kesme, kademe ilerlemesinin durdurulması ve memurluktan çıkarmadır. Fikret'in not defterinde yalnızca 'kademe ilerlemesinin durdurulması' doğru yazılmıştır. Görevden uzaklaştırma bir disiplin cezası değil ihtiyati tedbirdir; sürgün, yer değiştirme ve alt düzeydeki göreve atanma ise 657 sayılı Kanun'da yer almayan ifadelerdir.",
     answers: [
@@ -1823,7 +1823,7 @@ export const VAT_IDARE_HUKUKU_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>Ferit, devlete ait resmî belge, araç, gereç ve benzerlerini özel menfaat sağlamak için kullanmaktan aylıktan kesme disiplin cezası alıyor.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre, aylıktan kesme memurun brüt aylığının kaçta kaçında kesinti yapılmasıdır?</b></p>",
+    text: "<p>Ferit, devlete ait resmî belge, araç, gereç ve benzerlerini özel menfaat sağlamak için kullanmaktan aylıktan kesme disiplin cezası alıyor.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre, aylıktan kesme memurun brüt aylığının kaçta kaçında kesinti yapılmasıdır?</b></p>",
     diff: 2,
     expl: "Aylıktan kesme: Memurun brüt aylığından 1/30 – 1/8 arasında kesinti yapılmasıdır.",
     answers: [
@@ -1835,7 +1835,7 @@ export const VAT_IDARE_HUKUKU_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>M, özürsüz olarak 3-9 gün göreve gelmemekten dolayı kademe ilerlemesinin durdurulması cezası alıyor.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre, kademe ilerlemesinin durdurulması cezası verilen M'nin bulunduğu kademede ilerlemesi en fazla kaç yıl durdurulabilir?</b></p>",
+    text: "<p>M, özürsüz olarak 3-9 gün göreve gelmemekten dolayı kademe ilerlemesinin durdurulması cezası alıyor.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre, kademe ilerlemesinin durdurulması cezası verilen M'nin bulunduğu kademede ilerlemesi <u>en fazla</u> kaç yıl durdurulabilir?</b></p>",
     diff: 2,
     expl: "Kademe ilerlemesinin durdurulması: Fiilin ağırlık derecesine göre memurun, bulunduğu kademede ilerlemesinin 1-3 yıl durdurulmasıdır.",
     answers: [
@@ -1871,7 +1871,7 @@ export const VAT_IDARE_HUKUKU_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>Aylıktan kesme cezası ile tecziye edilenler ____ yıl, kademe ilerlemesinin durdurulması cezası ile tecziye edilenler ____ yıl boyunca daire başkanı kadrolarına, daire başkanı kadrosunun dengi ve daha üstü kadrolara, bölge ve il teşkilatlarının en üst yönetici kadrolarına, düzenleyici ve denetleyici kurumların başkanlık ve üyeliklerine, vali ve büyükelçi kadrolarına atanamazlar.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre, yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>Aylıktan kesme cezası ile tecziye edilenler ---- yıl, kademe ilerlemesinin durdurulması cezası ile tecziye edilenler ---- yıl boyunca daire başkanı kadrolarına, daire başkanı kadrosunun dengi ve daha üstü kadrolara, bölge ve il teşkilatlarının en üst yönetici kadrolarına, düzenleyici ve denetleyici kurumların başkanlık ve üyeliklerine, vali ve büyükelçi kadrolarına atanamazlar.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre, yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 3,
     expl: "657 sayılı DMK'ya göre aylıktan kesme cezası ile tecziye edilenler 5 yıl, kademe ilerlemesinin durdurulması cezası ile tecziye edilenler 10 yıl boyunca ilgili kadrolara atanamazlar.",
     answers: [
@@ -1883,7 +1883,7 @@ export const VAT_IDARE_HUKUKU_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>Devlete ait resmî belge, araç, gereç ve benzerlerini özel menfaat sağlamak için kullanması nedeniyle okul müdürü Nazlı'ya aylıktan kesme disiplin cezası verilmiştir.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre Nazlı; bu cezanın uygulanmasından başlayarak en az kaç yıl sonra atamaya yetkili amirine başvurarak özlük dosyasından silinmesini isteyebilir?</b></p>",
+    text: "<p>Devlete ait resmî belge, araç, gereç ve benzerlerini özel menfaat sağlamak için kullanması nedeniyle okul müdürü Nazlı'ya aylıktan kesme disiplin cezası verilmiştir.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre Nazlı; bu cezanın uygulanmasından başlayarak <u>en az</u> kaç yıl sonra atamaya yetkili amirine başvurarak özlük dosyasından silinmesini isteyebilir?</b></p>",
     diff: 2,
     expl: "Disiplin cezaları memurun özlük dosyasına işlenir. Devlet memurluğundan çıkarma cezasından başka bir disiplin cezasına çarptırılmış olan memur; uyarma ve kınama cezalarının uygulanmasından 5 sene, diğer cezaların uygulanmasından 10 sene sonra atamaya yetkili amire başvurarak, verilmiş olan cezalarının özlük dosyasından silinmesini isteyebilir. Aylıktan kesme 'diğer cezalar' kapsamında olduğundan 10 yıl gerekir.",
     answers: [
@@ -1895,7 +1895,7 @@ export const VAT_IDARE_HUKUKU_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>Gümrük memuru A, zimmetine para geçirmekten hakkında açılan ceza soruşturması nedeniyle görevden uzaklaştırılıyor.<br><br><b>657 sayılı Devlet Memurları Kanunu'na göre, görevden uzaklaştırılan memur A'ya bu süre içinde aylığının ne kadarı ödenir?</b></p>",
+    text: "<p>Gümrük memuru A, zimmetine para geçirmekten hakkında açılan ceza soruşturması nedeniyle görevden uzaklaştırılıyor.</p><p><b>657 sayılı Devlet Memurları Kanunu'na göre, görevden uzaklaştırılan memur A'ya bu süre içinde aylığının ne kadarı ödenir?</b></p>",
     diff: 2,
     expl: "Görevden uzaklaştırılan ve görevi ile ilgili olsun veya olmasın herhangi bir suçtan tutuklanan veya gözaltına alınan memurlara bu süre içinde aylıklarının üçte ikisi ödenir.",
     answers: [
@@ -1907,7 +1907,7 @@ export const VAT_IDARE_HUKUKU_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>Devlet Memurları Kanunu'na göre, devlet memuru hakkında savunması alınmadan disiplin cezası verilemez.<br><br><b>Buna göre savunma için devlet memuruna tanınacak en az süre aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Devlet Memurları Kanunu'na göre, devlet memuru hakkında savunması alınmadan disiplin cezası verilemez.</p><p><b>Buna göre savunma için devlet memuruna tanınacak <u>en az</u> süre aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Soruşturmayı yapan veya yetkili disiplin kurulunun 7 günden az olmamak üzere verdiği süre içinde veya belirtilen bir tarihte savunmasını yapmayan memur, savunma hakkından vazgeçmiş sayılır.",
     answers: [
@@ -1931,9 +1931,9 @@ export const VAT_IDARE_HUKUKU_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre memurların,</b><br>I. görevden uzaklaştırılmaları,<br>II. kadrolarının kaldırılması,<br>III. emekliliğe ayrılma<br><br><b>hâllerinin hangilerinde memurluk sona erer?</b></p>",
+    text: "<p><b>657 sayılı Devlet Memurları Kanunu'na göre memurların,</b><br>I. görevden uzaklaştırılmaları,<br>II. kadrolarının kaldırılması,<br>III. emekliliğe ayrılma</p><p><b>hâllerinin hangilerinde memurluk sona erer?</b></p>",
     diff: 2,
-    expl: "Devlet memurluğunu sona erdiren hâller: ölüm, emeklilik, memurluktan çıkarılma, bağdaşmazlık, koşullarda eksiklik, çekilmiş sayılma ve çekilmedir. Görevden uzaklaştırma memuruluğu sona erdirmez; kadrolarının kaldırılması da memuruluğu sona erdirmez (memur başka kadroya atanır). Emekliliğe ayrılma ise memuruluğu sona erdirir. Dolayısıyla yalnızca III memuruluğu sona erdirir.",
+    expl: "Devlet memurluğunu sona erdiren hâller: ölüm, emeklilik, memurluktan çıkarılma, bağdaşmazlık, koşullarda eksiklik, çekilmiş sayılma ve çekilmedir. Görevden uzaklaştırma memurluğu sona erdirmez; kadrolarının kaldırılması da memurluğu sona erdirmez (memur başka kadroya atanır). Emekliliğe ayrılma ise memurluğu sona erdirir. Dolayısıyla yalnızca III memurluğu sona erdirir.",
     answers: [
       { text: "Yalnız II", ok: false },
       { text: "Yalnız III", ok: true },

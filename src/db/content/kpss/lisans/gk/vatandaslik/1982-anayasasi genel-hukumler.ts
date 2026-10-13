@@ -5,7 +5,7 @@ import type { McQ } from "../../../../types";
 // ============================================================================
 export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
   {
-    text: "<p><b>Aşağıdaki ifadelerden hangisi 1982 Anayasası'nın başlangıç kısmında yer alan temel ilkelerden biri değildir?</b></p>",
+    text: "<p><b>Aşağıdaki ifadelerden hangisi 1982 Anayasası'nın başlangıç kısmında yer alan temel ilkelerden biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "1982 Anayasası'nın başlangıç metninde; Atatürk inkılaplarına bağlılık, laik Cumhuriyet, kuvvetler ayrılığı, millî egemenlik, yurtta sulh cihanda sulh ve Türk varlığının bölünmezliği ilkeleri yer alır. 'Yürütme organının tek başlı olması' (2017 değişikliğiyle gelse de) Anayasa'nın başlangıç metni ilkeleri arasında sayılmaz; kuvvetler ayrılığı vurgulanır.",
     answers: [
@@ -17,7 +17,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Anayasa metnine dâhil değildir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi Anayasa metnine dâhil <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Anayasa metninin dayandığı felsefeyi gösteren Başlangıç metni ve geçici/son hükümler Anayasa metnine dâhildir. Ancak maddelerin konusunu veya bağlantılarını gösteren 'Madde kenar başlıkları' sadece okumayı kolaylaştıran etiketlerdir ve anayasa metnine (hükmüne) dâhil değildir.",
     answers: [
@@ -34,14 +34,14 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     expl: "1982 Anayasası'nın değiştirilemez 1. Maddesi devletin şeklini belirler. O hüküm şöyledir: 'Türkiye Devleti bir Cumhuriyettir.' Diğer özellikler (demokratik, laik, vb.) Cumhuriyetin nitelikleridir.",
     answers: [
       { text: "Türkiye Devleti'nin başkenti Ankara'dır.", ok: false },
-      { text: "Türkiye devleti bir Cumhuriyettir.", ok: true },
+      { text: "Türkiye devleti bir Cumhuriyet'tir.", ok: true },
       { text: "Demokratik devlet", ok: false },
       { text: "Millî egemenlik", ok: false },
       { text: "Türkiye Devleti ülkesi ve milletiyle bölünemez bir bütündür.", ok: false }
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, Cumhuriyet'in nitelikleri arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, Cumhuriyet'in nitelikleri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Anayasanın 2. Maddesi Cumhuriyetin niteliklerini sayar: İnsan haklarına saygılı, demokratik, laik, sosyal bir hukuk devletidir. Türkiye Devleti kuvvetler birliğine değil, 'kuvvetler ayrılığı' ilkesine dayanır.",
     answers: [
@@ -53,7 +53,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nın 3. maddesinde aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>1982 Anayasası'nın 3. maddesinde aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Anayasanın değiştirilemez 3. Maddesi şunları kapsar: Devletin bütünlüğü (bölünmezlik), resmî dilin Türkçe olması, bayrağın ay yıldızlı al bayrak olması, millî marşın İstiklal Marşı olması ve başkentin Ankara olması. Vatandaşlık tanımı ise 66. Maddede düzenlenmiştir.",
     answers: [
@@ -65,7 +65,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nın 3. maddesinde yer alan \"Türkiye devleti ülkesi ve milletiyle bölünemez bir bütündür.\" ifadesi;</b></p><ul><li>I. Atatürk milliyetçiliği,</li><li>II. laik devlet,</li><li>III. üniter devlet</li></ul><p><b>hangi ilkeler ile ilişkilidir?</b></p>",
+    text: "<p><b>1982 Anayasası'nın 3. maddesinde yer alan \"Türkiye devleti ülkesi ve milletiyle bölünemez bir bütündür.\" ifadesi;</b><br><br>I. Atatürk milliyetçiliği,<br>II. laik devlet,<br>III. üniter devlet<br><br><b>hangi ilkeler ile ilişkilidir?</b></p>",
     diff: 3,
     expl: "Bölünmez bütünlük ilkesi, ülkenin eyaletlere veya bölgelere bölünemeyeceğini belirten 'Üniter devlet' yapısının temelidir. Aynı zamanda ülkedeki tüm vatandaşların tek bir ulus (millet) olduğunu savunan 'Atatürk milliyetçiliği' ile doğrudan bağlantılıdır.",
     answers: [
@@ -77,7 +77,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nın ilgili maddelerinin değiştirilmesine ilişkin verilen bir teklifin konusu;</b></p><ul><li>I. millî marş,</li><li>II. egemenlik yetkisi,</li><li>III. resmî dil,</li><li>IV. kanun önünde eşitlik ilkesi,</li><li>V. devletin şekli</li></ul><p><b>verilenlerden hangileri olabilir?</b></p>",
+    text: "<p><b>1982 Anayasası'nın ilgili maddelerinin değiştirilmesine ilişkin verilen bir teklifin konusu;</b><br><br>I. millî marş,<br>II. egemenlik yetkisi,<br>III. resmî dil,<br>IV. kanun önünde eşitlik ilkesi,<br>V. devletin şekli<br><br><b>verilenlerden hangileri olabilir?</b></p>",
     diff: 3,
     expl: "Anayasa m.4 uyarınca ilk üç madde (Devletin şekli, Cumhuriyetin nitelikleri, dil, bayrak, marş, başkent) değiştirilemez ve değiştirilmesi dahi teklif edilemez. Dolayısıyla I (marş), III (dil) ve V (devletin şekli) teklif edilemez. Ancak Egemenlik (m.6) ve Eşitlik (m.10) ilkeleri ilk üç maddede yer almadığı için anayasa değişikliğine konu olabilir.",
     answers: [
@@ -89,7 +89,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>1982 Anayasası'nın 37. maddesine göre: <i>\"Hiç kimse kanunen tabi olduğu mahkemeden başka bir merci önüne çıkarılamaz\".</i></p><p><b>Bu hüküm aşağıda verilen hukuk devleti ilkelerinden hangisini güvence altına almaktadır?</b></p>",
+    text: "<p>1982 Anayasası'nın 37. maddesine göre: \"Hiç kimse kanunen tabi olduğu mahkemeden başka bir merci önüne çıkarılamaz\".</p><p><b>Bu hüküm aşağıda verilen hukuk devleti ilkelerinden hangisini güvence altına almaktadır?</b></p>",
     diff: 2,
     expl: "Bu ifade, uyuşmazlıklar yaşanmadan önce, herkes için geçerli soyut kurallarla belirlenmiş, tarafsız mahkemelerde yargılanma hakkı olan 'Kanuni Hâkim Güvencesi (Doğal Hâkim)' ilkesini tanımlar. Bu sayede kişiye özel mahkeme (olağanüstü merci) kurulamaz.",
     answers: [
@@ -101,7 +101,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>1982 Anayasası'nın 11. maddesine göre: <i>\"Anayasa hükümleri, yasama, yürütme ve yargı organlarını, idare makamlarını ve diğer kuruluş ve kişileri bağlayan temel hukuk kurallarıdır. Kanunlar anayasaya aykırı olamaz.\"</i></p><p><b>Hükmü aşağıdakilerden hangisini güvence altına almaktadır?</b></p>",
+    text: "<p>1982 Anayasası'nın 11. maddesine göre: \"Anayasa hükümleri, yasama, yürütme ve yargı organlarını, idare makamlarını ve diğer kuruluş ve kişileri bağlayan temel hukuk kurallarıdır. Kanunlar anayasaya aykırı olamaz.\"</p><p><b>Hükmü aşağıdakilerden hangisini güvence altına almaktadır?</b></p>",
     diff: 2,
     expl: "Anayasa madde 11, normlar hiyerarşisinde Anayasa'nın en üstte bulunduğunu ve her türlü kanunun, kurumun ve yasanın ona uymak zorunda olduğunu anlatan 'Anayasanın üstün ve bağlayıcı olması' ilkesidir.",
     answers: [
@@ -113,7 +113,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Türk Milleti, egemenliğini, <b>----</b> koyduğu esaslara göre, <b>----</b> eliyle kullanır.</p><p><b>1982 Anayasası'na göre, yukarıda boş bırakılan yerlere sırasıyla aşağıdakilerden hangisi getirilmelidir?</b></p>",
+    text: "<p>Türk Milleti, egemenliğini, ---- koyduğu esaslara göre, ---- eliyle kullanır.</p><p><b>1982 Anayasası'na göre, yukarıda boş bırakılan yerlere sırasıyla aşağıdakilerden hangisi getirilmelidir?</b></p>",
     diff: 2,
     expl: "Anayasanın 6. maddesinde yer alan ifadeye göre: 'Türk Milleti, egemenliğini, anayasanın koyduğu esaslara göre, yetkili organları eliyle kullanır.' Bu ifade kuvvetler ayrılığı prensibinin bir sonucudur.",
     answers: [
@@ -125,7 +125,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. Yasama</li><li>II. Yürütme</li><li>III. Yargı</li></ul></p><p><b>1982 Anayasası'nda yukarıdakilerden hangileri hem yetki hem de görev olarak düzenlenmiştir?</b></p>",
+    text: "<p>I. Yasama<br>II. Yürütme<br>III. Yargı</p><p><b>1982 Anayasası'nda yukarıdakilerden hangileri hem yetki hem de görev olarak düzenlenmiştir?</b></p>",
     diff: 3,
     expl: "1982 Anayasası'nda Yasama (m.7) ve Yargı (m.9) sadece bir 'yetki' olarak verilmiştir. Ancak Yürütme (m.8); Cumhurbaşkanı tarafından anayasa ve kanunlara uygun olarak kullanılan ve yerine getirilen bir 'yetki ve görev' olarak düzenlenmiştir.",
     answers: [
@@ -137,7 +137,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi Anayasa'nın 10. maddesinde pozitif ayrımcılık yapılabilecek kesimler arasında belirtilmemiştir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi Anayasa'nın 10. maddesinde pozitif ayrımcılık yapılabilecek kesimler arasında <u>belirtilmemiştir</u>?</b></p>",
     diff: 2,
     expl: "Anayasa m.10'a göre korunması gereken (pozitif ayrımcılık sağlanan) dezavantajlı gruplar; kadınlar, çocuklar, yaşlılar, engelliler (özürlüler), harp ve vazife şehitlerinin dul ve yetimleri ile maluller ve gazilerdir. Sanatçılar bu kapsamda değildir.",
     answers: [
@@ -149,7 +149,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Fizik öğretmeni Defne'ye öğretmenliğe giriş mülakat sınavında Anayasası'nın ilk üç maddesine ilişkin sorular sorulmuştur.</p><p><b>Buna göre aşağıdakilerden hangisi 1982 Anayasası'nın ilk üç maddesine ilişkin Defne'nin vereceği bilgiler arasında yer almaz?</b></p>",
+    text: "<p>Fizik öğretmeni Defne'ye öğretmenliğe giriş mülakat sınavında Anayasa'nın ilk üç maddesine ilişkin sorular sorulmuştur.</p><p><b>Buna göre aşağıdakilerden hangisi 1982 Anayasası'nın ilk üç maddesine ilişkin Defne'nin vereceği bilgiler arasında <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "İlk üç madde şunları içerir: Devletin şekli (Cumhuriyet), Cumhuriyetin nitelikleri (Hukuk devleti, sosyal, laik, demokratik), Üniter yapı (Bölünmez bütünlük), Başkent, Bayrak, Marş ve Dil. 'Kanun önünde eşitlik' ilkesi ise ilk üç maddede değil, 10. maddede düzenlenmiştir.",
     answers: [
@@ -161,19 +161,19 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>1982 Anayasası'nın 2. maddesinde Cumhuriyet'in nitelikleri madde kenar başlığı ile düzenlenen hükümde; <i>\"Türkiye Cumhuriyeti, toplumun huzuru, millî dayanışma ve adalet anlayışı içinde, insan haklarına saygılı, Atatürk milliyetçiliğine bağlı, başlangıçta belirtilen temel ilkelere dayanan, demokratik, laik ve sosyal bir <b>----</b> Devletidir.\"</i> şeklinde belirtilmiştir.</p><p><b>Buna göre yukarıda boş bırakılan yere hangisi getirilebilir?</b></p>",
+    text: "<p>1982 Anayasası'nın 2. maddesinde Cumhuriyet'in nitelikleri madde kenar başlığı ile düzenlenen hükümde; \"Türkiye Cumhuriyeti, toplumun huzuru, millî dayanışma ve adalet anlayışı içinde, ---- Devletidir.\" şeklinde belirtilmiştir.</p><p><b>Buna göre yukarıda boş bırakılan yere hangisi getirilebilir?</b></p>",
     diff: 2,
-    expl: "İlgili cümlenin tam hâli '...demokratik, laik ve sosyal bir Hukuk Devletidir.' şeklindedir. Cumhuriyetin 4 temel niteliği (insan haklarına saygılı, demokratik, laik, sosyal, hukuk devleti) burada sayılmıştır.",
+    expl: "Anayasa'nın 2. maddesine göre Türkiye Cumhuriyeti, toplumun huzuru, millî dayanışma ve adalet anlayışı içinde, insan haklarına saygılı, Atatürk milliyetçiliğine bağlı, başlangıçta belirtilen temel ilkelere dayanan, demokratik, laik ve sosyal bir hukuk devletidir. Boşluğa seçenekler arasından yalnızca maddede sayılan 'demokratik' niteliği getirilebilir; federatif, liberal ve halkçı nitelikleri maddede yer almaz, 'insan haklarına dayalı' ifadesi de maddedeki 'insan haklarına saygılı' ifadesinden farklıdır.",
     answers: [
       { text: "Federatif", ok: false },
       { text: "Liberal", ok: false },
       { text: "İnsan haklarına dayalı", ok: false },
-      { text: "Demokratik", ok: false },
-      { text: "Hukuk", ok: true }
+      { text: "Demokratik", ok: true },
+      { text: "Halkçı", ok: false }
     ]
   },
   {
-    text: "<p>Zeynep, derste yazılanları defterine aşağıdaki gibi not alıyor:</p><ul><li>Türkiye Devleti, ülkesi ve milletiyle bölünmez bir bütündür.</li><li>Dili Türkçedir.</li><li>Bayrağı, şekli kanununda belirtilen, beyaz ay yıldızlı al bayraktır.</li><li>Millî marşı \"İstiklal Marşı\"dır.</li><li>Başkenti Ankara'dır.</li></ul><p><b>Zeynep'in defterine not aldığı yukarıdaki ifadeler 1982 Anayasası'nın hangi maddesinde düzenlenmiştir?</b></p>",
+    text: "<p>Zeynep, derste yazılanları defterine aşağıdaki gibi not alıyor.</p><p>• Türkiye Devleti, ülkesi ve milletiyle bölünmez bir bütündür.<br>• Dili Türkçedir.<br>• Bayrağı, şekli kanununda belirtilen, beyaz ay yıldızlı al bayraktır.<br>• Millî marşı \"İstiklal Marşı\"dır.<br>• Başkenti Ankara'dır.</p><p><b>Zeynep'in defterine not aldığı yukarıdaki ifadeler 1982 Anayasası'nın hangi maddesinde düzenlenmiştir?</b></p>",
     diff: 2,
     expl: "Devletin bütünlüğü, bayrağı, resmî dili, millî marşı ve başkenti; 1982 Anayasası'nın değiştirilemez olan 3. maddesinde düzenlenmiştir.",
     answers: [
@@ -185,7 +185,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi sosyal devletin hukuki yöntemlerinden biri değildir?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi sosyal devletin hukuki yöntemlerinden biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Sosyal devleti gerçekleştirme araçları (yöntemleri) şunlardır: Vergi adaleti (artan oranlı vergi), kamulaştırma, devletleştirme, planlama ve vatandaşlara sosyal haklar tanınmasıdır. 'Tahkim' ise hukuki bir uyuşmazlık çözüm yoludur, sosyal devlet yöntemi değildir.",
     answers: [
@@ -203,7 +203,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_1: McQ[] = [
 // ============================================================================
 export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
   {
-    text: "<p>Danıştay bir içtihadında \"Anadolu Liselerine girişte kız öğrencilere 3 puan eklenmesi yönündeki yönetmelik değişikliğini eşitlik ilkesine aykırı bulmayarak, Türk toplum yapısı, gelenek ve görenekleri göz önünde bulundurulduğunda kız öğrencilere adı geçen okullarda öncelik tanınmasının Anayasa ve Temel Eğitim Yasası'nda amaçlanan okuma ve fırsat eşitliği ilkelerini zedelemeyeceğine\" şeklinde karar vermiştir.</p><p><b>Buna göre Danıştayın bahsettiği hukuk kavramı aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Danıştay bir içtihadında \"Anadolu Liselerine girişte kız öğrencilere 3 puan eklenmesi yönündeki yönetmelik değişikliğini eşitlik ilkesine aykırı bulmayarak, Türk toplum yapısı, gelenek ve görenekleri göz önünde bulundurulduğunda kız öğrencilere adı geçen okullarda öncelik tanınmasının Anayasa ve Temel Eğitim Yasası'nda amaçlanan okuma ve fırsat eşitliği ilkelerini zedelediğinden söz edilemeyeceğine\" şeklinde karar vermiştir.</p><p><b>Buna göre Danıştayın bahsettiği hukuk kavramı aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Danıştay kararında, kız öğrencilerin dezavantajlı durumunu gidermek amacıyla yapılan düzenlemenin anayasal eşitlik ilkesini zedelemeyeceği ifade edilmiştir. Bu yaklaşım, eşitliği mutlak bir aynılaştırma olarak değil, dezavantajlı grupları korumayı amaçlayan pozitif ayrımcılık anlayışıyla ele alır. Bu ilke, Anayasa'nın 10. maddesinin son fıkrasında da açıkça düzenlenmiştir.",
     answers: [
@@ -215,7 +215,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası madde 6'ya göre</b></p><ul><li>Türk milleti, egemenliğini, Anayasa'nın koyduğu esaslara göre, yetkili organları eliyle kullanır.</li><li>hiçbir kimse veya organ kaynağını Anayasa'dan almayan bir devlet yetkisi kullanamaz.</li></ul><p><b>ifadeleri sırasıyla aşağıdaki kavramlardan hangilerine denk gelmektedir?</b></p>",
+    text: "<p><b>1982 Anayasası madde 6'ya göre</b><br><br>• Türk milleti, egemenliğini, Anayasa'nın koyduğu esaslara göre, yetkili organları eliyle kullanır.<br>• hiçbir kimse veya organ kaynağını Anayasa'dan almayan bir devlet yetkisi kullanamaz.<br><br><b>ifadeleri sırasıyla aşağıdaki kavramlardan hangilerine denk gelmektedir?</b></p>",
     diff: 3,
     expl: "Birinci cümlede egemenliğin millete ait olduğu ve bunun yetkili organlar (Yasama, Yürütme, Yargı) eliyle kullanılacağı ifade edilmektedir. Bu doğrudan 'kuvvetler ayrılığı' ilkesini karşılar. İkinci cümlede ise hiçbir kimsenin veya organın Anayasa'da öngörülmeyen yetkiyi kullanamayacağı vurgulanmaktadır. Bu, yetkinin kaynağının kanun/anayasa olması gerektiğini, yani 'idarenin kanuniliğini' gösterir.",
     answers: [
@@ -227,7 +227,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Danıştay verdiği bir kararda şu unsurları bir arada değerlendirerek bir anayasal ilkenin varlığına vurgu yapmıştır:</p><ul><li>Temel hak ve özgürlüklerin güvence altına alınması,</li><li>Kanunların Anayasaya uygunluğunun yargısal denetimi,</li><li>İdarenin hukuka bağlılığı ve yargı denetimi,</li><li>Kuvvetler ayrılığı ve yargı bağımsızlığı,</li><li>Devletin mali sorumluluğu ve demokratik rejim.</li></ul><p><b>Danıştayın bu ifadeleriyle vurgu yaptığı anayasal ilke aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Danıştay verdiği bir kararda şu unsurları bir arada değerlendirerek bir anayasal ilkenin varlığına vurgu yapmıştır:<br>• Temel hak ve özgürlüklerin güvence altına alınması,<br>• Kanunların Anayasaya uygunluğunun yargısal denetimi,<br>• İdarenin hukuka bağlılığı ve yargı denetimi,<br>• Kuvvetler ayrılığı ve yargı bağımsızlığı,<br>• Devletin mali sorumluluğu ve demokratik rejim.</p><p><b>Danıştay'ın bu ifadeleriyle vurgu yaptığı anayasal ilke aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Danıştayın kararında zikrettiği unsurlar doğrudan hukuk devleti ilkesini oluşturan alt unsurlardır. Yargısal denetim, yargı bağımsızlığı, temel haklar güvencesi ve idarenin hukuka bağlılığı hukuk devletinin olmazsa olmazlarıdır.",
     answers: [
@@ -263,7 +263,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi hukuk devletinin zorunlu bir unsuru değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi hukuk devletinin zorunlu bir unsuru <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Hukuk devleti; idarenin eylemlerinin yargı denetimine tabi olduğu, temel hakların korunduğu, kanuni hâkim güvencesinin olduğu devlettir. Ancak 'Cumhuriyet', bir yönetim biçimidir; hukuk devleti kavramının zorunlu unsuru değildir. Hukuk devleti meşruti bir monarşiyle de bağdaştırılabilir (Örn: İngiltere).",
     answers: [
@@ -275,7 +275,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi, demokratik devlet ilkesinin unsurları arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi, demokratik devlet ilkesinin unsurları arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Yasaların Anayasa'ya uygun olması (ve bunun denetlenmesi) 'hukuk devleti' ilkesine aittir. Diğer seçenekler (seçimler, çok partili hayat, halk iradesi, muhalefet) doğrudan demokratik devlet ilkesinin unsurlarıdır.",
     answers: [
@@ -287,7 +287,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi laik devlet ilkesinin şartlarından biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi laik devlet ilkesinin şartlarından biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Laiklik ilkesi, inanç özgürlüğünü güvence altına alır ancak bu özgürlük (özellikle ibadet/ayin hürriyeti) mutlak ve sınırsız değildir. Anayasa'nın 14. ve 24. maddelerinde bu özgürlüğün kamu düzeni, genel ahlak gibi sebeplerle sınırlanabileceği açıkça belirtilmiştir.",
     answers: [
@@ -299,7 +299,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi devletin temel amaç ve görevleri arasında yer almaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, aşağıdakilerden hangisi devletin temel amaç ve görevleri arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Anayasa Madde 5'e göre Devletin temel amaç ve görevleri; Türk milletinin bağımsızlığını ve bütünlüğünü, ülkenin bölünmezliğini, Cumhuriyeti ve demokrasiyi korumak, kişilerin refahını sağlamaktır. Yasama faaliyetlerini denetlemek ise devletin genel amacı değil, Anayasa Mahkemesinin görevidir.",
     answers: [
@@ -311,7 +311,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. Yasama</li><li>II. Yürütme</li><li>III. Yargı</li></ul></p><p><b>1982 Anayasası'na göre, yukarıdakilerden hangileri Türk milleti adına kullanılan yetkiler arasında sayılmıştır?</b></p>",
+    text: "<p>I. Yasama<br>II. Yürütme<br>III. Yargı</p><p><b>1982 Anayasası'na göre, yukarıdakilerden hangileri Türk milleti adına kullanılan yetkiler arasında sayılmıştır?</b></p>",
     diff: 3,
     expl: "1982 Anayasası'na göre; Yasama yetkisi Türk Milleti adına TBMM'nindir (m.7) ve Yargı yetkisi Türk Milleti adına bağımsız mahkemelerce kullanılır (m.9). Ancak Yürütme yetkisi Cumhurbaşkanı tarafından kullanılır; yürütme için 'Türk milleti adına' ibaresi geçmez.",
     answers: [
@@ -323,7 +323,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>II. Cumhuriyetin nitelikleri</b><br/><i>Madde 2 – Türkiye Cumhuriyeti, toplumun huzuru, millî dayanışma ve adalet anlayışı içinde, insan haklarına saygılı, Atatürk milliyetçiliğine bağlı, başlangıçta belirtilen temel ilkelere dayanan, demokratik, laik ve sosyal bir hukuk devletidir.</i></p><p><b>1982 Anayasası'na göre, yukarıda verilen metin ile ilgili;</b></p><ul><li>I. Değiştirilmez ve değiştirilmesi dahi teklif edilemez.</li><li>II. Madde kenar başlığı Anayasa metnine dâhildir.</li><li>III. Anayasa'nın başlangıç metninde düzenlenmiştir.</li></ul><p><b>verilen ifadelerden hangileri doğrudur?</b></p>",
+    text: "<p><b>II. Cumhuriyetin nitelikleri</b><br>Madde 2 – Türkiye Cumhuriyeti, toplumun huzuru, millî dayanışma ve adalet anlayışı içinde, insan haklarına saygılı, Atatürk milliyetçiliğine bağlı, başlangıçta belirtilen temel ilkelere dayanan, demokratik, laik ve sosyal bir hukuk devletidir.</p><p><b>1982 Anayasası'na göre, yukarıda verilen metin ile ilgili;</b><br><br>I. Değiştirilmez ve değiştirilmesi dahi teklif edilemez.<br>II. Madde kenar başlığı Anayasa metnine dâhildir.<br>III. Anayasa'nın başlangıç metninde düzenlenmiştir.<br><br><b>verilen ifadelerden hangileri doğrudur?</b></p>",
     diff: 3,
     expl: "Madde 2, Anayasa'nın değiştirilemez (ilk 3) maddelerindendir (I). Madde kenar başlıkları Anayasa metnine dâhil değildir (II). İlk 11 madde başlangıç metninde değil, 'Genel Esaslar' bölümünde düzenlenmiştir (III). Dolayısıyla sadece I. öncül doğrudur.",
     answers: [
@@ -335,7 +335,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nda yer alan Atatürk milliyetçiliğini yansıtan ifadeler arasında;</b></p><ul><li>I. Resmî dil Türkçedir.</li><li>II. Türkiye Devleti ülkesi ve milletiyle bölünemez bir bütündür.</li><li>III. Türk Devleti'ne vatandaşlık bağı ile bağlı olan herkes Türk'tür.</li></ul><p><b>verilenlerden hangileri yer alır?</b></p>",
+    text: "<p><b>1982 Anayasası'nda yer alan Atatürk milliyetçiliğini yansıtan ifadeler arasında;</b><br><br>I. Resmî dil Türkçedir.<br>II. Türkiye Devleti ülkesi ve milletiyle bölünemez bir bütündür.<br>III. Türk Devleti'ne vatandaşlık bağı ile bağlı olan herkes Türk'tür.<br><br><b>verilenlerden hangileri yer alır?</b></p>",
     diff: 2,
     expl: "Dilin Türkçe olması ve bölünmez bütünlük (m.3) ile vatandaşlık tanımı (m.66), Atatürk milliyetçiliğinin 'ırkçı/etnik değil, vatandaşlığa dayalı ve birleştirici' özelliğini yansıtan anayasal ifadelerdir. Üçü de yer alır.",
     answers: [
@@ -359,7 +359,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nın başlangıç kısmında geçen şu ifade:</b><br/><br/><i>\"---- ilkesi, devlet organları arasında bir üstünlük sıralaması anlamına gelmez. Belli Devlet yetki ve görevlerinin kullanılmasından ibaret olup, bununla sınırlı medeni bir iş bölümü ve iş birliği olduğunu anlatır.\"</i></p><p><b>aşağıdaki anayasal ilkelerden hangisini tanımlamaktadır?</b></p>",
+    text: "<p><b>1982 Anayasası'nın başlangıç kısmında geçen şu ifade:</b></p><p>\"---- ilkesi, devlet organları arasında bir üstünlük sıralaması anlamına gelmez. Belli Devlet yetki ve görevlerinin kullanılmasından ibaret olup, bununla sınırlı medeni bir iş bölümü ve iş birliği olduğunu anlatır.\"</p><p><b>aşağıdaki anayasal ilkelerden hangisini tanımlamaktadır?</b></p>",
     diff: 2,
     expl: "Kuvvetler ayrılığı; devletin üç temel erkini (yasama, yürütme, yargı) ayrı organlara vermeyi amaçlayan bir ilkedir. Ancak anayasanın başlangıç metninde de belirtildiği üzere bu ayrılık bir çatışma ya da hiyerarşi değil, medeni bir iş bölümü ve iş birliği anlamına gelir.",
     answers: [
@@ -371,7 +371,7 @@ export const VAT_1982_GENEL_HUKUMLER_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nda yürürlüğe girdiği tarihten günümüze;</b></p><ul><li>I. milletvekili seçilme yeterliliği,</li><li>II. Cumhuriyet'in nitelikleri,</li><li>III. Anayasa Mahkemesinin yapısı,</li><li>IV. Cumhurbaşkanı'nın görevleri</li></ul><p><b>verilenlerden hangilerinde değişiklik yapılmamıştır?</b></p>",
+    text: "<p><b>1982 Anayasası'nda yürürlüğe girdiği tarihten günümüze;</b><br><br>I. milletvekili seçilme yeterliliği,<br>II. Cumhuriyet'in nitelikleri,<br>III. Anayasa Mahkemesinin yapısı,<br>IV. Cumhurbaşkanı'nın görevleri<br><br><b>verilenlerden hangilerinde değişiklik <u>yapılmamıştır</u>?</b></p>",
     diff: 3,
     expl: "Cumhuriyetin nitelikleri (Madde 2) ilk günden bu yana değiştirilemez maddeler arasında korunmaktadır. Ancak milletvekili seçilme yaşı önce 25'e sonra 18'e düşürülmüş (I), Anayasa Mahkemesi yapısı 2010'da değişmiş (III) ve Cumhurbaşkanının görevleri 2017 referandumuyla tamamen yeniden düzenlenmiştir (IV).",
     answers: [

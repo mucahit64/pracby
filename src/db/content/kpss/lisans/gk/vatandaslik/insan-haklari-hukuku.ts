@@ -5,9 +5,9 @@ import { McQ } from "../../../../types";
 // ============================================================================
 export const VAT_INSAN_HAKLARI_HUKUKU_TEST_1: McQ[]= [
     {
-    text: "<p><b>Aşağıdakilerden hangisi, insan haklarını diğer hak türlerinden ayıran temel nitelikler arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi, insan haklarını diğer hak türlerinden ayıran temel nitelikler arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
-    expl: "İnsan haklarını başka hak kategorilerinden ayırt etmeye yarayan nitelikler şunlardır: evrenseldir, doğuştandır, mutlaktır, vazgeçilmezdir, devredilемez olma, birey haklarıdır, çoğunlukla özgürlük haklarıdır, temel haklardır, esas olarak devlete karşı ileri sürülen iddialardır. 'Şarta bağlı olma' ifadesi, bu hakların koşulsuz, bireyin yalnızca insan olması dolayısıyla kazanıldığı ilkesine aykırıdır.",
+    expl: "İnsan haklarını başka hak kategorilerinden ayırt etmeye yarayan nitelikler şunlardır: evrenseldir, doğuştandır, mutlaktır, vazgeçilmezdir, devredilemez olma, birey haklarıdır, çoğunlukla özgürlük haklarıdır, temel haklardır, esas olarak devlete karşı ileri sürülen iddialardır. 'Şarta bağlı olma' ifadesi, bu hakların koşulsuz, bireyin yalnızca insan olması dolayısıyla kazanıldığı ilkesine aykırıdır.",
     answers: [
       { text: "Devredilemez olma", ok: false },
       { text: "Temel hak olma", ok: false },
@@ -17,7 +17,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_1: McQ[]= [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi, devletin insan haklarına ilişkin temel yükümlülükleri arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi, devletin insan haklarına ilişkin temel yükümlülükleri arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Devletin insan haklarına ilişkin üç temel yükümlülüğü vardır: saygı gösterme (ihlal etmeme), koruma (üçüncü kişilere karşı bireyi koruma), yerine getirme / temin etme (hakların kullanılabilirliğini sağlama). Ayrıca devletin bu hakları tanıma ve hukuki güvenceye alma yükümlülüğü de kabul edilir. 'Sınırlama' ise devletin temel yükümlülükleri arasında yer almaz.",
     answers: [
@@ -41,7 +41,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_1: McQ[]= [
     ]
   },
   {
-    text: "<p>Fransız hukukçu Karel Vasak tarafından geliştirilen \"üç kuşak haklar\" anlayışına göre, aşağıdakilerden hangisi \"birinci kuşak\" haklar arasında <b>yer almaz</b>?</p>",
+    text: "<p><b>Fransız hukukçu Karel Vasak tarafından geliştirilen \"üç kuşak haklar\" anlayışına göre, aşağıdakilerden hangisi \"birinci kuşak\" haklar arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Fransız hukukçu Karel Vasak, insan haklarını üç kuşakta sınıflandırmıştır. Birinci Kuşak Haklar (Negatif ve Aktif Statü Hakları): yaşam hakkı, kişi özgürlüğü ve güvenliği, adil yargılanma hakkı, konut dokunulmazlığı, düşünce ve ifade özgürlüğü, seçme ve seçilme hakkı. İkinci Kuşak Haklar (Pozitif Statü Hakları): eğitim hakkı, sağlık hakkı, sosyal güvenlik hakkı. Sosyal güvenlik hakkı ikinci kuşak hak olduğundan birinci kuşak haklar arasında yer almaz.",
     answers: [
@@ -53,7 +53,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_1: McQ[]= [
     ]
   },
   {
-    text: "<p>Özgürlük kavramını, 1789 Fransız İnsan ve Yurttaş Hakları Bildirisi'ni esas alarak \"başkalarına zarar vermeyen her şeyi yapabilmek\" şeklinde tanımlayan anayasa aşağıdakilerden hangisidir?</p>",
+    text: "<p><b>Özgürlük kavramını, 1789 Fransız İnsan ve Yurttaş Hakları Bildirisi'ni esas alarak \"başkalarına zarar vermeyen her şeyi yapabilmek\" şeklinde tanımlayan anayasa aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "1924 Anayasası, birey hak ve özgürlüklerine ilişkin bölümünde, 1789'daki Fransız İnsan ve Yurttaş Hakları Bildirgesi'ne açık göndermede bulunan ilk Türk anayasasıdır. Anayasa'nın 68. maddesinde 'Hürriyet, başkasına zarar vermeyen her şeyi yapabilmektir.' ifadesi yer alır. Bu ifade, Fransız bildirgesinin 4. maddesindeki 'Özgürlük, başkalarına zarar vermeyen her şeyi yapabilme hakkıdır.' tanımını esas almıştır.",
     answers: [
@@ -65,9 +65,9 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_1: McQ[]= [
     ]
   },
   {
-    text: "<p>Osmanlı Devleti'nde tüm tebaanın din ayrımı gözetilmeksizin can ve mal güvenliği, vergide adalet, kişi güvenliği ve onurunun korunmasına yönelik güvenceler içeren <b>ilk insan hakları bildirgesi</b> aşağıdakilerden hangisidir?</p>",
+    text: "<p><b>Osmanlı Devleti'nde tüm tebaanın din ayrımı gözetilmeksizin can ve mal güvenliği, vergide adalet, kişi güvenliği ve onurunun korunmasına yönelik güvenceler içeren ilk insan hakları bildirgesi aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
-    expl: "Tanzimat Fermanı (Gülhane Hattı Hümayunu – 1839), Osmanlıda modern anlamda ilk insan hakları belgesi niteliğindedir. Bu fermanda herkesin can, mal ve namus emniyetinin sağlanacağı, vergide adaletин esas alınacağı, yargılamadan ceza verilmeyeceği (suçsuzluk karinesi ve adil yargılanma ilkesi), hiç kimsenin rüşvetle görevden alınamayacağı gibi temel ilkeler yer alır. Önemli bir fark olarak Tanzimat Fermanı, Müslüman ve gayrimüslim tebaanın hukuki statüsünde eşitlik yönünde ilk kez doğrudan güvence sunmuştur.",
+    expl: "Tanzimat Fermanı (Gülhane Hattı Hümayunu – 1839), Osmanlıda modern anlamda ilk insan hakları belgesi niteliğindedir. Bu fermanda herkesin can, mal ve namus emniyetinin sağlanacağı, vergide adaletin esas alınacağı, yargılamadan ceza verilmeyeceği (suçsuzluk karinesi ve adil yargılanma ilkesi), hiç kimsenin rüşvetle görevden alınamayacağı gibi temel ilkeler yer alır. Önemli bir fark olarak Tanzimat Fermanı, Müslüman ve gayrimüslim tebaanın hukuki statüsünde eşitlik yönünde ilk kez doğrudan güvence sunmuştur.",
     answers: [
       { text: "Sened-i İttifak", ok: false },
       { text: "Tanzimat Fermanı", ok: true },
@@ -77,7 +77,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_1: McQ[]= [
     ]
   },
   {
-    text: "<p>Kişi, suç isnadı olmadan tutuklanamaz; tutuklanan her birey, makul bir süre içinde hâkim önüne çıkarılmalı ya da serbest bırakılmalıdır.<br><br><b>Yukarıdaki ilkeyi tarihsel olarak güvence altına alan, İngiltere'de keyfi gözaltıların önlenmesine yönelik ilk hukuk metni olarak adlandırılan belge aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Kişi, suç isnadı olmadan tutuklanamaz; tutuklanan her birey, makul bir süre içinde hâkim önüne çıkarılmalı ya da serbest bırakılmalıdır.</p><p><b>Yukarıdaki ilkeyi tarihsel olarak güvence altına alan, İngiltere'de keyfi gözaltıların önlenmesine yönelik <u>ilk</u> hukuk metni olarak adlandırılan belge aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Habeas Corpus Act (1679), İngiltere'de çıkarılan ve keyfi tutuklama ile gözaltılara karşı bireyin güvenliğini sağlayan ilk somut düzenlemedir. Bu yasa, tutuklu kişinin kısa süre içinde hâkim önüne çıkarılması zorunluluğunu getirerek bireyin özgürlük hakkını hukuki güvenceye bağlamıştır.",
     answers: [
@@ -89,7 +89,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_1: McQ[]= [
     ]
   },
   {
-    text: "<p>9 Aralık 1948 tarihinde kabul edilen Soykırım Suçunun Önlenmesi ve Cezalandırılması Sözleşmesi'ne göre, ulusal, etnik, ırksal veya dinsel bir gruba karşı işlenen aşağıdaki fiillerden hangisi soykırım sucu <b>sayılmamıştır</b>?</p>",
+    text: "<p><b>9 Aralık 1948 tarihinde kabul edilen Soykırım Suçunun Önlenmesi ve Cezalandırılması Sözleşmesi'ne göre, ulusal, etnik, ırksal veya dinsel bir gruba karşı işlenen aşağıdaki fiillerden hangisi soykırım suçu <u>sayılmamıştır</u>?</b></p>",
     diff: 3,
     expl: "Soykırım Suçunun Önlenmesi ve Cezalandırılması Sözleşmesi'ne göre soykırım suçunu oluşturan eylemler: a) Gruba mensup olanların öldürülmesi, b) Grubun mensuplarına ciddi surette bedensel veya zihinsel zarar verilmesi, c) Grubun bütünüyle veya kısmen fiziksel varlığını ortadan kaldıracağı hesaplanarak yaşam şartlarını kasıtten değiştirmek, d) Grup içinde doğumları engellemek amacıyla tedbirler almak, e) Gruba mensup çocukları zorla bir başka gruba nakletmek. 'Grubun liderlerinin sistematik olarak hapsedilmesi' bu sözleşmede soykırım suçu olarak sayılmamıştır.",
     answers: [
@@ -101,7 +101,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_1: McQ[]= [
     ]
   },
   {
-    text: "<p>Roma Statüsü ile kurulan Birleşmiş Milletlere bağlı Uluslararası Ceza Mahkemesinin (UCM) yetki alanına giren suçlar arasında aşağıdakilerden hangisi <b>yer almaz</b>?</p>",
+    text: "<p><b>Roma Statüsü ile kurulan Birleşmiş Milletlere bağlı Uluslararası Ceza Mahkemesinin (UCM) yetki alanına giren suçlar arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Roma Statüsü, Uluslararası Ceza Mahkemesini kuran ve onun yetki sınırlarını belirleyen 1998 yılındaki uluslararası bir sözleşmedir. Bu statüye göre UCM yalnızca dört ana suç türünde bireyleri yargılayabilir: Soykırım Suçu, İnsanlığa Karşı Suçlar, Savaş Suçları, Saldırı Suçu (aggression). 'İşkence suçları' UCM'nin yetki alanında ayrı bir suç kategorisi olarak yer almaz; işkence insanlığa karşı suçlar kapsamında değerlendirilebilir ancak bağımsız bir kategori değildir.",
     answers: [
@@ -113,7 +113,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_1: McQ[]= [
     ]
   },
   {
-    text: "<p>\"Savaş hukuku\" olarak da adlandırılan; uluslararası veya uluslararası olmayan silahlı çatışmalarda sivilleri, yaralıları ve savaş esirlerini korumayı amaçlayan, 1949'daki Cenevre Sözleşmeleri ile uluslararası düzeyde tanımlanan hukuk dalı aşağıdakilerden hangisidir?</p>",
+    text: "<p><b>\"Savaş hukuku\" olarak da adlandırılan; uluslararası veya uluslararası olmayan silahlı çatışmalarda sivilleri, yaralıları ve savaş esirlerini korumayı amaçlayan, 1949'daki Cenevre Sözleşmeleri ile uluslararası düzeyde tanımlanan hukuk dalı aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "İnsancıl hukuk (diğer adıyla savaş hukuku), silahlı çatışmalar sırasında savaş dışı kalan sivil halkı, yaralanmış askerleri, savaş esirlerini ve çatışmalara artık katılamayanları koruma altına almayı amaçlayan kurallar bütünüdür. Bu hukuk dalı özellikle 1949'daki Cenevre Sözleşmeleri ve 1977'deki ek protokollerle uluslararası zemine oturtulmuştur.",
     answers: [
@@ -125,7 +125,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_1: McQ[]= [
     ]
   },
   {
-    text: "<p>Birleşmiş Milletler Güvenlik Konseyinin beş daimî üyesi ABD, Çin, Rusya, İngiltere ve Fransa'dır.<br><br><b>\"Dünya beşten büyüktür\" söylemi aşağıdakilerden hangisine yöneltilen bir eleştiridir?</b></p>",
+    text: "<p>Birleşmiş Milletler Güvenlik Konseyinin beş daimî üyesi ABD, Çin, Rusya, İngiltere ve Fransa'dır.</p><p><b>\"Dünya beşten büyüktür\" söylemi aşağıdakilerden hangisine yöneltilen bir eleştiridir?</b></p>",
     diff: 2,
     expl: "'Dünya beşten büyüktür' söylemi, BMGK'nin 5 daimi üyesinin (ABD, Rusya, Çin, İngiltere, Fransa) sahip olduğu veto yetkisiyle dünya siyasetine yön vermesini ve temsilde adaletsizliği eleştirir.",
     answers: [
@@ -191,7 +191,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_1: McQ[]= [
 // ============================================================================
 export const VAT_INSAN_HAKLARI_HUKUKU_TEST_2: McQ[] = [
     {
-    text: "<p><b>Avrupa İnsan Hakları Sözleşmesi'ne göre aşağıdakilerden hangisi, Avrupa İnsan Hakları Mahkemesine başvuru yapamaz?</b></p>",
+    text: "<p><b>Avrupa İnsan Hakları Sözleşmesi'ne göre aşağıdakilerden hangisi, Avrupa İnsan Hakları Mahkemesine başvuru <u>yapamaz</u>?</b></p>",
     diff: 2,
     expl: "AİHS hükümlerine göre AİHM'e bireysel başvuru yapma hakkına sahip gerçek veya tüzel kişiler ile topluluklar şunlardır: sözleşmeci devletler, gerçek kişiler, özel hukuk tüzel kişileri (şirketler), hükümet dışı örgütler ve kişi grupları, tüzel kişiliği olmayan fili topluluklar. Ancak kamu tüzel kişileri bireysel başvuru hakkına sahip değildir.",
     answers: [
@@ -203,7 +203,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Avrupa İnsan Hakları Sözleşmesi ve eki protokollerde tanınan haklarının yüksek sözleşmeci taraflardan biri tarafından ihlal edilmesinden dolayı mağdur olduğunu öne süren her gerçek kişi, hükümet dışı kuruluş veya kişi grupları mahkemeye başvurabilir.<br><br><b>Mahkemeye ancak, uluslararası hukukun genel olarak kabul edilen ilkeleri uyarınca iç hukuk yollarının tüketilmesinden sonra ve iç hukuktaki kesin karar tarihinden itibaren ne kadar süre içinde başvurulabilir?</b></p>",
+    text: "<p>Avrupa İnsan Hakları Sözleşmesi ve eki protokollerinde tanınan haklarının yüksek sözleşmeci taraflardan biri tarafından ihlal edilmesinden dolayı mağdur olduğunu öne süren her gerçek kişi, hükûmet dışı kuruluş veya kişi grupları mahkemeye başvurabilir.</p><p><b>Mahkemeye ancak, uluslararası hukukun genel olarak kabul edilen ilkeleri uyarınca iç hukuk yollarının tüketilmesinden sonra ve iç hukuktaki kesin karar tarihinden itibaren ne kadar süre içinde başvurulabilir?</b></p>",
     diff: 2,
     expl: "AİHS'ye göre bireysel başvuru, iç hukuk yolları tüketildikten sonra en geç 4 ay içinde yapılmalıdır. Bu süre usule ilişkin bağlayıcı bir kuraldır ve AİHM tarafından kendiliğinden incelenir. Süreyi aşan başvurular, esas incelenmeden reddedilir.",
     answers: [
@@ -239,7 +239,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Anayasa Mahkemesi<br>II. Türkiye İnsan Hakları ve Eşitlik Kurumu<br>III. İl ve İlçe İnsan Hakları Kurulları<br>IV. TBMM İnsan Haklarını İnceleme Komisyonu<br><br><b>Türkiye'de insan hakları alanında faaliyet gösteren ulusal mekanizmalar arasında yukarıdakilerden hangileri yer alır?</b></p>",
+    text: "<p>I. Anayasa Mahkemesi<br>II. Türkiye İnsan Hakları ve Eşitlik Kurumu<br>III. İl ve İlçe İnsan Hakları Kurulları<br>IV. TBMM İnsan Haklarını İnceleme Komisyonu</p><p><b>Türkiye'de insan hakları alanında faaliyet gösteren ulusal mekanizmalar arasında yukarıdakilerden hangileri yer alır?</b></p>",
     diff: 2,
     expl: "Türkiye'de insan haklarının korunması, geliştirilmesi ve izlenmesi amacıyla görev yapan başlıca ulusal mekanizmalar şunlardır: Anayasa Mahkemesi (AYM), Türkiye İnsan Hakları ve Eşitlik Kurumu (TİHEK), İl ve İlçe İnsan Hakları Kurulları, TBMM İnsan Haklarını İnceleme Komisyonu, Kamu Denetçiliği Kurumu, Kişisel Verileri Koruma Kurumu ve diğerleri. Dolayısıyla I, II, III ve IV'ün tamamı ulusal mekanizmalar arasında yer alır.",
     answers: [
@@ -299,7 +299,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>\"Anayasa ile tanınmış hak ve hürriyetleri ihlâl edilen herkes, yetkili makama geciktirilmeden başvurma imkânının sağlanmasını isteme hakkına sahiptir. Devlet, işlemlerinde, ilgili kişilerin hangi kanun yolları ve mercilere başvuracağını ve sürelerini belirtmek zorundadır\" hükmü 1982 Anayasası'nda hakların korunmasına yönelik ne tür bir başvuru yoludur?</p>",
+    text: "<p><b>\"Anayasa ile tanınmış hak ve hürriyetleri ihlâl edilen herkes, yetkili makama geciktirilmeden başvurma imkânının sağlanmasını isteme hakkına sahiptir. Devlet, işlemlerinde, ilgili kişilerin hangi kanun yolları ve mercilere başvuracağını ve sürelerini belirtmek zorundadır\" hükmü 1982 Anayasası'nda hakların korunmasına yönelik ne tür bir başvuru yoludur?</b></p>",
     diff: 2,
     expl: "Temel hak ve özgürlükleri ihlal edilen bireyler, yürütme organına başvurabilir. Bu usul idari başvuru yolu olarak adlandırılmaktadır. Anayasa'ya göre, Anayasa ile tanınmış hak ve hürriyetleri ihlâl edilen herkes, yetkili makama geciktirilmeden başvurma imkânının sağlanmasını isteme hakkına sahiptir.",
     answers: [
@@ -323,7 +323,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye'de \"İşkence ve Diğer Zalimane, Gayrinsani veya Küçültücü Muamele veya Cezaya Karşı Birleşmiş Milletler Sözleşmesine Ek İhtiyari Protokol\" hükümleri çerçevesinde ulusal önleme mekanizması olarak görev yapan kurum aşağıdakilerden hangisidir?</p>",
+    text: "<p><b>Türkiye'de \"İşkence ve Diğer Zalimane, Gayrinsani veya Küçültücü Muamele veya Cezaya Karşı Birleşmiş Milletler Sözleşmesine Ek İhtiyari Protokol\" hükümleri çerçevesinde ulusal önleme mekanizması olarak görev yapan kurum aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Ülkemizde İşkence ve Diğer Zalimane, Gayrinsani veya Küçültücü Muamele veya Cezaya Karşı Birleşmiş Milletler Sözleşmesine Ek İhtiyari Protokol hükümleri çerçevesinde ulusal önleme mekanizması olarak görev yapan kurum Türkiye İnsan Hakları ve Eşitlik Kurumu'dur (TİHEK). Amacı: insan haklarını korumak ve geliştirmek, kişilerin eşit muamele görme hakkının güvence altına alınması için çalışmak, işkence ve kötü muameleyle etkin mücadele etmektir.",
     answers: [
@@ -347,7 +347,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Irkı, dini, milliyeti, belirli bir sosyal gruba mensubiyeti veya siyasi görüşü nedeniyle zulüm görme korkusuyla ülkesinden ayrılan ve bu nedenle ülkesine dönemeyen kişi aşağıdakilerden hangisi ile ifade edilir?</p>",
+    text: "<p><b>Irkı, dini, milliyeti, belirli bir sosyal gruba mensubiyeti veya siyasi görüşü nedeniyle zulüm görme korkusuyla ülkesinden ayrılan ve bu nedenle ülkesine dönemeyen kişi aşağıdakilerden hangisi ile ifade edilir?</b></p>",
     diff: 2,
     expl: "Bu tanım, 1951'deki Mültecilerin Hukuki Durumuna Dair Cenevre Sözleşmesi (Madde 1A/2)'de yer alan klasik mülteci tanımıdır. Mülteci statüsü kazanabilmek için: zulüm korkusu bulunmalı, bu zulüm tehlikesi ırk, din, milliyet, sosyal grup veya siyasi görüşe dayalı olmalı ve kişi ülkesine dönemez durumda olmalıdır.",
     answers: [
@@ -359,7 +359,7 @@ export const VAT_INSAN_HAKLARI_HUKUKU_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir ulusal, etnik, ırksal veya dini grubun tamamını ya da bir kısmını yok etme niyetiyle, bu gruba mensup kişilere karşı öldürme, ciddi bedensel veya zihinsel zarar verme, yaşam koşullarını yok edici şekilde kısıtlama gibi fiillerin sistematik biçimde işlenmesi aşağıdakilerden hangisi ile ifade edilir?</p>",
+    text: "<p><b>Bir ulusal, etnik, ırksal veya dini grubun tamamını ya da bir kısmını yok etme niyetiyle, bu gruba mensup kişilere karşı öldürme, ciddi bedensel veya zihinsel zarar verme, yaşam koşullarını yok edici şekilde kısıtlama gibi fiillerin sistematik biçimde işlenmesi aşağıdakilerden hangisi ile ifade edilir?</b></p>",
     diff: 2,
     expl: "Soykırım; yalnızca insanlara yönelik saldırı değil, bir grubun varlığını sistematik olarak ortadan kaldırma niyetiyle yapılan eylemler bütünüdür. Bu suçun işlenebilmesi için: eylemin kasten yapılması (özel kast), hedefin ulusal, etnik, ırksal veya dini bir grup olması gerekir. Söz konusu eylemler arasında öldürme, ağır bedensel/ruhsal zarar verme, grup üyelerinin doğumların engelleme ve çocukların zorla başka gruba aktarılması gibi fiiller bulunur.",
     answers: [

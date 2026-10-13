@@ -5,7 +5,7 @@ import type { McQ } from "../../../../types";
 // ============================================================================
 export const VAT_TEMEL_HUKUK_TEST_1: McQ[] = [
   {
-    text: "<p>Sosyal hayatı düzenleyen kurallar ve onlara ait yaptırımlar aşağıda verilmiştir:</p><ul><li>I. Ahlak kuralları – tazminat</li><li>II. Din kuralları – günahkâr sayılma</li><li>III. Hukuk kuralları – ceza</li><li>IV. Görgü kuralları – ayıplama</li></ul><p><b>Buna göre yaptırımı yanlış eşleştirilen kural yukarıdakilerden hangileridir?</b></p>",
+    text: "<p>Sosyal hayatı düzenleyen kurallar ve onlara ait yaptırımlar aşağıda verilmiştir:</p><p>I. Ahlak kuralları – tazminat<br>II. Din kuralları – günahkâr sayılma<br>III. Hukuk kuralları – ceza<br>IV. Görgü kuralları – ayıplama</p><p><b>Buna göre yaptırımı <u>yanlış</u> eşleştirilen kural yukarıdakilerden hangileridir?</b></p>",
     diff: 2,
     expl: "Ahlak kuralları bireyin vicdanına hitap eder ve yaptırımı tazminat değil, toplumsal dışlanma veya vicdani rahatsızlık gibi manevi sonuçlardır. Tazminat ise yalnızca hukuk kurallarının ihlali hâlinde gündeme gelir.",
     answers: [
@@ -17,7 +17,7 @@ export const VAT_TEMEL_HUKUK_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi hukukun temel amaçları arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi hukukun temel amaçları arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Hukukun temel amaçları arasında özgürlük, güvenlik, adalet ve toplumsal düzeni sağlamak yer alır. Ancak hukuk, bireyler arasında mutlak eşitliği değil hukuki eşitliği sağlamayı amaçlar. Mutlak eşitlik hukukun amaçladığı bir durum değildir.",
     answers: [
@@ -41,7 +41,7 @@ export const VAT_TEMEL_HUKUK_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi hukukta müeyyide çeşitleri arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi hukukta müeyyide çeşitleri arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Müeyyide (yaptırım), hukuk kurallarına aykırı davranıldığında karşılaşılan hukuki sonuçlardır (Tazminat, iptal, cebri icra, hapis, geçersizlik). Ancak kıyas, bir yaptırım değil; hukuk boşluğu durumunda benzer kurallardan hareketle hüküm üretme yöntemidir.",
     answers: [
@@ -77,7 +77,7 @@ export const VAT_TEMEL_HUKUK_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türk Borçlar Kanunu'na göre aşağıdakilerden hangisi bir sözleşmede nispi butlan (iptal edilebilirlik) sebebi değildir?</b></p>",
+    text: "<p><b>Türk Borçlar Kanunu'na göre aşağıdakilerden hangisi bir sözleşmede nispi butlan (iptal edilebilirlik) sebebi <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Korkutma (ikrah), aşırı yararlanma (gabin), hata ve hile irade bozuklukları olup sözleşmeyi nispi butlanla sakatlar. Karşılıklı muvazaa (tarafların gerçek iradelerini gizleyip görünüşte işlem yapmaları) ise mutlak butlan (kesin hükümsüzlük) sebebidir.",
     answers: [
@@ -89,7 +89,7 @@ export const VAT_TEMEL_HUKUK_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Türk hukukunda;</p><ul><li>imam nikâhı ile yapılan evlilik,</li><li>16 yaşındaki bir çocuğun velisinin onayı olmadan bilgisayar satın alması,</li><li>bir kimsenin isim benzerliği nedeniyle yanlış kişiyle sözleşme yapması</li></ul><p><b>verilen işlemlere uygulanacak yaptırımlar sırasıyla hangisinde doğru verilmiştir?</b></p>",
+    text: "<p><b>Türk hukukunda;</b></p><p>• imam nikâhı ile yapılan evlilik,<br>• 16 yaşındaki bir çocuğun velisinin onayı olmadan bilgisayar satın alması,<br>• bir kimsenin isim benzerliği nedeniyle yanlış kişiyle sözleşme yapması</p><p><b>verilen işlemlere uygulanacak yaptırımlar sırasıyla hangisinde doğru verilmiştir?</b></p>",
     diff: 3,
     expl: "İmam nikâhı şekil kurallarına aykırıdır, 'yokluk' yaptırımına tabidir. 16 yaşındaki çocuğun işlemi 'tek taraflı bağlamazlık' ile sakattır. Yanlış kişiyle yapılan sözleşme ise irade sakatlığı (hata) sebebiyle 'nispi butlan' yaptırımına tabidir.",
     answers: [
@@ -101,7 +101,7 @@ export const VAT_TEMEL_HUKUK_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Aşağıda bazı hukuki durumlar verilmiştir:</p><ul><li>Bir kişi, hukuka aykırı davranarak diğer tarafa zarar verir.</li><li>Suç işleyen bir kişi hakkında mahkeme hüküm verir.</li><li>Borcunu rızasıyla ödemeyen kişiye karşı ilamlı takip başlatılır.</li></ul><p><b>Bu işlemlere uygulanacak yaptırımlar sırasıyla aşağıdakilerden hangisinde doğru verilmiştir?</b></p>",
+    text: "<p>Aşağıda bazı hukuki durumlar verilmiştir:</p><p>• Bir kişi, hukuka aykırı davranarak diğer tarafa zarar verir.<br>• Suç işleyen bir kişi hakkında mahkeme hüküm verir.<br>• Borcunu rızasıyla ödemeyen kişiye karşı ilamlı takip başlatılır.</p><p><b>Bu işlemlere uygulanacak yaptırımlar sırasıyla aşağıdakilerden hangisinde doğru verilmiştir?</b></p>",
     diff: 2,
     expl: "Hukuka aykırılıkla zarar verilmesi 'tazminat', suç işlenmesi 'ceza', borcunu ödemeyene zorla tahsil süreci ise 'cebri icra' yaptırımına tabidir.",
     answers: [
@@ -113,7 +113,7 @@ export const VAT_TEMEL_HUKUK_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir sözleşmenin geçerli olabilmesi için aşağıdaki unsurların sağlanması gerekir:</p><ul><li>Tarafların sözleşme yapma ehliyetine sahip olması,</li><li>Sözleşmenin emredici hükümlere, kişiliğe, ahlaka ve kamu düzenine uygun olması,</li><li>Sözleşme konusunun mümkün ve belirli olması</li></ul><p><b>Buna göre yukarıdaki unsurlara aykırı olan bir sözleşme aşağıdaki yaptırımlardan hangisine tabi olur?</b></p>",
+    text: "<p>Bir sözleşmenin geçerli olabilmesi için aşağıdaki unsurların sağlanması gerekir:</p><p>• Tarafların sözleşme yapma ehliyetine sahip olması,<br>• Sözleşmenin emredici hükümlere, kişiliğe, ahlaka ve kamu düzenine uygun olması,<br>• Sözleşme konusunun mümkün ve belirli olması</p><p><b>Buna göre yukarıdaki unsurlara aykırı olan bir sözleşme aşağıdaki yaptırımlardan hangisine tabi olur?</b></p>",
     diff: 2,
     expl: "Ehliyetsizlik, emredici hükümlere, ahlaka ve adaba aykırılık ile konunun imkansız olması durumları sözleşmeyi baştan itibaren geçersiz kılar. Bu yaptırım türü mutlak butlan (kesin hükümsüzlük) olarak adlandırılır.",
     answers: [
@@ -125,7 +125,7 @@ export const VAT_TEMEL_HUKUK_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Türk hukukuna göre</p><ul><li>A'nın antika diye B'ye sattığı vazonun sahte çıkması,</li><li>C'nin Mars'ta olduğunu iddia ettiği arsayı D'ye satması</li></ul><p><b>işlemlerinin hukukta karşılaşacağı yaptırımlar sırasıyla aşağıdakilerden hangisinde doğru verilmiştir?</b></p>",
+    text: "<p><b>Türk hukukuna göre</b></p><p>• A'nın antika diye B'ye sattığı vazonun sahte çıkması,<br>• C'nin Mars'ta olduğunu iddia ettiği arsayı D'ye satması</p><p><b>işlemlerinin hukukta karşılaşacağı yaptırımlar sırasıyla aşağıdakilerden hangisinde doğru verilmiştir?</b></p>",
     diff: 3,
     expl: "Sahte vazo satışı, irade sakatlığı (hata/hile) oluşturduğu için 'nispi butlan' ile iptal edilebilir. Mars'ta arsa satışı ise konusu baştan itibaren fiziksel olarak imkansız olduğundan kesin hükümsüz (mutlak butlan) yaptırımıyla geçersizdir.",
     answers: [
@@ -149,7 +149,7 @@ export const VAT_TEMEL_HUKUK_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Türk hukukuna göre</p><ul><li>Bir sözleşmede karşılıklı edimler arasında açık oransızlık, zarar görenin zor durumda kalmasından veya deneyimsizliğinden kaynaklanır.</li><li>Taraflar, üçüncü kişileri aldatmak amacıyla kendi aralarında hüküm doğurmayan görünüşte bir işlem yapma konusunda anlaşır.</li></ul><p><b>verilen tanımlar sırasıyla aşağıdaki kavramlardan hangisini açıklar?</b></p>",
+    text: "<p><b>Türk hukukuna göre</b></p><p>• Bir sözleşmede karşılıklı edimler arasında açık oransızlık, zarar görenin zor durumda kalmasından veya deneyimsizliğinden kaynaklanır.<br>• Taraflar, üçüncü kişileri aldatmak amacıyla kendi aralarında hüküm doğurmayan görünüşte bir işlem yapma konusunda anlaşır.</p><p><b>verilen tanımlar sırasıyla aşağıdaki kavramlardan hangisini açıklar?</b></p>",
     diff: 3,
     expl: "İlk ifade edimler arası aşırı dengesizliği anlatan gabin (aşırı yararlanma) kavramıdır. İkinci ifade ise tarafların gerçekte sözleşme yapma iradeleri olmamasına rağmen üçüncü kişileri aldatmak için yapılan muvazaa işlemidir.",
     answers: [
@@ -161,7 +161,7 @@ export const VAT_TEMEL_HUKUK_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisinin yaptırımı idari işlemde iptal olamaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisinin yaptırımı idari işlemde iptal <u>olamaz</u>?</b></p>",
     diff: 3,
     expl: "İdari işlemler yetki, şekil, sebep, konu veya amaç yönünden hukuka aykırıysa iptal davasına konu olabilir. Ancak trafik kazasında kusurlu sürücünün sebep olduğu zarar bir idari işlem değil, 'haksız fiil' niteliğindedir. Bu durumda adli yargıda tazminat davası açılır.",
     answers: [
@@ -173,7 +173,7 @@ export const VAT_TEMEL_HUKUK_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi 5237 sayılı Türk Ceza Kanunu'nda yer alan ceza türlerinden biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi 5237 sayılı Türk Ceza Kanunu'nda yer alan ceza türlerinden biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Ölüm cezası ve genel müsadere cezası 2004 Anayasa değişikliği ile hukukumuzdan çıkarılmıştır. TCK'ya göre hapis cezaları; süreli hapis, müebbet hapis ve ağırlaştırılmış müebbet hapistir.",
     answers: [
@@ -203,7 +203,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Meltem ile Osman resmî nikâh memuru önünde evlenmişlerdir.</p><p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi bu evliliğin mutlak butlan ile kesin hükümsüz sayılmasına neden olmaz?</b></p>",
+    text: "<p>Meltem ile Osman resmî nikâh memuru önünde evlenmişlerdir.</p><p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi bu evliliğin mutlak butlan ile kesin hükümsüz sayılmasına neden <u>olmaz</u>?</b></p>",
     diff: 3,
     expl: "Evlenmenin kesin hükümsüzlüğüne (mutlak butlan) neden olan sebepler; akıl hastalığı, mevcut evlilik ve yakın hısımlıktır. Ancak bulaşıcı hastalığını gizlemek, aldatma kapsamında yer aldığı için nispi butlan sebebidir.",
     answers: [
@@ -215,7 +215,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Belirli bir ülkede yürürlükte bulunan yazılı ve yazısız bütün hukuk kurallarıdır.</li><li>Olan değil, olması gereken hukuk kurallarıdır.</li><li>Yetkili makamlar tarafından konulan ve yürürlükte olan bütün hukuk kurallarıdır.</li></ul></p><p><b>Bu tanımlar sırasıyla hangi hukuk türlerine aittir?</b></p>",
+    text: "<p>• Belirli bir ülkede yürürlükte bulunan yazılı ve yazısız bütün hukuk kurallarıdır.<br>• Olan değil, olması gereken hukuk kurallarıdır.<br>• Yetkili makamlar tarafından konulan ve yürürlükte olan bütün hukuk kurallarıdır.</p><p><b>Bu tanımlar sırasıyla hangi hukuk türlerine aittir?</b></p>",
     diff: 2,
     expl: "Yürürlükte bulunan tüm yazılı ve yazısız hukuk 'Pozitif hukuk'tur. Olan değil, olması gereken ideal hukuk 'Doğal hukuk'tur. Yetkili makamlar tarafından konulmuş salt yazılı kurallar ise 'Mevzu hukuk'tur.",
     answers: [
@@ -227,7 +227,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanun m. 1'e göre, bir hukuki uyuşmazlığın çözümünde;</b><br/><br/>I. kanun,<br/>II. hâkimin oluşturduğu hukuk,<br/>III. örf ve âdet hukuku<br/><br/><b>ifadelerini hangi sırayla uygulamalıdır?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanun m. 1'e göre, bir hukuki uyuşmazlığın çözümünde</b></p><p>I. kanun,<br>II. hâkimin oluşturduğu hukuk,<br>III. örf ve âdet hukuku</p><p><b>ifadelerini hangi sırayla uygulamalıdır?</b></p>",
     diff: 2,
     expl: "Hakim uyuşmazlığın çözümünde öncelikle yazılı kaynaklara (Kanun) bakar. Kanunda hüküm yoksa yazısız kaynaklara (Örf ve âdet hukuku) başvurur. Orada da hüküm yoksa hakim kendisi kural koyarak hukuk yaratır.",
     answers: [
@@ -239,7 +239,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>4721 sayılı Türk Medeni Kanunu m. 1'e göre, <i>\"Kanunda hüküm bulunmayan hâllerde hâkim önce ---- hukukuna başvurur, bu da yoksa ---- gibi kural koyar; karar verirken ---- ve yargı kararlarından da yararlanır.\"</i></p><p><b>Yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>4721 sayılı Türk Medeni Kanunu m. 1'e göre, \"Kanunda hüküm bulunmayan hâllerde hâkim önce ---- hukukuna başvurur, bu da yoksa ---- gibi kural koyar; karar verirken ---- ve yargı kararlarından da yararlanır.\"</p><p><b>Yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 2,
     expl: "TMK Madde 1'e göre: Kanunda hüküm bulunmayan hâllerde hâkim örf ve âdet hukukuna göre karar verir. Bu da yoksa kendisi kanun koyucu olsaydı nasıl bir kural koyacaksa ona göre karar verir. Karar verirken bilimsel görüşlerden (doktrin) yararlanır.",
     answers: [
@@ -251,7 +251,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Adalet Meslek Yüksekokulunda yapılan Hukuka Giriş dersi sınavında, \"Kanunla eş değer hukuk normları nelerdir?\" sorusu sorulmuştur. Öğrencilerden bazıları şu cevapları vermiştir:<br/><br/><b>Ayşegül:</b> \"Yönetmelik ve Genelge\"<br/><b>Aydın:</b> \"Cumhurbaşkanı Kararnamesi ve Yönetmelik\"<br/><b>Mercan:</b> \"Anayasa ve Cumhurbaşkanı Kararnamesi\"<br/><b>Mete:</b> \"Milletlerarası Antlaşmalar ve Olağanüstü Hâl Cumhurbaşkanı Kararnameleri\"<br/><b>Hatice:</b> \"Anayasa ve Olağanüstü Hâl Cumhurbaşkanı Kararnameleri\"</p><p><b>Bu cevaplardan hangisi doğrudur?</b></p>",
+    text: "<p>Adalet Meslek Yüksekokulunda yapılan Hukuka Giriş dersi sınavında, \"Kanunla eş değer hukuk normları nelerdir?\" sorusu sorulmuştur. Öğrencilerden bazıları şu cevapları vermiştir:</p><p>• <b>Ayşegül:</b> \"Yönetmelik ve Genelge\"<br>• <b>Aydın:</b> \"Cumhurbaşkanı Kararnamesi ve Yönetmelik\"<br>• <b>Mercan:</b> \"Anayasa ve Cumhurbaşkanı Kararnamesi\"<br>• <b>Mete:</b> \"Milletlerarası Antlaşmalar ve Olağanüstü Hâl Cumhurbaşkanı Kararnameleri\"<br>• <b>Hatice:</b> \"Anayasa ve Olağanüstü Hâl Cumhurbaşkanı Kararnameleri\"</p><p><b>Bu cevaplardan hangisi doğrudur?</b></p>",
     diff: 3,
     expl: "Normlar hiyerarşisinde 'kanunla eşdeğer' olan düzenleyici işlemler; Milletlerarası Antlaşmalar (Anayasa m.90) ve Olağanüstü Hâl Cumhurbaşkanlığı Kararnameleri (OHAL CBK)'dir. Normal CBK'lar kanunun altındadır, Anayasa ise en üsttedir.",
     answers: [
@@ -263,7 +263,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Ülkemizde hâlen yürürlükte olan bazı hukuk kurallarını çıkarma yetkisi 9.7.2018 tarihi itibarıyla sona ermiştir diyen bir kimse bu düşüncesine;<br/><br/>I. tüzük,<br/>II. Kanun hükmünde kararname,<br/>III. yönetmelik,<br/>IV. Cumhurbaşkanı Kararnamesi<br/><br/><b>verilen hukuk kurallarından hangilerini örnek olarak verebilir?</b></p>",
+    text: "<p><b>Ülkemizde hâlen yürürlükte olan bazı hukuk kurallarını çıkarma yetkisi 9.7.2018 tarihi itibarıyla sona ermiştir diyen bir kimse bu düşüncesine;</b></p><p>I. tüzük,<br>II. kanun hükmünde kararname,<br>III. yönetmelik,<br>IV. Cumhurbaşkanı Kararnamesi</p><p><b>verilen hukuk kurallarından hangilerini örnek olarak verebilir?</b></p>",
     diff: 3,
     expl: "Cumhurbaşkanlığı Hükümet Sistemi'ne geçiş (2018) ile birlikte Tüzük ve Kanun Hükmünde Kararname (KHK) çıkarma yetkisi hukuk sistemimizden çıkarılmıştır.",
     answers: [
@@ -275,7 +275,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Vatandaşlık dersini videodan takip eden Ahmet, hukukun kaynakları ile ilgili aşağıdaki notları alıyor.<br/><b>Asli Kaynaklar</b><br/>a) Yazılı Kaynaklar: Anayasa, Milletlerarası antlaşma, Kanun, Cumhurbaşkanı Kararnamesi<br/>b) Yazısız Kaynaklar: Örf ve âdet hukuku<br/><b>Yardımcı Kaynaklar</b><br/>Doktrin, Yönetmelik</p><p><b>Buna göre Ahmet, hukukun kaynaklarından hangisini yanlış yere yazmıştır?</b></p>",
+    text: "<p>Vatandaşlık dersini videodan takip eden Ahmet, hukukun kaynakları ile ilgili aşağıdaki notları alıyor.</p><p><b>Asli Kaynaklar</b><br><b>a) Yazılı Kaynaklar</b><br>• Anayasa<br>• Milletlerarası antlaşma<br>• Kanun<br>• Cumhurbaşkanı Kararnamesi<br><b>b) Yazısız Kaynaklar</b><br>• Örf ve âdet hukuku<br><b>Yardımcı Kaynaklar</b><br>• Doktrin<br>• Yönetmelik</p><p><b>Buna göre Ahmet, hukukun kaynaklarından hangisini <u>yanlış</u> yere yazmıştır?</b></p>",
     diff: 2,
     expl: "Yönetmelikler asli (bağlayıcı) kaynaklar olan yazılı kaynaklar arasında yer alır. Yardımcı kaynaklar ise yalnızca doktrin (bilimsel görüşler) ve içtihatlardan (mahkeme kararları) oluşur.",
     answers: [
@@ -287,7 +287,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi, hukukun yardımcı kaynakları arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi, hukukun yardımcı kaynakları arasında <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "Bilimsel görüşler (doktrin) ve ilk derece mahkemelerinin kararları (içtihat) yardımcı kaynaktır ve bağlayıcı değildir. Ancak Yargıtay Büyük Genel Kurulunun verdiği 'İçtihadı Birleştirme Kararları' ilgili tüm mahkemeler için kesin bağlayıcıdır, yardımcı kaynak sayılamaz.",
     answers: [
@@ -299,7 +299,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türk hukukunda normlar hiyerarşisine göre,</b><br/><br/>I. kanun,<br/>II. temel hak ve özgürlüklere ilişkin milletlerarası antlaşmalar,<br/>III. Cumhurbaşkanı kararnameleri<br/><br/><b>verilen normların büyükten küçüğe sıralaması hangisinde doğru verilmiştir?</b></p>",
+    text: "<p><b>Türk hukukunda normlar hiyerarşisine göre,</b></p><p>I. kanun,<br>II. temel hak ve özgürlüklere ilişkin milletlerarası antlaşmalar,<br>III. Cumhurbaşkanı kararnameleri</p><p><b>verilen normların <u>büyükten küçüğe</u> sıralaması hangisinde doğru verilmiştir?</b></p>",
     diff: 3,
     expl: "Anayasa madde 90'a göre, temel hak ve özgürlüklere ilişkin milletlerarası antlaşmalar kanunlarla çelişirse antlaşma hükümleri üstün tutulur. Bu yüzden sıralama: Temel hak antlaşması > Kanun > Cumhurbaşkanlığı Kararnamesi şeklinde olmalıdır.",
     answers: [
@@ -311,7 +311,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>---- hukuk kuralları kamu düzenini, genel ahlakı ve zayıfları korumak üzere çıkarılır. Bu tür hukuk kurallarının aksi kararlaştırılamaz.</b></p><p><b>Yukarıdaki cümlede boş bırakılan yere hangisi getirilmelidir?</b></p>",
+    text: "<p>---- hukuk kuralları kamu düzenini, genel ahlakı ve zayıfları korumak üzere çıkarılır. Bu tür hukuk kurallarının aksi kararlaştırılamaz.</p><p><b>Yukarıdaki cümlede boş bırakılan yere hangisi getirilmelidir?</b></p>",
     diff: 2,
     expl: "Tarafların kendi iradeleriyle aksi yönünde bir anlaşma yapamadıkları, kamu düzenini koruma amaçlı kesin bağlayıcı kurallara 'emredici hukuk kuralları' denir.",
     answers: [
@@ -323,7 +323,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Kayın hısımlığı, kendisini meydana getiren evliliğin sona ermesiyle ortadan kalkmaz.<br/>II. Borcun ifası için gün belirtilmeksizin sadece ay belirlenmişse, bundan o ayın son günü anlaşılır.<br/>III. Sözleşme ile aksi kararlaştırılmadıkça satıcı ve alıcı borçlarını aynı anda ifa etmekle yükümlüdürler.</p><p><b>Yukarıda verilen hukuk kurallarının nitelikleri sırasıyla hangisinde doğru verilmiştir?</b></p>",
+    text: "<p>I. Kayın hısımlığı, kendisini meydana getiren evliliğin sona ermesiyle ortadan kalkmaz.<br>II. Borcun ifası için gün belirtilmeksizin sadece ay belirlenmişse, bundan o ayın son günü anlaşılır.<br>III. Sözleşme ile aksi kararlaştırılmadıkça satıcı ve alıcı borçlarını aynı anda ifa etmekle yükümlüdürler.</p><p><b>Yukarıda verilen hukuk kurallarının nitelikleri sırasıyla hangisinde doğru verilmiştir?</b></p>",
     diff: 3,
     expl: "I. cümlede tarafların iradesine bakılmaksızın uygulanan 'emredici' bir kural vardır. II. cümlede belirsizliği gidermek için kullanılan 'yorumlayıcı' kural bulunur. III. cümlede ise aksi kararlaştırılabildiği için 'tamamlayıcı' bir hukuk kuralı yer almaktadır.",
     answers: [
@@ -335,7 +335,7 @@ export const VAT_TEMEL_HUKUK_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>6098 sayılı Türk Borçlar Kanunu m. 299'da belirtilen <i>\"Kira sözleşmesi, kiraya verenin bir şeyin kullanılmasını veya kullanmayla birlikte ondan yararlanılmasını kiracıya bırakmayı, kiracının da buna karşılık kararlaştırılan kira bedelini ödemeyi üstlendiği sözleşmedir\"</i>. <b>ifadesi hangi hukuk kuralına örnektir?</b></p>",
+    text: "<p><b>6098 sayılı Türk Borçlar Kanunu m. 299'da belirtilen</b> \"Kira sözleşmesi, kiraya verenin bir şeyin kullanılmasını veya kullanmayla birlikte ondan yararlanılmasını kiracıya bırakmayı, kiracının da buna karşılık kararlaştırılan kira bedelini ödemeyi üstlendiği sözleşmedir\". <b>ifadesi hangi hukuk kuralına örnektir?</b></p>",
     diff: 2,
     expl: "Bir hukuki kavramın neleri kapsadığını ve sınırlarının neler olduğunu açıklayan ve anlamlandıran kurallar 'tanımlayıcı hukuk kuralları'dır.",
     answers: [
@@ -401,7 +401,7 @@ export const VAT_TEMEL_HUKUK_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>6098 sayılı Türk Borçlar Kanunu m. 59'da düzenlenen <i>\"Hâkim olayın özelliklerine ve kusurun ağırlığına göre tazminatın şeklini ve miktarını belirler\"</i>. <b>hükmüyle hâkime takdir yetkisi tanınması aşağıdaki boşluklardan hangisi için geçerlidir?</b></p>",
+    text: "<p><b>6098 sayılı Türk Borçlar Kanunu m. 59'da düzenlenen</b> \"Hâkim olayın özellikleri ve kusurun ağırlığına göre tazminatın şeklini ve miktarını belirler\". <b>hükmüyle hâkime takdir yetkisi tanınması aşağıdaki boşluklardan hangisi için geçerlidir?</b></p>",
     diff: 3,
     expl: "Kanun koyucunun, bilerek ve isteyerek bıraktığı; çözümünü hâkimin takdir yetkisine (durumun gerekleri ve hakkaniyete göre belirlemesine) bıraktığı boşluk türüne 'kural içi boşluk' denir.",
     answers: [
@@ -425,7 +425,7 @@ export const VAT_TEMEL_HUKUK_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Kanun, belirli bir konuda \"hakkaniyete uygun olarak karar verileceğini\" söylemektedir.</li><li>Ayırt etme gücüne sahip olmayan kişi, yaptığı geçersiz iş sözleşmesi gereği çalıştığı işverenden ücretini istemektedir.</li><li>Yapay zekâ varlıklarının mal varlığı edinmesine ilişkin hiçbir düzenleme kanunda yer almamaktadır.</li></ul></p><p><b>Yukarıda verilen olaylar sırasıyla hangi boşluk türlerini ifade etmektedir?</b></p>",
+    text: "<p>• Kanun, belirli bir konuda \"hakkaniyete uygun olarak karar verileceğini\" söylemektedir.<br>• Ayırt etme gücüne sahip olmayan kişi, yaptığı geçersiz iş sözleşmesi gereği çalıştığı işverenden ücretini istemektedir.<br>• Yapay zekâ varlıklarının mal varlığı edinmesine ilişkin hiçbir düzenleme kanunda yer almamaktadır.</p><p><b>Yukarıda verilen olaylar sırasıyla hangi boşluk türlerini ifade etmektedir?</b></p>",
     diff: 3,
     expl: "Birinci olayda hâkime takdir yetkisi verilmiştir (Kural içi boşluk). İkinci olayda kanundaki katı hüküm adalet hislerini zedeleyeceği için daraltılır (Örtülü boşluk). Üçüncü olayda ise yapay zeka ile ilgili kanunda hiçbir hüküm yoktur (Açık/Gerçek kanun boşluğu).",
     answers: [
@@ -437,7 +437,7 @@ export const VAT_TEMEL_HUKUK_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir öğrenci, Medeni Hukuk dersinde <i>\"kanun koyucunun gerek gördüğü takdirde, yürürlükteki kanunun anlamını açıklayıcı ve bağlayıcı biçimde yorum yapabileceğini\"</i> söylemiştir. Ancak ders hocası, bu yorum türünün 1924 Anayasası Dönemi'nde uygulandığını ancak artık uygulanmadığını belirtmiştir.</p><p><b>Bu açıklamalar, aşağıdaki yorum türlerinden hangisine ilişkindir?</b></p>",
+    text: "<p>Bir öğrenci, Medeni Hukuk dersinde \"kanun koyucunun gerek gördüğü takdirde, yürürlükteki kanunun anlamını açıklayıcı ve bağlayıcı biçimde yorum yapabileceğini\" söylemiştir. Ancak ders hocası, bu yorum türünün 1924 Anayasası Dönemi'nde uygulandığını ancak artık uygulanmadığını belirtmiştir.</p><p><b>Bu açıklamalar, aşağıdaki yorum türlerinden hangisine ilişkindir?</b></p>",
     diff: 2,
     expl: "Yasama organı (Meclis) tarafından kanunun anlamını açıklamak için yapılan bağlayıcı yoruma 'Yasama yorumu' denir. 1924 Anayasası'nda uygulanmış, ancak 1961'den itibaren hukukumuzdan çıkarılmıştır.",
     answers: [
@@ -449,7 +449,7 @@ export const VAT_TEMEL_HUKUK_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'nu oluşturan kitaplar arasında aşağıdakilerden hangisi yer almaz?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'nu oluşturan kitaplar arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Türk Medeni Kanunu (TMK); Başlangıç hükümleri ile başlar. Kitapları sırasıyla; Kişiler Hukuku, Aile Hukuku, Miras Hukuku ve Eşya Hukuku'dur. Ticari işletme hukuku ise Ticaret Hukukunun bir alt dalıdır.",
     answers: [
@@ -461,7 +461,7 @@ export const VAT_TEMEL_HUKUK_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Suç şüphesinin öğrenilmesinden, iddianamenin kabulüne kadar geçen evredir.<br/>II. İddianamenin kabulüyle başlayıp, hükmün kesinleşmesine kadar süren evredir.</p><p><b>Bu tanımlar aşağıdaki kavramlarla doğru şekilde eşleştirildiğinde hangi seçenek doğrudur?</b></p>",
+    text: "<p>I. Suç şüphesinin öğrenilmesinden, iddianamenin kabulüne kadar geçen evredir.<br>II. İddianamenin kabulüyle başlayıp, hükmün kesinleşmesine kadar süren evredir.</p><p><b>Bu tanımlar aşağıdaki kavramlarla doğru şekilde eşleştirildiğinde hangi seçenek doğrudur?</b></p>",
     diff: 3,
     expl: "Ceza Muhakemesi Kanunu (CMK) m.2'ye göre; suç şüphesinden iddianamenin kabulüne kadar olan evreye 'soruşturma' (yetkili merci Cumhuriyet Savcısıdır), iddianamenin kabulüyle başlayıp hüküm verilene kadar geçen evreye ise 'kovuşturma' (yargılama) denir.",
     answers: [
@@ -473,7 +473,7 @@ export const VAT_TEMEL_HUKUK_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>5271 sayılı Ceza Muhakemesi Kanunu'na göre</b><br/><br/>I. suç şüphesi altında bulunan kişinin, henüz iddianame düzenlenmeden önceki evredeki sıfatı,<br/>II. iddianamenin kabulüyle birlikte suç isnadı altında yargılanan kişinin sıfatı<br/><br/><b>aşağıdaki kavramlarla eşleştirildiğinde hangisi doğrudur?</b></p>",
+    text: "<p><b>5271 sayılı Ceza Muhakemesi Kanunu'na göre</b></p><p>I. suç şüphesi altında bulunan kişinin, henüz iddianame düzenlenmeden önceki evredeki sıfatı,<br>II. iddianamenin kabulüyle birlikte suç isnadı altında yargılanan kişinin sıfatı</p><p><b>aşağıdaki kavramlarla eşleştirildiğinde hangisi doğrudur?</b></p>",
     diff: 2,
     expl: "Soruşturma evresinde hakkında ceza soruşturması yürütülen kişiye 'şüpheli' denir. İddianamenin mahkemece kabulüyle birlikte başlayan kovuşturma (yargılama) evresinde ise kişi artık 'sanık' sıfatını kazanır.",
     answers: [
@@ -485,7 +485,7 @@ export const VAT_TEMEL_HUKUK_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>5271 sayılı Ceza Muhakemesi Kanunu'na göre</b><br/><br/>I. soruşturma evresinde suçun işlendiğini öğrenerek araştırma yapma ve iddianame düzenleyerek kamu davası açma yetkisi bulunan görevli kişi,<br/>II. yargılamada tarafsızlık ve bağımsızlık içinde karar verme yetkisi bulunan kişi,<br/><br/><b>aşağıdaki kavramlarla eşleştirildiğinde hangisi doğrudur?</b></p>",
+    text: "<p><b>5271 sayılı Ceza Muhakemesi Kanunu'na göre</b></p><p>I. soruşturma evresinde suçun işlendiğini öğrenerek araştırma yapma ve iddianame düzenleyerek kamu davası açma yetkisi bulunan görevli kişi,<br>II. yargılamada tarafsızlık ve bağımsızlık içinde karar verme yetkisi bulunan kişi,</p><p><b>aşağıdaki kavramlarla eşleştirildiğinde hangisi doğrudur?</b></p>",
     diff: 2,
     expl: "Soruşturma evresinin en yetkili kamu görevlisi Cumhuriyet savcısıdır (araştırır ve iddianame düzenler). Kovuşturma (yargılama) evresinde davayı yürüten ve bağımsız şekilde hüküm veren kişi ise hâkimdir.",
     answers: [
@@ -509,7 +509,7 @@ export const VAT_TEMEL_HUKUK_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Ceza muhakemesi sürecinde kişi özgürlüğünü sınırlayan tedbirlerden;</b><br/><br/>I. yakalama,<br/>II. tutuklama,<br/>III. gözaltı<br/><br/><b>hangileri yalnızca hâkim kararıyla gerçekleştirilebilir?</b></p>",
+    text: "<p><b>Ceza muhakemesi sürecinde kişi özgürlüğünü sınırlayan tedbirlerden;</b></p><p>I. yakalama,<br>II. tutuklama,<br>III. gözaltı</p><p><b>hangileri yalnızca hâkim kararıyla gerçekleştirilebilir?</b></p>",
     diff: 3,
     expl: "Yakalama işlemi suçüstü hâlinde herkes veya kolluk tarafından yapılabilir. Gözaltı kararı Cumhuriyet savcısı tarafından verilir. Ancak kişinin cezaevine gönderilmesi anlamına gelen 'Tutuklama' kararı yalnızca yetkili hâkim tarafından verilebilir.",
     answers: [
@@ -575,7 +575,7 @@ export const VAT_TEMEL_HUKUK_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Ceza muhakemesi sürecinde;</b><br/><br/>I. Cumhuriyet savcısının, yeterli şüphe bulunduğuna kanaat getirerek kamu davası açmak amacıyla düzenlediği yazılı belge,<br/>II. yargılama sonunda mahkemenin delilleri değerlendirerek verdiği karar<br/><br/><b>aşağıdaki kavramlarla eşleştirildiğinde hangisi doğrudur?</b></p>",
+    text: "<p><b>Ceza muhakemesi sürecinde;</b></p><p>I. Cumhuriyet savcısının, yeterli şüphe bulunduğuna kanaat getirerek kamu davası açmak amacıyla düzenlediği yazılı belge,<br>II. yargılama sonunda mahkemenin delilleri değerlendirerek verdiği karar</p><p><b>aşağıdaki kavramlarla eşleştirildiğinde hangisi doğrudur?</b></p>",
     diff: 2,
     expl: "Savcının dava açmak için hazırladığı yazılı ve suçlamaları içeren belgeye 'İddianame' denir. Mahkemenin yargılama sonunda sanığın beraatine, mahkûmiyetine vb. dair verdiği son karara ise 'Hüküm' adı verilir.",
     answers: [
@@ -587,7 +587,7 @@ export const VAT_TEMEL_HUKUK_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nda <i>\"Ölüm cezası ve genel müsadere cezası verilemez.\"</i> hükmü hangi yıl yapılan anayasa değişikliği ile hukukumuza girmiştir?</b></p>",
+    text: "<p><b>1982 Anayasası'nda</b> \"Ölüm cezası ve genel müsadere cezası verilemez.\" <b>hükmü hangi yıl yapılan anayasa değişikliği ile hukukumuza girmiştir?</b></p>",
     diff: 3,
     expl: "Ölüm cezası (idam) ve genel müsadere cezası, 2004 yılında yapılan Anayasa değişikliği ile hukuk sistemimizden tamamen çıkarılmıştır.",
     answers: [
@@ -599,7 +599,7 @@ export const VAT_TEMEL_HUKUK_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Ceza yargılama sürecinde;</b><br/><br/><ul><li>Uyuşmazlık konusu bir vakıanın varlığı ya da yokluğu hakkında hâkimi ikna etmek için tarafların yargılamada başvurduğu araçtır.</li><li>Tarafların ya da uzmanların, dava konusu hakkında sundukları bağlayıcı olmayan hukuki değerlendirmelerdir.</li></ul></p><p><b>verilen tanımlar sırasıyla aşağıdaki kavramlardan hangisine karşılık gelir?</b></p>",
+    text: "<p><b>Ceza yargılama sürecinde;</b></p><p>• Uyuşmazlık konusu bir vakıanın varlığı ya da yokluğu hakkında hâkimi ikna etmek için tarafların yargılamada başvurduğu araçtır.<br>• Tarafların ya da uzmanların, dava konusu hakkında sundukları bağlayıcı olmayan hukuki değerlendirmelerdir.</p><p><b>verilen tanımlar sırasıyla aşağıdaki kavramlardan hangisine karşılık gelir?</b></p>",
     diff: 3,
     expl: "Hâkimi olayın gerçekleştiğine ikna etmek için kullanılan geçerli araçlara (tanık, keşif, belge vb.) 'delil' denir. Uzman kişilerin veya tarafların olay hakkındaki hukuki görüş ve açıklamalarına ise 'mütalaa' denir.",
     answers: [
@@ -611,7 +611,7 @@ export const VAT_TEMEL_HUKUK_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Kanunun açıkça suç saymadığı bir fiil için kimseye ceza verilemez.<br/>II. İdarenin düzenleyici işlemleriyle suç ve ceza konulamaz.<br/>III. Kanunların suç ve ceza içeren hükümlerinde kıyas yapılamaz.</p><p><b>5237 sayılı Türk Ceza Kanunu'nun 2. maddesine göre, yukarıdakilerden hangileri \"suçta ve cezada kanunilik\" ilkesinin sonuçları arasında yer alır?</b></p>",
+    text: "<p>I. Kanunun açıkça suç saymadığı bir fiil için kimseye ceza verilemez.<br>II. İdarenin düzenleyici işlemleriyle suç ve ceza konulamaz.<br>III. Kanunların suç ve ceza içeren hükümlerinde kıyas yapılamaz.</p><p><b>5237 sayılı Türk Ceza Kanunu'nun 2. maddesine göre, yukarıdakilerden hangileri \"suçta ve cezada kanunilik\" ilkesinin sonuçları arasında yer alır?</b></p>",
     diff: 3,
     expl: "TCK m.2 'Suçta ve cezada kanunilik' ilkesini düzenler. Buna göre kanunsuz suç ve ceza olmaz, idarenin işlemiyle ceza getirilemez ve suç/ceza içeren hükümlerde kıyas uygulanamaz. Üçü de bu ilkenin sonucudur.",
     answers: [
@@ -623,7 +623,7 @@ export const VAT_TEMEL_HUKUK_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Alacaklı İbrahim, borçlu Selim'e <i>\"Sana sattığım ürünlerin borçlarını ödemezsen seni hapislerde süründürürüm.\"</i> diyor.</p><p><b>1982 Anayasası'na göre, İbrahim'in bu ifadesi suç ve cezalara ilişkin esaslardan hangisine aykırılık teşkil etmektedir?</b></p>",
+    text: "<p>Alacaklı İbrahim, borçlu Selim'e \"Sana sattığım ürünlerin borçlarını ödemezsen seni hapislerde süründürürüm.\" diyor.</p><p><b>1982 Anayasası'na göre, İbrahim'in bu ifadesi suç ve cezalara ilişkin esaslardan hangisine aykırılık teşkil etmektedir?</b></p>",
     diff: 2,
     expl: "1982 Anayasası m.38'e göre: 'Hiç kimse, yalnızca sözleşmeden doğan bir yükümlülüğü yerine getirememesinden dolayı özgürlüğünden alıkonulamaz.' Borcun ödenmemesi (sözleşme ihlali) kişiye hapis cezası verilmesinin gerekçesi olamaz.",
     answers: [
@@ -635,7 +635,7 @@ export const VAT_TEMEL_HUKUK_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p>Banu, trafikte tartıştığı Hakan'a <i>\"Bana ehliyeti kasaptan mı aldın diyerek hakaret ettin; sen suçlusun, hapis cezası alacaksın.\"</i> diyor.</p><p><b>Buna göre Banu, aşağıdaki hukukun temel ilkelerinden hangisine aykırı davranmıştır?</b></p>",
+    text: "<p>Banu, trafikte tartıştığı Hakan'a \"Bana ehliyeti kasaptan mı aldın diyerek hakaret ettin; sen suçlusun, hapis cezası alacaksın.\" diyor.</p><p><b>Buna göre Banu, aşağıdaki hukukun temel ilkelerinden hangisine aykırı davranmıştır?</b></p>",
     diff: 2,
     expl: "1982 Anayasası m.38 uyarınca 'Suçluluğu hükmen sabit oluncaya kadar, kimse suçlu sayılamaz'. Bu ilkeye 'Masumiyet karinesi' denir. Mahkeme kararı olmadan birini kesin suçlu ilan etmek bu ilkeye aykırıdır.",
     answers: [
@@ -659,7 +659,7 @@ export const VAT_TEMEL_HUKUK_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'ndaki <i>\"Herkes mali gücüne göre vergi ödemekle yükümlüdür.\"</i> ifadesi vergiye ilişkin aşağıdaki ilkelerden hangisine yöneliktir?</b></p>",
+    text: "<p><b>1982 Anayasası'ndaki</b> \"Herkes mali gücüne göre vergi ödemekle yükümlüdür.\" <b>ifadesi vergiye ilişkin aşağıdaki ilkelerden hangisine yöneliktir?</b></p>",
     diff: 3,
     expl: "Cümledeki 'herkes' kelimesi, ayrım yapılmaksızın tüm vatandaşların vergi mükellefi olmasını yani 'genellik' ilkesini belirtir. 'Mali gücüne göre' ifadesi ise çok kazanandan çok, az kazanandan az vergi alınmasını yani 'adalet' ilkesini vurgular.",
     answers: [
@@ -671,7 +671,7 @@ export const VAT_TEMEL_HUKUK_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Kamu gelirlerine ilişkin verilen;</b><br/><br/><ul><li>Belirli bir kamu hizmetinden yararlanmanın karşılığıdır.</li><li>Resmî belge veya işlem için alınan sabit nitelikteki ücrettir.</li><li>Kamu hizmeti karşılığı olmadan alınan, genel bütçe geliridir.</li></ul></p><p><b>ifadeler sırasıyla aşağıdaki kavramlardan hangilerinin karşılığıdır?</b></p>",
+    text: "<p><b>Kamu gelirlerine ilişkin verilen;</b></p><p>• Belirli bir kamu hizmetinden yararlanmanın karşılığıdır.<br>• Resmî belge veya işlem için alınan sabit nitelikteki ücrettir.<br>• Kamu hizmeti karşılığı olmadan alınan, genel bütçe geliridir.</p><p><b>ifadeler sırasıyla aşağıdaki kavramlardan hangilerinin karşılığıdır?</b></p>",
     diff: 3,
     expl: "1. Belirli bir hizmetin (pasaport, ruhsat) bireysel karşılığı olan bedele 'harç' denir. 2. Resmî bir işlemin sonucu/belge üzerinden alınan bedele 'resim' denir. 3. Karşılıksız ve kamu hizmetlerinin genel finansmanı için zorunlu alınan bedele ise 'vergi' denir.",
     answers: [
@@ -707,7 +707,7 @@ export const VAT_TEMEL_HUKUK_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıda vergilendirme sürecine ilişkin ifadeler verilmiştir:</b><br/><br/><ul><li>Vergi alacağının kanuna göre hesaplanarak belirlenmesi</li><li>Vergi alacağının mükellefe resmî yolla bildirilmesi</li><li>Vergi alacağının kesinleşerek ödemeye hazır hâle gelmesi</li><li>Vergi alacağının kamu gücüyle elde edilmesi</li></ul></p><p><b>Bu işlemler, gerçekleşme sırasına göre aşağıdaki kavramlardan hangileriyle doğru eşleştirilmiştir?</b></p>",
+    text: "<p>Aşağıda vergilendirme sürecine ilişkin ifadeler verilmiştir:</p><p>• Vergi alacağının kanuna göre hesaplanarak belirlenmesi<br>• Vergi alacağının mükellefe resmî yolla bildirilmesi<br>• Vergi alacağının kesinleşerek ödemeye hazır hâle gelmesi<br>• Vergi alacağının kamu gücüyle elde edilmesi</p><p><b>Bu işlemler, gerçekleşme sırasına göre aşağıdaki kavramlardan hangileriyle doğru eşleştirilmiştir?</b></p>",
     diff: 3,
     expl: "Vergilendirme süreci 4 aşamadan oluşur: 1) Tarh (hesaplanıp belirlenmesi), 2) Tebliğ (hesaplanan verginin mükellefe bildirilmesi), 3) Tahakkuk (hukuken kesinleşip ödenecek aşamaya gelmesi), 4) Tahsil (verginin fiilen ödenmesi/alınması).",
     answers: [
@@ -737,7 +737,7 @@ export const VAT_TEMEL_HUKUK_TEST_4: McQ[] = [
 // ============================================================================
 export const VAT_TEMEL_HUKUK_TEST_5: McQ[] = [
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, gerçek kişiliğin başlangıcı için</b></p><ul><li>I. tam doğmuş olmak,</li><li>II. ana rahmine düşmüş olmak,</li><li>III. sağ doğmuş olmak,</li><li>IV. ergin olmak</li></ul><p><b>verilenlerden hangilerinin birlikte gerçekleşmesi zorunludur?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, gerçek kişiliğin başlangıcı için</b></p><p>I. tam doğmuş olmak,<br>II. ana rahmine düşmüş olmak,<br>III. sağ doğmuş olmak,<br>IV. ergin olmak</p><p><b>verilenlerden hangilerinin birlikte gerçekleşmesi zorunludur?</b></p>",
     diff: 2,
     expl: "Gerçek kişiliğin başlangıcı, çocuğun tam ve sağ doğmasıyla gerçekleşir. Hukuken gerçek kişi olabilmek için çocuğun anne rahminden tamamen ayrılması (tam doğum) ve çok kısa bir süre de olsa anneden bağımsız yaşaması (sağ doğum) şarttır.",
     answers: [
@@ -761,7 +761,7 @@ export const VAT_TEMEL_HUKUK_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre</b></p><ul><li>I. ana rahmindeki cenin,</li><li>II. tam ve sağ doğan çocuk,</li><li>III. kanuna uygun şekilde kurulmuş vakıf</li></ul><p><b>verilenlerden hangileri gerçek kişi olarak kabul edilmektedir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre</b></p><p>I. ana rahmindeki cenin,<br>II. tam ve sağ doğan çocuk,<br>III. kanuna uygun şekilde kurulmuş vakıf</p><p><b>verilenlerden hangileri gerçek kişi olarak kabul edilmektedir?</b></p>",
     diff: 2,
     expl: "Türk hukukunda gerçek kişiler 'insanlar'dır ve kişilik tam ve sağ doğmakla başlar. Ana rahmindeki cenin henüz kişi kabul edilmez (sadece hak ehliyeti koşullu başlar). Vakıf ise tüzel kişidir.",
     answers: [
@@ -809,7 +809,7 @@ export const VAT_TEMEL_HUKUK_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, kişinin içinde bulunduğu uçağın havada infilak etmesi nedeniyle kişi hakkında ölüm karinesi çıkarılması için</b></p><ul><li>I. cesedinin bulunamaması,</li><li>II. ölümüne muhtemel gözle bakılması,</li><li>III. mahallî mülki amirin kararı</li></ul><p><b>verilenlerden hangilerinin varlığı aranmaktadır?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, kişinin içinde bulunduğu uçağın havada infilak etmesi nedeniyle kişi hakkında ölüm karinesi çıkarılması için</b></p><p>I. cesedinin bulunamaması,<br>II. ölümüne muhtemel gözle bakılması,<br>III. mahallî mülki amirin kararı</p><p><b>verilenlerden hangilerinin varlığı aranmaktadır?</b></p>",
     diff: 3,
     expl: "Ölüm karinesi; kişinin ölümüne 'kesin' (muhtemel değil) gözle bakılmayı gerektiren bir durumda kaybolması ve cesedinin bulunamamasıdır. Bu durumda mahkeme kararına gerek duyulmaksızın 'mahallin en büyük mülki amirinin (vali/kaymakam)' emriyle ölüm kaydı düşülür.",
     answers: [
@@ -821,7 +821,7 @@ export const VAT_TEMEL_HUKUK_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Medeni hukuka göre, hakkında mahkemece gaiplik kararı verilen bir kişiyle ilgili;</b></p><ul><li>I. Evliliği kendiliğinden sona erer.</li><li>II. Evliliğin sona ermesi için mahkemeden ayrıca evliliğin feshine karar verilmesi gerekir.</li><li>III. Evliliğin feshine karar verilmeden yeniden evlenilemez.</li></ul><p><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p><b>Medeni hukuka göre, hakkında mahkemece gaiplik kararı verilen bir kişiyle ilgili;</b></p><p>I. Evliliği kendiliğinden sona erer.<br>II. Evliliğin sona ermesi için mahkemeden ayrıca evliliğin feshine karar verilmesi gerekir.<br>III. Evliliğin feshine karar verilmeden yeniden evlenilemez.</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 3,
     expl: "Gaiplik kararı evliliği kendiliğinden sona erdirmez. Eşin yeniden evlenebilmesi için gaiplik davası ile birlikte veya ayrıca evliliğin feshini talep etmesi gerekir.",
     answers: [
@@ -833,7 +833,7 @@ export const VAT_TEMEL_HUKUK_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türk medeni hukukuna göre</b></p><ul><li>kendisinden uzun süreden beridir haber alınamayan A ile</li><li>ölümüne kesin gözüyle bakılmasını gerektiren bir durumda kaybolan ve cesedi bulunamayan B'nin</li></ul><p><b>kişiliklerinin sona ermesine neden olan durumlar sırasıyla aşağıdakilerden hangisinde doğru verilmiştir?</b></p>",
+    text: "<p><b>Türk medeni hukukuna göre</b></p><p>• kendisinden uzun süreden beridir haber alınamayan A ile<br>• ölümüne kesin gözüyle bakılmasını gerektiren bir durumda kaybolan ve cesedi bulunamayan B'nin</p><p><b>kişiliklerinin sona ermesine neden olan durumlar sırasıyla aşağıdakilerden hangisinde doğru verilmiştir?</b></p>",
     diff: 3,
     expl: "Uzun süre haber alınamama durumu 'gaiplik' (mahkeme kararı gerektirir), ölümüne kesin gözüyle bakılan bir olayda (örn: uçak kazası) cesedin bulunamaması durumu ise 'ölüm karinesi'dir.",
     answers: [
@@ -893,7 +893,7 @@ export const VAT_TEMEL_HUKUK_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre gerçek kişilerde hak ehliyetine sahip olmak için</b></p><ul><li>I. tam ve sağ doğmak,</li><li>II. ergin olmak,</li><li>III. ana rahmine düşmek,</li><li>IV. ayırt etme gücüne sahip olmak</li></ul><p><b>verilenlerden hangilerinin birlikte gerçekleşmesi gerekir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre gerçek kişilerde hak ehliyetine sahip olmak için</b></p><p>I. tam ve sağ doğmak,<br>II. ergin olmak,<br>III. ana rahmine düşmek,<br>IV. ayırt etme gücüne sahip olmak</p><p><b>verilenlerden hangilerinin birlikte gerçekleşmesi gerekir?</b></p>",
     diff: 3,
     expl: "Hak ehliyeti kural olarak pasif bir ehliyettir. Hukuken hak ehliyeti, 'tam ve sağ doğmak' koşuluyla, çocuğun 'ana rahmine düştüğü' andan itibaren başlar. Ergin olmak ve ayırt etme gücü fiil ehliyetinin şartlarıdır.",
     answers: [
@@ -905,7 +905,7 @@ export const VAT_TEMEL_HUKUK_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "<p>Türk Medeni Kanunu 8. maddesine göre, <i>\"Bütün insanlar, hukuk düzeninin sınırları içinde, haklara ve borçlara ehil olmada eşittirler.\"</i></p><p><b>ifadesi hak ehliyetinin hangi ilkelerinden bahsetmektedir?</b></p>",
+    text: "<p><b>Türk Medeni Kanunu 8. maddesine göre, \"Bütün insanlar, hukuk düzeninin sınırları içinde, haklara ve borçlara ehil olmada eşittirler.\"</b></p><p><b>ifadesi hak ehliyetinin hangi ilkelerinden bahsetmektedir?</b></p>",
     diff: 2,
     expl: "Maddedeki 'Bütün insanlar' ifadesi hiçbir ayrım gözetilmediğini belirten 'Genellik' ilkesini, 'ehil olmada eşittirler' ifadesi ise 'Eşitlik' ilkesini ifade eder.",
     answers: [
@@ -913,11 +913,11 @@ export const VAT_TEMEL_HUKUK_TEST_5: McQ[] = [
       { text: "eşitlik – süreklilik", ok: false },
       { text: "genellik – nesnellik", ok: false },
       { text: "serbestlik – eşitlik", ok: false },
-      { text: "genellik – eşitlik", ok: true }
+      { text: "eşitlik – genellik", ok: true }
     ]
   },
   {
-    text: "<p><b>Türk medeni hukukuna göre</b></p><ul><li>bir kimsenin kendi fiilleriyle lehine haklar aleyhine borçlar yaratabilmesi,</li><li>bir kimsenin haklara ve borçlara sahip olması</li></ul><p><b>ifadeleri sırasıyla hangilerini tanımlar?</b></p>",
+    text: "<p><b>Türk medeni hukukuna göre</b></p><p>• bir kimsenin kendi fiilleriyle lehine haklar aleyhine borçlar yaratabilmesi,<br>• bir kimsenin haklara ve borçlara sahip olması</p><p><b>ifadeleri sırasıyla hangilerini tanımlar?</b></p>",
     diff: 2,
     expl: "Kendi fiil ve işlemleriyle (sözleşme vb.) hak ve borç yaratabilme gücüne 'Fiil Ehliyeti', sadece pasif olarak bir hakka veya borca taraf olabilme (doğuştan gelen) duruma ise 'Hak Ehliyeti' denir.",
     answers: [
@@ -947,7 +947,7 @@ export const VAT_TEMEL_HUKUK_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre</b></p><ul><li>I. on sekiz yaşının doldurulması,</li><li>II. evlenme,</li><li>III. on beş yaşın doldurulması, kişinin başvurusu ve velinin rızası</li></ul><p><b>ifadelerinden hangilerinde ergin olmak için mahkeme kararı gereklidir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre</b></p><p>I. on sekiz yaşının doldurulması,<br>II. evlenme,<br>III. on beş yaşın doldurulması, kişinin başvurusu ve velinin rızası</p><p><b>ifadelerinden hangilerinde ergin olmak için mahkeme kararı gereklidir?</b></p>",
     diff: 3,
     expl: "18 yaşın doldurulması veya evlenme ile kişi kendiliğinden ergin olur (mahkeme kararına gerek yoktur). Ancak 15 yaşını dolduran bir küçüğün kendi isteği ve velisinin rızası ile ergin kılınması (kazai rüşt) için yetkili mahkemenin kararı şarttır.",
     answers: [
@@ -959,7 +959,7 @@ export const VAT_TEMEL_HUKUK_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Medeni hukuka göre bir kişinin ergin sayılmasını sağlayan durumlar arasında;</b></p><ul><li>I. on sekiz yaşını doldurmak,</li><li>II. evlenmek,</li><li>III. mahkeme kararı</li></ul><p><b>verilenlerden hangileri yer alır?</b></p>",
+    text: "<p><b>Medeni hukuka göre bir kişinin ergin sayılmasını sağlayan durumlar arasında;</b></p><p>I. on sekiz yaşını doldurmak,<br>II. evlenmek,<br>III. mahkeme kararı</p><p><b>verilenlerden hangileri yer alır?</b></p>",
     diff: 2,
     expl: "Kişi 18 yaşını doldurarak (olağan rüşt), yasal sınırlar içinde evlenerek (evlenme rüştü) veya şartları sağladığında mahkeme kararıyla (kazai rüşt) ergin sayılabilir. Üçü de geçerlidir.",
     answers: [
@@ -971,7 +971,7 @@ export const VAT_TEMEL_HUKUK_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türk Medeni Kanunu'na göre</b></p><ul><li>I. 17 yaşını dolduran kişiler, veli izniyle evlenebilir.</li><li>II. 16 yaşını dolduran kişilerin evlenmesine, ancak olağanüstü durum ve çok önemli bir sebep bulunursa mahkeme izin verebilir.</li><li>III. 15 yaşını dolduranlar, mahkeme izniyle de evlenemez.</li></ul><p><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p><b>Türk Medeni Kanunu'na göre</b></p><p>I. 17 yaşını dolduran kişiler, veli izniyle evlenebilir.<br>II. 16 yaşını dolduran kişilerin evlenmesine, ancak olağanüstü durum ve çok önemli bir sebep bulunursa mahkeme izin verebilir.<br>III. 15 yaşını dolduranlar, mahkeme izniyle de evlenemez.</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 3,
     expl: "Olağan evlenme yaşı 17'dir (veli izniyle). Olağanüstü durumlarda mahkeme kararıyla evlenme yaşı 16'dır. 15 yaşını dolduran kişi mahkeme kararıyla ergin kılınsa bile (kazai rüşt) kesinlikle evlenemez. Üç ifade de hukuk sistemimize göre doğrudur.",
     answers: [
@@ -1007,7 +1007,7 @@ export const VAT_TEMEL_HUKUK_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi kısıtlanma sebepleri arasında gösterilemez?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi kısıtlanma sebepleri arasında <u>gösterilemez</u>?</b></p>",
     diff: 2,
     expl: "Akıl hastalığı/zayıflığı, savurganlık, alkol veya uyuşturucu madde bağımlılığı, kötü yönetim ve 1 yıl/daha fazla hapis cezası almak kısıtlanma sebepleridir. 'Yaş küçüklüğü' ise bir kısıtlanma sebebi değildir; küçükler zaten doğrudan velayet altındadır.",
     answers: [
@@ -1031,7 +1031,7 @@ export const VAT_TEMEL_HUKUK_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre,</b></p><ul><li>I. kendisine yasal danışman atanmış kişiler,</li><li>II. mümeyyiz (ayırt etme gücüne sahip) çocuklar,</li><li>III. ayırt etme gücüne sahip ergin kısıtlılar</li></ul><p><b>verilenlerden hangileri fiil ehliyeti yönünden sınırlı ehliyetsizler grubuna dâhildir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre,</b></p><p>I. kendisine yasal danışman atanmış kişiler,<br>II. mümeyyiz çocuklar,<br>III. ayırt etme gücüne sahip ergin kısıtlılar</p><p><b>verilenlerden hangileri fiil ehliyeti yönünden sınırlı ehliyetsizler grubuna dâhildir?</b></p>",
     diff: 3,
     expl: "Ayırt etme gücüne sahip küçükler (mümeyyiz çocuklar) ve ayırt etme gücüne sahip kısıtlılar 'Sınırlı Ehliyetsizler' grubundadır. Kendisine yasal danışman atananlar ise 'Sınırlı Ehliyetliler' grubundadır.",
     answers: [
@@ -1043,7 +1043,7 @@ export const VAT_TEMEL_HUKUK_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, sınırlı ehliyetlileri tam ehliyetlerden ayıran kriter;</b></p><ul><li>I. mümeyyiz olma,</li><li>II. kendisine yasal danışman atanmış olma,</li><li>III. kısıtlı olmama,</li><li>IV. ergin olma</li></ul><p><b>verilenlerden hangileridir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, sınırlı ehliyetlileri tam ehliyetlerden ayıran kriter;</b></p><p>I. mümeyyiz olma,<br>II. kendisine yasal danışman atanmış olma,<br>III. kısıtlı olmama,<br>IV. ergin olma</p><p><b>verilenlerden hangileridir?</b></p>",
     diff: 3,
     expl: "Sınırlı ehliyetliler aslında tam ehliyetin tüm şartlarına sahip olan ancak korunmaları amacıyla kendilerine mahkemece belli konularda 'yasal danışman' atanmış kişilerdir. Tek ayıran kriter budur.",
     answers: [
@@ -1055,7 +1055,7 @@ export const VAT_TEMEL_HUKUK_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, fiil ehliyeti açısından tam ehliyetsizliği belirlemede kullanılan kriter;</b></p><ul><li>I. ayırt etme gücü,</li><li>II. yaş küçüklüğü,</li><li>III. kısıtlılık</li></ul><p><b>verilenlerden hangileridir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, fiil ehliyeti açısından tam ehliyetsizliği belirlemede kullanılan kriter;</b></p><p>I. ayırt etme gücü,<br>II. yaş küçüklüğü,<br>III. kısıtlılık</p><p><b>verilenlerden hangileridir?</b></p>",
     diff: 2,
     expl: "Bir kişinin fiil ehliyeti açısından 'tam ehliyetsiz' (hiçbir hukuki işlem yapamayan) sayılmasının tek ölçütü ayırt etme gücünün olmamasıdır. Yaş veya kısıtlılık sınırlı ehliyetsizliği ilgilendirir.",
     answers: [
@@ -1067,7 +1067,7 @@ export const VAT_TEMEL_HUKUK_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>A, 15 yaşını doldurduktan sonra velisinin izniyle mahkemeye başvurarak ergin kılınmıştır.</li><li>B, 17 yaşındayken evlenmiş, bir yıl sonra boşanmıştır.</li></ul></p><p><b>Medeni hukuka göre, bu kişilerin ehliyet türleri sırasıyla aşağıdakilerden hangisidir? (Her ikisinin de ayırt etme gücü tamdır ve kısıtlı değillerdir.)</b></p>",
+    text: "<p>• A, 15 yaşını doldurduktan sonra velisinin izniyle mahkemeye başvurarak ergin kılınmıştır.<br>• B, 17 yaşındayken evlenmiş, bir yıl sonra boşanmıştır.</p><p><b>Medeni hukuka göre, bu kişilerin ehliyet türleri sırasıyla aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "A, mahkeme kararıyla (kazai rüşt) ergin olmuştur. B, evlenme ile ergin olmuştur (boşansa dahi erginlik devam eder). Her ikisi de ergin, ayırt etme gücüne sahip ve kısıtlı olmadığı için 'tam ehliyetli' statüsündedirler.",
     answers: [
@@ -1079,19 +1079,19 @@ export const VAT_TEMEL_HUKUK_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre,</b></p><ul><li>ayırt etme gücüne sahip 16 yaşındaki M ile</li><li>ayırt etme gücüne sahip 28 yaşındaki kısıtlı L'nin</li></ul><p><b>fiil ehliyetleri sırasıyla aşağıdakilerden hangisinde doğru verilmiştir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre,</b></p><p>• ayırt etme gücüne sahip 16 yaşındaki M ile<br>• ayırt etme gücüne sahip 28 yaşındaki kısıtlı L'nin</p><p><b>fiil ehliyetleri sırasıyla aşağıdakilerden hangisinde doğru verilmiştir?</b></p>",
     diff: 3,
     expl: "M, yaş küçüklüğü nedeniyle ergin değildir; L ise ergin olmasına rağmen mahkeme kararıyla kısıtlanmıştır. Her ikisinin de ayırt etme gücü bulunduğu için hukuken 'sınırlı ehliyetsiz' statüsündedirler.",
     answers: [
       { text: "sınırlı ehliyetsiz – sınırlı ehliyetli", ok: false },
       { text: "tam ehliyetli – tam ehliyetsiz", ok: false },
-      { text: "sınırlı ehliyetli – tam ehliyetsiz", ok: false },
+      { text: "sınırlı ehliyetsiz – tam ehliyetsiz", ok: false },
       { text: "tam ehliyetli – sınırlı ehliyetli", ok: false },
       { text: "sınırlı ehliyetsiz – sınırlı ehliyetsiz", ok: true }
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, \"yerleşim yeri\" hakkında aşağıda verilen ifadelerden hangisi yanlıştır?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, \"yerleşim yeri\" hakkında aşağıda verilen ifadelerden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Türk Medeni Kanunu madde 19'a göre, \"Bir kimsenin aynı zamanda birden çok yerleşim yeri olamaz.\" Kural teklik ilkesidir (Ticari/sınai kuruluşlar hariç).",
     answers: [
@@ -1103,7 +1103,7 @@ export const VAT_TEMEL_HUKUK_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. Evli kişiler</li><li>II. Velayet altındaki çocuklar</li><li>III. Vesayet altındaki kişiler</li></ul></p><p><b>Türk Medeni Kanunu'na göre, yukarıdakilerden hangilerinin yerleşim yeri kanuni yerleşim yeridir?</b></p>",
+    text: "<p>I. Evli kişiler<br>II. Velayet altındaki çocuklar<br>III. Vesayet altındaki kişiler</p><p><b>Türk Medeni Kanunu'na göre, yukarıdakilerden hangilerinin yerleşim yeri kanuni yerleşim yeridir?</b></p>",
     diff: 3,
     expl: "Kişinin iradesi dışında bizzat kanun tarafından belirlenen yerleşim yerine 'kanuni yerleşim yeri' denir. Velayet altındaki çocukların (anne-babanın yanı) ve vesayet altındakilerin (vesayet makamının yanı) yerleşim yerleri kanunidir. Evli kişiler artık kendi yerleşim yerlerini serbestçe (iradi) seçebilir.",
     answers: [
@@ -1115,7 +1115,7 @@ export const VAT_TEMEL_HUKUK_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Medeni hukuka göre sınırlı ehliyetsizler;</b></p><ul><li>I. bağışta bulunmak,</li><li>II. vasiyetname düzenlemek,</li><li>III. kefalet sözleşmesi yapmak,</li><li>IV. vakıf kurmak</li></ul><p><b>işlemlerinden hangileri yapamaz?</b></p>",
+    text: "<p><b>Medeni hukuka göre sınırlı ehliyetsizler;</b></p><p>I. bağışta bulunmak,<br>II. vasiyetname düzenlemek,<br>III. kefalet sözleşmesi yapmak,<br>IV. vakıf kurmak</p><p><b>işlemlerinden hangileri <u>yapamaz</u>?</b></p>",
     diff: 3,
     expl: "Sınırlı ehliyetsizler (ayırt etme gücü olan küçük ve kısıtlılar) kanun gereği şu 4 işlemi kesinlikle yapamazlar: Kefil olmak, önemli bağışta bulunmak, vakıf kurmak ve rekabet yasağı sözleşmesi yapmak. Vasiyetname düzenlemek ise kişiye sıkı sıkıya bağlı bir hak olduğundan yaş şartını sağlamak kaydıyla yapabilirler.",
     answers: [
@@ -1157,7 +1157,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi hısımlık ilişkisi kurulmasının yollarından biri değildir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi hısımlık ilişkisi kurulmasının yollarından biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Hısımlık; kan bağı (doğum), evlilik (kayın hısımlığı), evlat edinme ve babalığın tanınması yollarıyla kurulur. Vesayet (vasi atanması) ise korunmaya muhtaç kişileri temsil etmek için mahkemece kurulan bir ilişkidir, hısımlık veya akrabalık doğurmaz.",
     answers: [
@@ -1193,7 +1193,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Sedef ile Ali evlidir. 4721 sayılı Türk Medeni Kanunu'na göre;</p><ul><li>I. Ali'nin babası ile Sedef'in teyzesi,</li><li>II. Sedef ile Ali,</li><li>III. Ali ile Sedef'in dayısı,</li><li>IV. Sedef'in kız kardeşi ile Ali</li></ul><p><b>verilenlerin hangileri arasında hısımlık ilişkisi bulunmaz?</b></p>",
+    text: "<p>Sedef ile Ali evlidir.</p><p><b>4721 sayılı Türk Medeni Kanunu'na göre</b></p><p>I. Ali'nin babası ile Sedef'in teyzesi,<br>II. Sedef ile Ali,<br>III. Ali ile Sedef'in dayısı,<br>IV. Sedef'in kız kardeşi ile Ali</p><p><b>verilenlerin hangileri arasında hısımlık ilişkisi <u>bulunmaz</u>?</b></p>",
     diff: 3,
     expl: "Kanuna göre eşler (karı-koca) arasında doğrudan bir hısımlık ilişkisi (akrabalık) bulunmaz; onlar hısımlığı kuran bağın kendisidir (II). Aynı şekilde eşlerin hısımları arasında da (dünürler vb.) hısımlık kurulmaz (I). III ve IV kayın hısımlığıdır.",
     answers: [
@@ -1205,7 +1205,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Demir, Buse ile evlidir.</li><li>Buse ve Demir'in Umut isimli bir çocukları vardır.</li><li>Demir'in annesinin adı Hatice, Buse'nin babasının adı Ahmet'tir.</li></ul></p><p><b>Yukarıda verilenler arasındaki hısımlık bağına ilişkin hangisi yanlıştır?</b></p>",
+    text: "<p>• Demir, Buse ile evlidir.<br>• Buse ve Demir'in Umut isimli bir çocukları vardır.<br>• Demir'in annesinin adı Hatice, Buse'nin babasının adı Ahmet'tir.</p><p><b>Yukarıda verilenler arasındaki hısımlık bağına ilişkin hangisi <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "Evlenme ile oluşan kayın hısımlığı, eşlerden biri ile diğer eşin kan hısımları arasında kurulur (Örn: Buse ile Hatice). Ancak eşlerin kan hısımları kendi aralarında hısım olamaz. Bu nedenle 'Hatice (kayınvalide) ile Ahmet (kayınpeder) arasında hısımlık vardır' ifadesi yanlıştır.",
     answers: [
@@ -1217,7 +1217,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı TMK'ye göre, aşağıdakilerden hangisi evlatlık hısımlığının kurulabilmesi için aranan şartlardan biri değildir?</b></p>",
+    text: "<p><b>4721 sayılı TMK'ye göre, aşağıdakilerden hangisi evlatlık hısımlığının kurulabilmesi için aranan şartlardan biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Evlat edinenin en az 30 yaşında olması (veya 5 yıllık evli olması), en az 18 yaş farkı ve mahkeme kararı şarttır. Ancak 'evlat edinilecek kişinin küçük yaşta olması' şart değildir; ergin kişiler de belli şartlarla (uzun süre bakılmış olması vb.) evlat edinilebilir.",
     answers: [
@@ -1229,7 +1229,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangi ikisi arasında hısımlık dolayısıyla evlenme engeli bulunmamaktadır?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangi ikisi arasında hısımlık dolayısıyla evlenme engeli <u>bulunmamaktadır</u>?</b></p>",
     diff: 3,
     expl: "Türk Medeni Kanunu'na göre üst soy-alt soy, kardeşler, evlat edinen ile evlatlık arasında ve önceki evlilik bitse bile eşin üst soy/alt soyuyla evlenmek yasaktır. Ancak eşlerden birinin, diğerinin yan soy hısımlarıyla (amca, dayı, hala, teyze, kayınbirader, baldız) evlenmesinde yasal engel yoktur.",
     answers: [
@@ -1241,7 +1241,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Tüzel kişi, belirli ve sürekli bir amacı gerçekleştirmek üzere kurulmuş, bağımsız varlığa sahip kişi veya mal topluluğudur.</p><p><b>Buna göre tüzel kişiler ile ilgili olarak;</b></p><ul><li>I. Kanuna uygun şekilde kurulduklarında hak ehliyeti kazanır.</li><li>II. Fiil ehliyetinin kazanılması için zorunlu organların oluşturulması gerekir.</li><li>III. Tüzel kişiler, iradelerini organları vasıtasıyla açıklarlar.</li></ul><p><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p>Tüzel kişi, belirli ve sürekli bir amacı gerçekleştirmek üzere kurulmuş, bağımsız varlığa sahip kişi veya mal topluluğudur.</p><p><b>Buna göre tüzel kişiler ile ilgili olarak;</b></p><p>I. Kanuna uygun şekilde kurulduklarında hak ehliyeti kazanır.<br>II. Fiil ehliyetinin kazanılması için zorunlu organların oluşturulması gerekir.<br>III. Tüzel kişiler, iradelerini organları vasıtasıyla açıklarlar.</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 2,
     expl: "Tüzel kişiler kuruldukları an hak ehliyetini kazanırlar. Hukuki işlem yapabilmeleri (fiil ehliyeti) için kanuni zorunlu organlarının (Örn: Yönetim Kurulu) kurulması şarttır ve iradelerini bu organlar aracılığıyla açıklarlar. Üç öncül de doğrudur.",
     answers: [
@@ -1253,7 +1253,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi derneklerin temel özelliklerinden biri değildir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi derneklerin temel özelliklerinden biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Dernekler, kişi topluluğu olup en az 7 kişiyle, kazanç amacı gütmeden kurulan tüzel kişilerdir. Dernek kurmak için önceden izin almaya gerek yoktur (Bildirim sistemi geçerlidir); tüzüğün mülki amirliğe verilmesiyle tüzel kişilik kazanılır.",
     answers: [
@@ -1265,7 +1265,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi vakıfların temel özelliklerinden biri değildir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi vakıfların temel özelliklerinden biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Vakıflar, bir mal varlığının belirli bir amaca özgülenmesiyle (mal topluluğu) oluşan tüzel kişilerdir. En az iki kişi şartı yoktur; tek bir kişi bile malını bağışlayarak vakıf kurabilir.",
     answers: [
@@ -1277,7 +1277,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi bir özel hukuk tüzel kişisi değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi bir özel hukuk tüzel kişisi <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Vakıf, Dernek, Şirket ve Sendika kişilerin kendi özgür iradeleriyle kurdukları 'Özel Hukuk Tüzel Kişileri'dir. İl özel idaresi, belediye ve köyler ise devletin yetkisiyle kurulan 'Kamu Hukuku Tüzel Kişileri'dir.",
     answers: [
@@ -1289,7 +1289,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p>Ahmet, tüzel kişiler hakkında bir tablo oluşturuyor. Tabloda \"Kamu Hukuku Tüzel Kişileri\" bölümüne; T.C. Devleti, Sinop Üniversitesi, Bilecik İl Özel İdaresi, Ankara Barosu, Kulu Belediyesi, TÜBİTAK, Yavaşlı Köyü ve Büro Memur Sendikası'nı yazıyor.</p><p><b>Buna göre Ahmet, bu listedekilerden hangisini yanlış tarafa yazmıştır?</b></p>",
+    text: "<p>Ahmet, tüzel kişiler hakkında bir tablo oluşturuyor.</p><p><b>Özel Hukuk Tüzel Kişileri</b><br>Kişi Topluluğu: Kızılay Derneği, Hayat Anonim Şirketi, Kilit Partisi, Tire Süt Kooperatifi<br>Mal Topluluğu: TEMA Vakfı</p><p><b>Kamu Hukuku Tüzel Kişileri</b><br>Kamu İdaresi: T.C. Devleti, Bilecik İl Özel İdaresi, Kulu Belediyesi, Yavaşlı Köyü<br>Kamu Kurumu: Sinop Üniversitesi, Ankara Barosu, TÜBİTAK, Büro Memur Sendikası</p><p><b>Buna göre Ahmet, verilenlerden hangisini <u>yanlış</u> tarafa yazmıştır?</b></p>",
     diff: 3,
     expl: "Sendikalar, işçilerin veya memurların kendi aralarında serbestçe kurduğu 'Özel Hukuk Tüzel Kişileri'dir. Kanunla kurulan veya kamu gücüne sahip olan idareler (Baro, Üniversite, Belediye vb.) gibi Kamu Hukuku tüzel kişisi değillerdir.",
     answers: [
@@ -1301,7 +1301,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, federasyonlar kuruluş amaçları aynı olan en az kaç derneğin, amaçlarını gerçekleştirmek üzere üye sıfatıyla bir araya gelmeleri suretiyle kurulur?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, federasyonlar kuruluş amaçları aynı olan <u>en az</u> kaç derneğin, amaçlarını gerçekleştirmek üzere üye sıfatıyla bir araya gelmeleri suretiyle kurulur?</b></p>",
     diff: 3,
     expl: "Derneklerin üst kuruluşu olan Federasyonlar, kuruluş amaçları aynı olan en az 5 (beş) derneğin bir araya gelmesiyle kurulur. Konfederasyonlar ise en az 3 federasyonun birleşmesiyle oluşur.",
     answers: [
@@ -1319,7 +1319,7 @@ export const VAT_TEMEL_HUKUK_TEST_7: McQ[] = [
 // ============================================================================
 export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
   {
-    text: "<p>4721 Türk Medeni Kanunu'na göre;</p><ul><li>ana ve babaya tanınan çocuğu temsil etme yetkisi,</li><li>belirli bir işin yürütülmesi veya bir malın yönetimi,</li><li>kısıtlı kişinin hem kişisel hem mal varlığı işlerini yürütmesi</li></ul><p><b>verilen açıklamalar sırasıyla hangi kavramlara uygundur?</b></p>",
+    text: "<p><b>4721 Türk Medeni Kanunu'na göre,</b></p><p>• ana ve babaya tanınan çocuğu temsil etme yetkisi,<br>• belirli bir işin yürütülmesi veya bir malın yönetimi,<br>• kısıtlı kişinin hem kişisel hem mal varlığı işlerini yürütmesi</p><p><b>verilen açıklamalar sırasıyla hangi kavramlara uygundur?</b></p>",
     diff: 2,
     expl: "Çocuğu anne-babanın temsil etmesine 'Velayet/Veli', belirli bir malın veya işin yönetimi için atanan kişiye 'Kayyım', kısıtlı veya kimsesiz küçüğün tüm işlerini temsilen atanan kişiye ise 'Vasi' denir.",
     answers: [
@@ -1331,7 +1331,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Ali henüz 14 yaşında bir çocuktur ve anne-babası hayattadır.</li><li>Zeynep, küçük bir çocuğa ait miras payını yönetmek üzere sulh hukuk mahkemesi kararıyla atanmıştır.</li><li>Mehmet, zihinsel engeli nedeniyle hem kişisel hem de mal varlığı işlerinde yardım alması gereken bir yetişkindir; onun işlerini bir kişi yürütmektedir.</li></ul></p><p><b>Buna göre Ali, Zeynep ve Mehmet'in hukuki durumlarında bu kişilere atanan sıfatlar sırasıyla hangisinde doğru verilmiştir?</b></p>",
+    text: "<p>• Ali henüz 14 yaşında bir çocuktur ve anne-babası hayattadır.<br>• Zeynep, küçük bir çocuğa ait miras payını yönetmek üzere sulh hukuk mahkemesi kararıyla atanmıştır.<br>• Mehmet, zihinsel engeli nedeniyle hem kişisel hem de mal varlığı işlerinde yardım alması gereken bir yetişkindir; onun işlerini bir kişi yürütmektedir.</p><p><b>Buna göre Ali, Zeynep ve Mehmet'in hukuki durumlarında bu kişilere atanan sıfatlar sırasıyla hangisinde doğru verilmiştir?</b></p>",
     diff: 3,
     expl: "14 yaşındaki Ali'nin anne babasına 'Veli' denir. Belirli bir miras payını yöneten Zeynep 'Kayyım' statüsündedir. Zihinsel engelli Mehmet'in tüm işlemlerini yürütecek temsilciye ise 'Vasi' denir.",
     answers: [
@@ -1343,7 +1343,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi evlilik için zorunlu bir şart değildir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi evlilik için zorunlu bir şart <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Türk Medeni Kanunu'na göre olağan evlenme yaşı 17'dir. 18 yaşın doldurulması zorunlu bir evlilik şartı değildir, 17 yaşını dolduranlar veli izniyle yasal olarak evlenebilirler.",
     answers: [
@@ -1355,7 +1355,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi yasal mirasçılar arasında yer almaz?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi yasal mirasçılar arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Yasal (kanuni) mirasçılar; alt soy (çocuk/torun), üst soy (anne/baba), yan soy (kardeş vb.), evlatlık, sağ kalan eş ve Devlettir. Vasiyet alacaklısı ise kanunla değil, ölenin iradesiyle (vasiyetle) mirasçı olduğu için 'iradi mirasçı'dır.",
     answers: [
@@ -1379,7 +1379,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türk medeni hukukunda eşyanın sahip olması gereken temel özellikleriyle ilgili;</b></p><ul><li>I. Maddi varlık taşımalıdır.</li><li>II. İnsan hâkimiyetine elverişli olmalıdır.</li><li>III. Ekonomik değer taşımalıdır.</li></ul><p><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p><b>Türk medeni hukukunda eşyanın sahip olması gereken temel özellikleriyle ilgili;</b></p><p>I. Maddi varlık taşımalıdır.<br>II. İnsan hâkimiyetine elverişli olmalıdır.<br>III. Ekonomik değer taşımalıdır.</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 2,
     expl: "Hukuken bir şeyin 'eşya' sayılabilmesi için bedensel (maddi) bir varlığının olması, üzerinde hakimiyet kurulabilmesi (Örn: Güneş ışığı eşya değildir) ve ekonomik bir değer ifade etmesi gerekir. Üçü de doğrudur.",
     answers: [
@@ -1391,7 +1391,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p>Ahmet, sağlığında tüm mal varlığını üçüncü kişilere bağışlamış, vasiyetnamesinde de mirasçılarından hiç söz etmemiştir. Ölümünden sonra geride alt soyu olan kızı Merve ve sağ kalan eşi Ayşe, kendilerine haksızlık yapıldığını ileri sürerek mahkemeye başvurmuştur.</p><p><b>4721 sayılı Türk Medeni Kanunu'na göre, yasal mirasçıların korunmasına özgü kurum aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Ahmet, sağlığında tüm mal varlığını üçüncü kişilere bağışlamış, vasiyetnamesinde de mirasçılarından hiç söz etmemiştir. Ölümünden sonra geride alt soyu olan kızı Merve ve sağ kalan eşi Ayşe, kendilerine haksızlık yapıldığını ileri sürerek mahkemeye başvurmuştur.</p><p><b>4721 sayılı Türk Medeni Kanunu'na göre, yasal mirasçıların korunmasını sağlayan miras hukukuna özgü kurum aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Miras bırakanın kendi iradesiyle dahi yasal mirasçılarından (eş, çocuk, anne-baba) kaçıramayacağı, kanunla koruma altına alınmış miras oranına 'saklı pay' (mahfuz hisse) denir.",
     answers: [
@@ -1403,7 +1403,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türk Medeni Kanunu'na göre, ayni haklarla ilgili;</b></p><ul><li>I. Ayni haklar mutlak haklardır ve herkese karşı ileri sürülebilir.</li><li>II. Mülkiyet hakkı, eşyayı kullanma, yararlanma ve tasarrufta bulunma yetkilerini içerir.</li><li>III. Rehin hakkı ve oturma hakkı sınırlı ayni haklardır.</li></ul><p><b>ifadelerinden hangileri doğrudur?</b></p>",
+    text: "<p><b>Türk Medeni Kanunu'na göre, ayni haklarla ilgili;</b></p><p>I. Ayni haklar mutlak haklardır ve herkese karşı ileri sürülebilir.<br>II. Mülkiyet hakkı, eşyayı kullanma, yararlanma ve tasarrufta bulunma yetkilerini içerir.<br>III. Rehin hakkı ve oturma hakkı sınırlı ayni haklardır.</p><p><b>ifadelerinden hangileri doğrudur?</b></p>",
     diff: 3,
     expl: "Ayni haklar (eşya üzerindeki haklar) herkese karşı ileri sürülebilen mutlak haklardandır (I). Mülkiyet, tam ayni haktır ve 3 yetkiyi de verir (II). Rehin ve irtifak/oturma hakları ise sadece belirli yetkiler veren sınırlı ayni haklardır (III).",
     answers: [
@@ -1415,7 +1415,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi sınırlı ayni haklardan biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi sınırlı ayni haklardan biri <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Ayni haklar mülkiyet hakkı (tam ayni hak) ve sınırlı ayni haklar (irtifak, rehin, taşınmaz yükü, intifa) olarak ayrılır. Mülkiyet hakkı eşya üzerindeki en geniş yetkiyi veren tam haktır, sınırlı değildir.",
     answers: [
@@ -1427,7 +1427,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıda verilen hukuki tanımlar;</b></p><ul><li>Taşınmazlara ilişkin mülkiyet ve diğer ayni hakların tescil edildiği Devletin memurlarının tuttuğu kayıtlardır.</li><li>Taşınmaz üzerinde kişisel hakların, tasarruf yetkisinin kısıtlanmasına ilişkin sınırlamaların veya geçici tescil taleplerinin tapuya işlenmesidir.</li><li>Kişinin bir eşya üzerinde fiilî hâkimiyet kurması sonucu doğan, hukuken korunan durumdur.</li></ul><p><b>sırasıyla hangi kavramlara aittir?</b></p>",
+    text: "<p><b>Aşağıda verilen hukuki tanımlar;</b></p><p>• Taşınmazlara ilişkin mülkiyet ve diğer ayni hakların tescil edildiği Devletin memurlarının tuttuğu kayıtlardır.<br>• Taşınmaz üzerinde kişisel hakların, tasarruf yetkisinin kısıtlanmasına ilişkin sınırlamaların veya geçici tescil taleplerinin tapuya işlenmesidir.<br>• Kişinin bir eşya üzerinde fiilî hâkimiyet kurması sonucu doğan, hukuken korunan durumdur.</p><p><b>sırasıyla hangi kavramlara aittir?</b></p>",
     diff: 3,
     expl: "Kayıtların tutulduğu deftere 'Tapu Sicili', kısıtlayıcı/kişisel hakların bu sicile yazılmasına 'Şerh', malın üzerinde fiilen zilyet bulunma/kullanma durumuna ise 'Zilyetlik' denir.",
     answers: [
@@ -1439,7 +1439,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li><b>----</b> payların belirlenmediği ve ortakların mal üzerinde bir bütün hâlinde malik sayıldığı mülkiyet biçimidir.</li><li><b>----</b> ise payların belirlendiği ve her paydaşın kendi payı üzerinde bağımsız tasarruf yetkisine sahip olduğu mülkiyet biçimidir.</li></ul></p><p><b>Yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>• <b>----</b> payların belirlenmediği ve ortakların mal üzerinde bir bütün hâlinde malik sayıldığı mülkiyet biçimidir.<br>• <b>----</b> ise payların belirlendiği ve her paydaşın kendi payı üzerinde bağımsız tasarruf yetkisine sahip olduğu mülkiyet biçimidir.</p><p><b>Yukarıda bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 3,
     expl: "Ortakların hisselerinin (paylarının) belli olmadığı, malın tamamına birlikte sahip oldukları tür 'Elbirliği (İştirak) Mülkiyeti'dir (Örn: Miras). Payların (1/2, 1/3 gibi) önceden belli olduğu türe ise 'Paylı (Müşterek) Mülkiyet' denir.",
     answers: [
@@ -1451,7 +1451,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. Eşyadan yararlanma ve kullanma yetkisi verir, ancak tasarruf hakkı vermeyen sınırlı bir ayni haktır.</li><li>II. Borcun teminatı amacıyla eşya üzerinde kurulan sınırlı ayni haktır.</li><li>III. Eşya üzerinde en geniş yetkiyi sağlar; kullanma, yararlanma ve tasarruf yetkisi içerir.</li></ul></p><p><b>Yukarıda verilen aynı hak türleriyle bu haklara ilişkin temel özellikler eşleştirildiğinde, hangisi doğrudur?</b></p>",
+    text: "<p>I. Eşyadan yararlanma ve kullanma yetkisi verir, ancak tasarruf hakkı vermeyen sınırlı bir ayni haktır.<br>II. Borcun teminatı amacıyla eşya üzerinde kurulan sınırlı ayni haktır.<br>III. Eşya üzerinde en geniş yetkiyi sağlar; kullanma, yararlanma ve tasarruf yetkisi içerir.</p><p><b>Yukarıda verilen ayni hak türleriyle bu haklara ilişkin temel özellikler eşleştirildiğinde, hangisi doğrudur?</b></p>",
     diff: 3,
     expl: "Sadece kullanma/yararlanma (meyvesini yeme) veren hak İntifa hakkıdır (I). Teminat için konulan hak Rehin hakkıdır (II). Üç yetkiyi birden veren en geniş hak Mülkiyet hakkıdır (III).",
     answers: [
@@ -1463,7 +1463,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi, borçlar hukukuna hâkim olan ilkelerden biri değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi, borçlar hukukuna hâkim olan ilkelerden biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "'Sınırlı sayı ve belirli bir tipe bağlı olma' ilkesi Eşya Hukukunda ayni haklar (mülkiyet, rehin vb.) için geçerlidir. Borçlar hukukunda ise tam tersine 'Sözleşme özgürlüğü' vardır ve taraflar kanunda tipi belirtilmeyen yeni sözleşmeler de üretebilirler.",
     answers: [
@@ -1475,7 +1475,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi sözleşme özgürlüğü kapsamında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi sözleşme özgürlüğü kapsamında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Sözleşme özgürlüğü sınırsız değildir. Taraflar emredici hukuk kurallarına, kamu düzenine, genel ahlaka, kişilik haklarına aykırı veya konusu imkânsız olan bir sözleşme yapamazlar. Yaparlarsa kesin hükümsüz (mutlak butlan) olur.",
     answers: [
@@ -1487,7 +1487,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Kural olarak borç ilişkisi, yalnızca sözleşmenin tarafları arasında hüküm ve sonuç doğurur.</li><li>Taraflar, hukuka ve ahlaka aykırı olmamak kaydıyla diledikleri kişiyle sözleşme yapabilir ve içeriğini serbestçe belirleyebilir.</li><li>Sözleşmelerde taraflar kural olarak karşılıklı edim yüklenir.</li></ul></p><p><b>Bu bilgiler sırasıyla aşağıdaki borçlar hukuku ilkelerinden hangilerine karşılık gelir?</b></p>",
+    text: "<p>• Kural olarak borç ilişkisi, yalnızca sözleşmenin tarafları arasında hüküm ve sonuç doğurur.<br>• Taraflar, hukuka ve ahlaka aykırı olmamak kaydıyla diledikleri kişiyle sözleşme yapabilir ve içeriğini serbestçe belirleyebilir.<br>• Sözleşmelerde taraflar kural olarak karşılıklı edim yüklenir.</p><p><b>Bu bilgiler sırasıyla aşağıdaki borçlar hukuku ilkelerinden hangilerine karşılık gelir?</b></p>",
     diff: 3,
     expl: "Borcun sadece muhatabını ilgilendirmesi 'Nispilik', dilediğiyle ve istediği içerikte yapabilmesi 'Sözleşme özgürlüğü', karşılıklı çıkar (alacak-verecek) içermesi 'İvazlılık' ilkesidir.",
     answers: [
@@ -1505,7 +1505,7 @@ export const VAT_TEMEL_HUKUK_TEST_8: McQ[] = [
 // ============================================================================
 export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
   {
-    text: "<p><ul><li>I. Borçlu</li><li>II. Edim</li><li>III. Alacaklı</li></ul></p><p><b>Türk Borçlar Kanunu'na göre, yukarıdakilerden hangileri borcun unsurları arasında yer alır?</b></p>",
+    text: "<p>I. Borçlu<br>II. Edim<br>III. Alacaklı</p><p><b>Türk Borçlar Kanunu'na göre, yukarıdakilerden hangileri borcun unsurları arasında yer alır?</b></p>",
     diff: 2,
     expl: "Her borç ilişkisinde alacaklı, borçlu ve edim olmak üzere üç temel unsur bulunur. Borcun konusu edim, tarafları ise alacaklı ve borçludur.",
     answers: [
@@ -1529,7 +1529,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Tarafların karşılıklı ve birbirine uygun irade beyanlarıyla kurulan hukuki işlem</li><li>Borçlunun yerine getirmekle yükümlü olduğu yapma, yapmama veya verme davranışı</li><li>Borçlunun borcunu süresi içinde ifa etmemesi veya geciktirmesi hâli</li></ul></p><p><b>Bu ifadeler sırasıyla aşağıdaki kavramlardan hangilerine karşılık gelir?</b></p>",
+    text: "<p>• Tarafların karşılıklı ve birbirine uygun irade beyanlarıyla kurulan hukuki işlem<br>• Borçlunun yerine getirmekle yükümlü olduğu yapma, yapmama veya verme davranışı<br>• Borçlunun borcunu süresi içinde ifa etmemesi veya geciktirmesi hâli</p><p><b>Bu ifadeler sırasıyla aşağıdaki kavramlardan hangilerine karşılık gelir?</b></p>",
     diff: 3,
     expl: "İki tarafın karşılıklı irade beyanıyla kurulan işleme 'sözleşme', borçlunun yerine getirmekle yükümlü olduğu davranışa 'edim', zamanında ifa edilmemesine ise 'temerrüt' denir.",
     answers: [
@@ -1541,7 +1541,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. Sözleşmeler</li><li>II. Haksız fiiller</li><li>III. Sebepsiz zenginleşmeler</li></ul></p><p><b>Türk Borçlar Kanunu'na göre, yukarıdakilerden hangileri borcun kaynakları arasında yer alır?</b></p>",
+    text: "<p>I. Sözleşmeler<br>II. Haksız fiiller<br>III. Sebepsiz zenginleşmeler</p><p><b>Türk Borçlar Kanunu'na göre, yukarıdakilerden hangileri borcun kaynakları arasında yer alır?</b></p>",
     diff: 2,
     expl: "Borçlar hukukunda borcun üç temel kaynağı vardır: Sözleşmelerden doğan borçlar, Haksız fiilden doğan borçlar ve Sebepsiz zenginleşmeden doğan borçlar.",
     answers: [
@@ -1553,7 +1553,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi haksız fiilin unsurları arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi haksız fiilin unsurları arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Haksız fiil sorumluluğunun doğabilmesi için hukuka aykırı fiil, zarar, kusur ve nedensellik bağı gerekir. İbra ise borçlunun borçtan kurtulduğunu gösteren, borcu sona erdiren bir işlemdir.",
     answers: [
@@ -1565,7 +1565,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>6098 sayılı Türk Borçlar Kanunu'na göre, aşağıdakilerden hangisi sözleşmeyi kesin hükümsüz yapan sebepler arasında yer almaz?</b></p>",
+    text: "<p><b>6098 sayılı Türk Borçlar Kanunu'na göre, aşağıdakilerden hangisi sözleşmeyi kesin hükümsüz yapan sebepler arasında <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "Emredici hükümlere, kişiliğe, ahlaka ve kamu düzenine aykırılık ile konunun baştan imkânsız olması mutlak butlan (kesin hükümsüzlük) sebepleridir. 'Aşırı yararlanma (gabin)' ise sözleşmeyi kesin hükümsüz kılmaz, iptal edilebilir (nispi butlan) hâle getirir.",
     answers: [
@@ -1589,7 +1589,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. Borçlu, kural olarak mal varlığı ile sorumlu tutulur; ancak şartları varsa şahsı üzerinden de sorumluluk doğabilir.</li><li>II. Borçlu, bazı hâllerde yalnızca belirli mal varlığı unsurları ile (sınırlı sorumluluk), bazı hâllerde tüm mal varlığı ile (sınırsız sorumluluk) sorumlu tutulabilir.</li><li>III. Hiç kimse, yalnızca sözleşmeden doğan bir borcunu ifa edemediği gerekçesiyle özgürlüğünden yoksun bırakılamaz.</li></ul></p><p><b>Borçlar hukukunda sorumluluk kavramı ile ilgili yukarıdaki ifadelerden hangileri yanlıştır?</b></p>",
+    text: "<p>I. Borçlu, kural olarak mal varlığı ile sorumlu tutulur; ancak şartları varsa şahsı üzerinden de sorumluluk doğabilir.<br>II. Borçlu, bazı hâllerde yalnızca belirli mal varlığı unsurları ile (sınırlı sorumluluk), bazı hâllerde tüm mal varlığı ile (sınırsız sorumluluk) sorumlu tutulabilir.<br>III. Hiç kimse, yalnızca sözleşmeden doğan bir borcunu ifa edemediği gerekçesiyle özgürlüğünden yoksun bırakılamaz.</p><p><b>Borçlar hukukunda sorumluluk kavramı ile ilgili yukarıdaki ifadelerden hangileri <u>yanlıştır</u>?</b></p>",
     diff: 3,
     expl: "Borçlar hukukunda genel ilkeye göre borçlu kural olarak yalnızca 'mal varlığı' ile sorumludur; şahıs varlığı (beden bütünlüğü, özgürlük vb.) üzerinden sorumluluk doğamaz. Bu yüzden I. öncül kesinlikle yanlıştır.",
     answers: [
@@ -1601,7 +1601,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi borcu sona erdiren sebepler arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi borcu sona erdiren sebepler arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Borcu sona erdiren sebepler; İfa, İfa imkânsızlığı, İbra, Yenileme (Tecdit), Takas ve Birleşme'dir. Alacaklının değişmesi (alacağın temliki) borcu sona erdirmez, sadece taraf değiştirir.",
     answers: [
@@ -1613,7 +1613,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türk Ticaret Kanunu'na göre;</b></p><ul><li>bir ticari işletmeyi, kısmen dahi olsa, kendi adına işleten kişi,</li><li>ister sabit bir iş yerinde ister gezici olarak faaliyet göstersin, ekonomik faaliyeti sadece geçimini sağlamaya yetecek ölçüde olan ve ticari işletme düzeyine ulaşmayan kişi</li></ul><p><b>ifadeleri sırasıyla aşağıdakilerden hangisini tanımlar?</b></p>",
+    text: "<p><b>Türk Ticaret Kanunu'na göre</b></p><p>• bir ticari işletmeyi, kısmen dahi olsa, kendi adına işleten kişi,<br>• ister sabit bir iş yerinde ister gezici olarak faaliyet göstersin, ekonomik faaliyeti sadece geçimini sağlamaya yetecek ölçüde olan ve ticari işletme düzeyine ulaşmayan kişi</p><p><b>ifadeleri sırasıyla aşağıdakilerden hangisini tanımlar?</b></p>",
     diff: 2,
     expl: "Ticari işletmeyi kendi adına işleten kişiye 'Tacir'; ekonomik faaliyeti ancak geçimini sağlamaya yetecek, sermayeden çok emeğine dayanan ve ticari düzeye ulaşmayan kişiye ise 'Esnaf' denir.",
     answers: [
@@ -1637,7 +1637,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. Kollektif şirket</li><li>II. Limitet şirket</li><li>III. Anonim şirket</li></ul></p><p><b>6102 sayılı Türk Ticaret Kanunu'na göre, yukarıdaki şirketlerden hangileri tek kişi ile kurulabilir?</b></p>",
+    text: "<p>I. Kollektif şirket<br>II. Limitet şirket<br>III. Anonim şirket</p><p><b>6102 sayılı Türk Ticaret Kanunu'na göre, yukarıdaki şirketlerden hangileri tek kişi ile kurulabilir?</b></p>",
     diff: 3,
     expl: "Yeni Türk Ticaret Kanunu'na göre Limitet şirket (en fazla 50 kişi) ve Anonim şirket en az 1 (tek) kişi ile kurulabilmektedir. Ancak Kollektif şirket (şahıs şirketi) en az 2 ortakla kurulmak zorundadır.",
     answers: [
@@ -1649,7 +1649,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>6102 sayılı Türk Ticaret Kanunu'na göre,</b></p><ul><li>I. limitet şirket,</li><li>II. kollektif şirket,</li><li>III. anonim şirket</li></ul><p><b>verilenlerden hangileri sermaye şirketidir?</b></p>",
+    text: "<p><b>6102 sayılı Türk Ticaret Kanunu'na göre,</b></p><p>I. limitet şirket,<br>II. kollektif şirket,<br>III. anonim şirket</p><p><b>verilenlerden hangileri sermaye şirketidir?</b></p>",
     diff: 3,
     expl: "Türk Ticaret Kanunu'na göre Anonim, Limitet ve Sermayesi Paylara Bölünmüş Komandit şirketler 'sermaye şirketi' sayılır. Kollektif ve adi komandit şirketler ise 'şahıs şirketi'dir.",
     answers: [
@@ -1673,7 +1673,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türk hukukuna göre,</b></p><ul><li>Gerçek kişiler (insanlar) ile Devlet arasındaki hukuki ve siyasi bağ,</li><li>Bir gerçek kişi veya bir şey (gemi, uçak) ile Devlet arasındaki siyasi ve hukuki bağ,</li></ul><p><b>açıklamaları sırasıyla aşağıdakilerden hangisini ifade eder?</b></p>",
+    text: "<p><b>Türk hukukuna göre,</b></p><p>• Gerçek kişiler (insanlar) ile Devlet arasındaki hukuki ve siyasi bağ,<br>• Bir gerçek kişi veya bir şey (gemi, uçak) ile Devlet arasındaki siyasi ve hukuki bağ,</p><p><b>açıklamaları sırasıyla aşağıdakilerden hangisini ifade eder?</b></p>",
     diff: 3,
     expl: "Sadece insanlar ile devlet arasındaki bağ 'vatandaşlık' olarak adlandırılırken; gerek gerçek/tüzel kişilerin gerekse eşyaların (gemi, uçak) devletle olan genel bağına 'uyrukluk (tabiiyet)' denir.",
     answers: [
@@ -1685,7 +1685,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Türk vatandaşlığını kazanmak isteyen yabancılarda;</b></p><ul><li>Başvuru tarihinden geriye doğru Türkiye'de kesintisiz <b>----</b> yıl ikamet etmek,</li><li>Bir Türk vatandaşı ile en az <b>----</b> yıldan beri evli olmak</li></ul><p><b>aranan yıl şartında bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p><b>Türk vatandaşlığını kazanmak isteyen yabancılarda;</b></p><p>• Başvuru tarihinden geriye doğru Türkiye'de kesintisiz ---- yıl ikamet etmek,<br>• Bir Türk vatandaşı ile en az ---- yıldan beri evli olmak</p><p><b>aranan yıl şartında bırakılan boşluklara sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 2,
     expl: "Türk vatandaşlığına genel yoldan başvuran yabancılarda kesintisiz '5 yıl' ikamet şartı aranırken; evlenme yoluyla başvuracak kişilerde en az '3 yıldan' beri evli olma şartı aranır.",
     answers: [
@@ -1703,7 +1703,7 @@ export const VAT_TEMEL_HUKUK_TEST_9: McQ[] = [
 // ============================================================================
 export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
   {
-    text: "<p><b>Aşağıdakilerden hangisi özel haklar arasında yer almaz?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi özel haklar arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Özel haklar, bireylerin kendi aralarındaki özel hukuk ilişkilerinden doğan haklardır (boşanma, miras, mülkiyet, alacak). Ancak seçme ve seçilme hakkı, devlet ile birey arasındaki siyasi bir ilişkiyi düzenleyen kamu (anayasal) hakkıdır.",
     answers: [
@@ -1715,7 +1715,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Herkese karşı ileri sürülebilen ve herkesin bu hakka saygı göstermekle yükümlü olduğu haklardır.</li><li>Sadece belirli kişiler arasında geçerli olan ve sadece ilgili kişilere karşı kullanılabilen haklardır.</li></ul></p><p><b>Yukarıda verilen ifadeler sırasıyla hangilerini tanımlar?</b></p>",
+    text: "<p>• Herkese karşı ileri sürülebilen ve herkesin bu hakka saygı göstermekle yükümlü olduğu haklardır.<br>• Sadece belirli kişiler arasında geçerli olan ve sadece ilgili kişilere karşı kullanılabilen haklardır.</p><p><b>Yukarıda verilen ifadeler sırasıyla hangilerini tanımlar?</b></p>",
     diff: 2,
     expl: "Herkese karşı ileri sürülebilen haklara 'mutlak haklar' (Örn: mülkiyet hakkı), sadece hukuki ilişkinin tarafı olan belirli kişilere karşı ileri sürülebilen haklara ise 'nispi haklar' (Örn: alacak hakkı) denir.",
     answers: [
@@ -1727,7 +1727,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıda verilen mutlak hak ve nispi hak eşleştirmelerinden hangisi yanlıştır?</b></p>",
+    text: "<p><b>Aşağıda verilen mutlak hak ve nispi hak eşleştirmelerinden hangisi <u>yanlıştır</u>?</b></p>",
     diff: 2,
     expl: "Mülkiyet ve kişilik hakları herkese karşı ileri sürülebildiği için mutlak haktır. Alacak ve nafaka hakları ise belirli kişilerden istendiği için nispi haktır. Kira hakkı da yalnızca sözleşme yapılan kiraya verene (ev sahibine) karşı ileri sürülebilen nispi bir haktır; mutlak hak değildir.",
     answers: [
@@ -1739,7 +1739,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>Miras yolu ile veya sözleşme gibi hukuki bir işlemle başkasına devredilebilen, kişiye bağlı olmayan haklar devredilebilen haklardır.</p><p><b>Buna göre,</b></p><ul><li>I. mülkiyet hakkı,</li><li>II. alacak hakkı,</li><li>III. nafaka hakkı,</li><li>IV. rehin hakkı</li></ul><p><b>gibi haklardan hangileri devredilebilen haklardır?</b></p>",
+    text: "<p>Miras yolu ile veya sözleşme gibi hukuki bir işlemle başkasına devredilebilen, kişiye bağlı olmayan haklar devredilebilen haklardır.</p><p><b>Buna göre,</b></p><p>I. mülkiyet hakkı,<br>II. alacak hakkı,<br>III. nafaka hakkı,<br>IV. rehin hakkı</p><p><b>gibi haklardan hangileri devredilebilen haklardır?</b></p>",
     diff: 3,
     expl: "Mülkiyet, alacak ve rehin hakları (mal varlığı hakları oldukları için) bir başkasına devredilebilir. Ancak 'nafaka hakkı', intifa hakkı ve oturma hakkı gibi haklar doğrudan kişiye bağlı oldukları için başkasına devredilemezler.",
     answers: [
@@ -1751,7 +1751,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Kullanıldığında yeni bir hukuksal durum yaratmaz.</li><li>Kullanıldığında, mevcut bir hukuki durumu kuran, değiştiren ya da sona erdiren sonuç doğurur.</li></ul></p><p><b>Yukarıda verilen ifadeler sırasıyla hangi kavramlara denk gelmektedir?</b></p>",
+    text: "<p>• Kullanıldığında yeni bir hukuksal durum yaratmaz.<br>• Kullanıldığında, mevcut bir hukuki durumu kuran, değiştiren ya da sona erdiren sonuç doğurur.</p><p><b>Yukarıda verilen ifadeler sırasıyla hangi kavramlara denk gelmektedir?</b></p>",
     diff: 3,
     expl: "Kullanılmasıyla yeni bir hukuki durum doğurmayan haklara 'alelade (sıradan) haklar' (Örn: velayet hakkı) denir. Tek taraflı irade ile yeni bir hukuki durum kuran, değiştiren veya bozan haklara ise 'yenilik doğuran (inşai) haklar' denir.",
     answers: [
@@ -1763,7 +1763,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>Sözleşmelerde kabul beyanı bir <b>----</b>, mirasın reddi bir <b>----</b>, ayıplı malın değiştirilmesini isteme ise bir <b>----</b> yenilik doğuran haktır.</p><p><b>Yukarıdaki ifadede boş bırakılan yerlere sırasıyla hangisi getirilmelidir?</b></p>",
+    text: "<p>Sözleşmelerde kabul beyanı bir ----, mirasın reddi bir ----, ayıplı malın değiştirilmesini isteme ise bir ---- yenilik doğuran haktır.</p><p><b>Yukarıdaki ifadede boş bırakılan yerlere sırasıyla hangisi getirilmelidir?</b></p>",
     diff: 3,
     expl: "Kabul beyanı yeni bir ilişki doğurduğu için 'kurucu', mirasın reddi var olan ilişkiyi sona erdirdiği için 'bozucu', ayıplı malın yenisiyle değiştirilmesi ise ilişkinin içeriğini değiştirdiği için 'değiştirici' yenilik doğuran haktır.",
     answers: [
@@ -1775,7 +1775,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>I. Kişinin hukuki sonuç doğurmak amacıyla yaptığı irade açıklamasıdır.</li><li>II. Hukukun sonuç bağladığı doğal olay ya da durumdur.</li><li>III. Hukuki sonuç doğuran insan davranışıdır.</li></ul></p><p><b>Bu tanımlar sırasıyla aşağıdaki kavramlarla eşleştirildiğinde hangisi doğrudur?</b></p>",
+    text: "<p>I. Kişinin hukuki sonuç doğurmak amacıyla yaptığı irade açıklamasıdır.<br>II. Hukukun sonuç bağladığı doğal olay ya da durumdur.<br>III. Hukuki sonuç doğuran insan davranışıdır.</p><p><b>Bu tanımlar sırasıyla aşağıdaki kavramlarla eşleştirildiğinde hangisi doğrudur?</b></p>",
     diff: 3,
     expl: "Sonuç doğurmak maksadıyla yapılan bilinçli irade açıklamasına (Örn: sözleşme) 'hukuki işlem' denir. İrade dışı gelişen ancak hukukun sonuç bağladığı olaylara (Örn: ölüm) 'hukuki olay' denir. Hukuki sonuç doğuran iradi insan eylemlerine (Örn: ikametgâh edinme) ise 'hukuki fiil' denir.",
     answers: [
@@ -1787,7 +1787,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre</b></p><ul><li>taşınmazlarda mülkiyetin devren kazanılması,</li><li>taşınır mallarda mülkiyetin devri,</li></ul><p><b>kural olarak sırasıyla hangisi ile gerçekleşmektedir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre</b></p><p>• taşınmazlarda mülkiyetin devren kazanılması,<br>• taşınır mallarda mülkiyetin devri,</p><p><b>kural olarak sırasıyla hangisi ile gerçekleşmektedir?</b></p>",
     diff: 2,
     expl: "Türk Medeni Kanunu'na göre taşınmaz mülkiyetinin devri/kazanılması kural olarak 'tapu siciline tescil' ile olur. Taşınır (menkul) mallarda ise mülkiyetin devri o malın fiilen teslimi yani 'zilyetliğin devri' ile gerçekleşir.",
     answers: [
@@ -1799,7 +1799,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Burcu, ormanda yürürken bir mantar bulup evine götürmüştür.</li><li>Cihan, köydeki sahipsiz ve tapusuz bir araziyi çitle çevirip domates ekmeye başlamıştır.</li></ul></p><p><b>Bu durumda Burcu ve Cihan'ın taşınır ve taşınmaz mallarda hak sahibi olması sırasıyla aşağıdaki eşleştirmelerden hangisinde doğru verilmiştir?</b></p>",
+    text: "<p>• Burcu, ormanda yürürken bir mantar bulup evine götürmüştür.<br>• Cihan, köydeki sahipsiz ve tapusuz bir araziyi çitle çevirip domates ekmeye başlamıştır.</p><p><b>Bu durumda Burcu ve Cihan'ın taşınır ve taşınmaz mallarda hak sahibi olması sırasıyla aşağıdaki eşleştirmelerden hangisinde doğru verilmiştir?</b></p>",
     diff: 3,
     expl: "Sahipsiz bir taşınır malı aslen kazanmaya 'sahiplenme (ihraz)' denir (Mantar toplamak). Sahipsiz bir taşınmaz malı aslen kazanmaya ise 'işgal' denir (Araziyi çevirmek).",
     answers: [
@@ -1811,7 +1811,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>4721 sayılı Türk Medeni Kanunu'na göre, <i>\"Durumun gereklerine göre kendisinden beklenen özeni göstermeyen kimse <b>----</b> iddiasında bulunamaz.\"</i></p><p><b>İfadesinde bırakılan boşluğa aşağıdakilerden hangisi getirilmelidir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre,</b> \"Durumun gereklerine göre kendisinden beklenen özeni göstermeyen kimse ---- iddiasında bulunamaz.\" <b>ifadesinde bırakılan boşluğa aşağıdakilerden hangisi getirilmelidir?</b></p>",
     diff: 2,
     expl: "Bir hakkın kazanılmasında engeli bilmeyen kişinin durumunu koruyan iyi niyet (sübjektif iyi niyet) kuralıdır. Ancak kişi kendisinden beklenen asgari dikkati göstermemişse 'iyi niyet' iddiasında bulunamaz.",
     answers: [
@@ -1823,7 +1823,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdakilerden hangisi tek taraflı bir hukuki işlem değildir?</b></p>",
+    text: "<p><b>Aşağıdakilerden hangisi tek taraflı bir hukuki işlem <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Mirasın reddi, vakıf kurma, tanıma, vasiyetname ve sözleşmeden dönme işlemleri yalnızca bir kişinin irade açıklamasıyla (tek taraflı) hukuki sonuç doğurur. Ancak 'Sözleşme', adından da anlaşılacağı üzere en az iki tarafın karşılıklı irade uyuşmasıyla kurulan iki/çok taraflı bir işlemdir.",
     answers: [
@@ -1835,7 +1835,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p>4721 sayılı Türk Medeni Kanunu m. 2'de yer alan, <i>\"Bir hakkın açıkça kötüye kullanılmasını hukuk düzeni korumaz\"</i>. <b>ifadesi aşağıdakilerden hangisi kapsamında düzenlenmiştir?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu m. 2'de yer alan, \"Bir hakkın açıkça kötüye kullanılmasını hukuk düzeni korumaz\". ifadesi aşağıdakilerden hangisi kapsamında düzenlenmiştir?</b></p>",
     diff: 2,
     expl: "TMK m.2 'Dürüstlük Kuralı'nı (Objektif İyi Niyet) düzenler. Herkes haklarını kullanırken ve borçlarını ifa ederken dürüst davranmak zorundadır; bir hakkı sırf başkasına zarar vermek için kötüye kullanmak dürüstlük kuralına aykırıdır.",
     answers: [
@@ -1847,7 +1847,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Medeni hukuka göre</b></p><ul><li>Hakların kazanılmasında ve bir hukuksal sonucun doğmasındaki engelin bilinmemesinde,</li><li>Hakların kullanılmasında ve borçların yerine getirilmesinde</li></ul><p><b>sırasıyla aşağıdaki ilkelerden hangisi geçerlidir?</b></p>",
+    text: "<p><b>Medeni hukuka göre</b></p><p>• Hakların kazanılmasında ve bir hukuksal sonucun doğmasındaki engelin bilinmemesinde,<br>• Hakların kullanılmasında ve borçların yerine getirilmesinde</p><p><b>sırasıyla aşağıdaki ilkelerden hangisi geçerlidir?</b></p>",
     diff: 3,
     expl: "Bir hakkın kazanılmasında eksikliği/engeli bilmemek 'İyi niyet' (Sübjektif iyi niyet, TMK m.3), var olan hakların kullanılması ve borçların yerine getirilmesinde uyulması gereken namuslu davranış ilkesi ise 'Dürüstlük' (Objektif iyi niyet, TMK m.2) kuralıdır.",
     answers: [
@@ -1859,7 +1859,7 @@ export const VAT_TEMEL_HUKUK_TEST_10: McQ[] = [
     ]
   },
   {
-    text: "<p><ul><li>Bir kişinin hakkını korumak için yetkili makamlara başvurma imkânı bulunmadığında, hakkını makul sınırlar içinde kendisinin korumasıdır.</li><li>Bir kimsenin kendisine veya bir başkasına yönelik haksız bir saldırıyı önlemek amacıyla, saldırının niteliğine uygun şekilde savunma yapmasıdır.</li><li>Bir kişinin kendisinin veya başkasının canına ya da malına yönelik ağır ve yakın bir tehlikeden korunmak amacıyla, başkasının malına zarar vermesidir.</li></ul></p><p><b>Yukarıda verilen tanımlar sırasıyla hangi hukuka uygunluk sebepleridir?</b></p>",
+    text: "<p>• Bir kişinin hakkını korumak için yetkili makamlara başvurma imkânı bulunmadığında, hakkını makul sınırlar içinde kendisinin korumasıdır.<br>• Bir kimsenin kendisine veya bir başkasına yönelik haksız bir saldırıyı önlemek amacıyla, saldırının niteliğine uygun şekilde savunma yapmasıdır.<br>• Bir kişinin kendisinin veya başkasının canına ya da malına yönelik ağır ve yakın bir tehlikeden korunmak amacıyla, başkasının malına zarar vermesidir.</p><p><b>Yukarıda verilen tanımlar sırasıyla hangi hukuka uygunluk sebepleridir?</b></p>",
     diff: 3,
     expl: "1. Kendi hakkını devlet gücüne başvuramadığı acil anda bizzat koruması 'Kendi gücüyle koruma', 2. Haksız saldırıyı orantılı şekilde defetmek 'Meşru müdafaa', 3. Bir tehlikeden kaçınmak için masum birinin malına (örn: kapıyı kırmak) zarar vermek 'Zaruret hâli (Iztırar)' olarak adlandırılır.",
     answers: [
@@ -1889,7 +1889,7 @@ export const VAT_TEMEL_HUKUK_TEST_11: McQ[] = [
     ]
   },
   {
-    text: "<p><b>5237 sayılı Türk Ceza Kanunu'na göre aşağıdakilerden hangisi meşru müdafaanın şartlarından biri değildir?</b></p>",
+    text: "<p><b>5237 sayılı Türk Ceza Kanunu'na göre aşağıdakilerden hangisi meşru müdafaanın şartlarından biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Meşru müdafaa (haklı savunma) için saldırının haksız olması, hâlen devam etmesi (veya muhakkak olması) ve savunmanın saldırıyla orantılı/defetme amaçlı olması şarttır. Ancak saldırının fail tarafından 'önceden tasarlanmış' olması diye bir şart yoktur; anlık gelişen olaylarda da meşru müdafaa yapılabilir.",
     answers: [
@@ -1913,7 +1913,7 @@ export const VAT_TEMEL_HUKUK_TEST_11: McQ[] = [
     ]
   },
   {
-    text: "<p><b>5237 sayılı Türk Ceza Kanunu'na göre, fiili işlediği sırada kaç yaşını doldurmamış çocukların cezai sorumluluğu yoktur?</b></p>",
+    text: "<p><b>5237 sayılı Türk Ceza Kanunu'na göre, fiili işlediği sırada kaç yaşını doldurmamış çocukların cezai sorumluluğu <u>yoktur</u>?</b></p>",
     diff: 2,
     expl: "TCK m.31'e göre: 'Fiili işlediği sırada 12 yaşını doldurmamış olan çocukların ceza sorumluluğu yoktur.' 12 yaşından küçüklere sadece çocuklara özgü güvenlik tedbirleri uygulanabilir.",
     answers: [
@@ -1973,7 +1973,7 @@ export const VAT_TEMEL_HUKUK_TEST_11: McQ[] = [
     ]
   },
   {
-    text: "<p>Sahibine var olan hukuki durumu sona erdirmek yetkisi veren haklar bozucu yenilik doğuran haklardır.</p><p><b>Aşağıdakilerden hangisi bozucu yenilik doğuran bir hak değildir?</b></p>",
+    text: "<p>Sahibine var olan hukuki durumu sona erdirmek yetkisi veren haklar bozucu yenilik doğuran haklardır.</p><p><b>Aşağıdakilerden hangisi bozucu yenilik doğuran bir hak <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Boşanma, fesih, mirasın reddi ve istifa mevcut bir ilişkiyi kökten bitiren bozucu haklardır. Ancak 'Alım (iştira) hakkı', tıpkı geri alım, ön alım ve kabul beyanları gibi kullanıldığında sözleşme ilişkisi kuran 'kurucu yenilik doğuran' haktır.",
     answers: [
@@ -1985,7 +1985,7 @@ export const VAT_TEMEL_HUKUK_TEST_11: McQ[] = [
     ]
   },
   {
-    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi ayırt etme gücünü etkileyen sebepler arasında yer almaz?</b></p>",
+    text: "<p><b>4721 sayılı Türk Medeni Kanunu'na göre, aşağıdakilerden hangisi ayırt etme gücünü etkileyen sebepler arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Akıl hastalığı, akıl zayıflığı, yaş küçüklüğü ve sarhoşluk kişinin fiillerini algılama yeteneğini (ayırt etme gücü) ortadan kaldırır. Ancak 'Savurganlık' kişinin ayırt etme gücünü bozmaz; sadece parasını kontrolsüz harcadığı için mahkemece kısıtlanmasına neden olan bir sebeptir.",
     answers: [
@@ -2021,7 +2021,7 @@ export const VAT_TEMEL_HUKUK_TEST_11: McQ[] = [
     ]
   },
   {
-    text: "<p>Hukuka giriş dersinin hocası olan Halil, <i>\"Bir örf ve âdetin, örf ve âdet hukuku kuralı hâline gelebilmesi, toplum içinde uzun zamandan beri sürekli olarak uygulanabilmesine ve tekrarlanmasına bağlıdır.\"</i> diyor.</p><p><b>Buna göre Halil, yukarıdaki ifadede örf âdet hukukunun hangi unsurunu vurgulamıştır?</b></p>",
+    text: "<p>Hukuka giriş dersinin hocası olan Halil, \"Bir örf ve âdetin, örf ve âdet hukuku kuralı hâline gelebilmesi, toplum içinde uzun zamandan beri sürekli olarak uygulanabilmesine ve tekrarlanmasına bağlıdır.\" diyor.</p><p><b>Buna göre Halil, yukarıdaki ifadede örf âdet hukukunun hangi unsurunu vurgulamıştır?</b></p>",
     diff: 2,
     expl: "Örf ve adet hukukunun kural olabilmesi için 3 unsur gerekir: Uzun süredir tekrarlanma ve alışkanlık (Maddi unsur), toplumun buna inanması (Manevi unsur) ve devlet/hukuk tarafından desteklenmesi (Hukuki unsur). Halil Hoca 'sürekli uygulanma ve tekrarlanma' diyerek Maddi unsuru vurgulamıştır.",
     answers: [
@@ -2045,7 +2045,7 @@ export const VAT_TEMEL_HUKUK_TEST_11: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Aşağıdaki haklardan hangisi, eşya üzerinde kurulan mutlak haklardan biri değildir?</b></p>",
+    text: "<p><b>Aşağıdaki haklardan hangisi, eşya üzerinde kurulan mutlak haklardan biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "İntifa, rehin, mülkiyet ve irtifak hakları doğrudan eşya/mal varlığı üzerinde kurulan ve herkese karşı ileri sürülebilen mutlak haklardır (ayni hak). Ancak 'Velayet hakkı' eşya üzerinde değil, 'kişiler' (çocuklar) üzerinde kurulan mutlak haktır.",
     answers: [
@@ -2057,7 +2057,7 @@ export const VAT_TEMEL_HUKUK_TEST_11: McQ[] = [
     ]
   },
   {
-    text: "<p><b>6102 sayılı Türk Ticaret Kanunu'na göre, aşağıdakilerden hangisi ticaret şirketleri arasında yer almaz?</b></p>",
+    text: "<p><b>6102 sayılı Türk Ticaret Kanunu'na göre, aşağıdakilerden hangisi ticaret şirketleri arasında <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Türk Ticaret Kanunu m.124'e göre ticaret şirketleri 5 gruba ayrılır: Kollektif, Komandit, Anonim, Limitet ve Kooperatif şirket. 'Adi Şirket' ise Borçlar Kanunu'nda düzenlenmiş olup tüzel kişiliğe sahip olmayan, ticaret şirketi sayılmayan bir gruptur.",
     answers: [

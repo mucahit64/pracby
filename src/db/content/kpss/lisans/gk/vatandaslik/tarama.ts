@@ -7,31 +7,31 @@ export const VAT_TARAMA_TEST_1: McQ[] = [
   {
     text: "<p><b>1982 Anayasası'na göre, siyasi partilere üye olabilmesine rağmen siyasi partilerin sadece merkez organlarında görev alabilen kamu görevlisi aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
-    expl: "1982 Anayasası'na göre memurlar ve diğer kamu görevlileri siyasi partilere üye olabilir; ancak yalnızca partilerin merkez organlarında görev alabilirler. Öğretim elemanları ise siyasi partilere üye olamazlar. Sözleşmeli personel, işçiler ve yükseköğretim öğrencileri bu kısıtlamaya tabi değildir.",
+    expl: "1982 Anayasası'nın 68. maddesine göre yükseköğretim elemanları (öğretim elemanları) siyasi partilere üye olabilir; ancak partilerin merkez organları dışında görev alamazlar. Memurlar, hâkim ve savcılar, silahlı kuvvetler mensupları ve yükseköğretim öncesi öğrenciler ise siyasi partilere üye olamaz. Sözleşmeli personel ve işçiler için böyle bir sınırlama yoktur.",
     answers: [
       { text: "Sözleşmeli personel", ok: false },
-      { text: "Öğretim elemanları", ok: false },
-      { text: "Memurlar", ok: true },
+      { text: "Öğretim elemanları", ok: true },
+      { text: "Memurlar", ok: false },
       { text: "İşçiler", ok: false },
       { text: "Yükseköğretim öğrencileri", ok: false }
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'nda idareye ilişkin aşağıdaki ilkelerden hangisi belirtilmemiştir?</b></p>",
+    text: "<p><b>1982 Anayasası'nda idareye ilişkin aşağıdaki ilkelerden hangisi <u>belirtilmemiştir</u>?</b></p>",
     diff: 2,
-    expl: "1982 Anayasası'nda idareye ilişkin belirtilen temel ilkeler şunlardır: yetkide ve usulde paralellik ilkesi, idarenin bütünlüğü ilkesi, merkezden yönetim ilkesi ve kanuni idare ilkesi. 'Yetki genişliği ilkesi' ise Anayasa'da ayrıca ve açıkça bir ilke olarak adlandırılarak belirtilmemiştir.",
+    expl: "1982 Anayasası'nda idareye ilişkin olarak idarenin kanuniliği (m.123), idarenin bütünlüğü (m.123), merkezden yönetim ve yerinden yönetim (m.123) ile yetki genişliği (m.126) ilkeleri düzenlenmiştir. 'Yetkide ve usulde paralellik ilkesi' ise Anayasa'da belirtilmemiş, idare hukuku öğretisinde ve yargı kararlarında geliştirilmiş bir ilkedir.",
     answers: [
-      { text: "Yetkide ve usulde paralellik ilkesi", ok: false },
+      { text: "Yetkide ve usulde paralellik ilkesi", ok: true },
       { text: "İdarenin bütünlüğü ilkesi", ok: false },
-      { text: "Yetki genişliği ilkesi", ok: true },
+      { text: "Yetki genişliği ilkesi", ok: false },
       { text: "Merkezden yönetim ilkesi", ok: false },
       { text: "Kanuni idare ilkesi", ok: false }
     ]
   },
   {
-    text: "<p>I. Anayasa Mahkemesi<br>II. Yargıtay<br>III. Uyuşmazlık Mahkemesi<br>IV. Danıştay<br><br><b>1982 Anayasası'na göre yukarıdakilerden hangilerinin başkanı, kendi üyeleri arasından gizli oyla ve üye tam sayısının salt çoğunluğu ile seçilir?</b></p>",
+    text: "<p>I. Anayasa Mahkemesi<br>II. Yargıtay<br>III. Uyuşmazlık Mahkemesi<br>IV. Danıştay</p><p><b>1982 Anayasası'na göre yukarıdakilerden hangilerinin başkanı, kendi üyeleri arasından gizli oyla ve üye tam sayısının salt çoğunluğu ile seçilir?</b></p>",
     diff: 3,
-    expl: "1982 Anayasası'na göre Yargıtay ve Danıştay başkanları, kendi üyeleri arasından gizli oyla ve üye tam sayısının salt çoğunluğuyla seçilir. Anayasa Mahkemesi Başkanı da kendi üyeleri arasından gizli oyla ve üye tam sayısının salt çoğunluğuyla seçilir. Uyuşmazlık Mahkemesi ise başkanını üyeleri arasından Anayasa Mahkemesi'nin belirleyeceği üye arasından seçer. Dolayısıyla I, II ve IV bu yöntemle başkanını seçer.",
+    expl: "1982 Anayasası'na göre Anayasa Mahkemesi, Yargıtay ve Danıştay başkanları kendi üyeleri arasından gizli oyla ve üye tam sayısının salt çoğunluğuyla seçilir. Uyuşmazlık Mahkemesine ise Anayasa Mahkemesinin kendi üyeleri arasından görevlendirdiği üye başkanlık eder. Dolayısıyla I, II ve IV doğrudur.",
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "Yalnız III", ok: false },
@@ -41,7 +41,7 @@ export const VAT_TARAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Eğitim ve öğretim hakkı ve ödevi<br>II. Kamu hizmetine girme hakkı<br>III. Bilgi edinme hakkı<br>IV. Siyasi faaliyette bulunma hakkı<br><br><b>1982 Anayasası'na göre, yukarıdaki hakların hangilerinden yabancılar yararlanabilir?</b></p>",
+    text: "<p>I. Eğitim ve öğretim hakkı ve ödevi<br>II. Kamu hizmetine girme hakkı<br>III. Bilgi edinme hakkı<br>IV. Siyasi faaliyette bulunma hakkı</p><p><b>1982 Anayasası'na göre, yukarıdaki hakların hangilerinden yabancılar yararlanabilir?</b></p>",
     diff: 3,
     expl: "1982 Anayasası'na göre temel haklar kural olarak herkese (Türk vatandaşları ve yabancılar) tanınmıştır; ancak bazı haklar yalnızca Türk vatandaşlarına aittir. Kamu hizmetine girme hakkı (md. 70) ve siyasi faaliyette bulunma hakkı (siyasi parti kurma, üye olma vb.) yalnızca Türk vatandaşlarına tanınmıştır. Eğitim ve öğretim hakkı ile bilgi edinme hakkı yabancılar dahil herkese tanınmıştır. Dolayısıyla yabancılar I ve III'ten yararlanabilir.",
     answers: [
@@ -53,7 +53,7 @@ export const VAT_TARAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>1982 Anayasası'na göre, seçim kanunlarında yapılan değişiklikler, yürürlüğe girdiği tarihten itibaren kaç yıl içinde yapılacak seçimlerde uygulanmaz?</b></p>",
+    text: "<p><b>1982 Anayasası'na göre, seçim kanunlarında yapılan değişiklikler, yürürlüğe girdiği tarihten itibaren kaç yıl içinde yapılacak seçimlerde <u>uygulanmaz</u>?</b></p>",
     diff: 2,
     expl: "1982 Anayasası'na göre seçim kanunlarında yapılan değişiklikler, yürürlüğe girdiği tarihten itibaren bir yıl içinde yapılacak seçimlerde uygulanmaz.",
     answers: [
@@ -65,7 +65,7 @@ export const VAT_TARAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Borçlarını ödeyemeyen borçlunun, mal varlığının mahkeme kararıyla alacaklılara dağıtılması amacıyla yasal süreç başlatılması işlemi aşağıdakilerden hangisi ile ifade edilir?</p>",
+    text: "<p><b>Borçlarını ödeyemeyen borçlunun, mal varlığının mahkeme kararıyla alacaklılara dağıtılması amacıyla yasal süreç başlatılması işlemi aşağıdakilerden hangisi ile ifade edilir?</b></p>",
     diff: 2,
     expl: "İflas, ödeme güçlüğü içindeki bir borçlunun tüm mal varlığının mahkeme kararıyla alacaklılara dağıtılması amacıyla başlatılan yasal süreçtir. Tasfiye mal varlığının tasfiyesini, rehin bir güvence türünü, ipotek taşınmaz üzerindeki rehin hakkını, gabin ise aşırı yararlanma (fahiş fiyat) durumunu ifade eder.",
     answers: [
@@ -89,31 +89,31 @@ export const VAT_TARAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>I. Dicle Üniversitesi<br>II. Çankırı Belediyesi<br>III. Bursa Barosu<br><br><b>Yönetmelik yapmaya ilişkin 1982 Anayasası hükümleri dikkate alındığında yukarıdaki birimlerden hangileri yönetmelik çıkarabilir?</b></p>",
+    text: "<p>I. Dicle Üniversitesi<br>II. Çankırı Belediyesi<br>III. Bursa Barosu</p><p><b>Yönetmelik yapmaya ilişkin 1982 Anayasası hükümleri dikkate alındığında yukarıdaki birimlerden hangileri yönetmelik çıkarabilir?</b></p>",
     diff: 2,
-    expl: "1982 Anayasası'na göre yönetmelik çıkarabilecek kurumlar: Cumhurbaşkanı, bakanlıklar ve kamu tüzel kişileri. Üniversiteler ve belediyeler kamu tüzel kişisi niteliğinde olduğundan yönetmelik çıkarabilir. Barolar ise kamu kurumu niteliğinde meslek kuruluşu olup yönetmelik değil, ağırlıklı olarak yönerge/iç düzenleme çıkarır; Anayasa'da yönetmelik çıkarma yetkisi açıkça verilmemiştir. Dolayısıyla I ve II yönetmelik çıkarabilir.",
+    expl: "1982 Anayasası'nın 124. maddesine göre Cumhurbaşkanı, bakanlıklar ve kamu tüzel kişileri kendi görev alanlarını ilgilendiren kanunların ve Cumhurbaşkanlığı kararnamelerinin uygulanmasını sağlamak amacıyla yönetmelik çıkarabilir. Üniversiteler ve belediyeler ile kamu kurumu niteliğindeki meslek kuruluşu olan barolar kamu tüzel kişisi olduğundan üçü de yönetmelik çıkarabilir.",
     answers: [
       { text: "Yalnız II", ok: false },
       { text: "Yalnız III", ok: false },
-      { text: "I ve II", ok: true },
+      { text: "I ve II", ok: false },
       { text: "II ve III", ok: false },
-      { text: "I, II ve III", ok: false }
+      { text: "I, II ve III", ok: true }
     ]
   },
   {
-    text: "<p><b>Türk vatandaşlığı aşağıdakilerden hangisiyle kazanılamaz?</b></p>",
+    text: "<p><b>Türk vatandaşlığı aşağıdakilerden hangisiyle <u>kazanılamaz</u>?</b></p>",
     diff: 2,
-    expl: "Türk vatandaşlığı; doğum (soy ve toprak esasına göre), yetkili makam kararı (귀화/vatandaşlığa alma), mahkeme kararıyla ve evlenme yoluyla kazanılabilir. Seçme hakkının kullanılması vatandaşlık kazandırmaz; aksine vatandaşlık, seçme hakkının ön koşuludur.",
+    expl: "5901 sayılı Türk Vatandaşlığı Kanunu'na göre Türk vatandaşlığı doğumla (soy bağı veya doğum yeri esası) ya da sonradan yetkili makam kararı, evlat edinilme ve seçme hakkının kullanılması yoluyla kazanılır. Evlenme tek başına vatandaşlık kazandırmaz; Türk vatandaşıyla evli yabancı yetkili makam kararıyla vatandaşlık kazanabilir. Mahkeme kararı ise Kanun'da vatandaşlık kazanma yolu olarak sayılmamıştır.",
     answers: [
       { text: "Doğum", ok: false },
       { text: "Yetkili makam kararı", ok: false },
-      { text: "Seçme hakkının kullanılması", ok: true },
-      { text: "Mahkeme kararıyla", ok: false },
+      { text: "Seçme hakkının kullanılması", ok: false },
+      { text: "Mahkeme kararıyla", ok: true },
       { text: "Evlenme yoluyla", ok: false }
     ]
   },
   {
-    text: "<p>Eşler, ancak birlikte evlât edinebilirler; evli olmayanlar birlikte evlât edinemezler.<br><br><b>Buna göre evlat edinebilmek için eşlerin en az kaç yıldan beri evli olmaları veya kaç yaşını doldurmuş bulunmaları gerekir?</b></p>",
+    text: "<p>Eşler, ancak birlikte evlât edinebilirler; evli olmayanlar birlikte evlât edinemezler.</p><p><b>Buna göre evlat edinebilmek için eşlerin <u>en az</u> kaç yıldan beri evli olmaları veya kaç yaşını doldurmuş bulunmaları gerekir?</b></p>",
     diff: 2,
     expl: "Medeni Kanun'a göre eşlerin birlikte evlat edinebilmesi için en az 5 yıldan beri evli olmaları veya her ikisinin de 30 yaşını doldurmuş bulunmaları gerekir.",
     answers: [
@@ -139,9 +139,9 @@ export const VAT_TARAMA_TEST_1: McQ[] = [
   {
     text: "<p><b>Aşağıdaki mahkemelerin hangileri arasındaki görev ve hüküm uyuşmazlıkları Uyuşmazlık Mahkemesi tarafından çözümlenir?</b></p>",
     diff: 2,
-    expl: "Uyuşmazlık Mahkemesi, adli ve idari yargı kolları arasındaki görev ve hüküm uyuşmazlıklarını çözümler. İdare mahkemesi ile vergi mahkemesi arasındaki uyuşmazlıklar her ikisi de idari yargı koluna ait olduğundan Uyuşmazlık Mahkemesi'nin değil, bölge idare mahkemesinin görev alanına girer. Diğer seçeneklerde ise biri adli biri idari yargı kolundan mahkemeler karşı karşıya değil, aynı yargı kolundan mahkemeler yer almaktadır. İdare mahkemesi (idari yargı) – vergi mahkemesi (idari yargı) çifti Uyuşmazlık Mahkemesi'nin görev alanı dışındadır.",
+    expl: "Uyuşmazlık Mahkemesi, adli ve idari yargı mercileri arasındaki görev ve hüküm uyuşmazlıklarını kesin olarak çözümler. Aile mahkemesi adli yargı, idare mahkemesi ise idari yargı merciidir; bu nedenle aralarındaki uyuşmazlık Uyuşmazlık Mahkemesince çözülür. Diğer seçeneklerdeki mahkemeler aynı yargı koluna (asliye ticaret–asliye hukuk, icra–asliye ceza, tüketici–iş: adli yargı; idare–vergi: idari yargı) aittir.",
     answers: [
-      { text: "aile mahkemesi – idare mahkemesi", ok: false },
+      { text: "aile mahkemesi – idare mahkemesi", ok: true },
       { text: "asliye ticaret mahkemesi – asliye hukuk mahkemesi", ok: false },
       { text: "idare mahkemesi – vergi mahkemesi", ok: false },
       { text: "icra mahkemesi – asliye ceza mahkemesi", ok: false },
@@ -149,7 +149,7 @@ export const VAT_TARAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Ödeme güçlüğü içinde bulunan borçlunun, alacaklıları ile yaptığı ve mahkeme tarafından onaylanarak borçların ödenmesinin ertelenmesini veya yeniden yapılandırılmasını sağlayan hukuki işleme ne ad verilir?</p>",
+    text: "<p><b>Ödeme güçlüğü içinde bulunan borçlunun, alacaklıları ile yaptığı ve mahkeme tarafından onaylanarak borçların ödenmesinin ertelenmesini veya yeniden yapılandırılmasını sağlayan hukuki işleme ne ad verilir?</b></p>",
     diff: 2,
     expl: "Konkordato, ödeme güçlüğü içindeki borçlunun alacaklılarıyla yaptığı ve mahkeme onayıyla geçerlilik kazanan, borçların ertelenmesini veya yeniden yapılandırılmasını sağlayan bir hukuki işlemdir. İrtifak bir ayni hak türü, ipotek taşınmaz rehni, muvazaa muvazaalı işlem, kefalet ise bir güvence sözleşmesidir.",
     answers: [
@@ -161,7 +161,7 @@ export const VAT_TARAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Türkiye'de en son mahallî idare seçimleri 31 Mart 2024'te yapılmıştır.<br><br><b>Buna göre bir sonraki mahallî idare seçiminde belediye başkanı adayı olmayı düşünen A, hangi yıl yapılacak seçimlerde başkan seçilebilir?</b></p>",
+    text: "<p>Türkiye'de en son mahallî idare seçimleri 31 Mart 2024'te yapılmıştır.</p><p><b>Buna göre bir sonraki mahallî idare seçiminde belediye başkanı adayı olmayı düşünen A, hangi yıl yapılacak seçimlerde başkan seçilebilir?</b></p>",
     diff: 2,
     expl: "Mahalli idare seçimleri beş yılda bir yapılır. 31 Mart 2024'te yapılan seçimlerin ardından bir sonraki mahalli idare seçimleri 2029 yılında yapılacaktır.",
     answers: [
@@ -173,7 +173,7 @@ export const VAT_TARAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Tazminat, haksız fiil sonucunda ortaya çıkan aşağıdaki unsurlardan hangisini ortadan kaldırmak amacıyla uygulanır?</p>",
+    text: "<p><b>Tazminat, haksız fiil sonucunda ortaya çıkan aşağıdaki unsurlardan hangisini ortadan kaldırmak amacıyla uygulanır?</b></p>",
     diff: 2,
     expl: "Tazminat, haksız fiil sonucunda ortaya çıkan zararı gidermek amacıyla uygulanır. Kusur, hukuka aykırılık, fiil ve illiyet bağı haksız fiilin diğer unsurlarıdır; tazminat bu unsurları ortadan kaldırmaz, zararı tazmin eder.",
     answers: [
@@ -185,19 +185,19 @@ export const VAT_TARAMA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Devlet Memurları Kanunu'nda yer alan \"Kamu hizmetleri görevlerine girmek, sınıflar içinde ilerlemek ve yükselmek, görevin sona erdirilmesini belirli bir sisteme dayandırmak ve bu sistemin eşit imkânlarla uygulanmasında Devlet memurlarını güveniğe sahip kılmak\" ifadesi ile aşağıdakilerden hangisi tanımlanmaktadır?</p>",
+    text: "<p><b>Devlet Memurları Kanunu'nda yer alan \"Kamu hizmetleri görevlerine girmek, sınıflar içinde ilerlemek ve yükselmek, görevin sona erdirilmesini belirli bir sisteme dayandırmak ve bu sistemin eşit imkânlarla uygulanmasında Devlet memurlarını güvenliğe sahip kılmak\" ifadesi ile aşağıdakilerden hangisi tanımlanmaktadır?</b></p>",
     diff: 2,
-    expl: "657 sayılı Devlet Memurları Kanunu'nda kariyer ilkesi; kamu hizmetleri görevlerine girmek, sınıflar içinde ilerlemek ve yükselmek, görevin sona erdirilmesini belirli bir sisteme dayandırmak ve bu sistemin eşit imkânlarla uygulanmasında devlet memurlarını güvenliğe sahip kılmak olarak tanımlanmaktadır.",
+    expl: "657 sayılı Devlet Memurları Kanunu'nun 3. maddesinde liyakat ilkesi; Devlet kamu hizmetleri görevlerine girmeyi, sınıflar içinde ilerleme ve yükselmeyi, görevin sona erdirilmesini liyakat sistemine dayandırmak ve bu sistemin eşit imkânlarla uygulanmasında Devlet memurlarını güvenliğe sahip kılmak olarak tanımlanmıştır. Kariyer ilkesi ise memurlara sınıfları içinde en yüksek derecelere kadar ilerleme imkânı sağlanmasını ifade eder.",
     answers: [
       { text: "Sınıflandırma", ok: false },
       { text: "Yer değiştirme", ok: false },
-      { text: "Liyakat", ok: false },
-      { text: "Kariyer", ok: true },
+      { text: "Liyakat", ok: true },
+      { text: "Kariyer", ok: false },
       { text: "Sadakat", ok: false }
     ]
   },
   {
-    text: "<p>Medeni hukuk gibi geniş ve dağınık alanlarda yer alan normların, sistematik bir şekilde düzenlenerek tek bir kanun metnine dönüştürülmesi süreci aşağıdakilerden hangisiyle ifade edilir?</p>",
+    text: "<p><b>Medeni hukuk gibi geniş ve dağınık alanlarda yer alan normların, sistematik bir şekilde düzenlenerek tek bir kanun metnine dönüştürülmesi süreci aşağıdakilerden hangisiyle ifade edilir?</b></p>",
     diff: 2,
     expl: "Kodifikasyon, geniş ve dağınık hukuk alanlarında yer alan normların sistematik biçimde düzenlenerek tek bir kanun metnine (kanun kitabına/code'a) dönüştürülmesi sürecidir. Norm çatışması, kanun boşluğu, normlar hiyerarşisi ve yorum ise hukukun farklı kavramlarıdır.",
     answers: [
