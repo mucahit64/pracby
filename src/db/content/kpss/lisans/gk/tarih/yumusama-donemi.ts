@@ -29,7 +29,7 @@ export const TAR_YUMUSAMA_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>Sömürgeciliğe karşı mücadeleyi benimseyen Asya ve Afrika'dan 24 ülkenin toplanmasıyla oluşan Bağlantısızlık Hareketi'nin kurulmasına;</p><p>I. Bandung,<br>II. Belgrad,<br>III. Helsinki</p><p><b>konferanslarından hangileri katkı sağlamıştır?</b></p>",
+    text: "<p><b>Sömürgeciliğe karşı mücadeleyi benimseyen Asya ve Afrika'dan 24 ülkenin toplanmasıyla oluşan Bağlantısızlık Hareketi'nin kurulmasına;</b></p><p>I. Bandung,<br>II. Belgrad,<br>III. Helsinki</p><p><b>konferanslarından hangileri katkı sağlamıştır?</b></p>",
     diff: 3,
     expl: "Bağlantısızlar Hareketi'nin temeli 1955 Bandung Konferansı'nda atılmış, teşkilat 1961 Belgrad Konferansı ile resmen kurulmuştur. Helsinki (1975) ise Yumuşama döneminde Avrupa güvenliği (AGİK) ile ilgilidir.",
     answers: [
@@ -139,13 +139,13 @@ export const TAR_YUMUSAMA_DONEMI_TEST_1: McQ[] = [
   {
     text: "<p><b>Yumuşama Dönemi'nde Türk - Amerikan ilişkilerinin bozulmasının nedenleri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
-    expl: "Kıbrıs Meselesi (1964 ve 1974 harekâtları), Johnson Mektubu (1964) ve Haşhaş Sorunu (1971) bu dönemde Türk-Amerikan ilişkilerini derinden sarsan krizlerdir. Küba Krizi ise doğrudan ABD-SSCB sorunudur, Türk-Amerikan ilişkilerini bozmamıştır (Jüpiter füzeleri sökülse de krize neden olmamıştır).",
+    expl: "Johnson Mektubu (1964), Haşhaş Sorunu (1971), Kıbrıs Meselesi ve Türkiye'ye danışılmadan Jüpiter füzelerinin söküldüğü Küba Krizi (1962) Yumuşama Dönemi'nde Türk-Amerikan ilişkilerini bozmuştur. Chester Projesi ise 1923'te gündeme gelen bir demir yolu ve maden imtiyazı projesi olup bu dönemle ilgili değildir.",
     answers: [
       { text: "Johnson Mektubu", ok: false },
       { text: "Haşhaş Sorunu", ok: false },
       { text: "Kıbrıs Meselesi", ok: false },
-      { text: "Küba Krizi", ok: true },
-      { text: "Cheester Projesi", ok: false }
+      { text: "Küba Krizi", ok: false },
+      { text: "Cheester Projesi", ok: true }
     ]
   },
   {
@@ -257,8 +257,8 @@ export const TAR_YUMUSAMA_DONEMI_TEST_2: McQ[] = [
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "Yalnız II", ok: false },
-      { text: "Yalnız III", ok: false },
       { text: "I ve II", ok: true },
+      { text: "I ve III", ok: false },
       { text: "II ve III", ok: false }
     ]
   },

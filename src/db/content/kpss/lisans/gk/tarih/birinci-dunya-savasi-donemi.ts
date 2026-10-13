@@ -3,7 +3,7 @@ import type { McQ } from "../../../../types";
 export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
   // ---------------- I. DÜNYA SAVAŞI DÖNEMİ - TEST 1 ----------------
   {
-    text: "XX. yüzyıl başlarında Osmanlı Devleti'ni destekleme ve kalkındırma imajı çizerek Osmanlıların üzerindeki etkinliğini giderek arttıran devlet aşağıdakilerden hangisidir?",
+    text: "<p><b>XX. yüzyıl başlarında Osmanlı Devleti'ni destekleme ve kalkındırma imajı çizerek Osmanlıların üzerindeki etkinliğini giderek arttıran devlet aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Özellikle II. Abdülhamit döneminden itibaren İngiltere ve Fransa'nın düşmanca politikalarına karşı, Osmanlı Devleti ile Almanya (Kayzer II. Wilhelm) arasında yakınlaşma başlamış ve Alman subayları/şirketleri (Bağdat Demiryolu vb.) Osmanlı üzerinde büyük etkinlik kurmuştur.",
     answers: [
@@ -11,15 +11,15 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Birinci Dünya Savaşı öncesinde;\nI. Rusya'nın Sırbistan'ın genişleme politikasını desteklemesi,\nII. Wilson İlkeleri'nin yayımlanması,\nIII. Almanya'nın sömürge arayışını hızlandırması\ngelişmelerinden hangilerinin Avrupa'daki kutuplaşmayı arttırdığı savunulabilir?",
+    text: "<p><b>Birinci Dünya Savaşı öncesinde;</b></p><p>I. Rusya'nın Sırbistan'ın genişleme politikasını desteklemesi,<br>II. Wilson İlkeleri'nin yayımlanması,<br>III. Almanya'nın sömürge arayışını hızlandırması</p><p><b>gelişmelerinden hangilerinin Avrupa'daki kutuplaşmayı arttırdığı savunulabilir?</b></p>",
     diff: 2,
-    expl: "Rusya'nın Panslavizm ile Balkanlarda Sırpları kışkırtması (I) ve Almanya'nın İngiltere'ye karşı sömürge yarışına girmesi (III) I. Dünya Savaşı'nın genel nedenleridir ve kutuplaşmayı artırmıştır. Wilson İlkeleri (II) ise savaşın BAŞINDA DEĞİL, sonlarına doğru (1918) yayımlanmıştır.",
+    expl: "Rusya'nın Panslavizm ile Balkanlarda Sırpları kışkırtması (I) ve Almanya'nın İngiltere'ye karşı sömürge yarışına girmesi (III) I. Dünya Savaşı'nın genel nedenleridir ve kutuplaşmayı artırmıştır. Wilson İlkeleri (II) ise savaşın başında değil, sonlarına doğru (1918) yayımlanmıştır.",
     answers: [
       { text: "Yalnız I", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve II", ok: false }, { text: "I ve III", ok: true }, { text: "I, II ve III", ok: false }
     ]
   },
   {
-    text: "Osmanlı padişahının I. Dünya Savaşı'nda Halife unvanı ile yayımladığı cihat çağrısına bazı Arap toplulukların tepkisiz kalması;\nI. İslamcılık akımının önemini kaybettiği,\nII. Osmanlı Devleti'nin Orta Doğu'da toprak kaybedileceği,\nIII. Osmanlı Devleti'nin nüfusunun azalacağı\ndurumlarından hangilerinin göstergesidir?",
+    text: "<p><b>Osmanlı padişahının I. Dünya Savaşı'nda Halife unvanı ile yayımladığı cihat çağrısına bazı Arap toplulukların tepkisiz kalması;</b></p><p>I. İslamcılık akımının önemini kaybettiği,<br>II. Osmanlı Devleti'nin Orta Doğu'da toprak kaybedileceği,<br>III. Osmanlı Devleti'nin nüfusunun azalacağı</p><p><b>durumlarından hangilerinin göstergesidir?</b></p>",
     diff: 2,
     expl: "Arapların (Müslümanların) Halife'nin cihat çağrısına uymayıp İngilizlerle işbirliği yapması, Ümmetçilik (İslamcılık) fikrinin iflas ettiğini (I) ve Ortadoğu'nun (Suriye, Hicaz, Irak) kaybedileceğini (II) gösterir. Toprak kaybedilince doğal olarak o bölgelerdeki nüfus da Osmanlı'dan çıkmış olur (III).",
     answers: [
@@ -27,7 +27,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Osmanlı Devleti'nin Bağlaşma (İttifak) Devletlerinin yanında savaşa girmesinde aşağıdakilerden hangisi etkili olmamıştır?",
+    text: "<p><b>Osmanlı Devleti'nin Bağlaşma (İttifak) Devletlerinin yanında savaşa girmesinde aşağıdakilerden hangisi etkili <u>olmamıştır</u>?</b></p>",
     diff: 2,
     expl: "Almanya ile yakınlaşma, yalnızlıktan kurtulma, diplomatik temasların reddedilmesi ve Alman gemilerinin (Goben ve Breslau) sığınması savaşa giriş nedenleridir. Gizli Antlaşmaların Rusya tarafından ifşa edilmesi (açıklanması) ise 1917 Bolşevik İhtilali'nden sonradır, yani Osmanlı savaşa girdikten çok sonra olmuştur.",
     answers: [
@@ -35,7 +35,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Osmanlı Devleti Mondros Ateşkes Antlaşması'nı İtilaf Devletleri adına aşağıdaki devletlerden hangisi ile imzalamıştır?",
+    text: "<p><b>Osmanlı Devleti Mondros Ateşkes Antlaşması'nı İtilaf Devletleri adına aşağıdaki devletlerden hangisi ile imzalamıştır?</b></p>",
     diff: 1,
     expl: "Osmanlı Devleti adına Bahriye Nazırı Rauf Bey'in (Orbay) imzaladığı Mondros Ateşkesi'ni, İtilaf Devletleri adına Limni adasındaki Agamemnon zırhlısında İngiliz Amiral Calthorpe imzalamıştır.",
     answers: [
@@ -43,7 +43,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Yarbay Mustafa Kemal'in Sofya Ataşemiliterliği görevinden istifa ederek görev aldığı ilk cephe aşağıdakilerden hangisidir?",
+    text: "<p><b>Yarbay Mustafa Kemal'in Sofya Ataşemiliterliği görevinden istifa ederek görev aldığı ilk cephe aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Mustafa Kemal, I. Dünya Savaşı patlak verdiğinde Sofya'da (Bulgaristan) Askeri Ataşe idi. Savaşta aktif görev almak için ısrar etmiş ve Tekirdağ'daki 19. Tümen Komutanlığına atanarak Çanakkale Cephesi'nde savaşa dâhil olmuştur.",
     answers: [
@@ -51,7 +51,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "26 Nisan 1916 tarihinde İngiltere, Fransa ve Rusya arasında imzalanan Sykes Picot Antlaşması'nda;\nI. Musul,\nII. Güney Irak,\nIII. Suriye\nbölgelerinden hangileri İngiltere'ye bırakılmıştır?",
+    text: "<p><b>26 Nisan 1916 tarihinde İngiltere, Fransa ve Rusya arasında imzalanan Sykes Picot Antlaşması'nda;</b></p><p>I. Musul,<br>II. Güney Irak,<br>III. Suriye</p><p><b>bölgelerinden hangileri İngiltere'ye bırakılmıştır?</b></p>",
     diff: 3,
     expl: "Orta Doğu'yu paylaşan gizli Sykes-Picot Antlaşması'nda İngiltere'ye Güney Irak (Bağdat ve Basra); Fransa'ya ise Suriye, Lübnan ve Musul bırakılmıştır. (Not: Musul daha sonra Fransa'dan alınıp İngiltere'ye geçecektir ancak Sykes-Picot metninde Fransa'nındır).",
     answers: [
@@ -59,7 +59,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "I. Dünya Savaşı'nda Osmanlı kamuoyu savaşı \"Harb-i Umumi\" olarak tanımlarken daha sonraki süreçte \"Cihan Harbi\" olarak nitelendirmiştir.\nBu tanım değişikliği aşağıdakilerden hangisi ile açıklanabilir?",
+    text: "<p>I. Dünya Savaşı'nda Osmanlı kamuoyu savaşı \"Harb-i Umumi\" olarak tanımlarken daha sonraki süreçte \"Cihan Harbi\" olarak nitelendirmiştir.</p><p><b>Bu tanım değişikliği aşağıdakilerden hangisi ile açıklanabilir?</b></p>",
     diff: 2,
     expl: "Savaş başlarda Avrupa devletleri arasında bir 'Genel Savaş' (Harb-i Umumi) olarak görülüyordu. Ancak 1917'de ABD'nin ve diğer kıtalardaki devletlerin (Japonya, Brezilya vb.) de savaşa girmesiyle tam anlamıyla bir Dünya/Cihan (Global) savaşına dönüşmüştür.",
     answers: [
@@ -67,7 +67,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal'in İstanbul'un fiilen işgali sürecinde İtilaf donanmasına ithafen \"Geldikleri gibi giderler!\" sözünü söylediği tarihî gemi aşağıdakilerden hangisidir?",
+    text: "<p><b>Mustafa Kemal'in İstanbul'un fiilen işgali sürecinde İtilaf donanmasına ithafen</b> \"Geldikleri gibi giderler!\" <b>sözünü söylediği tarihî gemi aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Mustafa Kemal, 13 Kasım 1918'de Suriye Cephesinden İstanbul'a döndüğünde, Haydarpaşa'dan Galata'ya geçerken bindiği 'Kartal istimbotu' (Kartal-II) üzerinde, Boğaz'a demirlemiş düşman zırhlılarını görünce bu efsanevi sözü söylemiştir.",
     answers: [
@@ -75,7 +75,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Aşağıdakilerden hangisi Wilson İlkeleri'nde yer alan konulardan biri değildir?",
+    text: "<p><b>Aşağıdakilerden hangisi Wilson İlkeleri'nde yer alan konulardan biri <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Wilson ilkelerinde 'Yenen devletler yenilenlerden Savaş Tazminatı (D) ve toprak almayacak' veya 'Boğazlar tüm gemilere açık olacak' (C) gibi maddeler vardır. Ancak İtilaf Devletleri 'Toprak almayacağız' kuralını delmek için sonradan (Paris Barış Konferansında) sömürgeciliğin isim değiştirmiş hâli olan 'Manda ve Himaye' fikrini uydurmuşlardır. Yani Manda ve Himaye Wilson ilkelerinde YOKTUR.",
     answers: [
@@ -83,7 +83,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Wilson İlkeleri'nde yer alan;\nI. yenen devletlerin yenilenlerden toprak almaması,\nII. Cemiyet-i Akvamın kurulmasının istenmesi,\nIII. Türk nüfusunun yoğun olduğu bölgelerde Türk egemenliğinin sağlanacak olması\nkararlarından hangilerinin Osmanlı Devleti'nin ateşkes yapmasında doğrudan etkili olduğu söylenebilir?",
+    text: "<p><b>Wilson İlkeleri'nde yer alan;</b></p><p>I. yenen devletlerin yenilenlerden toprak almaması,<br>II. Cemiyet-i Akvamın kurulmasının istenmesi,<br>III. Türk nüfusunun yoğun olduğu bölgelerde Türk egemenliğinin sağlanacak olması</p><p><b>kararlarından hangilerinin Osmanlı Devleti'nin ateşkes yapmasında doğrudan etkili olduğu söylenebilir?</b></p>",
     diff: 2,
     expl: "Savaşı kaybeden Osmanlı Devleti; galip devletlerin 'Toprak almayacak' (I) olması ve 'Türklerin çoğunlukta olduğu yerler Türklerin olacak' (III) güvencelerine (Wilson İlkeleri) güvenerek Mondros Ateşkesi'ni imzalamaya cesaret edebilmiştir.",
     answers: [
@@ -91,7 +91,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Osmanlı Devleti'nin;\n- İngiltere'nin sömürge bağını kesmek,\n- kaybettiği toprakları geri almak\namaçları doğrultusunda açtığı taarruz cephesi aşağıdakilerden hangisidir?",
+    text: "<p><b>Osmanlı Devleti'nin;</b></p><p>- İngiltere'nin sömürge bağını kesmek,<br>- kaybettiği toprakları geri almak</p><p><b>amaçları doğrultusunda açtığı taarruz cephesi aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Osmanlı Devleti'nin Almanya'nın isteğiyle, İngiltere'nin Hindistan'a (sömürgelerine) giden yolunu kesmek ve Mısır'ı geri almak amacıyla açtığı (Cemal Paşa komutasındaki) taarruz cephesi 'Kanal' (Süveyş) Cephesi'dir.",
     answers: [
@@ -99,7 +99,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Kafkas Cephesi'nin açılma nedenleri arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Kafkas Cephesi'nin açılma nedenleri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Enver Paşa'nın komutasında açılan Kafkas taarruz cephesinin amacı; Bakü petrollerine ulaşmak, Kars-Ardahan-Batum'u (Elviye-i Selase) geri almak ve Orta Asya Türkleriyle birleşmektir (Turan/Pan-Türkizm). Bulgaristan ise Batıdadır (Balkanlar), Kafkaslarla ilgisi yoktur.",
     answers: [
@@ -107,7 +107,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Kafkas İslam Orduları Komutanlığı görevi ile Bakü'yü işgalden kurtararak \"Bakü Fatihi\" unvanı ile anılan Osmanlı komutanı aşağıdakilerden hangisidir?",
+    text: "<p><b>Kafkas İslam Orduları Komutanlığı görevi ile Bakü'yü işgalden kurtararak</b> \"Bakü Fatihi\" <b>unvanı ile anılan Osmanlı komutanı aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Enver Paşa'nın kardeşi olan Nuri Paşa (Killigil), komuta ettiği Kafkas İslam Ordusu ile 1918 yılında Bakü'yü Ermeni ve Rus (Bolşevik) işgalinden kurtararak 'Bakü Fatihi' unvanını almıştır.",
     answers: [
@@ -115,7 +115,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal \"Altın Kılıç\" madalyasına aşağıda verilen cephelerin hangisinde kazandığı başarılar sonucunda layık görülmüştür?",
+    text: "<p><b>Mustafa Kemal</b> \"Altın Kılıç\" <b>madalyasına aşağıda verilen cephelerin hangisinde kazandığı başarılar sonucunda layık görülmüştür?</b></p>",
     diff: 3,
     expl: "Çanakkale'den sonra 16. Kolordu Komutanı olarak Kafkas Cephesi'ne atanan Mustafa Kemal, Rusların elindeki Muş ve Bitlis'i (1916) geri almayı başarmış ve bu başarısından dolayı 'Altın Kılıç'lı İmtiyaz Madalyası ile ödüllendirilmiştir.",
     answers: [
@@ -127,15 +127,15 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_1: McQ[] = [
 export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
   // ---------------- I. DÜNYA SAVAŞI DÖNEMİ - TEST 2 ----------------
   {
-    text: "I. Sykes Picot\nII. Atina\nIII. Mac Mahon\nIV. Rethondes\nYukarıdaki antlaşmalardan hangileri, Osmanlı Devleti'ni paylaşım tasarıları arasında yer almaktadır?",
+    text: "<p>I. Sykes Picot<br>II. Atina<br>III. Mac Mahon<br>IV. Rethondes</p><p><b>Yukarıdaki antlaşmalardan hangileri, Osmanlı Devleti'ni paylaşım tasarıları arasında yer almaktadır?</b></p>",
     diff: 2,
-    expl: "I. Dünya Savaşı sırasında yapılan GİZLİ paylaşım antlaşmaları Sykes-Picot (Orta Doğu) ve Mac Mahon'dur (Arapları ayaklandırma). Atina, Balkan Savaşları sonrasıdır; Rethondes ise I. Dünya Savaşı'nda Almanya'nın imzaladığı ateşkestir.",
+    expl: "I. Dünya Savaşı sırasında yapılan gizli paylaşım antlaşmaları Sykes-Picot (Orta Doğu) ve Mac Mahon'dur (Arapları ayaklandırma). Atina, Balkan Savaşları sonrasıdır; Rethondes ise I. Dünya Savaşı'nda Almanya'nın imzaladığı ateşkestir.",
     answers: [
       { text: "I ve II", ok: false }, { text: "I ve III", ok: true }, { text: "II ve III", ok: false }, { text: "II ve IV", ok: false }, { text: "I, II ve III", ok: false }
     ]
   },
   {
-    text: "Birinci Dünya Savaşı'nda Osmanlı Devleti'nin toprak kazanması ile sonuçlanan cephe aşağıdakilerden hangisidir?",
+    text: "<p><b>Birinci Dünya Savaşı'nda Osmanlı Devleti'nin toprak kazanması ile sonuçlanan cephe aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Kafkas Cephesi'nde 1917 Rus Devrimi çıkınca, savaştan çekilen Rusya ile imzalanan 1918 Brest-Litovsk Antlaşması sayesinde Osmanlı, ta 1878'de kaybettiği Kars, Ardahan ve Batum'u (Elviye-i Selase) geri alarak toprak kazanmıştır.",
     answers: [
@@ -143,7 +143,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Mondros Ateşkes Görüşmeleri'ne katılan Hüseyin Rauf Orbay antlaşmayı, aşağıda verilen hangi resmî görevle imzalamıştır?",
+    text: "<p><b>Mondros Ateşkes Görüşmeleri'ne katılan Hüseyin Rauf Orbay antlaşmayı, aşağıda verilen hangi resmî görevle imzalamıştır?</b></p>",
     diff: 3,
     expl: "Osmanlı Devleti I. Dünya Savaşı'ndan çekilirken kurulan Ahmet İzzet Paşa Hükümeti'nde 'Bahriye Nazırı' (Denizcilik Bakanı) olan Rauf Orbay, Mondros Ateşkesi'ni başdelege olarak imzalamıştır.",
     answers: [
@@ -151,7 +151,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "I. Dünya Savaşı sonucunda Osmanlı Devleti'nin kaybettiği bölgeler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>I. Dünya Savaşı sonucunda Osmanlı Devleti'nin kaybettiği bölgeler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Hicaz, Suriye, Kudüs ve Irak, savaş 'sırasında' yapılan çatışmalar ve savaş 'sonucunda' imzalanan Mondros ile kesin olarak kaybedilen yerlerdir. Ancak Mısır, İngiltere tarafından 1882'de fiilen işgal edilmiş ve 1914'te (Savaş başlarken) tamamen ilhak edildiği duyurulmuştur.",
     answers: [
@@ -159,7 +159,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Aşağıdaki cephelerin hangisinin sonucunda Kudüs kaybedilmiş ve İngiliz dışişleri bakanı tarafından \"Balfour Deklarasyonu\" yayımlanmıştır?",
+    text: "<p><b>Aşağıdaki cephelerin hangisinin sonucunda Kudüs kaybedilmiş ve İngiliz dışişleri bakanı tarafından</b> \"Balfour Deklarasyonu\" <b>yayımlanmıştır?</b></p>",
     diff: 2,
     expl: "Kanal Harekâtı başarısız olunca Osmanlı ordusu geri çekilmek zorunda kalmış ve savaş Suriye-Filistin Cephesi'ne taşınmıştır. Kudüs'ün (Filistin) kaybedilmesi üzerine İngiltere, Siyonistlere bir Yahudi devleti (İsrail) kurma sözü veren 1917 Balfour Deklarasyonunu yayımlamıştır.",
     answers: [
@@ -167,7 +167,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Osmanlı Devleti'ni paylaşım tasarılarında etkin rol oynayan İngiltere;\nI. St. Jean de Maurienne,\nII. Sykes Picot,\nIII. Mac Mahon\nantlaşmalarından hangileri ile Orta Doğu'da Osmanlı egemenliğine son vermeyi amaçlamıştır?",
+    text: "<p><b>Osmanlı Devleti'ni paylaşım tasarılarında etkin rol oynayan İngiltere;</b></p><p>I. St. Jean de Maurienne,<br>II. Sykes Picot,<br>III. Mac Mahon</p><p><b>antlaşmalarından hangileri ile Orta Doğu'da Osmanlı egemenliğine son vermeyi amaçlamıştır?</b></p>",
     diff: 3,
     expl: "İngiltere ve Fransa'nın Orta Doğu'yu cetvelle böldüğü Sykes-Picot (II) ve İngiliz Mısır Valisinin Arapları Osmanlı'ya karşı kışkırtmak için bağımsız devlet sözü verdiği Mac Mahon (III) gizli antlaşmaları doğrudan Orta Doğu ile ilgilidir. St. Jean de Maurienne ise İtalya'ya (İzmir) yöneliktir.",
     answers: [
@@ -175,7 +175,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Osmanlı orduları;\nI. Kut'ül Amare,\nII. Selman-ı Pak,\nIII. Nablus\nsavaşlarının hangilerinde İngilizlerle Irak Cephesi'nde mücadele etmiştir?",
+    text: "<p><b>Osmanlı orduları;</b></p><p>I. Kut'ül Amare,<br>II. Selman-ı Pak,<br>III. Nablus</p><p><b>savaşlarının hangilerinde İngilizlerle Irak Cephesi'nde mücadele etmiştir?</b></p>",
     diff: 2,
     expl: "Irak Cephesi'nde Osmanlı ordusu (Halil Kut Paşa), İngilizleri Selman-ı Pak'ta durdurmuş ve Kut'ül Amare'de kuşatarak General Townshend dâhil koca bir İngiliz ordusunu esir almıştır (I ve II). Nablus (Megiddo) ise Suriye-Filistin cephesindedir.",
     answers: [
@@ -183,7 +183,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Suriye-Filistin Cephesi'ne atanan Mustafa Kemal, düşmanı Halep önlerinde durdurmayı başarmıştır.\nMustafa Kemal'in direniş gösterdiği bu savaş aşağıdakilerden hangisidir?",
+    text: "<p>Suriye-Filistin Cephesi'ne atanan Mustafa Kemal, düşmanı Halep önlerinde durdurmayı başarmıştır.</p><p><b>Mustafa Kemal'in direniş gösterdiği bu savaş aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Suriye Cephesi'nde 7. Ordu Komutanı olan Mustafa Kemal, geri çekilme harekâtını yönetmiş ve İngiliz-Arap destekli düşman kuvvetlerini Halep'in kuzeyinde 'Katma Meydan Muharebesi' ile durdurarak Anadolu'ya (Misak-ı Milli sınırlarına) girmelerini önlemiştir.",
     answers: [
@@ -191,7 +191,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal, Suriye Cephesi'ndeki başarılarından dolayı aşağıdakilerden hangisinin yerine Yıldırım Orduları Grup Komutanlığına getirilmiştir?",
+    text: "<p><b>Mustafa Kemal, Suriye Cephesi'ndeki başarılarından dolayı aşağıdakilerden hangisinin yerine Yıldırım Orduları Grup Komutanlığına getirilmiştir?</b></p>",
     diff: 2,
     expl: "Mondros Ateşkesi'nin imzalandığı günlerde (31 Ekim 1918), Suriye'deki Alman General Liman Von Sanders'in ülkesine dönmesi üzerine, Mustafa Kemal Paşa onun yerine 'Yıldırım Orduları Grup Komutanlığı'na atanmıştır.",
     answers: [
@@ -199,7 +199,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Rusya ile imzalanan Brest-Litovsk Antlaşması ile aşağıdaki cephelerin hangisindeki savaş durumu sona ermiştir?",
+    text: "<p><b>Rusya ile imzalanan Brest-Litovsk Antlaşması ile aşağıdaki cephelerin hangisindeki savaş durumu sona ermiştir?</b></p>",
     diff: 1,
     expl: "1917 Bolşevik İhtilali ile Çarlık rejimi yıkılınca, Sovyet Rusya I. Dünya Savaşı'ndan çekilmiş ve 1918'de Osmanlı ile Brest-Litovsk Antlaşması'nı imzalayarak Doğu Anadolu'yu boşaltmış, böylece Kafkas Cephesi kapanmıştır.",
     answers: [
@@ -207,7 +207,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "İngilizlerin, Irak Cephesi'ni;\nI. Afrika ve Hindistan yolunun güvenliğini sağlamak,\nII. Abadan petrollerini ele geçirmek,\nIII. Rus çarına güneyden yardım götürmek\ndüşüncelerinden hangilerini gerçekleştirmek amacıyla açtığı söylenebilir?",
+    text: "<p><b>İngilizlerin, Irak Cephesi'ni;</b></p><p>I. Afrika ve Hindistan yolunun güvenliğini sağlamak,<br>II. Abadan petrollerini ele geçirmek,<br>III. Rus çarına güneyden yardım götürmek</p><p><b>düşüncelerinden hangilerini gerçekleştirmek amacıyla açtığı söylenebilir?</b></p>",
     diff: 2,
     expl: "Irak'a Basra Körfezi'nden asker çıkaran İngiltere; bölgedeki (Musul/Kerkük/Abadan) zengin petrol yataklarına konmayı (II), Hindistan sömürge yolunu kuzeyden gelecek Türk-Alman tehdidine karşı korumayı (I) ve karadan ilerleyip Kafkaslar üzerinden müttefiki Rusya'ya yardım ulaştırmayı (III) hedeflemiştir.",
     answers: [
@@ -215,7 +215,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "- Ravza-i Mutahhara'da bulunan kutsal emanetlerin İstanbul'a taşınmasını sağlamıştır.\n- İngiliz casus Lawrance tarafından \"Çöl Kaplanı\" olarak tanımlanmıştır.\nÖzellikleri verilen Osmanlı komutanı aşağıdakilerden hangisidir?",
+    text: "<p>- Ravza-i Mutahhara'da bulunan kutsal emanetlerin İstanbul'a taşınmasını sağlamıştır.<br>- İngiliz casus Lawrance tarafından \"Çöl Kaplanı\" olarak tanımlanmıştır.</p><p><b>Özellikleri verilen Osmanlı komutanı aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Mondros Ateşkesi imzalanmasına rağmen Medine'yi (Peygamberimizin kabrini) isyancı Araplara ve İngilizlere karşı 72 gün daha çekirge yiyerek şanlı bir şekilde savunan efsanevi komutan Fahreddin Paşa'dır (Çöl Kaplanı / Medine Müdafii).",
     answers: [
@@ -223,15 +223,15 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Aşağıda verilen hangi anlaşma sonucunda İtalya, İtilaf Devletlerinin yanında yer almıştır?",
+    text: "<p><b>Aşağıda verilen hangi anlaşma sonucunda İtalya, İtilaf Devletlerinin yanında yer almıştır?</b></p>",
     diff: 2,
-    expl: "I. Dünya Savaşı başlarken Almanya'nın yanında (İttifak bloğunda) yer alan İtalya, İngiltere ve Fransa'nın kendisine Oniki Ada, Antalya ve çevresini vaat ettiği 1915 GİZLİ Londra Antlaşması ile saf değiştirerek İtilaf Devletleri safına geçmiştir.",
+    expl: "I. Dünya Savaşı başlarken Almanya'nın yanında (İttifak bloğunda) yer alan İtalya, İngiltere ve Fransa'nın kendisine Oniki Ada, Antalya ve çevresini vaat ettiği 1915 gizli Londra Antlaşması ile saf değiştirerek İtilaf Devletleri safına geçmiştir.",
     answers: [
       { text: "Boğazlar Antlaşması", ok: false }, { text: "St. Jean de Maurienne Antlaşması", ok: false }, { text: "Londra Antlaşması", ok: true }, { text: "Mac Mahon Antlaşması", ok: false }, { text: "Petrograd Protokolü", ok: false }
     ]
   },
   {
-    text: "Çanakkale Savaşlarında elde ettiği başarılardan dolayı \"18 Mart Kahramanı\" olarak adlandırılan Osmanlı komutanı aşağıdakilerden hangisidir?",
+    text: "<p><b>Çanakkale Savaşlarında elde ettiği başarılardan dolayı</b> \"18 Mart Kahramanı\" <b>olarak adlandırılan Osmanlı komutanı aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Boğaz'ın savunmasından sorumlu olan Çanakkale Müstahkem Mevki Komutanı Mirliva (Tuğgeneral) Cevat (Çobanlı) Paşa, 18 Mart 1915'teki muazzam deniz zaferinin komutanı olduğu için '18 Mart Kahramanı' unvanını taşır.",
     answers: [
@@ -243,7 +243,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_2: McQ[] = [
 export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
   // ---------------- I. DÜNYA SAVAŞI DÖNEMİ - TEST 3 ----------------
   {
-    text: "Mustafa Kemal;\nI. Conkbayırı,\nII. Derne,\nIII. Arıburnu\ncephelerinin hangilerinde İstanbul'un işgalini önlemeye çalışmıştır?",
+    text: "<p><b>Mustafa Kemal;</b></p><p>I. Conkbayırı,<br>II. Derne,<br>III. Arıburnu</p><p><b>cephelerinin hangilerinde İstanbul'un işgalini önlemeye çalışmıştır?</b></p>",
     diff: 1,
     expl: "İtilaf Devletlerinin asıl amacı Çanakkale Boğazı'nı geçip başkent İstanbul'u işgal etmekti. Mustafa Kemal'in savaştığı Conkbayırı ve Arıburnu Çanakkale'dedir ve doğrudan İstanbul'u korumuştur. Derne ise Trablusgarp'tadır.",
     answers: [
@@ -251,7 +251,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal'in \"Biz oraya bir Darülfünun gömdük.\" sözü ile özetlediği cephe aşağıdakilerden hangisidir?",
+    text: "<p><b>Mustafa Kemal'in</b> \"Biz oraya bir Darülfünun gömdük.\" <b>sözü ile özetlediği cephe aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Çanakkale Savaşları'nda vatanı savunmak için lise ve Darülfünun (üniversite) öğrencisi, doktor, mühendis binlerce eğitimli aydın nesil (beyin göçü) şehit olmuştur.",
     answers: [
@@ -259,7 +259,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Almanya'nın Osmanlı Devleti'ni I. Dünya Savaşı'nda kendi yanına çekme nedenleri arasında yer alan;\nI. Berlin - Bağdat - Bakü hattını oluşturma,\nII. İngiliz sömürgelerine zarar verme,\nIII. savaşı Orta Doğu'ya yayma\ndurumlarından hangileri doğrudan İslamcılık düşüncesinden faydalanmaya yöneliktir?",
+    text: "<p><b>Almanya'nın Osmanlı Devleti'ni I. Dünya Savaşı'nda kendi yanına çekme nedenleri arasında yer alan;</b></p><p>I. Berlin - Bağdat - Bakü hattını oluşturma,<br>II. İngiliz sömürgelerine zarar verme,<br>III. savaşı Orta Doğu'ya yayma</p><p><b>durumlarından hangileri doğrudan İslamcılık düşüncesinden faydalanmaya yöneliktir?</b></p>",
     diff: 2,
     expl: "Almanya, Osmanlı padişahının 'Halife' gücünü (Cihat İlanı - İslamcılık) kullanarak, İngiltere'nin sömürgesi altındaki Hindistan ve Orta Doğu'daki milyonlarca Müslümanı ayaklandırmayı ve İngilizlere içten zarar vermeyi hedeflemiştir (II ve III). Berlin-Bağdat hattı ise tamamen lojistik ve stratejik (jeopolitik) bir yoldur.",
     answers: [
@@ -267,7 +267,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Sovyet Rusya ile İttifak Devletleri arasında imzalanan Brest-Litovsk Anlaşması'nın sonuçları arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Sovyet Rusya ile İttifak Devletleri arasında imzalanan Brest-Litovsk Anlaşması'nın sonuçları arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Ermenilerin Ruslarla işbirliği yapıp katliam yapması üzerine Osmanlı Devleti 1915 yılında savaş 'devam ederken' (Tehcir Kanunu'nu) Sevk ve İskan Kanunu'nu çıkarmıştır. 1918 Brest-Litovsk Antlaşması'nın bir sonucu değildir.",
     answers: [
@@ -275,7 +275,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Osmanlı Devleti'nin Almanya'nın yanında savaşa girmesi;\nI. İngilizlerin Kıbrıs'ı ilhak etmesi,\nII. savaşın süresinin uzaması,\nIII. cephe sayısının artması\ndurumlarından hangilerinin ortaya çıkmasına neden olmuştur?",
+    text: "<p><b>Osmanlı Devleti'nin Almanya'nın yanında savaşa girmesi;</b></p><p>I. İngilizlerin Kıbrıs'ı ilhak etmesi,<br>II. savaşın süresinin uzaması,<br>III. cephe sayısının artması</p><p><b>durumlarından hangilerinin ortaya çıkmasına neden olmuştur?</b></p>",
     diff: 1,
     expl: "Osmanlı savaşa girince yük Almanya'nın sırtından alınmış ve savaşın ömrü (Çanakkale zaferi ile) en az 2 yıl uzamıştır (II). Orta Doğu'da yeni cepheler açılmıştır (III). Ayrıca 1878'den beri Kıbrıs'ı geçici elinde tutan İngiltere, Osmanlı karşısında savaşa girince adayı tamamen ilhak ettiğini duyurmuştur (I).",
     answers: [
@@ -283,7 +283,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "I. Bulgaristan'ın İttifak Bloku'na katılması\nII. Çarlık Rusya'da yaşanan ihtilal sürecinin hızlanması\nIII. İstanbul'un işgalinin önlenmesi\nIV. Osmanlı Devleti'nin toprak kazanması\nYukarıdakilerden hangileri Çanakkale Savaşlarının sonuçları arasında gösterilemez?",
+    text: "<p>I. Bulgaristan'ın İttifak Bloku'na katılması<br>II. Çarlık Rusya'da yaşanan ihtilal sürecinin hızlanması<br>III. İstanbul'un işgalinin önlenmesi<br>IV. Osmanlı Devleti'nin toprak kazanması</p><p><b>Yukarıdakilerden hangileri Çanakkale Savaşlarının sonuçları arasında <u>gösterilemez</u>?</b></p>",
     diff: 1,
     expl: "Çanakkale Savaşları, düşmanın başkenti işgal etmesini önlemek için yapılan bir 'Savunma' savaşıdır. Bu büyük zaferle başkent kurtulmuş, Rusya yardım alamadığı için çökmüş ve Bulgaristan Osmanlı'nın yanında savaşa girmiştir. Ancak Çanakkale'de 'Toprak Kazanımı' (Yeni bir yer fethetme) söz konusu değildir.",
     answers: [
@@ -291,15 +291,15 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Osmanlı Devleti'ni paylaşım tasarılarında aşağıdaki devletlerden hangisi yer almamıştır?",
+    text: "<p><b>Osmanlı Devleti'ni paylaşım tasarılarında aşağıdaki devletlerden hangisi <u>yer almamıştır</u>?</b></p>",
     diff: 2,
-    expl: "I. Dünya Savaşı sırasındaki GİZLİ paylaşım antlaşmalarını (Sykes-Picot, Londra, Petrograd, St. Jean de Maurienne) imzalayan 4 ana devlet İngiltere, Fransa, Rusya ve İtalya'dır. Yunanistan bu gizli masalarda yoktur, savaştan sonraki Paris Barış Konferansı'nda İzmir'i kapacaktır.",
+    expl: "I. Dünya Savaşı sırasındaki gizli paylaşım antlaşmalarını (Sykes-Picot, Londra, Petrograd, St. Jean de Maurienne) imzalayan 4 ana devlet İngiltere, Fransa, Rusya ve İtalya'dır. Yunanistan bu gizli masalarda yoktur, savaştan sonraki Paris Barış Konferansı'nda İzmir'i kapacaktır.",
     answers: [
       { text: "İngiltere", ok: false }, { text: "İtalya", ok: false }, { text: "Yunanistan", ok: true }, { text: "Rusya", ok: false }, { text: "Fransa", ok: false }
     ]
   },
   {
-    text: "Aşağıda verilen hangi cephede yaşanan olumsuz gelişmeler üzerine 27 Mayıs 1915'te Tehcir Sevk ve İskân Kanunu çıkarılmıştır?",
+    text: "<p><b>Aşağıda verilen hangi cephede yaşanan olumsuz gelişmeler üzerine 27 Mayıs 1915'te Tehcir Sevk ve İskân Kanunu çıkarılmıştır?</b></p>",
     diff: 1,
     expl: "Doğu Anadolu'da (Kafkas Cephesi) ilerleyen Rus ordularına kılavuzluk yapan ve Türklere katliamlar düzenleyen Ermeni çetelerinin bu faaliyetlerini durdurmak için güvenli bölge olan Suriye'ye zorunlu göç ettirilmelerine (Tehcir) karar verilmiştir.",
     answers: [
@@ -307,7 +307,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Osmanlı Devleti I. Dünya Savaşı sırasında;\nI. Çanakkale,\nII. Kafkas,\nIII. Irak\ncephelerinin hangilerinde kaybettiği toprakları geri alma başarısı göstermiştir?",
+    text: "<p><b>Osmanlı Devleti I. Dünya Savaşı sırasında;</b></p><p>I. Çanakkale,<br>II. Kafkas,<br>III. Irak</p><p><b>cephelerinin hangilerinde kaybettiği toprakları geri alma başarısı göstermiştir?</b></p>",
     diff: 2,
     expl: "Kafkas Cephesi'nde 1918 yılında Bolşevik Rusya ile imzalanan Brest-Litovsk Antlaşması sayesinde, Osmanlı Devleti 1878 (Berlin) yılından beri Rus işgali altında olan Kars, Ardahan ve Batum'u (Elviye-i Selase) geri alma başarısı göstermiştir.",
     answers: [
@@ -315,7 +315,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "I. Dünya Savaşı ile ilgili aşağıdaki cephe - komutan eşleştirmelerinden hangisi yanlış olarak verilmiştir?",
+    text: "<p><b>I. Dünya Savaşı ile ilgili aşağıdaki cephe - komutan eşleştirmelerinden hangisi <u>yanlış</u> olarak verilmiştir?</b></p>",
     diff: 3,
     expl: "I. Dünya Savaşı'nda Mısır'ı geri almak için İngilizlere karşı açılan Kanal (Süveyş) Cephesi'nin komutanı 'Cemal Paşa'dır. Fahrettin Paşa ise Kanal'da değil, Hicaz (Medine) Cephesi'nde destan yazan komutandır.",
     answers: [
@@ -323,7 +323,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Kafkas Cephesi ile ilgili aşağıda verilen yargılardan hangisi doğru nitelikte değildir?",
+    text: "<p><b>Kafkas Cephesi ile ilgili aşağıda verilen yargılardan hangisi doğru nitelikte <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Kafkas Cephesi'nde Rusya ile savaşılmış, Tehcir çıkarılmış, Muş'u alan Mustafa Kemal madalya almış ve Erzincan Mütarekesi ile Brest-Litovsk imzalanıp toprak kazanılmıştır (A,B,C,D doğru). Ancak 'Bulgaristan'ın İttifak Bloku'na katılması' Kafkas Cephesi'nin değil, Çanakkale Savaşlarındaki muazzam zaferin sonucudur.",
     answers: [
@@ -331,7 +331,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Osmanlı Devleti İttifak Bloku'na katılması için;\nI. Dimetoka,\nII. Karaağaç,\nIII. Selanik\nbölgelerinden hangilerini Bulgaristan'a bırakmıştır?",
+    text: "<p><b>Osmanlı Devleti İttifak Bloku'na katılması için;</b></p><p>I. Dimetoka,<br>II. Karaağaç,<br>III. Selanik</p><p><b>bölgelerinden hangilerini Bulgaristan'a bırakmıştır?</b></p>",
     diff: 3,
     expl: "Çanakkale Savaşı kazanıldıktan sonra sınır komşusu olan Bulgaristan'ı İttifak (Osmanlı-Almanya) safına çekmek ve Almanya ile kara bağlantısını sağlamak amacıyla, Osmanlı Devleti Dimetoka ve Karaağaç bölgelerini (jest olarak) Bulgaristan'a bırakmıştır.",
     answers: [
@@ -339,15 +339,15 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal'in I. Dünya Savaşı sürecindeki askerî görevleri arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Mustafa Kemal'in I. Dünya Savaşı sürecindeki askerî görevleri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
-    expl: "Mustafa Kemal I. Dünya savaşında sırasıyla; Çanakkale'de (19. Tümen), Kafkas'ta (16. Kolordu/2. Ordu) ve Suriye'de (7. Ordu) komutanlık yapmıştır. '9. Ordu Müfettişliği' ise savaş SÜRECİNDE değil, savaş BİTTİKTEN ve Mondros imzalandıktan aylar sonra (1919 Mayıs'ta Samsun'a çıkarken) verilmiş olan bir görevdir.",
+    expl: "Mustafa Kemal I. Dünya savaşında sırasıyla; Çanakkale'de (19. Tümen), Kafkas'ta (16. Kolordu/2. Ordu) ve Suriye'de (7. Ordu) komutanlık yapmıştır. '9. Ordu Müfettişliği' ise savaş sürecinde değil, savaş bittikten ve Mondros imzalandıktan aylar sonra (1919 Mayıs'ta Samsun'a çıkarken) verilmiş olan bir görevdir.",
     answers: [
       { text: "IX. Ordu Müfettişliği", ok: true }, { text: "XIX. Tümen Komutanlığı", ok: false }, { text: "VII. Ordu Komutanlığı", ok: false }, { text: "XVI. Tümen Komutanlığı", ok: false }, { text: "II. Ordu Komutanlığı", ok: false }
     ]
   },
   {
-    text: "17 Mayıs 1915'te çıkarılan Ermeni Tehcir Kanunu ile ilgili aşağıda verilen bilgilerden hangisi doğru değildir?",
+    text: "<p><b>17 Mayıs 1915'te çıkarılan Ermeni Tehcir Kanunu ile ilgili aşağıda verilen bilgilerden hangisi doğru <u>değildir</u>?</b></p>",
     diff: 3,
     expl: "Tehcir (Sevk ve İskan) Kanunu, Kafkas Cephesindeki Ermeni ihanetleri (Hınçak-Taşnak çeteleri) üzerine Dahiliye Nazırı Talat Paşa'nın girişimiyle çıkmıştır ve savaş bitince (1918) Geri Dönüş Kararnamesi çıkarılmıştır (A,B,C,D doğru). Ancak Osmanlı'da resmi kanunların yayımlandığı yer 'Takvim-i Vekayi' gazetesidir. 'Ceride-i Resmiye' (Resmi Gazete) ise yıllar sonra TBMM döneminde kurulmuştur.",
     answers: [
@@ -355,7 +355,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Aşağıdakilerden hangisi Kafkas Cephesi'nde gerçekleştirilen Sarıkamış Harekâtı'nın sonuçlarından biridir?",
+    text: "<p><b>Aşağıdakilerden hangisi Kafkas Cephesi'nde gerçekleştirilen Sarıkamış Harekâtı'nın sonuçlarından biridir?</b></p>",
     diff: 1,
     expl: "Enver Paşa komutasındaki Osmanlı ordusunun şiddetli kış şartlarında on binlerce şehit verdiği Sarıkamış Faciası sonucunda Doğu Anadolu savunmasız kalmış; Rus orduları hızla ilerleyerek Erzurum, Erzincan, Muş, Bitlis, Trabzon ve Van'ı işgal etmiştir.",
     answers: [
@@ -365,6 +365,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_3: McQ[] = [
 ];
 
 export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_4: McQ[] = [
+  // ---------------- I. DÜNYA SAVAŞI DÖNEMİ - TEST 4 ----------------
   {
     text: "<p><b>Birinci Dünya Savaşı'nın başladığı sırada;</b></p><p>I. Mısır,<br>II. Hicaz,<br>III. Batum,<br>IV. Musul</p><p><b>bölgelerinden hangilerinin Osmanlı Devleti'nin sınırları içerisinde yer aldığı söylenebilir?</b></p>",
     diff: 2,
@@ -414,7 +415,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "<p><b>Birinci Dünya Savaşı'nda \"tarafsız kalan ülkelere\" aşağıdakilerden hangisi örnek gösterilebilir?</b></p>",
+    text: "<p><b>Birinci Dünya Savaşı'nda</b> \"tarafsız kalan ülkelere\" <b>aşağıdakilerden hangisi örnek gösterilebilir?</b></p>",
     diff: 1,
     expl: "1. Dünya Savaşı boyunca İsviçre, İspanya, Hollanda ve İskandinav ülkeleri (İsveç, Norveç) tarafsız kalmıştır. ABD, İtalya, Romanya ve Japonya savaşta yer alan ülkelerdir.",
     answers: [
@@ -482,7 +483,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_4: McQ[] = [
       { text: "Mac Mahon Antlaşması'nın imzalanması ile İslamcılık akımının geçersizliği ortaya çıkmıştır.", ok: false },
       { text: "Söz konusu antlaşmalarda Boğazlar ve Karadeniz kıyıları Çarlık Rusya'ya bırakılmıştır.", ok: false },
       { text: "Savaştan sonra İtilaflar arasında çıkarılabilecek tartışmaları önleme amaçlı imzalanmıştır.", ok: false },
-      { text: "ABD senatosu tarafından tüm antlaşmalar onaylanmıştır.", ok: true }
+      { text: "ABD senatosu tarafından tüm anlaşmalar onaylanmıştır.", ok: true }
     ]
   },
   {
@@ -524,7 +525,7 @@ export const TAR_BIRINCI_DUNYA_SAVASI_DONEMI_TEST_4: McQ[] = [
   {
     text: "<p><b>Birinci Dünya Savaşı'na son katılan İtilaf Devleti aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
-    expl: "Savaşa en son katılan İtilaf devleti Yunanistan'dır (1917 sonları/1918). Savaşa İtilaf bloğunda en son katılan büyük güç ise ABD'dir ancak genel olarak en son katılan devlet Yunanistan kabul edilir.",
+    expl: "ABD Nisan 1917'de savaşa girerken Yunanistan, Kral Konstantin'in tahttan indirilmesinin ardından Haziran 1917'de İtilaf Devletleri yanında savaşa katılmıştır. Bu nedenle seçenekler arasında savaşa en son katılan İtilaf devleti Yunanistan'dır.",
     answers: [
       { text: "ABD", ok: false },
       { text: "Rusya", ok: false },

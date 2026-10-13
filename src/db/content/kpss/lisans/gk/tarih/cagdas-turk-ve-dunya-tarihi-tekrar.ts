@@ -101,7 +101,7 @@ export const TAR_CAGDAS_TURK_VE_DUNYA_TARIHI_TEKRAR_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p>1954 Colombo, 1955 Bandung konferansları ile temeli atılan, 1961 Belgrad Konferansı ile resmen kurulan Bağlantısızlık Hareketi'ne aşağıda verilen devletlerden hangisi Doğu Bloku'ndan ayrılarak öncülük etmiştir?</p>",
+    text: "<p><b>1954 Colombo, 1955 Bandung konferansları ile temeli atılan, 1961 Belgrad Konferansı ile resmen kurulan Bağlantısızlık Hareketi'ne aşağıda verilen devletlerden hangisi Doğu Bloku'ndan ayrılarak öncülük etmiştir?</b></p>",
     diff: 2,
     expl: "SSCB lideri Stalin ile ters düşerek 1948'de Cominform'dan (Doğu Bloku'ndan) kopan Yugoslavya (Tito), daha sonra Hindistan ve Mısır ile birlikte Bağlantısızlar Hareketi'nin kurucu önderlerinden biri olmuştur.",
     answers: [
@@ -232,10 +232,10 @@ export const TAR_CAGDAS_TURK_VE_DUNYA_TARIHI_TEKRAR_TEST_2: McQ[] = [
     expl: "Türkiye, II. Dünya Savaşı yıllarında savaşa girmesi için yapılan baskıları müzakere etmek üzere 1943'te Adana (Yenice) ve yine 1943'te Kahire konferanslarına (İsmet İnönü ve Numan Menemencioğlu ile) katılmıştır. Moskova Konferansına katılmamıştır.",
     answers: [
       { text: "Yalnız I", ok: false },
-      { text: "Yalnız II", ok: false },
       { text: "Yalnız III", ok: false },
-      { text: "I ve II", ok: false },
-      { text: "I ve III", ok: true }
+      { text: "I ve III", ok: true },
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: false }
     ]
   },
   {

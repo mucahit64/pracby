@@ -3,7 +3,7 @@ import type { McQ } from "../../../../types";
 export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[] = [
   // ---------------- MUSTAFA KEMAL VE CUMHURIYETİN ÖNEMLİ ŞAHSİYETLERİ - TEST 1 ----------------
   {
-    text: "Mustafa Kemal'in ilk görev yeri aşağıdakilerden hangisidir?",
+    text: "<p><b>Mustafa Kemal'in ilk görev yeri aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Mustafa Kemal, 1905 yılında Harp Akademisi'nden Kurmay Yüzbaşı rütbesiyle mezun olduktan sonra, staj ve ilk görev yeri olarak Şam'daki 5. Ordu'ya (Suriye) atanmıştır.",
     answers: [
@@ -11,7 +11,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 1.B. (Page 234 Test 1 Key: 1.B 2.C 3.E 4.E 5.A 6.C 7.B 8.E 9.A 10.B 11.D 12.E 13.A 14.B)
   },
   {
-    text: "Mustafa Kemal'in tarih sahnesine ilk çıkışı aşağıdakilerden hangisi ile başlamıştır?",
+    text: "<p><b>Mustafa Kemal'in tarih sahnesine ilk çıkışı aşağıdakilerden hangisi ile başlamıştır?</b></p>",
     diff: 1,
     expl: "Mustafa Kemal'in askeri ve siyasi becerilerini göstererek Osmanlı kamuoyu tarafından tanınmasını sağlayan (tarih sahnesine ilk çıkışı) olay, İstanbul'da meşrutiyet karşıtı çıkan '31 Mart Ayaklanması'nı bastıran Hareket Ordusu'nda Kurmay Başkanı olarak görev almasıdır.",
     answers: [
@@ -19,7 +19,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 2.C.
   },
   {
-    text: "Mustafa Kemal'in ilk \"yurt dışı\" görevi aşağıdakilerden hangisidir?",
+    text: "<p><b>Mustafa Kemal'in ilk \"yurt dışı\" görevi aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Mustafa Kemal'in ilk resmi yurt dışı görevlendirmesi, 1910 yılında Fransa'da düzenlenen ve uçakların da kullanıldığı büyük askeri tatbikat olan 'Picardie (Pikardi) Manevraları'na Osmanlı ordusunu temsilen gözlemci olarak katılmasıdır.",
     answers: [
@@ -27,7 +27,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 3.E.
   },
   {
-    text: "Mustafa Kemal'in Afet İnan tarafından yayımlanmış, okullarda da okutulan yurttaşlık bilgisi kitabı aşağıdakilerden hangisidir?",
+    text: "<p><b>Mustafa Kemal'in Afet İnan tarafından yayımlanmış, okullarda da okutulan yurttaşlık bilgisi kitabı aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Atatürk'ün vatandaşlık hak ve ödevlerini, cumhuriyet erdemlerini bizzat dikte ettirerek manevi kızı Afet İnan'a yazdırdığı (ve liselerde okutulan) önemli eseri 'Vatandaş İçin Medeni Bilgiler' kitabıdır.",
     answers: [
@@ -35,7 +35,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 4.E.
   },
   {
-    text: "Atatürk Dönemi'nde en uzun süre meclis başkanlığı görevini yürüten devlet adamı aşağıdakilerden hangisidir?",
+    text: "<p><b>Atatürk Dönemi'nde en uzun süre meclis başkanlığı görevini yürüten devlet adamı aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Mustafa Kemal Atatürk döneminde (1924'ten 1935'e kadar) aralıksız 11 yıl boyunca TBMM Başkanlığı görevini yürüten ve Cumhuriyet tarihinin en uzun süre görev yapan meclis başkanlarından biri olan devlet adamı Kâzım Özalp'tir.",
     answers: [
@@ -43,7 +43,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 5.A.
   },
   {
-    text: "Mustafa Kemal'in ölümü ile cumhurbaşkanlığı görevine bir günlük vekâleten bakan, aynı zamanda Atatürk Dönemi'nden sonra en uzun süre meclis başkanlığı görevini üstlenen devlet adamı aşağıdakilerden hangisidir?",
+    text: "<p><b>Mustafa Kemal'in ölümü ile cumhurbaşkanlığı görevine bir günlük vekâleten bakan, aynı zamanda Atatürk Dönemi'nden sonra en uzun süre meclis başkanlığı görevini üstlenen devlet adamı aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Atatürk 10 Kasım 1938'de vefat edince, anayasa gereği İsmet İnönü seçilene kadar 1 günlüğüne Cumhurbaşkanlığına vekalet eden dönemin TBMM Başkanı Abdülhalik Renda'dır (Kendisi 1935'ten 1946'ya kadar TBMM başkanlığı yapmıştır).",
     answers: [
@@ -51,7 +51,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 6.C.
   },
   {
-    text: "I. Emin Onat\nII. Orhan Arda\nIII. Heinrich Krippel\nAnıtkabir'in mimarları arasında yukarıdakilerden hangileri yer alır?",
+    text: "<p>I. Emin Onat<br>II. Orhan Arda<br>III. Heinrich Krippel</p><p><b>Anıtkabir'in mimarları arasında yukarıdakilerden hangileri yer alır?</b></p>",
     diff: 1,
     expl: "Atatürk'ün ebedi istirahatgâhı olan Anıtkabir'in projesi uluslararası bir yarışmayla belirlenmiş ve yarışmayı kazanan Türk mimarlar Prof. Dr. Emin Onat (I) ve Doç. Dr. Orhan Arda (II) tarafından tasarlanmıştır. Krippel bir heykeltıraştır.",
     answers: [
@@ -59,7 +59,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 7.B.
   },
   {
-    text: "Mustafa Kemal;\nI. Selanik,\nII. Şam,\nIII. İstanbul,\nIV. Manastır\ngibi şehirlerin hangilerinde eğitim hayatını sürdürmüştür?",
+    text: "<p><b>Mustafa Kemal;</b></p><p>I. Selanik,<br>II. Şam,<br>III. İstanbul,<br>IV. Manastır</p><p><b>gibi şehirlerin hangilerinde eğitim hayatını sürdürmüştür?</b></p>",
     diff: 2,
     expl: "Atatürk; Selanik'te (Mektebi, Rüştiyesi), Manastır'da (Askeri İdadisi) ve İstanbul'da (Harp Okulu ve Harp Akademisi) okumuştur. Şam (Suriye) ise eğitim aldığı yer değil, mezun olduktan sonra atandığı 'ilk görev' yeridir.",
     answers: [
@@ -67,7 +67,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 8.E.
   },
   {
-    text: "Türkiye Cumhuriyeti'nin asker kökenli olmayan ilk \"sivil\" kökenli cumhurbaşkanı aşağıdakilerden hangisidir?",
+    text: "<p><b>Türkiye Cumhuriyeti'nin asker kökenli olmayan ilk \"sivil\" kökenli cumhurbaşkanı aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Atatürk ve İnönü Paşa (asker) kökenliydi. 1950'de Demokrat Parti'nin iktidara gelmesiyle Türkiye'nin 3. Cumhurbaşkanı olan Celal Bayar, cumhuriyet tarihinin İLK SİVİL (asker kökenli olmayan) cumhurbaşkanıdır.",
     answers: [
@@ -75,7 +75,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 9.A.
   },
   {
-    text: "- Çanakkale Cephesi'ndeki başarılarından dolayı \"Alçıtepe Kahramanı\" olarak bilinmektedir.\n- Yaptığı hayır işlerinden dolayı \"Yetimler Babası\" olarak ifade edilmiştir.\n- Millî Mücadele Dönemi'nde Doğu Cephesi'ndeki başarılardan dolayı \"Şark Fatihi\" olarak adlandırılmıştır.\nÖzellikleri verilen devlet adamı aşağıdakilerden hangisidir?",
+    text: "<p>- Çanakkale Cephesi'ndeki başarılarından dolayı \"Alçıtepe Kahramanı\" olarak bilinmektedir.<br>- Yaptığı hayır işlerinden dolayı \"Yetimler Babası\" olarak ifade edilmiştir.<br>- Millî Mücadele Dönemi'nde Doğu Cephesi'ndeki başarılardan dolayı \"Şark Fatihi\" olarak adlandırılmıştır.</p><p><b>Özellikleri verilen devlet adamı aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Doğu Cephesi'nde Ermenileri yenerek Gümrü Antlaşmasını imzalayan (Şark Fatihi) ve bölgedeki savaş yetimlerini toplayıp onlara askeri/mesleki eğitim veren (Yetimler Babası) efsanevi komutanımız Kâzım Karabekir Paşa'dır.",
     answers: [
@@ -83,7 +83,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 10.B.
   },
   {
-    text: "Mustafa Kemal'i anlatan;\nI. Gazi Paşa,\nII. Hangi Atatürk,\nIII. Tek Adam\neserlerinden hangileri Attilâ İlhan tarafından kaleme alınmıştır?",
+    text: "<p><b>Mustafa Kemal'i anlatan;</b></p><p>I. Gazi Paşa,<br>II. Hangi Atatürk,<br>III. Tek Adam</p><p><b>eserlerinden hangileri Attilâ İlhan tarafından kaleme alınmıştır?</b></p>",
     diff: 3,
     expl: "Attilâ İlhan'ın Kemalizmi ve Atatürk'ü sosyolojik bir aydın gözüyle irdelediği önemli eserlerinden biri 'Hangi Atatürk' kitabıdır (II). Ayrıca Attilâ İlhan'ın 'Gazi Paşa' adlı eseri de bulunmaktadır (I). 'Tek Adam' ise Şevket Süreyya Aydemir'e aittir (III yanlış). Bu nedenle doğru cevap I ve II'dir.",
     answers: [
@@ -91,7 +91,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 11.D. (I ve II).
   },
   {
-    text: "Mustafa Kemal'in biyografisini anlatan eserler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Mustafa Kemal'in biyografisini anlatan eserler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Lord Kinross'un 'Atatürk', H.C. Armstrong'un (Atatürk yaşarken yazılan ve onu eleştiren) 'Bozkurt', Klaus Kreiser ve Hıfzı Topuz'un eserleri doğrudan Atatürk biyografisidir. Ancak Falih Rıfkı Atay'ın 'Batış Yılları', Atatürk'ün hayatından ziyade Osmanlı'nın 1905-1914 arasındaki çöküş sürecini anlattığı bir anı kitabıdır (Atatürk'ü anlattığı asıl eseri Çankaya'dır).",
     answers: [
@@ -99,15 +99,15 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_1: McQ[]
     ] // Cevap anahtarı 12.E.
   },
   {
-    text: "Mustafa Kemal'in \"Kendisine minnet borcum vardır, bana yeni ufuklar açtı.\" diyerek bahsettiği Manastır Askerî İdadisindeki tarih öğretmeni aşağıdakilerden hangisidir?",
+    text: "<p><b>Mustafa Kemal'in \"Kendisine minnet borcum vardır, bana yeni ufuklar açtı.\" diyerek bahsettiği Manastır Askerî İdadisindeki tarih öğretmeni aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Mustafa Kemal'in lise (Manastır Askeri İdadisi) yıllarında, ona tarih bilincini, vatan sevgisini ve Fransız İhtilali'nin özgürlükçü fikirlerini aşılayarak 'yeni ufuklar açan' hocası Kolağası Mehmet Tevfik Bilge'dir.",
     answers: [
-      { text: "Mehmet Tevfik Bilge", ok: true }, { text: "Fuad Köprülü", ok: false }, { text: "Halil İnalcık", ok: false }, { text: "Tevfik Bıyıklıoğlu", ok: false }, { text: "Sâmih Rifat", ok: false }
+      { text: "Mehmet Tevfik Bilge", ok: true }, { text: "Fuad Köprülü", ok: false }, { text: "Halil İnalcık", ok: false }, { text: "Tevfik Bıyıklıoğlu", ok: false }, { text: "Sâmih Rîfat", ok: false }
     ] // Cevap anahtarı 13.A.
   },
   {
-    text: "Mustafa Kemal'in Hatay meselesi sürecinde \"Asım Us\" takma adıyla yazılarını yayımlandığı gazete aşağıdakilerden hangisidir?",
+    text: "<p><b>Mustafa Kemal'in Hatay meselesi sürecinde \"Asım Us\" takma adıyla yazılarının yayımlandığı gazete aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Atatürk, Hatay'ın anavatana katılması (bağımsızlık) mücadelesi verirken, İnönü hükümetinin bu konudaki pasif politikalarını eleştirmek için 1937 yılında 'Kurun' gazetesinde 'Asım Us' takma adıyla başyazılar kaleme almıştır.",
     answers: [
@@ -135,7 +135,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_2: McQ[]
   {
     text: "<p>- 1950 -1956 yılları arasında Demokrat Parti Dönemi'nde dışişleri bakanlığı görevini yapmıştır.<br>- Türk Edebiyatında İlk Mutasavvıflar eseri yayımlanmış ayrıca Osmanlı İmparatorluğu'nun Kuruluşu adlı eseriyle büyük yankı uyandırmıştır.</p><p><b>Özellikleri verilen tarihî karakter aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
-    expl: "Edebiyat ve tarih alanındaOrdinaryüs Profesör olan Fuat Köprülü, Demokrat Parti'nin 4 kurucusundan biridir ve iktidarları döneminde Dışişleri Bakanlığı yapmıştır. Bahsi geçen eserler onun en ünlü akademik çalışmalarıdır.",
+    expl: "Edebiyat ve tarih alanında Ordinaryüs Profesör olan Fuat Köprülü, Demokrat Parti'nin 4 kurucusundan biridir ve iktidarları döneminde Dışişleri Bakanlığı yapmıştır. Bahsi geçen eserler onun en ünlü akademik çalışmalarıdır.",
     answers: [
       { text: "Fuat Köprülü", ok: true },
       { text: "Afet İnan", ok: false },
@@ -229,7 +229,7 @@ export const TAR_MUSTAFA_KEMAL_VE_CUMHURIYETIN_ONEMLI_SAHSIYETLERI_TEST_2: McQ[]
     ]
   },
   {
-    text: "<p><b>Mustafa Kemal'in tarihî süreç içerisinde de etkin olduğu birimler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
+    text: "<p><b>Mustafa Kemal'in tarihî süreç içerisinde etkin olduğu birimler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Mustafa Kemal Vatan ve Hürriyet'i kurmuş, Anadolu ve Rumeli Müdafaa-i Hukuk ile Heyet-i Temsiliye'ye liderlik etmiş, Hürriyetperver Avam Fırkası'nın oluşumunda (Ali Fethi Okyar'ı teşvik ederek) etkin olmuştur. Ancak Hürriyet Partisi, 1955 yılında Demokrat Parti'den kopanlar tarafından kurulan ve Atatürk dönemi ile ilgisi olmayan bir partidir.",
     answers: [

@@ -521,7 +521,7 @@ export const TAR_XVIII_YUZYILDA_OSMANLI_DEVLETI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "<p><b>XVIII. yüzyılda görev yapan aşağıdaki padişahların hangisi döneminde askerî ıslahatlara ağırlık verilmemiştir?</b></p>",
+    text: "<p><b>XVIII. yüzyılda görev yapan aşağıdaki padişahların hangisi döneminde askerî ıslahatlara ağırlık <u>verilmemiştir</u>?</b></p>",
     diff: 2,
     expl: "III. Ahmet dönemi (Lale Devri), 18. yüzyılda barışın hâkim olduğu ve askeri alanda hiçbir ıslahatın yapılmadığı tek dönemdir.",
     answers: [

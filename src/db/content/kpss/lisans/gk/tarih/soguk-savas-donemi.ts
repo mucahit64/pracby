@@ -5,7 +5,7 @@ import type { McQ } from "../../../../types";
 // ============================================================================
 export const TAR_SOGUK_SAVAS_DONEMI_TEST_1: McQ[] = [
   {
-    text: "<p>ABD ve SSCB arasındaki ekonomik, bilimsel, siyasi, kültürel ve ideolojik rekabete soğuk savaş adı verilir.</p><p><b>Bu terimi ilk kez kullanan kişi aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>ABD ve SSCB arasındaki ekonomik, bilimsel, siyasi, kültürel ve ideolojik rekabete soğuk savaş adı verilir.</p><p><b>Bu terimi <u>ilk kez</u> kullanan kişi aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "1947 yılında 'Soğuk Savaş' (Cold War) terimini uluslararası ilişkiler ve siyaset arenasında ilk kez kullanan kişi Amerikalı finansör ve devlet adamı Bernard Baruch'tur.",
     answers: [
@@ -23,8 +23,8 @@ export const TAR_SOGUK_SAVAS_DONEMI_TEST_1: McQ[] = [
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "Yalnız II", ok: true },
-      { text: "Yalnız III", ok: false },
       { text: "I ve III", ok: false },
+      { text: "II ve III", ok: false },
       { text: "I, II ve III", ok: false }
     ]
   },
@@ -131,9 +131,9 @@ export const TAR_SOGUK_SAVAS_DONEMI_TEST_1: McQ[] = [
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "Yalnız II", ok: false },
-      { text: "Yalnız III", ok: false },
       { text: "I ve II", ok: true },
-      { text: "II ve III", ok: false }
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: false }
     ]
   },
   {

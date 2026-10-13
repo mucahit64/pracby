@@ -317,7 +317,7 @@ export const TAR_IKINCI_DUNYA_SAVASI_TEST_2: McQ[] = [
     answers: [
       { text: "IMF'nin kurulması", ok: false },
       { text: "İtalya'nın cumhuriyet rejimine geçmesi", ok: false },
-      { text: "Savaş suçlularını yargılamak için Nünberg Mahkemelerinin kurulması", ok: false },
+      { text: "Savaş suçlularını yargılamak için Nürnberg Mahkemelerinin kurulması", ok: false },
       { text: "Orta Doğu'da mandater rejimlerin güçlenmesi", ok: true },
       { text: "Kuzey Atlantik Paktı'nın kurulması", ok: false }
     ]

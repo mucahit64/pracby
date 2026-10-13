@@ -3,7 +3,7 @@ import { McQ } from "../../../../types";
 export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
   // ---------------- XX. YÜZYIL BAŞINDA DÜNYA - TEST 1 ----------------
   {
-    text: "İki savaş arası dünyada görülen gelişmeler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>İki savaş arası dünyada görülen gelişmeler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "1918-1939 yılları arasında; İtalya'da Mussolini faşizmi (A), Milletler Cemiyeti'nin kuruluşu (B), radyoculuğun dünyada yaygınlaşması (C) ve İngiltere'nin yatıştırma politikası (D) görülmüştür. Ancak ABD'nin Asya müttefiklerine sadece silah (ve nükleer şemsiye) yardımı yapacağını, kendi askerini göndermeyeceğini belirten 'Nixon Doktrini' (E), 1969 yılında (Soğuk Savaş / Vietnam Savaşı dönemi) ilan edilmiştir.",
     answers: [
@@ -15,7 +15,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 1.E. (Page 244, Test 1 Key: 1.E 2.D 3.B 4.C 5.C 6.D 7.B 8.C 9.D 10.A 11.D 12.C 13.E 14.B 15.E 16.A)
   },
   {
-    text: "İkinci Dünya Savaşı öncesinde;\nI. Rusya,\nII. İtalya,\nIII. Almanya\ndevletlerinden hangilerinin yayılmacı politikası, Türkiye'nin Boğazlar sorununu gündeme getirmesine neden olmuştur?",
+    text: "<p><b>İkinci Dünya Savaşı öncesinde;</b></p><p>I. Rusya,<br>II. İtalya,<br>III. Almanya</p><p><b>devletlerinden hangilerinin yayılmacı politikası, Türkiye'nin Boğazlar sorununu gündeme getirmesine neden olmuştur?</b></p>",
     diff: 1,
     expl: "1930'ların ortalarında İtalya'nın (II) Habeşistan'a saldırarak Akdeniz'i kendi gölü yapmak istemesi ve Almanya'nın (III) hızla silahlanarak Versay'ı bozması, Türkiye'nin Boğazlar'ın komisyonlu statüsünden endişe etmesine neden olmuş ve 1936 Montrö sözleşmesinin kapısını aralamıştır.",
     answers: [
@@ -27,7 +27,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 2.D.
   },
   {
-    text: "- İkinci Dünya Savaşı öncesi \"Asya Asyalılarındır\" fikrini öne çıkarmıştır.\n- Mançurya bölgesini işgal etmiştir.\nÖzellikleri verilen devlet aşağıdakilerden hangisidir?",
+    text: "<p>- İkinci Dünya Savaşı öncesi \"Asya Asyalılarındır\" fikrini öne çıkarmıştır.<br>- Mançurya bölgesini işgal etmiştir.</p><p><b>Özellikleri verilen devlet aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Asya'da Batılı (Avrupalı/Amerikalı) emperyalistleri kıtadan kovarak 'Büyük Doğu Asya Ortak Refah Alanı' kurmayı hedefleyen ve 'Asya Asyalılarındır' diyerek 1931'de Çin'in zengin bölgesi Mançurya'yı işgal eden devlet militarist Japonya'dır.",
     answers: [
@@ -39,7 +39,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 3.B.
   },
   {
-    text: "II. Dünya Savaşı'nın nedenlerinin oluşmasında;\nI. Trianon,\nII. Sevr,\nIII. Versay\nantlaşmalarından hangileri doğrudan etkili olmuştur?",
+    text: "<p><b>II. Dünya Savaşı'nın nedenlerinin oluşmasında;</b></p><p>I. Trianon,<br>II. Sevr,<br>III. Versay</p><p><b>antlaşmalarından hangileri doğrudan etkili olmuştur?</b></p>",
     diff: 2,
     expl: "I. Dünya Savaşı sonunda Almanya'ya imzalatılan ve aşırı derecede ağır/onur kırıcı maddeler barındıran Versay Antlaşması (III), Alman halkını hiperenflasyona ve sefalete sürüklemiş, intikam hissiyle Hitler'in faşist iktidarına ve doğrudan II. Dünya Savaşı'nın başlamasına neden olmuştur.",
     answers: [
@@ -51,7 +51,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 4.C.
   },
   {
-    text: "I. Dünya Savaşı sonunda İngiltere ve Fransa tarafından uygulanan \"Yatıştırma\" politikasının mimarı olan İngiliz başbakan aşağıdakilerden hangisidir?",
+    text: "<p><b>I. Dünya Savaşı sonunda İngiltere ve Fransa tarafından uygulanan</b> \"Yatıştırma\" <b>politikasının mimarı olan İngiliz başbakan aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Almanya (Hitler) Avrupa'da adım adım ilerlerken yeni bir dünya savaşını engellemek umuduyla, onun isteklerine sürekli taviz veren (Çekoslovakya'yı dahi ona bırakan) İngiliz Yatıştırma (Appeasement) politikasının baş mimarı Başbakan Neville Chamberlain'dir.",
     answers: [
@@ -63,7 +63,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 5.C.
   },
   {
-    text: "Rusya'nın 1918 yılında imzalayarak I. Dünya Savaşı'ndan çekildiği antlaşma aşağıdakilerden hangisidir?",
+    text: "<p><b>Rusya'nın 1918 yılında imzalayarak I. Dünya Savaşı'ndan çekildiği antlaşma aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "1917'deki komünist Ekim Devrimi (Bolşevik İhtilali) ile kurulan yeni Sovyet Rusya, İttifak devletleriyle (Almanya, Avusturya-Macaristan, Osmanlı, Bulgaristan) 3 Mart 1918'de 'Brest-Litovsk Antlaşması'nı imzalayarak emperyalist bir paylaşım savaşı olarak gördüğü I. Dünya Savaşı'ndan resmen çekilmiştir.",
     answers: [
@@ -75,7 +75,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 6.D.
   },
   {
-    text: "Dünya barışını sağlamak amacı ile ABD ve Fransa dışişleri bakanları tarafından esasları belirlenen; İngiltere, Japonya, İtalya, Belçika ve Almanya gibi devletlerin de katılım gösterdiği 1928 yılında kurulan pakt aşağıdakilerden hangisidir?",
+    text: "<p><b>Dünya barışını sağlamak amacı ile ABD ve Fransa dışişleri bakanları tarafından esasları belirlenen; İngiltere, Japonya, İtalya, Belçika ve Almanya gibi devletlerin de katılım gösterdiği 1928 yılında kurulan pakt aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "ABD Dışişleri Bakanı Frank Kellogg ve Fransız mevkidaşı Aristide Briand tarafından ortaya atılan, 'Savunmaya dayanmayan her savaş kanun dışıdır' ilkesini getiren ünlü saldırmazlık paktı Briand-Kellogg Paktı'dır (1928).",
     answers: [
@@ -87,7 +87,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 7.B.
   },
   {
-    text: "24 Ekim 1929 Perşembe günü New York Borsası'nın çöküşü ile başlayan ve tarihe \"Kara Perşembe\" olarak geçen 1929 Krizi;\nI. kredilendirilmenin fazlalığı,\nII. bankaların kötü yapılanması,\nIII. ABD'nin New Deal politikasını benimsemesi\ndurumlarından hangilerine bağlı olarak ortaya çıkmıştır?",
+    text: "<p><b>24 Ekim 1929 Perşembe günü New York Borsası'nın çöküşü ile başlayan ve tarihe</b> \"Kara Perşembe\" <b>olarak geçen 1929 Krizi;</b></p><p>I. kredilendirilmenin fazlalığı,<br>II. bankaların kötü yapılanması,<br>III. ABD'nin New Deal politikasını benimsemesi</p><p><b>durumlarından hangilerine bağlı olarak ortaya çıkmıştır?</b></p>",
     diff: 2,
     expl: "1929 Dünya Ekonomik Krizi (Büyük Buhran); ABD'de şirketlerin denetimsiz aşırı büyümesi, bankaların geri dönmeyecek (karşılıksız) devasa krediler dağıtması (I) ve kötü yapılandırılması (II) gibi nedenlerle çıkmıştır. New Deal (Yeni Düzen) (III) ise krize 'neden olan' değil, kriz çıktıktan sonra (1933) Roosevelt tarafından 'çözüm için' uygulanan devlet müdahaleci bir ekonomi programıdır.",
     answers: [
@@ -99,20 +99,19 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 8.C.
   },
   {
-    text: "Birinci Dünya Savaşı'nın ardından,\nI. Tunus,\nII. Cezayir,\nIII. Lübnan,\nIV. Mısır\nbölgelerinden hangileri Fransa tarafından mandalaştırılmıştır?",
+    text: "<p><b>Birinci Dünya Savaşı'nın ardından,</b></p><p>I. Tunus,<br>II. Cezayir,<br>III. Lübnan,<br>IV. Mısır</p><p><b>bölgelerinden hangileri Fransa tarafından mandalaştırılmıştır?</b></p>",
     diff: 3,
-    expl: "I. Dünya Savaşı sonrasında, Osmanlı'nın Orta Doğu (Arap) toprakları İngiltere ve Fransa arasında manda sistemine geçmiştir. Lübnan ve Suriye Fransa'nın mandası olmuştur (III). Cezayir (1830) ve Tunus (1881) ise savaş sonrasındaki 'Manda' sisteminin değil, savaştan ÇOK ÖNCE doğrudan işgal/sömürge haline getirilmiş bölgelerdir (Mısır ise İngiltere'nindir). (Not: KPSS literatüründeki bazı sorularda teknik hatalar olsa da cevap anahtarına göre Lübnan ve Suriye Fransa'nın I. DS sonrası manda bölgeleridir. Kitap, I, II ve III diyerek Cezayir ve Tunus'u da bu kavrama sokmuştur, biz de cevaba sadık kalıyoruz).",
+    expl: "I. Dünya Savaşı sonrasında Lübnan (III) ve Suriye, Milletler Cemiyeti'nin manda sistemi ile Fransa'ya bırakılmıştır. Tunus (I) ve Cezayir (II) ise zaten Fransa'nın sömürgesi/himayesindeydi ve Fransız yönetimi altında kalmaya devam etmiştir. Mısır (IV) ise İngiltere'nin nüfuz alanındadır. Kitabın cevap anahtarına göre doğru cevap I, II ve III'tür.",
     answers: [
       { text: "I ve II", ok: false },
       { text: "I ve III", ok: false },
       { text: "II ve IV", ok: false },
       { text: "I, II ve III", ok: true },
       { text: "I, II, III ve IV", ok: false }
-    ] // Cevap anahtarı 9.D. 
-    // Düzeltme: Tunus ve Cezayir klasik bir "Milletler Cemiyeti Manda Yönetimi" olmasa da, Fransız sömürgeleridir ve testin kurgusu D şıkkını (I, II ve III) işaret etmektedir.
+    ] // Cevap anahtarı 9.D.
   },
   {
-    text: "Japonya'da XIX. yüzyılın ikinci yarısından itibaren Batılı tarzda yenilikler yaparak \"Meiji Restorasyonu\" olarak adlandırılan reform hareketlerini gerçekleştiren imparator aşağıdakilerden hangisidir?",
+    text: "<p><b>Japonya'da XIX. yüzyılın ikinci yarısından itibaren Batılı tarzda yenilikler yaparak</b> \"Meiji Restorasyonu\" <b>olarak adlandırılan reform hareketlerini gerçekleştiren imparator aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Japonya'da feodal askeri diktatörlük olan Şogunluğu devirerek, kılık kıyafetten eğitime, modern sanayiden düzenli orduya kadar inanılmaz bir modernleşme atılımı (Meiji Restorasyonu / Aydınlanma Çağı) başlatan lider İmparator Mutsuhito'dur.",
     answers: [
@@ -124,7 +123,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 10.A.
   },
   {
-    text: "I. Küçük Antant\nII. Locarno Sözleşmesi\nIII. Briand - Kellog Paktı\nYukarıda verilen uluslararası oluşumların hangilerine Türkiye Cumhuriyeti katılmamıştır?",
+    text: "<p>I. Küçük Antant<br>II. Locarno Sözleşmesi<br>III. Briand - Kellog Paktı</p><p><b>Yukarıda verilen uluslararası oluşumların hangilerine Türkiye Cumhuriyeti <u>katılmamıştır</u>?</b></p>",
     diff: 2,
     expl: "Türkiye, barışı korumak amacıyla 1929'da 'Briand-Kellogg Paktı'na (III) katılmıştır. Ancak Balkanlar'da Çekoslovakya, Yugoslavya ve Romanya'nın kurduğu 1920 Küçük Antant'a (I) ve Almanya'nın batı sınırlarını (Avrupa barışını) garanti altına alan 1925 Locarno Sözleşmesi'ne (II) taraf DEĞİLDİR.",
     answers: [
@@ -136,7 +135,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 11.D.
   },
   {
-    text: "1904 - 1905 yılları arasında gerçekleşen Japon - Rus savaşı aşağıdaki antlaşmaların hangisi ile sona ermiştir?",
+    text: "<p><b>1904 - 1905 yılları arasında gerçekleşen Japon - Rus savaşı aşağıdaki antlaşmaların hangisi ile sona ermiştir?</b></p>",
     diff: 3,
     expl: "Mançurya ve Kore üzerindeki nüfuz mücadelesi nedeniyle çıkan savaşta, yükselen Asya gücü Japonya koca Rus donanmasını ve ordusunu ağır bir yenilgiye uğratmıştır. Savaş, ABD başkanı Roosevelt'in arabuluculuğu ile imzalanan 'Portsmouth (Pourstmuth)' Antlaşması ile sona ermiştir.",
     answers: [
@@ -148,7 +147,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 12.C.
   },
   {
-    text: "İzlediği saldırgan siyaset nedeni ile II. Dünya Savaşı'nın başlamasında etkili olan İtalya'nın bu politikalarına aşağıdakilerden hangisi örnek olarak gösterilemez?",
+    text: "<p><b>İzlediği saldırgan siyaset nedeni ile II. Dünya Savaşı'nın başlamasında etkili olan İtalya'nın bu politikalarına aşağıdakilerden hangisi örnek olarak <u>gösterilemez</u>?</b></p>",
     diff: 3,
     expl: "Mussolini (İtalya) iki savaş arası dönemde yayılmacı politikasıyla; Yunanistan'dan Korfu adasını bombalamış (A), Yugoslavya'dan Serbest Şehir Fiume'yi almış (B), Arnavutluk üzerinde himaye kurmuş (C) ve 12 Ada'yı üs yapıp silahlandırmıştır (D). Ancak 'Ren Bölgesi'ne asker çıkarmak' (E) Hitler'in yani ALMANYA'nın (Versay'ı ihlal eden) politikasıdır.",
     answers: [
@@ -160,7 +159,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 13.E.
   },
   {
-    text: "1938 Münih Konferansı'nda Almanya'ya bırakılan bölge aşağıdakilerden hangisidir?",
+    text: "<p><b>1938 Münih Konferansı'nda Almanya'ya bırakılan bölge aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "İngiltere ve Fransa, yatıştırma politikası gereği Hitler'i savaştan vazgeçirebileceklerini umarak, 1938'deki Münih Konferansı'nda (Çekoslovakya'nın itirazlarına rağmen) Almanca konuşan nüfusun yoğun olduğu 'Südetler (Süded)' bölgesini Almanya'ya bırakmışlardır.",
     answers: [
@@ -172,9 +171,9 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 14.B.
   },
   {
-    text: "1929 Krizi'nin Türkiye Cumhuriyeti'ne etkileri arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>1929 Krizi'nin Türkiye Cumhuriyeti'ne etkileri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 3,
-    expl: "1929 krizi ile özel sektör çökmüş (A), parayı koruma kanunu çıkmış (B), ihracat durunca dış borç ödemeleri zorlaşmış (C) ve devlet mecburen ekonomiye müdahale etmiştir (D Devletçilik). Ancak 'İthal İkameci anlayışa ağırlık verilmesi' (Dışarıdan mal almak yerine kendin üretmek) TAM DA BU DÖNEMDE ve bu kriz yüzünden (I. Beş Yıllık Sanayi Planı ile) uygulanan EN TEMEL ekonomi modelidir. Soru kökü 'hangisi YER ALMAZ' diyor. (Kitabın cevap anahtarı E diyor ancak teknik olarak bu kriz ithal ikameyi zorunlu kılmıştır. Yine de müfredatta 'İthal İkameci Planlı Ekonomi' dönemi resmi olarak 1960 sonrasını -DPT dönemini- ifade ettiği için cevap E olarak kabul edilmektedir).",
+    expl: "1929 Krizi ile Türkiye'de özel teşebbüs zayıflamış ve Teşvik-i Sanayi Kanunu başarısız olmuş (A), Türk lirasının değerini korumak için Türk Parasını Koruma Kanunu çıkarılmış (B), Osmanlı borçlarının taksitlerinin ödenmesi Fransa ile sorun hâline gelmiş (C) ve devletçilik ilkesi ön plana çıkmıştır (D). Planlı ekonomide ithal ikameci anlayışa ağırlık verilmesi ise 1960 sonrası Beş Yıllık Kalkınma Planları dönemine aittir; bu nedenle 1929 Krizi'nin etkileri arasında yer almaz.",
     answers: [
       { text: "Teşvik-i Sanayi Kanunu'nun başarısız olması", ok: false },
       { text: "Türk Parasını Koruma Kanunu'nun çıkarılması", ok: false },
@@ -184,7 +183,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_1: McQ[] = [
     ] // Cevap anahtarı 15.E.
   },
   {
-    text: "Avrupalıların artan baskısına karşı Çin'de başlayan yabancı karşıtlığını içeren ayaklanma aşağıdakilerden hangisidir?",
+    text: "<p><b>Avrupalıların artan baskısına karşı Çin'de başlayan yabancı karşıtlığını içeren ayaklanma aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "19. Yüzyılın sonlarında (1899) Çin'de artan Batılı emperyalist sömürüye, afyon ticaretine ve Hristiyan misyonerlerine karşı, gizli bir dövüş sanatları tarikatı (Haklı ve Uyumlu Yumruklar Cemiyeti) tarafından başlatılan ve 8 devletin ittifakıyla zar zor bastırılan isyan 'Boxer (Boksörler) Ayaklanması'dır.",
     answers: [
@@ -226,7 +225,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>II. Dünya Savaşı sürecinde;</b></p><p>I. Habeşistan,<br>II. Arnavutluk,<br>III. Sudet</p><p><b>bölgelerinden hangileri İtalya tarafından işgal edilmiştir?</b></p>",
+    text: "<p><b>II. Dünya Savaşı sürecinde;</b></p><p>I. Habeşistan,<br>II. Arnavutluk,<br>III. Suded</p><p><b>bölgelerinden hangileri İtalya tarafından işgal edilmiştir?</b></p>",
     diff: 2,
     expl: "İtalya (Mussolini yönetimi), Akdeniz'de yayılmacı politikası (Bizim Deniz/Mare Nostrum) doğrultusunda 1935'te Habeşistan'ı, 1939'da ise Arnavutluk'u işgal etmiştir. Sudet bölgesi ise 1938'de Almanya (Hitler) tarafından işgal edilmiştir.",
     answers: [
@@ -252,7 +251,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_2: McQ[] = [
   {
     text: "<p><b>İtalya'nın yayılmacı siyasetine karşı kurulan Akdeniz Paktı'nda aşağıdaki ülkelerden hangisi <u>yer almamıştır</u>?</b></p>",
     diff: 3,
-    expl: "İtalya'nın Doğu Akdeniz'deki saldırgan tutumuna karşı 1936'da İngiltere'nin öncülüğünde; Türkiye, Yunanistan ve Yugoslavya'nın katılımıyla Akdeniz Paktı kurulmuştur. SSCB bu paktın bir üyesi değildir.",
+    expl: "İtalya'nın Doğu Akdeniz'deki saldırgan tutumuna karşı 1936'da İngiltere öncülüğünde Fransa, Türkiye, Yunanistan ve Yugoslavya'nın katılımıyla Akdeniz Paktı (Akdeniz Anlaşması) oluşturulmuştur. SSCB bu oluşumda yer almamıştır.",
     answers: [
       { text: "Türkiye", ok: false },
       { text: "Fransa", ok: false },
@@ -262,7 +261,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p>Musul konusu için 19 Mayıs 1924 tarihinde toplanan Haliç Konferansı'ndan sonuç alınamaması üzerine Türkiye Cumhuriyeti aşağıdaki devletlerden hangisi ile 1925 yılında \"Dostluk Antlaşması\" imzalamıştır?</p>",
+    text: "<p><b>Musul konusu için 19 Mayıs 1924 tarihinde toplanan Haliç Konferansı'ndan sonuç alınamaması üzerine Türkiye Cumhuriyeti aşağıdaki devletlerden hangisi ile 1925 yılında</b> \"Dostluk Antlaşması\" <b>imzalamıştır?</b></p>",
     diff: 3,
     expl: "Musul meselesinde Milletler Cemiyeti'nin ve İngiltere'nin Türkiye aleyhine tutum sergilemesi üzerine, Batı'dan dışlandığını düşünen ve yalnız kalmak istemeyen Türkiye, 17 Aralık 1925'te SSCB ile \"Dostluk ve Saldırmazlık Antlaşması\" imzalamıştır.",
     answers: [
@@ -298,7 +297,7 @@ export const TAR_YIRMINCI_YUZYIL_BASLARINDA_DUNYA_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>İki savaş arası dönemde Almanya'nın izlediği;</b></p><p>I. Locarno Sözleşmesi'ni imzalama,<br>II. Milletler Cemiyetine üye olma,<br>III. Briand-Kellog Paktı'na katılma</p><p><b>politikalarından hangilerinin İngiltere'nin izlediği \"yatıştırma\" siyasetine uygun düştüğü söylenebilir?</b></p>",
+    text: "<p><b>İki savaş arası dönemde Almanya'nın izlediği;</b></p><p>I. Locarno Sözleşmesi'ni imzalama,<br>II. Milletler Cemiyetine üye olma,<br>III. Briand-Kellog Paktı'na katılma</p><p><b>politikalarından hangilerinin İngiltere'nin izlediği</b> \"yatıştırma\" <b>siyasetine uygun düştüğü söylenebilir?</b></p>",
     diff: 3,
     expl: "I. Dünya Savaşı'ndan yenik çıkan Almanya'nın uluslararası sisteme entegre edilerek saldırganlaşmasını önlemek isteyen Batılı devletlerin (özellikle İngiltere'nin) 'yatıştırma' siyaseti sonucunda Almanya; 1925'te Locarno'ya, 1926'da Milletler Cemiyetine ve 1928'de Briand-Kellogg Paktı'na dâhil edilerek uluslararası alana çekilmeye çalışılmıştır.",
     answers: [

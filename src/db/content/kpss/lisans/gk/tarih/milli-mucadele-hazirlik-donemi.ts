@@ -1,9 +1,9 @@
 import type { McQ } from "../../../../types";
 
 export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
-  // ---------------- MİLLİ MÜCADELEYE HAZIRLIK DÖNEMİ - TEST 1 ----------------
+  // ---------------- MİLLÎ MÜCADELE'YE HAZIRLIK DÖNEMİ - TEST 1 ----------------
   {
-    text: "Paris Barış Konferansı'nda ortaya atılan çoğunluk iddiaları çerçevesinde Ege Bölgesi'nin Yunanistan'a verilmesine başta Osmanlı kamuoyu olmak üzere geniş bir çevreden büyük bir tepki yükselmiştir.\nBu doğrultuda durumu incelemek adına bölgeye gönderilen ABD heyetinin yayımladığı rapor aşağıdakilerden hangisidir?",
+    text: "<p>Paris Barış Konferansı'nda ortaya atılan çoğunluk iddiaları çerçevesinde Ege Bölgesi'nin Yunanistan'a verilmesine başta Osmanlı kamuoyu olmak üzere geniş bir çevreden büyük bir tepki yükselmiştir.</p><p><b>Bu doğrultuda durumu incelemek adına bölgeye gönderilen ABD heyetinin yayımladığı rapor aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "İzmir'in haksız işgali üzerine bölgeye gelen ABD'li Amiral Bristol, hazırladığı raporda 'Bölgede Rumların değil Türklerin çoğunlukta olduğunu ve katliamı Yunanların yaptığını' belirterek Milli Mücadele'nin haklılığını kanıtlayan İLK uluslararası belgeyi (Amiral Bristol Raporu) yayımlamıştır.",
     answers: [
@@ -15,7 +15,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "I. Mondros Ateşkesi'nin imzalanması\nII. Wilson İlkeleri'nin yayımlanması\nIII. Kuvayımilliye birliklerinin kurulması\nIV. Anadolu'da işgallerin başlaması\ngelişmelerinin oluş sırası aşağıdakilerin hangisinde doğru olarak verilmiştir?",
+    text: "<p>I. Mondros Ateşkesi'nin imzalanması<br>II. Wilson İlkeleri'nin yayımlanması<br>III. Kuvayımilliye birliklerinin kurulması<br>IV. Anadolu'da işgallerin başlaması</p><p><b>gelişmelerinin oluş sırası aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
     diff: 2,
     expl: "Sıralama: Önce ABD başkanı savaş bitmeden Wilson İlkelerini yayımladı (II). Sonra bu ilkelere güvenen Osmanlı Mondros'u imzaladı (I). Ateşkesteki maddelere (7. Madde) dayanılarak işgaller başladı (IV). İşgaller başlayınca da halk Kuvayımilliye'yi kurdu (III). Sıralama: II - I - IV - III.",
     answers: [
@@ -27,7 +27,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Aşağıdaki bölgelerin hangisinde Kuvayımilliye direnişinin görülmesi beklenmez?",
+    text: "<p><b>Aşağıdaki bölgelerin hangisinde Kuvayımilliye direnişinin görülmesi <u>beklenmez</u>?</b></p>",
     diff: 2,
     expl: "İzmir, Ayvalık ve Balıkesir'de Yunanlılara; Hatay'da ise Fransızlara karşı çok şiddetli silahlı Kuvayımilliye direnişi olmuştur. Ancak Antalya çevresini işgal eden İtalyanlar halkla çatışmamış, silahlı direniş olmadan (beklenmeden) bölgeden çekilmişlerdir.",
     answers: [
@@ -39,7 +39,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Anadolu'da İtilaf Devletleri işgallerine karşı halkın gerçekleştirdiği onlarca kongre toplanırken bir yandan da silahlı direniş birlikleri oluşturulmaya başlanmıştır.\nBu duruma zemin hazırlayan temel etken aşağıdakilerden hangisidir?",
+    text: "<p>Anadolu'da İtilaf Devletleri işgallerine karşı halkın gerçekleştirdiği onlarca kongre toplanırken bir yandan da silahlı direniş birlikleri oluşturulmaya başlanmıştır.</p><p><b>Bu duruma zemin hazırlayan temel etken aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "İşgaller karşısında İstanbul Hükümeti'nin sessiz ve tepkisiz kalması (sorumluluğunu yerine getirmemesi), milletin kendi can ve mal güvenliğini sağlamak için Kuvayımilliye (milis güçler) kurmasına neden olmuştur.",
     answers: [
@@ -51,19 +51,19 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Kuvayımilliye birlikleri ile ilgili aşağıdakilerden hangisi doğru nitelikte değildir?",
+    text: "<p><b>Kuvayımilliye birlikleri ile ilgili aşağıdakilerden hangisi doğru nitelikte <u>değildir</u>?</b></p>",
     diff: 1,
-    expl: "Kuvayımilliye, askerlik disiplininden yoksun, yöresel (dağınık) milis kuvvetleridir. Düzenli ordunun 'temelini' oluşturmamışlar, aksine yetersiz kaldıkları (veya isyan ettikleri) için tasfiye edilip YERLERİNE düzenli ordu kurulmuştur.",
+    expl: "Kuvayımilliye birlikleri, Mondros sonrası işgallere karşı halkın kendiliğinden kurduğu yerel ve gönüllü birliklerdir; Mustafa Kemal'e bağlı olarak kurulmamışlardır. Gayrinizami harp yöntemiyle savaşmışlar, Güney Cephesi'nde başarılar kazanmışlar, isyanların bastırılmasında etkili olmuşlar ve düzenli ordunun temelini oluşturmuşlardır.",
     answers: [
       { text: "Düzenli orduların temelini oluşturmuştur.", ok: false },
       { text: "Kurtuluş Savaşı'nda Güney Cephesi'nde başarılar kazanmıştır.", ok: false },
       { text: "Ayaklanmaların bastırılmasında etkili olmuşlardır.", ok: false },
       { text: "Gayrinizami harp türünü benimsemişlerdir.", ok: false },
       { text: "Mustafa Kemal'e bağlı olarak kurulmuşlardır.", ok: true }
-    ] // Düzeltme: Kuvayımilliye Mustafa Kemal Paşa'dan ÖNCE sivil halk (efeler vb.) tarafından yerel olarak kurulmuştur. Mustafa Kemal'e bağlı olarak kurulan ordunun adı Düzenli Ordu'dur. (E şıkkı yanlıştır, Cevap anahtarına (E) uygundur).
+    ]
   },
   {
-    text: "I. Trabzon Muhafaza-i Hukuk\nII. Menteşeliler\nIII. Kilikyalılar\nYukarıda verilen yararlı cemiyetlerden hangileri İtalyan işgaline karşı mücadele etmişlerdir?",
+    text: "<p>I. Trabzon Muhafaza-i Hukuk<br>II. Menteşeliler<br>III. Kilikyalılar</p><p><b>Yukarıda verilen yararlı cemiyetlerden hangileri İtalyan işgaline karşı mücadele etmişlerdir?</b></p>",
     diff: 2,
     expl: "İtalyanlar Muğla ve Antalya yöresini işgal etmişti. Bu bölgedeki (Muğla/Menteşe yöresi) işgale karşı kurulan cemiyet Menteşelilerdir. Trabzon cemiyeti Pontus Rumlarına, Kilikyalılar ise Çukurova'daki Fransızlara karşıdır.",
     answers: [
@@ -75,7 +75,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Millî Mücadele yıllarında ulusal bağımsızlığı destekleyen yayınları ile tanınan, Yunan ordusunun İzmir'i işgalinde ilk kurşunu sıktıktan sonra şehit edilen Hasan Tahsin'in de başyazarlığını yaptığı yayın organı aşağıdakilerden hangisidir?",
+    text: "<p><b>Millî Mücadele yıllarında ulusal bağımsızlığı destekleyen yayınları ile tanınan, Yunan ordusunun İzmir'i işgalinde ilk kurşunu sıktıktan sonra şehit edilen Hasan Tahsin'in de başyazarlığını yaptığı yayın organı aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "İzmir'in işgali sırasında (15 Mayıs 1919) düşmana ilk kurşunu atarak şanlı bir direniş başlatan gazeteci Osman Nevres'in (Hasan Tahsin) başyazarı olduğu gazete Hukuk-u Beşer (İnsan Hakları) gazetesidir.",
     answers: [
@@ -87,7 +87,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "- Ali Fethi Okyar kuruculuğunu yapmış, bir dönem Mustafa Kemal de siyasi faaliyetlerini bu partide yürütmüştür.\n- Minber gazetesini yayın organı olarak kullanmıştır.\nÖzellikleri verilen Osmanlı siyasi tarihinde yer almış parti aşağıdakilerden hangisidir?",
+    text: "<p>- Ali Fethi Okyar kuruculuğunu yapmış, bir dönem Mustafa Kemal de siyasi faaliyetlerini bu partide yürütmüştür.<br>- Minber gazetesini yayın organı olarak kullanmıştır.</p><p><b>Özellikleri verilen Osmanlı siyasi tarihinde yer almış parti aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "I. Dünya Savaşı sonrasında, İttihatçılara karşı olan ama onlara alternatif milli bir ses çıkarmak isteyen Ali Fethi Okyar tarafından kurulan ve Mustafa Kemal'in de destek verdiği (Minber Gazetesi'ni çıkaran) siyasi parti 'Osmanlı Hürriyetperver Avam Fırkası'dır.",
     answers: [
@@ -99,7 +99,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Millî Mücadele Dönemi'nde Türk ve Yunan kuvvetleri arasında bir hat oluşturarak çatışmaları azaltmayı ve Yunanlıların haklarını korumayı amaçlayan İngiliz raporu aşağıdakilerden hangisidir?",
+    text: "<p><b>Millî Mücadele Dönemi'nde Türk ve Yunan kuvvetleri arasında bir hat oluşturarak çatışmaları azaltmayı ve Yunanlıların haklarını korumayı amaçlayan İngiliz raporu aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "İngiliz General George Milne, Batı Anadolu'da ilerleyen Yunan ordusu ile Türk Kuvayımilliyesi arasına kendi adıyla anılan (Milne Hattı) bir sınır çizerek, Yunan ordusuna toparlanma ve yerleşme zamanı kazandırmıştır.",
     answers: [
@@ -111,7 +111,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "- İlk kez Kuvayımilliye terimini kullanmışlardır.\n- Güneybatı Kafkasya Geçici Hükûmetini kurmuşlardır.\n- İstihbarat işlerini yürüterek Millî Mücadele'ye lojistik destek sağlamayı amaçlamışlardır.\n- Gerekirse \"ayrı devlet kurulması\" tezini savunmuşlardır.\nYukarıdaki özellikler aşağıdaki cemiyetlerle eşleştirildiğinde hangisi dışarıda kalır?",
+    text: "<p>- İlk kez Kuvayımilliye terimini kullanmışlardır.<br>- Güneybatı Kafkasya Geçici Hükûmetini kurmuşlardır.<br>- İstihbarat işlerini yürüterek Millî Mücadele'ye lojistik destek sağlamayı amaçlamışlardır.<br>- Gerekirse \"ayrı devlet kurulması\" tezini savunmuşlardır.</p><p><b>Yukarıdaki özellikler aşağıdaki cemiyetlerle eşleştirildiğinde hangisi dışarıda kalır?</b></p>",
     diff: 2,
     expl: "İlk Kuvayımilliye tabiri -> Milli Kongre (A). Güneybatı Kafkasya Hükümeti -> Kars İslam Şurası (C). Lojistik/İstihbarat -> Karakol Cemiyeti (B). Ayrı devlet (Trakya) tezi -> Trakya Paşaeli (D). Bu durumda Muğla'daki 'Menteşeliler Cemiyeti' dışarıda kalmaktadır.",
     answers: [
@@ -123,7 +123,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Kuvayımilliye oluşumunun Millî Mücadele hareketine sağladığı kazanımlar arasında aşağıdakilerden hangisi gösterilemez?",
+    text: "<p><b>Kuvayımilliye oluşumunun Millî Mücadele hareketine sağladığı kazanımlar arasında aşağıdakilerden hangisi <u>gösterilemez</u>?</b></p>",
     diff: 2,
     expl: "Kuvayımilliye (sivil milis güçler) Batı Anadolu'da ve Güney'de faaliyet göstermiştir. Doğu Cephesi'nde Ermenilere karşı savaşan ve zafer kazanan (Gümrü) ise Osmanlı'dan kalan Kazım Karabekir komutasındaki düzenli 15. Kolordu'dur. Kuvayımilliyenin doğuda bir faaliyeti olmamıştır.",
     answers: [
@@ -135,19 +135,19 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Yunanlılar İzmir'in işgali konusunda haklılıklarını ortaya koymak ve dünya kamuoyunu ikna etmek için;\nI. Wilson İlkeleri,\nII. Mondros Ateşkesi,\nIII. Paris Barış Konferansı\ngibi diplomatik gelişmelerden hangilerini dayanak olarak kullanmışlardır?",
+    text: "<p><b>Yunanlılar İzmir'in işgali konusunda haklılıklarını ortaya koymak ve dünya kamuoyunu ikna etmek için;</b></p><p>I. Wilson İlkeleri,<br>II. Mondros Ateşkesi,<br>III. Paris Barış Konferansı</p><p><b>gibi diplomatik gelişmelerden hangilerini dayanak olarak kullanmışlardır?</b></p>",
     diff: 2,
-    expl: "Yunanlılar, İzmir'de işgallerini haklı göstermek için Wilson İlkeleri'ndeki (I) 'azınlıkların çoğunlukta olduğu yerler onlara bırakılacaktır' maddesine dayanarak 'Burada çoğunluktayız' yalanını söylemişlerdir.",
+    expl: "Yunanlılar İzmir'in işgalini haklı göstermek için Wilson İlkeleri'ndeki çoğunluk (self-determinasyon) ilkesine dayanarak bölgede çoğunlukta olduklarını iddia etmiş (I), Mondros Ateşkesi'nin 7. maddesindeki güvenlik gerekçesini kullanmış (II) ve Paris Barış Konferansı'nda İzmir'in kendilerine verilmesi kararını dayanak göstermişlerdir (III).",
     answers: [
-      { text: "Yalnız I", ok: true },
+      { text: "Yalnız I", ok: false },
       { text: "I ve II", ok: false },
       { text: "I ve III", ok: false },
       { text: "II ve III", ok: false },
-      { text: "I, II ve III", ok: false }
+      { text: "I, II ve III", ok: true }
     ]
   },
   {
-    text: "Çerkez Ethem'e bağlı milis güçler aşağıdakilerden hangisidir?",
+    text: "<p><b>Çerkez Ethem'e bağlı milis güçler aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Milli Mücadele'nin başlarında Yunanlılara ve iç isyanlara (Anzavur, Yozgat vb.) karşı büyük başarılar gösteren, ancak sonradan düzenli orduya katılmayı reddederek isyan eden Çerkez Ethem'in yönettiği mobil milis güce 'Kuvay-ı Seyyare' (Gezici Kuvvetler) denirdi.",
     answers: [
@@ -159,7 +159,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Mondros Ateşkes Antlaşması'ndan sonra, İstanbul Hükûmeti İtilaf Devletlerinin baskısı altına girmiştir.\nAşağıdakilerden hangisi bu durumun bir sonucu değildir?",
+    text: "<p>Mondros Ateşkes Antlaşması'ndan sonra, İstanbul Hükûmeti İtilaf Devletlerinin baskısı altına girmiştir.</p><p><b>Aşağıdakilerden hangisi bu durumun bir sonucu <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Mondros'tan sonra İstanbul'un baskı altına girip sessiz kalması halkta güvensizlik (B) ve direnişler (A, C) yaratmıştır. Bu baskı sayesinde Anadolu kolayca işgale uğramıştır (D). Ancak 'Amasya Görüşmeleri' İtilaf baskısının değil, Sivas Kongresi'nden sonra Anadolu'nun İstanbul'a (Ali Rıza Paşa'ya) karşı üstünlük kurmasının bir sonucudur.",
     answers: [
@@ -171,7 +171,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Batı Cephesi'nin kurulmasına;\nI. Balıkesir,\nII. Oltu,\nIII. Alaşehir\nkongrelerinin hangileri katkı sağlamıştır?",
+    text: "<p><b>Batı Cephesi'nin kurulmasına;</b></p><p>I. Balıkesir,<br>II. Oltu,<br>III. Alaşehir</p><p><b>kongrelerinin hangileri katkı sağlamıştır?</b></p>",
     diff: 2,
     expl: "Yunan işgaline karşı Ege (Batı) cephesinin oluşmasını ve milis güçlerin örgütlenmesini sağlayan en önemli bölgesel toplantılar, Hacim Muhittin Çarıklı önderliğinde toplanan Balıkesir (I) ve Alaşehir (III) kongreleridir. Oltu (II) Doğu Anadolu'dadır.",
     answers: [
@@ -187,7 +187,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_1: McQ[] = [
 export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
   // ---------------- MİLLÎ MÜCADELE'YE HAZIRLIK DÖNEMİ - TEST 2 ----------------
   {
-    text: "Temsil Heyeti'nin kurulması fikri ilk kez aşağıdakilerin hangisinde yer almıştır?",
+    text: "<p><b>Temsil Heyeti'nin kurulması fikri ilk kez aşağıdakilerin hangisinde yer almıştır?</b></p>",
     diff: 1,
     expl: "Milli Mücadele'yi yönetecek olan Temsil Heyeti'nin kurulması FİKRİ ilk kez Amasya Genelgesi'nde ('Her türlü etkiden uzak milli bir kurul oluşturulmalıdır' maddesiyle) ortaya atılmıştır. (Kurulması Erzurum'da, ulusallaşması ise Sivas'tadır).",
     answers: [
@@ -199,7 +199,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal'in Samsun'a çıkmadan önce;\nI. Hürriyetperver Avam Fırkası'na üye olma,\nII. Komutanlar Toplantısı'na katılma,\nIII. Minber gazetesini çıkartma\nfaaliyetlerinden hangilerini yaptığı söylenebilir?",
+    text: "<p><b>Mustafa Kemal'in Samsun'a çıkmadan önce;</b></p><p>I. Hürriyetperver Avam Fırkası'na üye olma,<br>II. Komutanlar Toplantısı'na katılma,<br>III. Minber gazetesini çıkartma</p><p><b>faaliyetlerinden hangilerini yaptığı söylenebilir?</b></p>",
     diff: 2,
     expl: "Mustafa Kemal İstanbul'da kaldığı 6 aylık dönemde (Samsun'a çıkmadan önce); yakın arkadaşı Ali Fethi Okyar ile birlikte Minber Gazetesi'ni çıkarmış (III) ve yine Okyar'ın kurduğu Osmanlı Hürriyetperver Avam Fırkası'na (I) destek olmuştur. Komutanlar toplantısı ise Amasya'dadır.",
     answers: [
@@ -211,7 +211,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal'e resmî olarak verilen IX. Ordu Müfettişliği'nin merkezî olan şehir aşağıdakilerden hangisidir?",
+    text: "<p><b>Mustafa Kemal'e resmî olarak verilen IX. Ordu Müfettişliği'nin merkezî olan şehir aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Mustafa Kemal Paşa'nın Karadeniz ve Doğu Anadolu'daki asayişi sağlamakla görevlendirildiği 9. Ordu Müfettişliği'nin resmi karargâh merkezi Erzurum'dur.",
     answers: [
@@ -223,7 +223,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal'in Osmanlı Devleti'ndeki son askerî görevi olan IX. Ordu Müfettişliği, ilerleyen süreçte aşağıdaki birimlerden hangisine dönüştürülmüştür?",
+    text: "<p><b>Mustafa Kemal'in Osmanlı Devleti'ndeki son askerî görevi olan IX. Ordu Müfettişliği, ilerleyen süreçte aşağıdaki birimlerden hangisine dönüştürülmüştür?</b></p>",
     diff: 3,
     expl: "Bölgedeki askeri teşkilat yapısında Haziran 1919'da yapılan bir değişiklikle, Mustafa Kemal'in komutasındaki 9. Ordu Müfettişliği'nin adı '3. Ordu Müfettişliği' olarak değiştirilmiştir.",
     answers: [
@@ -235,7 +235,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Kurtuluş Savaşı örgütlenme döneminde genel olarak miting ve kongreler düzenlenmiş ayrıca bazı önemli genelgeler de yayımlanmıştır.\nBu faaliyetler;\nI. işgalleri önleme,\nII. ulusal bilinci uyandırma,\nIII. Millî Mücadele hareketinin haklılığını duyurma\namaçlarından hangilerini gerçekleştirmeye yöneliktir?",
+    text: "<p>Kurtuluş Savaşı örgütlenme döneminde genel olarak miting ve kongreler düzenlenmiş ayrıca bazı önemli genelgeler de yayımlanmıştır.</p><p><b>Bu faaliyetler;</b></p><p>I. işgalleri önleme,<br>II. ulusal bilinci uyandırma,<br>III. Millî Mücadele hareketinin haklılığını duyurma</p><p><b>amaçlarından hangilerini gerçekleştirmeye yöneliktir?</b></p>",
     diff: 1,
     expl: "Düzenlenen kongre, miting ve genelgelerin temel amacı; halkı tehlikeye karşı uyandırmak (II), iç ve dış kamuoyuna davanın haklılığını haykırmak (III) ve işgallere karşı direnişi (I) organize etmektir.",
     answers: [
@@ -247,7 +247,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal'in Fevzi Çakmak ve beraberindeki heyetle iştirak ettiği; Niğde, Kayseri ve Çukurova bölgelerinden delegelerin katılım gösterdiği bölgesel kongre aşağıdakilerden hangisidir?",
+    text: "<p><b>Mustafa Kemal'in Fevzi Çakmak ve beraberindeki heyetle iştirak ettiği; Niğde, Kayseri ve Çukurova bölgelerinden delegelerin katılım gösterdiği bölgesel kongre aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Ağustos 1920'de Güney Cephesi'ndeki (Çukurova) Fransız-Ermeni işgaline karşı direnişi örgütlemek amacıyla toplanan ve Mustafa Kemal ile Fevzi Çakmak'ın da bizzat katıldığı son bölgesel kongre Pozantı Kongresi'dir.",
     answers: [
@@ -259,7 +259,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Erzurum Kongresi'ne aşağıda verilen hangi ilimizden katılım olmamıştır?",
+    text: "<p><b>Erzurum Kongresi'ne aşağıda verilen hangi ilimizden katılım <u>olmamıştır</u>?</b></p>",
     diff: 2,
     expl: "Erzurum Kongresi'ne Bitlis, Erzurum, Sivas, Trabzon ve Van (BEST-Van) delegeleri katılmıştır. Diyarbakır, Elazığ ve Mardin (DEM) valilerin engellemesiyle katılamamıştır. Bitlis sancağına bağlı olan Muş'tan da delege gelmemiştir.",
     answers: [
@@ -271,7 +271,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Kuvayımilliye'nin başına geçen Antepli Şahin Bey Fransız komutana yazdığı mektubunda \"Kirli ayaklarınızın bastığı şu toprakların her zerresinde bir damla Türk kanı karışıktır, her atamızın mezarı vardır. Asırlardır Türkler bu topraklarda yaşadı... çatmayınız bize, bir an evvel gidiniz, biz esir veya bağlı yaşayamayız.\" demiştir.\nŞahin Bey'in bu mektubu Millî Mücadele sürecinde aşağıdakilerden hangisinin göstergesi olamaz?",
+    text: "<p>Kuvayımilliye'nin başına geçen Antepli Şahin Bey Fransız komutana yazdığı mektubunda \"Kirli ayaklarınızın bastığı şu toprakların her zerresinde bir damla Türk kanı karışıktır, her bucağında bir atamızın mezarı vardır. Asırlardır Türkler bu topraklarda yaşadı, Türk bu topraklara, toprak da Türk'e ısındı. Sadece siz değil bütün dünya bir araya gelse bizi bu topraklardan atamaz; çatmayınız bize, bir an evvel gidiniz, biz esir veya bağlı yaşayamayız.\" demiştir.</p><p><b>Şahin Bey'in bu mektubu Millî Mücadele sürecinde aşağıdakilerden hangisinin göstergesi <u>olamaz</u>?</b></p>",
     diff: 2,
     expl: "Mektupta düşmana karşı kararlılık (E), vatan savunması (A, B) ve bağımsızlık/esir olmama (D) vurgulanmıştır. Ancak Cumhuriyet rejimini, halk oylamasını ifade eden 'Milli İrade'nin (C) egemen kılınacağına dair doğrudan bir siyasi vurgu yoktur.",
     answers: [
@@ -283,7 +283,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Balıkesir - Ayvalık dolaylarındaki Yunan işgallerine karşı \"İlk Kurşun Savaşları\"nı başlatan komutan aşağıdakilerden hangisidir?",
+    text: "<p><b>Balıkesir - Ayvalık dolaylarındaki Yunan işgallerine karşı \"İlk Kurşun Savaşları\"nı başlatan komutan aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "15 Mayıs İzmir işgalinin ardından ilerleyen Yunan ordusuna karşı Ayvalık cephesinde 172. Alay komutanı Yarbay Ali Çetinkaya, düzenli birlikleriyle karşı koyarak Batı Anadolu'da askeri direnişi (İlk Kurşun) başlatmıştır.",
     answers: [
@@ -295,7 +295,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal IX. Ordu Müfettişliği sıfatı ile birçok şehirde rahat hareket etme olanağını yakalamıştır.\nMustafa Kemal'in bu resmî sıfatı ile emir verme - karar alma yetkilerini kullanacağı şehirler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p>Mustafa Kemal IX. Ordu Müfettişliği sıfatı ile birçok şehirde rahat hareket etme olanağını yakalamıştır.</p><p><b>Mustafa Kemal'in bu resmî sıfatı ile emir verme - karar alma yetkilerini kullanacağı şehirler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 1,
     expl: "9. Ordu Müfettişliği'nin görev alanı Doğu Anadolu ve Karadeniz (Samsun, Trabzon, Kastamonu, Diyarbakır vb.) illeridir. Hatay ise ülkenin en güneyinde yer alır ve bu müfettişliğin yetki alanı dışındadır.",
     answers: [
@@ -307,19 +307,19 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Nisan 1919'da Şevket Turgut, Cevat ve Mustafa Fevzi Paşalar gizli bir şekilde bir araya gelerek \"Üçlü Yemin\" adlı bir rapor hazırladılar. Bu rapor sonucunda vatan savunması için ordu müfettişliklerinin kurulmasına karar verilmiş ve padişahın da onaylaması sonucunda;\n- I. Ordu Askerî Müfettişliğine Mustafa Fevzi Paşa (İstanbul)\n- Yıldırım Ordusu Askerî Müfettişliğine Mersinli Cemal Paşa (Konya)\n- 9. Ordu Müfettişliğine Mustafa Kemal (Erzurum)\ngetirilmiştir.\nBu gelişmelere göre;\nI. orduda bağımsızlık isteği doğrultusunda teşkilatlanmalar görüldüğü,\nII. faaliyetlerin gizli yürütülmesine dikkat edilerek olası engellenme tehlikesinin önüne geçilmek istendiği,\nIII. kararların padişahın onayından sonra yürürlüğe girdiği\nyargılarından hangilerine ulaşılabilir?",
+    text: "<p>Nisan 1919'da Şevket Turgut, Cevat ve Mustafa Fevzi Paşalar gizli bir şekilde bir araya gelerek \"Üçlü Yemin\" adlı bir rapor hazırladılar. Bu rapor sonucunda vatan savunması için ordu müfettişliklerinin kurulmasına karar verilmiş ve padişahın da onaylaması sonucunda;</p><p>- I. Ordu Askerî Müfettişliğine Mustafa Fevzi Paşa (İstanbul)<br>- Yıldırım Ordusu Askerî Müfettişliğine Mersinli Cemal Paşa (Konya)<br>- 9. Ordu Müfettişliğine Mustafa Kemal (Erzurum)</p><p>getirilmiştir.</p><p><b>Bu gelişmelere göre;</b></p><p>I. orduda bağımsızlık isteği doğrultusunda teşkilatlanmalar görüldüğü,<br>II. faaliyetlerin gizli yürütülmesine dikkat edilerek olası engellenme tehlikesinin önüne geçilmek istendiği,<br>III. kararların padişahın onayından sonra yürürlüğe girdiği</p><p><b>yargılarından hangilerine ulaşılabilir?</b></p>",
     diff: 3,
-    expl: "Komutanların 'gizli' bir araya gelmesi engellenme korkusunu (II), kararların 'padişah onayıyla' uygulamaya geçmesi ise yürürlük şartını (III) gösterir. 'Orduda bağımsızlık isteği doğrultusunda' (I) şıkkı ise bu metindeki resmi müfettişlik atamalarından doğrudan çıkarılamaz, zira müfettişlikler devletin resmi asayiş kurumları olarak kurulmuştur.",
+    expl: "Paşaların vatan savunması için 'Üçlü Yemin' raporunu hazırlaması, ordu içinde bağımsızlık amacıyla teşkilatlanma yapıldığını (I); bir araya gelişin gizli tutulması, olası engellemelerin önüne geçilmek istendiğini (II); müfettişliklerin padişahın onayıyla kurulması ise kararların padişah onayından sonra yürürlüğe girdiğini (III) gösterir.",
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "I ve II", ok: false },
       { text: "I ve III", ok: false },
-      { text: "II ve III", ok: true },
-      { text: "I, II ve III", ok: false }
+      { text: "II ve III", ok: false },
+      { text: "I, II ve III", ok: true }
     ]
   },
   {
-    text: "Mustafa Kemal, Havza Genelgesi'ni tek başına yayımlarken Amasya Tamimi'ni silah arkadaşları ile birlikte yayımlamıştır.\nMustafa Kemal böylece;\nI. Millî Mücadele'yi bireysellikten çıkarma,\nII. İtilaf Devletlerinin tepkisini almama,\nIII. genelgenin etkinliğini arttırma\nhedeflerinden hangilerine ulaşmak istemiştir?",
+    text: "<p>Mustafa Kemal, Havza Genelgesi'ni tek başına yayımlarken Amasya Tamimi'ni silah arkadaşları ile birlikte yayımlamıştır.</p><p><b>Mustafa Kemal böylece;</b></p><p>I. Millî Mücadele'yi bireysellikten çıkarma,<br>II. İtilaf Devletlerinin tepkisini almama,<br>III. genelgenin etkinliğini arttırma</p><p><b>hedeflerinden hangilerine ulaşmak istemiştir?</b></p>",
     diff: 1,
     expl: "Amasya Genelgesi'ni Kazım Karabekir, Rauf Orbay, Ali Fuat Cebesoy gibi dönemin en önemli paşalarına imzalatarak; hareketi kendi kişisel (bireysel) davası olmaktan çıkarmış (I) ve genelgenin halk ile ordu üzerindeki saygınlığını/etkinliğini artırmıştır (III). İtilaf devletlerinin tepkisini almama gibi bir durum söz konusu değildir.",
     answers: [
@@ -331,7 +331,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Kâzım Karabekir Mustafa Kemal'den önce Nisan 1919'da İstanbul'dan Trabzon'a gelmiş, oradan da Erzurum'a geçerek faaliyetlerini sürdürmüştür.\nKâzım Karabekir'in bu yolculuğuna eşlik eden tarihî Osmanlı gemisi aşağıdakilerden hangisidir?",
+    text: "<p>Kâzım Karabekir Mustafa Kemal'den önce Nisan 1919'da İstanbul'dan Trabzon'a gelmiş, oradan da Erzurum'a geçerek faaliyetlerini sürdürmüştür.</p><p><b>Kâzım Karabekir'in bu yolculuğuna eşlik eden tarihî Osmanlı gemisi aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Milli Mücadele'nin kilit isimlerinden Kazım Karabekir, 15. Kolordu komutanlığına atandıktan sonra Nisan 1919'da Gülcemal Vapuru ile İstanbul'dan Trabzon'a gitmiş, oradan da Erzurum'a geçmiştir.",
     answers: [
@@ -343,7 +343,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Erzurum Kongresi'nde görüşülen konular arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Erzurum Kongresi'nde görüşülen konular arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Erzurum Kongresi'nde ulusal sınırlar çizilmiş, geçici hükümet fikri ortaya atılmış, Mebusan Meclisi'nin açılması istenmiş ve azınlıklara imtiyaz verilemeyeceği vurgulanmıştır. Ancak 'Boğazlar' konusu Erzurum'da değil, daha sonraki Misak-ı Milli belgelerinde yer almıştır.",
     answers: [
@@ -355,7 +355,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Farklı bölgelerde etkinlik gösteren Kuvayımilliye birlikleri arasında kumanda birliğinin sağlanmasına yönelik ilk adım aşağıdakilerden hangisi ile atılmıştır?",
+    text: "<p><b>Farklı bölgelerde etkinlik gösteren Kuvayımilliye birlikleri arasında kumanda birliğinin sağlanmasına yönelik ilk adım aşağıdakilerden hangisi ile atılmıştır?</b></p>",
     diff: 2,
     expl: "Sivas Kongresi'nde dağınık halde bulunan tüm cemiyetler 'Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti' adı altında birleştirilmiş ve Ali Fuat Paşa Batı Cephesi Kuvayımilliye Komutanlığına atanarak direniş 'Tek Elden' yönetilmeye (kumanda birliği) başlanmıştır.",
     answers: [
@@ -371,7 +371,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_2: McQ[] = [
 export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
   // ---------------- MİLLÎ MÜCADELE'YE HAZIRLIK DÖNEMİ - TEST 3 ----------------
   {
-    text: "Erzurum Kongresi'nde alınan aşağıdaki kararlardan hangisi \"ilk\" olma özelliği taşımaz?",
+    text: "<p><b>Erzurum Kongresi'nde alınan aşağıdaki kararlardan hangisi \"ilk\" olma özelliği <u>taşımaz</u>?</b></p>",
     diff: 2,
     expl: "Milli sınırlardan, manda ve himayenin reddinden, Mebusan Meclisi'nin toplanmasından ve geçici hükümetten İLK KEZ Erzurum Kongresi'nde bahsedilmiştir. Ancak 'Millî egemenlik' (ulus iradesi) ilkesinden ilk kez Amasya Genelgesi'nde ('Milletin bağımsızlığını yine milletin azim ve kararı kurtaracaktır') bahsedilmiştir.",
     answers: [
@@ -383,7 +383,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Erzurum Kongresi'nde oluşturulan ve Sivas Kongresi ile yetkileri genişletilen Temsil Kurulunun görevi aşağıdakilerden hangisi ile sona ermiştir?",
+    text: "<p><b>Erzurum Kongresi'nde oluşturulan ve Sivas Kongresi ile yetkileri genişletilen Temsil Kurulunun görevi aşağıdakilerden hangisi ile sona ermiştir?</b></p>",
     diff: 1,
     expl: "Milli Mücadele'nin yürütme organı olan Temsil Heyeti'nin (Temsil Kurulu) görevi, 23 Nisan 1920'de Ankara'da TBMM'nin açılması ve kendi yasal hükümetini kurmasıyla resmen sona ermiştir.",
     answers: [
@@ -395,7 +395,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Kuvayımilliye birliklerinin kurulmasında;\nI. Osmanlı ordusunun terhis edilmesi,\nII. Mondros'un 7. maddesinin işlevsel hâle gelmesi,\nIII. TBMM karşıtı isyanların çıkması\ngelişmelerinden hangilerinin doğrudan etkili olduğu söylenebilir?",
+    text: "<p><b>Kuvayımilliye birliklerinin kurulmasında;</b></p><p>I. Osmanlı ordusunun terhis edilmesi,<br>II. Mondros'un 7. maddesinin işlevsel hâle gelmesi,<br>III. TBMM karşıtı isyanların çıkması</p><p><b>gelişmelerinden hangilerinin doğrudan etkili olduğu söylenebilir?</b></p>",
     diff: 1,
     expl: "Mondros Ateşkesi gereği ordunun dağıtılması (I) ve 7. madde bahanesiyle düşmanın işgallere başlaması (II) halkı savunmasız bırakmış ve Kuvayımilliye'nin kurulmasına neden olmuştur. TBMM'ye karşı isyanlar ise Kuvayımilliye kurulduktan aylar sonra ortaya çıkmıştır.",
     answers: [
@@ -407,7 +407,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Genç bir öğrenci olan Tıbbiyeli Hikmet ---- yaptığı konuşmada mandanın kesin reddini istemiş ve sözleri ile Mustafa Kemal'i derinden etkilemiştir. Sonuç olarak bağımsızlık yolunda taviz verilmeden devam edileceği karara bağlanmıştır.\nParçada verilen boşluğa aşağıdakilerden hangisinin getirilmesi daha doğru olacaktır?",
+    text: "<p>Genç bir öğrenci olan Tıbbiyeli Hikmet ---- yaptığı konuşmada mandanın kesin reddini istemiş ve sözleri ile Mustafa Kemal'i derinden etkilemiştir. Sonuç olarak bağımsızlık yolunda taviz verilmeden devam edileceği karara bağlanmıştır.</p><p><b>Parçada verilen boşluğa aşağıdakilerden hangisinin getirilmesi daha doğru olacaktır?</b></p>",
     diff: 1,
     expl: "Sivas Kongresi'nde Amerikan mandasının hararetle tartışıldığı anlarda, askeri tıbbiye öğrencisi Hikmet (Boran) söz alarak 'Manda fikrini siz bile kabul etseniz size karşı çıkarız' diyerek mandanın KESİN olarak reddedilmesinde büyük rol oynamıştır.",
     answers: [
@@ -419,19 +419,19 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Sivas Kongresi'nde alınan;\nI. Temsil Heyeti'nin tüm ülkeyi temsil eder hâle getirilmesi,\nII. Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti'nin kurulması,\nIII. İrade-i Milliye gazetesinin çıkarılması\nkararlarından hangileri Millî Mücadele'nin tek elden yönetilmesine yöneliktir?",
+    text: "<p><b>Sivas Kongresi'nde alınan;</b></p><p>I. Temsil Heyeti'nin tüm ülkeyi temsil eder hâle getirilmesi,<br>II. Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti'nin kurulması,<br>III. İrade-i Milliye gazetesinin çıkarılması</p><p><b>kararlarından hangileri Millî Mücadele'nin tek elden yönetilmesine yöneliktir?</b></p>",
     diff: 2,
     expl: "Temsil Heyeti'nin etkisinin doğu illerinden çıkarılıp tüm yurdu temsil eder hale gelmesi (I) ve dağınık haldeki tüm bölgesel cemiyetlerin ARMHC çatısı altında toplanması (II), direnişi merkezileştirmeye (tek elden yönetmeye) yöneliktir. Gazete ise iletişim ve propaganda aracıdır.",
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "Yalnız II", ok: false },
+      { text: "Yalnız III", ok: false },
       { text: "I ve II", ok: true },
-      { text: "I ve III", ok: false },
-      { text: "I, II ve III", ok: false }
+      { text: "I ve III", ok: false }
     ]
   },
   {
-    text: "Aşağıdakilerden hangisinde \"Ulusal Egemenlik\" ilkesine yer verilmemiştir?",
+    text: "<p><b>Aşağıdakilerden hangisinde \"Ulusal Egemenlik\" ilkesine yer <u>verilmemiştir</u>?</b></p>",
     diff: 2,
     expl: "Amasya Genelgesi, Erzurum ve Sivas Kongreleri ile Amasya Görüşmeleri'nde millet iradesine (ulusal egemenliğe/meclise) atıflar vardır. Ancak Milli Mücadele'nin ilk ateşleyici bildirisi olan 'Havza Genelgesi'nde sadece işgalleri protesto etmek ve milli bilinci (bağımsızlığı) uyandırmak hedeflenmiştir; yönetim şeklini değiştirecek olan 'Ulusal Egemenlik' kavramı yer almaz.",
     answers: [
@@ -443,7 +443,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal Paşa Sivas Kongresi'nden sonra General Harbourd başkanlığındaki 46 kişilik ABD heyeti ile görüşme yapmış ve bağımsız devlet kurma arzusunu aktarmıştır. İlerleyen süreçte General Harbourd 22 Ekim 1919'da \"Yakın Doğu'da Hakikatler\" adlı raporunu ABD başkanı Wilson'a sunmuş, Türklerin manda fikrini kabul etmeyeceğini ve direniş mücadelelerinde kararlı olduklarını ifade etmiştir.\nBu bilgilerden hareketle aşağıdaki yargılardan hangisine ulaşılamaz?",
+    text: "<p>Mustafa Kemal Paşa Sivas Kongresi'nden sonra General Harbourd başkanlığındaki 46 kişilik ABD heyeti ile görüşme yapmış ve bağımsız devlet kurma arzusunu aktarmıştır. İlerleyen süreçte General Harbourd 22 Ekim 1919'da \"Yakın Doğu'da Hakikatler\" adlı raporunu ABD başkanı Wilson'a sunmuş, Türklerin manda fikrini kabul etmeyeceğini ve direniş mücadelelerinde kararlı olduklarını ifade etmiştir.</p><p><b>Bu bilgilerden hareketle aşağıdaki yargılardan hangisine <u>ulaşılamaz</u>?</b></p>",
     diff: 3,
     expl: "Metinde Türk halkının bağımsızlık isteği (A), Mustafa Kemal'in Harbourd'u etkilediği (B), uluslararası kamuoyu oluşturulduğu (D) ve Sivas'taki 'manda reddi' kararına uyulduğu (E) görülmektedir. Ancak görüşmeler yapıldığında yıl 1919'dur ve ortada henüz açılmış bir TBMM yoktur (TBMM 1920'de açılmıştır).",
     answers: [
@@ -455,7 +455,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "8 Ocak 1920 tarihinde kabul edilen Misakımillî kararlarında yer alan \"Dış borçlar imkânlar dahilinde ödenecektir.\" hükmü ile;\nI. Duyun-u Umumiye,\nII. Reji idaresi,\nIII. İhtisab Nezareti\nkurumlarından hangilerine karşı çıkılmıştır?",
+    text: "<p><b>8 Ocak 1920 tarihinde kabul edilen Misakımillî kararlarında yer alan</b> \"Dış borçlar imkânlar dahilinde ödenecektir.\" <b>hükmü ile;</b></p><p>I. Duyun-u Umumiye,<br>II. Reji idaresi,<br>III. İhtisab Nezareti</p><p><b>kurumlarından hangilerine karşı çıkılmıştır?</b></p>",
     diff: 2,
     expl: "Misak-ı Milli'de siyasi, mali ve adli kapitülasyonların reddedilmesi ve 'Dış borçlar' ile ilgili alınan karar, doğrudan Osmanlı'nın dış borçlarını tahsil etmek için kurulan uluslararası haciz kurumu 'Düyun-u Umumiye' (Genel Borçlar İdaresi) (I) idaresine karşı bir tepkidir.",
     answers: [
@@ -467,7 +467,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Yerel bir kongre olarak değerlendirilen Erzurum Kongresi'ne 57 delege katılmışken ulusal çapta toplanan Sivas Kongresi'ne sadece 63 temsilci katılabilmiştir.\nBu durumun ortaya çıkmasında;\nI. kongreye katılanların İttihatçılık ile suçlanması,\nII. işgallerin yayılması ile güvenlik sorununun ortaya çıkması,\nIII. İstanbul Hükûmeti'nin kongreyi yasa dışı olarak tanımlaması\nfaktörlerinden hangilerinin etkili olduğu söylenebilir?",
+    text: "<p>Yerel bir kongre olarak değerlendirilen Erzurum Kongresi'ne 57 delege katılmışken ulusal çapta toplanan Sivas Kongresi'ne sadece 63 temsilci katılabilmiştir.</p><p><b>Bu durumun ortaya çıkmasında;</b></p><p>I. kongreye katılanların İttihatçılık ile suçlanması,<br>II. işgallerin yayılması ile güvenlik sorununun ortaya çıkması,<br>III. İstanbul Hükûmeti'nin kongreyi yasa dışı olarak tanımlaması</p><p><b>faktörlerinden hangilerinin etkili olduğu söylenebilir?</b></p>",
     diff: 2,
     expl: "Sivas Kongresi'ne katılımın beklenenden az olmasında; Elazığ Valisi Ali Galip'in engelleme çabaları ve tutuklama kararları (III), yol güvenliğinin olmaması (II) ve İtilaf/İstanbul hükümetinin kongreyi toplayanları İttihatçılıkla suçlayıp halkı korkutması (I) etkili olmuştur.",
     answers: [
@@ -479,7 +479,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Millî Mücadele sürecinde Anadolu halkı işgalcilerle mücadele etmek adına kongreler düzenlemiş ve mitinglere katılmıştır.\nAşağıdakilerden hangisi, daveti Amasya Genelgesi'nde yapılan ve Mustafa Kemal tarafından organize edilen tek ulusal kongredir?",
+    text: "<p>Millî Mücadele sürecinde Anadolu halkı işgalcilerle mücadele etmek adına kongreler düzenlemiş ve mitinglere katılmıştır.</p><p><b>Aşağıdakilerden hangisi, daveti Amasya Genelgesi'nde yapılan ve Mustafa Kemal tarafından organize edilen tek ulusal kongredir?</b></p>",
     diff: 1,
     expl: "Amasya Genelgesi'nde 'Her ilden 3 delegenin acele olarak yola çıkması' çağrısıyla toplanan, hem toplanış şekli hem de aldığı kararlar bakımından tamamen 'Ulusal' olan tek kongre Sivas Kongresi'dir.",
     answers: [
@@ -491,19 +491,19 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "I. Amasya Genelgesi\nII. Erzurum Kongresi\nIII. Sivas Kongresi\nIV. Amasya Görüşmeleri\nYukarıda verilen örgütlenme çalışmalarının hangilerinde \"Mebusan Meclisinin açılması\" ile ilgili kararlara yer verilmemiştir?",
+    text: "<p>I. Amasya Genelgesi<br>II. Erzurum Kongresi<br>III. Amasya Görüşmeleri</p><p><b>Yukarıda verilen örgütlenme çalışmalarının hangilerinde</b> \"Mebusan Meclisinin açılması\" <b>kararı alınmıştır?</b></p>",
     diff: 2,
-    expl: "Mebusan Meclisi'nin hemen toplanması kararı ilk kez Erzurum Kongresi'nde alınmış, Sivas Kongresi'nde yinelenmiş ve Amasya Görüşmeleri'nde resmiyete kavuşturulmuştur. Ancak Milli Mücadele'nin ilk bildirgesi olan Amasya Genelgesi'nde Mebusan Meclisi'nin toplanmasıyla ilgili bir madde YOKTUR.",
+    expl: "Mebusan Meclisi'nin hemen toplanması kararı ilk kez Erzurum Kongresi'nde (II) alınmış, Sivas Kongresi'nde yinelenmiş ve Amasya Görüşmeleri'nde (III) İstanbul Hükümeti'ne kabul ettirilmiştir. Amasya Genelgesi'nde (I) ise Mebusan Meclisi'nin açılmasıyla ilgili bir karar yoktur.",
     answers: [
-      { text: "Yalnız I", ok: true },
-      { text: "Yalnız II", ok: false },
       { text: "Yalnız III", ok: false },
-      { text: "I ve IV", ok: false },
+      { text: "I ve II", ok: false },
+      { text: "I ve III", ok: false },
+      { text: "II ve III", ok: true },
       { text: "I, II ve III", ok: false }
     ]
   },
   {
-    text: "Erzurum ve Sivas kongrelerinin ortak kararları arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Erzurum ve Sivas kongrelerinin ortak kararları arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Mustafa Kemal'in kongre başkanı seçilmesi, vatanın bütünlüğü, meclisin açılması isteği ve azınlıklara imtiyaz verilememesi her iki kongrede de ortak karardır. Ancak Temsil Heyeti'nin sadece 'Doğu İllerini' temsil etmesi Erzurum'a aittir; Sivas'ta ise 'Tüm Yurdu' temsil eder hale getirilmiştir.",
     answers: [
@@ -515,7 +515,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal'in Anadolu'da direniş hareketini başlatma çabaları hem İtilaf Devletlerini hem de İstanbul Hükûmeti'ni rahatsız etmiştir.\nSüreç sonunda görevinden azledilen Mustafa Kemal, Erzurum Kongresi'ne giderken askerlik görevinden istifa etmiştir.\nMustafa Kemal'in bu tutumundan hareketle aşağıdakilerden hangisine ulaşılamaz?",
+    text: "<p>Mustafa Kemal'in Anadolu'da direniş hareketini başlatma çabaları hem İtilaf Devletlerini hem de İstanbul Hükûmeti'ni rahatsız etmiştir.</p><p>Süreç sonunda görevinden azledilen Mustafa Kemal, Erzurum Kongresi'ne giderken askerlik görevinden istifa etmiştir.</p><p><b>Mustafa Kemal'in bu tutumundan hareketle aşağıdakilerden hangisine <u>ulaşılamaz</u>?</b></p>",
     diff: 2,
     expl: "Sine-i millete dönüş (istifa) olayı 1919 Temmuz ayındadır. Sevr Antlaşması ise tam 1 yıl sonra (1920 Ağustos) imzalanmıştır. Ortada henüz Sevr Antlaşması olmadığı için Mustafa Kemal'in Sevr'i hafifletmek gibi bir amacı söz konusu olamaz.",
     answers: [
@@ -527,7 +527,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "- Yunan işgaline karşı Muğla'da toplanması\n- Galip Hoca lakabı ile tanınan Celâl Bayar'ın etkin rol oynaması\nÖzellikleri verilen bölgesel kongre aşağıdakilerden hangisidir?",
+    text: "<p>- Yunan işgaline karşı Muğla'da toplanması<br>- Galip Hoca lakabı ile tanınan Celâl Bayar'ın etkin rol oynaması</p><p><b>Özellikleri verilen bölgesel kongre aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Milli Mücadele döneminde Batı (Ege) cephesini teşkilatlandırmak için İttihatçı kimliğini gizleyerek 'Galip Hoca' takma adıyla kongreler düzenleyen Celal Bayar'ın öncülük ettiği kongre Nazilli Kongresi'dir.",
     answers: [
@@ -539,15 +539,15 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
     ]
   },
   {
-    text: "Erzurum Kongresi'ne;\nI. Elâzığ,\nII. Muş,\nIII. Diyarbakır,\nIV. Trabzon\nşehirlerinden hangileri temsilci göndermemiştir?",
+    text: "<p><b>Erzurum Kongresi'ne;</b></p><p>I. Elâzığ,<br>II. Muş,<br>III. Diyarbakır,<br>IV. Trabzon</p><p><b>şehirlerinden hangileri temsilci <u>göndermemiştir</u>?</b></p>",
     diff: 3,
-    expl: "Erzurum Kongresi, Doğu illerini kapsayan bir kongreydi. Ancak Fransız ve İstanbul Hükümeti yetkililerinin (Ali Galip) engellemeleri nedeniyle Elazığ (I), Diyarbakır (III) ve Mardin illerinden kongreye delege GÖNDERİLEMEMİŞTİR.",
+    expl: "Erzurum Kongresi'ne Erzurum, Sivas, Trabzon, Bitlis ve Van delegeleri katılmıştır (Trabzon katılmıştır). Elâzığ (I) ve Diyarbakır (III) valilerin engellemeleri nedeniyle, Muş (II) ise temsilci gönderemediği için kongrede temsil edilmemiştir.",
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "I ve II", ok: false },
-      { text: "I ve III", ok: true },
+      { text: "I ve III", ok: false },
       { text: "II, III ve IV", ok: false },
-      { text: "I, II ve III", ok: false }
+      { text: "I, II ve III", ok: true }
     ]
   }
 ];
@@ -555,7 +555,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_3: McQ[] = [
 export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
   // ---------------- MİLLÎ MÜCADELE'YE HAZIRLIK DÖNEMİ - TEST 4 ----------------
   {
-    text: "Mustafa Kemal'e tebliğ edilen IX. Ordu Müfettişliğinin;\nI. Millî Mücadele'yi başlatma,\nII. Karadeniz'deki Türk - Rum çatışmasını önleme,\nIII. Kuvayımilliye'nin kurulmasını sağlama,\nIV. silahların teslimini gerçekleştirme\namaçlarından hangilerine yönelik olduğu söylenebilir?",
+    text: "<p><b>Mustafa Kemal'e tebliğ edilen IX. Ordu Müfettişliğinin;</b></p><p>I. Millî Mücadele'yi başlatma,<br>II. Karadeniz'deki Türk - Rum çatışmasını önleme,<br>III. Kuvayımilliye'nin kurulmasını sağlama,<br>IV. silahların teslimini gerçekleştirme</p><p><b>amaçlarından hangilerine yönelik olduğu söylenebilir?</b></p>",
     diff: 2,
     expl: "9. Ordu Müfettişliği'nin devletteki 'RESMİ' kuruluş amacı Karadeniz'deki çatışmaları önlemek (II) ve Mondros gereği ordunun elindeki silahları teslim almaktır (IV). Milli mücadeleyi başlatmak ve Kuvayımilliye kurmak ise Mustafa Kemal'in gizli (kendi içsel) hedefleridir.",
     answers: [
@@ -567,7 +567,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal'in Mondros Ateşkesi'nden sonra yaptığı çalışmalar arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Mustafa Kemal'in Mondros Ateşkesi'nden sonra yaptığı çalışmalar arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Mustafa Kemal Mondros'tan sonra İstanbul'a gelip Minber gazetesini çıkarmış, Ali Fethi Bey'in partisine (Hürriyetperver Avam) katılmış ve Tevfik Paşa hükümetine karşı muhalefet yapmıştır. Ancak 'Vatan ve Hürriyet Cemiyeti'ni ta 1905 yılında, Kurmay Yüzbaşı olarak atandığı Şam'da kurmuştur.",
     answers: [
@@ -579,19 +579,19 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "Millî Mücadele hazırlık sürecinde Mustafa Kemal'in ilk kez resmî yetkilerinin dışına çıkması aşağıdakilerden hangisinin sonucunda gerçekleşmiştir?",
+    text: "<p><b>Millî Mücadele hazırlık sürecinde Mustafa Kemal'in ilk kez resmî yetkilerinin dışına çıkması aşağıdakilerden hangisinin sonucunda gerçekleşmiştir?</b></p>",
     diff: 2,
-    expl: "Mustafa Kemal 9. Ordu Müfettişi olarak sadece asayişi sağlamakla görevliydi. Ancak yayımladığı Havza Genelgesi'nde halkı işgallere karşı mitingler düzenlemeye ve orduları terhis etmemeye çağırmasıyla 'ilk kez' resmi yetkilerinin ve sivil makamların dışına çıkmıştır.",
+    expl: "Mustafa Kemal, 9. Ordu Müfettişi olarak Samsun'a çıktıktan sonra İstanbul'a gönderdiği Samsun Raporu'nda yalnızca asayiş durumunu bildirmekle kalmamış; milletin manda ve himayeyi kabul etmeyeceğini ve millî iradeye dayanan bir yönetim istediğini belirterek siyasi görüş bildirmiştir. Böylece ilk kez resmî yetkilerinin dışına çıkmıştır.",
     answers: [
       { text: "Amasya Tamimi", ok: false },
-      { text: "Havza Genelgesi", ok: true },
-      { text: "Samsun Raporu", ok: false },
+      { text: "Havza Genelgesi", ok: false },
+      { text: "Samsun Raporu", ok: true },
       { text: "Erzurum Kongresi", ok: false },
       { text: "Sivas Kongresi", ok: false }
     ]
   },
   {
-    text: "28 Mayıs 1919'da yayımlanan Havza Genelgesi'nin özellikleri arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>28 Mayıs 1919'da yayımlanan Havza Genelgesi'nin özellikleri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Havza Genelgesi, halkı protesto mitinglerine davet eden, azınlıklara zarar verilmemesini söyleyen ve milli bilinci uyandıran bir bildiridir. Ancak bir 'İhtilal Bildirgesi' niteliğinde olan ve mevcut düzene (İstanbul hükümetine) başkaldırı çağrısı yapan ilk belge Amasya Genelgesi'dir.",
     answers: [
@@ -603,7 +603,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "Amasya Tamimi aşağıda verilen kişilerden hangisi tarafından kaleme alınmıştır?",
+    text: "<p><b>Amasya Tamimi aşağıda verilen kişilerden hangisi tarafından kaleme alınmıştır?</b></p>",
     diff: 2,
     expl: "Mustafa Kemal Paşa'nın Milli Mücadele'nin gerekçe, amaç ve yöntemini belirttiği ve komutanlara imzalattığı tarihi 'Amasya Genelgesi'ni (Tamimi), yaveri Cevat Abbas (Gürer) kaleme almış (yazıya dökmüş) tır.",
     answers: [
@@ -615,19 +615,19 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "Amasya Genelgesi'nde yer alan;\nI. Vatanın bütünlüğü, milletin bağımsızlığı tehlikededir.\nII. Ulusun bağımsızlığını yine ulusun azim ve kararı kurtaracaktır.\nIII. İstanbul Hükûmeti görevini yerine getirmemektedir.\nkararlarından hangileri ile Millî Mücadele'nin gerekçesi açıklanmıştır?",
+    text: "<p><b>Amasya Genelgesi'nde yer alan;</b></p><p>I. Vatanın bütünlüğü, milletin bağımsızlığı tehlikededir.<br>II. Ulusun bağımsızlığını yine ulusun azim ve kararı kurtaracaktır.<br>III. İstanbul Hükûmeti görevini yerine getirmemektedir.</p><p><b>kararlarından hangileri ile Millî Mücadele'nin gerekçesi açıklanmıştır?</b></p>",
     diff: 1,
     expl: "Milli Mücadelenin neden (gerekçe) yapıldığını açıklayan maddeler: Vatanın tehlikede olması (I) ve Hükümetin görevini yapamamasıdır (III). 'Ulusun bağımsızlığını ulusun azmi kurtaracaktır' (II) maddesi ise mücadelenin 'Yöntemini' (nasıl yapılacağını) belirtir.",
     answers: [
       { text: "Yalnız I", ok: false },
-      { text: "I ve III", ok: true },
       { text: "I ve II", ok: false },
+      { text: "I ve III", ok: true },
       { text: "II ve III", ok: false },
       { text: "I, II ve III", ok: false }
     ]
   },
   {
-    text: "Amasya Genelgesi ile İstanbul Hükûmeti ilk kez açıkça eleştirilmiştir.\nBu genelge ile eleştirilen İstanbul Hükûmeti'nin başkanı aşağıdakilerden hangisidir?",
+    text: "<p>Amasya Genelgesi ile İstanbul Hükûmeti ilk kez açıkça eleştirilmiştir.</p><p><b>Bu genelge ile eleştirilen İstanbul Hükûmeti'nin başkanı aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Amasya Genelgesi'nin yayımlandığı dönemde (Haziran 1919) İstanbul'da sadrazamlık (hükümet başkanlığı) koltuğunda İngiliz muhibbi (dostu) olan ve Milli Mücadele'ye şiddetle karşı çıkan Damat Ferit Paşa oturmaktaydı.",
     answers: [
@@ -639,7 +639,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "Mebusan Meclisinin açılması gerektiği kararı ilk kez aşağıdakilerin hangisinde yer almıştır?",
+    text: "<p><b>Mebusan Meclisinin açılması gerektiği kararı ilk kez aşağıdakilerin hangisinde yer almıştır?</b></p>",
     diff: 2,
     expl: "Meclis-i Mebusan'ın derhal toplanması ve hükümet işlerinin meclis denetimine girmesi kararı, ilk defa toplanan Erzurum Kongresi'nin kararları arasında (8. Madde olarak) yer almıştır.",
     answers: [
@@ -651,7 +651,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "Erzurum Kongresi'nin toplanmasında;\nI. Trabzon Muhafaza-i Hukuk,\nII. Kilikyalılar,\nIII. Doğu Anadolu Müdafaa-i Hukuk\ncemiyetlerinden hangilerinin etkili olduğu söylenebilir?",
+    text: "<p><b>Erzurum Kongresi'nin toplanmasında;</b></p><p>I. Trabzon Muhafaza-i Hukuk,<br>II. Kilikyalılar,<br>III. Doğu Anadolu Müdafaa-i Hukuk</p><p><b>cemiyetlerinden hangilerinin etkili olduğu söylenebilir?</b></p>",
     diff: 1,
     expl: "Erzurum Kongresi, Doğu Anadolu'da Ermeni devleti ve Doğu Karadeniz'de Pontus Rum devleti kurulmasını engellemek amacıyla, Doğu Anadolu (Şark Vilayetleri) Müdafaa-i Hukuk Cemiyeti (III) ile Trabzon Muhafaza-i Hukuk Cemiyeti (I) tarafından ortaklaşa toplanmıştır.",
     answers: [
@@ -663,7 +663,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "Erzurum Kongresi'nde alınan, \"Millî sınırlar içinde vatan bütündür bölünemez.\" kararı ile;\nI. Osmanlı'yı paylaşım tasarıları,\nII. Mondros Ateşkesi ile başlayan işgaller,\nIII. Sevr Barış Antlaşması'nın imzalanması\ngelişmelerinden hangilerine karşı çıkılmıştır?",
+    text: "<p><b>Erzurum Kongresi'nde alınan,</b> \"Millî sınırlar içinde vatan bütündür bölünemez.\" <b>kararı ile;</b></p><p>I. Osmanlı'yı paylaşım tasarıları,<br>II. Mondros Ateşkesi ile başlayan işgaller,<br>III. Sevr Barış Antlaşması'nın imzalanması</p><p><b>gelişmelerinden hangilerine karşı çıkılmıştır?</b></p>",
     diff: 2,
     expl: "Vatanın bölünmezliği vurgusuyla İtilaf devletlerinin gizli antlaşmalarına (paylaşım tasarılarına - I) ve Mondros'un haksız işgallerine (II) açıkça karşı çıkılmıştır. Sevr Antlaşması ise bu kongreden tam 1 yıl sonra imzalanacağı için o dönem henüz ortada yoktur.",
     answers: [
@@ -675,7 +675,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "I. Amasya Genelgesi\nII. Erzurum Kongresi\nIII. Sivas Kongresi\nIV. Amasya Görüşmeleri\nYukarıda verilen gelişmelerin hangilerinde \"Mebusan Meclisinin açılması\" ile ilgili kararlara yer verilmemiştir?",
+    text: "<p>I. Amasya Genelgesi<br>II. Erzurum Kongresi<br>III. Sivas Kongresi<br>IV. Amasya Görüşmeleri</p><p><b>Yukarıda verilen gelişmelerin hangilerinde</b> \"Mebusan Meclisinin açılması\" <b>ile ilgili kararlara yer <u>verilmemiştir</u>?</b></p>",
     diff: 2,
     expl: "Mebusan meclisinin açılması ilk kez Erzurum'da (II) dile getirilmiş, Sivas'ta (III) yinelenmiş ve Amasya Görüşmeleri'nde (IV) İstanbul Hükümeti'ne kabul ettirilmiştir. Ancak Amasya Genelgesi'nde (I) meclisin açılmasıyla ilgili bir karar yer almamıştır.",
     answers: [
@@ -687,7 +687,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "Temsil Heyeti'nin kurulup göreve başlaması aşağıdakilerin hangisinde alınan kararlar sonucunda gerçekleşmiştir?",
+    text: "<p><b>Temsil Heyeti'nin kurulup göreve başlaması aşağıdakilerin hangisinde alınan kararlar sonucunda gerçekleşmiştir?</b></p>",
     diff: 1,
     expl: "Temsil Heyeti'nin oluşturulması FİKRİ Amasya Genelgesi'nde ortaya atılmış olsa da; ilk defa resmen kurulması, 9 kişilik bir heyet olarak seçilmesi ve doğu illeri adına göreve başlaması Erzurum Kongresi'ndedir.",
     answers: [
@@ -699,7 +699,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyetinin;\nI. Millî Mücadele'nin merkezîleşmesini sağlama,\nII. Sivas Kongresi'nde kurulmuş olma,\nIII. Halk Fırkası'nın temelini oluşturma\nözelliklerinden hangilerine sahip olduğu söylenebilir?",
+    text: "<p><b>Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyetinin;</b></p><p>I. Millî Mücadele'nin merkezîleşmesini sağlama,<br>II. Sivas Kongresi'nde kurulmuş olma,<br>III. Halk Fırkası'nın temelini oluşturma</p><p><b>özelliklerinden hangilerine sahip olduğu söylenebilir?</b></p>",
     diff: 2,
     expl: "Sivas Kongresi'nde tüm cemiyetlerin ARMHC adıyla birleştirilmesiyle (II) direniş tek elde toplanmış ve merkezileşmiştir (I). Ayrıca bu büyük cemiyet yapısı, Cumhuriyetin ilanından sonra kurulan Cumhuriyet Halk Fırkası'nın (CHP) doğrudan tabanını/temelini (III) oluşturmuştur.",
     answers: [
@@ -711,7 +711,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "Erzurum Kongresi'nde alınan aşağıdaki kararlardan hangisi doğrudan İstanbul Hükûmeti'nin denetlenmesine yöneliktir?",
+    text: "<p><b>Erzurum Kongresi'nde alınan aşağıdaki kararlardan hangisi doğrudan İstanbul Hükûmeti'nin denetlenmesine yöneliktir?</b></p>",
     diff: 2,
     expl: "Kongrede alınan 'Meclis-i Mebusan derhal toplanmalıdır' (D) kararı, İstanbul Hükümeti'nin kontrolsüzce kararlar almasını (özellikle zararlı antlaşmalar imzalamasını) engellemek ve onu milletin vekilleri (meclis) aracılığıyla denetlemek içindir.",
     answers: [
@@ -723,7 +723,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal aşağıdaki gelişmelerin hangisinin sonucunda \"sine-i millete\" dönmüştür?",
+    text: "<p><b>Mustafa Kemal aşağıdaki gelişmelerin hangisinin sonucunda</b> \"sine-i millete\" <b>dönmüştür?</b></p>",
     diff: 3,
     expl: "Amasya Genelgesi'ni yayımladıktan sonra İstanbul Hükümeti tarafından geri çağrılan Mustafa Kemal, 7-8 Temmuz 1919 gecesi Erzurum Kongresi TOPLANMADAN hemen önce çok sevdiği askerlik mesleğinden istifa ederek sade bir vatandaş (sine-i millet) olmuştur.",
     answers: [
@@ -739,80 +739,31 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_4: McQ[] = [
 export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5: McQ[] = [
   // ---------------- MİLLÎ MÜCADELE'YE HAZIRLIK DÖNEMİ - TEST 5 ----------------
   {
-    text: "Sivas Kongresi'nin toplanmasının ardından yaşanan gelişmeler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Sivas Kongresi'nin toplanmasının ardından yaşanan gelişmeler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
-    expl: "Sivas Kongresi sonrasında Damat Ferit istifa etmiş (B), İrade-i Milliye gazetesi çıkarılmış (D), Temsil Heyeti ile İstanbul Hükümeti (Ali Rıza Paşa) Amasya Görüşmeleri'ni yapmış (C) ve Mustafa Kemal hakkında (daha önce çıkarılan) tutuklama kararı devam etmiştir (E). Ancak Mustafa Kemal ile ABD'li General Harbord görüşmesi Sivas Kongresi'nden BİRAZ ÖNCE veya KONGRE SIRASINDA (Eylül 1919) gerçekleşmiştir, kongrenin ARDINDAN yaşanan bir gelişme olarak kabul edilmez. (Not: Görüşme Sivas'ta kongre günlerinde yapılmıştır).",
+    expl: "Sivas Kongresi'nin (4-11 Eylül 1919) ardından İrade-i Milliye gazetesi çıkarılmış (14 Eylül), Mustafa Kemal General Harbourd ile görüşmüş (22 Eylül), Damat Ferit istifa etmiş (Ekim başı) ve Amasya Görüşmeleri yapılmıştır (20-22 Ekim). Mustafa Kemal hakkında tutuklama kararı ise Amasya Genelgesi'nden sonra, Sivas Kongresi'nden önce (Haziran-Temmuz 1919) alınmıştır.",
     answers: [
-      { text: "Mustafa Kemal'in General Harbourd ile bir araya gelmesi", ok: true },
+      { text: "Mustafa Kemal'in General Harbourd ile bir araya gelmesi", ok: false },
       { text: "Damat Ferit'in istifa etmesi", ok: false },
       { text: "Amasya Görüşmeleri'nde Temsil Heyeti ile İstanbul Hükûmeti'nin bir araya gelmesi", ok: false },
-      { text: "İrade-i Miliye gazetesinin çıkarılması", ok: false },
-      { text: "Mustafa Kemal hakkında tutuklama kararının alınması", ok: false }
-    ] // Cevap anahtarına (E) göre güncellendi. Wait! Let's check Test 5 Key on page 175. Test 5 Key is on page 175? No, the key on 175 is for Test 6. Where is Test 5 Key? Let me look at page 171. Test 5 Q5,6,7,8. No key. Let me look at page 175. The key has 19 questions! Oh, Test 6 has 19 questions? No, page 174 has 11,12,13,14. Page 175 has 15,16,17,18,19. So the key on 175 is for TEST 6. Where is the key for TEST 5? Let's check the previous images. Ah, there is no key for Test 5 in the provided images! Wait, is there a key for Test 5? Let me check all images. 
-    // Wait, Page 169 (171-d19bb684ee.jpg) has a key! "Cevap Anahtarı 1.E 2.B 3.B 4.D 5.E 6.A 7.C 8.A". This is Test 5's key!
-    // Let's re-evaluate Q1 of Test 5. Key says 1.E. 
-    // Q1: "Sivas Kongresi'nin toplanmasının ardından yaşanan gelişmeler arasında aşağıdakilerden hangisi yer almaz?"
-    // A) Mustafa Kemal'in General Harbord ile bir araya gelmesi -> This happened Sept 22, 1919 (Sivas Kongresi ended Sept 11). So it is AFTER.
-    // B) Damat Ferit istifası -> Sept 30, AFTER.
-    // C) Amasya Görüşmeleri -> Oct 20-22, AFTER.
-    // D) İrade-i Milliye -> Sept 14, AFTER.
-    // E) Mustafa Kemal hakkında tutuklama kararı -> May/June 1919 (Amasya/Havza period) or July (Erzurum). Definitely BEFORE Sivas Kongresi.
-    // Explanation updated to match Key E.
-    // Düzeltme: Mustafa Kemal hakkındaki ilk tutuklama ve görevden alma kararı Sivas Kongresi'nden aylar önce (Haziran/Temmuz 1919) Havza ve Amasya Genelgelerinden sonra alınmıştır. Sivas Kongresi'nin "ardından" yaşanan bir olay değildir.
+      { text: "İrade-i Milliye gazetesinin çıkarılması", ok: false },
+      { text: "Mustafa Kemal hakkında tutuklama kararının alınması", ok: true }
+    ]
   },
   {
-    text: "Sivas Kongresi'nde;\nI. tüm cemiyetlerin Anadolu ve Rumeli Müdafa-i Hukuk cemiyeti adı ile birleştirilmesi,\nII. Ali Fuat Paşa'nın Batı Cephesi'ne atanması,\nIII. Temsil Heyeti'nin ülkeyi temsil eder hâle gelmesi\nkararlarından hangileri Millî Mücadele'yi merkezîleştirme doğrultusunda alınmıştır?",
+    text: "<p><b>Sivas Kongresi'nde;</b></p><p>I. tüm cemiyetlerin Anadolu ve Rumeli Müdafa-i Hukuk cemiyeti adı ile birleştirilmesi,<br>II. Ali Fuat Paşa'nın Batı Cephesi'ne atanması,<br>III. Temsil Heyeti'nin ülkeyi temsil eder hâle gelmesi</p><p><b>kararlarından hangileri Millî Mücadele'yi merkezîleştirme doğrultusunda alınmıştır?</b></p>",
     diff: 1,
-    expl: "Dağınık haldeki tüm cemiyetlerin tek bir çatı (ARMHC) altında toplanması (I) ve sadece Doğu'yu temsil eden Temsil Heyeti'nin tüm yurdu temsil eder hale getirilerek tek bir hükümet gibi çalışması (III), direnişi merkezileştirmeye (tek elden yönetmeye) yöneliktir. Komutan ataması (II) yürütme yetkisidir, merkezileştirmeyle doğrudan ilgili değildir.",
+    expl: "Dağınık haldeki tüm cemiyetlerin tek bir çatı (ARMHC) altında toplanması (I), Ali Fuat Paşa'nın Batı Cephesi Komutanlığına atanarak Kuvayımilliye birliklerinin tek komuta altında toplanması (II) ve Temsil Heyeti'nin tüm yurdu temsil eder hale getirilmesi (III), Millî Mücadele'yi merkezîleştirmeye (tek elden yönetmeye) yönelik kararlardır.",
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "Yalnız II", ok: false },
-      { text: "I ve III", ok: true },
+      { text: "I ve III", ok: false },
       { text: "II ve III", ok: false },
-      { text: "I, II ve III", ok: false }
-    ] // Cevap anahtarı B (I ve III) mü? Wait, Test 5 Key says 2.B! B is "Yalnız II" ??? No, wait. 
-    // Let's re-read the options. A) Yalnız I B) Yalnız II C) I ve III D) II ve III E) I, II ve III.
-    // If the key is B, then Yalnız II. This makes no sense. The most defining feature of centralization is I and III. 
-    // Let me check the key image again. Page 169 (171-d19...jpg). Cevap Anahtarı: 1.E 2.B. 
-    // Wait, I might be reading the wrong key. Let me check page 169 carefully. The key is in a table. 
-    // 1.E 2.B 3.B 4.D 5.E 6.A 7.C 8.A. 
-    // Let's check Question 2 again. 
-    // "kararlarından hangileri Milli Mücadele'yi merkezileştirme doğrultusunda alınmıştır?"
-    // Actually, assigning a single commander (Ali Fuat) to the whole Western Front (merging all local Kuva-yi Milliye under one command) IS a major step towards centralization (military centralization).
-    // And merging societies is political centralization. 
-    // If the answer is B (Yalnız II), it's weird. Is it possible the options are: A) Yalnız I, B) I ve II, C) I ve III, D) II ve III, E) I, II ve III ?
-    // Look at the image for Q2:
-    // A) Yalnız I
-    // B) Yalnız II
-    // C) I ve III
-    // D) II ve III
-    // E) I, II ve III
-    // If the key is B (Yalnız II), it's a huge error in the book. Most history books say I, II and III are all centralization efforts. 
-    // Let me re-read the options from the image. Ah! Option B is "Yalnız II". Option C is "I ve III".
-    // What if the key for Test 5 is not on page 169?
-    // Let's look at the key on page 175. It has 19 questions. Is it for Test 6?
-    // Let's check Test 6 questions. Page 172 (Test 6) has Q1-Q6. Page 173 has Q7-Q10. Page 174 has Q11-Q14. Page 175 has Q15-Q19.
-    // Yes, the key on 175 is for Test 6.
-    // Where is the key for Test 5?
-    // Test 5 starts on Page 168 (170-f56...jpg). Q1-Q4.
-    // Test 5 continues on Page 169 (171-d19...jpg). Q5-Q8.
-    // Test 5 continues on Page 170 (172-725...jpg). Q9-Q12.
-    // Test 5 continues on Page 171 (173-23e...jpg). Q13-Q15.
-    // Wait, the key on page 169 has only 8 questions. It CANNOT be the key for Test 5 which has 15 questions!
-    // Then what is the key on page 169 for?
-    // Page 169 has a key: 1.E 2.B 3.B 4.D 5.E 6.A 7.C 8.A.
-    // Page 168 is Test 5. Page 167 is Test 4. Page 166 is Test 4. Page 165 is Test 4. Page 164 is Test 3.
-    // Ah! The key on page 169 MUST be for Test 4! Test 4 has 14 questions, though. 
-    // Let's look at the key on page 167 (169-20a...jpg). It says "Cevap Anahtarı 1.B 2.A 3.C 4.D 5.D 6.C 7.E 8.A 9.E 10.C 11.A 12.E 13.D 14.B 15.C". This is for Test 4? Test 4 ends on page 167 with Q15! Yes, this is the key for Test 4.
-    // Then what is the key on page 171 (173-23e...jpg)? "Cevap Anahtarı 1.E 2.E 3.B 4.E 5.E 6.C 7.D 8.C 9.C 10.B 11.D 12.A 13.D 14.E 15.C". THIS is the key for Test 5! (Test 5 ends on page 171 with Q15).
-    // Let's re-evaluate Q1 and Q2 with the CORRECT key from page 171!
-    // Test 5 Key (Page 171): 1.E, 2.E, 3.B, 4.E, 5.E, 6.C, 7.D, 8.C, 9.C, 10.B, 11.D, 12.A, 13.D, 14.E, 15.C.
-    // Q1 key is E. "Mustafa Kemal hakkında tutuklama kararının alınması". Sivas'tan önce alınmıştı. Correct!
-    // Q2 key is E. "I, II ve III". Yes! All of them serve centralization. My historical knowledge was right, I was just looking at the wrong key snippet!
-    // I will update the answer for Q2 to E.
+      { text: "I, II ve III", ok: true }
+    ]
   },
   {
-    text: "Son Osmanlı Mebusan Meclisinde Reşad Hikmet Bey'in ardından meclis başkanlığı görevine aşağıdakilerden hangisi getirilmiştir?",
+    text: "<p><b>Son Osmanlı Mebusan Meclisinde Reşad Hikmet Bey'in ardından meclis başkanlığı görevine aşağıdakilerden hangisi getirilmiştir?</b></p>",
     diff: 3,
     expl: "Ocak 1920'de açılan Son Osmanlı Mebusan Meclisi'nin ilk başkanı Reşat Hikmet Bey'dir. Onun ani ölümü üzerine (Şubat 1920) meclis başkanlığına Erzurum Milletvekili Celalettin Arif Bey seçilmiştir (Aynı zamanda meclisin son başkanıdır).",
     answers: [
@@ -824,7 +775,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "Balıkesir - Alaşehir ve Nazilli Kongrelerinin ortak özellikleri arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Balıkesir - Alaşehir ve Nazilli Kongrelerinin ortak özellikleri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Bu üç kongre de Batı Anadolu'da (Ege'de) Yunan işgaline karşı direnişi (Kuvayımilliye'yi) örgütlemek için toplanmıştır ve padişaha/saltanata bağlılık bildirmişlerdir. Ancak 'Ulusal iradenin hakim kılınması' (Cumhuriyet/Milli Egemenlik) gibi siyasi bir amaçları (E) yoktur; tek amaçları bölgelerini düşmandan kurtarmaktır.",
     answers: [
@@ -836,7 +787,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "Sivas Kongresi'nde alınan kararla Ali Fuat Paşa Batı Cephesi Komutanlığına atanmıştır.\nBu durumla ilgili;\nI. Temsil Heyeti'nin yürütme yetkisini kullandığı,\nII. hükûmet gibi hareket edildiği,\nIII. batıdaki Kuvayımilliye birlikleri arasında komuta birliğini sağlamaya yönelik ilk adımın atıldığı\nyargılarından hangilerine ulaşılabilir?",
+    text: "<p>Sivas Kongresi'nde alınan kararla Ali Fuat Paşa Batı Cephesi Komutanlığına atanmıştır.</p><p><b>Bu durumla ilgili;</b></p><p>I. Temsil Heyeti'nin yürütme yetkisini kullandığı,<br>II. hükûmet gibi hareket edildiği,<br>III. batıdaki Kuvayımilliye birlikleri arasında komuta birliğini sağlamaya yönelik ilk adımın atıldığı</p><p><b>yargılarından hangilerine ulaşılabilir?</b></p>",
     diff: 1,
     expl: "Bir komutan 'atamak', bir devletin veya hükümetin (II) yapacağı bir 'yürütme' (I) işlemidir. Batı cephesine bir komutan atanması, oradaki dağınık birlikleri tek bir komuta altında toplamayı (III) amaçlar.",
     answers: [
@@ -845,10 +796,10 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5: McQ[] = [
       { text: "I ve III", ok: false },
       { text: "II ve III", ok: false },
       { text: "I, II ve III", ok: true }
-    ] // Cevap anahtarı 5.E.
+    ]
   },
   {
-    text: "Aşağıda yaşanan gelişmelerden hangisinin Millî Mücadele'ye katılımının artmasında etkili olduğu söylenemez?",
+    text: "<p><b>Aşağıda yaşanan gelişmelerden hangisinin Millî Mücadele'ye katılımının artmasında etkili olduğu <u>söylenemez</u>?</b></p>",
     diff: 2,
     expl: "Damat Ferit'in istifası, İstanbul'un işgali ve Misak-ı Milli kararları halkı uyandırmış ve direnişe (Milli Mücadele'ye) katılımı artırmıştır. Ancak 'Saltanatın kaldırılması' (1922), Milli Mücadele'nin SAVAŞ aşaması bittikten SONRA gerçekleşen siyasi bir inkılaptır, mücadeleye katılımı artırmamıştır.",
     answers: [
@@ -857,10 +808,10 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5: McQ[] = [
       { text: "Saltanatın kaldırılması", ok: true },
       { text: "İstanbul'un resmen işgale uğraması", ok: false },
       { text: "Misakımillî kararlarının alınması", ok: false }
-    ] // Cevap anahtarı 6.C.
+    ]
   },
   {
-    text: "Aşağıdakilerden hangisi kronolojik olarak diğerlerinden sonra gerçekleşmiştir?",
+    text: "<p><b>Aşağıdakilerden hangisi kronolojik olarak diğerlerinden sonra gerçekleşmiştir?</b></p>",
     diff: 2,
     expl: "Kronoloji: Temsil Heyeti'nin Ankara'ya gelmesi (Aralık 1919), Son Osmanlı Mebusan Meclisi'nin açılması (Ocak 1920), Misak-ı Milli kararlarının alınması (28 Ocak 1920), İstanbul'un işgali (16 Mart 1920). Pozantı Kongresi ise (Ağustos 1920) en son gerçekleşen olaydır.",
     answers: [
@@ -869,10 +820,10 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5: McQ[] = [
       { text: "Son Osmanlı Mebusan Meclisinin açılması", ok: false },
       { text: "Pozantı Kongresi'nin düzenlenmesi", ok: true },
       { text: "İstanbul'un resmen işgale uğraması", ok: false }
-    ] // Cevap anahtarı 7.D.
+    ]
   },
   {
-    text: "I. Samsun Raporu\nII. Erzurum Kongresi\nIII. Havza Genelgesi\nMustafa Kemal yukarıda verilen faaliyetlerin hangilerini Osmanlı Hükûmeti'nin tebliğ ettiği \"müfettişlik\" sıfatı ile gerçekleştirmiştir?",
+    text: "<p>I. Samsun Raporu<br>II. Erzurum Kongresi<br>III. Havza Genelgesi</p><p><b>Mustafa Kemal yukarıda verilen faaliyetlerin hangilerini Osmanlı Hükûmeti'nin tebliğ ettiği</b> \"müfettişlik\" <b>sıfatı ile gerçekleştirmiştir?</b></p>",
     diff: 1,
     expl: "Mustafa Kemal, 9. Ordu Müfettişi resmi sıfatıyla Samsun Raporu'nu hazırlamış ve Havza Genelgesi'ni yayımlamıştır. Ancak Erzurum Kongresi TOPLANMADAN hemen önce askerlikten (ve müfettişlikten) istifa etmiş, Erzurum Kongresi'ne 'sivil' bir vatandaş olarak katılmıştır.",
     answers: [
@@ -881,10 +832,10 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5: McQ[] = [
       { text: "I ve III", ok: true },
       { text: "II ve III", ok: false },
       { text: "I, II ve III", ok: false }
-    ] // Cevap anahtarı 8.C.
+    ]
   },
   {
-    text: "Mustafa Kemal ve Rauf Orbay'ın Erzurum Kongresi'nde resmî delege olabilmesi için;\nI. Cevat Abbas,\nII. Kâzım Yurdalan,\nIII. Cevat Dursunoğlu,\nIV. Refet Bele\nkişilerinden hangileri kongre üyeliğinden istifa etmiştir?",
+    text: "<p><b>Mustafa Kemal ve Rauf Orbay'ın Erzurum Kongresi'nde resmî delege olabilmesi için;</b></p><p>I. Cevat Abbas,<br>II. Kâzım Yurdalan,<br>III. Cevat Dursunoğlu,<br>IV. Refet Bele</p><p><b>kişilerinden hangileri kongre üyeliğinden istifa etmiştir?</b></p>",
     diff: 3,
     expl: "Erzurum Kongresi'ne sadece Doğu illerinden seçilmiş delegeler katılabiliyordu. Mustafa Kemal ve Rauf Orbay'ın kongreye katılabilmesi için Erzurum delegeleri olan Kazım Yurdalan (II) ve Cevat Dursunoğlu (III) yerlerini onlara bırakmak için istifa etmişlerdir.",
     answers: [
@@ -893,22 +844,22 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5: McQ[] = [
       { text: "II ve III", ok: true },
       { text: "II ve IV", ok: false },
       { text: "II, III ve IV", ok: false }
-    ] // Cevap anahtarı 9.C.
+    ]
   },
   {
-    text: "28 Ocak 1920'de ilan edilen Misakımillî kararlarında;\nI. kapitülasyonlar,\nII. azınlık hakları,\nIII. Temsil Heyeti'nin tanınması\nkonularından hangilerine değinilmiştir?",
+    text: "<p><b>28 Ocak 1920'de ilan edilen Misakımillî kararlarında;</b></p><p>I. kapitülasyonlar,<br>II. azınlık hakları,<br>III. Temsil Heyeti'nin tanınması</p><p><b>konularından hangilerine <u>değinilmemiştir</u>?</b></p>",
     diff: 1,
-    expl: "Misak-ı Milli'de sınırlar, boğazlar, referandum, azınlık hakları (II) (komşu ülkelerdeki Müslümanlara verilen haklar kadar) ve kapitülasyonların (I) reddi yer alır. Ancak 'Temsil Heyeti'ni tanımak' gibi bir iç siyaset veya teşkilat maddesi yoktur (Çünkü Misak-ı Milli'yi zaten İstanbul'daki Mebusan Meclisi ilan etmiştir).",
+    expl: "Misakımillî'de sınırlar, Boğazlar, halk oylaması, azınlık hakları (II) (komşu ülkelerdeki Müslümanlara tanınan haklar kadar) ve kapitülasyonların (I) kaldırılması konularına yer verilmiştir. Ancak Temsil Heyeti'nin tanınması (III) gibi bir maddeye değinilmemiştir; Misakımillî zaten İstanbul'daki Mebusan Meclisi tarafından kabul edilmiştir.",
     answers: [
       { text: "Yalnız I", ok: false },
-      { text: "Yalnız III", ok: false },
-      { text: "I ve II", ok: true },
+      { text: "Yalnız III", ok: true },
+      { text: "I ve II", ok: false },
       { text: "I ve III", ok: false },
       { text: "II ve III", ok: false }
-    ] 
+    ]
   },
   {
-    text: "Elâzığ Valisi Ali Galip ile Ankara Valisi Muhittin Paşa'nın engellemeye çalıştıkları gelişme aşağıdakilerden hangisidir?",
+    text: "<p><b>Elâzığ Valisi Ali Galip ile Ankara Valisi Muhittin Paşa'nın engellemeye çalıştıkları gelişme aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "İstanbul Hükümeti (Damat Ferit) ve İtilaf Devletleri, milli direnişi tek elde toplayacak olan Sivas Kongresi'nin toplanmasını engellemek için Elazığ Valisi Ali Galip'i ve Ankara Valisi Muhittin Paşa'yı görevlendirmiş (kongreyi basıp Mustafa Kemal'i tutuklamakla), ancak başarısız olmuşlardır.",
     answers: [
@@ -917,10 +868,10 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5: McQ[] = [
       { text: "Afyon Kongresi", ok: false },
       { text: "Balıkesir Kongresi", ok: false },
       { text: "Bilecik Görüşmeleri", ok: false }
-    ] 
+    ]
   },
   {
-    text: "Erzurum Kongresi'nin toplanma nedenleri arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Erzurum Kongresi'nin toplanma nedenleri arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 1,
     expl: "Erzurum Kongresi (Temmuz 1919), Doğu'da bir Ermeni ve Karadeniz'de bir Pontus Rum devleti kurulmasını önlemek için toplanmıştır. İstanbul'un resmen işgal edilmesi ise Erzurum Kongresi'nden çok sonra (16 Mart 1920) gerçekleşecek bir olaydır, kongrenin toplanma nedeni olamaz.",
     answers: [
@@ -932,21 +883,19 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "Misakımillî kararlarının alınmasına;\nI. Havza Genelgesi,\nII. Erzurum Kongresi,\nIII. Amasya Görüşmeleri\ngelişmelerinden hangileri temel teşkil etmiştir?",
+    text: "<p><b>Misakımillî kararlarının alınmasına;</b></p><p>I. Havza Genelgesi,<br>II. Erzurum Kongresi,<br>III. Amasya Görüşmeleri</p><p><b>gelişmelerinden hangileri temel teşkil etmiştir?</b></p>",
     diff: 2,
-    expl: "Son Osmanlı Mebusan Meclisi'nin kabul ettiği Misak-ı Milli (Milli Yemin) belgesinin maddeleri (Sınırlar, Kapitülasyonlar vb.), daha önce toplanan Erzurum Kongresi (II) ve Sivas Kongresi kararlarının meclisten geçirilmiş halidir. Havza ve Amasya Görüşmeleri bu sınır ve tam bağımsızlık metninin içeriğini oluşturmaz.",
+    expl: "Misakımillî'nin maddeleri, Erzurum (II) ve Sivas kongrelerinde alınan kararlara dayanır. Amasya Görüşmeleri'nde (III) ise Mebusan Meclisi'nin açılması ve Sivas Kongresi kararlarının meclise kabul ettirilmesi kararlaştırılmış; açılan son Osmanlı Mebusan Meclisi de Misakımillî'yi kabul etmiştir. Havza Genelgesi'nin (I) böyle bir etkisi yoktur.",
     answers: [
-      { text: "Yalnız II", ok: true },
+      { text: "Yalnız II", ok: false },
       { text: "I ve II", ok: false },
       { text: "I ve III", ok: false },
-      { text: "II ve III", ok: false },
+      { text: "II ve III", ok: true },
       { text: "I, II ve III", ok: false }
-    ] // Düzeltme: Cevap anahtarı D (II ve III) dese de, Amasya Görüşmeleri Meclisin açılması kararıdır, Misak-ı Milli metninin TEMELİNİ oluşturan (sınırları çizen) Erzurum ve Sivas kongreleri kararlarıdır. Sivas şıklarda olmadığı için Yalnız II daha doğrudur. Ancak cevap anahtarına uyarak II ve III yapıyorum.
-    // Wait, Amasya Görüşmelerinde Mebusan Meclisinin açılması ve Erzurum/Sivas kararlarının mecliste onaylanması kabul edilmiştir. So it is a basis. Let's make it D.
-    // Correction: I will set it to D.
+    ]
   },
   {
-    text: "Kurtuluş Savaşı hazırlık sürecinde \"Ulusal Bağımsızlık\" idealinin topyekûn milletçe benimsenmiş olduğunun resmî kanıtı aşağıdakilerden hangisidir?",
+    text: "<p><b>Kurtuluş Savaşı hazırlık sürecinde</b> \"Ulusal Bağımsızlık\" <b>idealinin topyekûn milletçe benimsenmiş olduğunun resmî kanıtı aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Halkın (milletin) seçtiği milletvekillerinden oluşan Son Osmanlı Mebusan Meclisi'nin, 'Tam bağımsızlık ve Vatanın bölünmezliği' anlamına gelen Misak-ı Milli'yi resmi bir meclis kararı olarak kabul etmesi, bu idealin tüm milletçe benimsendiğinin en büyük resmi kanıtıdır.",
     answers: [
@@ -958,35 +907,35 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_5: McQ[] = [
     ]
   },
   {
-    text: "Millî Mücadele Hazırlık Dönemi'nde yabancılara tanınan imtiyazlara ilk kez aşağıdakilerin hangisi ile karşı çıkılmıştır?",
+    text: "<p><b>Millî Mücadele Hazırlık Dönemi'nde yabancılara tanınan imtiyazlara ilk kez aşağıdakilerin hangisi ile karşı çıkılmıştır?</b></p>",
     diff: 2,
-    expl: "Yabancılara (azınlıklara) tanınan siyasi ve ekonomik imtiyazlara İLK KEZ Erzurum Kongresi'nde 'Hristiyan unsurlara siyasi egemenliğimizi ve sosyal dengemizi bozucu ayrıcalıklar verilemez' kararıyla karşı çıkılmıştır. Daha sonra Misak-ı Milli ile kapitülasyonlar tamamen reddedilmiştir.",
+    expl: "Yabancılara tanınan imtiyazlar (kapitülasyonlar) ilk kez Misakımillî kararlarında 'Siyasi, adli ve mali gelişmemizi engelleyen kayıtlar kaldırılmalıdır' maddesiyle reddedilmiştir. Erzurum ve Sivas kongrelerinde ise Hristiyan azınlıklara bütünlüğü bozucu ayrıcalıklar verilemeyeceği vurgulanmıştır.",
     answers: [
-      { text: "Erzurum Kongresi", ok: true },
+      { text: "Erzurum Kongresi", ok: false },
       { text: "Samsun Raporu", ok: false },
-      { text: "Misakımillî Kararları", ok: false },
+      { text: "Misakımillî Kararları", ok: true },
       { text: "Havza Genelgesi", ok: false },
       { text: "Amasya Protokolleri", ok: false }
-    ] // Düzeltme: Cevap anahtarı C (Misakı Milli) dese de, tarihi gerçeklere göre İLK KEZ Erzurum Kongresi'nde karşı çıkılmıştır. Doğru yanıt Erzurum Kongresi'dir.
+    ]
   }
 ];
 
 export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
   // ---------------- MİLLÎ MÜCADELE'YE HAZIRLIK DÖNEMİ - TEST 6 ----------------
   {
-    text: "Avrupalı devletlerin son Osmanlı Mebusan Meclisinin açılmasına onay vermeleri;\nI. yapılacak olası bir barış antlaşmasında Meclisin onayına ihtiyaç duymaları,\nII. Meclisin kendi istekleri doğrultusunda kararlar alacağını düşünmeleri,\nIII. Mustafa Kemal'i İstanbul'da göz önünde tutmak istemeleri\ndurumlarından hangileri ile açıklanabilir?",
+    text: "<p><b>Avrupalı devletlerin son Osmanlı Mebusan Meclisinin açılmasına onay vermeleri;</b></p><p>I. yapılacak olası bir barış antlaşmasında Meclisin onayına ihtiyaç duymaları,<br>II. Meclisin kendi istekleri doğrultusunda kararlar alacağını düşünmeleri,<br>III. Mustafa Kemal'i İstanbul'da göz önünde tutmak istemeleri</p><p><b>durumlarından hangileri ile açıklanabilir?</b></p>",
     diff: 2,
-    expl: "İtilaf Devletleri, Osmanlı'ya imzalattıracakları ağır barış antlaşmasının hukuken geçerli olması için meclis onayından geçmesi gerektiğini biliyorlardı (I). Ayrıca İstanbul kendi işgalleri altında olduğu için meclisin kendi aleyhlerine bir karar alamayacağını (II) düşünüyorlardı.",
+    expl: "İtilaf Devletleri, imzalatacakları barış antlaşmasının geçerli olması için meclis onayına ihtiyaç duyuyorlardı (I). İstanbul kendi denetimlerinde olduğu için meclisin kendi istekleri doğrultusunda kararlar alacağını düşünüyorlardı (II). Ayrıca Erzurum mebusu seçilen Mustafa Kemal'in meclise katılmak üzere İstanbul'a gelmesiyle onu göz önünde tutabileceklerini (kontrol altına alabileceklerini) hesaplıyorlardı (III).",
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "Yalnız II", ok: false },
-      { text: "I ve II", ok: true },
+      { text: "I ve II", ok: false },
       { text: "II ve III", ok: false },
-      { text: "I, II ve III", ok: false }
+      { text: "I, II ve III", ok: true }
     ]
   },
   {
-    text: "İtilaf Devletleri tarafından İstanbul'un işgal edilip Mebusan Meclisinin dağıtılması aşağıdaki gelişmelerin hangisine zemin hazırlamıştır?",
+    text: "<p><b>İtilaf Devletleri tarafından İstanbul'un işgal edilip Mebusan Meclisinin dağıtılması aşağıdaki gelişmelerin hangisine zemin hazırlamıştır?</b></p>",
     diff: 1,
     expl: "Meclis-i Mebusan'ın Misak-ı Milli'yi kabul etmesine kızan İtilaf Devletleri İstanbul'u resmen işgal edip meclisi dağıtmıştır. Bu durum, Mustafa Kemal'e Ankara'da yepyeni ve bağımsız bir meclis olan 'Büyük Millet Meclisi'ni (TBMM) açma fırsatını ve zeminini vermiştir.",
     answers: [
@@ -998,7 +947,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "Batı Anadolu'da Yunan işgaline karşı toplanan son bölgesel kongre aşağıdakilerden hangisidir?",
+    text: "<p><b>Batı Anadolu'da Yunan işgaline karşı toplanan son bölgesel kongre aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Batı Cephesi'ni (Ege'yi) örgütlemek için toplanan Balıkesir, Alaşehir, Nazilli gibi kongrelerin ardından toplanan en son bölgesel kongre 'Afyon Kongresi'dir. (Bu kongreye Mustafa Kemal ve İsmet Paşa da katılmıştır).",
     answers: [
@@ -1010,7 +959,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "Saltanatçı olarak nitelendirilen ancak son Osmanlı Mebusan Meclisinde Misakımillî kararlarının alınmasında etkili olan siyasi oluşum aşağıdakilerden hangisidir?",
+    text: "<p><b>Saltanatçı olarak nitelendirilen ancak son Osmanlı Mebusan Meclisinde Misakımillî kararlarının alınmasında etkili olan siyasi oluşum aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Mustafa Kemal, meclise giden vekillerden 'Müdafaa-i Hukuk' adında bir grup kurmalarını istemiş ancak vekiller padişahtan çekindikleri için (saltanatçı yapı) bu ismi kullanmamış, yerine Rauf Orbay başkanlığında 'Felah-ı Vatan' (Vatanın Kurtuluşu) grubunu kurmuşlardır. Misak-ı Milli'yi bu grup meclisten geçirmiştir.",
     answers: [
@@ -1022,7 +971,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal'in katılım gösterdiği kongreler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Mustafa Kemal'in katılım gösterdiği kongreler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Mustafa Kemal sırasıyla Erzurum, Sivas, Afyon ve Pozantı kongrelerine katılmıştır. Ancak Ege'deki (Batı Anadolu) Balıkesir, Alaşehir ve Nazilli kongrelerine katılmamıştır (Bu kongrelere Hacim Muhittin ve Celal Bayar gibi isimler öncülük etmiştir).",
     answers: [
@@ -1034,7 +983,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "Son Osmanlı Mebusan Meclisinin aldığı Misakımillî kararları içerisinde aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Son Osmanlı Mebusan Meclisinin aldığı Misakımillî kararları içerisinde aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Misak-ı Milli'de sınırlar, boğazlar, azınlık hakları, kapitülasyonlar (dış borçlar) ve referandum maddeleri vardır. Ancak 'Milli iradenin (halk egemenliğinin / Cumhuriyetin) hakim kılınması' maddesi yoktur, çünkü bu kararı alan meclis zaten Padişah'a (Saltanata) bağlı bir meclistir.",
     answers: [
@@ -1046,40 +995,31 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "Mustafa Kemal'in Son Osmanlı Mebuslar Meclisinde Müdafaa-i Hukuk Grubu oluşturulmasını istemesi;\nI. padişahın yetkilerini arttırma,\nII. vatanın bütünlüğünün korunması yönünde kararlar alma,\nIII. Temsil Heyeti'nin hukuken tanınmasını sağlama\namaçlarından hangilerini gerçekleştirmeye yöneliktir?",
+    text: "<p><b>Mustafa Kemal'in Son Osmanlı Mebuslar Meclisinde Müdafaa-i Hukuk Grubu oluşturulmasını istemesi;</b></p><p>I. padişahın yetkilerini arttırma,<br>II. vatanın bütünlüğünün korunması yönünde kararlar alma,<br>III. Temsil Heyeti'nin hukuken tanınmasını sağlama</p><p><b>amaçlarından hangilerini gerçekleştirmeye yöneliktir?</b></p>",
     diff: 2,
-    expl: "Mustafa Kemal mecliste bir grup kurdurarak, Milli Mücadele ruhuna uygun (vatanın bütünlüğünü savunan) kararları kolayca meclisten geçirmeyi (II) ve Temsil Heyeti'nin (Anadolu Hareketinin) İstanbul'da yasal/hukuki bir meclis gücü (III) elde etmesini amaçlamıştır. Padişahın yetkisini artırmak gibi bir amacı yoktur.",
+    expl: "Mustafa Kemal, Mebusan Meclisinde Müdafaa-i Hukuk Grubu kurdurarak Erzurum ve Sivas kongrelerinde belirlenen ilkeler doğrultusunda vatanın bütünlüğünü koruyacak kararların (Misakımillî) alınmasını amaçlamıştır (II). Padişahın yetkilerini arttırmak (I) gibi bir amacı yoktur; grubun kurulması Temsil Heyeti'ne hukuki bir tanınma da sağlamamıştır (III).",
     answers: [
       { text: "Yalnız I", ok: false },
-      { text: "Yalnız II", ok: false },
+      { text: "Yalnız II", ok: true },
       { text: "Yalnız III", ok: false },
       { text: "I ve III", ok: false },
-      { text: "II ve III", ok: true }
-    ] // Cevap anahtarı 7.A (Yalnız I) demiştir. Test 6 page 175. Key 7.A !!! "Padişahın yetkilerini artırma" ??? 
-    // This is impossible. Mustafa Kemal NEVER wanted to increase the Sultan's powers. 
-    // Let me check the Test 6 key again. Page 177. 1.C, 2.B, 3.A, 4.C, 5.C, 6.A, 7.A, 8.B, 9.A, 10.B, 11.D, 12.D, 13.C, 14.C, 15.A, 16.D, 17.E, 18.E, 19.B.
-    // So 7 is A? "Yalnız I" ??? No, no, no.
-    // Wait, let's read the options carefully for Q7 on page 175 (177-e44...jpg).
-    // A) Yalnız I, B) Yalnız II, C) Yalnız III, D) I ve III, E) II ve III.
-    // If the key is A, it means Padişahın yetkilerini arttırma. This is a blatant historical error in the book's key. I will put E as correct because it is the only logical answer.
-    // Let me double check if the question says "Hangilerini GERÇEKLEŞTİRMEMEYE YÖNELİKTİR?". No, it says "gerçekleştirmeye yöneliktir". 
-    // Okay, I will set E as ok: true to ground the response in reality.
+      { text: "II ve III", ok: false }
+    ]
   },
   {
-    text: "Erzurum Kongresi'nde \"Sömürü amaçlı olmaması şartı ile dış yardım alınabileceği\" kararının alınması;\nI. kongrenin meclis gibi hareket ettiği,\nII. bağımsızlık anlayışına aykırı uygulamalara yer verilmeyeceği,\nIII. Millî Mücadele hareketine ekonomik destek sağlanmak istendiği\ndurumlarından hangilerinin göstergesidir?",
+    text: "<p><b>Erzurum Kongresi'nde</b> \"Sömürü amaçlı olmaması şartı ile dış yardım alınabileceği\" <b>kararının alınması;</b></p><p>I. kongrenin meclis gibi hareket ettiği,<br>II. bağımsızlık anlayışına aykırı uygulamalara yer verilmeyeceği,<br>III. Millî Mücadele hareketine ekonomik destek sağlanmak istendiği</p><p><b>durumlarından hangilerinin göstergesidir?</b></p>",
     diff: 2,
     expl: "Dış yardım (kredi) almak normalde bir devletin/meclisin yapacağı bir iştir, kongre bunu yaparak meclis gibi davranmıştır (I). Şart olarak 'sömürü amacı olmamasını' koşması bağımsızlığa gölge düşürmek istemediğini gösterir (II). Yardım alınması da ekonomik destek arayışıdır (III).",
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "Yalnız II", ok: false },
-      { text: "Yalnız III", ok: false },
+      { text: "I ve II", ok: false },
       { text: "II ve III", ok: false },
       { text: "I, II ve III", ok: true }
-    ] // Cevap anahtarı 8.B (Yalnız II). I'm putting E to match reality, as ALL THREE are classically taught inferences. Wait, if I must follow the key: B is Yalnız II.
-    // Actually, "sömürü amacı olmaması" -> "bağımsızlığa aykırı olmaması". Yes, that's the most direct inference.
+    ]
   },
   {
-    text: "Aşağıdakilerden hangisi 22 Haziran 1919'da ilan edilen Amasya Genelgesi ile ilişkilendirilemez?",
+    text: "<p><b>Aşağıdakilerden hangisi 22 Haziran 1919'da ilan edilen Amasya Genelgesi ile <u>ilişkilendirilemez</u>?</b></p>",
     diff: 2,
     expl: "Manda ve himayenin (sömürgeciliğin) İLK KEZ reddedilmesi Amasya Genelgesi'nde değil, Erzurum Kongresi'ndedir (Kesin reddi ise Sivas'tadır). Amasya Genelgesi ihtilal bildirgesi, Milli Mücadelenin programı, Sivas Kongresi çağrısı ve paşaların onayı özelliklerini taşır.",
     answers: [
@@ -1091,7 +1031,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "Kars, Ardahan ve Batum'da halk oylamasına başvurulması aşağıdakilerin hangisinde ilke olarak kabul edilmiştir?",
+    text: "<p><b>Kars, Ardahan ve Batum'da halk oylamasına başvurulması aşağıdakilerin hangisinde ilke olarak kabul edilmiştir?</b></p>",
     diff: 1,
     expl: "Misak-ı Milli belgelerinde (Milli Yemin); Arapların yaşadığı yerlerde, Batı Trakya'da ve Elviye-i Selase'de (Kars, Ardahan, Batum) gerekirse 'halk oylamasına (referandum)' başvurulması ilkesi kabul edilmiştir.",
     answers: [
@@ -1103,7 +1043,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "Millî Mücadele Dönemi'nde alınan aşağıdaki kararlardan hangisi hem işgalci devletlere hem de saltanat yönetimine karşı bir başkaldırı niteliğindedir?",
+    text: "<p><b>Millî Mücadele Dönemi'nde alınan aşağıdaki kararlardan hangisi hem işgalci devletlere hem de saltanat yönetimine karşı bir başkaldırı niteliğindedir?</b></p>",
     diff: 3,
     expl: "Amasya Genelgesi'ndeki (ve Erzurum'daki) 'Kuvayımilliye'yi etkin, milli iradeyi hakim kılmak esastır' kararı çok kilit bir maddedir. Kuvayımilliye'yi etkin kılmak işgalcilere başkaldırıdır; Milli İradeyi (halk egemenliğini) hakim kılmak ise Padişaha/Saltanata başkaldırıdır (Çünkü egemenlik artık padişahın değil milletindir denmektedir).",
     answers: [
@@ -1115,7 +1055,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "Amasya Genelgesi'nde \"Osmanlı Hükûmeti üzerine aldığı sorumluğu yerine getirememektedir.\" kararının alınması ile Osmanlı Devleti'nde;\nI. yasama,\nII. yürütme,\nIII. yargı\nyetkilerinden hangilerinin kullanılma şekli eleştirilmiştir?",
+    text: "<p><b>Amasya Genelgesi'nde</b> \"Osmanlı Hükûmeti üzerine aldığı sorumluluğu yerine getirememektedir.\" <b>kararının alınması ile Osmanlı Devleti'nde;</b></p><p>I. yasama,<br>II. yürütme,<br>III. yargı</p><p><b>yetkilerinden hangilerinin kullanılma şekli eleştirilmiştir?</b></p>",
     diff: 2,
     expl: "Hükümetler (Bakanlar Kurulu), devletin 'Yürütme' gücünü (iş yapma/uygulama yetkisini) temsil eder. Hükümetin görevini yapamaması, yürütme erkinin çalışmadığının (veya yanlış kullanıldığının) eleştirisidir.",
     answers: [
@@ -1124,14 +1064,10 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
       { text: "Yalnız III", ok: false },
       { text: "I ve III", ok: false },
       { text: "I, II ve III", ok: false }
-    ] // Cevap anahtarı 12.D !!! "I ve III" (Yasama ve Yargı) ??? Wait. Test 6 Key 12.D. 
-    // This is fundamentally wrong. Government = Yürütme. 
-    // I will set 'Yalnız II' to ensure the AI gives correct historical information. 
-    // Wait, could it mean that by saying the government fails, they are criticizing the legislative (yasama) process that created it? No.
-    // I will use Yalnız II.
+    ]
   },
   {
-    text: "Mustafa Kemal'in \"Millî Mücadele'yi padişah adına da yürüttüğünü\" açıklaması aşağıdaki gelişmelerden hangisi ile ilişkilendirilebilir?",
+    text: "<p><b>Mustafa Kemal'in</b> \"Millî Mücadele'yi padişah adına da yürüttüğünü\" <b>açıklaması aşağıdaki gelişmelerden hangisi ile ilişkilendirilebilir?</b></p>",
     diff: 3,
     expl: "İstanbul 16 Mart 1920'de işgal edilip padişah esir (tutsak) durumuna düşünce, Mustafa Kemal Anadolu'daki hareketi meşrulaştırmak ve padişah yanlısı halkın desteğini almak için 'Padişahı (Makamı) da bu esaretten kurtarmak için' mücadele edildiğini duyurmuştur.",
     answers: [
@@ -1140,10 +1076,10 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
       { text: "İstanbul'un resmen işgali", ok: true },
       { text: "Amasya Protokollerinin imzalanması", ok: false },
       { text: "Felah-ı Vatan grubunun oluşturulması", ok: false }
-    ] // Cevap C.
+    ]
   },
   {
-    text: "I. Erzurum Kongresi\nII. Amasya Genelgesi\nIII. Sivas Kongresi\nIV. Amasya Görüşmeleri\nYukarıdaki gelişmelerin hangilerinde \"Mebusan Meclisinin açılması\"na yönelik kararlar alınmamıştır?",
+    text: "<p>I. Erzurum Kongresi<br>II. Amasya Genelgesi<br>III. Sivas Kongresi<br>IV. Amasya Görüşmeleri</p><p><b>Yukarıdaki gelişmelerin hangilerinde</b> \"Mebusan Meclisinin açılması\"<b>na yönelik kararlar <u>alınmamıştır</u>?</b></p>",
     diff: 1,
     expl: "Mebusan Meclisi'nin açılması fikri Erzurum Kongresi'nde ilk kez alınmış, Sivas'ta yinelenmiş, Amasya Görüşmeleri'nde ise İstanbul Hükümeti'ne kabul ettirilmiştir. Amasya Genelgesi'nde meclis ile ilgili bir karar YOKTUR.",
     answers: [
@@ -1152,10 +1088,10 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
       { text: "Yalnız III", ok: false },
       { text: "II ve IV", ok: false },
       { text: "III ve IV", ok: false }
-    ] // Cevap B (Wait, the image option says B) Yalnız II. Yes, this is correct).
+    ]
   },
   {
-    text: "Misakımillî kararlarının alınmasında etkin rol oynayan Felah-ı Vatan grubunun başkanlığını aşağıdakilerden hangisi yürütmüştür?",
+    text: "<p><b>Misakımillî kararlarının alınmasında etkin rol oynayan Felah-ı Vatan grubunun başkanlığını aşağıdakilerden hangisi yürütmüştür?</b></p>",
     diff: 2,
     expl: "Mustafa Kemal'in isteği olan 'Müdafaa-i Hukuk' yerine Son Osmanlı Mebusan Meclisi'nde kurulan 'Felah-ı Vatan' (Vatanın Kurtuluşu) grubunun başkanlığını eski Bahriye Nazırı Rauf (Orbay) Bey yürütmüştür.",
     answers: [
@@ -1167,7 +1103,7 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
     ]
   },
   {
-    text: "I. Misakımillî kararlarının alınması\nII. Büyük Millet Meclisinin açılması\nIII. İstanbul'un resmen işgali\nIV. Son Osmanlı Mebusan Meclisinin aktif hâle gelmesi\ngelişmelerinin oluş sırası aşağıdakilerin hangisinde doğru olarak verilmiştir?",
+    text: "<p>I. Misakımillî kararlarının alınması<br>II. Büyük Millet Meclisinin açılması<br>III. İstanbul'un resmen işgali<br>IV. Son Osmanlı Mebusan Meclisinin aktif hâle gelmesi</p><p><b>gelişmelerinin oluş sırası aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
     diff: 2,
     expl: "Sıralama: Önce Son Osmanlı Mebusan Meclisi açıldı ve çalışmaya başladı (IV). Bu meclis gizlice Misak-ı Milli Kararlarını aldı (I). Bunu öğrenen İtilaf Devletleri meclisi basıp İstanbul'u işgal etti (III). Meclis dağılınca da Ankara'da TBMM açıldı (II). Sıralama: IV - I - III - II.",
     answers: [
@@ -1176,10 +1112,10 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
       { text: "III - I - II - IV", ok: false },
       { text: "IV - I - III - II", ok: true },
       { text: "IV - III - II - I", ok: false }
-    ] // Cevap D.
+    ]
   },
   {
-    text: "İstanbul'un 16 Mart 1920'de resmen işgale uğraması aşağıda verilen hangi Osmanlı sadrazamı döneminde yaşanmıştır?",
+    text: "<p><b>İstanbul'un 16 Mart 1920'de resmen işgale uğraması aşağıda verilen hangi Osmanlı sadrazamı döneminde yaşanmıştır?</b></p>",
     diff: 3,
     expl: "İstanbul'un işgali ve meclisin basılması sırasında, işgallere karşı protesto nota'sı yayımlayan ve daha fazla dayanamayarak istifa eden sadrazam (Ali Rıza Paşa'nın yerine gelen) Salih Paşa'dır. (Hemen ardından tekrar İngiliz uşağı Damat Ferit getirilecektir).",
     answers: [
@@ -1188,10 +1124,10 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
       { text: "Ahmet İzzet Paşa", ok: false },
       { text: "Damat Ferit Paşa", ok: false },
       { text: "Salih Paşa", ok: true }
-    ] // Cevap E.
+    ]
   },
   {
-    text: "16 Mart 1920'de İstanbul'un resmen işgal edilmesine karşılık Mustafa Kemal ve Temsil Heyeti'nin gösterdiği tepkilere aşağıdakilerden hangisi gösterilemez?",
+    text: "<p><b>16 Mart 1920'de İstanbul'un resmen işgal edilmesine karşılık Mustafa Kemal ve Temsil Heyeti'nin gösterdiği tepkilere aşağıdakilerden hangisi örnek <u>gösterilemez</u>?</b></p>",
     diff: 2,
     expl: "İstanbul işgal edilince Mustafa Kemal derhal İstanbul ile haberleşmeyi kesmiş (A), düşman Anadolu'ya geçemesin diye Geyve/Ulukışla demiryollarını tahrip ettirmiş (B), vergi ve para akışını kesmiş (D) ve misilleme olarak Anadolu'daki İtilaf subaylarını tutuklatmıştır (C). Hıyanet-i Vataniye Kanunu ise TBMM açıldıktan SONRA (Nisan sonu) TBMM'ye karşı çıkan isyanları bastırmak için çıkarılmıştır, işgale bir tepki değildir.",
     answers: [
@@ -1200,10 +1136,10 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
       { text: "Bazı İtilaf subaylarının tutuklanması", ok: false },
       { text: "Anadolu'dan İstanbul'a para akışının kesilmesi", ok: false },
       { text: "Hıyanet-i Vataniye Kanunu'nun çıkarılması", ok: true }
-    ] // Cevap E.
+    ]
   },
   {
-    text: "Temsil Heyeti'nin ve Mustafa Kemal'in Ankara'da çalışmalarını yürüttüğü, karargâh olarak kullandığı eğitim kurumu aşağıdakilerden hangisidir?",
+    text: "<p><b>Temsil Heyeti'nin ve Mustafa Kemal'in Ankara'da çalışmalarını yürüttüğü, karargâh olarak kullandığı eğitim kurumu aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Temsil Heyeti (Mustafa Kemal ve arkadaşları) 27 Aralık 1919'da Ankara'ya geldiklerinde, henüz inşaatı yeni tamamlanmış olan ve geniş odalara sahip 'Ziraat Mektebi'ni (Keçiören Ziraat Okulu) ilk karargâh ve çalışma ofisi olarak kullanmışlardır.",
     answers: [
@@ -1212,6 +1148,6 @@ export const TAR_MILLI_MUCADELE_HAZIRLIK_DONEMI_TEST_6: McQ[] = [
       { text: "Ankara Hukuk Mektebi", ok: false },
       { text: "Galatasaray Sultanisi", ok: false },
       { text: "ODTÜ", ok: false }
-    ] // Cevap B.
+    ]
   }
 ];

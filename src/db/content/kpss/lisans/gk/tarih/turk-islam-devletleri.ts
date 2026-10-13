@@ -3,7 +3,7 @@ import type { McQ } from "../../../../types";
 export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
   // ---------------- TÜRK İSLAM DEVLETLERİ - TEST 1 ----------------
   {
-    text: "I. Belencer\nII. Nihavent\nIII. Haristan\nsavaşlarından hangileri Türk - Arap orduları arasında yaşanmıştır?",
+    text: "<p>I. Belencer<br>II. Nihavent<br>III. Haristan</p><p><b>savaşlarından hangileri Türk - Arap orduları arasında yaşanmıştır?</b></p>",
     diff: 2,
     expl: "Belencer Savaşı (Hazarlar-Araplar) ve Haristan Savaşı (Türgişler-Araplar) Türkler ile Araplar arasında olmuştur. Nihavent Savaşı ise Araplar ile Sasaniler arasındadır.",
     answers: [
@@ -15,7 +15,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "I. Karahanlılar\nII. Gazneliler\nIII. Büyük Selçuklular\nYukarıda verilen Türk-İslam devletlerinden hangilerinin millî kimliğini korumasında kuruldukları coğrafyanın etkisinden söz edilebilir?",
+    text: "<p>I. Karahanlılar<br>II. Gazneliler<br>III. Büyük Selçuklular</p><p><b>Yukarıda verilen Türk-İslam devletlerinden hangilerinin millî kimliğini korumasında kuruldukları coğrafyanın etkisinden söz edilebilir?</b></p>",
     diff: 1,
     expl: "Karahanlılar, Orta Asya'da (nüfusu tamamen Türk olan bir bölgede) kuruldukları için millî benliklerini korumuş ve Türkçeyi resmî dil yapmışlardır. Gazneli ve Selçuklular farklı coğrafyalara yayıldıkları için dillerinde Farsça ve Arapça etkisi fazladır.",
     answers: [
@@ -23,7 +23,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Karahanlı Devleti'ne en parlak dönemini yaşatan hükümdar aşağıdakilerden hangisidir?",
+    text: "<p><b>Karahanlı Devleti'ne en parlak dönemini yaşatan hükümdar aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Karahanlı Devleti en parlak ve güçlü dönemini Yusuf Kadir Han zamanında yaşamıştır.",
     answers: [
@@ -31,7 +31,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Samanoğullarının zayıflaması ile Afganistan - İran dolaylarında kurulan Türk-İslam devleti aşağıdakilerden hangisidir?",
+    text: "<p><b>Samanoğullarının zayıflaması ile Afganistan - İran dolaylarında kurulan Türk-İslam devleti aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Afganistan'ın Gazne şehrinde, Samanoğulları devletinin zayıflamasıyla Alp Tegin tarafından kurulan devlet Gaznelilerdir.",
     answers: [
@@ -39,7 +39,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Abbasiler Dönemi'nde ordularında görev yapan Türkler için kurulan ve bir dönem Abbasilerde başkent olma özelliği de gösteren, günümüzde ise Irak sınırında bulunan şehir aşağıdakilerden hangisidir?",
+    text: "<p><b>Abbasiler Dönemi'nde ordularında görev yapan Türkler için kurulan ve bir dönem Abbasilerde başkent olma özelliği de gösteren, günümüzde ise Irak sınırında bulunan şehir aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Abbasiler, ordudaki Türk askerlerinin Araplarla karışıp savaşçı özelliklerini kaybetmemesi için Samarra (Sürre-men-raa) şehrini kurmuşlardır.",
     answers: [
@@ -47,7 +47,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Türklerin İslamiyet'i kabulü ile;\nI. Ahilik,\nII. gulam,\nIII. vakıf\nunsurlarından hangilerinin gelişme gösterdiği söylenebilir?",
+    text: "<p><b>Türklerin İslamiyet'i kabulü ile;</b></p><p>I. Ahilik,<br>II. gulam,<br>III. vakıf</p><p><b>unsurlarından hangilerinin gelişme gösterdiği söylenebilir?</b></p>",
     diff: 1,
     expl: "Ahilik (esnaf teşkilatı), Gulam (esir/devşirme asker sistemi) ve Vakıf kurumları İslamiyet'in kabulünden sonra Türk-İslam devletlerinde ortaya çıkmış ve gelişmiştir.",
     answers: [
@@ -55,7 +55,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "İskitleri ataları olarak kabul ettikleri için kendilerini \"Afresyapoğulları\" olarak nitelendiren Türk-İslam devleti aşağıdakilerden hangisidir?",
+    text: "<p><b>İskitleri ataları olarak kabul ettikleri için kendilerini</b> \"Afresyapoğulları\" <b>olarak nitelendiren Türk-İslam devleti aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
     expl: "Karahanlılar, soylarını efsanevi Türk hükümdarı Alp Er Tunga'ya (İran kaynaklarında Afrasiyab) dayandırdıkları için kendilerine Afrasiyaboğulları demişlerdir.",
     answers: [
@@ -63,7 +63,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Büyük Selçuklu Devleti'nin yıkılmasında etkili olan nedenler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Büyük Selçuklu Devleti'nin yıkılmasında etkili olan nedenler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Baba İshak (Babailer) Ayaklanması, Büyük Selçuklu Devleti'nin değil, Türkiye (Anadolu) Selçuklu Devleti'nin zayıflamasında ve yıkılış sürecinde etkilidir.",
     answers: [
@@ -71,7 +71,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Gazneli Hükümdarı Sultan Mahmut'un;\nI. ekonomik kazanç elde etmek,\nII. İslamiyet'i yayılmasını sağlamak,\nIII. dinî lider hâline gelmek\ndüşüncelerinden hangilerini gerçekleştirmek için Hindistan'a seferler yaptığı söylenebilir?",
+    text: "<p><b>Gazneli Hükümdarı Sultan Mahmut'un;</b></p><p>I. ekonomik kazanç elde etmek,<br>II. İslamiyet'in yayılmasını sağlamak,<br>III. dinî lider hâline gelmek</p><p><b>düşüncelerinden hangilerini gerçekleştirmek için Hindistan'a seferler yaptığı söylenebilir?</b></p>",
     diff: 2,
     expl: "Gazneli Mahmut, Hindistan'a yaptığı 17 seferde İslamiyet'i yaymayı (Gaza ve Cihat) ve ganimet elde etmeyi (ekonomik) amaçlamıştır. Halifeliği (dini liderliği) ele geçirme amacı yoktur.",
     answers: [
@@ -79,7 +79,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Gazneliler ile Karahanlılar arasında 1025 yılında gerçekleşen \"Maveraünnehir İttifakı\"na katılan hükümdarlar aşağıdakilerin hangisinde doğru olarak verilmiştir?",
+    text: "<p><b>Gazneliler ile Karahanlılar arasında 1025 yılında gerçekleşen</b> \"Maveraünnehir İttifakı\"<b>na katılan hükümdarlar aşağıdakilerin hangisinde doğru olarak verilmiştir?</b></p>",
     diff: 3,
     expl: "Karahanlı hükümdarı Yusuf Kadir Han ile Gazneli hükümdarı Sultan Mahmut bir araya gelerek Maveraünnehir mülakatını gerçekleştirmişlerdir.",
     answers: [
@@ -87,7 +87,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "I. Dandanakan\nII. Malazgirt\nIII. Nesa\nsavaşlarından hangileri Anadolu hâkimiyeti nedeniyle yaşanmıştır?",
+    text: "<p>I. Dandanakan<br>II. Malazgirt<br>III. Nesa</p><p><b>savaşlarından hangileri Anadolu hâkimiyeti nedeniyle yaşanmıştır?</b></p>",
     diff: 2,
     expl: "Dandanakan ve Nesa savaşları Büyük Selçuklu ile Gazneliler arasında Horasan hakimiyeti için yapılmıştır. Malazgirt Savaşı ise Anadolu'nun kapılarını Türklere açmak için Bizans ile yapılmıştır.",
     answers: [
@@ -95,7 +95,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Büyük Selçukluların yıkılması ile ortaya çıkan atabeylikler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Büyük Selçukluların yıkılması ile ortaya çıkan atabeylikler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "Kastamonu'da kurulan Candaroğulları, Türkiye Selçuklu Devleti'nin yıkılış sürecinde kurulan 2. Dönem Türk Beyliklerinden biridir. Atabeylik değildir.",
     answers: [
@@ -103,15 +103,15 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "1174 - 1250 yılları arasında Mısır'da hüküm süren Eyyûbi Devleti ile ilgili olarak verilen;\nI. Hicaz bölgesinin ilk kez Türk hâkimiyetine girmesi,\nII. Hittin Savaşı ile Haçlılara üstünlük sağlaması,\nIII. Fatimi Devleti'ne son vermesi\nyargılarından hangileri doğru niteliktedir?",
+    text: "<p><b>1174 - 1250 yılları arasında Mısır'da hüküm süren Eyyûbi Devleti ile ilgili olarak verilen;</b></p><p>I. Hicaz bölgesinin ilk kez Türk hâkimiyetine girmesi,<br>II. Hıttin Savaşı ile Haçlılara üstünlük sağlaması,<br>III. Fatimi Devleti'ne son vermesi</p><p><b>yargılarından hangileri doğru niteliktedir?</b></p>",
     diff: 2,
-    expl: "Hicaz bölgesine egemen olan İLK Türk devleti Akşitler (İhşidiler)'dir. Ancak Hittin Savaşı (Kudüs'ün alınması) ve Şii Fatimilere son verilmesi Selahaddin Eyyübi dönemidir.",
+    expl: "Hicaz bölgesine egemen olan İLK Türk devleti Akşitler (İhşidiler)'dir. Ancak Hıttin Savaşı (Kudüs'ün alınması) ve Şii Fatimilere son verilmesi Selahaddin Eyyûbi dönemidir.",
     answers: [
       { text: "Yalnız II", ok: false }, { text: "Yalnız III", ok: false }, { text: "I ve II", ok: false }, { text: "II ve III", ok: true }, { text: "I, II ve III", ok: false }
     ]
   },
   {
-    text: "\"Hadim'ül Harameyn-i Şerif\" unvanı ile anılan Türk-İslam hükümdarı aşağıdakilerden hangisidir?",
+    text: "<p>\"Hadim'ül Harameyn-i Şerif\" <b>unvanı ile anılan Türk-İslam hükümdarı aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Mekke ve Medine'nin (Haremeyn) hizmetkarı unvanını ilk kullanan Türk hükümdarı Selahaddin Eyyûbi'dir (Daha sonra Yavuz Sultan Selim de kullanacaktır).",
     answers: [
@@ -119,7 +119,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Aşağıda verilen Selçuklu hükümdarlarından hangisinin ölümü üzerine iç karışıklıklar başlamış ve devlet 1092 - 1118 yılları arasında sürecek olan \"Fetret Devri\"ne girmiştir?",
+    text: "<p><b>Aşağıda verilen Selçuklu hükümdarlarından hangisinin ölümü üzerine iç karışıklıklar başlamış ve devlet 1092 - 1118 yılları arasında sürecek olan</b> \"Fetret Devri\"<b>ne girmiştir?</b></p>",
     diff: 2,
     expl: "Sultan Melikşah'ın 1092'deki ölümüyle oğulları arasında taht kavgaları başlamış ve bu döneme Fetret Devri denilmiştir.",
     answers: [
@@ -127,7 +127,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "Karahanlı Devleti'ni ilk Türk devletlerinden ayıran en önemli özellik aşağıdakilerden hangisidir?",
+    text: "<p><b>Karahanlı Devleti'ni ilk Türk devletlerinden ayıran en önemli özellik aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Karahanlıların, Hun, Göktürk veya Uygurlardan en temel farkı; Orta Asya'da İslamiyet'i kabul eden ilk büyük Türk devleti olmasıdır.",
     answers: [
@@ -139,7 +139,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_1: McQ[] = [
 export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
   // ---------------- TÜRK İSLAM DEVLETLERİ - TEST 2 ----------------
   {
-    text: "Aşağıda verilen devletlerin hangisinde sultan dinî bakımdan halifeye, halife de siyasi bakımdan sultana bağlı kalmıştır?",
+    text: "<p><b>Aşağıda verilen devletlerin hangisinde sultan dinî bakımdan halifeye, halife de siyasi bakımdan sultana bağlı kalmıştır?</b></p>",
     diff: 2,
     expl: "Tuğrul Bey'in Bağdat seferi sonrası Abbasi halifesi siyasi yetkilerini Selçuklu sultanına devretmiş, sadece dini lider olarak kalmıştır.",
     answers: [
@@ -147,7 +147,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "- En geniş sınırlarına Alaettin Tekiş zamanında ulaşmışlardır.\n- Moğollar ile \"Otrar Faciası\" olayını yaşamışlardır.\nÖzellikleri verilen Türk-İslam devleti aşağıdakilerden hangisidir?",
+    text: "<ul><li>En geniş sınırlarına Alaettin Tekiş zamanında ulaşmışlardır.</li><li>Moğollar ile \"Otrar Faciası\" olayını yaşamışlardır.</li></ul><p><b>Özellikleri verilen Türk-İslam devleti aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Cengiz Han'ın elçilerini Otrar şehrinde öldürdükleri için Moğolların gazabına uğrayan (Otrar Faciası) devlet Harzemşahlardır.",
     answers: [
@@ -155,15 +155,15 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "1086 yılında Melikşah aralarında Nizamülmülk'ün de bulunduğu devlet adamlarına \"Her biriniz memleketimiz hakkında düşünün... Allah'ın fermanına veya kanunlarına aykırı bir hadise olmasın\" demiştir.\nMelikşah'ın bu sözlerinden hareketle Selçuklular ile ilgili aşağıdaki yargılardan hangisine ulaşılamaz?",
+    text: "<p>1086 yılında Melikşah aralarında Nizamülmülk'ün de bulunduğu devlet adamlarına \"Her biriniz memleketimiz hakkında düşünün, önceki padişahların yapıp bizim yapamadığımız devlet işlerini yazılı olarak bize bildirsin ki memleketlerimizde Allah'ın fermanına veya kanunlarına aykırı bir hadise olmasın, ahirette bunun hesabını veremeyiz.\" demiştir.</p><p><b>Melikşah'ın bu sözlerinden hareketle Selçuklular ile ilgili aşağıdaki yargılardan hangisine <u>ulaşılamaz</u>?</b></p>",
     diff: 3,
-    expl: "Meşruti (padişah + meclis) ve Demokratik uygulamalar Selçuklularda yoktur. Yönetim mutlak monarşidir (padişahlıktır). Metinde sadece danışma ve adaletten bahsedilmiştir.",
+    expl: "Melikşah'ın devlet adamlarından görüş istemesi danışmaya dayalı (demokratik) bir uygulamayı ve hükümdarın icraatının sorgulanabildiğini; Allah'ın fermanına ve kanunlara uyma vurgusu teokratik özelliği ve kanun üstünlüğünü gösterir. Ancak hükümdarın yetkilerinin bir anayasa ve meclisle sınırlandığı meşruti monarşiye geçildiğine dair bir bilgi yoktur.",
     answers: [
-      { text: "Hükümdarların yaptığı faaliyetlerin sorgulanabileceği", ok: false }, { text: "Devletin teokratik özellik gösterdiği", ok: false }, { text: "Kanun üstünlüğünün esas alındığı", ok: false }, { text: "Meşruti - monarşik yapıya geçildiği", ok: false }, { text: "Demokratik uygulamaların görüldüğü", ok: true } // Soru kökünde hata olabilir, cevap anahtarı D diyor ancak D ve E yargılarına ulaşılamaz. Cevap anahtarına (D) sadık kalındı.
+      { text: "Hükümdarların yaptığı faaliyetlerin sorgulanabileceği", ok: false }, { text: "Devletin teokratik özellik gösterdiği", ok: false }, { text: "Kanun üstünlüğünün esas alındığı", ok: false }, { text: "Meşruti - monarşik yapıya geçildiği", ok: true }, { text: "Demokratik uygulamaların görüldüğü", ok: false }
     ]
   },
   {
-    text: "Büyük Selçukluların hâkimiyet kurduğu bölgeler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Büyük Selçukluların hâkimiyet kurduğu bölgeler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 3,
     expl: "Büyük Selçuklu Devleti İran, Irak ve Horasan bölgesinde hüküm sürmüştür (İsfahan, Merv, Rey, Nişabur). Ancak Hindistan'ın Pencap bölgesinde Gazneliler hüküm sürmüştür.",
     answers: [
@@ -171,7 +171,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "I. Ayn-ı Calut\nII. Elbistan\nIII. Ayn-ı Seylem\nsavaşlarının hangileri Moğol - Memluk orduları arasında yaşanmıştır?",
+    text: "<p>I. Ayn-ı Calut<br>II. Elbistan<br>III. Ayn-ı Seylem</p><p><b>savaşlarının hangileri Moğol - Memluk orduları arasında yaşanmıştır?</b></p>",
     diff: 2,
     expl: "Memlukler, Moğolları (İlhanlıları) Ayn-ı Calut (1260) ve Elbistan (1277) savaşlarında yenerek Moğol ilerleyişini durduran tek devlettir.",
     answers: [
@@ -179,15 +179,15 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "1250 - 1517 yılları arasında hüküm süren Memluk Devleti ile ilgili aşağıdakilerden hangisi doğru bir bilgi değildir?",
+    text: "<p><b>1250 - 1517 yılları arasında hüküm süren Memluk Devleti ile ilgili aşağıdakilerden hangisi doğru bir bilgi <u>değildir</u>?</b></p>",
     diff: 2,
     expl: "Mısır'daki İLK Türk-İslam eserleri (örneğin Tolunoğlu Ahmet Camii) Tolunoğulları dönemine aittir, Memluklere değil.",
     answers: [
-      { text: "Osmanlılar ile yaptıkları Mercidabık - Ridaniye savaşları ile yıkılmışlardır.", ok: false }, { text: "Farklı hanedanlar tarafından yönetilmişlerdir.", ok: false }, { text: "Abbasi halifesini ülkelerinde barındırmışlardır.", ok: false }, { text: "Mısır Türkiye'si anlayışının oluşmasına katkıda bulunmuşlardır.", ok: false }, { text: "Mısır'daki ilk Türk-İslam eserlerini ortaya koymuşlardır.", ok: true }
+      { text: "Osmanlılar ile yaptıkları Mercidabık - Ridaniye savaşları ile yıkılmışlardır.", ok: false }, { text: "Farklı hanedanlar tarafından yönetilmişlerdir.", ok: false }, { text: "Abbasi halifesini ülkelerinde barındırmışlardır.", ok: false }, { text: "\"Mısır Türkiye'si\" anlayışının oluşmasına katkıda bulunmuşlardır.", ok: false }, { text: "Mısır'daki ilk Türk-İslam eserlerini ortaya koymuşlardır.", ok: true }
     ]
   },
   {
-    text: "Büyük Selçuklularda Sultan Melikşah'ın ölümü ile başlayan Fetret Devri'ne son veren Selçuklu hükümdarı aşağıdakilerden hangisidir?",
+    text: "<p><b>Büyük Selçuklularda Sultan Melikşah'ın ölümü ile başlayan Fetret Devri'ne son veren Selçuklu hükümdarı aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Büyük Selçuklu'nun son büyük sultanı Sencer, taht kavgalarını bitirerek devleti tekrar toparlamış ve Fetret Devrini bitirmiştir.",
     answers: [
@@ -195,15 +195,15 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Büyük Selçukluların önemli görevlere İran kökenli yöneticileri getirmesinin;\nI. Oğuz isyanlarının yaşanması,\nII. bürokraside Farsçanın egemen olması,\nIII. yerel nüfusun bağlılığının kolaylaşması\ndurumlarından hangilerine neden olduğu savunulabilir?",
+    text: "<p><b>Büyük Selçukluların önemli görevlere İran kökenli yöneticileri getirmesinin;</b></p><p>I. Oğuz isyanlarının yaşanması,<br>II. bürokraside Farsçanın egemen olması,<br>III. yerel nüfusun bağlılığının kolaylaşması</p><p><b>durumlarından hangilerine neden olduğu savunulabilir?</b></p>",
     diff: 2,
-    expl: "İranlıların devlet kademelerine (vezirlik vb.) getirilmesi asıl kurucu unsur olan Türkmenlerin (Oğuzların) isyanına neden olmuş ve devlet dilinde Farsçanın etkisini artırmıştır.",
+    expl: "İranlıların devlet kademelerine (vezirlik vb.) getirilmesi asıl kurucu unsur olan Türkmenlerin (Oğuzların) isyanına neden olmuş, devlet dilinde Farsçanın etkisini artırmış ve yerel İran halkının devlete bağlılığını kolaylaştırmıştır.",
     answers: [
-      { text: "Yalnız II", ok: false }, { text: "I ve II", ok: false }, { text: "I ve III", ok: false }, { text: "II ve III", ok: false }, { text: "I, II ve III", ok: true } // Cevap anahtarı E
+      { text: "Yalnız II", ok: false }, { text: "I ve II", ok: false }, { text: "I ve III", ok: false }, { text: "II ve III", ok: false }, { text: "I, II ve III", ok: true }
     ]
   },
   {
-    text: "- Türk-İslam tarihinin \"ilk imparatorluğu\" olma özelliğini göstermişlerdir.\n- \"Yeminiler\" olarak da bilinmektedir.\nÖzellikleri verilen Türk-İslam devleti aşağıdakilerden hangisidir?",
+    text: "<ul><li>Türk-İslam tarihinin \"ilk imparatorluğu\" olma özelliğini göstermişlerdir.</li><li>\"Yeminiler\" olarak da bilinmektedir.</li></ul><p><b>Özellikleri verilen Türk-İslam devleti aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Farklı milletleri (Türk, Afgan, Hintli, Gurlu) bünyesinde barındırdığı için ilk Türk-İslam imparatorluğu sayılan devlet Gaznelilerdir. (Diğer adları Yeminilerdir).",
     answers: [
@@ -211,7 +211,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Büyük Selçuklu komutanları tarafından Anadolu'da kurulan beylikler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Büyük Selçuklu komutanları tarafından Anadolu'da kurulan beylikler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Mengücek, Danişment, Saltuk ve Çaka beylikleri Malazgirt sonrası kurulan 1. Dönem beyliklerdir. Karamanoğulları ise Türkiye Selçuklu yıkıldıktan sonra kurulan 2. Dönem beyliğidir.",
     answers: [
@@ -219,7 +219,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Osmanoğullarının 1335 yılına kadar vergi ödemek zorunda kaldığı Moğol - Türk devleti aşağıdakilerden hangisidir?",
+    text: "<p><b>Osmanoğullarının 1335 yılına kadar vergi ödemek zorunda kaldığı Moğol - Türk devleti aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Kösedağ Savaşı'ndan sonra Anadolu'yu haraca bağlayan ve İran'da kurulan Moğol devleti İlhanlılardır.",
     answers: [
@@ -227,7 +227,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Aşağıda verilen Mısır'da kurulmuş olan Türk-İslam devletlerinden hangisi diğerlerine oranla daha uzun süre varlık göstermiştir?",
+    text: "<p><b>Aşağıda verilen Mısır'da kurulmuş olan Türk-İslam devletlerinden hangisi diğerlerine oranla daha uzun süre varlık göstermiştir?</b></p>",
     diff: 2,
     expl: "Memlukler, 1250 yılından Yavuz Sultan Selim'in 1517 Mısır Seferine kadar (267 yıl) yaşayarak Mısır'daki en uzun ömürlü Türk devleti olmuştur.",
     answers: [
@@ -235,7 +235,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Büyük Selçuklu Sultanı Melikşah'ın Dönemi'nde yaşanan gelişmeler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Büyük Selçuklu Sultanı Melikşah'ın Dönemi'nde yaşanan gelişmeler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "İlk Selçuklu medresesi (Nişabur Medresesi) Tuğrul Bey döneminde açılmıştır. Nizamiye Medreseleri ise Alparslan döneminde başlayıp Melikşah'ta devam etmiştir.",
     answers: [
@@ -243,7 +243,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "963 - 1187 yılları arasında siyasi varlığını sürdüren Gazneliler ile ilgili aşağıdakilerden hangisine ulaşılamaz?",
+    text: "<p><b>963 - 1187 yılları arasında siyasi varlığını sürdüren Gazneliler ile ilgili aşağıdakilerden hangisine <u>ulaşılamaz</u>?</b></p>",
     diff: 1,
     expl: "Haçlı Seferlerine karşı Anadolu Selçuklu, Eyyübiler ve Danişmentliler gibi batıdaki devletler mücadele etmiştir. Afganistan/Hindistan'daki Gaznelilerin Haçlılarla savaşı yoktur.",
     answers: [
@@ -251,7 +251,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Karahanlıları, Gaznelilerden ayıran özellikler arasında aşağıdakilerden hangisi yer almaz?",
+    text: "<p><b>Karahanlıları, Gaznelilerden ayıran özellikler arasında aşağıdakilerden hangisi <u>yer almaz</u>?</b></p>",
     diff: 2,
     expl: "Hem Karahanlılar hem de Gazneliler Türk idareciler tarafından kurulmuşlardır, bu onları ayıran değil birleştiren bir özelliktir.",
     answers: [
@@ -259,7 +259,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "Ani ve Kars kalelerini fethetmesi üzerine Abbasi halifesi tarafından Fetihlerin Babası anlamına gelen \"Ebu'l Feth\" unvanı verilen Selçuklu hükümdarı aşağıdakilerden hangisidir?",
+    text: "<p><b>Ani ve Kars kalelerini fethetmesi üzerine Abbasi halifesi tarafından Fetihlerin Babası anlamına gelen</b> \"Ebu'l Feth\" <b>unvanı verilen Selçuklu hükümdarı aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
     expl: "Hristiyanlar için çok kutsal sayılan Ani Kalesi'ni aldığı için Halife, Sultan Alparslan'a 'Ebu'l Feth' (Fetihlerin Babası) unvanını vermiştir.",
     answers: [
@@ -267,7 +267,7 @@ export const TAR_TURK_ISLAM_DEVLETLERI_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "- Timur Hanedanlığı'nın devamı niteliğindedir.\n- Hindistan'da siyasi birliği sağlayan son Türk-İslam devletidir.\n- En parlak dönemini Cihan Şah Dönemi'nde yaşamışlardır.\nÖzellikleri verilen Türk-İslam devleti aşağıdakilerden hangisidir?",
+    text: "<ul><li>Timur Hanedanlığı'nın devamı niteliğindedir.</li><li>Hindistan'da siyasi birliği sağlayan son Türk-İslam devletidir.</li><li>En parlak dönemini Cihan Şah Dönemi'nde yaşamışlardır.</li></ul><p><b>Özellikleri verilen Türk-İslam devleti aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
     expl: "Timur'un torunlarından Babür Şah tarafından Hindistan'da kurulan ve Tac Mahal'i inşa eden (Şah Cihan dönemi) imparatorluk Babürlerdir.",
     answers: [

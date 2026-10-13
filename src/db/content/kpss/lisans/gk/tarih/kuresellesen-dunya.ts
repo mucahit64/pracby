@@ -173,14 +173,14 @@ export const TAR_KURESELLESEN_DUNYA_TEST_1: McQ[] = [
     ]
   },
   {
-    text: "<p><b>I. Camp David,<br>II. Washington,<br>III. Zürih</b></p><p><b>antlaşmalarından hangileri Orta Doğu coğrafyasında savaş durumuna son vermeye yöneliktir?</b></p>",
+    text: "<p>I. Camp David<br>II. Washington<br>III. Zürih</p><p><b>antlaşmalarından hangileri Orta Doğu coğrafyasında savaş durumuna son vermeye yöneliktir?</b></p>",
     diff: 3,
-    expl: "1978 Camp David Antlaşmaları, Orta Doğu'da İsrail ile Mısır arasındaki savaşlara son vermiştir. Washington ve Zürih antlaşmaları Orta Doğu'daki Arap-İsrail savaşlarıyla ilgili değildir (Örn: Zürih, Kıbrıs meselesi içindir).",
+    expl: "Camp David Antlaşmaları (1978) ve Washington Antlaşması (1994, Ürdün-İsrail) Arap-İsrail arasındaki savaş durumunu sona erdirmeye yöneliktir. Zürih Antlaşması (1959) ise Kıbrıs meselesiyle ilgilidir.",
     answers: [
-      { text: "Yalnız I", ok: true },
+      { text: "Yalnız I", ok: false },
       { text: "Yalnız II", ok: false },
       { text: "Yalnız III", ok: false },
-      { text: "I ve II", ok: false },
+      { text: "I ve II", ok: true },
       { text: "I, II ve III", ok: false }
     ]
   }
@@ -203,7 +203,7 @@ export const TAR_KURESELLESEN_DUNYA_TEST_2: McQ[] = [
     ]
   },
   {
-    text: "<p><b>İran İslam devriminin gerçekleşmesi ve Humeyni'nin iktidara gelmesinde aşağıdaki devletlerden hangisinin katkısı daha fazla olmuştur?</b></p>",
+    text: "<p><b>İran İslam devriminin gerçekleşmesi ve Humeyni'nin iktidara gelmesinde aşağıdaki devletlerden hangisinin katkısı <u>daha fazla</u> olmuştur?</b></p>",
     diff: 3,
     expl: "Şah yönetimine karşı muhalefet eden Ayetullah Humeyni, sürgün yıllarını (özellikle son dönemini) Fransa'da (Paris yakınlarında) geçirmiş ve devrimi kasetler, mesajlar yoluyla oradan yöneterek 1979'da İran'a dönmüştür.",
     answers: [
@@ -217,10 +217,10 @@ export const TAR_KURESELLESEN_DUNYA_TEST_2: McQ[] = [
   {
     text: "<p><b>1980 yılında Irak-İran Savaşı'nın başlaması aşağıdaki oluşumlardan hangisinin önemini kaybettiğinin göstergesidir?</b></p>",
     diff: 2,
-    expl: "Orta Doğu'daki en büyük iki İslam ülkesinin 8 yıl boyunca birbirleriyle savaşması, İslam dünyasında birlik ve barışı sağlamak için 1969'da kurulan \"İslam Konferansı Örgütü\"nün (İİT) işlevsiz kaldığını ve önemini yitirdiğini gösterir.",
+    expl: "Bağdat Paktı (CENTO), Orta Doğu ülkelerini SSCB'ye karşı bir arada tutmayı amaçlıyordu. 1979 İran İslam Devrimi ile İran'ın paktan çekilmesi ve 1980'de bölgenin iki büyük ülkesi Irak ile İran'ın birbirine savaş açması, paktın önemini tamamen kaybettiğini göstermiştir.",
     answers: [
-      { text: "İslam Konferansı Örgütü", ok: true },
-      { text: "Bağdat Paktı", ok: false },
+      { text: "İslam Konferansı Örgütü", ok: false },
+      { text: "Bağdat Paktı", ok: true },
       { text: "Bağlantısızlar Hareketi", ok: false },
       { text: "Şangay Beşlisi", ok: false },
       { text: "COMECON", ok: false }
@@ -229,13 +229,13 @@ export const TAR_KURESELLESEN_DUNYA_TEST_2: McQ[] = [
   {
     text: "<p><b>SSCB'nin dağılması ile;</b></p><p>I. Cominform,<br>II. Varşova Paktı,<br>III. COMECON</p><p><b>teşkilatlarından hangileri önemini kaybetmiştir?</b></p>",
     diff: 1,
-    expl: "SSCB'nin (Doğu Blokunun) çökmesiyle, bu bloğun siyasi (Cominform), askeri (Varşova Paktı) ve ekonomik (COMECON) tüm teşkilatları varlık nedenini yitirerek tamamen dağılmış ve tarihe karışmıştır.",
+    expl: "SSCB'nin dağılmasıyla Doğu Bloku'nun askerî teşkilatı Varşova Paktı ve ekonomik teşkilatı COMECON varlık nedenini yitirerek 1991'de dağılmıştır. Cominform ise SSCB'nin dağılmasından çok önce, 1956'da kapatılmıştı.",
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "Yalnız II", ok: false },
-      { text: "Yalnız III", ok: false },
-      { text: "II ve III", ok: false },
-      { text: "I, II ve III", ok: true }
+      { text: "I ve II", ok: false },
+      { text: "II ve III", ok: true },
+      { text: "I, II ve III", ok: false }
     ]
   },
   {
