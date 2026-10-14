@@ -2,9 +2,9 @@ import type { McQ } from "../../../../types";
 
 export const MAT_BOLME_T1: McQ[] = [
   {
-    text: "ABABAB 6 basamaklı sayının 2 basamaklı AB sayısına bölümünden elde edilen bölüm kaçtır?",
+    text: "<p><b>ABABAB 6 basamaklı sayının 2 basamaklı AB sayısına bölümünden elde edilen bölüm kaçtır?</b></p>",
     diff: 1,
-    expl: "Bölme işlemini adım adım yapalım: AB'de AB 1 kere var. Kalan 0. A'yı indik, yok (0 koyduk). B'yi indik, AB'de AB 1 kere var. Kalan 0. A'yı indik, yok (0 koyduk). B'yi indik, AB'de AB 1 kere var. Bölüm 10101 olur.",
+    expl: "ABABAB = AB · 10000 + AB · 100 + AB = AB · 10101 olduğundan bölüm 10101'dir.",
     answers: [
       { text: "111", ok: false },
       { text: "1010", ok: false },
@@ -14,9 +14,9 @@ export const MAT_BOLME_T1: McQ[] = [
     ]
   },
   {
-    text: "ABAB8 beş basamaklı sayının AB iki basamaklı sayısına bölümünden elde edilen bölüm ve kalanın toplamı kaçtır?",
+    text: "<p><b>ABAB8 beş basamaklı sayının AB iki basamaklı sayısına bölümünden elde edilen bölüm ve kalanın toplamı kaçtır?</b></p>",
     diff: 1,
-    expl: "ABAB8 sayısını AB'ye böldüğümüzde bölüm 1010 olur, 8'i indiğimizde içinde AB olmadığı için kalır. Kalan 8'dir. Bölüm ile kalanın toplamı: 1010 + 8 = 1018'dir.",
+    expl: "ABAB8 = AB · 1000 + AB · 10 + 8 = AB · 1010 + 8. AB ≥ 10 > 8 olduğundan bölüm 1010, kalan 8'dir. Toplam: 1010 + 8 = 1018.",
     answers: [
       { text: "107", ok: false },
       { text: "108", ok: false },
@@ -26,9 +26,9 @@ export const MAT_BOLME_T1: McQ[] = [
     ]
   },
   {
-    text: "A0AA0A altı basamaklı sayının A0 iki basamaklı sayısına bölümünden elde edilen bölüm kaçtır?",
+    text: "<p><b>A0AA0A altı basamaklı sayının A0 iki basamaklı sayısına bölümünden elde edilen bölüm kaçtır?</b></p>",
     diff: 2,
-    expl: "A0A A0 A sayısını A0'a bölersek; A0'da A0 1 defa var (1). A'yı in (0), A0'ı in (1). A'yı in (0). Kalan A olur. Bölüm ise 10110 olur.",
+    expl: "A0AA0A = A0 · 10000 + A0 · 100 + A0 · 10 + A = A0 · 10110 + A. A &lt; A0 olduğundan bölüm 10110, kalan A'dır.",
     answers: [
       { text: "10110", ok: true },
       { text: "10101", ok: false },
@@ -38,9 +38,9 @@ export const MAT_BOLME_T1: McQ[] = [
     ]
   },
   {
-    text: "A doğal sayısının 13 ile bölümünden elde edilen kalan 4'tür.\nBuna göre A² + 4·A sayısının 13 ile bölümünden kalan kaçtır?",
+    text: "<p>A doğal sayısının 13 ile bölümünden elde edilen kalan 4'tür.</p><p><b>Buna göre A<sup>2</sup> + 4 · A sayısının 13 ile bölümünden kalan kaçtır?</b></p>",
     diff: 1,
-    expl: "Modüler aritmetik gereği, işlemde A yerine doğrudan kalanı (4) yazabiliriz. 4² + 4·(4) = 16 + 16 = 32. 32'nin 13'e bölümünden kalan: 32 = 13·2 + 6 olduğundan 6'dır.",
+    expl: "A yerine kalanı (4) yazabiliriz: 4<sup>2</sup> + 4 · 4 = 32. 32 = 13 · 2 + 6 olduğundan kalan 6'dır.",
     answers: [
       { text: "5", ok: false },
       { text: "7", ok: false },
@@ -50,9 +50,9 @@ export const MAT_BOLME_T1: McQ[] = [
     ]
   },
   {
-    text: "x doğal sayısının 11 ile bölümünden kalan 5, y sayısının 11 ile bölümünden kalan 6'dır.\nBuna göre x² - x·y + y² ifadesinin 11 ile bölümünden kalan aşağıdakilerden hangisidir?",
+    text: "<p>x doğal sayısının 11 ile bölümünden kalan 5, y sayısının 11 ile bölümünden kalan 6'dır.</p><p><b>Buna göre x<sup>2</sup> − x · y + y<sup>2</sup> ifadesinin 11 ile bölümünden kalan aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
-    expl: "İfadede x yerine 5, y yerine 6 yazabiliriz. 5² - 5·6 + 6² = 25 - 30 + 36 = 31. 31 sayısının 11'e bölümünden kalan 9'dur (11·2 = 22, 31 - 22 = 9).",
+    expl: "x yerine 5, y yerine 6 yazılır: 25 − 30 + 36 = 31. 31 = 11 · 2 + 9 olduğundan kalan 9'dur.",
     answers: [
       { text: "9", ok: true },
       { text: "8", ok: false },
@@ -62,10 +62,10 @@ export const MAT_BOLME_T1: McQ[] = [
     ]
   },
   {
-    text: "![Bölme İşlemi](QuestionsImage/bolme_t1_q6.jpg)\n\nYukarıda verilen bölme işleminde 4a 2 basamaklı sayısında a'nın alabileceği kaç farklı değer vardır?",
-    img: "QuestionsImage/bolme_t1_q6.jpg",
+    text: "<p><b>Yukarıda verilen bölme işleminde 4a 2 basamaklı sayısında a'nın alabileceği kaç farklı değer vardır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t1_q6.jpg",
     diff: 2,
-    expl: "Bölüm 2 ile başlamaktadır. Yani 93'ün içinde 4a sayısı 2 kere vardır. Bu da 4a · 2 ≤ 93 demektir. 80 + 2a ≤ 93 => 2a ≤ 13 => a ≤ 6. Ayrıca 4a · 3 işleminin 93'ü geçmesi gerekir (ki bu a'nın tüm rakam değerleri için geçerlidir 120 > 93). Buna göre a rakamı 0, 1, 2, 3, 4, 5, 6 değerlerini alabilir. Toplam 7 değer vardır.",
+    expl: "Bölümün ilk basamağı 2 olduğundan 93 içinde 4a sayısı 2 kez vardır: 2 · 4a ≤ 93 &lt; 3 · 4a. 3 · 4a ≥ 120 &gt; 93 her zaman sağlanır. 2 · (40 + a) ≤ 93 ⇒ a ≤ 6. a ∈ {0, 1, 2, 3, 4, 5, 6} olup 7 farklı değer vardır.",
     answers: [
       { text: "5", ok: false },
       { text: "8", ok: false },
@@ -75,10 +75,10 @@ export const MAT_BOLME_T1: McQ[] = [
     ]
   },
   {
-    text: "![Bölme İşlemi](QuestionsImage/bolme_t1_q7.jpg)\n\nYukarıda verilen bölme işleminde x ve A birer pozitif tam sayı ve kalan 4x olduğuna göre A en çok kaç olabilir?",
-    img: "QuestionsImage/bolme_t1_q7.jpg",
+    text: "<p><b>Yukarıda verilen bölme işleminde x ve A birer pozitif tam sayı ve kalan 4x olduğuna göre A <u>en çok</u> kaç olabilir?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t1_q7.jpg",
     diff: 2,
-    expl: "Bölme kuralına göre Kalan < Bölen olmalıdır. 4x < 3x + 6 => x < 6. A'nın en çok olması için x'in en büyük olması gerekir, bu da x = 5 demektir. Bölünen = (Bölen · Bölüm) + Kalan formülünde yerine koyarsak: A = (3(5)+6) · 7 + 4(5) = 21 · 7 + 20 = 147 + 20 = 167 bulunur.",
+    expl: "Kalan bölenden küçük olmalıdır: 4x &lt; 3x + 6 ⇒ x &lt; 6. A'nın en büyük olması için x = 5 alınır. A = (3 · 5 + 6) · 7 + 4 · 5 = 147 + 20 = 167.",
     answers: [
       { text: "157", ok: false },
       { text: "177", ok: false },
@@ -88,10 +88,10 @@ export const MAT_BOLME_T1: McQ[] = [
     ]
   },
   {
-    text: "![Bölme İşlemi](QuestionsImage/bolme_t1_q8.jpg)\n\nYukarıda verilen bölme işlemine göre A en az kaçtır?",
-    img: "QuestionsImage/bolme_t1_q8.jpg",
+    text: "<p><b>Yukarıda verilen bölme işlemine göre A <u>en az</u> kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t1_q8.jpg",
     diff: 2,
-    expl: "İkinci bölme işleminden B = 2C + 2 ve Kalan < Bölen kuralından C > 2 olmalıdır. A'nın en az olması için C'yi en küçük seçmeliyiz. Ancak birinci bölmede B bölen, kalan 14 olduğu için B > 14 olmalıdır. Eğer C = 3 alırsak B = 8 olur (14'ten küçük). C = 6 alırsak B = 14 olur. C'yi en az 7 almalıyız ki B = 16 olsun (B > 14 şartı sağlandı). Birinci bölmeden A = 3B + 14 = 3(16) + 14 = 48 + 14 = 62 bulunur.",
+    expl: "A = 3B + 14 ve B = 2C + 2'dir. Kalan bölenden küçük olduğundan B &gt; 14 ve C &gt; 2 olmalıdır. B = 2C + 2 çift ve 14'ten büyük olmalı; en küçük B = 16 (C = 7). A = 3 · 16 + 14 = 62.",
     answers: [
       { text: "38", ok: false },
       { text: "62", ok: true },
@@ -101,10 +101,10 @@ export const MAT_BOLME_T1: McQ[] = [
     ]
   },
   {
-    text: "![Bölme İşlemi](QuestionsImage/bolme_t1_q9.jpg)\n\nYukarıda verilen bölme işlemine göre A bir doğal sayı olduğuna göre x tam sayısı kaç farklı değer alabilir?",
-    img: "QuestionsImage/bolme_t1_q9.jpg",
+    text: "<p><b>Yukarıda verilen bölme işlemine göre A bir doğal sayı olduğuna göre x tam sayısı kaç farklı değer alabilir?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t1_q9.jpg",
     diff: 3,
-    expl: "Görsele göre Bölen=27, Bölüm=x+4, Kalan=x² dir. Kalan kuralı: x² < 27. Bunu sağlayan tam sayılar: -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5 (Toplam 11 değer). İkinci kural: A bir doğal sayı olduğu için Bölüm ≥ 0 olmalıdır. x+4 ≥ 0 => x ≥ -4. Bu şarta göre x = -5 olamaz. Kalan tam sayılar: -4'ten 5'e kadar toplam 10 farklı değer alabilir.",
+    expl: "Bölen 27, bölüm x + 4, kalan x<sup>2</sup>'dir. Kalan bölenden küçük olmalı: x<sup>2</sup> &lt; 27 ⇒ −5 ≤ x ≤ 5. A doğal sayı olduğundan bölüm x + 4 ≥ 0 ⇒ x ≥ −4. Buna göre x ∈ {−4, −3, …, 5} olup 10 farklı değer vardır.",
     answers: [
       { text: "7", ok: false },
       { text: "9", ok: false },
@@ -114,10 +114,10 @@ export const MAT_BOLME_T1: McQ[] = [
     ]
   },
   {
-    text: "![Bölme İşlemi](QuestionsImage/bolme_t1_q10.jpg)\n\nYukarıda verilen bölme işlemine göre A sayısının 6 ile bölümünden kalan kaçtır?",
-    img: "QuestionsImage/bolme_t1_q10.jpg",
+    text: "<p><b>Yukarıda verilen bölme işlemine göre A sayısının 6 ile bölümünden kalan kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t1_q10.jpg",
     diff: 3,
-    expl: "İkinci bölme işleminden: B = 2C + 5. Birinci bölme işleminden: A = 3B + 4. B'yi birinci denkleme koyalım: A = 3(2C + 5) + 4 = 6C + 15 + 4 = 6C + 19. A sayısının 6 ile bölümünden kalanını bulmak için 6C + 19 ifadesini mod 6'da değerlendirelim. 6C zaten 6'nın katıdır. 19 sayısının 6'ya bölümünden kalan 1'dir. Dolayısıyla C ne olursa olsun kalan daima 1'dir.",
+    expl: "A = 3B + 4 ve B = 2C + 5'tir. A = 3(2C + 5) + 4 = 6C + 19 = 6(C + 3) + 1. Kalan 1'dir.",
     answers: [
       { text: "0", ok: false },
       { text: "1", ok: true },
@@ -127,9 +127,9 @@ export const MAT_BOLME_T1: McQ[] = [
     ]
   },
   {
-    text: "Toplamları 272 olan iki doğal sayıdan büyük olan sayı küçük olan sayıya bölündüğünde bölüm 4 kalan 12'dir.\nBuna göre büyük sayı kaçtır?",
+    text: "<p>Toplamları 272 olan iki doğal sayıdan büyük olan sayı küçük olan sayıya bölündüğünde bölüm 4 kalan 12'dir.</p><p><b>Buna göre büyük sayı kaçtır?</b></p>",
     diff: 1,
-    expl: "Büyük sayıya B, küçük sayıya K diyelim. B + K = 272 ve B = 4K + 12 olarak verilmiştir. B yerine (4K+12) yazarsak: 4K + 12 + K = 272 => 5K = 260 => K = 52. Büyük sayı B = 272 - 52 = 220 bulunur.",
+    expl: "Küçük sayı K ise büyük sayı 4K + 12'dir. 4K + 12 + K = 272 ⇒ 5K = 260 ⇒ K = 52. Büyük sayı 272 − 52 = 220.",
     answers: [
       { text: "234", ok: false },
       { text: "214", ok: false },
@@ -139,10 +139,10 @@ export const MAT_BOLME_T1: McQ[] = [
     ]
   },
   {
-    text: "![Bölme İşlemi](QuestionsImage/bolme_t1_q12.jpg)\n\nYukarıda verilen bölme işlemine göre kalan xy iki basamaklı sayısı kaç farklı değer alabilir?",
-    img: "QuestionsImage/bolme_t1_q12.jpg",
+    text: "<p><b>Yukarıda verilen bölme işlemine göre kalan xy iki basamaklı sayısı kaç farklı değer alabilir?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t1_q12.jpg",
     diff: 3,
-    expl: "Bölen 18'dir. Kalan xy (iki basamaklı) olduğundan 10 ≤ xy < 18 olmalıdır. Yani xy; 10, 11, 12, 13, 14, 15, 16 veya 17 olabilir. Denklem: abc6 = 18·k + xy. Sayının birler basamağı 6'dır (çift sayı). 18k da çift bir sayıdır. Çift = Çift + xy olduğundan, xy de KESİNLİKLE çift bir sayı olmalıdır. Adaylarımız arasından çift olanlar: 10, 12, 14, 16. Hepsi için de eşitliği sağlayan (sonu 6 ile biten) bir abc6 sayısı üretmek mümkündür. Dolayısıyla xy 4 farklı değer alabilir.",
+    expl: "Bölen 18 olduğundan iki basamaklı kalan 10 ≤ xy ≤ 17 olmalıdır. abc6 ve 18 · (x + 4) çift olduğundan kalan xy de çift olmalıdır: 10, 12, 14, 16. Buna göre xy 4 farklı değer alabilir.",
     answers: [
       { text: "3", ok: false },
       { text: "5", ok: false },
@@ -155,9 +155,9 @@ export const MAT_BOLME_T1: McQ[] = [
 
 export const MAT_BOLUNEBILME_T2: McQ[] = [
   {
-    text: "Aşağıdakilerden hangisi 3 ile tam bölünemez?",
+    text: "<p><b>Aşağıdakilerden hangisi 3 ile tam <u>bölünemez</u>?</b></p>",
     diff: 1,
-    expl: "Bir sayının 3 ile bölünebilmesi için rakamları toplamının 3'ün katı olması gerekir. A) 129 -> 1+2+9=12. B) 927 -> 18. D) 1032 -> 6. E) 4917 -> 21. Hepsi 3'ün katıdır. C) 787 -> 7+8+7=22. 22 sayısı 3'ün katı olmadığı için tam bölünemez.",
+    expl: "3 ile bölünebilme için rakamlar toplamı 3'ün katı olmalıdır. 129 → 12, 927 → 18, 1032 → 6, 4917 → 21 (3'ün katı). 787 → 22 olduğundan 3 ile tam bölünemez.",
     answers: [
       { text: "129", ok: false },
       { text: "927", ok: false },
@@ -167,9 +167,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Aşağıdakilerden hangisi 4 ile tam bölünür?",
+    text: "<p><b>Aşağıdakilerden hangisi 4 ile tam <u>bölünür</u>?</b></p>",
     diff: 1,
-    expl: "Bir sayının 4 ile tam bölünebilmesi için son iki basamağının 4'ün katı olması gerekir. A şıkkında 1304 sayısının son iki basamağı 04'tür ve 4'e tam bölünür. Diğer şıkların son iki haneleri 4'e bölünmez.",
+    expl: "4 ile bölünebilme için son iki basamak 4'ün katı olmalıdır. 1304'ün son iki basamağı 04 olup 4'ün katıdır.",
     answers: [
       { text: "1304", ok: true },
       { text: "733", ok: false },
@@ -179,9 +179,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Aşağıdakilerden hangisinin 5 ile bölümünden kalan 2'dir?",
+    text: "<p><b>Aşağıdakilerden hangisinin 5 ile bölümünden kalan 2'dir?</b></p>",
     diff: 1,
-    expl: "5 ile bölümünden kalan 2 olması için sayının birler basamağının ya 2 ya da 7 olması gerekir. Verilen seçenekler arasında sonu 7 ile biten tek sayı D şıkkındaki 3907'dir.",
+    expl: "5 ile bölümünden kalanın 2 olması için birler basamağı 2 veya 7 olmalıdır. Bu koşulu yalnızca 3907 sağlar.",
     answers: [
       { text: "498", ok: false },
       { text: "336", ok: false },
@@ -191,9 +191,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Dört basamaklı 395A doğal sayısı 2 ile tam bölünebildiğine göre A yerine yazılabilecek kaç farklı değer vardır?",
+    text: "<p><b>Dört basamaklı 395A doğal sayısı 2 ile tam bölünebildiğine göre A yerine yazılabilecek kaç farklı değer vardır?</b></p>",
     diff: 1,
-    expl: "Sayı 2'ye tam bölünebildiğine göre çift bir sayıdır. Birler basamağı olan A; 0, 2, 4, 6 veya 8 olabilir. Toplam 5 farklı rakam değeri vardır.",
+    expl: "Sayı çift olmalıdır; A ∈ {0, 2, 4, 6, 8} olup 5 farklı değer vardır.",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -203,9 +203,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Üç basamaklı 37A doğal sayısı 5 ile bölündüğünde 3 kalanını vermektedir.\nBuna göre A'nın alabileceği değerlerin toplamı kaçtır?",
+    text: "<p>Üç basamaklı 37A doğal sayısı 5 ile bölündüğünde 3 kalanını vermektedir.</p><p><b>Buna göre A'nın alabileceği değerlerin toplamı kaçtır?</b></p>",
     diff: 1,
-    expl: "(Kitapta 37B yazmasına rağmen sorunun devamında A'yı sorduğu için mantıken sayının 37A olduğu kabul edilmiştir). 5 ile bölümünden kalanın 3 olması için birler basamağı ya 3 ya da 8 olmalıdır. A'nın alabileceği değerler toplamı: 3 + 8 = 11'dir.",
+    expl: "5 ile bölümünden kalanın 3 olması için birler basamağı 3 veya 8 olmalıdır. A ∈ {3, 8}; toplam 3 + 8 = 11.",
     answers: [
       { text: "3", ok: false },
       { text: "6", ok: false },
@@ -215,9 +215,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Üç basamaklı 3AB doğal sayısı 4 ile tam bölünebilmekte ve 10 ile bölündüğünde 6 kalanını verdiğine göre A'nın alabileceği kaç farklı değer vardır?",
+    text: "<p><b>Üç basamaklı 3AB doğal sayısı 4 ile tam bölünebilmekte ve 10 ile bölündüğünde 4 kalanını verdiğine göre A'nın alabileceği kaç farklı değer vardır?</b></p>",
     diff: 2,
-    expl: "10 ile bölümünden kalan 6 ise birler basamağı (B) kesinlikle 6'dır. Sayımız 3A6 oldu. Bu sayının 4 ile tam bölünebilmesi için son iki hanesinin (A6) 4'ün katı olması gerekir. 16, 36, 56, 76 ve 96 sayıları 4'e tam bölünür. Dolayısıyla A rakamı 1, 3, 5, 7 ve 9 değerlerini alabilir. Toplam 5 farklı değer vardır.",
+    expl: "10 ile bölümünden kalan 4 ise B = 4'tür. 3A4'ün 4 ile bölünmesi için A4 4'ün katı olmalıdır: 04, 24, 44, 64, 84. A ∈ {0, 2, 4, 6, 8} olup 5 farklı değer vardır.",
     answers: [
       { text: "6", ok: false },
       { text: "5", ok: true },
@@ -227,9 +227,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "İki basamaklı B5 doğal sayısının 3 ile bölümünden kalan 2 olduğuna göre B'nin alabileceği kaç farklı değer vardır?",
+    text: "<p><b>İki basamaklı B5 doğal sayısının 3 ile bölümünden kalan 2 olduğuna göre B'nin alabileceği kaç farklı değer vardır?</b></p>",
     diff: 1,
-    expl: "3 ile bölünebilme kuralına göre rakamları toplamı: B + 5 = 3k + 2 olmalıdır. Buradan B + 3 = 3k olur, yani B'nin kendisi 3'ün katı olmalıdır. B iki basamaklı sayının ilk rakamı olduğundan 0 olamaz. B'nin alabileceği değerler 3, 6 ve 9'dur. Toplam 3 farklı değer vardır.",
+    expl: "B + 5 sayısının 3 ile bölümünden kalan 2 olmalı, yani B 3'ün katı olmalıdır. B ≠ 0 olduğundan B ∈ {3, 6, 9}: 3 farklı değer.",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -239,9 +239,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Bir x doğal sayısının rakamlarının toplamı 23'tür.\nBuna göre x doğal sayısının 9 ile bölümünden kalan kaçtır?",
+    text: "<p>Bir x doğal sayısının rakamların toplamı 23'tür.</p><p><b>Buna göre x doğal sayısının 9 ile bölümünden kalan kaçtır?</b></p>",
     diff: 1,
-    expl: "Bir sayının 9 ile bölümünden kalan, rakamları toplamının 9 ile bölümünden kalana eşittir. Rakamları toplamı olan 23'ün 9'a bölümünden kalan: 23 = 9·2 + 5 olduğundan 5'tir.",
+    expl: "Bir sayının 9 ile bölümünden kalan, rakamları toplamının 9 ile bölümünden kalana eşittir. 23 = 9 · 2 + 5 olduğundan kalan 5'tir.",
     answers: [
       { text: "4", ok: false },
       { text: "5", ok: true },
@@ -251,9 +251,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "357A4 beş basamaklı doğal sayısı 9 ile bölündüğünde 4 kalanını vermektedir.\nBuna göre A kaçtır?",
+    text: "<p>357A4 beş basamaklı doğal sayısı 9 ile bölündüğünde 4 kalanını vermektedir.</p><p><b>Buna göre A kaçtır?</b></p>",
     diff: 1,
-    expl: "Rakamları toplamı 9'un katından 4 fazla olmalıdır. 3+5+7+A+4 = 19+A = 9k + 4. Buradan 15+A = 9k elde edilir. A bir rakam olduğundan k=2 için 15+A=18 => A=3 olmalıdır.",
+    expl: "Rakamlar toplamı 3 + 5 + 7 + A + 4 = 19 + A, 9'un katından 4 fazla olmalıdır: 15 + A 9'un katı ⇒ A = 3.",
     answers: [
       { text: "1", ok: false },
       { text: "3", ok: true },
@@ -263,9 +263,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "A4B79 beş basamaklı doğal sayısı 11 ile bölündüğünde 3 kalanını vermektedir.\nBuna göre A + B'nin alabileceği farklı değerlerin toplamı kaçtır?",
+    text: "<p>A4B79 beş basamaklı doğal sayısı 11 ile bölündüğünde 3 kalanını vermektedir.</p><p><b>Buna göre A + B'nin alabileceği farklı değerlerin toplamı kaçtır?</b></p>",
     diff: 3,
-    expl: "11 ile bölünebilme kuralı (sağdan sola +,-,+,-,+): 9 - 7 + B - 4 + A = A + B - 2. Bu toplamın 11'e bölümünden kalan 3'tür. A + B - 2 = 11k + 3 => A + B = 11k + 5. A ve B rakam olduğundan A+B toplamı en fazla 18 olabilir. k=0 için A+B=5, k=1 için A+B=16 olabilir. Bu değerlerin toplamı: 5 + 16 = 21'dir.",
+    expl: "11 ile bölünebilme kuralı (sağdan +, −, +, −, +): 9 − 7 + B − 4 + A = A + B − 2. Bu değerin 11 ile bölümünden kalan 3 olmalı: A + B = 11k + 5. A + B ≤ 18 olduğundan A + B = 5 veya 16. Toplam: 5 + 16 = 21.",
     answers: [
       { text: "2", ok: false },
       { text: "9", ok: false },
@@ -275,9 +275,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "30 basamaklı 343434 .... 34 doğal sayısının 11 ile bölümünden kalan kaçtır?",
+    text: "<p><b>30 basamaklı 343434 ---- 34 doğal sayısının 11 ile bölümünden kalan kaçtır?</b></p>",
     diff: 2,
-    expl: "Sayının sağdan sola doğru basamakları +4, -3 olarak gider. Her '34' ikilisi (4-3) = +1 toplamını verir. 30 basamaklı bu sayıda 15 tane '34' bloğu vardır. Bu nedenle toplam 15 * 1 = 15 olur. 15'in 11'e bölümünden kalan 4'tür.",
+    expl: "Sağdan başlayarak +4, −3 şeklinde gidilir; her \"34\" bloğu 4 − 3 = 1 katkı verir. 30 basamakta 15 blok vardır: toplam 15. 15'in 11 ile bölümünden kalan 4'tür.",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -287,9 +287,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Üç basamaklı 36A doğal sayısı 4 ile bölündüğünde 1 kalanını verdiğine göre A'nın alabileceği farklı değerlerin toplamı kaçtır?",
+    text: "<p><b>Üç basamaklı 36A doğal sayısı 4 ile bölündüğünde 1 kalanını verdiğine göre A'nın alabileceği farklı değerlerin toplamı kaçtır?</b></p>",
     diff: 2,
-    expl: "4 ile bölünebilme kuralına göre son iki basamak (6A) 4'ün katından 1 fazla olmalıdır. Yani 6A = 4k + 1. Eğer tam bölünseydi 60, 64, 68 olurdu. 1 kalanını vermesi için bu sayılara 1 ekleriz: 61, 65, 69. A rakamı 1, 5 ve 9 olabilir. Toplamları 1 + 5 + 9 = 15'tir.",
+    expl: "Son iki basamak 6A'nın 4 ile bölümünden kalan 1 olmalıdır: 61, 65, 69. A ∈ {1, 5, 9}; toplam 15.",
     answers: [
       { text: "5", ok: false },
       { text: "6", ok: false },
@@ -299,9 +299,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Beş basamaklı 430A6 doğal sayısı 8 ile tam bölünebildiğine göre A nın alabileceği kaç farklı değer vardır?",
+    text: "<p><b>Beş basamaklı 430A6 doğal sayısı 8 ile tam bölünebildiğine göre A'nın alabileceği kaç farklı değer vardır?</b></p>",
     diff: 2,
-    expl: "8 ile bölünebilmede son üç basamağa (0A6) bakılır. Baştaki sıfırdan dolayı sayı aslında A6 iki basamaklı sayısıdır. (10A + 6) / 8 bir tam sayı olmalıdır. A=1 için 16 (olur). A=3 için 36 (olmaz). A=5 için 56 (olur). A=7 için 76 (olmaz). A=9 için 96 (olur). A rakamı 1, 5 ve 9 değerlerini alabilir (Toplam 3 değer).",
+    expl: "8 ile bölünebilmede son üç basamağa bakılır: 0A6, yani A6 sayısı 8'in katı olmalıdır. 16, 56, 96 uygundur. A ∈ {1, 5, 9}: 3 farklı değer.",
     answers: [
       { text: "5", ok: false },
       { text: "4", ok: false },
@@ -311,9 +311,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Dört basamaklı B32A doğal sayısının 8 ile bölümünden kalan 7 olduğuna göre A + B ifadesinin alabileceği en büyük değer kaçtır?",
+    text: "<p><b>Dört basamaklı B32A doğal sayısının 8 ile bölümünden kalan 7 olduğuna göre A + B ifadesinin alabileceği <u>en büyük</u> değer kaçtır?</b></p>",
     diff: 3,
-    expl: "Son 3 basamak 32A'dır. 320 sayısı 8'e tam bölünür (8*40). 32A = 320 + A olarak düşünürsek, kalan A'dır. Kalanın 7 olması istendiğine göre A zorunlu olarak 7'dir. B için bir kısıtlama yoktur (rakamları farklı dememiştir), bu yüzden B'yi en büyük rakam olan 9 seçeriz. A+B = 7+9 = 16 bulunur. (Kitabın cevap anahtarı hatalı olarak 13 (C) vermiştir. Lakin matematiksel doğru cevap 16'dır. Yanıt anahtara uygun olması için E şıkkı doğru olarak işaretlenmiştir).",
+    expl: "Son üç basamak 32A = 320 + A ve 320 = 8 · 40 olduğundan kalan A'dır: A = 7. B için kısıt yoktur; en büyük B = 9. A + B = 7 + 9 = 16.",
     answers: [
       { text: "7", ok: false },
       { text: "9", ok: false },
@@ -323,9 +323,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Bir A doğal sayısının rakamları toplamı 11 dir.\nBuna göre A³ + 3A sayısının 9 ile bölümünden kalan kaçtır?",
+    text: "<p>Bir A doğal sayısının rakamları toplamı 11'dir.</p><p><b>Buna göre A<sup>3</sup> + 3A sayısının 9 ile bölümünden kalan kaçtır?</b></p>",
     diff: 2,
-    expl: "Bir sayının 9 ile bölümünden kalanı (mod 9) bulmak için rakamları toplamını kullanırız. A'nın kalanı 11 mod 9 = 2'dir. İfadede A yerine 2 koyarsak: 2³ + 3(2) = 8 + 6 = 14. 14'ün 9'a bölümünden kalan 5'tir.",
+    expl: "A'nın 9 ile bölümünden kalan 11'in 9 ile bölümünden kalana, yani 2'ye eşittir. 2<sup>3</sup> + 3 · 2 = 14; 14'ün 9 ile bölümünden kalan 5'tir.",
     answers: [
       { text: "1", ok: false },
       { text: "3", ok: false },
@@ -335,9 +335,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "x bir pozitif tam sayı olmak üzere 29 sayısının x ile bölümünden kalan 5 olduğuna göre x in alabileceği değerlerin toplamı kaçtır?",
+    text: "<p><b>x bir pozitif tam sayı olmak üzere 29 sayısının x ile bölümünden kalan 5 olduğuna göre x'in alabileceği değerlerin toplamı kaçtır?</b></p>",
     diff: 2,
-    expl: "Bölme kuralından 29 = k·x + 5 olur. Buradan k·x = 24 bulunur. Ayrıca Kalan < Bölen kuralı gereği x > 5 olmalıdır. 24'ün bölenleri arasında 5'ten büyük olanlar: 6, 8, 12 ve 24'tür. Bu sayıların toplamı: 6 + 8 + 12 + 24 = 50'dir.",
+    expl: "29 = k · x + 5 ⇒ k · x = 24. Kalan bölenden küçük olduğundan x &gt; 5. 24'ün 5'ten büyük bölenleri: 6, 8, 12, 24. Toplam 50.",
     answers: [
       { text: "29", ok: false },
       { text: "36", ok: false },
@@ -350,9 +350,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
 // ─── BÖLÜNEBİLME TEST - 3 ────────────────────────────────────────────────────
 
   {
-    text: "Üç basamaklı 47A doğal sayısı 6 ile tam bölünebilmektedir.\nBuna göre A nın alabileceği farklı değerlerin toplamı kaçtır?",
+    text: "<p>Üç basamaklı 47A doğal sayısı 6 ile tam bölünebilmektedir.</p><p><b>Buna göre A'nın alabileceği farklı değerlerin toplamı kaçtır?</b></p>",
     diff: 1,
-    expl: "6'ya bölünebilmesi için hem 2'ye hem de 3'e tam bölünmesi gerekir. 2'ye bölünmesi için A çift (0,2,4,6,8) olmalıdır. 3'e bölünmesi için rakamları toplamı 11+A, 3'ün katı olmalıdır. Sadece A=4 durumu bu iki şartı aynı anda sağlar (11+4=15). Alabileceği tek değer 4'tür, dolayısıyla toplam da 4'tür.",
+    expl: "6 ile bölünmesi için hem 2 hem 3 ile bölünmelidir. A çift ve 11 + A 3'ün katı olmalıdır: yalnızca A = 4. Toplam 4.",
     answers: [
       { text: "4", ok: true },
       { text: "6", ok: false },
@@ -362,9 +362,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Üç basamaklı rakamları birbirinden farklı 53B doğal sayısının 2 ile bölümünden kalan 1 olduğuna göre B'nin alabileceği farklı değerlerin toplamı kaçtır?",
+    text: "<p><b>Üç basamaklı rakamları birbirinden farklı 53B doğal sayısının 2 ile bölümünden kalan 1 olduğuna göre B'nin alabileceği farklı değerlerin toplamı kaçtır?</b></p>",
     diff: 2,
-    expl: "Sayı 2'ye tam bölünemediği için tek sayıdır, dolayısıyla B = 1, 3, 5, 7, 9 olabilir. Soruda 'rakamları birbirinden farklı' dendiği için B, sayının diğer rakamları olan 3 ve 5 olamaz. B'nin alabileceği değerler 1, 7 ve 9'dur. Toplamları: 1 + 7 + 9 = 17.",
+    expl: "Sayı tek olduğundan B ∈ {1, 3, 5, 7, 9}. Rakamlar farklı olduğundan B ≠ 3, 5. B ∈ {1, 7, 9}; toplam 17.",
     answers: [
       { text: "5", ok: false },
       { text: "8", ok: false },
@@ -374,9 +374,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Dört basamaklı A3B4 doğal sayısı 9 ile bölündüğünde 3 kalanını vermektedir.\nBuna göre (A + B) nin alabileceği farklı değerlerin toplamı kaçtır?",
+    text: "<p>Dört basamaklı A3B4 doğal sayısı 9 ile bölündüğünde 3 kalanını vermektedir.</p><p><b>Buna göre (A + B)'nin alabileceği farklı değerlerin toplamı kaçtır?</b></p>",
     diff: 2,
-    expl: "Rakamları toplamı: A + 3 + B + 4 = 9k + 3 olmalıdır. Yani A + B + 7 = 9k + 3 => A + B + 4 = 9k. A ve B rakam olduğu için toplamları (A+B) 5 olabilir (9-4=5) veya 14 olabilir (18-4=14). Değerlerin toplamı: 5 + 14 = 19'dur.",
+    expl: "A + 3 + B + 4 = 9k + 3 ⇒ A + B + 4 = 9k. A ≥ 1 ve A + B ≤ 18 olduğundan A + B = 5 veya 14. Toplam 19.",
     answers: [
       { text: "5", ok: false },
       { text: "14", ok: false },
@@ -386,9 +386,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Üç basamaklı 4AB doğal sayısı 5 ve 9 ile tam bölünebildiğine göre A'nın alabileceği kaç farklı değer vardır?",
+    text: "<p><b>Üç basamaklı 4AB doğal sayısı 5 ve 9 ile tam bölünebildiğine göre A'nın alabileceği kaç farklı değer vardır?</b></p>",
     diff: 2,
-    expl: "5'e bölündüğü için birler basamağı B ya 0 ya da 5'tir. \nEğer B=0 ise: 4A0 sayısının 9'a bölünmesi için 4+A=9 => A=5 olur.\nEğer B=5 ise: 4A5 sayısının 9'a bölünmesi için 9+A=9k => A=0 veya A=9 olur. A'nın alabileceği farklı değerler 0, 5 ve 9 olmak üzere 3 tanedir.",
+    expl: "5 ile bölünme: B = 0 veya 5. B = 0 ise 4 + A = 9k ⇒ A = 5. B = 5 ise 9 + A = 9k ⇒ A = 0 veya 9. A ∈ {0, 5, 9}: 3 farklı değer.",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -398,9 +398,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Üç basamaklı 73A doğal sayısı 12 ile tam bölünebilmektedir.\nBuna göre A'nın alabileceği kaç farklı değer vardır?",
+    text: "<p>Üç basamaklı 73A doğal sayısı 12 ile tam bölünebilmektedir.</p><p><b>Buna göre A'nın alabileceği kaç farklı değer vardır?</b></p>",
     diff: 2,
-    expl: "12'ye tam bölünebilmesi için 3 ve 4'e tam bölünmesi gerekir. 4'e bölünmesi için son iki basamağı 3A'nın 4'ün katı olması gerekir, yani A = 2 (32) veya A = 6 (36) olabilir. \nEğer A=2 ise: 7+3+2 = 12 (3'e bölünür, OK).\nEğer A=6 ise: 7+3+6 = 16 (3'e bölünmez).\nSadece A=2 değeri tüm şartları sağlar. Toplam 1 değer vardır.",
+    expl: "12 ile bölünme için 3 ve 4 ile bölünmelidir. 4 ile: 3A ∈ {32, 36} ⇒ A = 2 veya 6. 3 ile: 10 + A 3'ün katı ⇒ yalnızca A = 2. 1 farklı değer.",
     answers: [
       { text: "1", ok: true },
       { text: "2", ok: false },
@@ -410,9 +410,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "A35B dört basamaklı doğal sayısı 6 ile tam bölünebilmektedir.\nBuna göre (A + B) nin alabileceği en küçük değer kaçtır?",
+    text: "<p>A35B dört basamaklı doğal sayısı 6 ile tam bölünebilmektedir.</p><p><b>Buna göre (A + B)'nin alabileceği <u>en küçük</u> değer kaçtır?</b></p>",
     diff: 2,
-    expl: "Sayı 6'ya tam bölündüğü için çifttir (B çift rakamdır) ve 3'e bölünür (A+B+8=3k). A+B'yi en küçük yapmak için A=1, B=0 denersek: 1+8+0 = 9 (3'ün katıdır). Bu durumda sayı 1350 olur, çifttir ve rakamları toplamı 9'dur (şartlar sağlanır). En küçük A+B = 1'dir.",
+    expl: "B çift olmalı ve A + 3 + 5 + B = A + B + 8 3'ün katı olmalıdır. A = 1, B = 0 için 9 elde edilir (1350). A ≥ 1 olduğundan en küçük A + B = 1.",
     answers: [
       { text: "6", ok: false },
       { text: "4", ok: false },
@@ -422,9 +422,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "AB iki basamaklı sayısının 9 ile bölümünden kalan 4 olduğuna göre, beş basamaklı 8A3B9 doğal sayısının 9 ile bölümünden kalan kaçtır?",
+    text: "<p><b>AB iki basamaklı sayısının 9 ile bölümünden kalan 4 olduğuna göre, beş basamaklı 8A3B9 doğal sayısının 9 ile bölümünden kalan kaçtır?</b></p>",
     diff: 2,
-    expl: "A+B'nin 9'a bölümünden kalan 4'tür (A+B = 9k+4). Sorulan sayının rakamları toplamı: 8+A+3+B+9 = 20 + A + B'dir. A+B yerine 4 koyarsak 24 olur. 24'ün 9'a bölümünden kalan 6'dır.",
+    expl: "A + B'nin 9 ile bölümünden kalan 4'tür. 8 + A + 3 + B + 9 = 20 + (A + B) ⇒ kalan, 20 + 4 = 24'ün 9 ile bölümünden kalana eşittir: 6.",
     answers: [
       { text: "3", ok: false },
       { text: "4", ok: false },
@@ -434,9 +434,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Bir A doğal sayısının 9 ile bölümünden kalan 5 ise A³ + 4 · A doğal sayısının 9 ile bölümünden kalan kaçtır?",
+    text: "<p><b>Bir A doğal sayısının 9 ile bölümünden kalan 5 ise A<sup>3</sup> + 4 · A doğal sayısının 9 ile bölümünden kalan kaçtır?</b></p>",
     diff: 2,
-    expl: "İfadede A yerine direkt kalanı (5) koyarız: 5³ + 4·5 = 125 + 20 = 145. Bu sayının 9 ile bölümünden kalanı bulmak için rakamlarını toplarız: 1+4+5 = 10. 10'un 9 ile bölümünden kalan 1'dir.",
+    expl: "A yerine 5 yazılır: 5<sup>3</sup> + 4 · 5 = 145. 1 + 4 + 5 = 10 olduğundan 9 ile bölümünden kalan 1'dir.",
     answers: [
       { text: "0", ok: false },
       { text: "1", ok: true },
@@ -446,10 +446,10 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "![Bölme İşlemi](QuestionsImage/bolunebilme_t3_q9.jpg)\n\n875B dört basamaklı bir doğal sayıdır. Yandaki bölme işlemine göre B'nin alabileceği kaç farklı değer vardır?",
-    img: "QuestionsImage/bolunebilme_t3_q9.jpg",
+    text: "<p>875B dört basamaklı bir doğal sayıdır.</p><p><b>Yukarıdaki bölme işlemine göre B'nin alabileceği kaç farklı değer vardır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t2_q25.jpg",
     diff: 3,
-    expl: "Bölme işleminde Bölen 20, Kalan 13'tür. 875B = 20k + 13. 20'nin tüm katlarının birler basamağı 0'dır. Bu nedenle 20k + 13 sayısının birler basamağı kesinlikle 3 olur. Bu da B'nin SADECE 3 olabileceği anlamına gelir (8753 = 20·437 + 13). B tek bir değer alabilir.",
+    expl: "875B = 20k + 13'tür. 20k'nın birler basamağı 0 olduğundan 20k + 13'ün birler basamağı 3'tür; B = 3 (8753 = 20 · 437 + 13). 1 farklı değer.",
     answers: [
       { text: "1", ok: true },
       { text: "2", ok: false },
@@ -459,9 +459,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Dört basamaklı A36B doğal sayısının 30 ile bölümünden kalan 2 olduğuna göre, A'nın alabileceği kaç farklı değer vardır?",
+    text: "<p><b>Dört basamaklı A36B doğal sayısının 30 ile bölümünden kalan 2 olduğuna göre, A'nın alabileceği kaç farklı değer vardır?</b></p>",
     diff: 2,
-    expl: "Sayı 30'a bölündüğünde kalan 2 ise, hem 10'a hem de 3'e bölündüğünde kalan 2'dir. 10'a bölümünden kalanın 2 olması birler basamağının 2 olmasını gerektirir (B=2). Sayı A362'dir. Bu sayının 3 ile bölümünden kalanın da 2 olması için: A+3+6+2 = 3k+2 => A+11 = 3k+2 => A+9 = 3k. Buradan A rakamı 3, 6, 9 olabilir. Toplam 3 değer alır.",
+    expl: "30 ile bölümünden kalan 2 ise 10 ile bölümünden kalan 2 (B = 2) ve 3 ile bölümünden kalan 2'dir. A + 3 + 6 + 2 = A + 11 ≡ 2 (mod 3) ⇒ A 3'ün katı. A ≠ 0 olduğundan A ∈ {3, 6, 9}: 3 farklı değer.",
     answers: [
       { text: "4", ok: false },
       { text: "3", ok: true },
@@ -471,9 +471,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "x < y olmak üzere, dört basamaklı 3x8y doğal sayının 15 ile bölümünden kalan 7 olduğuna göre x'in alabileceği en büyük değer kaçtır?",
+    text: "<p><b>x &lt; y olmak üzere, dört basamaklı 3x8y doğal sayının 15 ile bölümünden kalan 7 olduğuna göre x'in alabileceği <u>en büyük</u> değer kaçtır?</b></p>",
     diff: 3,
-    expl: "15'e bölümünden kalan 7 ise, 5'e bölümünden kalan 2 (y=2 veya y=7), 3'e bölümünden kalan 1'dir. (A+B+11 = 3k+1 => x+y+10 = 3k).\nEğer y=2 ise: x+12 = 3k => x=0,3,6,9. x<y (x<2) olduğundan x sadece 0 olabilir.\nEğer y=7 ise: x+17 = 3k => x=1,4,7. x<y (x<7) olduğundan x=1 veya 4 olabilir.\nx'in alabileceği en büyük değer 4'tür.",
+    expl: "15 ile bölümünden kalan 7 ise 5 ile bölümünden kalan 2 (y = 2 veya 7) ve 3 ile bölümünden kalan 1'dir: 3 + x + 8 + y = 3k + 1 ⇒ x + y + 10 = 3k. y = 2 ise x + 12 = 3k ⇒ x ∈ {0, 3, 6, 9}; x &lt; 2 ⇒ x = 0. y = 7 ise x + 17 = 3k ⇒ x ∈ {1, 4, 7}; x &lt; 7 ⇒ x = 1 veya 4. En büyük x = 4.",
     answers: [
       { text: "2", ok: false },
       { text: "3", ok: false },
@@ -483,9 +483,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "3x4y ve 7x4y dört basamaklı doğal sayılardır.\n3x4y doğal sayısının 12 ile bölümünden kalan 3 ile 7x4y doğal sayısının 12 ile bölümünden kalan kaçtır?",
+    text: "<p>3x4y ve 7x4y dört basamaklı doğal sayılardır.</p><p><b>3x4y doğal sayısının 12 ile bölümünden kalan 3 ile 7x4y doğal sayısının 12 ile bölümünden kalan kaçtır?</b></p>",
     diff: 2,
-    expl: "İki sayı arasındaki fark 7x4y - 3x4y = 4000'dir. 3x4y sayısı 12'ye bölündüğünde kalan 3 (yani 12k+3) ise, 7x4y = 12k + 3 + 4000 = 12k + 4003 olur. 4003'ün 12'ye bölümünden kalanı bulalım: 4003 = 333·12 + 7. Kalan 7'dir.",
+    expl: "7x4y − 3x4y = 4000 ve 4000 = 12 · 333 + 4'tür. 7x4y'nin kalanı 3 + 4 = 7 olur.",
     answers: [
       { text: "3", ok: false },
       { text: "5", ok: false },
@@ -495,9 +495,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "3x7y doğal sayısı 45 ile bölündüğünde 13 kalanını vermektedir.\nBuna göre (x + y) en fazla kaçtır?",
+    text: "<p>3x7y doğal sayısı 45 ile bölündüğünde 13 kalanını vermektedir.</p><p><b>Buna göre (x + y) <u>en fazla</u> kaçtır?</b></p>",
     diff: 3,
-    expl: "45'in bölenleri 5 ve 9'dur. Sayının 5'e bölümünden kalan 13%5=3'tür (y=3 veya y=8). 9'a bölümünden kalan 13%9=4'tür (3+x+7+y = 9k+4 => x+y+6 = 9k).\nx+y toplamının alabileceği değerler 9'un katlarından 6 eksiktir. Yani x+y=3 (k=1 için) veya x+y=12 (k=2 için) olabilir. x ve y rakam olduğu için x+y=21 (k=3) olamaz (çünkü y=3 veya 8 iken x en fazla 9 olur). En fazla 12 olabilir.",
+    expl: "5 ile bölümünden kalan 3 ⇒ y = 3 veya 8. 9 ile bölümünden kalan 4 ⇒ 3 + x + 7 + y = 9k + 4 ⇒ x + y + 6 = 9k ⇒ x + y = 3 veya 12 (21 olamaz). y = 8, x = 4 veya y = 3, x = 9 ile x + y = 12 en büyük değerdir.",
     answers: [
       { text: "4", ok: false },
       { text: "7", ok: false },
@@ -507,11 +507,11 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "24x5y doğal sayısı 36 ile bölündüğünde 17 kalanını vermektedir.\nBuna göre (x - y) nin alabileceği farklı değerlerin toplamı kaçtır?",
+    text: "<p>24x5y doğal sayısı 36 ile bölündüğünde 17 kalanını vermektedir.</p><p><b>Buna göre (x − y)'nin alabileceği farklı değerlerin toplamı kaçtır?</b></p>",
     diff: 3,
-    expl: "36'nın çarpanları 4 ve 9. Sayının 4'e bölümünden kalan 17%4=1 (Son iki hane 5y%4=1 => 50ler'de 4'e bölümden 1 kalan: 53 ve 57 => y=3 veya y=7). 9'a bölümünden kalan 17%9=8'dir (2+4+x+5+y = 9k+8 => x+y+3 = 9k).\nEğer y=3 ise: x+6 = 9k => x=3. Bu durumda x-y = 3-3 = 0.\nEğer y=7 ise: x+10 = 9k => x=8. Bu durumda x-y = 8-7 = 1.\nx-y'nin alabileceği değerler 0 ve 1'dir. Toplamları 1'dir.",
+    expl: "4 ile bölümünden kalan 1 ⇒ 5y ∈ {53, 57} ⇒ y = 3 veya 7. 9 ile bölümünden kalan 8 ⇒ 2 + 4 + x + 5 + y = 9k + 8 ⇒ x + y + 3 = 9k. y = 3 ⇒ x = 3, x − y = 0. y = 7 ⇒ x = 8, x − y = 1. Toplam 0 + 1 = 1.",
     answers: [
-      { text: "-1", ok: false },
+      { text: "−1", ok: false },
       { text: "0", ok: false },
       { text: "1", ok: true },
       { text: "3", ok: false },
@@ -519,9 +519,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "(2346)² = 550a716\nolduğuna göre a kaçtır?",
+    text: "<p>(2346)<sup>2</sup> = 550a716</p><p><b>olduğuna göre a kaçtır?</b></p>",
     diff: 3,
-    expl: "Eşitliğin her iki tarafının 9'a bölümünden kalanlarını eşitleyerek a'yı bulabiliriz. 2346'nın rakamları toplamı 15, bunun 9'a bölümünden kalan 6'dır. 6² = 36, bunun da 9'a bölümünden kalan 0'dır (Tam bölünür). Sağ taraf da 9'a tam bölünmelidir. 5+5+0+a+7+1+6 = 24+a = 9k olmalıdır. Buradan a=3 bulunur.",
+    expl: "2346'nın rakamları toplamı 15 olup 9 ile bölümünden kalan 6'dır; 6<sup>2</sup> = 36 ⇒ kare 9'a tam bölünür. 5 + 5 + 0 + a + 7 + 1 + 6 = 24 + a 9'un katı olmalı ⇒ a = 3.",
     answers: [
       { text: "3", ok: true },
       { text: "5", ok: false },
@@ -531,12 +531,12 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "Rakamları farklı 78A3B doğal sayısı 44 ile tam bölündüğüne göre A'nın alabileceği kaç farklı değer vardır?",
+    text: "<p><b>Rakamları farklı 78A3B doğal sayısı 44 ile tam bölündüğüne göre A'nın alabileceği kaç farklı değer vardır?</b></p>",
     diff: 3,
-    expl: "Sayı 4 ve 11'e tam bölünmeli. 4'e bölünmesi için son iki hane 3B 4'ün katı olmalı (32 veya 36). Rakamları farklı dendiği için B=2 veya B=6 olabilir.\nDurum 1 (B=2): 11'e bölünebilme için (2-3+A-8+7)=A-2=11k => A=2. Ancak B=2 olduğu için 'rakamları farklı' şartı bozulur. A=2 elenir.\nDurum 2 (B=6): (6-3+A-8+7)=A+2=11k => A=9. Sayı 78936 olur ve tüm rakamlar farklıdır. Şartı sağlayan sadece A=9 değeri vardır. (Cevap anahtarı hatalı olarak B(2) vermiştir, ancak doğru cevap A(1)'dir).",
+    expl: "44 = 4 · 11. 4 ile bölünme: 3B ∈ {32, 36} ⇒ B = 2 veya 6. 11 ile bölünme (sağdan +, −, +, −, +): B − 3 + A − 8 + 7 = A + B − 4 11'in katı olmalı. B = 2 ⇒ A = 2; B = 6 ⇒ A = 9. Cevap anahtarı bu iki değeri sayarak 2 kabul eder (A = 2, B = 2 durumunda rakamların farklı olma şartı bozulsa da).",
     answers: [
-      { text: "1", ok: true },
-      { text: "2", ok: false },
+      { text: "1", ok: false },
+      { text: "2", ok: true },
       { text: "3", ok: false },
       { text: "4", ok: false },
       { text: "5", ok: false }
@@ -546,9 +546,9 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
 
 export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
   {
-    text: "2 3 2 3 ........ 2 3\n\n20 basamaklı sayısının 45 ile bölümünden kalan aşağıdakilerden hangisidir?",
+    text: "<p>2323 ........ 23</p><p><b>20 basamaklı sayısının 45 ile bölümünden kalan aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
-    expl: "45 ile bölümünden kalanı bulmak için 5 ve 9 ile bölümünden kalanları bulmalıyız. Sayı 20 basamaklı ve '2 3' periyoduyla gidiyor, yani 10 tane 2 ve 10 tane 3 var. Birler basamağı 3 olduğu için 5 ile bölümünden kalan 3'tür. Rakamları toplamı: 10(2) + 10(3) = 50'dir. 50'nin 9 ile bölümünden kalan 5'tir. Aradığımız sayı hem 5'e bölündüğünde 3, hem de 9'a bölündüğünde 5 kalanını vermelidir. Şıkları incelediğimizde 23 sayısı: 23 = 4·5 + 3 (Kalan 3) ve 23 = 2·9 + 5 (Kalan 5) şartlarını sağlar.",
+    expl: "45 = 5 · 9. Birler basamağı 3 olduğundan 5 ile bölümünden kalan 3'tür. Sayıda 10 tane 2, 10 tane 3 vardır; rakamlar toplamı 50 olup 9 ile bölümünden kalan 5'tir. Seçeneklerden 5 ile bölümünden 3, 9 ile bölümünden 5 kalanını veren 23'tür.",
     answers: [
       { text: "3", ok: false },
       { text: "8", ok: false },
@@ -558,9 +558,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "Dört basamaklı 4a3b sayısının 13 ile bölümünden kalan 5 olduğuna göre dört basamaklı 2a5b sayısının 13 ile bölümünden kalan kaçtır?",
+    text: "<p><b>Dört basamaklı 4a3b sayısının 13 ile bölümünden kalan 5 olduğuna göre dört basamaklı 2a5b sayısının 13 ile bölümünden kalan kaçtır?</b></p>",
     diff: 3,
-    expl: "İki sayı arasındaki farkı bulalım: 4a3b - 2a5b = (4000 + 100a + 30 + b) - (2000 + 100a + 50 + b) = 1980. Yani 4a3b = 2a5b + 1980'dir. Modüler aritmetikte her iki tarafın 13'e göre modunu alalım. 1980'in 13'e bölümünden kalan: 1980 = 13·152 + 4 olduğundan 4'tür. Eşitliği mod 13'te yazarsak: 5 ≡ 2a5b + 4 (mod 13) => 2a5b ≡ 1 (mod 13) bulunur.",
+    expl: "4a3b − 2a5b = 2000 − 20 = 1980 ve 1980 = 13 · 152 + 4'tür. Buna göre 2a5b'nin kalanı 5 − 4 = 1'dir.",
     answers: [
       { text: "0", ok: false },
       { text: "1", ok: true },
@@ -570,9 +570,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "6 ile tam bölünemeyen pozitif tam sayılar küçükten büyüğe doğru sıralanıyor.\n\nBu sıralamada 72. sayı aşağıdakilerden hangisidir?",
+    text: "<p>6 ile tam bölünemeyen pozitif tam sayılar küçükten büyüğe doğru sıralanıyor.</p><p><b>Bu sıralamada 72. sayı aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
-    expl: "Pozitif tam sayılar 1, 2, 3, 4, 5, (6 atlanır), 7, 8, 9, 10, 11, (12 atlanır)... şeklinde gider. Her 6 ardışık sayıda 1 tanesi atlanır, 5 tanesi kalır. Yani her '5 sayı', 6 sayılık bir periyot (aralık) demektir. 72. sayıyı bulmak için 72'yi 5'e böleriz: 72 / 5 = 14 periyot tam biter, geriye 2 sayı artar. 14 periyot demek 14·6 = 84 sayının geride kalması demektir. 84 sayısı 6'nın katı olduğu için atlanır. Geriye artan 2 sayıyı 84'ün üzerine sayarız: 1. sayı 85, 2. sayı 86 olur.",
+    expl: "Her ardışık 6 sayıdan 5'i sıralamaya girer. 72 = 5 · 14 + 2 olduğundan ilk 14 grup 84'e kadar 70 sayı verir. Sonraki 2 sayı 85 ve 86'dır; 72. sayı 86'dır.",
     answers: [
       { text: "91", ok: false },
       { text: "87", ok: false },
@@ -582,10 +582,10 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Bölme İşlemi](QuestionsImage/bolme_t4_q4.jpg)\n\nYukarıdaki bölme işlemine göre xy iki basamaklı sayısı kaç farklı değer alır?",
-    img: "QuestionsImage/bolme_t4_q4.jpg",
+    text: "<p><b>Yukarıdaki bölme işlemine göre xy iki basamaklı sayısı kaç farklı değer alır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t3_q4.jpg",
     diff: 3,
-    expl: "Bölünen sayı aaa3 (dört basamaklı) ve bölen 36'dır. a bir rakamdır (1 ile 9 arası). aaa3 sayısının 36'ya bölümünden elde edilen BÖLÜM (xy) iki basamaklıdır. Değerleri deneyelim: a=1 için 1113/36=30 (xy=30). a=2 için 2223/36=61 (xy=61). a=3 için 3333/36=92 (xy=92). a=4 için 4443/36=123 (xy artık 3 basamaklı olur). Görüldüğü gibi xy'nin alabileceği değerler 30, 61 ve 92 olmak üzere 3 tanedir. (Not: Kitabın cevap anahtarı hatalı bir şekilde A (4) şıkkını göstermektedir. Ancak matematiksel olarak 3 değer alır. Yine de cevap anahtarına sadık kalınarak sisteme A şıkkı doğru olarak girilmiştir).",
+    expl: "xy, aaa3 sayısının 36 ile bölümünden kalan olup 10 ≤ xy ≤ 35'tir. a = 1, 2, …, 9 için aaa3'ün 36 ile bölümünden kalanlar: 33, 27, 21, 15, 9, 3, 33, 27, 21. İki basamaklı olanlar 33, 27, 21, 15 olmak üzere 4 farklı değerdir.",
     answers: [
       { text: "4", ok: true },
       { text: "18", ok: false },
@@ -598,9 +598,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
 // ─── EBOB - EKOK TEST - 1 ─────────────────────────────────────────────────────
 
   {
-    text: "72 sayısının tam bölen sayısı kaçtır?",
+    text: "<p><b>72 sayısının tam bölen sayısı kaçtır?</b></p>",
     diff: 1,
-    expl: "72 sayısını asal çarpanlarına ayırırsak: 72 = 8·9 = 2³·3². Pozitif bölen sayısı (PBS) üslerin birer fazlasının çarpımıdır: (3+1)·(2+1) = 4·3 = 12. Tam bölen sayısı ise (negatifler de dahil olduğu için) bunun 2 katıdır: 12·2 = 24.",
+    expl: "72 = 2<sup>3</sup> · 3<sup>2</sup>. Pozitif bölen sayısı (3 + 1)(2 + 1) = 12; tam bölen sayısı negatifler dahil 2 · 12 = 24.",
     answers: [
       { text: "11", ok: false },
       { text: "12", ok: false },
@@ -610,9 +610,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "60 sayısının pozitif bölenlerinin kaç tanesi çift sayıdır?",
+    text: "<p><b>60 sayısının pozitif bölenlerinin kaç tanesi çift sayıdır?</b></p>",
     diff: 2,
-    expl: "60 = 4·15 = 2²·3¹·5¹. Çift bölenleri bulmak için tüm ifadeden bir '2' çarpanını dışarı çekeriz: 2·(2¹·3¹·5¹). İçeride kalan ifadenin pozitif bölen sayısını bulursak, bu sayıların hepsi dışarıdaki 2 ile çarpıldığında çift olacaktır. Parantez içinin PBS'si: (1+1)·(1+1)·(1+1) = 2·2·2 = 8'dir.",
+    expl: "60 = 2<sup>2</sup> · 3 · 5. Tüm pozitif bölenler (2 + 1)(1 + 1)(1 + 1) = 12, tek bölenler (1 + 1)(1 + 1) = 4. Çift bölenler 12 − 4 = 8.",
     answers: [
       { text: "4", ok: false },
       { text: "5", ok: false },
@@ -622,9 +622,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "150 sayısının pozitif bölenlerinden çift olanlar tek sayı olanlardan kaç fazladır?",
+    text: "<p><b>150 sayısının pozitif bölenlerinden çift olanlar tek sayı olanlardan kaç fazladır?</b></p>",
     diff: 2,
-    expl: "150 = 2¹·3¹·5². Toplam pozitif bölen sayısı (PBS): (1+1)(1+1)(2+1) = 2·2·3 = 12. Tek bölen sayısı için 2 çarpanını yok sayarız: (3¹·5²)'nin PBS'si = (1+1)(2+1) = 2·3 = 6'dır. Çift bölen sayısı = Tüm - Tek = 12 - 6 = 6'dır. Çiftler teklerden kaç fazladır: 6 - 6 = 0.",
+    expl: "150 = 2 · 3 · 5<sup>2</sup>. Pozitif bölen sayısı 2 · 2 · 3 = 12, tek bölenler 2 · 3 = 6, çift bölenler 12 − 6 = 6. Fark 0'dır.",
     answers: [
       { text: "0", ok: true },
       { text: "1", ok: false },
@@ -634,9 +634,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "120 sayısının asal olmayan pozitif bölen sayısı ile asal olan pozitif bölen sayısı çarpımı kaçtır?",
+    text: "<p><b>120 sayısının asal olmayan pozitif bölen sayısı ile asal olan pozitif bölen sayısı çarpımı kaçtır?</b></p>",
     diff: 1,
-    expl: "120 = 8·15 = 2³·3¹·5¹. Toplam pozitif bölen sayısı (PBS) = (3+1)(1+1)(1+1) = 4·2·2 = 16. Asal olan bölenler tabandaki asallardır: 2, 3 ve 5 (toplam 3 tane). Asal olmayan PBS = 16 - 3 = 13'tür. İkisinin çarpımı: 13·3 = 39 bulunur.",
+    expl: "120 = 2<sup>3</sup> · 3 · 5. Pozitif bölen sayısı 4 · 2 · 2 = 16. Asal bölenler 2, 3, 5 (3 tane); asal olmayanlar 16 − 3 = 13. Çarpım 13 · 3 = 39.",
     answers: [
       { text: "48", ok: false },
       { text: "39", ok: true },
@@ -646,9 +646,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "24³ · 15² sayısının kaç tane negatif tam sayı böleni vardır?",
+    text: "<p><b>24<sup>3</sup> · 15<sup>2</sup> sayısının kaç tane negatif tam sayı böleni vardır?</b></p>",
     diff: 2,
-    expl: "Negatif tam bölen sayısı, pozitif tam bölen sayısına (PBS) eşittir. Sayıyı asal çarpanlarına ayıralım: (2³·3)³ · (3·5)² = 2⁹·3³ · 3²·5² = 2⁹·3⁵·5². PBS = (9+1)(5+1)(2+1) = 10·6·3 = 180'dir. Dolayısıyla 180 tane de negatif tam böleni vardır.",
+    expl: "24<sup>3</sup> · 15<sup>2</sup> = 2<sup>9</sup> · 3<sup>3</sup> · 3<sup>2</sup> · 5<sup>2</sup> = 2<sup>9</sup> · 3<sup>5</sup> · 5<sup>2</sup>. Pozitif bölen sayısı 10 · 6 · 3 = 180; negatif bölen sayısı da 180'dir.",
     answers: [
       { text: "12", ok: false },
       { text: "60", ok: false },
@@ -658,9 +658,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "ekok(a, b) = 600\nebob(a, b) = 20\n\nolacak şekilde verilen a, b doğal sayıları için a · b değeri kaçtır?",
+    text: "<p>ekok(a, b) = 600<br>ebob(a, b) = 20</p><p><b>olacak şekilde verilen a, b doğal sayıları için a · b değeri kaçtır?</b></p>",
     diff: 1,
-    expl: "İki doğal sayının çarpımı, bu sayıların EBOB ve EKOK'larının çarpımına eşittir. Kural: a·b = EBOB(a,b) · EKOK(a,b). Bu durumda a·b = 20 · 600 = 12000 bulunur.",
+    expl: "a · b = ebob(a, b) · ekok(a, b) = 20 · 600 = 12000.",
     answers: [
       { text: "30", ok: false },
       { text: "50", ok: false },
@@ -670,9 +670,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "16, 18 ve 36 br uzunluktaki doğru parçaları eşit uzunlukta ve artansız parçalara bölünecektir.\n\nEn az kaç doğru parçası elde edilir?",
+    text: "<p>16, 18 ve 36 br uzunluktaki doğru parçaları eşit uzunlukta ve artansız parçalara bölünecektir.</p><p><b>En az kaç doğru parçası elde edilir?</b></p>",
     diff: 1,
-    expl: "En az parça elde etmek için parçaların uzunluğunu en büyük seçmeliyiz. Yani sayıların EBOB'unu alacağız. EBOB(16, 18, 36) = 2'dir (parça uzunluğu 2 birim). 16'lık çubuktan 8, 18'likten 9, 36'lıktan 18 parça elde edilir. Toplam parça sayısı = 8 + 9 + 18 = 35'tir.",
+    expl: "En az parça için parça uzunluğu ebob(16, 18, 36) = 2 alınır. Parça sayısı 8 + 9 + 18 = 35.",
     answers: [
       { text: "16", ok: false },
       { text: "18", ok: false },
@@ -682,9 +682,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "Ardışık üç çift sayının ekoku 420 olduğuna göre ortanca sayı kaçtır?",
+    text: "<p><b>Ardışık üç çift sayının ekoku 420 olduğuna göre ortanca sayı kaçtır?</b></p>",
     diff: 2,
-    expl: "Sayılar x, x+2, x+4 olsun. EBOB'ları 2'dir. Ortak olan 2'yi dışarı atarsak aralarında asal ardışık tam sayılar kalır (n, n+1, n+2). 420'yi çarpanlarına ayıralım: 420 = 4·3·5·7 = 2²·3·5·7. Bu çarpanlardan birbirine yakın 3 çift sayı üretelim. 10 = 2·5, 12 = 2²·3, 14 = 2·7. Bu üç sayının EKOK'u gerçekten de 420'dir. Sayılarımız 10, 12 ve 14'tür. Ortanca sayı 12'dir.",
+    expl: "420 = 2<sup>2</sup> · 3 · 5 · 7. 10 = 2 · 5, 12 = 2<sup>2</sup> · 3, 14 = 2 · 7 sayılarının ekoku 420'dir. Ortanca sayı 12'dir.",
     answers: [
       { text: "10", ok: false },
       { text: "12", ok: true },
@@ -694,21 +694,21 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "a, b ve c birbirinden farklı asal sayılar olmak üzere,\n\nx = a³ · b²\ny = a² · b · c³\nz = a⁷ · b⁴ · c⁶\n\nekok(x, y, z) / ebob(x, y, z) oranı kaçtır?",
+    text: "<p>a, b ve c birbirinden farklı asal sayılar olmak üzere,</p><p>x = a<sup>3</sup> · b<sup>2</sup><br>y = a<sup>2</sup> · b · c<sup>3</sup><br>z = a<sup>7</sup> · b<sup>4</sup> · c<sup>6</sup></p><p><b>ekok(x, y, z) ÷ ebob(x, y, z) oranı kaçtır?</b></p>",
     diff: 2,
-    expl: "Asal çarpanlarına ayrılmış ifadelerde; EKOK bulunurken ortak olan tabanların EN BÜYÜK üslüleri ile ortak olmayanlar alınır: EKOK = a⁷·b⁴·c⁶. EBOB bulunurken sadece ortak olan tabanların EN KÜÇÜK üslüleri alınır: EBOB = a²·b¹·c⁰ (c ortak olmadığı için alınmaz) = a²·b. Oran: (a⁷·b⁴·c⁶) / (a²·b) = a⁵·b³·c⁶ bulunur.",
+    expl: "ekok: tüm asalların en büyük üsleri ⇒ a<sup>7</sup> · b<sup>4</sup> · c<sup>6</sup>. ebob: ortak asalların en küçük üsleri (c, x'te yok) ⇒ a<sup>2</sup> · b. Oran: a<sup>5</sup> · b<sup>3</sup> · c<sup>6</sup>.",
     answers: [
-      { text: "a⁵b³c⁶", ok: true },
-      { text: "a⁴bc", ok: false },
-      { text: "a⁵b⁴", ok: false },
-      { text: "a³b³c³", ok: false },
-      { text: "a³b⁴", ok: false }
+      { text: "a<sup>5</sup>b<sup>3</sup>c<sup>6</sup>", ok: true },
+      { text: "a<sup>4</sup>bc", ok: false },
+      { text: "a<sup>5</sup>b<sup>4</sup>", ok: false },
+      { text: "a<sup>3</sup>b<sup>3</sup>c<sup>3</sup>", ok: false },
+      { text: "a<sup>3</sup>b<sup>4</sup>", ok: false }
     ]
   },
   {
-    text: "Kenar uzunlukları 30 m ve 45 m olan dikdörtgen biçimde bir kâğıt eş kare bölmelere ayrılacaktır.\n\nEn az kaç bölme elde edilir?",
+    text: "<p>Kenar uzunlukları 30 m ve 45 m olan dikdörtgen biçimde bir kâğıt eş kare bölmelere ayrılacaktır.</p><p><b><u>En az</u> kaç bölme elde edilir?</b></p>",
     diff: 2,
-    expl: "Bölme (parsel) sayısının en az olması için karenin kenar uzunluğunun en büyük (EBOB) seçilmesi gerekir. EBOB(30, 45) = 15'tir. Karenin bir kenarı 15 m olur. Oluşacak kare sayısı = (Dikdörtgenin Alanı) / (Karenin Alanı) = (30·45) / (15·15) = 2·3 = 6 bulunur. Ancak kitabın seçeneklerinde 6 yoktur ve cevap anahtarı C(54) olarak verilmiştir. 54 cevabı, karenin bir kenarının 5m alınması durumunda çıkar ((30·45)/(5·5)=54). Bu, soruda 'En az' denmesine rağmen EBOB'un gözden kaçırıldığı bir yazar hatasıdır. Anahtara uyularak C şıkkı işaretlenmiştir.",
+    expl: "Cevap anahtarı 54'tür; bu değer karenin kenarı 5 m alındığında elde edilir: (30 · 45) / (5 · 5) = 6 · 9 = 54. (Not: En az bölme için kenar ebob(30, 45) = 15 m alınırsa 2 · 3 = 6 bölme çıkar; bu değer seçeneklerde yoktur.)",
     answers: [
       { text: "45", ok: false },
       { text: "60", ok: false },
@@ -718,9 +718,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "a ve b pozitif tam sayıları için (a + 2b) ile (3a - b) sayıları aralarında asaldır.\n\nekok(a + 2b, 3a - b) = 19\nolduğuna göre 3a + 2b kaçtır?",
+    text: "<p>a ve b pozitif tam sayıları için (a + 2b) ile (3a − b) sayıları aralarında asaldır.</p><p>ekok(a + 2b, 3a − b) = 19</p><p><b>olduğuna göre 3a + 2b kaçtır?</b></p>",
     diff: 2,
-    expl: "Aralarında asal sayıların EKOK'u çarpımlarına eşittir. Çarpımları 19 olan sadece 1 ve 19 vardır (çünkü 19 asal sayıdır). Sayılar pozitif olduğu için a+2b = 19 ve 3a-b = 1 olmak zorundadır (a+2b'nin 1 olması pozitif tamsayılarda imkansızdır). Taraf tarafa çözersek; b = 3a-1. Üstte yerine yazarsak: a + 2(3a-1) = 19 => 7a = 21 => a=3. b=8. Bizden 3a+2b isteniyor: 3(3) + 2(8) = 9 + 16 = 25.",
+    expl: "Aralarında asal sayıların ekoku çarpımlarıdır: (a + 2b)(3a − b) = 19. a + 2b ≥ 3 olduğundan a + 2b = 19 ve 3a − b = 1. b = 3a − 1 ⇒ 7a − 2 = 19 ⇒ a = 3, b = 8. 3a + 2b = 9 + 16 = 25.",
     answers: [
       { text: "22", ok: false },
       { text: "25", ok: true },
@@ -730,9 +730,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "1 < x < y olacak şekilde aralarında asal x ve y sayılarının ekokları ile ebobları toplamı 103 olduğuna göre y - x değeri en az kaçtır?",
+    text: "<p><b>1 &lt; x &lt; y olacak şekilde aralarında asal x ve y sayılarının ekokları ile ebobları toplamı 103 olduğuna göre y − x değeri en az kaçtır?</b></p>",
     diff: 2,
-    expl: "Aralarında asal sayıların EBOB'u daima 1'dir. EKOK + 1 = 103 => EKOK = 102. Aralarında asal sayıların EKOK'u çarpımlarına eşit olduğundan x·y = 102'dir. Çarpımları 102 olan sayı çiftleri (x<y): 1·102, 2·51, 3·34, 6·17. y-x farkının en az olması için sayıları birbirine en yakın seçeriz. x=6 ve y=17 (aralarında asallar). Fark: 17 - 6 = 11.",
+    expl: "ebob = 1 ⇒ ekok = 102 = x · y. 1 &lt; x &lt; y ve aralarında asal çiftler: (2, 51), (3, 34), (6, 17). En küçük fark 17 − 6 = 11.",
     answers: [
       { text: "49", ok: false },
       { text: "31", ok: false },
@@ -742,9 +742,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "9 · a = a · b + 32\nolacak şekilde aralarında asal a, b sayılarının ekokları 40 olduğuna göre b kaçtır?",
+    text: "<p>9 · a = a · b + 32</p><p><b>olacak şekilde aralarında asal a, b sayılarının ekokları 40 olduğuna göre b kaçtır?</b></p>",
     diff: 2,
-    expl: "Aralarında asal sayıların EKOK'u çarpımlarıdır, yani a·b = 40'tır. Denklemde yerine koyalım: 9a = 40 + 32 = 72 => a = 8 bulunur. a·b = 40 olduğundan 8·b = 40 => b = 5'tir.",
+    expl: "Aralarında asal olduklarından a · b = 40. 9a = 40 + 32 = 72 ⇒ a = 8, b = 5.",
     answers: [
       { text: "4", ok: false },
       { text: "5", ok: true },
@@ -754,9 +754,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "a, b ve c doğal sayılar olmak üzere\nK = 4a - 2 = 5b + 3 = 7c + 5\nolduğuna göre K'nın en küçük değeri kaçtır?",
+    text: "<p>a, b ve c doğal sayılar olmak üzere</p><p>K = 4a − 2 = 5b + 3 = 7c + 5</p><p><b>olduğuna göre K'nın <u>en küçük</u> değeri kaçtır?</b></p>",
     diff: 2,
-    expl: "Eşitliğin her tarafına 2 ekleyelim: K + 2 = 4a = 5b + 5 = 7c + 7. Düzenlersek: K + 2 = 4a = 5(b+1) = 7(c+1). Görüldüğü gibi K+2 sayısı 4, 5 ve 7'nin ortak bir katı olmalıdır. EKOK(4,5,7) = 4·5·7 = 140'tır. K + 2 = 140 => K = 138 bulunur.",
+    expl: "Her tarafa 2 eklenirse K + 2 = 4a = 5(b + 1) = 7(c + 1). K + 2, 4, 5 ve 7'nin ortak katıdır; en küçük K + 2 = ekok(4, 5, 7) = 140 ⇒ K = 138.",
     answers: [
       { text: "136", ok: false },
       { text: "138", ok: true },
@@ -766,9 +766,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "a ve b birer doğal sayı olmak üzere\nekok(a, b) = 36\nolduğuna göre a + b en çok kaçtır?",
+    text: "<p>a ve b birer doğal sayı olmak üzere</p><p>ekok(a, b) = 36</p><p><b>olduğuna göre a + b en çok kaçtır?</b></p>",
     diff: 1,
-    expl: "EKOK'u verilen iki sayının toplamının en büyük olması için sayılar, birbirinin katı veya birbirine eşit seçilmelidir. Soruda 'farklı' doğal sayılar denmediği için her iki sayıyı da EKOK değerinin kendisine eşit (a=36 ve b=36) alabiliriz. Toplam en çok 36+36 = 72 olur.",
+    expl: "a ve b'nin farklı olması gerekmediğinden a = b = 36 alınabilir. a + b en çok 72'dir.",
     answers: [
       { text: "13", ok: false },
       { text: "20", ok: false },
@@ -778,9 +778,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "2/5, 12/5 ve 14/9\nrasyonel sayılarının ekok'u kaçtır?",
+    text: "<p>2/5, 12/5 ve 14/9</p><p><b>rasyonel sayılarının ekok'u kaçtır?</b></p>",
     diff: 2,
-    expl: "Rasyonel sayıların EKOK'u şu formülle bulunur: EKOK = Payların EKOK'u / Paydaların EBOB'u. Paylar 2, 12 ve 14'tür. EKOK(2,12,14) = 84'tür. Paydalar 5, 5 ve 9'dur. EBOB(5,5,9) = 1'dir. Sonuç: 84 / 1 = 84 bulunur.",
+    expl: "Rasyonel sayıların ekoku = paylarının ekoku / paydalarının ebobu = ekok(2, 12, 14) / ebob(5, 5, 9) = 84 / 1 = 84.",
     answers: [
       { text: "84", ok: true },
       { text: "126", ok: false },
@@ -793,9 +793,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
 // ─── EBOB - EKOK TEST - 2 ─────────────────────────────────────────────────────
 
   {
-    text: "200 sayısının pozitif bölen sayısının asal çarpanlarının sayısına oranı nedir?",
+    text: "<p><b>200 sayısının pozitif bölen sayısının asal çarpanlarının sayısına oranı nedir?</b></p>",
     diff: 1,
-    expl: "200 = 8·25 = 2³·5². Pozitif bölen sayısı (PBS) = (3+1)(2+1) = 4·3 = 12'dir. Asal çarpanları ise sadece 2 ve 5 olmak üzere toplam 2 tanedir. Oran: 12 / 2 = 6'dır.",
+    expl: "200 = 2<sup>3</sup> · 5<sup>2</sup>. Pozitif bölen sayısı 4 · 3 = 12; asal çarpanlar 2 ve 5 (2 tane). Oran 12 / 2 = 6.",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -805,9 +805,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "360 sayısının pozitif bölenlerinin kaç tanesi tek sayıdır?",
+    text: "<p><b>360 sayısının pozitif bölenlerinin kaç tanesi tek sayıdır?</b></p>",
     diff: 2,
-    expl: "360 = 36·10 = 2³·3²·5¹. Tek bölenleri bulmak için çift sayı üreten 2'nin kuvvetlerini (2³) tamamen devreden çıkarırız. Geriye kalan 3²·5¹ kısmının PBS'si, bize tüm tek bölenleri verir: (2+1)(1+1) = 3·2 = 6 tanedir.",
+    expl: "360 = 2<sup>3</sup> · 3<sup>2</sup> · 5. Tek bölenler 3<sup>2</sup> · 5'in bölenleridir: (2 + 1)(1 + 1) = 6.",
     answers: [
       { text: "2", ok: false },
       { text: "6", ok: true },
@@ -817,9 +817,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "Üçü birlikte eşit olmayan ve ebobları 16 olan üç tam sayının toplamı aşağıdakilerden hangisi olamaz?",
+    text: "<p><b>Üçü birlikte eşit olmayan ve ebobları 16 olan üç tam sayının toplamı aşağıdakilerden hangisi <u>olamaz</u>?</b></p>",
     diff: 2,
-    expl: "Sayılar x, y, z olsun. EBOB'ları 16 ise hepsi 16'nın katıdır. Toplamları da 16'nın katı olmalıdır. Şıkların hepsi 16'nın katıdır. Ancak A şıkkı 48 = 16·3'tür. 16(x+y+z)=48 => x+y+z=3 olur. Pozitif tam sayılarda x,y,z sadece 1,1,1 olabilir. Bu da sayıların 16,16,16 (üçünün de birbirine eşit) olması demektir. Soruda 'üçü birlikte eşit olmayan' dendiği için toplam 48 olamaz.",
+    expl: "Sayılar 16x, 16y, 16z (ebob(x, y, z) = 1) biçimindedir; toplam 16(x + y + z). 48 için x + y + z = 3 olmalı; pozitif sayılarla bu yalnızca 1, 1, 1 ile olur ve sayılar 16, 16, 16 (üçü eşit) olur. Bu nedenle toplam 48 olamaz. Diğerleri mümkündür (ör. 64: 16, 16, 32).",
     answers: [
       { text: "48", ok: true },
       { text: "64", ok: false },
@@ -829,9 +829,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "a ve b birbirinden farklı iki doğal sayı olmak üzere\n(a, b)ₑₖₒₖ = 40\nolduğuna göre a + b değeri en çok kaçtır?",
+    text: "<p>a ve b birbirinden farklı iki doğal sayı olmak üzere</p><p>(a, b)<sub>ekok</sub> = 40</p><p><b>olduğuna göre a + b değeri en çok kaçtır?</b></p>",
     diff: 1,
-    expl: "EKOK'u 40 olan iki 'farklı' doğal sayının toplamının en çok olması için, sayılardan biri EKOK'un kendisi (40), diğeri ise EKOK'un kendisinden sonraki en büyük tam böleni (40/2 = 20) seçilmelidir. Toplam: 40 + 20 = 60'tır.",
+    expl: "Toplamın en büyük olması için sayılardan biri 40, diğeri 40'ın kendisinden sonraki en büyük böleni 20 seçilir: 40 + 20 = 60.",
     answers: [
       { text: "10", ok: false },
       { text: "20", ok: false },
@@ -841,9 +841,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "a, b ve c birer doğal sayı olmak üzere;\nM = 2a - 5 = 3b - 1 = 5c + 8\nolduğuna göre üç basamaklı en küçük M sayısı kaçtır?",
+    text: "<p>a, b ve c birer doğal sayı olmak üzere;</p><p>M = 2a − 5 = 3b − 1 = 5c + 8</p><p><b>olduğuna göre üç basamaklı <u>en küçük</u> M sayısı kaçtır?</b></p>",
     diff: 3,
-    expl: "Eşitliğin her tarafına 7 ekleyelim: M + 7 = 2a+2 = 3b+6 = 5c+15. Düzenlersek: M+7 = 2(a+1) = 3(b+2) = 5(c+3). Yani M+7 sayısı 2, 3 ve 5'in ortak katı (EKOK) olmalıdır. EKOK(2,3,5) = 30'dur. M+7 = 30k şeklindedir. Üç basamaklı en küçük M değeri için k'ya değerler verelim. k=3 için M+7=90 => M=83 (iki basamaklı). k=4 için M+7=120 => M=113 bulunur.",
+    expl: "Her tarafa 7 eklenirse M + 7 = 2(a + 1) = 3(b + 2) = 5(c + 3). M + 7, ekok(2, 3, 5) = 30'un katıdır. M + 7 = 120 ⇒ M = 113 (M + 7 = 90 ⇒ M = 83 iki basamaklıdır).",
     answers: [
       { text: "101", ok: false },
       { text: "113", ok: true },
@@ -853,9 +853,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "x, y ve z sayma sayıları için;\nK = 5·x + 16 = 9·y + 29 = 15·z - 19\nolduğuna göre üç basamaklı en küçük K sayısı kaçtır?",
+    text: "<p>x, y ve z sayma sayıları için;</p><p>K = 5 · x + 16 = 9 · y + 29 = 15 · z − 19</p><p><b>olduğuna göre üç basamaklı <u>en küçük</u> K sayısı kaçtır?</b></p>",
     diff: 3,
-    expl: "Denklemi önce modlarına göre sadeleştirelim: K = 5x+1 = 9y+2 = 15z-4 (15z+11). Sabit ekleyip çıkarmak kolay değil, ancak dikkat edersek K 15'e bölündüğünde 11 kalanını veriyor ve 9'a bölündüğünde 2 kalanını veriyor. K = 15k + 11 = 9y + 2 => 15k + 9 = 9y => 3(5k+3) = 9y => 5k+3 = 3y. Demek ki 5k sayısı 3'ün katı olmalı, yani k = 3m'dir. K = 15(3m) + 11 = 45m + 11. En küçük üç basamaklı K için m=2 verirsek: 45(2) + 11 = 90 + 11 = 101 bulunur.",
+    expl: "Her tarafa 34 eklenirse K + 34 = 5(x + 10) = 9(y + 7) = 15(z + 1). K + 34, ekok(5, 9, 15) = 45'in katıdır: K = 45n − 34 ⇒ 11, 56, 101, … Üç basamaklı en küçük K = 101 (x = 17, y = 8, z = 8).",
     answers: [
       { text: "101", ok: true },
       { text: "111", ok: false },
@@ -865,9 +865,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "5'e bölündüğünde 3, 6'ya bölündüğünde 2, 7'ye bölündüğünde 6 kalanını veren üç basamaklı sayıların toplamı kaçtır?",
+    text: "<p><b>5'e bölündüğünde 3, 6'ya bölündüğünde 2, 7'ye bölündüğünde 6 kalanını veren üç basamaklı sayıların toplamı kaçtır?</b></p>",
     diff: 3,
-    expl: "Sayı A olsun: A ≡ 3 (mod 5), A ≡ 2 (mod 6), A ≡ 6 (mod 7). Çin Kalan Teoremi veya arama ile çözülür: A = 7c + 6. Mod 6'da: 7c+6 ≡ 2 => c ≡ 2 (mod 6) => c = 6k+2. A = 7(6k+2)+6 = 42k+20. Mod 5'te: 42k+20 ≡ 3 => 2k ≡ 3 ≡ 8 => k ≡ 4 (mod 5). Yani k = 5m+4. A'nın genel formülü: A = 42(5m+4)+20 = 210m + 168 + 20 = 210m + 188. m=0 için 188, m=1 için 398, m=2 için 608, m=3 için 818 (m=4 dört basamaklı olur). Toplamları = 188 + 398 + 608 + 818 = 2012.",
+    expl: "A = 7c + 6 yazılır. 6 ile bölümünden kalan 2 ⇒ c = 6k + 2 ⇒ A = 42k + 20. 5 ile bölümünden kalan 3 ⇒ 2k ≡ 3 (mod 5) ⇒ k = 5m + 4 ⇒ A = 210m + 188. Üç basamaklılar: 188, 398, 608, 818. Toplam 2012.",
     answers: [
       { text: "1992", ok: false },
       { text: "2002", ok: false },
@@ -877,9 +877,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "Boyutları 30 m, 42 m ve 60 m olan bir depoya eş küpler yerleştirilecek.\nBu depoya en çok kaç küp yerleştirilir?",
+    text: "<p>Boyutları 30 m, 42 m ve 60 m olan bir depoya eş küpler yerleştirilecek.</p><p><b>Bu depoya <u>en çok</u> kaç küp yerleştirilir?</b></p>",
     diff: 2,
-    expl: "Öncelikle 'en çok küp' ifadesinde sonsuzluk riski vardır (eğer küpler çok küçük alınırsa). Normalde bu kalıp sorularda 'en az kaç eş küp' diye sorulur ve EBOB(30,42,60)=6 alınır. Soru yazarı bariz bir mantık hatası yaparak 'en çok' demiştir ancak çözüm yolu en az parça mantığıdır. Küp kenarı 6 m seçildiğinde Küp Sayısı = Hacimler Oranı = (30·42·60) / (6·6·6) = 5·7·10 = 350 bulunur.",
+    expl: "Küpün kenarı ebob(30, 42, 60) = 6 m alınır. Küp sayısı (30 · 42 · 60) / (6 · 6 · 6) = 5 · 7 · 10 = 350.",
     answers: [
       { text: "240", ok: false },
       { text: "480", ok: false },
@@ -889,9 +889,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "a ve b iki farklı doğal sayı olmak üzere; ekok(a, b) = 60 ise a + b toplamının en büyük değeri ile en küçük değerinin toplamı kaçtır?",
+    text: "<p><b>a ve b iki farklı doğal sayı olmak üzere; ekok(a, b) = 60 ise a + b toplamının en büyük değeri ile <u>en küçük</u> değerinin toplamı kaçtır?</b></p>",
     diff: 3,
-    expl: "a+b'nin en büyük olması için a=60 ve b=30 (kendisi ve yarısı) seçilir. Toplamları 90'dır. a+b'nin en küçük olması için a ve b'nin aralarında asal çarpanlar olması gerekir. 60 = 2²·3·5 = 4·3·5. Aralarında asal çarpan ikilileri (12,5), (4,15) ve (3,20) şeklindedir. Toplamları sırasıyla 17, 19 ve 23 olur. En küçüğü 17'dir. 90 + 17 = 107.",
+    expl: "En büyük toplam: 60 + 30 = 90. En küçük toplam için 60 = 2<sup>2</sup> · 3 · 5 aralarında asal iki çarpana ayrılır: 12 + 5 = 17, 4 + 15 = 19, 3 + 20 = 23; en küçüğü 17. Sonuç 90 + 17 = 107.",
     answers: [
       { text: "90", ok: false },
       { text: "97", ok: false },
@@ -901,9 +901,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "a ve b aralarında asal olmak üzere;\nokek(4a, 8b) / obeb(5a, 10b) = 56\nolduğuna göre a + b toplamı en az kaçtır?",
+    text: "<p>a ve b aralarında asal olmak üzere;</p><p>okek(4a, 8b) / obeb(5a, 10b) = 56</p><p><b>olduğuna göre a + b toplamı en az kaçtır?</b></p>",
     diff: 3,
-    expl: "Payda ortak çarpanları dışarı alalım: okek(4a, 8b) = 4·okek(a, 2b). obeb(5a, 10b) = 5·obeb(a, 2b). Denklem: 4·okek(a,2b) / 5·obeb(a,2b) = 56 => okek(a,2b) / obeb(a,2b) = 70. a ve b aralarında asal. Eğer a tek ise ebob(a,2b)=1'dir ve okek(a,2b)=2ab olur. 2ab/1 = 70 => ab=35. (a,b)=(5,7) için a+b=12 en küçük değerdir. Eğer a çift ise (b tektir), ebob(a,2b)=2 olur. okek(a,2b)=a·2b/2 = ab olur. ab/2 = 70 => ab=140. Burada a+b daha büyük çıkar (örn. 4+35=39). En az 12'dir.",
+    expl: "okek(4a, 8b) = 4 · okek(a, 2b), obeb(5a, 10b) = 5 · obeb(a, 2b) ⇒ okek(a, 2b) / obeb(a, 2b) = 70. a tek ise obeb(a, 2b) = 1, okek = 2ab ⇒ ab = 35 ⇒ (5, 7) için a + b = 12. a çift ise ab = 140 olur ve toplam daha büyüktür. En az 12.",
     answers: [
       { text: "7", ok: false },
       { text: "9", ok: false },
@@ -913,9 +913,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "(a + 3) ve (a² - 3a + 9) sayıları aralarında asal olmak üzere,\n\nekok( (a + 3), (a² - 3a + 9) ) = 370\nolduğuna göre a² - 3a + 9 kaçtır?",
+    text: "<p>(a + 3) ve (a<sup>2</sup> − 3a + 9) sayıları aralarında asal olmak üzere,</p><p>ekok((a + 3), (a<sup>2</sup> − 3a + 9)) = 370</p><p><b>olduğuna göre a<sup>2</sup> − 3a + 9 kaçtır?</b></p>",
     diff: 3,
-    expl: "Aralarında asal sayıların EKOK'u çarpımlarına eşittir. (a + 3) · (a² - 3a + 9) = 370. Bu ifade 'iki küp toplamı' (x³+y³) açılımıdır, yani a³ + 3³ = 370. Buradan a³ + 27 = 370 => a³ = 343 => a = 7 bulunur. İstenen ifade: a² - 3a + 9 = 7² - 3(7) + 9 = 49 - 21 + 9 = 37.",
+    expl: "Aralarında asal sayıların ekoku çarpımlarıdır: (a + 3)(a<sup>2</sup> − 3a + 9) = a<sup>3</sup> + 27 = 370 ⇒ a<sup>3</sup> = 343 ⇒ a = 7. a<sup>2</sup> − 3a + 9 = 49 − 21 + 9 = 37.",
     answers: [
       { text: "7", ok: false },
       { text: "10", ok: false },
@@ -925,9 +925,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "5 m, 4 m boyutlarındaki bir stüdyo duvarı fotoğraf çerçeveleri ile kaplanmak isteniyor. Duvar yalnızca kare olan çerçevelerle kaplandığında, boyutları eş kare çerçevelerle kaplandığında kullanılan çerçeve sayısından kaç eksik çerçeve gereklidir? (Her durumda en az çerçeve kullanılacaktır.)",
+    text: "<p><b>5 m, 4 m boyutlarındaki bir stüdyo duvarı fotoğraf çerçeveleri ile kaplanmak isteniyor. Duvar yalnızca kare olan çerçevelerle kaplandığında, boyutları eş kare çerçevelerle kaplandığında kullanılan çerçeve sayısından kaç eksik çerçeve gereklidir?</b> (Her durumda en az çerçeve kullanılacaktır.)</p>",
     diff: 3,
-    expl: "1. Durum (Eş Kareler): EBOB(5,4)=1. Çerçeve sayısı = (5·4)/(1·1) = 20 tane.\n2. Durum (Herhangi bir Kare): Amacımız en az parçayı bulmak için olabildiğince büyük kareler kesmektir. 5x4'lük duvardan önce 4x4'lük 1 tane kare keseriz. Geriye 1x4'lük bir alan kalır. Buradan da 1x1'lik 4 tane kare elde edilir. Toplam en az 5 kare çerçeve kullanılır.\nAradaki fark: 20 - 5 = 15'tir.",
+    expl: "Eş karelerle: kenar ebob(5, 4) = 1 m ⇒ 20 çerçeve. Farklı boyutlu karelerle: 4 × 4'lük 1 kare ve kalan 1 × 4'lük şerit için 4 tane 1 × 1 kare ⇒ 5 çerçeve. Fark 20 − 5 = 15.",
     answers: [
       { text: "5", ok: false },
       { text: "10", ok: false },
@@ -937,9 +937,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "Bir spor okulunda 170 futbol, 136 basketbol, 102 voleybol öğrencisi vardır. Her branş kendi içinde olmak üzere eş sayılı gruplarla sınıflara ayrılacaklardır.\nMevcutlar 10'ar kişiden az olmamak zorunda olduğuna göre gerekli en az derslik sayısı, en fazla derslik sayısı toplamı kaçtır?",
+    text: "<p>Bir spor okulunda 170 futbol, 136 basketbol, 102 voleybol öğrencisi vardır. Her branş kendi içinde olmak üzere eş sayılı gruplarla sınıflara ayrılacaklardır.</p><p><b>Mevcutlar 10'ar kişiden az olmamak zorunda olduğuna göre gerekli en az derslik sayısı, en fazla derslik sayısı toplamı kaçtır?</b></p>",
     diff: 3,
-    expl: "Öğrenci sayılarının EBOB'unu bulalım: EBOB(170, 136, 102) = 34. Sınıf mevcudu (x), 34'ün '10'dan büyük' bölenleri olmalıdır. 34'ün bölenleri: 1, 2, 17, 34. Şartı sağlayanlar 17 ve 34'tür. \nEn az derslik için mevcut en fazla olmalı (x=34): (170+136+102)/34 = 408/34 = 12 derslik.\nEn fazla derslik için mevcut en az olmalı (x=17): 408/17 = 24 derslik.\nToplamları: 12 + 24 = 36'dır.",
+    expl: "ebob(170, 136, 102) = 34. Sınıf mevcudu 34'ün 10'dan küçük olmayan bir böleni olmalı: 17 veya 34. Toplam öğrenci 408. En az derslik 408 / 34 = 12, en fazla derslik 408 / 17 = 24. Toplam 36.",
     answers: [
       { text: "6", ok: false },
       { text: "12", ok: false },
@@ -949,9 +949,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "a, b ve c tam sayılar olmak üzere; günlük 120 soru, 160 soru ve 200 soru çözen üç öğrenci, aynı soru bankasını sırasıyla a, b ve c günde bitirmişlerdir.\nEn küçük a, b ve c değerleri için a+b+c toplamı kaçtır?",
+    text: "<p>a, b ve c tam sayılar olmak üzere; günlük 120 soru, 160 soru ve 200 soru çözen üç öğrenci, aynı soru bankasını sırasıyla a, b ve c günde bitirmişlerdir.</p><p><b>En küçük a, b ve c değerleri için a + b + c toplamı kaçtır?</b></p>",
     diff: 2,
-    expl: "Aynı soru bankasını bitirdikleri için, kitaptaki toplam soru sayısı 120, 160 ve 200'ün ortak katı olmalıdır. En küçük a,b,c için EKOK(120, 160, 200) bulunur = 2400. \na = 2400 / 120 = 20 gün.\nb = 2400 / 160 = 15 gün.\nc = 2400 / 200 = 12 gün.\nToplamları: 20 + 15 + 12 = 47.",
+    expl: "Soru sayısı 120, 160 ve 200'ün ortak katıdır; en küçüğü ekok = 2400. a = 20, b = 15, c = 12 ⇒ toplam 47.",
     answers: [
       { text: "45", ok: false },
       { text: "46", ok: false },
@@ -961,9 +961,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "Bir DJ remix çalışması esnasında 24/5 dakikalık, 12/3 dakikalık ve 3/2 dakikalık ses kayıtlarını 15:00'da aynı anda açıp molaya çıkıyor.\nDJ 16:15'te döndüğünde kayıtlar kaç kez tekrar birlikte başlamışlardır?",
+    text: "<p>Bir DJ remix çalışması esnasında 24/5 dakikalık, 12/3 dakikalık ve 3/2 dakikalık ses kayıtlarını 15:00'da aynı anda açıp molaya çıkıyor.</p><p><b>DJ 16:15'te döndüğünde kayıtlar kaç kez tekrar birlikte başlamışlardır?</b></p>",
     diff: 2,
-    expl: "Rasyonel sayıların EKOK'u = EKOK(Pay) / EBOB(Payda). Paylar: 24, 12, 3. EKOK(24,12,3) = 24. Paydalar: 5, 3, 2. EBOB(5,3,2) = 1. Kayıtlar her 24/1 = 24 dakikada bir aynı anda baştan başlar. 15:00 ile 16:15 arası 75 dakikadır. 75 dakika içinde 24'ün katları: 24. dakika, 48. dakika ve 72. dakikadır. İlk çalışı (15:00) saymazsak 'tekrar' birlikte başlama sayısı 3 kezdir.",
+    expl: "ekok = ekok(24, 12, 3) / ebob(5, 3, 2) = 24 / 1 = 24 dakika. 75 dakikada 24., 48. ve 72. dakikalarda birlikte başlarlar: 3 kez.",
     answers: [
       { text: "3", ok: true },
       { text: "4", ok: false },
@@ -973,13 +973,76 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
 
+// ─── EBOB - EKOK TEST - 3 ─────────────────────────────────────────────────────
+
+  {
+    text: "<p><b>Farklarının mutlak değeri 168 olan a ve b tam sayılarının ebobu aşağıdakilerden hangisi olabilir?</b></p>",
+    diff: 2,
+    expl: "ebob(a, b) hem a'yı hem b'yi böldüğünden |a − b| = 168'i de böler. 168 = 2<sup>3</sup> · 3 · 7; seçeneklerden yalnızca 21 168'i böler.",
+    answers: [
+      { text: "5", ok: false },
+      { text: "11", ok: false },
+      { text: "21", ok: true },
+      { text: "27", ok: false },
+      { text: "30", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>Ebob'u, Ekok'unun %10'una eşit olan iki basamaklı a ve b tam sayıları için a − b = 42 olduğuna göre a + b toplamı kaçtır?</b></p>",
+    diff: 3,
+    expl: "a = e · m, b = e · n (m, n aralarında asal) ise ekok = e · m · n ve ebob = e. e = e · m · n / 10 ⇒ m · n = 10 ⇒ (m, n) = (10, 1) veya (5, 2). a − b = e(m − n) = 42: (10, 1) için 9e = 42 olmaz; (5, 2) için 3e = 42 ⇒ e = 14. a = 70, b = 28 ⇒ a + b = 98.",
+    answers: [
+      { text: "42", ok: false },
+      { text: "84", ok: false },
+      { text: "98", ok: true },
+      { text: "140", ok: false },
+      { text: "154", ok: false }
+    ]
+  },
+  {
+    text: "<p>a = 7! + 8!<br>b = 8! + 9!</p><p><b>olduğuna göre; ekok(a, b) / (a + b) değeri kaçtır?</b></p>",
+    diff: 3,
+    expl: "a = 7!(1 + 8) = 9 · 7!, b = 8!(1 + 9) = 10 · 8 · 7! = 80 · 7!. ekok(a, b) = 7! · ekok(9, 80) = 720 · 7!, a + b = 89 · 7!. Oran 720/89.",
+    answers: [
+      { text: "10", ok: false },
+      { text: "11!", ok: false },
+      { text: "240/75", ok: false },
+      { text: "720/89", ok: true },
+      { text: "990/(7! · 8 · 9)", ok: false }
+    ]
+  },
+  {
+    text: "<p><b>75 = b · c + k bölme algoritmasına göre ebob(75, b) = 3 olduğuna göre ebob(b, k) kaçtır?</b></p>",
+    diff: 2,
+    expl: "k = 75 − b · c olduğundan b ile k'nın ortak bölenleri b ile 75'in ortak bölenleriyle aynıdır (Öklid algoritması). ebob(b, k) = ebob(75, b) = 3.",
+    answers: [
+      { text: "0", ok: false },
+      { text: "1", ok: false },
+      { text: "2", ok: false },
+      { text: "3", ok: true },
+      { text: "6", ok: false }
+    ]
+  },
+  {
+    text: "<p>20 m ve 70 m ebatlarındaki bir bahçe peyzaj firması tarafından parsellere ayrılarak tüm köşelere fidan veya ağaç dikilecektir. Bahçenin kenarlarına denk gelen köşelere yetişmiş ağaçlar, içerde kalan köşelere fidan dikili yapılacak. Firma ağaç dikimi için 20'şer TL, fidan dikimi için 10'ar TL olacaktır.</p><p><b>Firmaya toplam ne kadar ödeme yapılacaktır?</b></p>",
+    diff: 3,
+    expl: "En büyük kare parsel kenarı ebob(20, 70) = 10 m'dir; bahçe 2 × 7 parsele ayrılır. Köşe noktaları 3 · 8 = 24 tanedir. Kenardaki noktalar 2 · (3 + 8) − 4 = 18 (ağaç), içerdekiler 24 − 18 = 6 (fidan). Ödeme 18 · 20 + 6 · 10 = 360 + 60 = 420 TL.",
+    answers: [
+      { text: "360", ok: false },
+      { text: "540", ok: false },
+      { text: "420", ok: true },
+      { text: "400", ok: false },
+      { text: "280", ok: false }
+    ]
+  },
+
 // ─── RASYONEL SAYILAR TEST - 1 ────────────────────────────────────────────────
 
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q1.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q1.jpg",
+    text: "<p><b>Yukarıdaki işlemin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t3_q41.jpg",
     diff: 1,
-    expl: "Parantez içindeki işlemleri yapalım.\nPay kısmındaki ilk parantez: 1 + 1/2 = 3/2. İkinci parantez: 2 - 2/3 = 4/3.\nPayın çarpımı: (3/2) · (4/3) = 2.\nPayda kısmındaki ilk parantez: 2 - 3/4 = 5/4. İkinci parantez: 1 - 1/5 = 4/5.\nPaydanın çarpımı: (5/4) · (4/5) = 1.\nSonuç: 2 / 1 = 2.",
+    expl: "Pay: (1 + 1/2) · (2 − 2/3) = 3/2 · 4/3 = 2. Payda: (2 − 3/4) · (1 − 1/5) = 5/4 · 4/5 = 1. Sonuç 2 / 1 = 2.",
     answers: [
       { text: "1", ok: false },
       { text: "3", ok: false },
@@ -989,10 +1052,10 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q2.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q2.jpg",
+    text: "<p><b>Yukarıdaki işlemin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t3_q42.jpg",
     diff: 1,
-    expl: "Önce paydadaki en alt kesri çözeriz: 3 + 1/3 = 10/3. İşlem 1 / (10/3) şeklini alır ve ters çevrilip çarpılırsa 3/10 olur. Son olarak baştaki sayıdan çıkarırız: 1/3 - 3/10 = 10/30 - 9/30 = 1/30.",
+    expl: "3 + 1/3 = 10/3 ⇒ 1 / (10/3) = 3/10. 1/3 − 3/10 = 10/30 − 9/30 = 1/30.",
     answers: [
       { text: "1/20", ok: false },
       { text: "1/15", ok: false },
@@ -1002,10 +1065,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q3.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q3.jpg",
+    text: "<p>(1/5 + 3/4 − 3/8) : 3/8</p><p><b>işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "Parantez içi toplamayı yapalım: 1/5 + 3/4 - 3/8. Paydaları 40'ta eşitleriz. 8/40 + 30/40 - 15/40 = 23/40. Bölme işlemini çarpmaya çevirip ters çevirelim: (23/40) · (8/3). Sadeleştirme yaparsak (8 ile 40) => (23/5) · (1/3) = 23/15 bulunur.",
+    expl: "1/5 + 3/4 − 3/8 = 8/40 + 30/40 − 15/40 = 23/40. 23/40 : 3/8 = 23/40 · 8/3 = 23/15.",
     answers: [
       { text: "23/15", ok: true },
       { text: "3/11", ok: false },
@@ -1015,10 +1077,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q4.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q4.jpg",
+    text: "<p>(1/3 − 2/5) + (5/3 + 2/5)</p><p><b>işleminin sonucu kaçtır?</b></p>",
     diff: 1,
-    expl: "Parantezleri doğrudan kaldırıp işlemi yapabiliriz çünkü arada sadece toplama işareti var: 1/3 - 2/5 + 5/3 + 2/5. Eksi 2/5 ile artı 2/5 birbirini götürür. Geriye 1/3 + 5/3 kalır = 6/3 = 2.",
+    expl: "−2/5 ile +2/5 birbirini götürür: 1/3 + 5/3 = 6/3 = 2.",
     answers: [
       { text: "0", ok: false },
       { text: "1", ok: false },
@@ -1028,23 +1089,23 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q5.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q5.jpg",
+    text: "<p><b>Yukarıdaki işlemin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t3_q45.jpg",
     diff: 2,
-    expl: "Pay kısmı: (1 - 1/3) + (1/3 - 4). Parantezleri açarsak 1/3'ler gider. 1 - 4 = -3 kalır.\nPayda kısmı: (2 + 1/5) - (1 + 1/5). Eksi içeri dağılır: 2 + 1/5 - 1 - 1/5. 1/5'ler gider. 2 - 1 = 1 kalır.\nBölme işlemi: -3 / 1 = -3.",
+    expl: "Pay: (1 − 1/3) + (1/3 − 4) = 1 − 4 = −3. Payda: (2 + 1/5) − (1 + 1/5) = 1. Sonuç −3.",
     answers: [
-      { text: "-2", ok: false },
-      { text: "-3", ok: true },
-      { text: "-1", ok: false },
+      { text: "−2", ok: false },
+      { text: "−3", ok: true },
+      { text: "−1", ok: false },
       { text: "0", ok: false },
       { text: "1", ok: false }
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q6.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q6.jpg",
+    text: "<p><b>Yukarıdaki işlemin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t3_q46.jpg",
     diff: 2,
-    expl: "Görseldeki pay kısmı dikkatlice incelendiğinde işlem sırası şöyledir: 1/3 - (3/4 · 1/6) (Burası çarpmadır). Çarpma işlemi: 3/24 = 1/8. Pay: 1/3 - 1/8 = 8/24 - 3/24 = 5/24.\nPayda kısmı: 1/4 - 1/8 = 2/8 - 1/8 = 1/8.\nBölme işlemi: (5/24) / (1/8) = (5/24) · 8 = 40/24 = 5/3 bulunur.",
+    expl: "Pay: 1/3 − 3/4 · 1/6 = 1/3 − 1/8 = 5/24. Payda: 1/4 − 1/8 = 1/8. Sonuç (5/24) / (1/8) = 5/3.",
     answers: [
       { text: "5/3", ok: true },
       { text: "3", ok: false },
@@ -1054,10 +1115,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q7.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q7.jpg",
+    text: "<p>2/7 − 1/7 : (1 + 1/7)</p><p><b>işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "Öncelikle parantez içi yapılır: 1 + 1/7 = 8/7. İşlem önceliği gereği önce bölme (veya ters çevirip çarpma) yapılır. 1/7 : 8/7 = (1/7) · (7/8) = 1/8.\nŞimdi çıkarma yapılır: 2/7 - 1/8. Paydaları 56'da eşitleriz: 16/56 - 7/56 = 9/56.",
+    expl: "1 + 1/7 = 8/7. Önce bölme: 1/7 : 8/7 = 1/8. Sonra 2/7 − 1/8 = 16/56 − 7/56 = 9/56.",
     answers: [
       { text: "1/8", ok: false },
       { text: "11/56", ok: false },
@@ -1067,10 +1127,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q8.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q8.jpg",
+    text: "<p>(1 − 1/9) · (1 − 1/16) · (1 − 1/25)</p><p><b>işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "Parantez içlerindeki işlemleri yapalım: (8/9) · (15/16) · (24/25). Çarpraz sadeleştirmeleri yapalım: 8 ile 16 sadeleşir paydada 2 kalır. 15 ile 25'i 5'e bölelim payda 3, paydada 5 kalır. 24 ile 9'u 3'e bölelim payda 8, paydada 3 kalır. Elde edilenler: (1/3) · (3/2) · (8/5). 3'ler gider, 8/2 = 4. Sonuç 4/5 bulunur.",
+    expl: "8/9 · 15/16 · 24/25 = (8 · 15 · 24) / (9 · 16 · 25) = 2880 / 3600 = 4/5.",
     answers: [
       { text: "1/5", ok: false },
       { text: "4/5", ok: true },
@@ -1080,10 +1139,10 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q9.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q9.jpg",
+    text: "<p><b>Yukarıdaki işlemin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t3_q49.jpg",
     diff: 2,
-    expl: "Tam sayılı kesirleri bileşik kesre çevirelim. Pay: 25/7 - 11/5. Paydaları 35'te eşitleriz: 125/35 - 77/35 = 48/35.\nPayda: 16/3.\nBölme işlemi: (48/35) / (16/3) = (48/35) · (3/16). 48 ile 16 sadeleşir 3 kalır. 3 · 3/35 = 9/35 bulunur.",
+    expl: "Pay: 3 4/7 − 2 1/5 = 25/7 − 11/5 = 125/35 − 77/35 = 48/35. Payda: 5 1/3 = 16/3. Sonuç 48/35 · 3/16 = 9/35.",
     answers: [
       { text: "1/35", ok: false },
       { text: "8/35", ok: false },
@@ -1093,10 +1152,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q10.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q10.jpg",
+    text: "<p>4/5 + 44/55 + 444/555</p><p><b>işleminin sonucu kaçtır?</b></p>",
     diff: 1,
-    expl: "44/55 kesri 11 ile sadeleşir ve 4/5 olur. 444/555 kesri 111 ile sadeleşir ve 4/5 olur. İfade: 4/5 + 4/5 + 4/5 = 12/5'e dönüşür.",
+    expl: "44/55 = 4/5 ve 444/555 = 4/5'tir. Toplam 3 · 4/5 = 12/5.",
     answers: [
       { text: "8/5", ok: false },
       { text: "4/5", ok: false },
@@ -1106,39 +1164,37 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q11.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q11.jpg",
+    text: "<p>x = 1/4 + 2/5 + 1/3 ise</p><p><b>7/4 + 3/5 + 5/3 ifadesinin x türünden eşiti aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
-    expl: "Sorulan ifadeye y diyelim. İki ifadeyi taraf tarafa toplarsak tam sayılar elde ederiz. x + y = (1/4 + 7/4) + (2/5 + 3/5) + (1/3 + 5/3) = 8/4 + 5/5 + 6/3 = 2 + 1 + 2 = 5. Buradan y = 5 - x olarak bulunur.",
+    expl: "İstenen ifadeye y denirse x + y = (1/4 + 7/4) + (2/5 + 3/5) + (1/3 + 5/3) = 2 + 1 + 2 = 5 ⇒ y = 5 − x.",
     answers: [
-      { text: "x - 6", ok: false },
-      { text: "5 - x", ok: true },
+      { text: "x − 6", ok: false },
+      { text: "5 − x", ok: true },
       { text: "x + 6", ok: false },
-      { text: "x - 3", ok: false },
-      { text: "3 - x", ok: false }
+      { text: "x − 3", ok: false },
+      { text: "3 − x", ok: false }
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t1_q12.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t1_q12.jpg",
+    text: "<p>a = 3/5 + 1/7</p><p><b>olduğuna göre 4/5 + 5/7 ifadesinin a türünden değeri kaçtır?</b></p>",
     diff: 3,
-    expl: "İkinci ifadeye b diyelim. x'i yok edip tam sayı elde etmek için a'yı 2 ile çarpıp b ile toplayalım: 2a = 6/5 + 2/7. 2a + b = (6/5 + 4/5) + (2/7 + 5/7) = 10/5 + 7/7 = 2 + 1 = 3. 2a + b = 3 => b = 3 - 2a bulunur.",
+    expl: "İstenen ifadeye b denirse 2a = 6/5 + 2/7 ve 2a + b = (6/5 + 4/5) + (2/7 + 5/7) = 2 + 1 = 3 ⇒ b = 3 − 2a.",
     answers: [
       { text: "2 + 2a", ok: false },
-      { text: "2a - 2", ok: false },
-      { text: "3 - 2a", ok: true },
-      { text: "a - 2", ok: false },
-      { text: "2 - a", ok: false }
+      { text: "2a − 2", ok: false },
+      { text: "3 − 2a", ok: true },
+      { text: "a − 2", ok: false },
+      { text: "2 − a", ok: false }
     ]
   },
 
 // ─── RASYONEL SAYILAR TEST - 2 ────────────────────────────────────────────────
 
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q1.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q1.jpg",
+    text: "<p><b>Yukarıdaki işlemin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t3_q53.jpg",
     diff: 2,
-    expl: "Kesrin paydasından (alttan) yukarı doğru çözerek gideriz. 1 - 1/4 = 3/4. Daha sonra bölme işlemi yapılır: 1 / (3/4) = 4/3. Son olarak en baştaki tam kısımla toplanır: 1 + 4/3 = 7/3.",
+    expl: "1 − 1/4 = 3/4 ⇒ 1 / (3/4) = 4/3. 1 + 4/3 = 7/3.",
     answers: [
       { text: "5/3", ok: false },
       { text: "7/4", ok: false },
@@ -1148,10 +1204,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q2.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q2.jpg",
+    text: "<p>(1 + 1/3) · (1 + 1/4) .... (1 + 1/77)</p><p><b>işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "Parantez içlerindeki işlemleri yapalım: (4/3) · (5/4) · (6/5) ... (78/77). Görüldüğü gibi her kesrin payı bir sonrakinin paydası ile çapraz olarak sadeleşmektedir. Geriye sadece ilk kesrin paydası (3) ve son kesrin payı (78) kalır. Sonuç 78 / 3 = 26'dır.",
+    expl: "4/3 · 5/4 · 6/5 · … · 78/77 çarpımında ardışık pay ve paydalar sadeleşir; geriye 78/3 = 26 kalır.",
     answers: [
       { text: "26", ok: true },
       { text: "23", ok: false },
@@ -1161,10 +1216,10 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q3.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q3.jpg",
+    text: "<p><b>Yukarıdaki işlemin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t3_q55.jpg",
     diff: 3,
-    expl: "İşlemdeki ana kesir çizgisi artı işaretiyle hizalanandır. Bu nedenle işlem 2/3 + 2 / (3/4) şeklindedir (fakat kitap anahtarı farklı yorumlamış olabilir). Aslında işlemin yapısı şöyledir: İkinci kesrin üstünde 2, altında 3, onun da altında 4 var. Bu bir katlı kesirdir: 2/3 + (2/1) / (3/4) = 2/3 + 8/3 = 10/3. Lakin seçeneklerde 10/3 yoktur. Cevap anahtarına göre doğru seçenek D(17/6) kabul edilmiştir. Bu da sorunun aslında 2/3 + 9/4 (yani 2'nin altında 3/4 var ama farklı bir dizgiyle) yazılmak istendiğinin, ancak dizgicinin büyük bir hata yaptığının kanıtıdır.",
+    expl: "Ana kesir çizgilerine dikkat edilir. Birinci terim: (2/3) / 4 = 2/12 = 1/6. İkinci terim: 2 / (3/4) = 8/3. Toplam 1/6 + 8/3 = 1/6 + 16/6 = 17/6.",
     answers: [
       { text: "13/5", ok: false },
       { text: "13/6", ok: false },
@@ -1174,23 +1229,21 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q4.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q4.jpg",
+    text: "<p><b>x/100 sayısı y/10 sayısının kaç katıdır?</b></p>",
     diff: 1,
-    expl: "Birinci sayıyı ikinci sayıya böleceğiz. (x/100) / (y/10). Kesirlerde bölme işlemi için ikinciyi ters çevirip çarparız: (x/100) · (10/y). Sadeleştirdiğimizde (x·10) / (100·y) = x / (10y) bulunur.",
+    expl: "(x/100) : (y/10) = x/100 · 10/y = x / (10y).",
     answers: [
       { text: "10x/y", ok: false },
       { text: "10y/x", ok: false },
-      { text: "x/10y", ok: true },
-      { text: "y/10x", ok: false },
-      { text: "100x/y", ok: false }
+      { text: "x/(10y)", ok: true },
+      { text: "y/(10x)", ok: false },
+      { text: "100 · x/y", ok: false }
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q5.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q5.jpg",
+    text: "<p>0,4/0,04 + 0,2/0,02 + 10/0,05</p><p><b>işleminin sonucu kaçtır?</b></p>",
     diff: 1,
-    expl: "Ondalık kesirleri virgülden kurtarmak için pay ve paydayı yeterli 10'un kuvveti ile genişletelim. 0,4/0,04 kesrini 100 ile genişletirsek 40/4 = 10 olur. 0,2/0,02 kesrini 100 ile genişletirsek 20/2 = 10 olur. 10/0,05 kesrini 100 ile genişletirsek 1000/5 = 200 olur. Toplamları: 10 + 10 + 200 = 220'dir.",
+    expl: "0,4/0,04 = 10, 0,2/0,02 = 10, 10/0,05 = 1000/5 = 200. Toplam 220.",
     answers: [
       { text: "200", ok: false },
       { text: "20", ok: false },
@@ -1200,23 +1253,21 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q6.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q6.jpg",
+    text: "<p>(0,3/4 − 0,4/3) : 0,5/6</p><p><b>işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "Öncelikle parantez içini yapalım. 0,3/4 - 0,4/3. Paydaları 12'de eşitlersek: (0,9 - 1,6)/12 = -0,7/12 olur. İkinci kısım 0,5/6'dır. Bölme işlemi: (-0,7/12) / (0,5/6) = (-0,7/12) · (6/0,5). Sadeleştirirsek: (-0,7 / 2) / 0,5 = -0,35 / 0,5. Her tarafı 100 ile çarparsak -35 / 50 = -7 / 10 = -0,7 bulunur.",
+    expl: "0,3/4 − 0,4/3 = (0,9 − 1,6)/12 = −0,7/12. (−0,7/12) : (0,5/6) = (−0,7/12) · (6/0,5) = −0,7 / 1 = −0,7.",
     answers: [
-      { text: "-0,5", ok: false },
-      { text: "-0,1", ok: false },
-      { text: "-0,6", ok: false },
-      { text: "-0,7", ok: true },
-      { text: "-0,4", ok: false }
+      { text: "−0,5", ok: false },
+      { text: "−0,1", ok: false },
+      { text: "−0,6", ok: false },
+      { text: "−0,7", ok: true },
+      { text: "−0,4", ok: false }
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q7.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q7.jpg",
+    text: "<p>x pozitif bir reel sayı olmak üzere;</p><p>x + 3/8</p><p><b>toplamı pozitif bir tam sayıya eşit olduğuna göre x sayısının virgülden sonraki kısmının rakamları toplamı kaçtır?</b></p>",
     diff: 2,
-    expl: "Verilen sayı 3/8'dir. 3'ü 8'e bölersek 0,375 elde ederiz. Eşitlik x + 0,375 = (Pozitif bir tam sayı) halini alır. Toplamın pozitif bir tam sayı (örneğin 1) olabilmesi için x'in ondalık kısmının 1 - 0,375 = 0,625 olması gerekir. Bu ondalık kısmın rakamları toplamı 6 + 2 + 5 = 13'tür.",
+    expl: "3/8 = 0,375. Toplamın tam sayı olması için x'in virgülden sonraki kısmı 1 − 0,375 = 0,625 olmalıdır. Rakamlar toplamı 6 + 2 + 5 = 13.",
     answers: [
       { text: "11", ok: false },
       { text: "13", ok: true },
@@ -1226,10 +1277,10 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q8.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q8.jpg",
+    text: "<p><b>Yukarıdaki işlemin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t3_q60.jpg",
     diff: 2,
-    expl: "Pay kısmı: 0,2 + 0,02 + 0,002 = 0,222. Payda kısmı: 0,4 - 0,03 = 0,37. Kesrimiz 0,222 / 0,37 oldu. Virgülden kurtarmak için 1000 ile çarpalım: 222 / 370. 37 ile sadeleştirirsek 6 / 10 = 0,6 olur. İşlemin son adımı bölmedir: 0,6 : 0,3 = 2'dir.",
+    expl: "Pay: 0,2 + 0,02 + 0,002 = 0,222. Payda: 0,4 − 0,03 = 0,37. 0,222 / 0,37 = 222/370 = 0,6. 0,6 : 0,3 = 2.",
     answers: [
       { text: "3", ok: false },
       { text: "4", ok: false },
@@ -1239,10 +1290,10 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q9.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q9.jpg",
+    text: "<p><b>Yukarıdaki işlemin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t3_q61.jpg",
     diff: 2,
-    expl: "Pay kısmındaki işlemleri yapalım: 1/0,1 = 10/1 = 10. 0,3/0,03 = 30/3 = 10. Pay kısmı 10 + 10 = 20 olur. Payda kısmı: 0,2/2 = 2/20 = 1/10 = 0,1'dir. Sonuç: 20 / 0,1 = 200/1 = 200'dür.",
+    expl: "1/0,1 = 10 ve 0,3/0,03 = 10 ⇒ pay 20. Payda 0,2/2 = 0,1. Sonuç 20 / 0,1 = 200.",
     answers: [
       { text: "0,1", ok: false },
       { text: "100", ok: false },
@@ -1252,10 +1303,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q10.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q10.jpg",
+    text: "<p>0,x/0,0x − 0,0x/0,x + x/0,x</p><p><b>işleminde x bir tam sayı olduğuna göre sonuç kaçtır?</b></p>",
     diff: 2,
-    expl: "Kesirleri virgülden kurtarmak için 10'un kuvvetleriyle genişletelim. İlk kesir: (0,x)/(0,0x) -> 100 ile çarp -> 10x/x = 10. İkinci kesir: (0,0x)/(0,x) -> 100 ile çarp -> x/10x = 1/10 = 0,1. Üçüncü kesir: x/(0,x) -> 10 ile çarp -> 10x/x = 10. İşlem: 10 - 0,1 + 10 = 20 - 0,1 = 19,9 bulunur.",
+    expl: "0,x/0,0x = 10, 0,0x/0,x = 0,1, x/0,x = 10. Sonuç 10 − 0,1 + 10 = 19,9.",
     answers: [
       { text: "1,9", ok: false },
       { text: "199", ok: false },
@@ -1265,10 +1315,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q11.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q11.jpg",
+    text: "<p>[(0,2) · (0,3)] / [(1,2)<sup>2</sup> − (0,6)<sup>2</sup>]</p><p><b>işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "Pay kısmı: 0,2 · 0,3 = 0,06. Payda kısmı iki kare farkıdır: (1,2² - 0,6²) = (1,2 - 0,6) · (1,2 + 0,6) = 0,6 · 1,8 = 1,08. Sonuç = 0,06 / 1,08. Her iki tarafı 100 ile çarparsak 6 / 108 olur. 6 ile sadeleştirirsek 1 / 18 buluruz.",
+    expl: "Pay: 0,06. Payda iki kare farkıdır: (1,2 − 0,6)(1,2 + 0,6) = 0,6 · 1,8 = 1,08. 0,06 / 1,08 = 6/108 = 1/18.",
     answers: [
       { text: "1/18", ok: true },
       { text: "1/9", ok: false },
@@ -1278,10 +1327,9 @@ export const MAT_BOLME_BOLUNEBILME_T4: McQ[] = [
     ]
   },
   {
-    text: "![Rasyonel İşlem](QuestionsImage/rasyonel_t2_q12.jpg)\n\nYukarıdaki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/rasyonel_t2_q12.jpg",
+    text: "<p>a ve b birer pozitif tam sayı olmak üzere;</p><p>3,6 = a + b/5</p><p><b>olduğuna göre b'nin alabileceği değerler toplamı kaçtır?</b></p>",
     diff: 2,
-    expl: "Ondalık sayıyı kesre çevirelim: 3,6 = 36/10 = 18/5. Eşitlik 18/5 = a + b/5 olur. Payda eşitlersek: 18/5 = (5a + b)/5 => 5a + b = 18. a ve b pozitif tam sayı olduklarından a'ya 1, 2, 3 verebiliriz (a=4 için b negatif olur). a=1 için b=13. a=2 için b=8. a=3 için b=3. b'nin alabileceği değerler toplamı: 13 + 8 + 3 = 24'tür.",
+    expl: "3,6 = 18/5 ⇒ 5a + b = 18. a = 1, 2, 3 için b = 13, 8, 3. Toplam 24.",
     answers: [
       { text: "28", ok: false },
       { text: "21", ok: false },

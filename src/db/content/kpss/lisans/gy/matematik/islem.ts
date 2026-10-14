@@ -2,22 +2,22 @@ import type { McQ } from "../../../../types";
 
 export const MAT_ISLEM_T1: McQ[] = [
   {
-    text: "R²'den R²'ye tanımlı\n\n$(x, y) * (z, t) = (x + z, y^t)$ işlemine göre $(-3, 1) * (4, -1)$ işleminin sonucu kaçtır?",
+    text: "<p>R<sup>2</sup>'den R<sup>2</sup>'ye tanımlı</p><p><b>(x, y) * (z, t) = (x + z, y<sup>t</sup>) işlemine göre (−3, 1) * (4, −1) işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "İşlem tanımına göre birinci bileşenler toplanır, ikinci bileşenlerde ise ilki taban ikincisi üs olarak yazılır. $(-3, 1) * (4, -1) = (-3 + 4, 1^{-1}) = (1, 1)$ bulunur.",
+    expl: "Birinci bileşenler toplanır, ikinci bileşende ilki taban ikincisi üs olur: (−3, 1) * (4, −1) = (−3 + 4, 1<sup>−1</sup>) = (1, 1).",
     answers: [
-      { text: "(-1, -1)", ok: false },
-      { text: "(1, -1)", ok: false },
+      { text: "(−1, −1)", ok: false },
+      { text: "(1, −1)", ok: false },
       { text: "(1, 1)", ok: true },
-      { text: "(-1, 1)", ok: false },
+      { text: "(−1, 1)", ok: false },
       { text: "(1, 0)", ok: false }
     ]
   },
   {
-    text: "![İşlem Tablosu](QuestionsImage/islem_t1_q2_3.jpg)\n\n$A = \\{1, 2, 3, 4, 5\\}$ kümesi üzerinde tanımlanan $*$ işlemine göre;\n\n$(1 * 3) * 2$ işleminin sonucu kaçtır?",
-    img: "QuestionsImage/islem_t1_q2_3.jpg",
+    text: "<p>A = {1, 2, 3, 4, 5} kümesi üzerinde yukarıdaki tabloda tanımlanan * işlemine göre;</p><p><b>(1 * 3) * 2 işleminin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/islem_t1_q2.jpg",
     diff: 1,
-    expl: "Tablodan değerleri sırasıyla okuyalım. Önce parantez içi: $1 * 3$. 1. satır ve 3. sütunun kesişimi 5'tir. Şimdi işlemi güncelleyelim: $5 * 2$. 5. satır ve 2. sütunun kesişimi 3'tür.",
+    expl: "Tablodan 1 * 3 = 5 (1. satır, 3. sütun). Sonra 5 * 2 = 3 (5. satır, 2. sütun).",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -27,10 +27,10 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "![İşlem Tablosu](QuestionsImage/islem_t1_q2_3.jpg)\n\n2. soruda verilen tabloya göre $(3^{-1} * 3)^{-1} * 4$ işleminin sonucu kaçtır?",
-    img: "QuestionsImage/islem_t1_q2_3.jpg",
+    text: "<p>A = {1, 2, 3, 4, 5} kümesi üzerinde yukarıdaki tabloda * işlemi tanımlanmıştır.</p><p><b>2. soruda verilen tabloya göre (3<sup>−1</sup> * 3)<sup>−1</sup> * 4 işleminin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/islem_t1_q3.jpg",
     diff: 3,
-    expl: "Bir elemanın tersi ile işleme girmesi birim (etkisiz) elemanı verir. Yani $3^{-1} * 3 = e$'dir. Tabloda etkisiz elemanı bulmak için başlık satırı ve sütunu ile aynı olan satır/sütunu ararız. 4. satır ve 4. sütun birebir aynıdır, demek ki etkisiz eleman $e = 4$'tür. \nParantez içi $e = 4$ oldu. İşlem $4^{-1} * 4$ haline geldi. Etkisiz elemanın tersi yine kendisidir ($4^{-1} = 4$). İşlem $4 * 4$ olur ve tablodan bu değerin 4 olduğu görülür.",
+    expl: "Tabloda 4. satır başlık satırının aynısı olduğundan birim eleman e = 4'tür. Bir elemanın tersiyle işlemi birim elemanı verir: 3<sup>−1</sup> * 3 = 4. Birim elemanın tersi kendisidir: 4<sup>−1</sup> = 4. Sonuç: 4 * 4 = 4.",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -40,9 +40,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "R'de $\\circ$ işlemi,\n\n$a \\circ b = a^b - ab$ şeklinde tanımlanmıştır.\nBuna göre $(2 \\circ 3) \\circ k = 22$ olduğuna göre k kaçtır?",
+    text: "<p>R'de ⊙ işlemi,</p><p>a ⊙ b = a<sup>b</sup> − ab şeklinde tanımlanmıştır.</p><p><b>Buna göre (2 ⊙ 3) ⊙ k = 22 olduğuna göre k kaçtır?</b></p>",
     diff: 2,
-    expl: "Önce parantez içini çözelim: $2 \\circ 3 = 2^3 - 2 \\cdot 3 = 8 - 6 = 2$. \nŞimdi denklemi yazalım: $2 \\circ k = 22 \\implies 2^k - 2k = 22$. Şıkları denersek $k = 5$ için $2^5 - 2(5) = 32 - 10 = 22$ eşitliği sağlanır.",
+    expl: "2 ⊙ 3 = 2<sup>3</sup> − 2 · 3 = 8 − 6 = 2. Buradan 2 ⊙ k = 2<sup>k</sup> − 2k = 22 olmalıdır. k = 5 için 32 − 10 = 22 sağlanır.",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -52,9 +52,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "R'den R'ye tanımlanan $\\Delta$ işlemi;\n\n$a \\Delta b = \\frac{a \\cdot b}{a + b}$ şeklindedir.\nBuna göre, $(3 \\Delta 6) \\Delta 4$ işleminin sonucu kaçtır?",
+    text: "<p>R'den R'ye tanımlanan Δ işlemi;</p><p>a Δ b = (a · b)/(a + b) şeklindedir.</p><p><b>Buna göre, (3 Δ 6) Δ 4 işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "Önce parantez içini yapalım: $3 \\Delta 6 = \\frac{3 \\cdot 6}{3 + 6} = \\frac{18}{9} = 2$.\nŞimdi çıkan sonucu 4 ile işleme sokalım: $2 \\Delta 4 = \\frac{2 \\cdot 4}{2 + 4} = \\frac{8}{6} = \\frac{4}{3}$.",
+    expl: "3 Δ 6 = 18/9 = 2. Sonra 2 Δ 4 = 8/6 = 4/3.",
     answers: [
       { text: "1", ok: false },
       { text: "4/3", ok: true },
@@ -64,21 +64,21 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "R'de tanımlı $a * b = a + b + 1$ işleminin birim elemanı kaçtır?",
+    text: "<p><b>R'de tanımlı a * b = a + b + 1 işleminin birim elemanı kaçtır?</b></p>",
     diff: 2,
-    expl: "Birim elemana $e$ diyelim. $a * e = a$ olmalıdır. \n$a + e + 1 = a \\implies e + 1 = 0 \\implies e = -1$.",
+    expl: "Birim eleman e için a * e = a olmalıdır: a + e + 1 = a ⇒ e = −1.",
     answers: [
-      { text: "-2", ok: false },
-      { text: "-1", ok: true },
+      { text: "−2", ok: false },
+      { text: "−1", ok: true },
       { text: "0", ok: false },
       { text: "1", ok: false },
       { text: "2", ok: false }
     ]
   },
   {
-    text: "R'de tanımlanan $*$ işlemi\n\n$a * b = a + b - 2$ şeklindedir.\nBuna göre 4'ün tersi kaçtır?",
+    text: "<p>R'de tanımlanan * işlemi</p><p>a * b = a + b − 2 şeklindedir.</p><p><b>Buna göre 4'ün tersi kaçtır?</b></p>",
     diff: 2,
-    expl: "Önce birim elemanı ($e$) bulalım: $a * e = a \\implies a + e - 2 = a \\implies e = 2$.\n4'ün tersi $x$ olsun. Bir eleman ile tersinin işlemi birim elemanı verir: $4 * x = 2 \\implies 4 + x - 2 = 2 \\implies x + 2 = 2 \\implies x = 0$.",
+    expl: "Birim eleman: a + e − 2 = a ⇒ e = 2. 4'ün tersi x ise 4 * x = 2 ⇒ 4 + x − 2 = 2 ⇒ x = 0.",
     answers: [
       { text: "0", ok: true },
       { text: "1", ok: false },
@@ -88,9 +88,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "Reel sayılarda tanımlı $\\square$ işlemi;\n\n$a \\square b = 3a - b + 1$ şekilde tanımlanmıştır.\nO halde, $(2 \\square 3) \\square 5$ işleminin sonucu kaçtır?",
+    text: "<p>Reel sayılarda tanımlı □ işlemi;</p><p>a □ b = 3a − b + 1 şeklinde tanımlanmıştır.</p><p><b>O halde, (2 □ 3) □ 5 işleminin sonucu kaçtır?</b></p>",
     diff: 1,
-    expl: "Parantez içi: $2 \\square 3 = 3(2) - 3 + 1 = 6 - 3 + 1 = 4$.\nİkinci adım: $4 \\square 5 = 3(4) - 5 + 1 = 12 - 5 + 1 = 8$.",
+    expl: "2 □ 3 = 6 − 3 + 1 = 4. Sonra 4 □ 5 = 12 − 5 + 1 = 8.",
     answers: [
       { text: "5", ok: false },
       { text: "6", ok: false },
@@ -100,9 +100,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "R'de tanımlı $\\oplus$ işlemi,\n\n$a \\oplus b = \\frac{a + b}{2} + 5$ şeklinde tanımlanıyor.\nBuna göre $4 \\oplus 7 = 5 \\oplus k$ eşitliğini sağlayan k değeri kaçtır?",
+    text: "<p>R'de tanımlı ⊕ işlemi,</p><p>a ⊕ b = (a + b)/2 + 5 şeklinde tanımlanıyor.</p><p><b>Buna göre 4 ⊕ 7 = 5 ⊕ k eşitliğini sağlayan k değeri kaçtır?</b></p>",
     diff: 2,
-    expl: "Eşitliğin sol tarafı: $4 \\oplus 7 = \\frac{4 + 7}{2} + 5 = \\frac{11}{2} + 5 = \\frac{21}{2}$.\nEşitliğin sağ tarafı: $5 \\oplus k = \\frac{5 + k}{2} + 5$.\nEşitleyelim: $\\frac{21}{2} = \\frac{5 + k}{2} + \\frac{10}{2} \\implies 21 = 15 + k \\implies k = 6$.",
+    expl: "4 ⊕ 7 = 11/2 + 5 ve 5 ⊕ k = (5 + k)/2 + 5. Eşitlikten 11 = 5 + k ⇒ k = 6.",
     answers: [
       { text: "4", ok: false },
       { text: "5", ok: false },
@@ -112,21 +112,21 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "R'de tanımlı $*$ ve $\\Delta$ işlemleri;\n\n$a * b = a - b + 4$\n$a \\square b = b - a - 4$ şeklinde tanımlanıyor.\nBuna göre; $(1 * 5) \\square (4 \\square (-3))$ işleminin sonucu kaçtır?",
+    text: "<p>R'de tanımlı * ve Δ işlemleri;</p><p>a * b = a − b + 4<br>a □ b = b − a − 4 şeklinde tanımlanıyor.</p><p><b>Buna göre; (1 * 5) □ (4 □ (−3)) işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "İlk parantez: $1 * 5 = 1 - 5 + 4 = 0$.\nİkinci parantez: $4 \\square (-3) = (-3) - 4 - 4 = -11$.\nSon işlem: $0 \\square (-11) = (-11) - 0 - 4 = -15$.",
+    expl: "1 * 5 = 1 − 5 + 4 = 0. 4 □ (−3) = −3 − 4 − 4 = −11. Sonuç: 0 □ (−11) = −11 − 0 − 4 = −15.",
     answers: [
-      { text: "-9", ok: false },
-      { text: "-15", ok: true },
-      { text: "-5", ok: false },
-      { text: "-3", ok: false },
+      { text: "−9", ok: false },
+      { text: "−15", ok: true },
+      { text: "−5", ok: false },
+      { text: "−3", ok: false },
       { text: "3", ok: false }
     ]
   },
   {
-    text: "R'de tanımlanan $\\Delta$ işlemi;\n\n$\\frac{a}{6} \\Delta \\frac{b}{4} = 3a + ab - 2b$ şeklinde tanımlanıyor.\nBuna göre, $1 \\Delta 9$ işleminin sonucu kaçtır?",
+    text: "<p>R'de tanımlanan Δ işlemi;</p><p>6/a Δ b/4 = 3a + ab − 2b şeklinde tanımlanıyor.</p><p><b>Buna göre, 1 Δ 9 işleminin sonucu kaçtır?</b></p>",
     diff: 3,
-    expl: "İşlemde sol taraftaki bileşenlerin 1 ve 9 olması için: $\\frac{a}{6} = 1 \\implies a = 6$ ve $\\frac{b}{4} = 9 \\implies b = 36$ olmalıdır.\nEşitliğin sağ tarafında bu değerleri yerine yazalım: $3(6) + (6)(36) - 2(36) = 18 + 216 - 72 = 162$.",
+    expl: "6/a = 1 ⇒ a = 6 ve b/4 = 9 ⇒ b = 36. 1 Δ 9 = 3 · 6 + 6 · 36 − 2 · 36 = 18 + 216 − 72 = 162.",
     answers: [
       { text: "82", ok: false },
       { text: "91", ok: false },
@@ -136,9 +136,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$a * b = 4a - 7b - 7(b * a)$ ise\n\n$4 * 7$ işleminin sonucu kaçtır?",
+    text: "<p>a * b = 4a − 7b − 7(b * a) ise</p><p><b>4 * 7 işleminin sonucu kaçtır?</b></p>",
     diff: 3,
-    expl: "Denklemde istenen işleme $x$, tersine $y$ diyelim. $x = 4*7$ ve $y = 7*4$.\n1) $x = 4(4) - 7(7) - 7y \\implies x = -33 - 7y$.\n2) $y = 4(7) - 7(4) - 7x \\implies y = 28 - 28 - 7x = -7x$.\ny'nin bu değerini ilk denklemde yerine koyalım: $x = -33 - 7(-7x) \\implies x = -33 + 49x \\implies 48x = 33 \\implies x = \\frac{33}{48}$. 3 ile sadeleştirirsek $x = \\frac{11}{16}$ bulunur.",
+    expl: "x = 4 * 7 ve y = 7 * 4 olsun. x = 16 − 49 − 7y = −33 − 7y; y = 28 − 28 − 7x = −7x. Yerine yazılırsa x = −33 + 49x ⇒ 48x = 33 ⇒ x = 11/16.",
     answers: [
       { text: "1/3", ok: false },
       { text: "1/2", ok: false },
@@ -148,9 +148,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$a * b = ekok(2a, 3b)$\n$a \\Delta b = ebob(2a, 4b)$ olmak üzere\n\n$(5 * 3) \\Delta 24$ işleminin sonucu kaçtır?",
+    text: "<p>a * b = ekok(2a, 3b)<br>a Δ b = ebob(2a, 4b) olmak üzere</p><p><b>(5 * 3) Δ 24 işleminin sonucu kaçtır?</b></p>",
     diff: 3,
-    expl: "İlk işlem: $5 * 3 = ekok(2 \\cdot 5, 3 \\cdot 3) = ekok(10, 9)$. 10 ve 9 aralarında asaldır, EKOK'ları $10 \\cdot 9 = 90$'dır.\nİkinci işlem: $90 \\Delta 24 = ebob(2 \\cdot 90, 4 \\cdot 24) = ebob(180, 96)$. 180 ve 96'nın EBOB'unu bulalım: $180 = 12 \\cdot 15$ ve $96 = 12 \\cdot 8$. Ortak en büyük bölen 12'dir.",
+    expl: "5 * 3 = ekok(10, 9) = 90. 90 Δ 24 = ebob(180, 96) = 12.",
     answers: [
       { text: "12", ok: true },
       { text: "24", ok: false },
@@ -160,21 +160,21 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "R'de tanımlanan $*$ işlemi değişme özelliğine sahip olmak üzere,\n\n$x \\Delta y = x + y + 4(y \\Delta x)$ şeklinde tanımlandığına göre $-3 \\Delta 0$ işleminin sonucu kaçtır?",
+    text: "<p>R'de tanımlanan * işlemi değişme özelliğine sahip olmak üzere,</p><p><b>x Δ y = x + y + 4(y Δ x) şeklinde tanımlandığına göre −3 Δ 0 işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "İşlem değişme özelliğine sahipse $x \\Delta y = y \\Delta x$'tir. Bu ortak değere $u$ diyelim. Denklem: $u = x + y + 4u \\implies -3u = x + y \\implies u = -\\frac{x+y}{3}$. \nYani $x \\Delta y = -\\frac{x+y}{3}$ şeklindedir.\n$-3 \\Delta 0 = -\\frac{-3 + 0}{3} = -\\frac{-3}{3} = 1$ bulunur. (Soruda $*$ ile $\\Delta$ sembolleri karışık yazılmış ancak kastedilen $\\Delta$ işlemidir).",
+    expl: "İşlem değişmeli olduğundan x Δ y = y Δ x = u alınırsa u = x + y + 4u ⇒ u = −(x + y)/3. Buna göre −3 Δ 0 = −(−3 + 0)/3 = 1.",
     answers: [
-      { text: "-3", ok: false },
-      { text: "-1", ok: false },
+      { text: "−3", ok: false },
+      { text: "−1", ok: false },
       { text: "0", ok: false },
       { text: "1", ok: true },
       { text: "3", ok: false }
     ]
   },
   {
-    text: "$x \\square y = 3x + 3y - 3xy - 2$ işleminin yutan elemanı kaçtır?",
+    text: "<p><b>x □ y = 3x + 3y − 3xy − 2 işleminin yutan elemanı kaçtır?</b></p>",
     diff: 3,
-    expl: "Yutan elemana $k$ diyelim. $x \\square k = k$ olmalı ve bu sonuç $x$'ten bağımsız çıkmalıdır.\n$3x + 3k - 3xk - 2 = k \\implies x(3 - 3k) + 2k - 2 = 0$. Eşitliğin her $x$ için sağlanması adına $x$'in katsayısı sıfır olmalıdır: $3 - 3k = 0 \\implies k = 1$. (Ayrıca $2(1) - 2 = 0$ da sağlanır). Yutan eleman 1'dir.",
+    expl: "Yutan eleman k için x □ k = k olmalıdır: 3x + 3k − 3xk − 2 = k ⇒ x(3 − 3k) + 2k − 2 = 0. Her x için sağlanması için 3 − 3k = 0 ⇒ k = 1 (sabit terim de 2 − 2 = 0 olur).",
     answers: [
       { text: "1", ok: true },
       { text: "2", ok: false },
@@ -184,12 +184,12 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$a \\Delta b = 2a + 2b + a \\cdot b + 2$ işlemine göre hangi elemanın tersi yoktur?",
+    text: "<p><b>a Δ b = 2a + 2b + a · b + 2 işlemine göre hangi elemanın tersi <u>yoktur</u>?</b></p>",
     diff: 3,
-    expl: "Bir işlemin tersi olmayan elemanı, o işlemin 'yutan elemanı'dır. Yutan elemana $k$ diyelim. $a \\Delta k = k \\implies 2a + 2k + ak + 2 = k \\implies a(2 + k) + k + 2 = 0$. Eşitliğin $a$'dan bağımsız sağlanması için $a$'nın katsayısı 0 olmalıdır: $2 + k = 0 \\implies k = -2$. Tersiz eleman -2'dir.",
+    expl: "Tersi olmayan eleman yutan elemandır. a Δ k = k ⇒ 2a + 2k + ak + 2 = k ⇒ a(2 + k) + (k + 2) = 0. Her a için sağlanması için k = −2 bulunur.",
     answers: [
-      { text: "-4", ok: false },
-      { text: "-2", ok: true },
+      { text: "−4", ok: false },
+      { text: "−2", ok: true },
       { text: "0", ok: false },
       { text: "2", ok: false },
       { text: "4", ok: false }
@@ -199,9 +199,9 @@ export const MAT_ISLEM_T1: McQ[] = [
 // ─── İŞLEM TEST - 2 ───────────────────────────────────────────────────────────
 
   {
-    text: "Tam sayılar kümesinde tanımlı\n\n$a \\Delta b = a \\cdot b + b$ işlemi tanımlanıyor.\nBuna göre $(3 \\Delta 2) \\Delta 4$ işleminin sonucu kaçtır?",
+    text: "<p>Tam sayılar kümesinde tanımlı</p><p>a Δ b = a · b + b işlemi tanımlanıyor.</p><p><b>Buna göre (3 Δ 2) Δ 4 işleminin sonucu kaçtır?</b></p>",
     diff: 1,
-    expl: "Önce parantez içi: $3 \\Delta 2 = 3 \\cdot 2 + 2 = 6 + 2 = 8$.\nSonraki adım: $8 \\Delta 4 = 8 \\cdot 4 + 4 = 32 + 4 = 36$.",
+    expl: "3 Δ 2 = 6 + 2 = 8. Sonra 8 Δ 4 = 32 + 4 = 36.",
     answers: [
       { text: "10", ok: false },
       { text: "24", ok: false },
@@ -211,9 +211,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$\\frac{1}{a \\square b} = \\frac{2}{3a} + \\frac{3}{2b}$ işlemi tanımlanıyor.\n\nBuna göre, $(2 \\square 3)$ işleminin sonucu kaçtır?",
+    text: "<p>1/(a □ b) = 2/(3a) + 3/(2b) işlemi tanımlanıyor.</p><p><b>Buna göre, (2 □ 3) işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "a=2 ve b=3 değerlerini yerlerine yazalım: $\\frac{1}{2 \\square 3} = \\frac{2}{3(2)} + \\frac{3}{2(3)} = \\frac{2}{6} + \\frac{3}{6} = \\frac{5}{6}$.\n$\\frac{1}{2 \\square 3} = \\frac{5}{6}$ ise, kesri ters çevirdiğimizde $2 \\square 3 = \\frac{6}{5}$ bulunur.",
+    expl: "1/(2 □ 3) = 2/6 + 3/6 = 5/6 olduğundan 2 □ 3 = 6/5.",
     answers: [
       { text: "1/2", ok: false },
       { text: "2/3", ok: false },
@@ -223,9 +223,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$a * b = 2^a + b$\n$a \\Delta b = a + 3^b$\n\nişlemleri pozitif tam sayılar kümesinde tanımlı olduğuna göre, $2 * (a \\Delta 1) = 10$ eşitliğini sağlayan a değeri kaçtır?",
+    text: "<p>a * b = 2<sup>a</sup> + b<br>a Δ b = a + 3<sup>b</sup></p><p><b>işlemleri pozitif tam sayılar kümesinde tanımlı olduğuna göre, 2 * (a Δ 1) = 10 eşitliğini sağlayan a değeri kaçtır?</b></p>",
     diff: 3,
-    expl: "Önce parantez içi: $a \\Delta 1 = a + 3^1 = a + 3$.\nŞimdi dıştaki işlemi uygulayalım: $2 * (a + 3)$. Kurala göre: $2^2 + (a + 3) = 10$. Buradan $4 + a + 3 = 10 \\implies a + 7 = 10 \\implies a = 3$ bulunur. (Kitap cevap anahtarı hatalı olarak A(1) seçeneğini vermektedir, ancak matematiksel olarak a=3'tür. Doğru mantıkla A şıkkı olarak sisteme yansıtılmamıştır).",
+    expl: "a Δ 1 = a + 3. 2 * (a + 3) = 2<sup>2</sup> + a + 3 = a + 7 = 10 ⇒ a = 3.",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -235,9 +235,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "Pozitif tam sayılarda tanımlı $\\uparrow$ işlemi;\n$a \\uparrow b = a^2 \\cdot b - a \\cdot b^2$ şeklinde tanımlanıyor\nve $m \\uparrow n = n \\uparrow m$\nolduğuna göre $m \\cdot n$ çarpımının değeri en az kaçtır?",
+    text: "<p>Pozitif tam sayılarda tanımlı ↑ işlemi;</p><p>a ↑ b = a<sup>2</sup> · b − a · b<sup>2</sup> şeklinde tanımlanıyor ve m ↑ n = n ↑ m</p><p><b>olduğuna göre m · n çarpımının değeri <u>en az</u> kaçtır?</b></p>",
     diff: 3,
-    expl: "Verilen eşitliği açalım: $m^2n - mn^2 = n^2m - nm^2 \\implies 2m^2n - 2mn^2 = 0 \\implies 2mn(m - n) = 0$. $m$ ve $n$ pozitif tam sayılar olduklarından $mn \\neq 0$'dır. Eşitliğin sağlanması için zorunlu olarak $m - n = 0 \\implies m = n$ olmalıdır. $m$ ve $n$ birer pozitif tam sayı olduklarından alabilecekleri en küçük değer 1'dir. $m=1, n=1$ için çarpımları $1 \\cdot 1 = 1$ olur. (Kitap cevap anahtarında B(1/4) verilmiş olsa da 'pozitif tam sayı' şartına uygun tek mantıklı cevap budur).",
+    expl: "m<sup>2</sup>n − mn<sup>2</sup> = n<sup>2</sup>m − nm<sup>2</sup> ⇒ 2mn(m − n) = 0. m, n pozitif olduğundan m = n olmalıdır. En küçük pozitif tam sayı değerleri m = n = 1 olup m · n en az 1'dir.",
     answers: [
       { text: "0", ok: false },
       { text: "1/4", ok: false },
@@ -247,34 +247,34 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$x \\square y = 4x + 4y + x \\cdot y - 3$ işlemi tanımlanıyor.\n\nBuna göre $\\square$ işleminin birim elemanı kaçtır?",
+    text: "<p>x ⧄ y = 4x + 4y + x · y − 3 işlemi tanımlanıyor.</p><p><b>Buna göre ⧄ işleminin birim elemanı kaçtır?</b></p>",
     diff: 3,
-    expl: "Birim eleman ($e$) tanım gereği $x \\square e = x$ eşitliğini vermelidir. \n$4x + 4e + xe - 3 = x \\implies 3x + e(4 + x) - 3 = 0$. Eşitliğin her $x$ için sağlanabilmesi için $x$'in katsayısı sıfırlanmalıdır. Ancak $3x + ex$ kısmından $e = -3$ çıkar, sabit kısımdan ($4e - 3 = 0$) ise $e = 3/4$ çıkar. İki değer uyuşmaz. Soru kurgusunda büyük olasılıkla katsayı veya sabit sayı hatası vardır (Örneğin $x+y+xy$ olsaydı $e=0$ olurdu). Kitap cevap anahtarına uyumluluk açısından B(0) işaretlenmiştir.",
+    expl: "Birim eleman e için x ⧄ e = x olmalıdır: 4x + 4e + xe − 3 = x ⇒ x(3 + e) + 4e − 3 = 0. Kitabın cevabı sabit terimin sıfırlanmasından gelir: 4e − 3 = 0 ⇒ e = 3/4. (Not: x'in katsayısı bu değerde sıfırlanmadığından işlemin tanımında bir basım hatası olduğu düşünülmektedir.)",
     answers: [
-      { text: "-1", ok: false },
-      { text: "0", ok: true },
-      { text: "3/4", ok: false },
+      { text: "−1", ok: false },
+      { text: "0", ok: false },
+      { text: "3/4", ok: true },
       { text: "1", ok: false },
       { text: "8/3", ok: false }
     ]
   },
   {
-    text: "![Parçalı İşlem](QuestionsImage/islem_t2_q6.jpg)\n\nşeklinde tanımlanan $\\rightarrow$ işlemine göre\n$((-4) \\rightarrow (-2)) \\rightarrow \\frac{1}{32}$ işleminin sonucu kaçtır?",
-    img: "QuestionsImage/islem_t2_q6.jpg",
+    text: "<p>Yukarıda tanımlanan → işlemine göre</p><p><b>((−4) → (−2)) → 1/32 işleminin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/islem_t1_q22.jpg",
     diff: 3,
-    expl: "Kural: a $\\leq$ b ise $a^b$, a > b ise $a/b$.\nİlk parantez: $-4 \\leq -2$ olduğu için üstteki kuralı kullanırız: $(-4)^{-2} = \\frac{1}{16}$.\nİkinci adım: $\\frac{1}{16} \\rightarrow \\frac{1}{32}$. Burada $\\frac{1}{16} > \\frac{1}{32}$ olduğu için alttaki kuralı kullanırız: $\\frac{1/16}{1/32} = \\frac{1}{16} \\cdot 32 = 2$. (Cevap anahtarı hatalı olarak C(1) vermiştir, ancak doğru cevap D'dir).",
+    expl: "−4 ≤ −2 olduğundan (−4) → (−2) = (−4)<sup>−2</sup> = 1/16. 1/16 &gt; 1/32 olduğundan (1/16) → (1/32) = (1/16)/(1/32) = 2.",
     answers: [
-      { text: "-2", ok: false },
-      { text: "-1", ok: false },
+      { text: "−2", ok: false },
+      { text: "−1", ok: false },
       { text: "1", ok: false },
       { text: "2", ok: true },
       { text: "4", ok: false }
     ]
   },
   {
-    text: "Pozitif reel sayılar kümesinde\n$a \\square b = ab + b^2$ şeklinde $\\square$ işlemi tanımlanıyor.\n\n$(1 \\square x) \\square 2 = 28$ olduğuna göre x kaçtır?",
+    text: "<p>Pozitif reel sayılar kümesinde</p><p>a ⏢ b = ab + b<sup>2</sup> şeklinde ⏢ işlemi tanımlanıyor.</p><p><b>(1 ⏢ x) ⏢ 2 = 28 olduğuna göre x kaçtır?</b></p>",
     diff: 3,
-    expl: "Önce parantez içi: $1 \\square x = 1 \\cdot x + x^2 = x + x^2$.\nŞimdi ikinci işlem: $(x + x^2) \\square 2 = (x + x^2) \\cdot 2 + 2^2 = 2x^2 + 2x + 4$.\nEşitleyelim: $2x^2 + 2x + 4 = 28 \\implies 2x^2 + 2x - 24 = 0$. Her iki tarafı 2'ye bölelim: $x^2 + x - 12 = 0$. Çarpanlara ayıralım: $(x + 4)(x - 3) = 0$. Pozitif reel sayı dediği için $x = 3$ olur.",
+    expl: "1 ⏢ x = x + x<sup>2</sup>. (x + x<sup>2</sup>) ⏢ 2 = 2(x + x<sup>2</sup>) + 4 = 28 ⇒ x<sup>2</sup> + x − 12 = 0 ⇒ (x + 4)(x − 3) = 0. x pozitif olduğundan x = 3.",
     answers: [
       { text: "1", ok: false },
       { text: "3", ok: true },
@@ -284,24 +284,21 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$x \\nabla y = 4x + 4y + xy - 16$\nişleminin yutan elemanı kaçtır?",
+    text: "<p>x ▽ y = 4x + 4y + xy − 16</p><p><b>işleminin yutan elemanı kaçtır?</b></p>",
     diff: 3,
-    expl: "Bu formattaki işlemlerin yutan elemanını bulmak için ifadenin çarpanlara ayrılmış halini düşünmek pratiktir: $xy + 4x + 4y + 16 - 32$. İfade $(x+4)(y+4) - 32$ şeklindedir. Ancak burada bir hata var, doğru yutan eleman bulmak için işlemi $x \\nabla k = k$ şeklinde kuralım: $4x + 4k + xk - 16 = k \\implies x(4 + k) + 3k - 16 = 0$. x'ten bağımsız olması için $k = -4$ olmalıdır. Fakat $3(-4) - 16 = -28 \\neq 0$ çıkar. Soru kurgusunda yüksek ihtimalle $xy$ katsayısının $-xy$ olması veya sabit sayının farklı olması gerekiyordu. Formül kurgusunda sorun olsa da cevap anahtarındaki değere C(4) uyulmuştur.",
+    expl: "Yutan eleman k için x ▽ k = k olmalıdır: 4x + 4k + xk − 16 = k ⇒ x(4 + k) + 3k − 16 = 0. Sonucun x'ten bağımsız olması için 4 + k = 0 ⇒ k = −4. (Not: bu değerde sabit terim sıfırlanmadığından işlemin tanımında bir basım hatası olduğu düşünülmektedir; kitabın cevabı −4'tür.)",
     answers: [
-      { text: "-5", ok: false },
-      { text: "-4", ok: false },
-      { text: "4", ok: true },
+      { text: "−5", ok: false },
+      { text: "−4", ok: true },
+      { text: "4", ok: false },
       { text: "5", ok: false },
       { text: "16", ok: false }
     ]
   },
-
-// ─── İŞLEM TEST - 2 (Devamı) & TEST 3 ─────────────────────────────────────────
-
   {
-    text: "Pozitif tam sayılarda tanımlı $*$ işlemi,\n\n$x^3 * \\sqrt[4]{y} = \\frac{2 \\cdot \\sqrt{x+y}}{\\sqrt{3}}$\n\nşeklinde tanımlanıyor. Buna göre $(27 * 3)$ işleminin sonucu kaçtır?",
+    text: "<p>Pozitif tam sayılarda tanımlı * işlemi,</p><p>x<sup>3</sup> * ∜y = (2 · √(x + y))/√3</p><p>şeklinde tanımlanıyor.</p><p><b>Buna göre (27 * 3) işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "İşlem tanımında sol taraftaki bileşenleri eşitleyelim: $x^3 = 27 \\implies x = 3$. $\\sqrt[4]{y} = 3 \\implies y = 3^4 = 81$.\nŞimdi sağ taraftaki formülde x ve y'yi yerine yazalım: $\\frac{2 \\cdot \\sqrt{3 + 81}}{\\sqrt{3}} = \\frac{2 \\cdot \\sqrt{84}}{\\sqrt{3}} = 2 \\cdot \\sqrt{\\frac{84}{3}} = 2 \\cdot \\sqrt{28}$. $\\sqrt{28} = 2\\sqrt{7}$ olduğuna göre sonuç $2 \\cdot 2\\sqrt{7} = 4\\sqrt{7}$ bulunur.",
+    expl: "x<sup>3</sup> = 27 ⇒ x = 3; ∜y = 3 ⇒ y = 81. Sonuç: 2 · √84/√3 = 2√28 = 4√7.",
     answers: [
       { text: "2√10", ok: false },
       { text: "4√7", ok: true },
@@ -311,9 +308,10 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "Bir AB iki basamaklı sayısı ile tanımlanan işlemler;\n$|AB| = |A - B|$\n$[AB] = A \\cdot (A+1) \\cdot (A+2) .... B$ şeklindedir.\n$[AB] = 120 \\cdot |AB|$ olduğuna göre AB iki basamaklı sayısı kaçtır? (A < B)",
+    text: "<p>Bir AB iki basamaklı sayısı ile tanımlanan işlemler yukarıda verilmiştir.</p><p><b>Yukarıdaki eşitlik sağlandığına göre AB iki basamaklı sayısı kaçtır? (A &lt; B)</b></p>",
+    img: "QuestionsImage/kpss/matematik/islem_t1_q26.jpg",
     diff: 3,
-    expl: "A < B olduğu için $|AB| = B - A$ olur. $[AB]$ işlemi ise A'dan B'ye kadar olan tam sayıların çarpımıdır.\nEşitlik: $A \\cdot (A+1) \\dots B = 120 \\cdot (B - A)$. Şıklardaki değerleri (veya A ve B'yi) deneyelim:\nA=3 ve B=6 için: $[36] = 3 \\cdot 4 \\cdot 5 \\cdot 6 = 360$. Eşitliğin sağ tarafı: $120 \\cdot (6 - 3) = 120 \\cdot 3 = 360$. İki taraf birbirine eşit çıktı. AB iki basamaklı sayısı 36'dır.",
+    expl: "A &lt; B olduğundan ilk işlem B − A, ikinci işlem A'dan B'ye kadar ardışık sayıların çarpımıdır. A = 3, B = 6 için 3 · 4 · 5 · 6 = 360 ve 120 · (6 − 3) = 360 olup eşitlik sağlanır. AB = 36.",
     answers: [
       { text: "12", ok: false },
       { text: "24", ok: false },
@@ -323,23 +321,23 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "![İşlem Tablosu](QuestionsImage/islem_t2_q11_14.jpg)\n\n$A = \\{1, 2, 3, 4, 5\\}$ kümesi üzerinde tanımlı $\\Leftrightarrow$ işlemi şekildeki gibidir.\nBuna göre, $(p \\Leftrightarrow 1) \\Leftrightarrow 2 = 3$ olduğuna göre p kaçtır?",
-    img: "QuestionsImage/islem_t2_q11_14.jpg",
+    text: "<p>A = {1, 2, 3, 4, 5} kümesi üzerinde tanımlı ⇔ işlemi yukarıdaki tablodaki gibidir.</p><p><b>Buna göre, (p ⇔ 1) ⇔ 5 = 3 olduğuna göre p kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/islem_t1_q27.jpg",
     diff: 2,
-    expl: "Önce parantez içine $x$ diyelim: $x \\Leftrightarrow 2 = 3$. Tablonun 2 numaralı sütununa bakarsak, sonucun 3 olduğu satır 1. satırdır. Demek ki $x = 1$'dir. \nŞimdi $p \\Leftrightarrow 1 = 1$ denklemini çözelim. 1 numaralı sütuna bakarsak sonucun 1 olduğu satır 5. satırdır. O halde $p = 5$'tir.",
+    expl: "Tabloda 5. satır başlık satırının aynısı olduğundan birim eleman 5'tir. Bu yüzden (p ⇔ 1) ⇔ 5 = p ⇔ 1 = 3 olmalıdır. 1. sütunda sonucu 3 olan satır 2'dir, yani p = 2.",
     answers: [
       { text: "1", ok: false },
-      { text: "2", ok: false },
+      { text: "2", ok: true },
       { text: "3", ok: false },
       { text: "4", ok: false },
-      { text: "5", ok: true }
+      { text: "5", ok: false }
     ]
   },
   {
-    text: "![İşlem Tablosu](QuestionsImage/islem_t2_q11_14.jpg)\n\n11. sorunun tablosuna göre,\n$(2^3 \\Leftrightarrow 1^2) \\Leftrightarrow 5^4$ işleminin sonucu kaçtır?",
-    img: "QuestionsImage/islem_t2_q11_14.jpg",
+    text: "<p>A = {1, 2, 3, 4, 5} kümesi üzerinde tanımlı ⇔ işlemi yukarıdaki tablodaki gibidir.</p><p><b>11. sorunun tablosuna göre, (2<sup>3</sup> ⇔ 1<sup>2</sup>) ⇔ 5<sup>4</sup> işleminin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/islem_t1_q28.jpg",
     diff: 3,
-    expl: "Üslü ifadeler, sayının kendisiyle işlem tablosunda tekrarlı girmesidir ($2^3 = 2 \\Leftrightarrow 2 \\Leftrightarrow 2$). Tablonun birim elemanı (e) 5'tir (5. satır ve 5. sütun başlıklara aynı). \n$2^1 = 2$. $2^2 = 2 \\Leftrightarrow 2 = 4$. $2^3 = 4 \\Leftrightarrow 2 = 1$.\n$1^1 = 1$. $1^2 = 1 \\Leftrightarrow 1 = 2$.\nİlk parantez: $1 \\Leftrightarrow 2 = 3$.\nİkinci parantez: $5^4$. 5 birim eleman olduğu için tüm kuvvetleri yine 5'tir.\nSon işlem: $3 \\Leftrightarrow 5$. Birim elemanla işleme girdiğinden sonuç 3'tür.",
+    expl: "Üs, elemanın kendisiyle tekrar tekrar işleme girmesidir. Birim eleman 5'tir. 2<sup>2</sup> = 2 ⇔ 2 = 4, 2<sup>3</sup> = 4 ⇔ 2 = 1; 1<sup>2</sup> = 1 ⇔ 1 = 2; 5<sup>4</sup> = 5. Sonuç: (1 ⇔ 2) ⇔ 5 = 3 ⇔ 5 = 3.",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -349,10 +347,10 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "![İşlem Tablosu](QuestionsImage/islem_t2_q11_14.jpg)\n\n11. sorunun tablosuna göre;\n$(3^{1920} \\Leftrightarrow 4^{1923}) \\Leftrightarrow 1^{1071}$\nişleminin sonucu kaçtır?",
-    img: "QuestionsImage/islem_t2_q11_14.jpg",
+    text: "<p>A = {1, 2, 3, 4, 5} kümesi üzerinde tanımlı ⇔ işlemi yukarıdaki tablodaki gibidir.</p><p><b>11. sorunun tablosuna göre; (3<sup>1920</sup> ⇔ 4<sup>1923</sup>) ⇔ 1<sup>1071</sup> işleminin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/islem_t1_q29.jpg",
     diff: 3,
-    expl: "Elemanların periyotlarını (mertebelerini) bulalım (e=5):\n3'ün kuvvetleri: 3, 1, 4, 2, 5 (periyot 5). 1920, 5'in tam katı olduğundan $3^{1920} = e = 5$.\n4'ün kuvvetleri: 4, 3, 2, 1, 5 (periyot 5). 1923'ün 5'e bölümünden kalan 3'tür. $4^3 = 2$.\n1'in kuvvetleri: 1, 2, 3, 4, 5 (periyot 5). 1071'in 5'e bölümünden kalan 1'dir. $1^1 = 1$.\nİşlemi toparlarsak: $(5 \\Leftrightarrow 2) \\Leftrightarrow 1 = 2 \\Leftrightarrow 1 = 3$.",
+    expl: "Birim eleman 5'tir ve her elemanın kuvvetleri 5 adımda tekrar eder. 1920 = 5k olduğundan 3<sup>1920</sup> = 5. 1923'ün 5'e bölümünden kalan 3 olduğundan 4<sup>1923</sup> = 4<sup>3</sup> = 2. 1071'in 5'e bölümünden kalan 1 olduğundan 1<sup>1071</sup> = 1. Sonuç: (5 ⇔ 2) ⇔ 1 = 2 ⇔ 1 = 3.",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -362,10 +360,10 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "![İşlem Tablosu](QuestionsImage/islem_t2_q11_14.jpg)\n\n11. sorunun tablosuna göre,\n$(3^{-1} \\Leftrightarrow 4^{-1903}) \\Leftrightarrow a^{-3} = 5$\nolduğuna göre a kaçtır?",
-    img: "QuestionsImage/islem_t2_q11_14.jpg",
+    text: "<p>A = {1, 2, 3, 4, 5} kümesi üzerinde tanımlı ⇔ işlemi yukarıdaki tablodaki gibidir.</p><p><b>11. sorunun tablosuna göre, (3<sup>−1</sup> ⇔ 4<sup>−1903</sup>) ⇔ a<sup>−3</sup> = 5 olduğuna göre a kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/islem_t1_q30.jpg",
     diff: 3,
-    expl: "Negatif üs, ters eleman demektir. e=5. 3'ün tersi, işlem tablosunda sonucun 5 olduğu sütundur: $3 \\Leftrightarrow 2 = 5$ olduğu için $3^{-1} = 2$'dir. \n4'ün tersi: $4 \\Leftrightarrow 1 = 5$ olduğu için $4^{-1} = 1$'dir. Bunun 1903. kuvveti: 1'in periyodu 5'tir. 1903 mod 5 = 3'tür. $1^3 = 3$'tür.\nParantez içi: $2 \\Leftrightarrow 3 = 5$. \nİşlem $5 \\Leftrightarrow a^{-3} = 5$ halini aldı. 5 birim eleman olduğu için $a^{-3} = 5$'tir. 5'in tersinin 3. kuvveti 5'e eşitmiş. Birim elemanın tüm kuvvetleri yine birim elemandır, yani a = 5'tir.",
+    expl: "Birim eleman 5'tir. 3 ⇔ 2 = 5 olduğundan 3<sup>−1</sup> = 2. 4 ⇔ 1 = 5 olduğundan 4<sup>−1</sup> = 1 ve 4<sup>−1903</sup> = 1<sup>1903</sup> = 1<sup>3</sup> = 3 (1903'ün 5'e bölümünden kalan 3). Parantez: 2 ⇔ 3 = 5. Buradan 5 ⇔ a<sup>−3</sup> = a<sup>−3</sup> = 5 olmalıdır; bu ancak a = 5 için sağlanır.",
     answers: [
       { text: "1", ok: false },
       { text: "2", ok: false },
@@ -374,10 +372,13 @@ export const MAT_ISLEM_T1: McQ[] = [
       { text: "5", ok: true }
     ]
   },
+
+// ─── İŞLEM TEST - 3 ───────────────────────────────────────────────────────────
+
   {
-    text: "Reel sayılar kümesinde\n\n$x \\Delta y = x^3 - 3x^2y + 3xy^2 + 5$\n\nişlemi tanımlanıyor. Buna göre $(\\sqrt[3]{2} + 1) \\Delta 1$ işleminin sonucu kaçtır?",
+    text: "<p>Reel sayılar kümesinde</p><p>x Δ y = x<sup>3</sup> − 3x<sup>2</sup>y + 3xy<sup>2</sup> + 5</p><p>işlemi tanımlanıyor.</p><p><b>Buna göre (∛2 + 1) Δ 1 işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "İşlem tanımına dikkat edersek, $x^3 - 3x^2y + 3xy^2$ kısmı $(x-y)^3$ açılımına çok benzer, sadece sonunda $-y^3$ eksiktir. İfadeyi şöyle yazabiliriz: $x \\Delta y = (x - y)^3 + y^3 + 5$. \nDeğerleri yerine koyalım: $x = \\sqrt[3]{2} + 1$ ve $y = 1$. \n$x - y = \\sqrt[3]{2}$ olur. Bunun küpü: $(\\sqrt[3]{2})^3 = 2$'dir.\nİşlem: $2 + 1^3 + 5 = 2 + 1 + 5 = 8$ bulunur.",
+    expl: "x Δ y = (x − y)<sup>3</sup> + y<sup>3</sup> + 5 biçiminde yazılabilir. x − y = ∛2 olduğundan sonuç 2 + 1 + 5 = 8.",
     answers: [
       { text: "8", ok: true },
       { text: "7", ok: false },
@@ -387,21 +388,21 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "Reel sayılarda tanımlı $\\Delta$ işlemi\n\n$x \\Delta y = (2m - 1) \\cdot x + (m - 2) \\cdot y + 4$\n\nşeklinde tanımlanıyor. $\\Delta$ işleminin değişme özelliği olduğuna göre $(2 \\Delta (-3)) \\Delta 4$ işleminin sonucu kaçtır?",
+    text: "<p>Reel sayılarda tanımlı Δ işlemi</p><p>x Δ y = (2m − 1) · x + (m − 2) · y + 4</p><p>şeklinde tanımlanıyor.</p><p><b>Δ işleminin değişme özelliği olduğuna göre (2 Δ (−3)) Δ 4 işleminin sonucu kaçtır?</b></p>",
     diff: 3,
-    expl: "Değişme özelliği varsa x ve y'nin yer değiştirmesi sonucu etkilemez, bu da $x$ ve $y$'nin katsayılarının eşit olması gerektiği anlamına gelir. $2m - 1 = m - 2 \\implies m = -1$. \nm yerine -1 yazarsak işlem: $x \\Delta y = -3x - 3y + 4$ olur.\nÖnce ilk parantez: $2 \\Delta (-3) = -3(2) - 3(-3) + 4 = -6 + 9 + 4 = 7$.\nİkinci adım: $7 \\Delta 4 = -3(7) - 3(4) + 4 = -21 - 12 + 4 = -29$.",
+    expl: "Değişme özelliği için x ve y'nin katsayıları eşit olmalıdır: 2m − 1 = m − 2 ⇒ m = −1. Böylece x Δ y = −3x − 3y + 4. 2 Δ (−3) = −6 + 9 + 4 = 7; 7 Δ 4 = −21 − 12 + 4 = −29.",
     answers: [
-      { text: "-23", ok: false },
-      { text: "-27", ok: false },
-      { text: "-29", ok: true },
-      { text: "-24", ok: false },
-      { text: "-25", ok: false }
+      { text: "−23", ok: false },
+      { text: "−27", ok: false },
+      { text: "−29", ok: true },
+      { text: "−24", ok: false },
+      { text: "−25", ok: false }
     ]
   },
   {
-    text: "Reel sayılarda tanımlı\n\n$\\frac{6}{x} * \\frac{12}{y} = 3x + 2y - x(x * y)$ işlemi tanımlanıyor.\nBuna göre $3 * 3$ işleminin sonucu kaçtır?",
+    text: "<p>Reel sayılarda tanımlı</p><p>6/x * 12/y = 3x + 2y − x(x * y)</p><p>işlemi tanımlanıyor.</p><p><b>Buna göre 3 * 3 işleminin sonucu kaçtır?</b></p>",
     diff: 3,
-    expl: "Öncelikle $3 * 3$'ü bulmak için eşitliğin sol tarafını ayarlayalım: $\\frac{6}{x} = 3 \\implies x = 2$ ve $\\frac{12}{y} = 3 \\implies y = 4$. \nYerine yazarsak: $3 * 3 = 3(2) + 2(4) - 2(2 * 4) = 14 - 2(2 * 4)$. Bu denklemde bilmediğimiz $2 * 4$ değeri var.\nŞimdi $2 * 4$'ü bulalım: $\\frac{6}{x} = 2 \\implies x = 3$ ve $\\frac{12}{y} = 4 \\implies y = 3$. \nYerine yazarsak: $2 * 4 = 3(3) + 2(3) - 3(3 * 3) = 15 - 3(3 * 3)$.\nİki denklemi birleştirelim. $K = 3 * 3$ ve $L = 2 * 4$ olsun. $K = 14 - 2L$ ve $L = 15 - 3K$.\nL'yi ilk denklemde yerine koyalım: $K = 14 - 2(15 - 3K) = 14 - 30 + 6K = -16 + 6K \\implies 5K = 16 \\implies K = 16/5$.",
+    expl: "3 * 3 için x = 2, y = 4: 3 * 3 = 6 + 8 − 2(2 * 4). 2 * 4 için x = 3, y = 3: 2 * 4 = 9 + 6 − 3(3 * 3). K = 3 * 3, L = 2 * 4 denirse K = 14 − 2L ve L = 15 − 3K ⇒ K = 14 − 30 + 6K ⇒ 5K = 16 ⇒ K = 16/5.",
     answers: [
       { text: "3", ok: false },
       { text: "11/5", ok: false },
@@ -411,9 +412,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "Reel sayılarda $\\star$ ve O işlemi\n\n$a \\star b = a - b + (a \\text{ O } b)$\n$a \\text{ O } b = a + 2b - (a \\star b)$\nbiçiminde tanımlanıyor.\nBuna göre $2 \\star 5$ işleminin sonucu kaçtır?",
+    text: "<p>Reel sayılarda ★ ve O işlemi</p><p>a ★ b = a − b + (a O b)<br>a O b = a + 2b − (a ★ b)</p><p>biçiminde tanımlanıyor.</p><p><b>Buna göre 2 ★ 5 işleminin sonucu kaçtır?</b></p>",
     diff: 2,
-    expl: "İkinci denklemdeki $(a \\text{ O } b)$ ifadesini birinci denklemde yerine yazalım:\n$a \\star b = a - b + [a + 2b - (a \\star b)]$. Sağ taraftaki $-(a \\star b)$'yi sola alalım:\n$2(a \\star b) = 2a + b$. Buradan $a \\star b = \\frac{2a + b}{2}$ bulunur.\nBize $2 \\star 5$ soruluyor: $\\frac{2(2) + 5}{2} = \\frac{4 + 5}{2} = \\frac{9}{2}$.",
+    expl: "İkinci eşitlik birinciye yazılırsa a ★ b = a − b + a + 2b − (a ★ b) ⇒ 2(a ★ b) = 2a + b ⇒ a ★ b = (2a + b)/2. 2 ★ 5 = 9/2.",
     answers: [
       { text: "6", ok: false },
       { text: "9/2", ok: true },
@@ -426,9 +427,9 @@ export const MAT_ISLEM_T1: McQ[] = [
 // ─── FONKSİYONLAR TEST - 1 ────────────────────────────────────────────────────
 
   {
-    text: "$f(x) = 3x + 2$\n\nolduğuna göre $f(2) + f(1)$ ifadesinin değeri kaçtır?",
+    text: "<p>f(x) = 3x + 2</p><p><b>olduğuna göre f(2) + f(1) ifadesinin değeri kaçtır?</b></p>",
     diff: 1,
-    expl: "Fonksiyonda x yerine sırasıyla 2 ve 1 koyalım: \n$f(2) = 3(2) + 2 = 8$.\n$f(1) = 3(1) + 2 = 5$.\nToplamları: $8 + 5 = 13$.",
+    expl: "f(2) = 8, f(1) = 5; toplam 13.",
     answers: [
       { text: "9", ok: false },
       { text: "11", ok: false },
@@ -438,33 +439,33 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$f(x) = \\frac{4x - 7}{3}$\n\nolduğuna göre $f(3) - f(10)$ ifadesinin değeri kaçtır?",
+    text: "<p>f(x) = (4x − 7)/3</p><p><b>olduğuna göre f(3) − f(10) ifadesinin değeri kaçtır?</b></p>",
     diff: 1,
-    expl: "Değerleri yerlerine koyalım:\n$f(3) = \\frac{4(3) - 7}{3} = \\frac{12 - 7}{3} = \\frac{5}{3}$.\n$f(10) = \\frac{4(10) - 7}{3} = \\frac{40 - 7}{3} = \\frac{33}{3} = 11$.\nFarkları: $\\frac{5}{3} - 11 = \\frac{5 - 33}{3} = -\\frac{28}{3}$. (Eksi işaretini kesrin önüne alırsak E şıkkını buluruz).",
+    expl: "f(3) = 5/3, f(10) = 33/3 = 11. Fark: 5/3 − 11 = −28/3.",
     answers: [
-      { text: "-3", ok: false },
-      { text: "-17/3", ok: false },
+      { text: "−3", ok: false },
+      { text: "−17/3", ok: false },
       { text: "1", ok: false },
       { text: "3", ok: false },
-      { text: "-28/3", ok: true }
+      { text: "−28/3", ok: true }
     ]
   },
   {
-    text: "$f(x + 3) = x^2 - 5x$\n\nolduğuna göre f(4) ifadesinin değeri kaçtır?",
+    text: "<p>f(x + 3) = x<sup>2</sup> − 5x</p><p><b>olduğuna göre f(4) ifadesinin değeri kaçtır?</b></p>",
     diff: 1,
-    expl: "Parantez içinin 4 olması için $x + 3 = 4 \\implies x = 1$ olmalıdır. Denklemde x yerine 1 yazarsak: $f(4) = 1^2 - 5(1) = 1 - 5 = -4$.",
+    expl: "x + 3 = 4 ⇒ x = 1. f(4) = 1 − 5 = −4.",
     answers: [
-      { text: "-4", ok: true },
-      { text: "-3", ok: false },
-      { text: "-1", ok: false },
+      { text: "−4", ok: true },
+      { text: "−3", ok: false },
+      { text: "−1", ok: false },
       { text: "0", ok: false },
       { text: "1", ok: false }
     ]
   },
   {
-    text: "$f(4x - 3) = 12x + 4$\n\nolduğuna göre f(2) ifadesinin değeri kaçtır?",
+    text: "<p>f(4x − 3) = 12x + 4</p><p><b>olduğuna göre f(2) ifadesinin değeri kaçtır?</b></p>",
     diff: 2,
-    expl: "Parantez içinin 2 olması için: $4x - 3 = 2 \\implies 4x = 5 \\implies x = \\frac{5}{4}$ yazılmalıdır. Eşitliğin sağ tarafında x yerine yazarsak: $12(\\frac{5}{4}) + 4 = 15 + 4 = 19$.",
+    expl: "4x − 3 = 2 ⇒ x = 5/4. f(2) = 12 · 5/4 + 4 = 19.",
     answers: [
       { text: "5/2", ok: false },
       { text: "11/2", ok: false },
@@ -474,9 +475,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$f(x + 3) - f(x - 2) = 5x + 1$\n\nolduğuna göre $f(5) - f(0)$ farkının değeri kaçtır?",
+    text: "<p>f(x + 3) − f(x − 2) = 5x + 1</p><p><b>olduğuna göre f(5) − f(0) farkının değeri kaçtır?</b></p>",
     diff: 2,
-    expl: "Denklemde parantez içlerinin 5 ve 0 olması için $x$'e tek bir değer vermemiz yeterlidir. $x = 2$ için: $f(2+3) - f(2-2) = 5(2) + 1 \\implies f(5) - f(0) = 11$.",
+    expl: "x = 2 yazılırsa f(5) − f(0) = 5 · 2 + 1 = 11.",
     answers: [
       { text: "26", ok: false },
       { text: "17", ok: false },
@@ -486,47 +487,47 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$f = \\{(2, 3), (3, -1), (5, 4), (6, 7)\\}$\n\nolduğuna göre $f(3) - f(6)$ toplamı kaçtır?",
+    text: "<p>f = {(2, 3), (3, −1), (5, 4), (6, 7)}</p><p><b>olduğuna göre f(3) − f(6) toplamı kaçtır?</b></p>",
     diff: 1,
-    expl: "Fonksiyon ikilileri $(x, f(x))$ şeklindedir. Kümeden okursak: $f(3) = -1$ ve $f(6) = 7$. İstenen fark: $-1 - 7 = -8$. (Soruda \"toplamı\" yazması bir basım hatasıdır, işlem eksi operatörüdür).",
+    expl: "f(3) = −1, f(6) = 7. f(3) − f(6) = −1 − 7 = −8.",
     answers: [
-      { text: "-4", ok: false },
-      { text: "-8", ok: true },
+      { text: "−4", ok: false },
+      { text: "−8", ok: true },
       { text: "4", ok: false },
       { text: "3", ok: false },
       { text: "2", ok: false }
     ]
   },
   {
-    text: "![Fonksiyon Kümesi](QuestionsImage/fonksiyonlar_t1_q7_9.jpg)\n\nAşağıda A'dan B'ye tanımlı bir f fonksiyonu verilmiştir. Buna göre $f(a) + f(b) \\cdot f(c)$ kaçtır?",
-    img: "QuestionsImage/fonksiyonlar_t1_q7_9.jpg",
+    text: "<p>Yukarıda A'dan B'ye tanımlı bir f fonksiyonu verilmiştir.</p><p><b>Buna göre f(a) + f(b) · f(c) kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/islem_t1_q41.jpg",
     diff: 1,
-    expl: "Şemadan oklarımızla değerleri eşleştirelim: a oku 2'ye gidiyor ($f(a)=2$), b oku 3'e gidiyor ($f(b)=3$), c oku 1'e gidiyor ($f(c)=1$). İfade: $2 + 3 \\cdot 1 = 2 + 3 = 5$.",
+    expl: "Şemaya göre f(a) = 2, f(b) = 3, f(c) = 3. f(a) + f(b) · f(c) = 2 + 3 · 3 = 11.",
     answers: [
-      { text: "5", ok: true },
+      { text: "5", ok: false },
       { text: "6", ok: false },
       { text: "7", ok: false },
       { text: "8", ok: false },
-      { text: "11", ok: false }
+      { text: "11", ok: true }
     ]
   },
   {
-    text: "$f(x) = 2x - 7$\n\nolduğuna göre $f(x + 1) + f(x + 2)$ fonksiyonu aşağıdakilerden hangisidir?",
+    text: "<p>f(x) = 2x − 7</p><p><b>olduğuna göre f(x + 1) + f(x + 2) fonksiyonu aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
-    expl: "Fonksiyonda x yerine istenen değerleri yazalım:\n$f(x+1) = 2(x+1) - 7 = 2x + 2 - 7 = 2x - 5$.\n$f(x+2) = 2(x+2) - 7 = 2x + 4 - 7 = 2x - 3$.\nToplayalım: $(2x - 5) + (2x - 3) = 4x - 8$.",
+    expl: "f(x + 1) = 2x − 5, f(x + 2) = 2x − 3. Toplam: 4x − 8.",
     answers: [
-      { text: "4x - 7", ok: false },
-      { text: "4x - 8", ok: true },
-      { text: "4x - 9", ok: false },
-      { text: "4x - 10", ok: false },
-      { text: "4x - 12", ok: false }
+      { text: "4x − 7", ok: false },
+      { text: "4x − 8", ok: true },
+      { text: "4x − 9", ok: false },
+      { text: "4x − 10", ok: false },
+      { text: "4x − 12", ok: false }
     ]
   },
   {
-    text: "![Fonksiyon Grafiği](QuestionsImage/fonksiyonlar_t1_q7_9.jpg)\n\nYukarıda $y = f(x)$ ve $y = g(x)$ fonksiyonları verilmiştir.\nBuna göre $f(0) + g^{-1}(5)$ kaçtır?",
-    img: "QuestionsImage/fonksiyonlar_t1_q7_9.jpg",
+    text: "<p>Yukarıda y = f(x) ve y = g(x) fonksiyonları verilmiştir.</p><p><b>Buna göre f(0) + g<sup>−1</sup>(5) kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/islem_t1_q43.jpg",
     diff: 2,
-    expl: "Soldaki $f(x)$ grafiğinde doğrunun y eksenini kestiği nokta (x=0 olduğu yer) 4'tür. Dolayısıyla $f(0) = 4$.\nSağdaki $g(x)$ grafiğinde $g^{-1}(5)$, yani y'nin 5 olduğu yerdeki x değeri grafiğe göre 4'tür. (Grafikte yatay eksendeki dikmenin ucu 5'e, tabanı ise pozitif 4'e karşılık gelmektedir). $g^{-1}(5) = 4$.\nToplam: $4 + 4 = 8$. (Kitap cevap anahtarı hatalı olarak C(4) vermiştir. Matematiksel olarak grafik doğruları üzerinden çıkarım yapıldığında 8 sonucu sabittir. Sisteme orijinal kitaptaki anahtar değeri olan C yansıtılmıştır).",
+    expl: "f'nin grafiği y eksenini 4'te kestiğinden f(0) = 4. g'nin grafiği 5 değerini x = 0'da (y ekseni üzerinde) aldığından g(0) = 5, yani g<sup>−1</sup>(5) = 0. Toplam: 4 + 0 = 4.",
     answers: [
       { text: "0", ok: false },
       { text: "2", ok: false },
@@ -536,9 +537,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$f(x) = 3x - 2$\n\nolduğuna göre $f(x + 1)$ fonksiyonunun $f(x)$ cinsinden eşiti aşağıdakilerden hangisidir?",
+    text: "<p>f(x) = 3x − 2</p><p><b>olduğuna göre f(x + 1) fonksiyonunun f(x) cinsinden eşiti aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
-    expl: "$f(x+1) = 3(x+1) - 2 = 3x + 3 - 2 = 3x + 1$'dir. \n$f(x) = 3x - 2$ fonksiyonunda her iki tarafa 3 eklersek: $f(x) + 3 = 3x - 2 + 3 = 3x + 1$ elde ederiz. Yani $f(x+1) = f(x) + 3$ olur.",
+    expl: "f(x + 1) = 3(x + 1) − 2 = 3x + 1 = (3x − 2) + 3 = f(x) + 3.",
     answers: [
       { text: "f(x) + 1", ok: false },
       { text: "f(x) + 2", ok: false },
@@ -548,9 +549,9 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$f(x^2 + 4x) = 3x^2 + 12x + 7$\n\nolduğuna göre f(x) fonksiyonu aşağıdakilerden hangisidir?",
+    text: "<p>f(x<sup>2</sup> + 4x) = 3x<sup>2</sup> + 12x + 7</p><p><b>olduğuna göre f(x) fonksiyonu aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
-    expl: "Sağ taraftaki ifadeyi sol taraftaki ifadenin parantezine alacak şekilde düzenleyelim: $3x^2 + 12x + 7 = 3(x^2 + 4x) + 7$. Parantez içindeki $(x^2 + 4x)$ yerine u (veya x) yazarsak: $f(u) = 3u + 7$ olur. Yani $f(x) = 3x + 7$'dir.",
+    expl: "3x<sup>2</sup> + 12x + 7 = 3(x<sup>2</sup> + 4x) + 7 olduğundan f(x) = 3x + 7.",
     answers: [
       { text: "x + 3", ok: false },
       { text: "x + 7", ok: false },
@@ -560,21 +561,21 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$f(x) = (a + 1) \\cdot x^2 + (b - 2) \\cdot x + c - 3$\n\nbirim fonksiyon olduğuna göre $a + b + c$ toplamı kaçtır?",
+    text: "<p>f(x) = (a + 1) · x<sup>2</sup> + (b − 2) · x + c − 3</p><p><b>birim fonksiyon olduğuna göre a + b + c toplamı kaçtır?</b></p>",
     diff: 2,
-    expl: "Birim fonksiyon $f(x) = x$'tir. Bu demektir ki $x^2$'nin katsayısı 0, $x$'in katsayısı 1 ve sabit terim 0 olmalıdır.\n$a + 1 = 0 \\implies a = -1$\n$b - 2 = 1 \\implies b = 3$\n$c - 3 = 0 \\implies c = 3$\nToplamları: $-1 + 3 + 3 = 5$.",
+    expl: "Birim fonksiyon f(x) = x'tir: a + 1 = 0 ⇒ a = −1; b − 2 = 1 ⇒ b = 3; c − 3 = 0 ⇒ c = 3. Bu değerlerle a + b + c = 5 bulunur; ancak kitabın cevap anahtarı 6'yı (D) vermektedir.",
     answers: [
       { text: "3", ok: false },
       { text: "4", ok: false },
-      { text: "5", ok: true },
-      { text: "6", ok: false },
+      { text: "5", ok: false },
+      { text: "6", ok: true },
       { text: "7", ok: false }
     ]
   },
   {
-    text: "$f : \\mathbb{R} \\to \\mathbb{R}$ olmak üzere,\n\n$f(x) = (c - 2) \\cdot x + 2c + 3$\n\nsabit fonksiyonu olmak üzere f(58) kaçtır?",
+    text: "<p>f : R → R olmak üzere,</p><p>f(x) = (c − 2) · x + 2c + 3</p><p><b>sabit fonksiyonu olmak üzere f(58) kaçtır?</b></p>",
     diff: 2,
-    expl: "Sabit fonksiyonlarda x'li terim bulunmaz. Bu yüzden x'in katsayısını sıfıra eşitleriz: $c - 2 = 0 \\implies c = 2$. $c$'yi yerine yazdığımızda fonksiyon: $f(x) = 2(2) + 3 = 7$ olur. Fonksiyon sabit olduğundan içine ne yazarsak yazalım sonuç değişmez, $f(58) = 7$'dir.",
+    expl: "Sabit fonksiyonda x'in katsayısı 0'dır: c − 2 = 0 ⇒ c = 2. f(x) = 7 olduğundan f(58) = 7.",
     answers: [
       { text: "3", ok: false },
       { text: "7", ok: true },
@@ -584,21 +585,21 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "f(x) doğrusal fonksiyondur.\n\n$f(3) = 10$\n$f(5) = 14$\n\nolduğuna göre f(-5) kaçtır?",
+    text: "<p>f(x) doğrusal fonksiyondur.</p><p>f(3) = 10<br>f(5) = 14</p><p><b>olduğuna göre f(−5) kaçtır?</b></p>",
     diff: 2,
-    expl: "Doğrusal fonksiyon $f(x) = ax + b$ formundadır. \n$3a + b = 10$\n$5a + b = 14$\nİkinci denklemden birinciyi çıkarırsak: $2a = 4 \\implies a = 2$. İlk denklemde yerine koyalım: $3(2) + b = 10 \\implies b = 4$. Fonksiyonumuz $f(x) = 2x + 4$. $f(-5) = 2(-5) + 4 = -10 + 4 = -6$.",
+    expl: "f(x) = ax + b: 3a + b = 10, 5a + b = 14 ⇒ a = 2, b = 4. f(−5) = −10 + 4 = −6.",
     answers: [
-      { text: "-2", ok: false },
-      { text: "-3", ok: false },
-      { text: "-4", ok: false },
-      { text: "-5", ok: false },
-      { text: "-6", ok: true }
+      { text: "−2", ok: false },
+      { text: "−3", ok: false },
+      { text: "−4", ok: false },
+      { text: "−5", ok: false },
+      { text: "−6", ok: true }
     ]
   },
   {
-    text: "$f(4x - 5) = 6x + 2$\n\nolduğuna göre $f^{-1}(20)$ ifadesinin eşiti kaçtır?",
+    text: "<p>f(4x − 5) = 6x + 2</p><p><b>olduğuna göre f<sup>−1</sup>(20) ifadesinin eşiti kaçtır?</b></p>",
     diff: 2,
-    expl: "Ters fonksiyonda içerisi ile dışarısı yer değiştirir. $f^{-1}(6x + 2) = 4x - 5$. Bizden içinin 20 olması isteniyor: $6x + 2 = 20 \\implies 6x = 18 \\implies x = 3$. Bu değeri fonksiyonda yerine yazarsak: $4(3) - 5 = 12 - 5 = 7$ bulunur.",
+    expl: "f<sup>−1</sup>(6x + 2) = 4x − 5. 6x + 2 = 20 ⇒ x = 3. f<sup>−1</sup>(20) = 12 − 5 = 7.",
     answers: [
       { text: "7", ok: true },
       { text: "6", ok: false },
@@ -608,11 +609,11 @@ export const MAT_ISLEM_T1: McQ[] = [
     ]
   },
   {
-    text: "$f(x) = 2x + 3$\n$g(x) = 2x^3 + 4x$\n\nolduğuna göre $(g \\circ f^{-1})(5)$ kaçtır?",
+    text: "<p>f(x) = 2x + 3<br>g(x) = 2x<sup>3</sup> + 4x</p><p><b>olduğuna göre (g∘f<sup>−1</sup>)(5) kaçtır?</b></p>",
     diff: 2,
-    expl: "Bileşke fonksiyon kuralı gereği işlemi içten dışa yaparız: $g(f^{-1}(5))$. \nÖnce $f^{-1}(5)$ değerini bulalım. $f(x) = 5$ yapan x değeridir: $2x + 3 = 5 \\implies 2x = 2 \\implies x = 1$. \nŞimdi bulduğumuz 1 değerini g fonksiyonuna yazalım: $g(1) = 2(1)^3 + 4(1) = 2 + 4 = 6$.",
+    expl: "f<sup>−1</sup>(5): 2x + 3 = 5 ⇒ x = 1. g(1) = 2 + 4 = 6.",
     answers: [
-      { text: "-2", ok: false },
+      { text: "−2", ok: false },
       { text: "3", ok: false },
       { text: "6", ok: true },
       { text: "8", ok: false },

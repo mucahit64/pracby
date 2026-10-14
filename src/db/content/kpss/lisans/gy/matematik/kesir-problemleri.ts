@@ -2,9 +2,9 @@ import type { McQ } from "../../../../types";
 
 export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
   {
-    text: "40 litre olan bir zeytinyağı 3/7 litrelik şişelere doldurulacaktır.\n\nBuna göre son şişenin kaçta kaçı boş kalır?",
+    text: "<p>40 litre olan bir zeytinyağı 3/7 litrelik şişelere doldurulacaktır.</p><p><b>Buna göre son şişenin kaçta kaçı boş kalır?</b></p>",
     diff: 3,
-    expl: "Öncelikle 40 litrenin içinde kaç tane 3/7 litrelik tam şişe olduğunu bulalım: $40 / (3/7) = 280 / 3 = 93.33...$ Yani 93 şişe tam dolar. 93 şişenin aldığı yağ miktarı: $93 \\cdot (3/7) = 279 / 7$ litredir. Geriye kalan yağ miktarı: $40 - 279/7 = 1/7$ litredir. Bu kalan $1/7$ litre yağ, son şişeye konacaktır. Şişenin kapasitesi $3/7$ litre olduğundan doluluk oranı: $(1/7) / (3/7) = 1/3$ olur. Bize şişenin BOŞ kısmı soruluyor: $1 - 1/3 = 2/3$ boş kalır.",
+    expl: "40 / (3/7) = 280/3 = 93 + 1/3. 93 şişe tam dolar, son şişenin 1/3'ü dolar. Son şişenin 1 − 1/3 = 2/3'ü boş kalır.",
     answers: [
       { text: "1/3", ok: false },
       { text: "2/3", ok: true },
@@ -14,9 +14,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Ana duraktan hareket eden bir otobüsteki yolcuların 2/7 si erkektir. Otobüsün hareketinden sonra bu otobüse her durakta 2 erkek yolcu binip, 3 bayan yolcu inerse ana duraktan sonraki 4. duraktan ayrıldıktan sonra otobüsteki erkek yolcu sayısı bayan yolcu sayısının 2 katı oluyor.\n\nBuna göre otobüs ana duraktan kaç yolcu ile hareket etmiştir?",
+    text: "<p>Ana duraktan hareket eden bir otobüsteki yolcuların 2/7 si erkektir. Otobüsün hareketinden sonra bu otobüse her durakta 2 erkek yolcu binip, 3 bayan yolcu inerse ana duraktan sonraki 4. duraktan ayrıldıktan sonra otobüsteki erkek yolcu sayısı bayan yolcu sayısının 2 katı oluyor.</p><p><b>Buna göre otobüs ana duraktan kaç yolcu ile hareket etmiştir?</b></p>",
     diff: 2,
-    expl: "Başlangıçta tüm yolcular $7x$ olsun. Erkekler $2x$, Bayanlar $5x$'tir. 4 durak boyunca toplam 8 erkek biner, 12 bayan iner. Son durumda Erkek = $2x + 8$, Bayan = $5x - 12$ olur. Erkek sayısı bayanların 2 katı olacağına göre: $2x + 8 = 2(5x - 12) \\implies 2x + 8 = 10x - 24 \\implies 8x = 32 \\implies x = 4$. Ana duraktaki yolcu sayısı $7x = 7 \\cdot 4 = 28$'dir.",
+    expl: "Yolcular 7x olsun: 2x erkek, 5x bayan. 4 durakta 8 erkek biner, 12 bayan iner. 2x + 8 = 2(5x − 12) ⇒ 8x = 32 ⇒ x = 4. Başlangıçta 7x = 28 yolcu vardır.",
     answers: [
       { text: "14", ok: false },
       { text: "21", ok: false },
@@ -26,9 +26,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Payı ve paydası tam sayı olan bir kesrin payına ve paydasına a eklediğimiz zaman kesrin değeri 2/3 oluyor. Aynı kesrin pay ve paydasından a çıkardığımızda ise kesrin değeri 5/9 oluyor.\n\nBu kesrin paydası aşağıdakilerden hangisi olabilir?",
+    text: "<p>Payı ve paydası tam sayı olan bir kesrin payına ve paydasına a eklediğimiz zaman kesrin değeri 2/3 oluyor. Aynı kesrin pay ve paydasından a çıkardığımızda ise kesrin değeri 5/9 oluyor.</p><p><b>Bu kesrin paydası aşağıdakilerden hangisi olabilir?</b></p>",
     diff: 3,
-    expl: "Kesrimiz $x/y$ olsun. $(x+a)/(y+a) = 2/3 \\implies 3x + 3a = 2y + 2a \\implies a = 2y - 3x$. \nİkinci durum: $(x-a)/(y-a) = 5/9 \\implies 9x - 9a = 5y - 5a \\implies 9x - 4a = 5y$. \nİlk denklemdeki a'yı ikinci denkleme yazalım: $9x - 4(2y - 3x) = 5y \\implies 9x - 8y + 12x = 5y \\implies 21x = 13y$. \nBuradan $x/y = 13/21$ oranını buluruz. Orijinal kesrin paydası (y), 21'in bir katı olmak zorundadır. Şıklarda 21 vardır.",
+    expl: "Kesir x/y olsun. 3(x + a) = 2(y + a) ⇒ a = 2y − 3x. 9(x − a) = 5(y − a) ⇒ 9x − 4a = 5y. a yerine yazılırsa 21x = 13y ⇒ x/y = 13/21. Payda 21'in katı olmalıdır; seçeneklerde 21 vardır.",
     answers: [
       { text: "21", ok: true },
       { text: "13", ok: false },
@@ -38,9 +38,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "İki raflı bir kitaplığın her rafında yan yana dizili birbirinden farklı 80'er kitap bulunmaktadır. Bu kitaplıktan toplam 80 kitap okuyan Can'ın okuduğu kitaplardan hiçbiri kitaplıkta yan yana bulunmamaktadır. Deniz, bu kitaplığın ilk rafındaki kitapların 2/5'ini, ikinci rafındaki kitapların ise 3/5'ini okumuştur.\n\nBuna göre, kitaplıkta hem Can hem de Deniz'in okumuş olduğu ortak kitap sayısı en az kaçtır?",
+    text: "<p>İki raflı bir kitaplığın her rafında yan yana dizili birbirinden farklı 80'er kitap bulunmaktadır. Bu kitaplıktan toplam 80 kitap okuyan Can'ın okuduğu kitaplardan hiçbiri kitaplıkta yan yana bulunmamaktadır. Deniz, bu kitaplığın ilk rafındaki kitapların 2/5'ini, ikinci rafındaki kitapların ise 3/5'ini okumuştur.</p><p><b>Buna göre, kitaplıkta hem Can hem de Deniz'in okumuş olduğu ortak kitap sayısı <u>en az</u> kaçtır?</b></p>",
     diff: 3,
-    expl: "Can 80 kitap okumuş ve hiçbiri yan yana değilse, bir raftan en fazla 40 kitap okuyabilir. Toplam 80 olması için Can 1. raftan 40, 2. raftan 40 kitap okumak zorundadır. \nDeniz 1. raftan $80 \\cdot 2/5 = 32$ kitap okumuştur. 1. rafta Can 40 kitap okuduğuna göre, Deniz'in okuduğu 32 kitap, Can'ın okumadığı diğer 40 kitaptan seçilebilir. Yani 1. raftaki ortak kitap sayısı 0 yapılabilir. \nDeniz 2. raftan $80 \\cdot 3/5 = 48$ kitap okumuştur. 2. rafta Can 40 kitap okumuştu. Toplam 80 kitap var. Kesişim en az: $40 + 48 - 80 = 8$ kitap ortak olmak zorundadır. \nToplam ortak kitap en az $0 + 8 = 8$'dir.",
+    expl: "Yan yana olmayan kitaplardan bir rafta en fazla 40 tane seçilebilir; Can her raftan 40 kitap okumuştur. Deniz 1. raftan 32 kitap okumuştur; bunlar Can'ın okumadığı 40 kitaptan seçilebilir, ortak 0 olur. Deniz 2. raftan 48 kitap okumuştur; ortak en az 40 + 48 − 80 = 8'dir. En az ortak kitap 8.",
     answers: [
       { text: "30", ok: false },
       { text: "32", ok: false },
@@ -53,9 +53,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
 // ─── SAYISAL MANTIK PROBLEMLERİ TEST - 1 ──────────────────────────────────────
 
   {
-    text: "Rakamları toplamı 5'in katı olan rakamları farklı üç basamaklı doğal sayılara \"beşgen\" sayılar denir.\n\nBuna göre en büyük beşgen sayı ile en küçük beşgen sayının toplamı aşağıdakilerden hangisidir?",
+    text: "<p>Rakamları toplamı 5'in katı olan rakamları farklı üç basamaklı doğal sayılara \"beşgen\" sayılar denir.</p><p><b>Buna göre en büyük beşgen sayı ile en küçük beşgen sayının toplamı aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
-    expl: "En büyük beşgen sayı için ilk rakamları 9 ve 8 seçelim. $9+8=17$. 5'in katı olması için son rakam 3 olmalı (toplam 20). Sayı 983'tür. \nEn küçük beşgen sayı için ilk rakamları 1 ve 0 seçelim. $1+0=1$. 5'in katı olması için son rakam 4 olmalı (toplam 5). Sayı 104'tür. \nToplamları: $983 + 104 = 1087$.",
+    expl: "En büyük: 98_ için 9 + 8 + c = 20 ⇒ c = 3, sayı 983. En küçük: 10_ için 1 + 0 + c = 5 ⇒ c = 4, sayı 104. Toplam 983 + 104 = 1087.",
     answers: [
       { text: "1069", ok: false },
       { text: "1087", ok: true },
@@ -65,9 +65,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir doğal sayının en büyük asal çarpanı k ise, bu doğal sayıya \"k-sal\" denir.\n\nBuna göre 5-sal iki basamaklı en büyük doğal sayı ile 7-sal üç basamaklı en küçük doğal sayının toplamı aşağıdakilerden hangisidir?",
+    text: "<p>Bir doğal sayının en büyük asal çarpanı k ise, bu doğal sayıya \"k-sal\" denir.</p><p><b>Buna göre 5-sal iki basamaklı en büyük doğal sayı ile 7-sal üç basamaklı en küçük doğal sayının toplamı aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
-    expl: "5-sal sayının asal çarpanları sadece 2, 3 ve 5 olabilir. İki basamaklı en büyük değerleri denersek: 99(p=11), 98(p=7), 97(p=97), 96(p=3), 95(p=19), 94(p=47), 93(p=93), 92(p=23), 91(p=13). 90 = $2 \\cdot 3^2 \\cdot 5$. En büyük asal çarpanı 5'tir. Yani en büyük 2 basamaklı 5-sal sayı 90'dır.\n7-sal sayının asal çarpanları 2, 3, 5, 7 olabilir (max 7). Üç basamaklı en küçük değerleri denersek: 100(p=5), 101(p=101), 102(p=17), 103(p=103), 104(p=13). 105 = $3 \\cdot 5 \\cdot 7$. En büyük asal çarpanı 7'dir. En küçük 3 basamaklı 7-sal sayı 105'tir.\nToplamları: $90 + 105 = 195$.",
+    expl: "99'dan geriye doğru: 99, 98, 97, 96 (en büyük asal çarpanı 3), 95, 94, 93, 92, 91 uygun değil; 90 = 2 · 3<sup>2</sup> · 5 uygundur. 100'den ileri: 100 (5), 101, 102 (17), 103, 104 (13) uygun değil; 105 = 3 · 5 · 7 uygundur. Toplam 90 + 105 = 195.",
     answers: [
       { text: "180", ok: false },
       { text: "190", ok: false },
@@ -77,9 +77,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir doğal sayının rakamları toplamı, bu doğal sayının basamak sayısına eşit ise bu doğal sayıya \"uygun\" sayı denir.\n\nBuna göre, üç basamaklı en büyük uygun sayı ile dört basamaklı en küçük uygun sayının toplamı aşağıdakilerden hangisidir?",
+    text: "<p>Bir doğal sayının rakamları toplamı, bu doğal sayının basamak sayısına eşit ise bu doğal sayıya \"uygun\" sayı denir.</p><p><b>Buna göre, üç basamaklı en büyük uygun sayı ile dört basamaklı en küçük uygun sayının toplamı aşağıdakilerden hangisidir?</b></p>",
     diff: 1,
-    expl: "3 basamaklı uygun sayının rakamları toplamı 3 olmalıdır. En büyük olması için yüzler basamağına 3 veririz: 300.\n4 basamaklı uygun sayının rakamları toplamı 4 olmalıdır. En küçük olması için binler basamağına 1, sona kalanları ekleriz: 1003.\nToplamları: $300 + 1003 = 1303$.",
+    expl: "Üç basamaklı en büyük uygun sayının rakamları toplamı 3'tür: 300. Dört basamaklı en küçük uygun sayının rakamları toplamı 4'tür: 1003. Toplam 1303.",
     answers: [
       { text: "1303", ok: true },
       { text: "1296", ok: false },
@@ -89,9 +89,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Ardışık 4 pozitif tam sayının toplamı biçiminde yazılabilen bir sayıya \"dörtlü sayı\" deniliyor.\n\nBuna göre, üç basamaklı en küçük dörtlü sayı ile iki basamaklı en büyük dörtlü sayının farkı aşağıdakilerden hangisidir?",
+    text: "<p>Ardışık 4 pozitif tam sayının toplamı biçiminde yazılabilen bir sayıya \"dörtlü sayı\" deniliyor.</p><p><b>Buna göre, üç basamaklı en küçük dörtlü sayı ile iki basamaklı en büyük dörtlü sayının farkı aşağıdakilerden hangisidir?</b></p>",
     diff: 2,
-    expl: "Dörtlü sayı = $x + (x+1) + (x+2) + (x+3) = 4x + 6$'dır (x pozitif tam sayı). \nİki basamaklı en büyük dörtlü sayı: $4x + 6 \\leq 99 \\implies 4x \\leq 93 \\implies x = 23$. Sayı: $4(23) + 6 = 98$.\nÜç basamaklı en küçük dörtlü sayı: $4x + 6 \\geq 100 \\implies 4x \\geq 94 \\implies x = 24$. Sayı: $4(24) + 6 = 102$.\nFarkları: $102 - 98 = 4$.",
+    expl: "Dörtlü sayı x + (x + 1) + (x + 2) + (x + 3) = 4x + 6 biçimindedir. İki basamaklı en büyüğü x = 23 için 98, üç basamaklı en küçüğü x = 24 için 102'dir. Fark 102 − 98 = 4.",
     answers: [
       { text: "4", ok: true },
       { text: "6", ok: false },
@@ -101,9 +101,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir tam sayının küpüne eşit olan bir sayıya tam küp sayı denir. Eğer bir tam küp sayının rakamları toplamı yine bir tam küp sayı ise bu sayıya çifteküp sayı denir.\n\nBuna göre, aşağıdakilerden hangisi bir çifteküp sayıdır?",
+    text: "<p>Bir tam sayının küpüne eşit olan bir sayıya tam küp sayı denir. Eğer bir tam küp sayının rakamları toplamı yine bir tam küp sayı ise bu sayıya çifteküp sayı denir.</p><p><b>Buna göre, aşağıdakilerden hangisi bir tam küp sayıdır?</b></p>",
     diff: 1,
-    expl: "Seçenekleri inceleyelim. B şıkkındaki 512 sayısı bir tam küptür ($8^3 = 512$). Aynı zamanda rakamları toplamı $5 + 1 + 2 = 8$'dir. 8 sayısı da bir tam küptür ($2^3 = 8$). Bu yüzden 512 bir çifteküp sayıdır.",
+    expl: "512 = 8<sup>3</sup> bir tam küptür; rakamları toplamı 5 + 1 + 2 = 8 = 2<sup>3</sup> olduğundan aynı zamanda çifteküp sayıdır. Diğer seçenekler (999, 1225, 243 = 3<sup>5</sup>, 1024 = 2<sup>10</sup>) tam küp değildir.",
     answers: [
       { text: "999", ok: false },
       { text: "512", ok: true },
@@ -113,9 +113,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir tam sayı, asal bölenlerinin toplamına kalansız bölünüyorsa bu sayıya \"özgün sayı\" denir. (Örneğin 84 özgün sayıdır).\n\nBuna göre, aşağıdakilerden hangisi özgün sayıdır?",
+    text: "<p>Bir tam sayı, asal bölenlerinin toplamına kalansız bölünüyorsa bu sayıya \"özgün sayı\" denir.</p><p>Örneğin, 84 özgün sayıdır.</p><p>Çünkü, asal bölenleri olan 2, 3 ve 7 sayılarının toplamına kalansız bölünür.</p><p><b>Buna göre, aşağıdakilerden hangisi özgün sayıdır?</b></p>",
     diff: 2,
-    expl: "Şıkları inceleyelim. C şıkkındaki 1200 sayısını asal çarpanlarına ayıralım: $1200 = 12 \\cdot 100 = 2^4 \\cdot 3 \\cdot 5^2$. Asal bölenleri 2, 3 ve 5'tir. Bu asal bölenlerin toplamı $2 + 3 + 5 = 10$'dur. 1200 sayısı 10'a kalansız bölündüğü için özgün sayıdır.",
+    expl: "1200 = 2<sup>4</sup> · 3 · 5<sup>2</sup>; asal bölenlerin toplamı 2 + 3 + 5 = 10 ve 1200, 10'a kalansız bölünür. (1260 ve 420 için toplam 17, 320 için 7, 489 = 3 · 163 için 166'dır; bunlara bölünmezler.)",
     answers: [
       { text: "1260", ok: false },
       { text: "420", ok: false },
@@ -125,9 +125,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "İki basamaklı AB asal sayısının rakamları toplamı da bir asal sayıya eşitse bu AB sayısına \"mevsimsel sayı\" denir.\n\nBuna göre, en büyük mevsimsel sayının rakamları toplamı kaçtır?",
+    text: "<p>İki basamaklı AB asal sayısının rakamları toplamı da bir asal sayıya eşitse bu AB sayısına \"mevsimsel sayı\" denir.</p><p><b>Buna göre, en büyük mevsimsel sayının rakamları toplamı kaçtır?</b></p>",
     diff: 2,
-    expl: "En büyük iki basamaklı asalları inceleyelim: 97 asaldır, ancak rakamları toplamı $9+7=16$ asal değildir. 89 asaldır, rakamları toplamı $8+9=17$ asaldır. Bu yüzden en büyük mevsimsel sayı 89'dur. Rakamları toplamı 17'dir.",
+    expl: "97 asaldır fakat 9 + 7 = 16 asal değildir. 89 asaldır ve 8 + 9 = 17 asaldır. En büyük mevsimsel sayı 89, rakamları toplamı 17.",
     answers: [
       { text: "11", ok: false },
       { text: "7", ok: false },
@@ -137,9 +137,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Rakamları birbirinden ve sıfırdan farklı üç basamaklı bir doğal sayının yüzler basamağındaki rakam diğer basamaklarındaki rakamları tam bölüyorsa bu sayıya \"atölye\" sayı denir. (Örneğin 246 bir atölye sayıdır).\n\nBuna göre, en büyük atölye sayı ile en küçük atölye sayının toplamı kaçtır?",
+    text: "<p>Rakamları birbirinden ve sıfırdan farklı üç basamaklı bir doğal sayının yüzler basamağındaki rakam diğer basamaklarındaki rakamları tam bölüyorsa bu sayıya \"atölye\" sayı denir.</p><p>Örneğin, 246 bir atölye sayıdır.</p><p><b>Buna göre, en büyük atölye sayı ile en küçük atölye sayının toplamı kaçtır?</b></p>",
     diff: 3,
-    expl: "Sıfır kullanılamaz ve rakamlar farklı olmalı. Sayı abc formatında, a böler b ve a böler c. \nEn büyük atölye sayı için a'yı büyük seçmeliyiz. a=4 dersek bölenleri 4,8. Sayı en fazla 484 olur (rakamlar aynı, geç). a=3 dersek katları 3,6,9. En büyük yapmak için 396'yı seçeriz.\nEn küçük atölye sayı için a'yı küçük seçmeliyiz. a=1 dersek diğer rakamlar 1'in katıdır. En küçük olması için 123'ü seçeriz.\nToplamları: $396 + 123 = 519$.",
+    expl: "Yüzler basamağı 5 veya daha büyükse kendisinden farklı iki katı rakam bulunamaz; 4 için yalnızca 8 vardır. Yüzler basamağı 3 iken 6 ve 9 kullanılabilir: en büyük atölye sayı 396. En küçük atölye sayı 123. Toplam 396 + 123 = 519.",
     answers: [
       { text: "444", ok: false },
       { text: "486", ok: false },
@@ -149,9 +149,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir x doğal sayısının 9 katı, her bir basamağında 6 rakamı bulunan bir doğal sayıya eşit ise bu x doğal sayısına dokuzgen sayı denir.\n\nBuna göre en küçük dokuzgen sayının rakamları toplamı aşağıdakilerden hangisidir?",
+    text: "<p>Bir x doğal sayısının 9 katı, her bir basamağında 6 rakamı bulunan bir doğal sayıya eşit ise bu x doğal sayısına dokuzgen sayı denir.</p><p><b>Buna göre en küçük dokuzgen sayının rakamları toplamı aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
-    expl: "İstenen durum $9 \\cdot x = 666...6$ formatındadır. 66 sayısını 9'a bölersek tam bölünmez. 666 sayısını 9'a bölersek: $666 / 9 = 74$ bulunur ve tam bölünür. Demek ki en küçük dokuzgen sayı $x = 74$'tür. Rakamları toplamı $7 + 4 = 11$'dir.",
+    expl: "66…6 sayısının 9'a bölünmesi için rakamları toplamı 9'un katı olmalıdır; en küçüğü 666'dır. 666 / 9 = 74 ⇒ rakamları toplamı 7 + 4 = 11.",
     answers: [
       { text: "18", ok: false },
       { text: "11", ok: true },
@@ -161,9 +161,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "İki basamaklı AB doğal sayısı, iki basamaklı ardışık altı pozitif tek sayının aritmetik ortalamasına eşitse AB sayısına ortak sayı denir.\n\nBuna göre, en büyük ortak sayı ile en küçük ortak sayının toplamı kaçtır?",
+    text: "<p>İki basamaklı AB doğal sayısı, iki basamaklı ardışık altı pozitif tek sayının aritmetik ortalamasına eşitse AB sayısına ortak sayı denir.</p><p><b>Buna göre, <u>en büyük</u> ortak sayı ile <u>en küçük</u> ortak sayının toplamı kaçtır?</b></p>",
     diff: 3,
-    expl: "Ardışık 6 pozitif tek sayının aritmetik ortalaması her zaman bir ÇİFT sayıdır (çünkü 6 sayının tam ortasındaki değer çift olur). \nİki basamaklı en küçük 6 ardışık tek sayı: 11, 13, 15, 17, 19, 21. Bunların ortalaması 16'dır. Yani en küçük ortak sayı 16'dır.\nİki basamaklı en büyük 6 ardışık tek sayı: 89, 91, 93, 95, 97, 99. Bunların ortalaması 94'tür. Yani en büyük ortak sayı 94'tür.\nToplamları: $94 + 16 = 110$.",
+    expl: "En küçük: 11, 13, 15, 17, 19, 21 ⇒ ortalama 16. En büyük: 89, 91, 93, 95, 97, 99 ⇒ ortalama 94. Toplam 94 + 16 = 110.",
     answers: [
       { text: "106", ok: false },
       { text: "104", ok: false },
@@ -176,10 +176,10 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
 // ─── SAYISAL MANTIK PROBLEMLERİ TEST - 2 ──────────────────────────────────────
 
   {
-    text: "![Sayısal Mantık](QuestionsImage/sayisal_mantik_t2_q1.jpg)\n\nYukarıda verilen tanıma göre görseldeki işlemin değeri aşağıdakilerden hangisidir?",
-    img: "QuestionsImage/sayisal_mantik_t2_q1.jpg",
+    text: "<p>2 basamaklı AB doğal sayısı için kare içine yazılan AB = A<sup>2</sup> + B biçiminde tanımlanıyor.</p><p>Örneğin; kare içindeki 43 = 4<sup>2</sup> + 3 = 19'dur.</p><p><b>Buna göre yukarıda verilen ifadenin değeri aşağıdakilerden hangisidir?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q15.jpg",
     diff: 1,
-    expl: "Kare içindeki sayıların tanımı: $[AB] = A^2 + B$. Buna göre işlemleri yapalım:\n$[42] = 4^2 + 2 = 18$.\n$[37] = 3^2 + 7 = 16$.\n$[23] = 2^2 + 3 = 7$.\nİşlem: $18 + 16 - 7 = 27$.",
+    expl: "42 → 4<sup>2</sup> + 2 = 18, 37 → 3<sup>2</sup> + 7 = 16, 23 → 2<sup>2</sup> + 3 = 7. Sonuç 18 + 16 − 7 = 27.",
     answers: [
       { text: "25", ok: false },
       { text: "36", ok: false },
@@ -189,23 +189,23 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "![Sayısal Mantık](QuestionsImage/sayisal_mantik_t2_q2.jpg)\n\nYukarıda verilen tanıma göre eşitliğini sağlayan en büyük ve en küçük AB sayılarının toplamı kaçtır?",
-    img: "QuestionsImage/sayisal_mantik_t2_q2.jpg",
+    text: "<p>2 basamaklı AB doğal sayısı için kare içine yazılan AB = A<sup>2</sup> + B biçiminde tanımlanıyor.</p><p><b>Buna göre yukarıda verilen eşitliği sağlayan <u>en büyük</u> ve <u>en küçük</u> AB sayılarının toplamı kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q16.jpg",
     diff: 2,
-    expl: "Eşitlik: $[AB] = [BA] \\implies A^2 + B = B^2 + A$. Düzenlersek: $A^2 - B^2 = A - B \\implies (A - B)(A + B) = (A - B)$. \nDurum 1: $A - B = 0 \\implies A = B$. Rakamları aynı iki basamaklı sayılar (11, 22... 99). En büyüğü 99, en küçüğü 11'dir.\nDurum 2: $A - B \\neq 0 \\implies A + B = 1$. İki basamaklı sayı olmak zorunda olduğu için $A$ sıfır olamaz. Bu şartı sağlayan tek sayı $A=1, B=0$ yani 10'dur. \nTüm sağlayan sayılar içinde en büyük 99, en küçük 10'dur. Toplamları: $99 + 10 = 109$.",
+    expl: "A<sup>2</sup> + B = B<sup>2</sup> + A ⇒ (A − B)(A + B − 1) = 0. AB ve BA iki basamaklı olduğundan A, B ≠ 0; A + B = 1 olamaz, dolayısıyla A = B. Uygun sayılar 11, 22, …, 99. Toplam 99 + 11 = 110.",
     answers: [
-      { text: "109", ok: true },
+      { text: "109", ok: false },
       { text: "120", ok: false },
-      { text: "110", ok: false },
+      { text: "110", ok: true },
       { text: "112", ok: false },
       { text: "108", ok: false }
     ]
   },
   {
-    text: "![Sayısal Mantık](QuestionsImage/sayisal_mantik_t2_q3.jpg)\n\nYukarıda verilen çokgen formülü tanımına göre görseldeki işlemin sonucu aşağıdakilerden hangisidir?",
-    img: "QuestionsImage/sayisal_mantik_t2_q3.jpg",
+    text: "<p>n kenarlı bir çokgenin içine yazılan bir A doğal sayısı için çokgenin sonucu A<sup>n</sup>/n ifadesinin tam kısmı olarak tanımlanıyor.</p><p>Örneğin: üçgen içine yazılan 6 = 6<sup>3</sup>/3 = 72'dir.</p><p><b>Buna göre yukarıda verilen ifadenin sonucu aşağıdakilerden hangisidir?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q17.jpg",
     diff: 2,
-    expl: "Çokgen içine yazılan A sayısı için formül: $\\lfloor A^n / n \\rfloor$ (tam kısmı). \nKare içindeki 3: $3^4 / 4 = 81 / 4 = 20.25$. Tam kısmı 20'dir.\nÜçgen içindeki 6: $6^3 / 3 = 216 / 3 = 72$. Tam kısmı 72'dir. (Kitap örneğinde bu 36 olarak yazılmış olsa da bu yazarın yaptığı bir basım hatasıdır, formül açıktır).\nToplam: $20 + 72 = 92$.",
+    expl: "Kare içindeki 3: 3<sup>4</sup>/4 = 81/4 = 20,25 ⇒ 20. Üçgen içindeki 6: 6<sup>3</sup>/3 = 72. Sonuç 20 + 72 = 92.",
     answers: [
       { text: "44", ok: false },
       { text: "46", ok: false },
@@ -215,23 +215,23 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "![Sayısal Mantık](QuestionsImage/sayisal_mantik_t2_q4.jpg)\n\nYukarıda verilen tanıma göre eşitliğini sağlayan xy ifadesinin rakamları toplamı kaçtır?",
-    img: "QuestionsImage/sayisal_mantik_t2_q4.jpg",
+    text: "<p>n kenarlı bir çokgenin içine yazılan bir A doğal sayısı için çokgenin sonucu A<sup>n</sup>/n ifadesinin tam kısmı olarak tanımlanıyor.</p><p><b>Yukarıdaki eşitliği sağlayan xy ifadesinin rakamları toplamı kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q18.jpg",
     diff: 2,
-    expl: "Elmas şekli dört kenarlı olduğu için formül: $A^4 / 4 = xy$ şeklindedir. $xy$ iki basamaklı bir sayıdır. A'ya değerler verelim:\nA=3 için: $3^4 / 4 = 81 / 4 = 20.25$. Tam kısmı 20. (xy=20)\nA=4 için: $4^4 / 4 = 256 / 4 = 64$. Tam kısmı 64. (xy=64)\nEğer xy = 20 ise rakamları toplamı 2'dir (şıklarda yok). \nEğer xy = 64 ise rakamları toplamı $6 + 4 = 10$'dur. Şıklara uyan cevap 10'dur.",
+    expl: "A beşgen içindedir: sonuç A<sup>5</sup>/5'in tam kısmıdır. A = 2 için 32/5 ⇒ 6 (tek basamaklı), A = 3 için 243/5 = 48,6 ⇒ 48, A = 4 için 1024/5 ⇒ 204 (üç basamaklı). xy = 48, rakamları toplamı 12.",
     answers: [
-      { text: "10", ok: true },
+      { text: "10", ok: false },
       { text: "14", ok: false },
       { text: "13", ok: false },
       { text: "15", ok: false },
-      { text: "12", ok: false }
+      { text: "12", ok: true }
     ]
   },
   {
-    text: "![Sayısal Mantık](QuestionsImage/sayisal_mantik_t2_q5.jpg)\n\nYukarıda verilen daire formülü tanımına göre görseldeki ifadenin değeri kaçtır?",
-    img: "QuestionsImage/sayisal_mantik_t2_q5.jpg",
+    text: "<p>Bir tam sayının karesine eşit olan sayılara tam kare sayı denir. x sayısına eşit veya x sayısından büyük en küçük tam kare sayı, daire içine yazılan x olarak gösteriliyor.</p><p>Örnek: daire içindeki 34 = 36 = 6<sup>2</sup>, daire içindeki 49 = 49 = 7<sup>2</sup></p><p><b>Buna göre yukarıda verilen ifadenin değeri kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q19.jpg",
     diff: 2,
-    expl: "Daire formülü: İçindeki sayıya eşit veya ondan büyük en küçük tam kare sayı.\nDaire(68) = 81.\nDaire(45) = 49.\nİşlem: Daire(68) - Daire(68 - 45) = Daire(68) - Daire(23).\nDaire(23) = 25'tir.\nSonuç: $81 - 25 = 56$.",
+    expl: "Daire içindeki 45 = 49 olduğundan büyük dairenin içi 68 − 49 = 19 olur; daire içindeki 19 = 25. Daire içindeki 68 = 81. Sonuç 81 − 25 = 56.",
     answers: [
       { text: "46", ok: false },
       { text: "56", ok: true },
@@ -241,10 +241,10 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "![Sayısal Mantık](QuestionsImage/sayisal_mantik_t2_q6.jpg)\n\nYukarıda verilen tanıma göre eşitliğini sağlayan en küçük 2 farklı n doğal sayısının toplamı kaçtır?",
-    img: "QuestionsImage/sayisal_mantik_t2_q6.jpg",
+    text: "<p>Bir tam sayının karesine eşit olan sayılara tam kare sayı denir. x sayısına eşit veya x sayısından büyük en küçük tam kare sayı, daire içine yazılan x olarak gösteriliyor.</p><p><b>Yukarıdaki eşitliği sağlayan <u>en küçük</u> 2 farklı n doğal sayısının toplamı kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q20.jpg",
     diff: 3,
-    expl: "Daire(n) = Daire(5+n) demek, n ve 5+n sayılarının 'kendilerinden büyük veya eşit en küçük tam kare'lerinin aynı olması demektir. Yani her ikisi de aynı $(k-1)^2$ ile $k^2$ aralığında yer almalıdır. $(k-1)^2 < n < n+5 \\leq k^2$. Aralığın genişliği en az 5 olmalıdır, yani $k^2 - (k-1)^2 \\geq 6 \\implies 2k - 1 \\geq 6 \\implies k \\geq 4$. En küçük tam kare 16'dır (k=4). Aralığımız (9, 16] olur. Bu aralığa hem n hem de n+5 sığmalıdır. n=10 için (10 ve 15 bu aralıktadır, Daireleri 16 olur). n=11 için (11 ve 16 bu aralıktadır, Daireleri 16 olur). n=12 verirsek n+5=17 olur ve Daire(17)=25 olacağından eşitlik bozulur. En küçük iki n değeri 10 ve 11'dir. Toplamları 21'dir.",
+    expl: "n ile n + 5 aynı tam kareye yuvarlanmalıdır. n = 0, …, 9 için n ile n + 5 farklı tam karelere gider (örneğin 9 → 9, 14 → 16). n = 10 için 10 ve 15 → 16; n = 11 için 11 ve 16 → 16; n = 12 için 17 → 25 olur. En küçük iki değer 10 ve 11, toplam 21.",
     answers: [
       { text: "24", ok: false },
       { text: "33", ok: false },
@@ -254,10 +254,10 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "![Sayısal Mantık](QuestionsImage/sayisal_mantik_t2_q7.jpg)\n\nYukarıda verilen üçgen formülü tanımına göre görseldeki işlemin sonucu kaçtır?",
-    img: "QuestionsImage/sayisal_mantik_t2_q7.jpg",
+    text: "<p>En az iki farklı asal böleni olan bir A pozitif tam sayısının en küçük ve en büyük asal bölenlerinin çarpımı, üçgen içine yazılan A ile gösteriliyor.</p><p><b>Buna göre yukarıda verilen işlemin sonucu kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q21.jpg",
     diff: 2,
-    expl: "Üçgen formülü: İçindeki sayının en küçük ve en büyük asal bölenlerinin çarpımı.\nÜçgen(360): $360 = 2^3 \\cdot 3^2 \\cdot 5$. Asallar: 2, 3, 5. Min=2, Max=5. Çarpım = 10.\nÜçgen(1260): $1260 = 2^2 \\cdot 3^2 \\cdot 5 \\cdot 7$. Asallar: 2, 3, 5, 7. Min=2, Max=7. Çarpım = 14.\nToplam: $10 + 14 = 24$.",
+    expl: "360 = 2<sup>3</sup> · 3<sup>2</sup> · 5 ⇒ 2 · 5 = 10. 1260 = 2<sup>2</sup> · 3<sup>2</sup> · 5 · 7 ⇒ 2 · 7 = 14. Sonuç 10 + 14 = 24.",
     answers: [
       { text: "20", ok: false },
       { text: "28", ok: false },
@@ -267,10 +267,10 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "![Sayısal Mantık](QuestionsImage/sayisal_mantik_t2_q8.jpg)\n\nYukarıda verilen tanıma göre eşitliğini sağlayan 3 basamaklı en büyük A sayısının rakamları toplamı kaçtır?",
-    img: "QuestionsImage/sayisal_mantik_t2_q8.jpg",
+    text: "<p>En az iki farklı asal böleni olan bir A pozitif tam sayısının en küçük ve en büyük asal bölenlerinin çarpımı, üçgen içine yazılan A ile gösteriliyor.</p><p><b>Yukarıdaki eşitliği sağlayan 3 basamaklı en büyük A sayısının rakamları toplamı kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q22.jpg",
     diff: 3,
-    expl: "Üçgen(A) = 22 ise, A sayısının en küçük ve en büyük asal çarpanlarının çarpımı 22'dir. Asal sayıların çarpımı 22 olduğuna göre, bu asallar zorunlu olarak 2 ve 11'dir. Demek ki A sayısı 2 ve 11 asallarını mutlaka içermeli ve 11'den büyük hiçbir asal sayı içermemelidir. $A = 22 \\cdot k$. K'nın içinde sadece 2, 3, 5, 7, 11 asalları olabilir. A'nın üç basamaklı en büyük sayı olması için K'yı maksimize etmeliyiz. $22 \\cdot 45 = 990$. (45'in asalları 3 ve 5'tir, kurala uyar). Daha büyüğü 990'dan sonra 1000'i geçer. A = 990. Rakamları toplamı: $9 + 9 + 0 = 18$.",
+    expl: "22 = 2 · 11 olduğundan A'nın en küçük asal böleni 2, en büyüğü 11'dir. A = 22k ve k yalnızca 2, 3, 5, 7, 11 asallarını içerebilir. En büyük üç basamaklı değer k = 45 için A = 990'dır. Rakamları toplamı 9 + 9 + 0 = 18.",
     answers: [
       { text: "16", ok: false },
       { text: "27", ok: false },
@@ -283,10 +283,10 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
 // ─── SAYISAL MANTIK PROBLEMLERİ TEST - 3 ──────────────────────────────────────
 
   {
-    text: "![Dart Oyunu](QuestionsImage/sayisal_mantik_t3_q1.jpg)\n\n1'den 18'e kadar çift sayılar en fazla birer kez kullanılarak sekiz eş dilime ayrılan dart tahtasıyla oyun oynanıyor. (Puan = 3 okun toplamı. Eşitlik durumunda oyun berabere). Yanda içindeki sayıları verilen dart tahtasında 2 oyuncunun oynadığı oyun berabere bitmiştir.\nBuna göre oyuncuların aldıkları puanların toplamı en fazla kaç olabilir?",
-    img: "QuestionsImage/sayisal_mantik_t3_q1.jpg",
+    text: "<p>1'den 18'e kadar sayılar en fazla birer kez kullanılarak sekiz eş dilime ayrılan daire biçimindeki bir dart tahtasının dilimlerine yerleştiriliyor. Bu dart tahtasına oklarla atış yapılarak oynanan bir oyunun kuralları aşağıda verilmiştir.</p><ul><li>Her bir atışta dart farklı bir daire dilimine gelmektedir.</li><li>Her bir turda oyunculardan her biri, daire dilimlerinin içine toplam 3 ok isabet edene kadar atış yapmaktadır.</li><li>Her bir turda okların isabet ettiği daire dilimlerindeki sayıların toplamı oyuncunun tur puanını belirlemektedir.</li><li>Bir tur sonunda oyuncunun tur puanları toplamı o oyuncunun oyun puanını belirlemektedir.</li><li>Oyun puanı en yüksek olan oyuncu oyunu kazanmaktadır.</li></ul><p>Yukarıda içindeki sayıları verilen dart tahtasında 2 oyuncunun oynadığı oyun berabere bitmiştir.</p><p><b>Buna göre oyuncuların aldıkları puanların toplamı <u>en fazla</u> kaç olabilir?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q23.jpg",
     diff: 3,
-    expl: "Tahtadaki sayılar 2, 4, 6, 8, 10, 12, 14, 16. Toplamları 72'dir. Oyun berabere bittiğine göre P1 = P2 olmalıdır. Her iki oyuncu da 3'er ok atıyor ve her ok farklı dilime geliyorsa toplam 6 dilim vurulur, 2 dilim boşta kalır. Alınan puanlar toplamı P1 + P2 = 2P'dir (Çift sayı olmak zorundadır). Toplam puanın en büyük olması için boşta kalan 2 dilimin en küçük (2 ve 4) seçilmesi gerekir. Bu durumda maksimum puan 72 - (2+4) = 66 olur. Ancak 66 puanı P1=33, P2=33 şeklinde bölünmelidir ki 3 çift sayının toplamı hiçbir zaman tek sayı (33) olamaz. Bu nedenle 66 elenir. Bir sonraki en büyük çift toplamı ararız. Boşta kalanlar (2 ve 6) olursa, toplam 72 - 8 = 64 olur. P1=32 ve P2=32 mümkündür (Örn: 16+12+4=32 ve 14+10+8=32). Maksimum toplam puan 64'tür.",
+    expl: "Tahtadaki sayılar 2, 4, …, 16 (toplam 72). İki oyuncu farklı 6 dilime atış yapar, 2 dilim boş kalır. Toplam en çok 72 − (2 + 4) = 66 olabilir; ancak bu durumda her oyuncu 33 almalıdır ve çift sayıların toplamı tek olamaz. Boş dilimler 2 ve 6 olursa toplam 64 olur: 16 + 12 + 4 = 32 ve 14 + 10 + 8 = 32. En fazla 64.",
     answers: [
       { text: "72", ok: false },
       { text: "60", ok: false },
@@ -296,10 +296,10 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "![Dart Oyunu](QuestionsImage/sayisal_mantik_t3_q2.jpg)\n\nYanda numaraları verilen dart tahtasında 1. Oyuncu 21 puan almıştır. 2. Oyuncu oyunu kaybettiğine göre aldığı puan aşağıdakilerden hangisi olamaz?",
-    img: "QuestionsImage/sayisal_mantik_t3_q2.jpg",
+    text: "<p>1'den 18'e kadar sayılar en fazla birer kez kullanılarak sekiz eş dilime ayrılan daire biçimindeki bir dart tahtasının dilimlerine yerleştiriliyor. Bu dart tahtasına oklarla atış yapılarak oynanan bir oyunun kuralları aşağıda verilmiştir.</p><ul><li>Her bir atışta dart farklı bir daire dilimine gelmektedir.</li><li>Her bir turda oyunculardan her biri, daire dilimlerinin içine toplam 3 ok isabet edene kadar atış yapmaktadır.</li><li>Her bir turda okların isabet ettiği daire dilimlerindeki sayıların toplamı oyuncunun tur puanını belirlemektedir.</li><li>Bir tur sonunda oyuncunun tur puanları toplamı o oyuncunun oyun puanını belirlemektedir.</li><li>Oyun puanı en yüksek olan oyuncu oyunu kazanmaktadır.</li></ul><p>Yukarıda numaraları verilen dart tahtasında 1. Oyuncu 21 puan almıştır.</p><p><b>2. Oyuncu oyunu kaybettiğine göre aldığı puan aşağıdakilerden hangisi <u>olamaz</u>?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q24.jpg",
     diff: 3,
-    expl: "Tahtadaki sayılar tek sayılardır: 1, 3, 5, 7, 9, 11, 13, 15. P1 = 21 puan almış (Örn: 15+5+1). P2 oyunu kaybettiği için 21'den küçük bir puan almalıdır. Her oyuncu 3 ok attığı için ve tek sayıların toplamı tek sayı olacağından P2 ancak 19, 17, 15, 13, 11 gibi tek sayılar alabilir. Ancak kalan sayılar kümesinden bu puanların elde edilip edilemeyeceğini kontrol etmeliyiz. Hangi P1 kombinasyonunu seçersek seçelim geriye kalan 5 sayının en küçük üçlüsünün toplamı DAİMA en az 15 yapmaktadır. (Çünkü 1,3,11 olursa 15 vb). Dolayısıyla kalan sayılarla 13 veya daha düşük bir puan elde etmek matematiksel olarak imkânsızdır. (Cevap anahtarı C(13) olarak vermiştir).",
+    expl: "Kitabın cevap anahtarı C (13) seçeneğini vermektedir. 1. oyuncunun 21 puanı {1, 5, 15}, {1, 7, 13}, {1, 9, 11}, {3, 5, 13}, {3, 7, 11} veya {5, 7, 9} ile alınır. 13 puan yalnızca {1, 3, 9} veya {1, 5, 7} ile alınabilir ve her ikisi de 1. oyuncunun her seçeneğiyle ortak dilim içerdiğinden 13 puan alınamaz. 15, 17, 19 alınabilir (örneğin {5, 7, 9} karşısında {1, 3, 11} = 15). Not: 11 puanı veren tek üçlü {1, 3, 7} de her seçenekle çakıştığından 11 de alınamaz.",
     answers: [
       { text: "17", ok: false },
       { text: "19", ok: false },
@@ -309,10 +309,10 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "![Çokgen Mantık](QuestionsImage/sayisal_mantik_t3_q3.jpg)\n\nŞekildeki 6 dairenin içine birbirinden farklı rakamlar yazılacaktır. Ortadaki daireye çevresindeki teğet olan dairelerin toplamı yazılmaktadır. Yukarıda sayıları verilen şekildeki bilgilere göre ortadaki daire içindeki x sayısı 3 ile tam bölünmektedir.\nBuna göre a + b toplamı en çok kaçtır?",
-    img: "QuestionsImage/sayisal_mantik_t3_q3.jpg",
+    text: "<p>Şekildeki 6 dairenin içine birbirinden farklı rakamlar yazılacaktır.</p><ul><li>her daireye gelecek rakamlar birbirinden farklı,</li><li>ortadaki daireye çevresindeki teğet olan dairelerin toplamı</li></ul><p>olacak şekilde yerleştiriliyor. Örnek: çevredeki dairelerde 7, 2, 3, 4, 5, 6 varken ortadaki dairede 27 yazar.</p><p>Yukarıda sayıları verilen şekildeki bilgilere göre ortadaki daire içindeki x sayısı 3 ile tam bölünmektedir.</p><p><b>Buna göre a + b toplamı <u>en çok</u> kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q25.jpg",
     diff: 2,
-    expl: "Kullanılan rakamlar 1, 3, 4, 5. Geriye kalan kullanılabilecek rakamlar: 0, 2, 6, 7, 8, 9. Ortadaki x sayısı: x = 1 + 3 + 4 + 5 + a + b = 13 + a + b. x'in 3'e tam bölünmesi ve a+b'nin maksimum olması isteniyor. a ve b için en büyük kalan rakamları (8 ve 9) denersek: a+b = 17 olur. x = 13 + 17 = 30. 30 sayısı 3'e tam bölünür. Demek ki a+b en çok 17 olabilir.",
+    expl: "x = 1 + 4 + 3 + 5 + a + b = 13 + a + b. a ve b, 1, 3, 4, 5'ten farklıdır; en büyük seçim 8 ve 9 ile a + b = 17 olur ve x = 30, 3'e tam bölünür. En çok 17.",
     answers: [
       { text: "17", ok: true },
       { text: "15", ok: false },
@@ -322,10 +322,10 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "![Çokgen Mantık](QuestionsImage/sayisal_mantik_t3_q4.jpg)\n\nYukarıda sayıları yerleştirilmiş şekildeki bilgilere göre a sayısının yerine yazılabilecek rakamların toplamı kaçtır?",
-    img: "QuestionsImage/sayisal_mantik_t3_q4.jpg",
+    text: "<p>Şekildeki 6 dairenin içine birbirinden farklı rakamlar yazılacaktır.</p><ul><li>her daireye gelecek rakamlar birbirinden farklı,</li><li>ortadaki daireye çevresindeki teğet olan dairelerin toplamı</li></ul><p>olacak şekilde yerleştiriliyor.</p><p><b>Yukarıda sayıları yerleştirilmiş şekildeki bilgilere göre a sayısının yerine yazılabilecek rakamların toplamı kaçtır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q26.jpg",
     diff: 3,
-    expl: "Ortadaki sayı 29. Çevresindekilerin toplamı 29 olmalı: 7 + 4 + 3 + 5 + a + b = 29. Buradan a + b = 10 bulunur. Kullanılan rakamlar 3, 4, 5, 7'dir. Kullanılabilecek diğer rakamlar 0, 1, 2, 6, 8, 9'dur. Toplamı 10 yapan bu rakamlardan ikililer: (1, 9) ve (2, 8)'dir. Dolayısıyla a rakamı 1, 9, 2 veya 8 olabilir. Bu değerlerin toplamı: 1 + 9 + 2 + 8 = 20'dir.",
+    expl: "7 + 4 + 3 + 5 + a + b = 29 ⇒ a + b = 10. a ve b, 3, 4, 5, 7'den ve birbirinden farklıdır: (1, 9), (9, 1), (2, 8), (8, 2). a'nın alabileceği değerler 1, 9, 2, 8; toplam 20.",
     answers: [
       { text: "18", ok: false },
       { text: "23", ok: false },
@@ -334,13 +334,10 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
       { text: "22", ok: false }
     ]
   },
-
-// ─── SAYISAL MANTIK PROBLEMLERİ TEST - 4 ──────────────────────────────────────
-
   {
-    text: "Burak ve Can'ın kâğıtlara tam sayılar yazarak oynadıkları bir oyunun kuralları aşağıda verilmiştir.\n• Her iki oyuncu da birer basamaklı 2'den büyük pozitif tam sayı yazıyor.\n• Aynı sayıyı yazarlarsa berabere.\n• En az biri çift sayı yazarsa BÜYÜK sayıyı yazan kazanıyor.\n• En az biri asal sayı yazarsa KÜÇÜK sayıyı yazan kazanıyor.\nBurak'ın yazdığı sayının asal olduğu biliniyor. Can oyunu kazandığına göre Can'ın yazabileceği kaç farklı pozitif tam sayı vardır?",
+    text: "<p>Burak ve Can'ın kâğıtlara tam sayılar yazarak oynadıkları bir oyunun kuralları aşağıda verilmiştir.</p><ul><li>Her iki oyuncu da birer kâğıda, diğerine göstermeden bir basamaklı 2'den büyük bir pozitif tam sayı yazıyor.</li><li>Oyuncular aynı sayıyı yazarsa oyun berabere bitiyor.</li><li>Oyunculardan <u>en az</u> biri çift sayı yazarsa büyük sayıyı yazan oyunu kazanıyor.</li><li>Oyunculardan <u>en az</u> biri asal sayı yazarsa küçük sayıyı yazan oyunu kazanıyor.</li></ul><p>Burak'ın yazdığı sayının asal olduğu biliniyor.</p><p><b>Buna göre Can oyunu kazandığına göre Can'ın yazabileceği kaç farklı pozitif tamsayı vardır?</b></p>",
     diff: 3,
-    expl: "Oyunun kurallarında bir çakışma olursa (Biri asal, diğeri çift) asal kuralının (küçük olan kazanır) geçerli olduğu görülmektedir. Burak asal yazmış (3, 5 veya 7). Can'ın kazanması için Asal kuralı gereği Can'ın sayısının Burak'ınkinden KÜÇÜK olması şarttır. \nEğer Burak 3 yazdıysa Can 3'ten küçük sayı yazamaz (sayılar 2'den büyük).\nEğer Burak 5 yazdıysa Can 3 veya 4 yazabilir.\nEğer Burak 7 yazdıysa Can 3, 4, 5 veya 6 yazabilir.\nGenel olarak Can'ın kazanabileceği ve kurallara uyan sayılar kümesi {3, 4, 5, 6}'dır. Yani Can 4 farklı sayı yazabilir.",
+    expl: "Burak asal (3, 5 veya 7) yazdığından küçük sayıyı yazan kazanır; Can'ın sayısı Burak'ınkinden küçük olmalıdır. Burak 5 yazarsa Can 3, 4; Burak 7 yazarsa Can 3, 4, 5, 6 yazabilir. Can'ın yazabileceği sayılar {3, 4, 5, 6} ⇒ 4 farklı sayı.",
     answers: [
       { text: "4", ok: true },
       { text: "6", ok: false },
@@ -350,9 +347,9 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Yukarıdaki oyun kurallarına göre, Can 6 rakamını yazmış ve oyunu kazanmıştır. Buna göre Burak'ın yazabileceği sayıların toplamı aşağıdakilerden hangisidir?",
+    text: "<p>Burak ve Can'ın kâğıtlara tam sayılar yazarak oynadıkları bir oyunun kuralları aşağıda verilmiştir.</p><ul><li>Her iki oyuncu da birer kâğıda, diğerine göstermeden bir basamaklı 2'den büyük bir pozitif tam sayı yazıyor.</li><li>Oyuncular aynı sayıyı yazarsa oyun berabere bitiyor.</li><li>Oyunculardan <u>en az</u> biri çift sayı yazarsa büyük sayıyı yazan oyunu kazanıyor.</li><li>Oyunculardan <u>en az</u> biri asal sayı yazarsa küçük sayıyı yazan oyunu kazanıyor.</li></ul><p>Can 6 rakamını yazmış ve oyunu kazanmıştır.</p><p><b>Buna göre Burak'ın yazabileceği sayıların toplamı aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
-    expl: "Can 6 (çift) yazdı ve kazandı. \nDurum 1 (Çift Kuralı Geçerli): Büyük olan kazanır. Can (6) kazandığına göre Burak 6'dan küçük olmalı. Burak 4 yazabilir (her ikisi de çift, kural çakışmaz, büyük olan Can kazanır).\nDurum 2 (Asal Kuralı Geçerli): Burak asal yazmış olmalı ki bu kural devreye girsin. Asal kuralında KÜÇÜK olan kazanır. Can (6) kazandığına göre Can, Burak'tan küçük olmalıdır. Yani Burak > 6 olan bir asal sayı yazmıştır. Bu da 7'dir. (Burak 7 yazarsa, biri çift biri asal kuralı çakışır. Asal kuralı baskın olduğu için küçük olan Can kazanır).\nBuna göre Burak'ın yazabileceği sayılar 4 ve 7'dir. Toplamları 11'dir.",
+    expl: "Burak asal olmayan bir sayı yazarsa çift kuralıyla büyük sayı kazanır; Can'ın kazanması için Burak 6'dan küçük, asal olmayan bir sayı, yani 4 yazmalıdır. Burak asal yazarsa küçük sayı kazanır; Burak 6'dan büyük asal, yani 7 yazmalıdır. Toplam 4 + 7 = 11.",
     answers: [
       { text: "11", ok: true },
       { text: "16", ok: false },
@@ -362,27 +359,130 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Can, Burak ve Deniz; 1'den 10'a kadar numaralandırılmış 10 kartın bulunduğu bir torbadan sırasıyla üçer tane kart çekiyor.\n• 6 numaralı kartı Can, 10 numaralı kartı Deniz çekmiştir.\n• Can'ın çektiği kartların numaraları toplamı, Burak'ın çektiği kartların numaraları toplamından 4 fazladır.\nCan'ın çektiği kartlardaki sayıların toplamı 20 olduğuna göre Burak'ın çektiği kartlardaki sayıların en küçüğü aşağıdakilerden hangisidir?",
+    text: "<p>Can, Burak ve Deniz; 1'den 10'a kadar rakamlarla numaralandırılmış 10 kartın bulunduğu bir torbadan sırasıyla üçer tane kart çekiyor. Çekilen bu kartlarla ilgili bazı bilgiler aşağıda verilmiştir.</p><ul><li>6 numaralı kartı Can, 10 numaralı kartı Deniz çekmiştir.</li><li>Can'ın çektiği kartların numaraları toplamı, Burak'ın çektiği kartların numaraları toplamından 4 fazladır.</li></ul><p><b>Can'ın çektiği kartlardaki sayıların toplamı 20 olduğuna göre Burak'ın çektiği kartlardaki sayıların <u>en küçüğü</u> aşağıdakilerden hangisidir?</b></p>",
     diff: 3,
-    expl: "Can'ın toplamı 20 ise, Burak'ın toplamı 16'dır. Deniz'in toplamını bulmak için 10 karttan 9'unun çekildiğini ve 1'inin torbada kaldığını unutmamalıyız. \nCan'ın kartları (Toplam 20, 6'sı var): Kalan 14 için 2 kart seçmeli. {5, 9} dışında 1'den 10'a kadar (6 ve 10 hariç) 14 veren başka çift yoktur (7,7 olamaz). Can = {5, 6, 9}.\nBurak'ın kartları (Toplam 16, 3 kart). Kalan kartlar: 1, 2, 3, 4, 7, 8. (10 Deniz'de). Burak'ın 16 yapması için {1, 7, 8} çekmesi ZORUNLUDUR. Diğer hiçbir 3'lü kombinasyon 16 yapmaz (Örn: 2+?+? olmaz). Burak'ın en küçük kartı 1'dir.",
+    expl: "Kitabın cevap anahtarı C (3) seçeneğini vermektedir. Not: Can'ın diğer iki kartının toplamı 14'tür; 6 ve 10 kullanılamadığından bu kartlar 5 ve 9'dur. Burak'ın toplamı 16'dır ve kalan 1, 2, 3, 4, 7, 8 kartlarından toplamı 16 olan tek üçlü {1, 7, 8}'dir; bu hesapla en küçük kart 1 bulunur.",
     answers: [
       { text: "4", ok: false },
       { text: "5", ok: false },
-      { text: "3", ok: false },
+      { text: "3", ok: true },
       { text: "2", ok: false },
-      { text: "1", ok: true }
+      { text: "1", ok: false }
     ]
   },
   {
-    text: "Yukarıdaki bilgilere ek olarak, Deniz'in çektiği kartlardaki sayıların toplamı 25 olduğuna göre Can'ın çektiği kartlardaki sayıların toplamı kaçtır?",
+    text: "<p>Can, Burak ve Deniz; 1'den 10'a kadar rakamlarla numaralandırılmış 10 kartın bulunduğu bir torbadan sırasıyla üçer tane kart çekiyor. Çekilen bu kartlarla ilgili bazı bilgiler aşağıda verilmiştir.</p><ul><li>6 numaralı kartı Can, 10 numaralı kartı Deniz çekmiştir.</li><li>Can'ın çektiği kartların numaraları toplamı, Burak'ın çektiği kartların numaraları toplamından 4 fazladır.</li></ul><p><b>Deniz'in çektiği kartlardaki sayıların toplamı 25 olduğuna göre Can'ın çektiği kartlardaki sayıların toplamı kaçtır?</b></p>",
     diff: 3,
-    expl: "Deniz'in toplamı 25, 10 numaralı karta sahip. Diğer 2 kartının toplamı 15 olmalı. Kullanılabilecek kartlar (6 hariç, o Can'da) içinde 15'i veren tek çift {7, 8}'dir. Deniz = {10, 7, 8}.\nGeriye kalan kartlar: 1, 2, 3, 4, 5, 9. \nCan = {6, x, y}. Burak = {a, b, c}. Can = Burak + 4.\nKalanlardan öyle iki set ayırmalıyız ki Can'ın toplamı Burak'tan 4 fazla olsun. \nEğer Can {6, 1, 9} alırsa toplamı 16 olur. Kalanlar {2, 3, 4, 5}'tir. Burak {3, 4, 5} alırsa toplamı 12 olur. 16 = 12 + 4 şartı mükemmel sağlanır. Demek ki Can'ın toplamı 16'dır.",
+    expl: "Deniz'in diğer iki kartının toplamı 15'tir; 6 Can'da olduğundan bunlar 7 ve 8'dir. Kalan kartlar 1, 2, 3, 4, 5, 9 (biri torbada kalır). Can = {6, 1, 9} = 16 ve Burak = {3, 4, 5} = 12 koşulu sağlar (16 = 12 + 4); diğer seçimler sağlamaz. Can'ın toplamı 16.",
     answers: [
       { text: "15", ok: false },
       { text: "19", ok: false },
       { text: "20", ok: false },
       { text: "16", ok: true },
       { text: "14", ok: false }
+    ]
+  },
+
+// ─── SAYISAL MANTIK PROBLEMLERİ TEST - 4 ──────────────────────────────────────
+
+  {
+    text: "<p>Bir müşteri, evinin önünden taksiye binmiş ve şoföre şunu söylemiştir:</p><p>\"Önce yol üzerindeki restauranta uğramam lazım. Oradan yemek aldığımda beni iş yerime bırakırsın.\"</p><p>Taksici de müşteriye şu şekilde karşılık vermiştir:</p><p>\"Beklediğim süreler için ayrı bir ücret alıyorum. Kabul ediyorsanız devam edeyim.\"</p><p>Müşterinin kabul ettiği bu ücret tarifesi yukarıdaki tabloda verilmiştir.</p><p>Rastaurantta 15 dk bekleyen bu müşteri toplam 8 km yol gitmiştir.</p><p><b>Buna göre taksiciye kaç TL ödeme yapmıştır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q31.jpg",
+    diff: 2,
+    expl: "Açılış 2,5 TL; 8 km = 80 · 100 m ⇒ 80 · 0,25 = 20 TL; bekleme 15 · 0,20 = 3 TL. Toplam 2,5 + 20 + 3 = 25,5 TL.",
+    answers: [
+      { text: "24", ok: false },
+      { text: "27,5", ok: false },
+      { text: "25,5", ok: true },
+      { text: "29", ok: false },
+      { text: "22,5", ok: false }
+    ]
+  },
+  {
+    text: "<p>Bir müşteri, evinin önünden taksiye binmiş ve şoföre şunu söylemiştir:</p><p>\"Önce yol üzerindeki restauranta uğramam lazım. Oradan yemek aldığımda beni iş yerime bırakırsın.\"</p><p>Taksici de müşteriye şu şekilde karşılık vermiştir:</p><p>\"Beklediğim süreler için ayrı bir ücret alıyorum. Kabul ediyorsanız devam edeyim.\"</p><p>Müşterinin kabul ettiği bu ücret tarifesi yukarıdaki tabloda verilmiştir.</p><p><b>Bu müşteri taksiyle toplam 12 km yol gitmiş ve taksiciye 35,9 TL verdiğine göre taksiciyi uğradığı restaurantta kaç dk bekletmiştir?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q32.jpg",
+    diff: 2,
+    expl: "Açılış 2,5 TL; 12 km = 120 · 100 m ⇒ 30 TL. Bekleme ücreti 35,9 − 32,5 = 3,4 TL ⇒ 3,4 / 0,20 = 17 dakika.",
+    answers: [
+      { text: "23", ok: false },
+      { text: "17", ok: true },
+      { text: "20", ok: false },
+      { text: "19", ok: false },
+      { text: "21", ok: false }
+    ]
+  },
+  {
+    text: "<p>Ali, Berk ve Can'ın katıldığı bir poligon yarışmasında yarışmanın kuralları şu şekildedir:</p><ul><li>Her bir yarışmacı, dört farklı mesafenin her birinden 3 atış yapacaktır.</li><li>Hedefe isabet eden her atış için yarışmacılara yukarıdaki tabloda verilen puanlar verilecektir.</li><li>Yarışmacıların aldıkları puana göre sıralama oluşturulmuştur.</li></ul><p><b>Birinci olan kişi 4 atış kaçırdığına göre ikinci olan kişi <u>en az</u> kaç atış kaçırmıştır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q33.jpg",
+    diff: 3,
+    expl: "Tüm atışlar isabet ederse puan 3 · (20 + 25 + 35 + 50) = 390 olur. Birinci 4 atış kaçırdığından en fazla 390 − (3 · 20 + 25) = 305 puan alabilir. İkinci 1 atış kaçırsaydı en az 390 − 50 = 340 puan alırdı ve birinciyi geçerdi. 2 atış kaçırırsa (iki 100 m atışı) 290 puan alabilir. En az 2.",
+    answers: [
+      { text: "2", ok: true },
+      { text: "5", ok: false },
+      { text: "7", ok: false },
+      { text: "3", ok: false },
+      { text: "4", ok: false }
+    ]
+  },
+  {
+    text: "<p>Ali, Berk ve Can'ın katıldığı bir poligon yarışmasında yarışmanın kuralları şu şekildedir:</p><ul><li>Her bir yarışmacı, dört farklı mesafenin her birinden 3 atış yapacaktır.</li><li>Hedefe isabet eden her atış için yarışmacılara yukarıdaki tabloda verilen puanlar verilecektir.</li><li>Yarışmacıların aldıkları puana göre sıralama oluşturulmuştur.</li></ul><p>Toplam da 175 puan alan Berk 20 m ve 100 m atışlarının sadece birini kaçırmıştır.</p><p><b>Buna göre Berk 30 m ve 50 m atışlarında toplam kaç atışı kaçırmıştır?</b></p>",
+    img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q34.jpg",
+    diff: 3,
+    expl: "Berk 20 m ve 100 m mesafelerinin her birinde birer atış kaçırmıştır: 2 · 20 + 2 · 50 = 140 puan. Kalan 35 puan yalnızca bir adet 50 m isabetiyle alınabilir. 30 m'de 3, 50 m'de 2 atış kaçırmıştır; toplam 5.",
+    answers: [
+      { text: "2", ok: false },
+      { text: "3", ok: false },
+      { text: "6", ok: false },
+      { text: "5", ok: true },
+      { text: "4", ok: false }
+    ]
+  },
+  {
+    text: "<p>1'den 9'a kadar olan rakamlar 9 farklı karta yazılmış ve bu kartlar bir torbaya atılmıştır. 3 öğrencinin oynadığı bu oyunun kuralları aşağıda verilmiştir.</p><ul><li>Her öğrenci torbadan birer kart seçer.</li><li>Her oyunda bir öğrenci belirlenir.</li><li>Diğer iki öğrenci belirlenen bu öğrenciye kendi çektiği kartlardaki sayıların çarpımını söyler.</li><li>Belirlenen ilk öğrenci de bu sayıyla kendi sayısını çarpar ve bir sayı bulur.</li></ul><p><b>Buna göre birinci öğrencinin seçtiği rakam 7 olduğuna göre diğer iki öğrenciden çarptıkları sayıyı aldıktan sonra ki bulabileceği sayı aşağıdakilerden hangisi olabilir?</b></p>",
+    diff: 2,
+    expl: "Bulunan sayı 7'nin katı olmalıdır; seçeneklerde yalnızca 35 vardır: 35 = 7 · 5 ve 5 = 1 · 5 (farklı iki kart).",
+    answers: [
+      { text: "86", ok: false },
+      { text: "150", ok: false },
+      { text: "120", ok: false },
+      { text: "72", ok: false },
+      { text: "35", ok: true }
+    ]
+  },
+  {
+    text: "<p>1'den 9'a kadar olan rakamlar 9 farklı karta yazılmış ve bu kartlar bir torbaya atılmıştır. 3 öğrencinin oynadığı bu oyunun kuralları aşağıda verilmiştir.</p><ul><li>Her öğrenci torbadan birer kart seçer.</li><li>Her oyunda bir öğrenci belirlenir.</li><li>Diğer iki öğrenci belirlenen bu öğrenciye kendi çektiği kartlardaki sayıların çarpımını söyler.</li><li>Belirlenen ilk öğrenci de bu sayıyla kendi sayısını çarpar ve bir sayı bulur.</li></ul><p>İlk öğrenci seçtiği kartı yanlışlıkla ters tutmuş ve arkadaşlarından sayıyı alıp kendi sayısıyla çarptıktan sonra bulması gereken sayıyı 120 fazla bulmuştur.</p><p><b>Buna göre diğer iki öğrencinin çektikleri kartlardaki sayıların toplamı aşağıdakilerden hangisidir?</b></p>",
+    diff: 3,
+    expl: "Ters tutulunca farklı bir rakam gibi okunabilen kart 6'dır (9 olarak okunur). Diğer iki kartın çarpımı P ise 9P − 6P = 3P = 120 ⇒ P = 40 = 5 · 8. Toplam 5 + 8 = 13.",
+    answers: [
+      { text: "13", ok: true },
+      { text: "11", ok: false },
+      { text: "9", ok: false },
+      { text: "12", ok: false },
+      { text: "8", ok: false }
+    ]
+  },
+  {
+    text: "<p>Bir doğal sayının en sağdaki rakamı siliniyor ve kalan sayı, rakamlarının yerleri değiştirilmeden silinen rakama bölünüyor.</p><p>Bu bölme işleminden elde edilen bölüm, o doğal sayının atölye sayısı olarak tanımlanıyor.</p><p>Örneğin 345 sayısının atölye sayısı 6, 562 sayısının atölye sayısı ise 28' dir.</p><p><b>Yukarıda verilen bilgilere göre 2567 sayısının atölye sayısı aşağıdakilerden hangisidir?</b></p>",
+    diff: 1,
+    expl: "Son rakam 7 silinir, kalan 256 sayısı 7'ye bölünür: 256 = 7 · 36 + 4. Bölüm 36.",
+    answers: [
+      { text: "32", ok: false },
+      { text: "35", ok: false },
+      { text: "36", ok: true },
+      { text: "42", ok: false },
+      { text: "34", ok: false }
+    ]
+  },
+  {
+    text: "<p>Bir doğal sayının en sağdaki rakamı siliniyor ve kalan sayı, rakamlarının yerleri değiştirilmeden silinen rakama bölünüyor.</p><p>Bu bölme işleminden elde edilen bölüm, o doğal sayının atölye sayısı olarak tanımlanıyor.</p><p>Örneğin 345 sayısının atölye sayısı 6, 562 sayısının atölye sayısı ise 28' dir.</p><p><b>AABB dört basamaklı sayısının atölye sayısı 23 olduğuna göre A + B toplamının değeri aşağıdakilerden hangisidir?</b></p>",
+    diff: 3,
+    expl: "AAB sayısı B'ye bölündüğünde bölüm 23'tür: 23B ≤ 110A + B < 24B ⇒ 22B ≤ 110A < 23B ⇒ 4,78A < B ≤ 5A. A = 1 için B = 5 (115 / 5 = 23); A ≥ 2 için B rakam olamaz. A + B = 6.",
+    answers: [
+      { text: "8", ok: false },
+      { text: "10", ok: false },
+      { text: "9", ok: false },
+      { text: "7", ok: false },
+      { text: "6", ok: true }
     ]
   }
 ];

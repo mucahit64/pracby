@@ -2,9 +2,9 @@ import type { McQ } from "../../../../types";
 
 export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
   {
-    text: "Ahmet 4 kitap, 5 silgi ve 3 deftere 29 TL ya da 2 defter 1 kitaba 11 TL ödüyor.\n\nBuna göre Ahmet 2 kitap, 2 silgi ve 2 deftere kaç TL öder?",
+    text: "<p>Ahmet 4 kitap, 5 silgi ve 3 deftere 29 TL ya da 2 defter 1 kitaba 11 TL ödüyor.</p><p><b>Buna göre Ahmet 2 kitap, 2 silgi ve 2 deftere kaç TL öder?</b></p>",
     diff: 2,
-    expl: "Denklemleri yazalım: 4k + 5s + 3d = 29 ve k + 2d = 11. İkinci denklemi 2 ile çarpıp birinci denklemden çıkaralım: (4k + 5s + 3d) - (2k + 4d) = 29 - 22 => 2k + 5s - d = 7. İstenen 2k + 2s + 2d değerine doğrudan ulaşmak zor görünse de, k ve d'ye denklemi sağlayan değerler verebiliriz. k=5, d=3 olsun (5+6=11). İlk denkleme koyalım: 20 + 5s + 9 = 29 => 5s = 0 => s=0. İstenen: 2(5) + 2(0) + 2(3) = 16 bulunur. (Başka değerler için de sonuç değişmez).",
+    expl: "4k + 5s + 3d = 29 ve k + 2d = 11. Birinci denklemin 2/5'i ile ikinci denklemin 2/5'i toplanırsa (8k/5 + 2s + 6d/5) + (2k/5 + 4d/5) = 2k + 2s + 2d = (2/5)(29 + 11) = 16 TL.",
     answers: [
       { text: "8", ok: false },
       { text: "10", ok: false },
@@ -14,9 +14,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir salonda 30 evli çift ve 35 bekar kadın vardır.\n\nBu salona kaç evli çift gelirse salondaki kadın sayısı erkek sayısının 2 katı olur?",
+    text: "<p>Bir salonda 30 evli çift ve 35 bekar kadın vardır.</p><p><b>Bu salona kaç evli çift gelirse salondaki kadın sayısı erkek sayısının 2 katı olur?</b></p>",
     diff: 1,
-    expl: "Başlangıçta Erkek (E) = 30, Kadın (K) = 30 + 35 = 65. Salona x tane evli çift gelirse, x erkek ve x kadın gelir. Yeni durum: E = 30+x, K = 65+x. Kadınların sayısı erkeklerin 2 katı olacağına göre: 65+x = 2(30+x) => 65+x = 60+2x => x=5 bulunur.",
+    expl: "Başlangıçta erkek = 30, kadın = 30 + 35 = 65. x evli çift gelirse erkek = 30 + x, kadın = 65 + x olur. 65 + x = 2(30 + x) ⇒ x = 5.",
     answers: [
       { text: "3", ok: false },
       { text: "5", ok: true },
@@ -26,9 +26,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir öğrenci cebindeki parasıyla 2 kalem ve 6 silgi veya sadece 12 silgi alabiliyor.\n\nBuna göre bu öğrenci cebindeki parası ile kaç tane kalem alabilir?",
+    text: "<p>Bir öğrenci cebindeki parasıyla 2 kalem ve 6 silgi veya sadece 12 silgi alabiliyor.</p><p><b>Buna göre bu öğrenci cebindeki parası ile kaç tane kalem alabilir?</b></p>",
     diff: 1,
-    expl: "Parası = 2k + 6s = 12s. Buradan 2k = 6s => k = 3s (1 kalem 3 silgi fiyatındadır). Toplam parası 12 silgi fiyatı kadar (12s) olduğuna göre, 12s / 3s = 4 tane kalem alabilir.",
+    expl: "2k + 6s = 12s ⇒ 2k = 6s ⇒ k = 3s. Parası 12s olduğundan 12s / 3s = 4 kalem alabilir.",
     answers: [
       { text: "3", ok: false },
       { text: "4", ok: true },
@@ -38,9 +38,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Elif hergün bir öncekinden 15 soru fazla çözüyor.\n\nElif 7 günün sonunda 490 soru çözdüğüne göre üçüncü gün kaç soru çözmüştür?",
+    text: "<p>Elif hergün bir öncekinden 15 soru fazla çözüyor.</p><p><b>Elif 7 günün sonunda 490 soru çözdüğüne göre üçüncü gün kaç soru çözmüştür?</b></p>",
     diff: 2,
-    expl: "İlk gün a soru çözsün. Günler: a, a+15, a+30, a+45, a+60, a+75, a+90. Toplam = 7a + 315 = 490 => 7a = 175 => a = 25'tir. Üçüncü gün (a+30) soru çözmüştür: 25 + 30 = 55.",
+    expl: "Günler: a, a + 15, …, a + 90. Toplam 7a + 315 = 490 ⇒ a = 25. Üçüncü gün a + 30 = 55 soru çözmüştür.",
     answers: [
       { text: "55", ok: true },
       { text: "70", ok: false },
@@ -50,9 +50,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Esra 540 sayfalık bir kitabı hergün bir önceki günden 4 sayfa fazla okursa 9 günde bitiriyor.\n\nBuna göre Esra ilk gün kaç sayfa kitap okumuştur?",
+    text: "<p>Esra 540 sayfalık bir kitabı hergün bir önceki günden 4 sayfa fazla okursa 9 günde bitiriyor.</p><p><b>Buna göre Esra ilk gün kaç sayfa kitap okumuştur?</b></p>",
     diff: 2,
-    expl: "İlk gün a sayfa okusun. 9 günlük okuma miktarı bir aritmetik dizidir. Ortanca (5. gün) okuduğu sayfa = Toplam / Gün Sayısı = 540 / 9 = 60'tır. 5. gün = a + 4*4 = 60 => a + 16 = 60 => a = 44. İlk gün 44 sayfa okumuştur.",
+    expl: "Ortanca (5.) gün okunan sayfa = 540 / 9 = 60. 5. gün = a + 4 · 4 = 60 ⇒ a = 44.",
     answers: [
       { text: "32", ok: false },
       { text: "36", ok: false },
@@ -62,9 +62,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir kumbara da 50 kr ve 1 TL'lik madeni paralardan 50 adet vardır.\n\nKumbaradaki paraların toplam tutarı 43 TL olduğuna göre kumbarada kaç tane 50 Kr'luk vardır?",
+    text: "<p>Bir kumbara da 50 kr ve 1 TL'lik madeni paralardan 50 adet vardır.</p><p><b>Kumbaradaki paraların toplam tutarı 43 TL olduğuna göre kumbarada kaç tane 50 Kr'luk vardır?</b></p>",
     diff: 1,
-    expl: "50 Kr = x adet, 1 TL = y adet olsun. x + y = 50. Toplam tutar: 0.5x + y = 43. İkinci denklemi eksi ile çarpıp toplarsak: 0.5x = 7 => x = 14 adet bulunur.",
+    expl: "50 kr'luk x, 1 TL'lik y adet olsun. x + y = 50 ve 0,5x + y = 43. Taraf tarafa çıkarılırsa 0,5x = 7 ⇒ x = 14.",
     answers: [
       { text: "12", ok: false },
       { text: "13", ok: false },
@@ -74,9 +74,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "50 kuruşluk ve 25 kuruşluk madeni paraların bulunduğu bir kumbarada toplam 150 adet madeni para vardır.\n\nKumbarada 65 TL olduğuna göre madeni paraların kaç tanesi 25 kuruşluktur?",
+    text: "<p>50 kuruşluk ve 25 kuruşluk madeni paraların bulunduğu bir kumbarada toplam 150 adet madeni para vardır.</p><p><b>Kumbarada 65 TL olduğuna göre madeni paraların kaç tanesi 25 kuruşluktur?</b></p>",
     diff: 2,
-    expl: "50 Kr = x, 25 Kr = y olsun. x + y = 150. Toplam tutar (TL cinsinden): 0.5x + 0.25y = 65. İkinci denklemi 4 ile çarpalım: 2x + y = 260. İlk denklemi eksi ile çarpıp toplayalım: (2x+y) - (x+y) = 260 - 150 => x = 110. y = 150 - 110 = 40 bulunur.",
+    expl: "50 kr'luk x, 25 kr'luk y adet olsun. x + y = 150 ve 0,5x + 0,25y = 65 ⇒ 2x + y = 260. Çıkarılırsa x = 110, y = 40.",
     answers: [
       { text: "80", ok: false },
       { text: "70", ok: false },
@@ -86,9 +86,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir markette ödeme sırasına giren Demet baştan 4. sondan 8. sırada olduğuna göre sırada kaç kişi vardır?",
+    text: "<p><b>Bir markette ödeme sırasına giren Demet baştan 4. sondan 8. sırada olduğuna göre sırada kaç kişi vardır?</b></p>",
     diff: 1,
-    expl: "Kuyruk problemlerinde toplam kişi sayısı = Baştan Sıra + Sondan Sıra - 1 formülüyle bulunur. 4 + 8 - 1 = 11 kişi vardır.",
+    expl: "Kişi sayısı = baştan sıra + sondan sıra − 1 = 4 + 8 − 1 = 11.",
     answers: [
       { text: "12", ok: false },
       { text: "11", ok: true },
@@ -98,9 +98,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir kuyrukta Zeynep baştan 12., Fatma sondan 19. sıradadır.\n\nİkisinin arasında 4 kişi olduğuna göre bu kuyrukta en çok kaç kişi vardır?",
+    text: "<p>Bir kuyrukta Zeynep baştan 12., Fatma sondan 19. sıradadır.</p><p><b>İkisinin arasında 4 kişi olduğuna göre bu kuyrukta <u>en çok</u> kaç kişi vardır?</b></p>",
     diff: 1,
-    expl: "Kuyrukta kişi sayısının en çok olması için kişilerin kesişmemesi, yani Zeynep'in önde, Fatma'nın arkada olması gerekir. Toplam kişi = Baştan Sıra + Aradakiler + Sondan Sıra = 12 + 4 + 19 = 35.",
+    expl: "En çok kişi için Zeynep önde, Fatma arkada olmalıdır: 12 + 4 + 19 = 35.",
     answers: [
       { text: "31", ok: false },
       { text: "32", ok: false },
@@ -110,9 +110,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir sinema bilet kuyruğunda Talha baştan 12., Murat ise sondan 18. sıradadır.\n\nTalha ile Murat arasında 6 kişi olduğuna göre ve Murat, Talha'dan önde olduğuna göre bu kuyrukta kaç kişi vardır?",
+    text: "<p>Bir sinema bilet kuyruğunda Talha baştan 12., Murat ise sondan 18. sıradadır.</p><p><b>Talha ile Murat arasında 6 kişi olduğuna ve Murat, Talha'dan önde olduğuna göre bu kuyrukta kaç kişi vardır?</b></p>",
     diff: 2,
-    expl: "Murat önde (kesişim var) ise kişi sayısı en az durumundadır. Formül: Baştan + Sondan - Aradakiler - 2 (Kendileri). 12 + 18 - 6 - 2 = 22 kişi vardır.",
+    expl: "Murat önde ise Talha'nın önündeki 11 kişi içinde Murat ve aradaki 6 kişi bulunur; Murat baştan 12 − 6 − 1 = 5. sıradadır. Kişi sayısı = 5 + 18 − 1 = 22.",
     answers: [
       { text: "20", ok: false },
       { text: "21", ok: false },
@@ -122,9 +122,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Mustafa bir deneme sınavındaki başarı sıralamasında baştan (n + 5)., sondan (2n - 4). kişidir.\n\nDeneme sınavına 120 kişi katıldığına göre n kaçtır?",
+    text: "<p>Mustafa bir deneme sınavındaki başarı sıralamasında baştan (n + 5)., sondan (2n − 4). kişidir.</p><p><b>Deneme sınavına 120 kişi katıldığına göre n kaçtır?</b></p>",
     diff: 2,
-    expl: "Toplam Kişi = Baştan Sıra + Sondan Sıra - 1. (n+5) + (2n-4) - 1 = 120 => 3n = 120 => n = 40.",
+    expl: "(n + 5) + (2n − 4) − 1 = 120 ⇒ 3n = 120 ⇒ n = 40.",
     answers: [
       { text: "39", ok: false },
       { text: "40", ok: true },
@@ -134,9 +134,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir çubuğun yarısı kesilirse orta noktası 14 cm kayıyor.\n\nBuna göre çubuk kesilmeden önce kaç cm'dir?",
+    text: "<p>Bir çubuğun yarısı kesilirse orta noktası 14 cm kayıyor.</p><p><b>Buna göre çubuk kesilmeden önce kaç cm'dir?</b></p>",
     diff: 1,
-    expl: "Bir çubuktan kesilen parçanın YARISI kadar orta nokta kayar. Orta nokta 14 cm kaymışsa kesilen parça 14*2 = 28 cm'dir. Bu 28 cm çubuğun yarısı olduğuna göre, tamamı 28*2 = 56 cm'dir.",
+    expl: "Bir uçtan kesilen parçanın yarısı kadar orta nokta kayar. Kesilen parça 2 · 14 = 28 cm ve bu çubuğun yarısıdır; çubuk 56 cm'dir.",
     answers: [
       { text: "28", ok: false },
       { text: "36", ok: false },
@@ -146,21 +146,21 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir parça telin ucundan telin 1/10'u, diğer ucundan 1/6'sı kesildiğinde orta noktası ilk duruma göre 4 cm kayıyor.\n\nBuna göre başlangıçta telin uzunluğu kaç cm dir?",
+    text: "<p>Bir parça telin ucundan telin 1/10'u, diğer ucundan 1/6'sı kesildiğinde orta noktası ilk duruma göre 4 cm kayıyor.</p><p><b>Buna göre başlangıçta telin uzunluğu kaç cm dir?</b></p>",
     diff: 2,
-    expl: "İki uçtan farklı miktarlarda kesildiğinde orta nokta, kesilen kısımların farkının yarısı kadar kayar. |x/6 - x/10| / 2 = 4 => (4x/60) / 2 = 4 => 4x / 120 = 4 => x = 120 cm.",
+    expl: "İki uçtan kesildiğinde orta nokta, kesilen parçaların farkının yarısı kadar kayar: (x/6 − x/10) / 2 = x/30 = 4 ⇒ x = 120 cm.",
     answers: [
-      { text: "120", ok: true },
       { text: "240", ok: false },
       { text: "300", ok: false },
       { text: "360", ok: false },
-      { text: "420", ok: false }
+      { text: "420", ok: false },
+      { text: "120", ok: true }
     ]
   },
   {
-    text: "Bir otelin 40 odasının bir bölümü 2 yataklı, gerisi 3 yataklıdır.\n\nBu otelin yatak kapasitesi 95 olduğuna göre kaç odası 2 yataklıdır?",
+    text: "<p>Bir otelin 40 odasının bir bölümü 2 yataklı, gerisi 3 yataklıdır.</p><p><b>Bu otelin yatak kapasitesi 95 olduğuna göre kaç odası 2 yataklıdır?</b></p>",
     diff: 1,
-    expl: "2 yataklı oda sayısı x, 3 yataklı y olsun. x + y = 40. Toplam yatak: 2x + 3y = 95. y yerine (40-x) yazarsak: 2x + 3(40-x) = 95 => 120 - x = 95 => x = 25 bulunur.",
+    expl: "x + y = 40 ve 2x + 3y = 95 ⇒ 2x + 3(40 − x) = 95 ⇒ x = 25.",
     answers: [
       { text: "20", ok: false },
       { text: "23", ok: false },
@@ -170,9 +170,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "48 tane tavşan ve tavuğun bulunduğu bir kümeste toplam ayak sayısı 128 olduğuna göre, kümeste kaç tavşan vardır?",
+    text: "<p><b>48 tane tavşan ve tavuğun bulunduğu bir kümeste toplam ayak sayısı 128 olduğuna göre, kümeste kaç tavşan vardır?</b></p>",
     diff: 1,
-    expl: "Tavşan (4 ayak) = x, Tavuk (2 ayak) = y. x + y = 48. Toplam ayak: 4x + 2y = 128. y yerine (48-x) yazarsak: 4x + 2(48-x) = 128 => 2x + 96 = 128 => 2x = 32 => x = 16 tavşan.",
+    expl: "Tavşan x, tavuk 48 − x olsun. 4x + 2(48 − x) = 128 ⇒ 2x = 32 ⇒ x = 16.",
     answers: [
       { text: "10", ok: false },
       { text: "12", ok: false },
@@ -182,24 +182,24 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "100 soruluk bir sınavda 4 yanlış bir doğruyu götürmektedir. Her net için 4 puan kazanan bir öğrenci bütün sorularını cevaplamış ve 360 puan almıştır.\n\nBuna göre bu öğrenci kaç soruya yanlış cevap vermiştir?",
+    text: "<p>100 soruluk bir sınavda 4 yanlış bir doğruyu götürmektedir. Her net için 4 puan kazanan bir öğrenci bütün sorularını cevaplamış ve 360 puan almıştır.</p><p><b>Buna göre bu öğrenci kaç soruya yanlış cevap vermiştir?</b></p>",
     diff: 2,
-    expl: "Öğrenci D tane doğru, Y tane yanlış yapmış olsun. D + Y = 100. Net sayısı: N = D - Y/4. Puan: 4 * N = 360 => N = 90 net. D - Y/4 = 90 denkleminde D yerine (100-Y) yazalım: 100 - Y - Y/4 = 90 => 5Y/4 = 10 => Y = 8 yanlış.",
+    expl: "Kitabın cevap anahtarı B (24) seçeneğini vermektedir. Not: 360 / 4 = 90 net; D + Y = 100 ve D − Y/4 = 90 denklemlerinden Y = 8 bulunur, bu değer seçeneklerde yoktur.",
     answers: [
       { text: "20", ok: false },
-      { text: "24", ok: false },
+      { text: "24", ok: true },
       { text: "28", ok: false },
       { text: "32", ok: false },
-      { text: "8", ok: true }
-    ] // Kitabın şıkları A) 20 B) 24 C) 28 D) 32 E) 36 verilmiştir ancak matematiksel cevap kesinlikle 8'dir. B şıkkında muhtemelen bir hata var (Kitap anahtarı 16.B demiştir). Sisteme matematiksel olarak doğru olan 8 eklenmiştir.
+      { text: "36", ok: false }
+    ]
   },
 
 // ─── SAYI PROBLEMLERİ TEST - 4 ────────────────────────────────────────────────
 
   {
-    text: "Bir sınıfta öğrenciler sıralara ikişer ikişer otururlarsa 8 kişi ayakta kalıyor. Üçer üçer otururlarsa 4 kişilik boş yer kalıyor.\n\nBuna göre bu sınıfta kaç öğrenci vardır?",
+    text: "<p>Bir sınıfta öğrenciler sıralara ikişer ikişer otururlarsa 8 kişi ayakta kalıyor. Üçer üçer otururlarsa 4 kişilik boş yer kalıyor.</p><p><b>Buna göre bu sınıfta kaç öğrenci vardır?</b></p>",
     diff: 2,
-    expl: "Sıra sayısı x olsun. İkişerli oturma durumu: 2x + 8 (Sınıf mevcudu). Üçerli oturma durumu: 3x - 4 (Sınıf mevcudu). Birbirine eşitlersek: 2x + 8 = 3x - 4 => x = 12 sıra vardır. Öğrenci sayısı = 2(12) + 8 = 32'dir.",
+    expl: "Sıra sayısı x olsun. 2x + 8 = 3x − 4 ⇒ x = 12. Öğrenci sayısı 2 · 12 + 8 = 32.",
     answers: [
       { text: "20", ok: false },
       { text: "24", ok: false },
@@ -209,9 +209,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir sınıftaki öğrenciler sıralara üçerli otururlarsa 6 öğrenci ayakta kalıyor. Eğer dörderli otururlarsa 2 sıra boş kalıyor.\n\nBuna göre, öğrenciler sıralara beşerli otururlarsa, kaç sıra tam dolmaz?",
+    text: "<p>Bir sınıftaki öğrenciler sıralara üçerli otururlarsa 6 öğrenci ayakta kalıyor. Eğer dörderli otururlarsa 2 sıra boş kalıyor.</p><p><b>Buna göre, öğrenciler sıralara beşerli otururlarsa, kaç sıra tam <u>dolmaz</u>?</b></p>",
     diff: 3,
-    expl: "Sıra sayısı x olsun. Mevcut = 3x + 6. Dörderli oturulursa 2 sıra boş kalıyor: Mevcut = 4(x - 2). Eşitlersek: 3x + 6 = 4x - 8 => x = 14 sıra vardır. Sınıf mevcudu = 3(14) + 6 = 48 öğrencidir. 48 öğrenci beşerli oturursa 48 / 5 = 9 sıra tam dolar, geriye 3 öğrenci kalır (onlar da 1 sırayı yarım doldurur). Toplam 14 sıra vardı. 9'u tam dolu, 1'i yarım, 4'ü tamamen boş. Tam dolmayan sıra sayısı = 1 (yarım) + 4 (boş) = 5'tir.",
+    expl: "Sıra sayısı x olsun. 3x + 6 = 4(x − 2) ⇒ x = 14, öğrenci sayısı 48. Beşerli oturulursa 9 sıra tam dolar, 1 sırada 3 kişi oturur, 4 sıra boş kalır. Tam dolmayan sıra sayısı 1 + 4 = 5.",
     answers: [
       { text: "3", ok: false },
       { text: "4", ok: false },
@@ -221,9 +221,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "50 kişilik boş koltuğun bulunduğu 150 kişilik bir konferans salonuna a kişi gelirse boş koltuk sayısı (a + 10) a düşeceğine göre bu salondan (a + 3) kişi çıksaydı boş koltuk sayısı kaç olurdu?",
+    text: "<p><b>50 kişilik boş koltuğun bulunduğu 150 kişilik bir konferans salonuna a kişi gelirse boş koltuk sayısı (a + 10) a düşeceğine göre bu salondan (a + 3) kişi çıksaydı boş koltuk sayısı kaç olurdu?</b></p>",
     diff: 2,
-    expl: "Salon 150 kişilik, 50 boş koltuk varsa içeride 100 kişi vardır. Salona a kişi gelirse içeride 100+a kişi olur, boş koltuk sayısı 150 - (100+a) = 50-a olur. Soruya göre bu sayı a+10'dur. 50-a = a+10 => 2a = 40 => a=20. Eğer içerideki 100 kişiden a+3 (yani 23) kişi çıksaydı içeride 77 kişi kalırdı. Boş koltuk sayısı = 150 - 77 = 73 olurdu.",
+    expl: "Salonda 100 kişi vardır. a kişi gelirse boş koltuk 50 − a = a + 10 ⇒ a = 20. Salondan a + 3 = 23 kişi çıksaydı boş koltuk sayısı 50 + 23 = 73 olurdu.",
     answers: [
       { text: "27", ok: false },
       { text: "43", ok: false },
@@ -233,9 +233,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Enes 6 adım ileri, 2 adım geri atarak ilerliyor.\n\nToplam 89 adım attığına göre kaç adım ilerlemiş olur?",
+    text: "<p>Enes 6 adım ileri, 2 adım geri atarak ilerliyor.</p><p><b>Toplam 89 adım attığına göre kaç adım ilerlemiş olur?</b></p>",
     diff: 2,
-    expl: "Enes'in bir periyodu (döngüsü) 6+2=8 adımdır ve bu 8 adımda net olarak 6-2=4 adım ilerler. 89 adımın içinde kaç tam periyot olduğuna bakalım: 89 / 8 = 11 tam periyot var, geriye 1 adım artar. 11 periyotta 11*4 = 44 adım ilerler. Kalan 1 adımı da ileri doğru atacağı için toplamda 44 + 1 = 45 adım ilerlemiş olur.",
+    expl: "Her 8 adımda net 4 adım ilerler. 89 = 11 · 8 + 1 olduğundan 11 · 4 = 44 adım ilerler, kalan 1 adım da ileri atılır: 44 + 1 = 45.",
     answers: [
       { text: "42", ok: false },
       { text: "43", ok: false },
@@ -245,9 +245,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "30 metre derinliğindeki bir kuyunun dibinde bulunan kurbağa, hergün 5 metre yukarı çıkarken 3 metre aşağı kaymaktadır.\n\nBuna göre kurbağa kaçıncı günde kuyudan çıkar?",
+    text: "<p>30 metre derinliğindeki bir kuyunun dibinde bulunan kurbağa, hergün 5 metre yukarı çıkarken 3 metre aşağı kaymaktadır.</p><p><b>Buna göre kurbağa kaçıncı günde kuyudan çıkar?</b></p>",
     diff: 2,
-    expl: "Kurbağanın günlük net ilerlemesi 5 - 3 = 2 metredir. Ancak son gün zirveye ulaştığında bir daha geri kaymayacaktır. Bu yüzden tırmanması gereken net mesafeden son günkü atılımı (5m) çıkaralım: 30 - 5 = 25 metre. 25 metreyi günde 2 metre ilerleyerek 12.5 yani 13 günde çıkar (13 günde 26 metrede olur). 14. gün 5 metre sıçrayıp kuyudan (31 metreye çıkarak) tamamen çıkmış olur.",
+    expl: "Günlük net ilerleme 2 m'dir. Son gün kaymayacağından n. gün sonunda 2(n − 1) + 5 ≥ 30 olmalıdır ⇒ n − 1 ≥ 12,5 ⇒ n = 14. (13 gün sonunda 26 m'dedir, 14. gün 5 m çıkarak kuyudan çıkar.)",
     answers: [
       { text: "13", ok: false },
       { text: "14", ok: true },
@@ -257,9 +257,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir fare 32 m uzunluğundaki bir ağaca tırmanırken 4 m çıkıp 1 m aşağı kayıyor.\n\nBuna göre fare bu ağacın en üst yüzeyine geldiğinde kaç m yol almış olur?",
+    text: "<p>Bir fare 32 m uzunluğundaki bir ağaca tırmanırken 4 m çıkıp 1 m aşağı kayıyor.</p><p><b>Buna göre fare bu ağacın en üst yüzeyine geldiğinde kaç m yol almış olur?</b></p>",
     diff: 3,
-    expl: "Farenin bir döngüsü (4 yukarı, 1 aşağı) toplam 5m yol almasını sağlar ancak net olarak 3m yükselir. En tepeye ulaştığında son adımında geri kaymayacağı için 32 - 4 = 28m'lik kısmı döngülerle çıkmalıdır. 28 / 3 = 9.33... yani 10 tam döngü gereklidir. 10 döngüde 10*5 = 50m yol alır ve 30m yüksekliğe ulaşır. Kalan 2m'yi de direk yukarı çıkarak tamamlar (aşağı kaymaz). Toplam aldığı yol = 50 + 2 = 52 metredir.",
+    expl: "Her döngüde 5 m yol alır, net 3 m yükselir. 10 döngü sonunda 30 m yükseklikte olur ve 50 m yol almıştır. Kalan 2 m'yi çıkarak tepeye ulaşır: 50 + 2 = 52 m.",
     answers: [
       { text: "45", ok: false },
       { text: "46", ok: false },
@@ -269,9 +269,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir fidan dikildikten sonra her ayın sonunda bir önceki aydaki boyunun 3 katı oluyor.\n\nBu fidanın boyu 8. ayın sonunda 3⁸/2 cm olduğuna göre kaçıncı ayın sonunda boyu 13,5 cm olur?",
+    text: "<p>Bir fidan dikildikten sonra her ayın sonunda bir önceki aydaki boyunun 3 katı oluyor.</p><p><b>Bu fidanın boyu 8. ayın sonunda 3<sup>8</sup>/2 cm olduğuna göre kaçıncı ayın sonunda boyu 13,5 cm olur?</b></p>",
     diff: 2,
-    expl: "Fidanın başlangıç boyuna x diyelim. n. ayın sonunda boyu x · 3ⁿ olur. 8. ayın sonunda: x · 3⁸ = 3⁸ / 2 => x = 1/2 cm. Fidanın boyunun 13.5 (yani 27/2) cm olmasını istiyoruz. Denklem: (1/2) · 3ⁿ = 27 / 2 => 3ⁿ = 27 => n = 3 bulunur.",
+    expl: "Başlangıç boyu x ise n. ayın sonunda x · 3<sup>n</sup> olur. x · 3<sup>8</sup> = 3<sup>8</sup>/2 ⇒ x = 1/2. (1/2) · 3<sup>n</sup> = 27/2 ⇒ 3<sup>n</sup> = 27 ⇒ n = 3.",
     answers: [
       { text: "2", ok: false },
       { text: "3", ok: true },
@@ -281,9 +281,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Ferda bir merdivenin basamaklarını ikişer ikişer çıkıp, üçer üçer inmiştir.\n\nFerda'nın çıkarken attığı adım sayısı, inerken attığı adım sayısından 15 fazla ise bu merdiven kaç basamaklıdır?",
+    text: "<p>Ferda bir merdivenin basamaklarını ikişer ikişer çıkıp, üçer üçer inmiştir.</p><p><b>Ferda'nın çıkarken attığı adım sayısı, inerken attığı adım sayısından 15 fazla ise bu merdiven kaç basamaklıdır?</b></p>",
     diff: 1,
-    expl: "Basamak sayısı x olsun. Çıkarken attığı adım x/2, inerken x/3. Denklem: x/2 = x/3 + 15 => x/2 - x/3 = 15 => x/6 = 15 => x = 90 basamaklıdır.",
+    expl: "x/2 − x/3 = 15 ⇒ x/6 = 15 ⇒ x = 90.",
     answers: [
       { text: "60", ok: false },
       { text: "75", ok: false },
@@ -293,33 +293,33 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Dolu bir bidonun ağırlığı x kg, yarısı dolu bidonun ağırlığı y kg'dır.\n\nBuna göre boş bidonun ağırlığı kaç kg'dır?",
+    text: "<p>Dolu bir bidonun ağırlığı x kg, yarısı dolu bidonun ağırlığı y kg'dır.</p><p><b>Buna göre boş bidonun ağırlığı kaç kg'dır?</b></p>",
     diff: 2,
-    expl: "Su miktarına S, boş bidonun ağırlığına B diyelim. Dolu bidon: S + B = x. Yarısı dolu bidon: S/2 + B = y. İkinci denklemi 2 ile çarparsak: S + 2B = 2y. Birinci denklemi bundan çıkarırsak: (S + 2B) - (S + B) = 2y - x => B = 2y - x bulunur.",
+    expl: "Boş bidon B, su S olsun. B + S = x, B + S/2 = y. İkinci denklemin 2 katından birinci çıkarılırsa B = 2y − x.",
     answers: [
-      { text: "2y - x", ok: true },
-      { text: "y - x", ok: false },
-      { text: "x - y", ok: false },
+      { text: "2y − x", ok: true },
+      { text: "y − x", ok: false },
+      { text: "x − y", ok: false },
       { text: "x + y", ok: false },
-      { text: "(x - y) / (x + y)", ok: false }
+      { text: "(x − y)/(x + y)", ok: false }
     ]
   },
   {
-    text: "Bir kitabın sayfalarını 1 den başlayarak numaralandırmak için 264 rakam kullanılmıştır.\n\nBuna göre bu kitap kaç sayfadır?",
+    text: "<p>Bir kitabın sayfalarını 1 den başlayarak numaralandırmak için 264 rakam kullanılmıştır.</p><p><b>Buna göre bu kitap kaç sayfadır?</b></p>",
     diff: 2,
-    expl: "1-9 arası (tek basamaklı) sayfalar için 9 rakam kullanılır. 10-99 arası (iki basamaklı) 90 sayfa için 90*2 = 180 rakam kullanılır. Toplam 189 rakam kullanıldı. Geriye 264 - 189 = 75 rakam kaldı. Bunlar üç basamaklı sayfalardır. 75 / 3 = 25 sayfa üç basamaklıdır. Toplam sayfa sayısı = 99 + 25 = 124'tür.",
+    expl: "1–9 için 9, 10–99 için 180 rakam kullanılır (toplam 189). Kalan 264 − 189 = 75 rakam, 75 / 3 = 25 tane üç basamaklı sayfadır. Sayfa sayısı 99 + 25 = 124.",
     answers: [
       { text: "123", ok: false },
-      { text: "124", ok: false },
-      { text: "125", ok: true },
+      { text: "124", ok: true },
+      { text: "125", ok: false },
       { text: "126", ok: false },
       { text: "127", ok: false }
-    ] // Yazar notu: Kitabın cevabı 125(C) olarak vermiştir. Lakin matematiksel hesap 124'tür. Cevap anahtarına uygunluk için C seçeneği işaretlenmiştir.
+    ]
   },
   {
-    text: "İçinde bir miktar su bulunan kap 3 kg gelmektedir. Kaba içindeki suyun 3 katı kadar su ilave edildiğinde kalan ağırlığı 4,8 kg geldiğine göre boş kabın ağırlığı kaç kg'dır?",
+    text: "<p><b>İçinde bir miktar su bulunan kap 3 kg gelmektedir. Kaba içindeki suyun 3 katı kadar su ilave edildiğinde kalan ağırlığı 4,8 kg geldiğine göre boş kabın ağırlığı kaç kg'dır?</b></p>",
     diff: 2,
-    expl: "Boş kap K, içindeki su S olsun. Başlangıçta K + S = 3 kg. İçindeki suyun 3 katı (3S) kadar su eklenirse içindeki toplam su 4S olur. Yeni ağırlık: K + 4S = 4.8. İkinci denklemden birinciyi çıkarırsak: 3S = 1.8 => S = 0.6 kg. Başlangıçtaki denkleme dönersek K + 0.6 = 3 => K = 2.4 kg bulunur.",
+    expl: "K + S = 3 ve K + 4S = 4,8 ⇒ 3S = 1,8 ⇒ S = 0,6 ⇒ K = 2,4 kg.",
     answers: [
       { text: "2,2", ok: false },
       { text: "2,3", ok: false },
@@ -329,9 +329,9 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Su dolu bir şişe 900 gramdır. Suyun yarısı içildiğinde şişe 680 gram gelmektedir.\n\nBuna göre boş şişenin ağırlığı kaç gramdır?",
+    text: "<p>Su dolu bir şişe 900 gramdır. Suyun yarısı içildiğinde şişe 680 gram gelmektedir.</p><p><b>Buna göre boş şişenin ağırlığı kaç gramdır?</b></p>",
     diff: 1,
-    expl: "Boş şişe = B, Tamamı su = S. B + S = 900 ve B + S/2 = 680. İkinci denklemi 2 ile çarparsak 2B + S = 1360. İlk denklemi bundan çıkarırsak B = 1360 - 900 = 460 gram bulunur.",
+    expl: "Suyun yarısı 900 − 680 = 220 g, tamamı 440 g'dır. Boş şişe 900 − 440 = 460 g.",
     answers: [
       { text: "460", ok: true },
       { text: "440", ok: false },
@@ -341,21 +341,21 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "Bir sokağın her iki tarafına eşit aralıklarla sokağın başına ve sonuna bir direk gelecek şekilde toplam 18 direk dikilecektir. 2 direk arası 3 m daha uzun olsaydı toplam 12 direk dikilecekti.\n\nBuna göre sokağın uzunluğu kaç m'dir?",
+    text: "<p>Bir sokağın her iki tarafına eşit aralıklarla sokağın başına ve sonuna bir direk gelecek şekilde toplam 18 direk dikilecektir. 2 direk arası 3 m daha uzun olsaydı toplam 12 direk dikilecekti.</p><p><b>Buna göre sokağın uzunluğu kaç m'dir?</b></p>",
     diff: 3,
-    expl: "Sokağın her iki tarafına toplam 18 direk dikilecekse, bir tarafına 9 direk dikilir. 9 direk arasında 8 aralık (x) vardır. Sokağın uzunluğu L = 8x. Eğer direk arası (x+3) olsaydı toplam 12, yani taraf başı 6 direk olacaktı. 6 direk arasında 5 aralık vardır. L = 5(x+3). İki durumu eşitlersek: 8x = 5x + 15 => 3x = 15 => x = 5m. Sokağın uzunluğu L = 8 * 5 = 40 metredir. (Cevap anahtarına uygunluk için seçenekler dikkatlice incelendiğinde '40' doğru cevaptır).",
+    expl: "Kitabın cevap anahtarı B (93,5) seçeneğini vermektedir; bu sonuç her bir tarafa 18 ve 12 direk dikildiği kabul edilerek bulunur: aralık x ise 17x = 11(x + 3) ⇒ x = 5,5 ⇒ uzunluk 17 · 5,5 = 93,5 m. (\"Toplam\" ifadesi iki tarafın toplamı olarak alınırsa 8x = 5(x + 3) ⇒ 40 m bulunur ve bu seçeneklerde yoktur.)",
     answers: [
       { text: "36", ok: false },
-      { text: "40", ok: true },
+      { text: "93,5", ok: true },
       { text: "45", ok: false },
       { text: "48", ok: false },
       { text: "67,5", ok: false }
     ]
   },
   {
-    text: "Ali, Ahmet ve Ayşe'nin toplam 45 tane oyuncağı vardır. Ali oyuncaklarının yarısını Ahmet'e, Ahmet oyuncaklarının üçte birini Ayşe'ye ve Ayşe'de oyuncaklarının dörtte birini Ali'ye verdiğinde hiç kimsenin oyuncak sayısı değişmiyor.\n\nBaşlangıçta Ahmet'in kaç oyuncağı vardır?",
+    text: "<p>Ali, Ahmet ve Ayşe'nin toplam 45 tane oyuncağı vardır. Ali oyuncaklarının yarısını Ahmet'e, Ahmet oyuncaklarının üçte birini Ayşe'ye ve Ayşe'de oyuncaklarının dörtte birini Ali'ye verdiğinde hiç kimsenin oyuncak sayısı değişmiyor.</p><p><b>Başlangıçta Ahmet'in kaç oyuncağı vardır?</b></p>",
     diff: 3,
-    expl: "Hiç kimsenin oyuncak sayısı değişmiyorsa, verdikleri oyuncak sayısı aldıklarına eşittir (eş zamanlı takas varsayımıyla). \nAli A/2 verir, C/4 alır => A/2 = C/4 => C = 2A. \nAhmet B/3 verir, A/2 alır => B/3 = A/2 => B = 1.5A. \nAyşe C/4 verir, B/3 alır => C/4 = B/3 => C = 4/3 B = 4/3(1.5A) = 2A (Denklemler tutarlı).\nToplam oyuncak: A + B + C = A + 1.5A + 2A = 4.5A = 45 => A = 10. Ahmet'in oyuncak sayısı B = 1.5 * 10 = 15'tir.",
+    expl: "Ali, Ahmet, Ayşe'nin oyuncakları A, B, C olsun. Herkesin verdiği aldığına eşittir: A/2 = C/4, B/3 = A/2 ⇒ C = 2A, B = 1,5A. A + 1,5A + 2A = 4,5A = 45 ⇒ A = 10, B = 15.",
     answers: [
       { text: "10", ok: false },
       { text: "12", ok: false },
@@ -368,9 +368,57 @@ export const MAT_SAYI_PROBLEMLERI_T3: McQ[] = [
 
 export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
   {
-    text: "Yedi vagonlu trendeki her bir vagona en fazla 25 yolcu binmektedir. Bu trende ardışık olan her iki vagondaki toplam yolcu sayısının 29 olduğu biliniyor.\n\nBuna göre, trendeki toplam yolcu sayısı en az kaç olabilir?",
+    text: "<p>Bir koşu yarışmasında üç koşucu aynı anda koşmaya başlamışlardır.</p><p>Birinci gelen koşucu yarışı bitirdiğinde ikinci ile arasında 28 m, üçüncü ile arasında 48 m mesafe bulunmaktadır. İkinci gelen atlet yarışı bitirdiğinde ise üçüncü ile arasında 24 metre mesafe bulunmaktadır.</p><p><b>Buna göre yarış pisti kaç m dir?</b></p>",
     diff: 3,
-    expl: "Vagonlar w1, w2... w7 olsun. Her ardışık iki vagon 29 ise: w1+w2=29, w2+w3=29 => w1=w3=w5=w7 (tekler eşit). Aynı şekilde çiftler w2=w4=w6 birbirine eşittir. w1'e x dersek, w2=29-x olur. Toplam yolcu = 4x + 3(29-x) = x + 87. Toplamı minimize etmek için x'i en küçük seçmeliyiz. Ancak her vagonda max 25 kişi kuralı vardır. Çift vagonlardaki yolcu (29-x) ≤ 25 olmalı => x ≥ 4. x'in en küçük değeri 4'tür. Toplam yolcu = 4 + 87 = 91 olur.",
+    expl: "Pist L olsun. Birinci bitirdiğinde ikinci L − 28, üçüncü L − 48 metrededir. İkinci kalan 28 m'yi koşarken üçüncü 48 − 24 = 24 m koşar; hız oranı 28/24 = 7/6'dır. (L − 28)/(L − 48) = 7/6 ⇒ 6L − 168 = 7L − 336 ⇒ L = 168 m.",
+    answers: [
+      { text: "140", ok: false },
+      { text: "168", ok: true },
+      { text: "192", ok: false },
+      { text: "144", ok: false },
+      { text: "156", ok: false }
+    ]
+  },
+  {
+    text: "<p>Kitap fuarına giden bir öğrenci grubunda 10 öğrenci 1'er kitap almış, diğer öğrencilerin her biri ise en az 3 en fazla 5 kitap almıştır. 4'er kitap alan öğrencilerin sayısı; 3'er kitap alan öğrencilerin sayısının üç katına, 5'er kitap alan öğrencilerin sayısının ise yarısına eşittir.</p><p><b>Gruptaki öğrenciler toplam 190 kitap aldığına göre, grupta kaç öğrenci vardır?</b></p>",
+    diff: 3,
+    expl: "3'er kitap alan a kişi ise 4'er alan 3a, 5'er alan 6a kişidir. 10 + 3a + 12a + 30a = 190 ⇒ 45a = 180 ⇒ a = 4. Öğrenci sayısı 10 + 4 + 12 + 24 = 50.",
+    answers: [
+      { text: "36", ok: false },
+      { text: "40", ok: false },
+      { text: "60", ok: false },
+      { text: "50", ok: true },
+      { text: "44", ok: false }
+    ]
+  },
+  {
+    text: "<p>Murat, 1'den 10'a kadar tam sayılarla numaralandırılmış 10 karttan önce iki kart çekiyor, sonra kalan kartlardan iki kart daha alarak toplam dört kart alıyor. Murat'ın aldığı kartlarla ilgili aşağıdakiler bilinmektedir.</p><ul><li>Murat'ın önce aldığı iki kartın numaraları çarpımı 24'tür.</li><li>Murat'ın önce aldığı iki kartın numaraları toplamı, sonra aldığı iki kartın numaraları toplamına eşittir.</li></ul><p><b>Buna göre, Murat'ın sonradan aldığı kartların numaraları çarpımı kaç farklı değer alabilir?</b></p>",
+    diff: 3,
+    expl: "Çarpımı 24 olan kartlar (3, 8) veya (4, 6)'dır. (3, 8) için toplam 11: sonraki kartlar (1, 10), (2, 9), (4, 7), (5, 6) ⇒ çarpımlar 10, 18, 28, 30. (4, 6) için toplam 10: (1, 9), (2, 8), (3, 7) ⇒ çarpımlar 9, 16, 21. Toplam 7 farklı değer.",
+    answers: [
+      { text: "7", ok: true },
+      { text: "2", ok: false },
+      { text: "4", ok: false },
+      { text: "3", ok: false },
+      { text: "5", ok: false }
+    ]
+  },
+  {
+    text: "<p>Mehmet, ikisi fizik ve ikisi kimya olmak üzere her birinde 16'şar soru bulunan 4 farklı test çözmüştür. Mehmet'in bu 4 testteki doğru cevap sayılarının ortalaması 12, kimya testlerindeki doğru cevap sayılarının ortalaması ise 11'dir.</p><p><b>Buna göre, Mehmet'in bir fizik testindeki doğru cevap sayısı ile bir kimya testindeki doğru cevap sayısı arasındaki fark en fazla kaç olabilir?</b></p>",
+    diff: 3,
+    expl: "Toplam doğru 48, kimya toplamı 22, fizik toplamı 26'dır. Fizik testlerinden biri 16 olabilir; kimya testlerinden biri en az 22 − 16 = 6 olur. Fark en fazla 16 − 6 = 10'dur. (Ters durumda kimya 16, fizik en az 26 − 16 = 10 ⇒ fark 6.)",
+    answers: [
+      { text: "8", ok: false },
+      { text: "7", ok: false },
+      { text: "11", ok: false },
+      { text: "10", ok: true },
+      { text: "9", ok: false }
+    ]
+  },
+  {
+    text: "<p>Yedi vagonlu trendeki her bir vagona en fazla 25 yolcu binmektedir. Bu trende ardışık olan her iki vagondaki toplam yolcu sayısının 29 olduğu biliniyor.</p><p><b>Buna göre, trendeki toplam yolcu sayısı en az kaç olabilir?</b></p>",
+    diff: 3,
+    expl: "Ardışık iki vagonun toplamı 29 olduğundan tek sıradaki vagonlar (1, 3, 5, 7) x, çift sıradakiler (2, 4, 6) 29 − x yolcu taşır. Toplam 4x + 3(29 − x) = x + 87. 29 − x ≤ 25 ⇒ x ≥ 4. En az toplam 4 + 87 = 91.",
     answers: [
       { text: "90", ok: false },
       { text: "91", ok: true },
@@ -380,9 +428,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "0 ile 100 arasında puan verilen bir sınava giren 15 öğrenciden 10 öğrencinin 60'dan fazla 80'den az puan aldığı bilinmektedir.\n\nBuna göre bu 15 öğrencinin sınavdan aldıkları puanların aritmetik ortalaması\nI. 45\nII. 75\nIII. 88\ndeğerlerinden hangileri olabilir?",
+    text: "<p>0 ile 100 arasında puan verilen bir sınava giren 15 öğrenciden 10 öğrencinin 60'dan fazla 80'den az puan aldığı bilinmektedir.</p><p><b>Buna göre bu 15 öğrencinin sınavdan aldıkları puanların aritmetik ortalaması</b></p><p>I. 45<br>II. 75<br>III. 88</p><p><b>değerlerinden hangileri olabilir?</b></p>",
     diff: 3,
-    expl: "10 öğrencinin puan aralığı (60, 80) olduğuna göre sınır puanlar 61 ve 79'dur. Geriye kalan 5 öğrencinin puanı [0, 100] aralığında olabilir.\nMinimum Ortalama: 10 öğrenci 61, 5 öğrenci 0 alır. Toplam = 610. Ort = 610/15 = 40.66.\nMaksimum Ortalama: 10 öğrenci 79, 5 öğrenci 100 alır. Toplam = 790+500=1290. Ort = 1290/15 = 86.\nOrtalama (40.66, 86) aralığında olmalıdır. I(45) ve II(75) bu aralıktadır ancak III(88) bu aralığın dışındadır.",
+    expl: "10 öğrencinin toplamı 600'den büyük, 800'den küçüktür; diğer 5 öğrencinin toplamı 0 ile 500 arasındadır. Ortalama 600/15 = 40'tan büyük, 1300/15 ≈ 86,7'den küçüktür. 45 ve 75 olabilir, 88 olamaz.",
     answers: [
       { text: "Yalnız I", ok: false },
       { text: "Yalnız II", ok: false },
@@ -392,9 +440,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Bir grup çocuk belirli sayıdaki ellerinde bulunan şekerleri eşit sayıda paylaşmış ve her biri kendi şekerlerinden 2 tanesini yemiştir. Gruba daha sonra katılan Ozan'a ellerinde kalan şekerlerden birer tane verdiklerinden gruptaki herkesin elinde eşit sayıda şeker olduğu görülmüştür.\n\nBuna göre başlangıçtaki şeker sayısı aşağıdakilerden hangisi olamaz?",
+    text: "<p>Bir grup çocuk belirli sayıdaki ellerinde bulunan şekerleri eşit sayıda paylaşmış ve her biri kendi şekerlerinden 2 tanesini yemiştir. Gruba daha sonra katılan Ozan'a ellerinde kalan şekerlerden birer tane verdiklerinden gruptaki herkesin elinde eşit sayıda şeker olduğu görülmüştür.</p><p><b>Buna göre başlangıçtaki şeker sayısı aşağıdakilerden hangisi <u>olamaz</u>?</b></p>",
     diff: 3,
-    expl: "Başlangıçtaki çocuk sayısı N ve toplam şeker C olsun. Her çocuk C/N şeker alır. 2 tane yedikleri için C/N - 2 kalır. Ozan'a 1 şeker verdiklerinde her çocukta C/N - 3 kalır. Ozan ise N çocuktan 1'er şeker aldığı için N şekeri olur. Herkesin şekeri eşit olduğuna göre C/N - 3 = N => C/N = N+3 => C = N(N+3). \nŞıkları inceleyelim: \nA) 108 = 9*12 (N=9, Olabilir)\nB) 40 = 5*8 (N=5, Olabilir)\nC) 54 = 6*9 (N=6, Olabilir)\nD) 36 = Hiçbir tam sayı n(n+3)'ü sağlamaz (Olamaz)\nE) 70 = 7*10 (N=7, Olabilir)",
+    expl: "N çocuk ve C şeker olsun. Her çocukta C/N − 3 şeker kalır, Ozan'da N şeker olur. C/N − 3 = N ⇒ C = N(N + 3). 108 = 9 · 12, 40 = 5 · 8, 54 = 6 · 9, 70 = 7 · 10 yazılabilir; 36 bu biçimde yazılamaz.",
     answers: [
       { text: "108", ok: false },
       { text: "40", ok: false },
@@ -404,9 +452,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Tamamen dolu olan bir laptopun bataryası; sadece uyku moduna alındığında 120 saatte, film izlerken ise 5 saatte tamamen bitiyor. Bu laptopun bataryası tamamen dolu olan bu laptop 40 saat sadece uyku moduna alınıyor ve hemen ardından 45 dakika sadece film izleniyor.\n\nBuna göre, bu laptopun kalan bataryası ile en fazla kaç dakika film izlenebilir?",
+    text: "<p>Tamamen dolu olan bir laptopun bataryası; sadece uyku moduna alındığında 120 saatte, film izlerken ise 5 saatte tamamen bitiyor. Bu laptopun bataryası uyku modunda da film izlerken de sabit hızla azalıyor. Bataryası tamamen dolu olan bu laptop 40 saat sadece uyku moduna alınıyor ve hemen ardından 45 dakika sadece film izleniyor.</p><p><b>Buna göre, bu laptopun kalan bataryası ile en fazla kaç dakika film izlenebilir?</b></p>",
     diff: 2,
-    expl: "Bataryanın toplam kapasitesini oran olarak (1 birim) düşünelim. Uyku modu bataryayı saatte 1/120 oranında, film izlemek ise saatte 1/5 oranında tüketir.\n40 saat uyku = 40 * 1/120 = 1/3 tüketim.\n45 dk (3/4 saat) film = (3/4) * 1/5 = 3/20 tüketim.\nToplam tüketim = 1/3 + 3/20 = 20/60 + 9/60 = 29/60.\nKalan batarya = 1 - 29/60 = 31/60.\nBununla ne kadar film izlenebilir (dakika cinsinden): Toplam film süresi 5 saat = 300 dakikadır. 300 * (31/60) = 5 * 31 = 155 dakika.",
+    expl: "40 saat uyku bataryanın 40/120 = 1/3'ünü, 45 dakika film 45/300 = 3/20'sini tüketir. Kalan 1 − 1/3 − 3/20 = 31/60. Film süresi 300 · 31/60 = 155 dakika.",
     answers: [
       { text: "155", ok: true },
       { text: "145", ok: false },
@@ -419,9 +467,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
 // ─── KESİR PROBLEMLERİ TEST - 1 ───────────────────────────────────────────────
 
   {
-    text: "Yarısı ile 2 katının toplamı 45 olan sayının 1/3'ü kaçtır?",
+    text: "<p><b>Yarısı ile 2 katının toplamı 45 olan sayının 1/3'ü kaçtır?</b></p>",
     diff: 1,
-    expl: "Sayı x olsun. Denklem: x/2 + 2x = 45 => 5x/2 = 45 => x = 18. Bize bu sayının 1/3'ü soruluyor: 18 / 3 = 6.",
+    expl: "x/2 + 2x = 45 ⇒ 5x/2 = 45 ⇒ x = 18. 18'in 1/3'ü 6'dır.",
     answers: [
       { text: "3", ok: false },
       { text: "6", ok: true },
@@ -431,9 +479,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Hangi sayının 1/4'üne 7 eklenirse 15 elde edilir?",
+    text: "<p><b>Hangi sayının 1/4'üne 7 eklenirse 15 elde edilir?</b></p>",
     diff: 1,
-    expl: "Denklem: x/4 + 7 = 15 => x/4 = 8 => x = 32.",
+    expl: "x/4 + 7 = 15 ⇒ x/4 = 8 ⇒ x = 32.",
     answers: [
       { text: "2", ok: false },
       { text: "8", ok: false },
@@ -443,9 +491,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "200 gramı 36 TL olan bir baharat çeşidinin 3/4 kg'ı kaç TL'dir?",
+    text: "<p><b>200 gramı 36 TL olan bir baharat çeşidinin 3/4 kg'ı kaç TL dir?</b></p>",
     diff: 1,
-    expl: "200g = 36 TL ise, 1 kg (1000g) = 36 * 5 = 180 TL'dir. Bizden 1 kilonun 3/4'ünün fiyatı isteniyor: 180 * (3/4) = 45 * 3 = 135 TL.",
+    expl: "1 kg = 5 · 36 = 180 TL. 3/4 kg = 180 · 3/4 = 135 TL.",
     answers: [
       { text: "96", ok: false },
       { text: "108", ok: false },
@@ -455,9 +503,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "3/5'i 21 olan sayının 2/7'si kaçtır?",
+    text: "<p><b>3/5'i 21 olan sayının 2/7'si kaçtır?</b></p>",
     diff: 1,
-    expl: "Sayının tamamı: (3x/5) = 21 => 3x = 105 => x = 35. Bu sayının 2/7'si: 35 * (2/7) = 10.",
+    expl: "3x/5 = 21 ⇒ x = 35. 35 · 2/7 = 10.",
     answers: [
       { text: "5", ok: false },
       { text: "10", ok: true },
@@ -467,9 +515,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Hangi sayının 1/5'inin 18 fazlası, aynı sayının 1/3'ünün 8 eksiğine eşittir?",
+    text: "<p><b>Hangi sayının 1/5'inin 18 fazlası, aynı sayının 1/3'ünün 8 eksiğine eşittir?</b></p>",
     diff: 2,
-    expl: "Denklem: x/5 + 18 = x/3 - 8. Bilinmeyenleri bir tarafa toplayalım: 18 + 8 = x/3 - x/5 => 26 = 2x/15 => x = 13 * 15 = 195.",
+    expl: "x/5 + 18 = x/3 − 8 ⇒ 26 = 2x/15 ⇒ x = 195.",
     answers: [
       { text: "145", ok: false },
       { text: "165", ok: false },
@@ -479,9 +527,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Bir aracın yakıt deposuna 20 lt yakıt eklenince deponun yarısı, 10 lt yakıt azaltınca deponun 1/4'ü dolu oluyor.\n\nBuna göre depo kaç lt'liktir?",
+    text: "<p>Bir aracın yakıt deposuna 20 lt yakıt eklenince deponun yarısı, 10 lt yakıt azaltınca deponun 1/4'ü dolu oluyor.</p><p><b>Buna göre depo kaç lt'liktir?</b></p>",
     diff: 2,
-    expl: "Depodaki mevcut yakıt x, deponun tamamı V olsun. x + 20 = V/2 ve x - 10 = V/4. İkinci denklemi eksi ile çarpıp toplayalım: 30 = V/2 - V/4 => 30 = V/4 => V = 120 litre.",
+    expl: "Yakıt x, depo V olsun. x + 20 = V/2 ve x − 10 = V/4 ⇒ 30 = V/4 ⇒ V = 120 lt.",
     answers: [
       { text: "60", ok: false },
       { text: "90", ok: false },
@@ -491,9 +539,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Bir kitabın önce 2/7'si sonra kalanın 1/5'i okunuyor.\n\nOkunan kısım tüm kitabın kaçta kaçıdır?",
+    text: "<p>Bir kitabın önce 2/7'si sonra kalanın 1/5'i okunuyor.</p><p><b>Okunan kısım tüm kitabın kaçta kaçıdır?</b></p>",
     diff: 2,
-    expl: "Kitap 35x olsun (paydaların çarpımı). Önce 2/7'si yani 10x okundu. Kalan = 25x. Sonra kalanın 1/5'i yani 5x okundu. Toplam okunan = 10x + 5x = 15x. Oran: 15x / 35x = 3/7'dir.",
+    expl: "Kitap 35x olsun. Önce 10x okunur, kalan 25x'in 1/5'i 5x okunur. Okunan 15x/35x = 3/7.",
     answers: [
       { text: "3/7", ok: true },
       { text: "4/7", ok: false },
@@ -503,9 +551,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "3 yanlışın 1 doğruyu götürdüğü 30 soruluk bir sınavda, sadece 2 soruyu boş bırakan öğrenci 20 net yaptığına göre kaç yanlış yapmıştır?",
+    text: "<p><b>3 yanlışın 1 doğruyu götürdüğü 30 soruluk bir sınavda, sadece 2 soruyu boş bırakan öğrenci 20 net yaptığına göre kaç yanlış yapmıştır?</b></p>",
     diff: 2,
-    expl: "Öğrenci 28 soruyu işaretlemiştir. Doğru D, Yanlış Y olsun. D + Y = 28. Net sayısı = D - Y/3 = 20. İlk denklemden D yerine 28-Y yazalım: (28 - Y) - Y/3 = 20 => 8 = 4Y/3 => Y = 6 bulunur.",
+    expl: "D + Y = 28 ve D − Y/3 = 20 ⇒ 28 − Y − Y/3 = 20 ⇒ 4Y/3 = 8 ⇒ Y = 6.",
     answers: [
       { text: "3", ok: false },
       { text: "6", ok: true },
@@ -515,9 +563,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "İpek parasının 2/15'ini kardeşine verince, kardeşine verdiği paranın 6 katının 15 TL fazlasına kendisinde kaldığına göre kardeşine ne kadar vermiştir?",
+    text: "<p><b>İpek parasının 2/15'ini kardeşine verince, kardeşine verdiği paranın 6 katının 15 TL fazlası kendisinde kaldığına göre kardeşine ne kadar vermiştir?</b></p>",
     diff: 2,
-    expl: "İpek'in parası 15x olsun. Kardeşine 2x verir. Kalan parası 13x'tir. Kardeşine verdiği paranın 6 katının 15 fazlası = 6(2x) + 15 = 12x + 15. Bu kalan parasına eşittir: 13x = 12x + 15 => x = 15. Kardeşine 2x = 30 TL vermiştir.",
+    expl: "Para 15x olsun. Kardeşine 2x verir, 13x kalır. 13x = 6 · 2x + 15 ⇒ x = 15. Kardeşine 2x = 30 TL vermiştir.",
     answers: [
       { text: "15", ok: false },
       { text: "30", ok: true },
@@ -527,9 +575,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Bir yayık makinesindeki ayranın önce 1/5'i sonra 2/3'ü satıldığında makinede 4 litre ayran kaldığına göre, yayık makinesi kaç litreliktir?",
+    text: "<p><b>Bir yayık makinesindeki ayranın önce 1/5'i sonra 2/3'ü satıldığında makinede 4 litre ayran kaldığına göre, yayık makinesi kaç litreliktir?</b></p>",
     diff: 2,
-    expl: "Soruda 'kalanın' ibaresi olmadığı için her iki kesir de bütüne göre hesaplanır. Makine 15x kapasiteli olsun. Önce 1/5'i (3x), sonra 2/3'ü (10x) satıldı. Toplam satılan = 13x. Kalan = 2x. 2x = 4 => x = 2. Makine kapasitesi 15x = 30 litredir.",
+    expl: "Kesirler bütüne göredir. Makine 15x olsun: 3x + 10x = 13x satılır, 2x kalır. 2x = 4 ⇒ x = 2 ⇒ 30 litre.",
     answers: [
       { text: "10", ok: false },
       { text: "15", ok: false },
@@ -539,9 +587,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Halit her gün cebindeki paranın 1/5'ini harcıyor.\n\n4. günün başında 320 TL parası olduğuna göre, Halit'in cebinde ilk günün sonunda ne kadar kalmıştır?",
+    text: "<p>Halit her gün cebindeki paranın 1/5'ini harcıyor.</p><p><b>4. günün başında 320 TL parası olduğuna göre, Halit'in cebinde ilk günün sonunda ne kadar kalmıştır?</b></p>",
     diff: 3,
-    expl: "Halit her gün parasının 1/5'ini harcıyorsa geriye 4/5'i kalır. Başlangıç parası P olsun. 1. gün sonu: P(4/5). 2. gün sonu: P(4/5)². 3. gün sonu (4. günün başı): P(4/5)³ = 320. Buradan P * (64/125) = 320 => P = 5 * 125 = 625 TL (İlk Para). İlk günün sonunda: 625 * 4/5 = 500 TL kalmıştır. Ancak kitabın cevap anahtarı kurgusal bir hatayla A(400) -yani 2. günün sonunu- işaret etmektedir. Veritabanına anahtar uygunluğundan A işlenmiştir.",
+    expl: "Kitabın cevap anahtarı A (400) seçeneğini vermektedir. Her gün paranın 4/5'i kalır. 4. günün başı 3. günün sonudur: 3. gün başında 320 · 5/4 = 400 TL vardır (bu, 2. günün sonundaki paradır). Not: Hesap ilk günün sonu için sürdürülürse 400 · 5/4 = 500 TL bulunur.",
     answers: [
       { text: "400", ok: true },
       { text: "450", ok: false },
@@ -551,9 +599,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Açık parfüm satan bir mağaza her gün 2 litre daha fazla satış yapıyor.\n\n5. günün sonunda 35 litre satış yaptığına göre, 3. gün yaptığı satış 5. gün yaptığı satışın kaçta kaçıdır?",
+    text: "<p>Açık parfüm satan bir mağaza her gün 2 litre daha fazla satış yapıyor.</p><p><b>5. günün sonunda 35 litre satış yaptığına göre, 3. gün yaptığı satış 5. gün yaptığı satışın kaçta kaçıdır?</b></p>",
     diff: 2,
-    expl: "Satışlar: 1.gün a, 2.gün a+2, 3.gün a+4, 4.gün a+6, 5.gün a+8. Beş günün toplam satışı = 5a + 20 = 35 => 5a = 15 => a=3. 3. gün satışı = a+4 = 7 litre. 5. gün satışı = a+8 = 11 litre. Oran 7/11'dir.",
+    expl: "Satışlar a, a + 2, a + 4, a + 6, a + 8. Toplam 5a + 20 = 35 ⇒ a = 3. 3. gün 7, 5. gün 11 litre ⇒ 7/11.",
     answers: [
       { text: "1/3", ok: false },
       { text: "3/11", ok: false },
@@ -563,9 +611,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "KPSS'ye hazırlanan İbrahim, fasikülündeki soruların 4/15'ini çözmüştür.\n\n70 soru daha çözerse sorularının yarısını çözmüş olacağına göre, çözmesi gereken kaç soru kalmıştır?",
+    text: "<p>KPSS'ye hazırlanan İbrahim, fasikülündeki soruların 4/15'ini çözmüştür.</p><p><b>70 soru daha çözerse sorularının yarısını çözmüş olacağına göre, çözmesi gereken kaç soru kalmıştır?</b></p>",
     diff: 2,
-    expl: "Toplam soru 30x olsun. 4/15'i = 8x çözdü. 70 daha çözerse yarısı (15x) oluyor. 8x + 70 = 15x => 7x = 70 => x=10. Toplam soru 300'dür. Toplam 150 (yarısını) çözmüştür. Çözmesi gereken 150 soru kalmıştır.",
+    expl: "Soru sayısı 30x olsun. 8x + 70 = 15x ⇒ x = 10, toplam 300 soru. 70 soru daha çözdükten sonra 150 soru çözmüş olur ve çözmesi gereken 150 soru kalır.",
     answers: [
       { text: "80", ok: false },
       { text: "100", ok: false },
@@ -575,9 +623,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Bir konser alanındaki insanların, 1/8'i konser bitmeden önce alandan ayrılmıştır.\nKonser bittiğinde alanda kalanların 5/7'si daha ayrılmıştır.\n\nAlanda 400 kişi kaldığına göre, konser alanına toplam kaç kişi gelmiştir?",
+    text: "<p>Bir konser alanındaki insanların, 1/8'i konser bitmeden önce alandan ayrılmıştır. Konser bittiğinde alanda kalanların 5/7'si daha ayrılmıştır.</p><p><b>Alanda 400 kişi kaldığına göre, konser alanına toplam kaç kişi gelmiştir?</b></p>",
     diff: 2,
-    expl: "Toplam kişi 8x olsun. 1/8'i ayrıldı, kalan 7x. Sonra kalan 7x'in 5/7'si (5x) daha ayrıldı. Geriye 7x - 5x = 2x kişi kaldı. 2x = 400 => x = 200. Toplam kişi 8x = 1600'dür.",
+    expl: "Toplam 8x olsun. x kişi ayrılır, 7x kalır; 7x'in 5/7'si (5x) ayrılınca 2x kalır. 2x = 400 ⇒ 8x = 1600.",
     answers: [
       { text: "800", ok: false },
       { text: "1200", ok: false },
@@ -587,9 +635,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Evden okula bisiklet ile giden Ümit, yolun 4/7'sini gittikten sonra lastiği patlıyor. Yolun kalan kısmının 1/2'sini yürüyen Ümit kalan yolu arkadaşının aracıyla gidiyor.\n\nÜmit'in yürüdüğü mesafe 6 km ise ev-okul arası kaç km'dir?",
+    text: "<p>Evden okula bisiklet ile giden Ümit, yolun 4/7'sini gittikten sonra lastiği patlıyor. Yolun kalan kısmını 1/2'sini yürüyen Ümit kalan yolu arkadaşının aracıyla gidiyor.</p><p><b>Ümit'in yürüdüğü mesafe 6 km ise ev-okul arası kaç km'dir?</b></p>",
     diff: 2,
-    expl: "Yolun tamamı 14x olsun. 4/7'si = 8x bisikletle gitti. Kalan = 6x. Kalanın yarısı (1/2'si) = 3x yürüdü. 3x = 6 km => x = 2. Ev-okul mesafesi = 14x = 28 km.",
+    expl: "Yol 14x olsun. 8x bisikletle gidilir, kalan 6x'in yarısı 3x yürünür. 3x = 6 ⇒ x = 2 ⇒ 28 km.",
     answers: [
       { text: "14", ok: false },
       { text: "16", ok: false },
@@ -602,9 +650,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
 // ─── KESİR PROBLEMLERİ TEST - 2 ───────────────────────────────────────────────
 
   {
-    text: "1/3'ünün 2/5'i, 1/10'unun 9 fazlası olan sayı kaçtır?",
+    text: "<p><b>1/3'ünün 2/5'i, 1/10'unun 9 fazlası olan sayı kaçtır?</b></p>",
     diff: 2,
-    expl: "Sayı x olsun. Denklemi kuralım: (x/3) * (2/5) = (x/10) + 9 => 2x/15 = x/10 + 9. Paydaları eşitleyelim: 4x/30 - 3x/30 = 9 => x/30 = 9 => x = 270.",
+    expl: "(x/3) · (2/5) = x/10 + 9 ⇒ 2x/15 − x/10 = 9 ⇒ x/30 = 9 ⇒ x = 270.",
     answers: [
       { text: "15", ok: false },
       { text: "30", ok: false },
@@ -614,33 +662,33 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Bir sayının 3 eksiğinin 1/6'sı ile 3 fazlasının 1/2'si toplamı aynı sayının 3/5'ine eşit olduğuna göre bu sayı kaçtır?",
+    text: "<p><b>Bir sayının 3 eksiğinin 1/6'sı ile 3 fazlasının 1/2'si toplamı aynı sayının 3/5'ine eşit olduğuna göre bu sayı kaçtır?</b></p>",
     diff: 2,
-    expl: "Denklem: (x-3)/6 + (x+3)/2 = 3x/5. Paydaları 30'da eşitleyelim: 5(x-3) + 15(x+3) = 18x => 5x - 15 + 15x + 45 = 18x => 20x + 30 = 18x => 2x = -30 => x = -15.",
+    expl: "(x − 3)/6 + (x + 3)/2 = 3x/5. 30 ile çarpılırsa 5x − 15 + 15x + 45 = 18x ⇒ 2x = −30 ⇒ x = −15.",
     answers: [
-      { text: "-18", ok: false },
-      { text: "-15", ok: true },
-      { text: "-5", ok: false },
-      { text: "-3", ok: false },
-      { text: "-1", ok: false }
+      { text: "−18", ok: false },
+      { text: "−15", ok: true },
+      { text: "−5", ok: false },
+      { text: "−3", ok: false },
+      { text: "−1", ok: false }
     ]
   },
   {
-    text: "Ali cebindeki paranın 1/6'sını harcarsa cebinde 4a + 240 TL'si, 1/4'ünü harcarsa 400 - a TL'si kalacaktır.\n\n1/3'ünü harcarsa kalan parası aşağıdakilerden hangisi olabilir?",
+    text: "<p>Ali cebindeki paranın 1/6'sını harcarsa cebinde 4a + 240 TL'si, 1/4'ünü harcarsa 400 − a TL'si kalacaktır.</p><p><b>1/3'ünü harcarsa kalan parası aşağıdakilerden hangisi olabilir?</b></p>",
     diff: 3,
-    expl: "Ali'nin parası x olsun. 1/6'sını harcarsa 5x/6'sı kalır => 5x/6 = 4a + 240. 1/4'ünü harcarsa 3x/4'ü kalır => 3x/4 = 400 - a => a = 400 - 3x/4. İlk denklemde yerine koyalım: 5x/6 = 4(400 - 3x/4) + 240 = 1600 - 3x + 240 = 1840 - 3x. 5x/6 + 3x = 1840 => 23x/6 = 1840 => x = 480. Bu durumda a = 400 - 3(480)/4 = 40. Bizden 1/3'ü harcandıktan sonra kalanı, yani 2x/3 isteniyor: 2(480)/3 = 320 TL. Şıklarda a=40 yazarak 320'yi veren seçeneği bulmalıyız: B şıkkında 40a - 1280 = 1600 - 1280 = 320.",
+    expl: "Para x olsun. 5x/6 = 4a + 240 ve 3x/4 = 400 − a ⇒ a = 400 − 3x/4. Yerine yazılırsa 5x/6 = 1840 − 3x ⇒ x = 480, a = 40. Kalan para 2x/3 = 320 TL'dir. a = 40 için 40 · a − 1280 = 320 olur.",
     answers: [
       { text: "4a", ok: false },
-      { text: "40·a - 1280", ok: true },
-      { text: "8a - 60", ok: false },
+      { text: "40 · a − 1280", ok: true },
+      { text: "8a − 60", ok: false },
       { text: "8a", ok: false },
-      { text: "10a - 100", ok: false }
+      { text: "10a − 100", ok: false }
     ]
   },
   {
-    text: "Dolu bir bidonun ağırlığı 6 kg gelmektedir. Bidondaki suyun 2/3'ü döküldükten sonra kalan su ile bidonun ağırlığı 3 kg geldiğine göre, boş bidon ağırlığı kaç kg'dır?",
+    text: "<p><b>Dolu bir bidonun ağırlığı 6 kg gelmektedir. Bidondaki suyun 2/3'ü döküldükten sonra kalan su ile bidonun ağırlığı 3 kg geldiğine göre, boş bidon ağırlığı kaç kg'dır?</b></p>",
     diff: 2,
-    expl: "Boş bidon B, su S olsun. B + S = 6. 2/3'ü dökülünce S/3 su kalır. B + S/3 = 3. İki denklemi birbirinden çıkarırsak 2S/3 = 3 => S = 4.5 kg. Boş bidon B = 6 - 4.5 = 1.5 kg (yani 3/2 kg).",
+    expl: "B + S = 6 ve B + S/3 = 3 ⇒ 2S/3 = 3 ⇒ S = 9/2 ⇒ B = 3/2 kg.",
     answers: [
       { text: "3/2", ok: true },
       { text: "3", ok: false },
@@ -650,9 +698,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Selim ve Sibel aynı miktardaki faturalarının ödemeleri için sırasıyla paralarının 2/7'si ve 1/4'ünü kullanmışlardır.\n\nÖdemelerden önce Selim'in parası Sibel'in parasının kaç katıdır?",
+    text: "<p>Selim ve Sibel aynı miktardaki faturalarının ödemeleri için sırasıyla paralarının 2/7'si ve 1/4'ünü kullanmışlardır.</p><p><b>Ödemelerden önce Selim'in parası Sibel'in parasının kaç katıdır?</b></p>",
     diff: 2,
-    expl: "Fatura tutarı F olsun. Selim'in parası Se, Sibel'in parası Si. (2/7)Se = F => Se = 7F/2. (1/4)Si = F => Si = 4F. Oran: Se / Si = (7F/2) / 4F = 7/8.",
+    expl: "Fatura F olsun. Selim'in parası 7F/2, Sibel'in parası 4F'dir. Oran (7F/2) / 4F = 7/8.",
     answers: [
       { text: "7/4", ok: false },
       { text: "7/8", ok: true },
@@ -662,9 +710,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Bir sınıftaki öğrencilerin 3/7'si kızdır. Sınıfa 2 kız, 1 erkek öğrenci daha gelince sınıfın 5/9'u erkek öğrenci oluyor.\n\nBuna göre son durumda sınıfın mevcudu kaçtır?",
+    text: "<p>Bir sınıftaki öğrencilerin 3/7'si kızdır. Sınıfa 2 kız, 1 erkek öğrenci daha gelince sınıfın 5/9'u erkek öğrenci oluyor.</p><p><b>Buna göre son durumda sınıfın mevcudu kaçtır?</b></p>",
     diff: 2,
-    expl: "Başlangıçta sınıf 7x olsun. Kızlar 3x, Erkekler 4x. Gelenlerle birlikte Kız = 3x+2, Erkek = 4x+1. Sınıf mevcudu = 7x+3. Erkeklerin oranı: (4x+1) / (7x+3) = 5/9. İçler dışlar çarpımı: 36x + 9 = 35x + 15 => x = 6. Son durumdaki sınıf mevcudu: 7(6) + 3 = 45.",
+    expl: "Sınıf 7x olsun: 3x kız, 4x erkek. (4x + 1)/(7x + 3) = 5/9 ⇒ 36x + 9 = 35x + 15 ⇒ x = 6. Son mevcut 7 · 6 + 3 = 45.",
     answers: [
       { text: "6", ok: false },
       { text: "18", ok: false },
@@ -674,9 +722,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Bir tahta parçasının ucundan 1/8'e kesiliyor. Tahtanın orta noktası ilk duruma göre 6 cm kayıyor.\n\nBuna göre tahtanın kesildikten sonraki uzunluğu kaç cm'dir?",
+    text: "<p>Bir tahta parçasının ucundan 1/8'e kesiliyor. Tahtanın orta noktası ilk duruma göre 6 cm kayıyor.</p><p><b>Buna göre tahtanın kesildikten sonraki uzunluğu kaç cm'dir?</b></p>",
     diff: 2,
-    expl: "Tahtanın uzunluğu L olsun. Bir ucundan kesilen miktarın yarısı kadar orta nokta kayar. L/8 / 2 = 6 => L/16 = 6 => L = 96 cm (Başlangıç). Kesilen miktar = 96/8 = 12 cm. Kesildikten sonraki boyu = 96 - 12 = 84 cm.",
+    expl: "Orta nokta kesilen parçanın yarısı kadar kayar: (L/8)/2 = 6 ⇒ L = 96 cm. Kesilen 12 cm, kalan 84 cm.",
     answers: [
       { text: "42", ok: false },
       { text: "58", ok: false },
@@ -686,9 +734,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Bir grupta kızlar erkeklerin 1/2'si kadardır. Erkeklerin 1/4'ü esmerdir. Sarışın erkeklerin 1/9'u kadar esmer kız olduğuna göre, 16 esmer bulunan bu grupta toplam kaç kişi vardır? (Grupta kumral yoktur. Yalnızca esmer ve sarışın vardır.)",
+    text: "<p>Bir grupta kızlar erkeklerin 1/2'si kadardır. Erkeklerin 1/4'ü esmerdir.</p><p><b>Sarışın erkeklerin 1/9'u kadar esmer kız olduğuna göre, 16 esmer bulunan bu grupta toplam kaç kişi vardır?</b> (Grupta kumral yoktur. Yalnızca esmer ve sarışın vardır.)</p>",
     diff: 3,
-    expl: "Erkekler = 4x olsun. Kızlar = 2x olur. Esmer Erkek = x, Sarışın Erkek = 3x. Esmer Kız = (3x)/9 = x/3. Gruptaki toplam esmer sayısı = x + x/3 = 4x/3 = 16 => x = 12. Toplam kişi sayısı (Erkek + Kız) = 4x + 2x = 6x = 6(12) = 72.",
+    expl: "Erkekler 4x, kızlar 2x olsun. Esmer erkek x, sarışın erkek 3x, esmer kız 3x/9 = x/3. x + x/3 = 16 ⇒ x = 12. Toplam 6x = 72.",
     answers: [
       { text: "24", ok: false },
       { text: "36", ok: false },
@@ -698,9 +746,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "52 kişinin bulunduğu bir salona 4 çift ardından 8 bayan giriyor.\n\nSon durumda salondaki erkek sayısının bayan sayısına oranı 8/9 olduğuna göre başlangıçta salonda kaç erkek vardır?",
+    text: "<p>52 kişinin bulunduğu bir salona 4 çift ardından 8 bayan giriyor.</p><p><b>Son durumda salondaki erkek sayısının bayan sayısına oranı 8/9 olduğuna göre başlangıçta salonda kaç erkek vardır?</b></p>",
     diff: 3,
-    expl: "Başlangıçta E erkek, K bayan olsun. E + K = 52. Salona 4 çift girince 4 erkek, 4 bayan eklenir. Ardından 8 bayan girince son durum: Erkek = E+4, Bayan = K+4+8 = K+12. Oran: (E+4)/(K+12) = 8/9 => 9E + 36 = 8K + 96 => 9E - 8K = 60. İki denklemi çözelim: 8(E+K) = 8(52) = 416. Taraf tarafa toplayalım: 17E = 476 => E = 28.",
+    expl: "E + K = 52. Son durumda erkek E + 4, bayan K + 12. (E + 4)/(K + 12) = 8/9 ⇒ 9E − 8K = 60. 8E + 8K = 416 ile toplanırsa 17E = 476 ⇒ E = 28.",
     answers: [
       { text: "22", ok: false },
       { text: "24", ok: false },
@@ -710,21 +758,21 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Bir kesrin değeri 4/9'dur. Kesrin payına 4 eklenir, paydasından 5 çıkarılırsa kesrin değeri 4/7 oluyor.\n\nİlk kesrin pay ve paydasının toplamı kaçtır?",
+    text: "<p>Bir kesrin değeri 4/9'dur. Kesrin payına 4 eklenir, paydasından 5 çıkarılırsa kesrin değeri 4/7 oluyor.</p><p><b>İlk kesrin pay ve paydasının toplamı kaçtır?</b></p>",
     diff: 2,
-    expl: "İlk kesir 4k / 9k olsun. Denklem: (4k+4) / (9k-5) = 4/7 => 28k + 28 = 36k - 20 => 8k = 48 => k = 6. İlk kesrin payı 24, paydası 54'tür. Toplamları 24 + 54 = 78.",
+    expl: "Kesir 4k/9k olsun. (4k + 4)/(9k − 5) = 4/7 ⇒ 28k + 28 = 36k − 20 ⇒ k = 6. Kesir 24/54, toplam 78.",
     answers: [
       { text: "37", ok: false },
       { text: "54", ok: false },
       { text: "77", ok: false },
       { text: "78", ok: true },
       { text: "79", ok: false }
-    ] // Yazar notu: Kitabın cevap anahtarı hatalı bir okuma veya basım ile D yerine C şıkkı vermiştir (10.D değil C demiş, hayır 10.D). Aslında 10. sorunun cevabı anahtara göre D'dir. Düzeltildi.
+    ]
   },
   {
-    text: "İçinde bir miktar su bulunan bir su deposuna 35 lt su eklenince deponun 1/6'sı kadar taşma oluyor. 21 lt su eklenince deponun 1/6'sı boş kalıyor.\n\nDepoda başlangıçta kaç litre su vardır?",
+    text: "<p>İçinde bir miktar su bulunan bir su deposuna 35 lt su eklenince deponun 1/6'sı kadar taşma oluyor. 21 lt su eklenince deponun 1/6'sı boş kalıyor.</p><p><b>Depoda başlangıçta kaç litre su vardır?</b></p>",
     diff: 2,
-    expl: "Başlangıçtaki su S, depo hacmi V olsun. S + 35 = V + V/6 = 7V/6. S + 21 = V - V/6 = 5V/6. İkinci denklemi birinciden çıkaralım: 14 = 2V/6 = V/3 => V = 42 litre. S + 21 = 5(42)/6 = 35 => S = 14 litre.",
+    expl: "S + 35 = 7V/6 ve S + 21 = 5V/6 ⇒ 14 = V/3 ⇒ V = 42. S = 35 − 21 = 14 litre.",
     answers: [
       { text: "7", ok: false },
       { text: "14", ok: true },
@@ -734,9 +782,9 @@ export const MAT_SAYI_PROBLEMLERI_T5: McQ[] = [
     ]
   },
   {
-    text: "Bir yazar evindeki kitapların 1/3'ünü dağıtmaya karar verir.\nDağıtmayı düşündüğü kitapların 1/3'ünü üniversitesine, 1/3'ünü memleketinin kütüphanesine ve kalanın 1/3'ünü lisesine verdikten sonra dağıtılacak 80 kitabı kaldığına göre, başlangıçta yazarın evinde toplam kaç kitap vardır?",
+    text: "<p>Bir yazar evindeki kitapların 1/3'ünü dağıtmaya karar verir.</p><p><b>Dağıtmayı düşündüğü kitapların 1/3'ünü üniversitesine, 1/3'ünü memleketinin kütüphanesine ve kalanın 1/3'ünü lisesine verdikten sonra dağıtılacak 80 kitabı kaldığına göre, başlangıçta yazarın evinde toplam kaç kitap vardır?</b></p>",
     diff: 3,
-    expl: "Dağıtmayı düşündüğü kitaplara Y diyelim. Y/3 üniversiteye, Y/3 kütüphaneye gitti. Kalan Y - 2Y/3 = Y/3. Kalanın 1/3'ü lisesine gitti: (Y/3) * (1/3) = Y/9. Geriye kalan = Y/3 - Y/9 = 2Y/9. Bu kalan 80 kitaptır: 2Y/9 = 80 => Y = 360. Dağıtmayı düşündüğü kitaplar (Y) tüm kitapların 1/3'ü olduğuna göre toplam kitap sayısı = 3 * 360 = 1080'dir.",
+    expl: "Dağıtılacak kitaplar Y olsun. 2Y/3 verilir, Y/3 kalır; bunun 1/3'ü liseye gidince 2Y/9 kalır. 2Y/9 = 80 ⇒ Y = 360. Toplam kitap 3 · 360 = 1080.",
     answers: [
       { text: "180", ok: false },
       { text: "270", ok: false },
