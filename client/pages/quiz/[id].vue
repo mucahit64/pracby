@@ -64,7 +64,7 @@
           <img
             :src="`/${currentQuestion.image_url}`"
             :alt="'Soru görseli'"
-            class="block w-full max-h-72 object-contain rounded-lg"
+            class="block mx-auto w-auto max-w-full sm:max-w-md max-h-56 object-contain rounded-lg"
             @error="imageLoadError = true"
             @load="imageLoadError = false"
           >
