@@ -56,10 +56,10 @@
           <span class="text-xs font-extrabold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-full">⚡ +{{ xpEarned }} XP</span>
         </div>
 
-        <!-- Question text (not for swipe/fill_blank) -->
-        <div v-if="currentQuestion.question_type !== 'swipe' && currentQuestion.question_type !== 'fill_blank'" class="question-html text-base sm:text-lg text-gray-800 leading-snug space-y-2" v-html="sanitizeHtml(currentQuestion.question_text)"/>
+        <!-- Question text before image (not for swipe/fill_blank) -->
+        <div v-if="showQuestionText && questionTextParts.before" class="question-html text-base sm:text-lg text-gray-800 leading-snug space-y-2" v-html="sanitizeHtml(questionTextParts.before)"/>
 
-        <!-- Question image -->
+        <!-- Question image (placed at the IMAGE_MARKER in question_text, otherwise above the text) -->
         <div v-if="currentQuestion.image_url" class="w-full">
           <img
             :src="`/${currentQuestion.image_url}`"
@@ -73,6 +73,9 @@
             Bu sorunun görseli yüklenemedi veya eksik.
           </div>
         </div>
+
+        <!-- Question text after image -->
+        <div v-if="showQuestionText && questionTextParts.after" class="question-html text-base sm:text-lg text-gray-800 leading-snug space-y-2" v-html="sanitizeHtml(questionTextParts.after)"/>
 
         <!-- Multiple choice / True-false -->
         <template v-if="currentQuestion.question_type === 'multiple_choice' || currentQuestion.question_type === 'true_false'">
@@ -500,6 +503,7 @@ const totalAnswered = ref(0);
 
 // Image error tracking — reset per question
 const imageLoadError = ref(false);
+const IMAGE_MARKER = '<!--img-->';
 
 // Report modal state
 const reportModalOpen = ref(false);
@@ -538,6 +542,16 @@ const swipeCardStyle = computed(() => {
 
 const swipeRightOpacity = computed(() => Math.min(1, Math.max(0, swipeDragX.value / SWIPE_THRESHOLD)));
 const swipeLeftOpacity = computed(() => Math.min(1, Math.max(0, -swipeDragX.value / SWIPE_THRESHOLD)));
+
+const showQuestionText = computed(() => currentQuestion.value?.question_type !== 'swipe' && currentQuestion.value?.question_type !== 'fill_blank');
+
+// Question text may contain an <!--img--> marker that sets where the image goes; without one the image sits above the text.
+const questionTextParts = computed(() => {
+  const text = currentQuestion.value?.question_text ?? '';
+  const markerIndex = text.indexOf(IMAGE_MARKER);
+  if (markerIndex === -1) return { before: '', after: text };
+  return { before: text.slice(0, markerIndex), after: text.slice(markerIndex + IMAGE_MARKER.length) };
+});
 
 const fillBlankParts = computed(() => {
   const text = currentQuestion.value?.question_text ?? '';
