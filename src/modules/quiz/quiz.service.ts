@@ -8,7 +8,7 @@ import type {
   ReportQuestionInput,
   GuestReportQuestionInput,
 } from "./quiz.schema";
-import { regenerateEnergy } from "../user/user.service";
+import { regenerateEnergy, spendEnergyUpdate } from "../user/user.service";
 
 // Normal test: fixed 10 questions from a specific test record
 // Step final: 15 questions from all tests in the step (2×d1, 7×d2, 6×d3)
@@ -282,7 +282,7 @@ export const submitAnswer = async (
       .first();
 
     if (!unlimitedEnergy) {
-      await db("users").where({ id: userId }).where("energy", ">", 0).decrement("energy", 1);
+      await db("users").where({ id: userId }).where("energy", ">", 0).update(spendEnergyUpdate(1));
       await db("quiz_sessions").where({ id: sessionId }).increment("energy_lost", 1);
     }
   }
@@ -599,7 +599,7 @@ export const finishSessionWithAnswers = async (
     if (energyToDeduct > 0) {
       await trx("users")
         .where({ id: userId })
-        .update({ energy: db.raw("GREATEST(energy - ?, 0)", [energyToDeduct]) });
+        .update(spendEnergyUpdate(energyToDeduct));
       await trx("quiz_sessions").where({ id: sessionId }).increment("energy_lost", energyToDeduct);
     }
 

@@ -6,6 +6,16 @@ import type { UpdateProfileInput } from "./user.schema";
 const MAX_ENERGY = 25;
 const REGEN_INTERVAL_MS = 10 * 60 * 1000; // 10 minutes
 
+/**
+ * Update fields for spending energy. Regeneration counts from the moment energy drops
+ * below max, so the timestamp restarts when spending from a full bar; below max it is
+ * kept so already-accrued regeneration is not lost. (`energy` here is the pre-update value.)
+ */
+export const spendEnergyUpdate = (amount: number) => ({
+  energy: db.raw("GREATEST(energy - ?, 0)", [amount]),
+  energy_refreshed_at: db.raw("CASE WHEN energy >= ? THEN now() ELSE energy_refreshed_at END", [MAX_ENERGY]),
+});
+
 export const regenerateEnergy = async (userId: string) => {
   const user = await db("users")
     .where({ id: userId })
