@@ -79,20 +79,20 @@
 
         <!-- Multiple choice / True-false -->
         <template v-if="currentQuestion.question_type === 'multiple_choice' || currentQuestion.question_type === 'true_false'">
-          <div class="flex flex-col gap-2.5">
+          <div class="flex flex-col gap-2 sm:gap-2.5">
             <button
               v-for="(option, i) in currentAnswers"
               :key="option.id"
-              class="flex items-center gap-3.5 bg-white border-2 rounded-2xl px-4 py-3.5 cursor-pointer transition-all duration-150 font-[inherit] text-left"
+              class="flex items-center gap-2.5 sm:gap-3.5 bg-white border-2 rounded-xl sm:rounded-2xl px-3 py-2 sm:px-4 sm:py-3.5 cursor-pointer transition-all duration-150 font-[inherit] text-left"
               :class="getMcOptionClass(option.id)"
               :disabled="answered"
               @click="answerMc(option.id)"
             >
               <span
-                class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-sm font-extrabold shrink-0"
+                class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 flex items-center justify-center text-xs sm:text-sm font-extrabold shrink-0"
                 :class="getMcLetterClass(option.id)"
               >{{ optionLetters[i] }}</span>
-              <span class="text-sm font-bold flex-1" v-html="sanitizeHtml(option.answer_text)"/>
+              <span class="text-[13px] leading-snug sm:text-sm font-semibold sm:font-bold flex-1" v-html="sanitizeHtml(option.answer_text)"/>
             </button>
           </div>
         </template>
@@ -170,7 +170,8 @@
               @click="flashcardFlipped = !flashcardFlipped"
             >
               <p v-if="!flashcardFlipped" class="text-gray-400 font-bold">Kartı çevirmek için tıkla</p>
-              <p v-else class="text-sm font-bold text-gray-800 leading-relaxed">{{ currentQuestion.explanation || currentQuestion.type_data?.back || 'Açıklama yok' }}</p>
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <p v-else class="text-sm font-bold text-gray-800 leading-relaxed" v-html="formatExplanation(currentQuestion.explanation || currentQuestion.type_data?.back || 'Açıklama yok')" />
             </div>
             <div v-if="!answered" class="flex gap-3 w-full max-w-[360px]">
               <button class="flex-1 bg-white text-negative font-extrabold text-sm py-3.5 rounded-xl border-2 border-negative hover:bg-negative/5 transition-all cursor-pointer font-[inherit]" @click="answerFlashcard(false)">✗ Bilmiyorum</button>
@@ -268,21 +269,69 @@
           </div>
         </template>
 
-        <!-- Feedback -->
-        <transition name="fade">
+        <!-- Spacer so the fixed feedback sheet never covers the last options -->
+        <div v-if="answered" class="h-52 sm:h-36 shrink-0" aria-hidden="true" />
+
+        <!-- Feedback (bottom sheet) -->
+        <transition name="sheet">
           <div
-            v-if="answered" class="flex flex-col items-stretch gap-3 rounded-2xl px-4 py-4 border-b-4 sm:flex-row sm:items-center sm:gap-3.5 sm:px-5"
-            :class="lastAnswerCorrect ? 'bg-positive/10 border-positive text-positive' : 'bg-negative/10 border-negative text-negative'"
+            v-if="answered"
+            class="fixed inset-x-0 bottom-0 z-20 border-t-2"
+            :class="lastAnswerCorrect ? 'bg-[#e9f9ef] border-positive/30' : 'bg-[#fdecec] border-negative/30'"
+            role="status"
           >
-          <div class="flex-1 min-w-0">
-              <div class="text-base font-black">{{ lastAnswerCorrect ? '✓ Harika! 🎉' : '✗ Yanlış! 😔' }}</div>
-              <div v-if="currentQuestion.explanation" class="text-xs font-semibold opacity-80 mt-0.5">{{ currentQuestion.explanation }}</div>
+            <div class="max-w-[960px] mx-auto px-4 sm:px-8 pt-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:py-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+              <div class="flex items-center gap-5 flex-1 min-w-0">
+                <div
+                  class="hidden sm:flex w-20 h-20 rounded-full bg-white items-center justify-center text-4xl font-black shrink-0"
+                  :class="lastAnswerCorrect ? 'text-positive' : 'text-negative'"
+                >{{ lastAnswerCorrect ? '✓' : '✗' }}</div>
+                <div class="flex-1 min-w-0" :class="lastAnswerCorrect ? 'text-positive' : 'text-negative'">
+                  <div class="flex items-center justify-between gap-3">
+                    <div class="text-xl font-black">{{ lastAnswerCorrect ? 'Harika!' : (correctAnswerText ? 'Doğru cevap:' : 'Yanlış!') }}</div>
+                    <div class="sm:hidden flex items-center gap-1 shrink-0">
+                      <button
+                        v-if="currentQuestion.explanation"
+                        class="p-1 bg-transparent border-0 cursor-pointer opacity-80 hover:opacity-100"
+                        :class="lastAnswerCorrect ? 'text-positive' : 'text-negative'"
+                        :title="explanationOpen ? 'Açıklamayı Gizle' : 'Açıklamayı Göster'"
+                        :aria-label="explanationOpen ? 'Açıklamayı Gizle' : 'Açıklamayı Göster'"
+                        :aria-expanded="explanationOpen"
+                        @click="explanationOpen = !explanationOpen"
+                      >
+                        <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': explanationOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" /></svg>
+                      </button>
+                      <button
+                        class="p-1 bg-transparent border-0 cursor-pointer opacity-80 hover:opacity-100"
+                        :class="lastAnswerCorrect ? 'text-positive' : 'text-negative'"
+                        title="Soruyu Bildir"
+                        aria-label="Soruyu Bildir"
+                        @click="openReportModal"
+                      >
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- eslint-disable-next-line vue/no-v-html -->
+                  <div v-if="!lastAnswerCorrect && correctAnswerText" class="text-sm font-bold mt-0.5" v-html="sanitizeHtml(correctAnswerText)" />
+                  <!-- eslint-disable-next-line vue/no-v-html -->
+                  <div v-if="currentQuestion.explanation" class="max-h-[25vh] overflow-y-auto text-sm font-semibold text-gray-700 leading-snug mt-1.5 sm:block" :class="explanationOpen ? 'block' : 'hidden'" v-html="formatExplanation(currentQuestion.explanation)" />
+                  <button
+                    class="hidden sm:inline-flex mt-2 items-center gap-1.5 text-xs font-extrabold uppercase tracking-wide opacity-80 hover:opacity-100 bg-transparent border-0 p-0 cursor-pointer font-[inherit]"
+                    :class="lastAnswerCorrect ? 'text-positive' : 'text-negative'"
+                    @click="openReportModal"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
+                    Bildir
+                  </button>
+                </div>
+              </div>
+              <button
+                class="w-full sm:w-auto sm:min-w-[160px] shrink-0 text-white font-black text-sm py-3.5 px-8 rounded-2xl border-b-4 border-black/20 cursor-pointer transition-all font-[inherit] active:border-b-0 active:translate-y-1"
+                :class="lastAnswerCorrect ? 'bg-positive' : 'bg-negative'"
+                @click="nextQuestion"
+              >DEVAM ET</button>
             </div>
-            <button
-              class="self-end shrink-0 bg-white font-extrabold text-sm px-5 py-2.5 rounded-xl border-2 cursor-pointer transition-all font-[inherit] sm:self-auto"
-              :class="lastAnswerCorrect ? 'text-positive border-positive hover:bg-positive/5' : 'text-negative border-negative hover:bg-negative/5'"
-              @click="nextQuestion"
-            >DEVAM</button>
           </div>
         </transition>
       </div>
@@ -503,6 +552,8 @@ const totalAnswered = ref(0);
 
 // Image error tracking — reset per question
 const imageLoadError = ref(false);
+// Mobile feedback sheet hides the explanation until expanded
+const explanationOpen = ref(false);
 const IMAGE_MARKER = '<!--img-->';
 
 // Report modal state
@@ -552,6 +603,9 @@ const questionTextParts = computed(() => {
   if (markerIndex === -1) return { before: '', after: text };
   return { before: text.slice(0, markerIndex), after: text.slice(markerIndex + IMAGE_MARKER.length) };
 });
+
+// Correct option text shown in the feedback sheet after a wrong multiple-choice / true-false answer
+const correctAnswerText = computed(() => currentAnswers.value.find((a) => a.is_correct)?.answer_text ?? '');
 
 const fillBlankParts = computed(() => {
   const text = currentQuestion.value?.question_text ?? '';
@@ -901,6 +955,7 @@ function nextQuestion() {
     return;
   }
   imageLoadError.value = false;
+  explanationOpen.value = false;
   currentIndex.value++;
   initQuestionState();
 }
@@ -1158,6 +1213,17 @@ async function submitReport() {
 </script>
 
 <style scoped>
+/* Feedback sheet slides up from the bottom of the screen */
+.sheet-enter-active,
+.sheet-leave-active {
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+}
+.sheet-enter-from,
+.sheet-leave-to {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
 /* Make images inside question HTML render as block so text flows below, not beside */
 .question-html :deep(img) {
   display: block;
