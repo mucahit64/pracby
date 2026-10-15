@@ -1,76 +1,70 @@
 <template>
   <div>
-    <div class="flex items-center justify-between mb-6">
-      <h1 class="text-2xl font-bold text-white">Soru Raporları</h1>
-      <div v-if="reportStats" class="flex gap-3 text-sm">
-        <span class="text-yellow-400">{{ reportStats.pending }} beklemede</span>
-        <span class="text-green-400">{{ reportStats.fixed }} düzeltildi</span>
-        <span class="text-gray-400">{{ reportStats.total }} toplam</span>
+    <h1 class="text-2xl font-bold text-white mb-6">Soru Raporları</h1>
+
+    <!-- Filters: status tabs with per-status question counts, plus reason -->
+    <div class="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div class="inline-flex flex-wrap gap-1 p-1 bg-gray-800 border border-gray-700 rounded-xl self-start">
+        <button
+          v-for="tab in statusTabs"
+          :key="tab.value"
+          :class="['inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors', filters.status === tab.value ? 'bg-purple-600 text-white' : 'text-gray-400 hover:text-gray-200 hover:bg-gray-700']"
+          @click="setStatusFilter(tab.value)"
+        >
+          {{ tab.label }}
+          <span
+            v-if="reportStats"
+            :class="['min-w-[1.25rem] px-1.5 rounded-full text-xs leading-5 text-center', filters.status === tab.value ? 'bg-white/20 text-white' : 'bg-gray-700 text-gray-400']"
+          >{{ reportStats[tab.value || 'total'] ?? 0 }}</span>
+        </button>
+      </div>
+      <div class="md:w-56 shrink-0">
+        <select v-model="filters.reason" class="admin-select" @change="loadGroups(1)">
+          <option value="">Tüm Sebepler</option>
+          <option v-for="(label, value) in REASON_LABELS" :key="value" :value="value">{{ label }}</option>
+        </select>
       </div>
     </div>
 
-    <!-- Filters -->
-    <div class="bg-gray-800 rounded-xl p-4 border border-gray-700 mb-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
-      <select v-model="filters.status" class="admin-select" @change="loadReports(1)">
-        <option value="">Tüm Durumlar</option>
-        <option value="pending">Beklemede</option>
-        <option value="reviewed">İncelendi</option>
-        <option value="fixed">Düzeltildi</option>
-        <option value="dismissed">Reddedildi</option>
-      </select>
-      <select v-model="filters.reason" class="admin-select" @change="loadReports(1)">
-        <option value="">Tüm Sebepler</option>
-        <option value="wrong_answer">Yanlış Cevap</option>
-        <option value="unclear_question">Belirsiz Soru</option>
-        <option value="wrong_explanation">Yanlış Açıklama</option>
-        <option value="typo">Yazım Hatası</option>
-        <option value="other">Diğer</option>
-      </select>
-      <div class="text-sm text-gray-400 flex items-center">
-        Toplam: {{ total }} rapor
-      </div>
-    </div>
-
-    <!-- Table -->
+    <!-- Table: one row per reported question -->
     <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-x-auto">
       <table class="w-full text-sm">
         <thead>
           <tr class="border-b border-gray-700 text-gray-400 text-left">
             <th class="px-4 py-3 font-medium">Soru</th>
-            <th class="px-4 py-3 font-medium w-36">Raporlayan</th>
-            <th class="px-4 py-3 font-medium w-32">Sebep</th>
-            <th class="px-4 py-3 font-medium w-24">Durum</th>
-            <th class="px-4 py-3 font-medium w-28">Tarih</th>
-            <th class="px-4 py-3 font-medium w-24 text-center">İşlem</th>
+            <th class="px-4 py-3 font-medium w-24 text-center">Bildirim</th>
+            <th class="px-4 py-3 font-medium w-28">Durum</th>
+            <th class="px-4 py-3 font-medium w-28">Son Bildirim</th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="loading">
-            <td colspan="6" class="px-4 py-8 text-center text-gray-500">Yükleniyor...</td>
+            <td colspan="4" class="px-4 py-8 text-center text-gray-500">Yükleniyor...</td>
           </tr>
-          <tr v-else-if="reports.length === 0">
-            <td colspan="6" class="px-4 py-8 text-center text-gray-500">Rapor bulunamadı</td>
+          <tr v-else-if="loadError">
+            <td colspan="4" class="px-4 py-8 text-center text-red-400">{{ loadError }}</td>
+          </tr>
+          <tr v-else-if="groups.length === 0">
+            <td colspan="4" class="px-4 py-8 text-center text-gray-500">Rapor bulunamadı</td>
           </tr>
           <tr
-            v-for="r in reports"
-            :key="r.id"
-            class="border-b border-gray-700/50 hover:bg-gray-700/30 transition-colors"
+            v-for="g in groups"
+            v-else
+            :key="g.question_id"
+            class="border-b border-gray-700/50 hover:bg-gray-700/30 transition-colors cursor-pointer"
+            @click="openDetail(g)"
           >
             <td class="px-4 py-3">
-              <div class="text-gray-200 line-clamp-2 max-w-xs">{{ stripHtml(r.question_text) }}</div>
-              <div v-if="r.description" class="text-xs text-gray-500 mt-1 italic">{{ r.description }}</div>
+              <div class="text-gray-200 line-clamp-2">{{ stripHtml(g.question_text, 160) }}</div>
+              <div class="flex flex-wrap gap-1 mt-1.5">
+                <span v-for="reason in g.reasons" :key="reason" class="text-xs px-2 py-0.5 rounded bg-gray-700 text-gray-400">{{ reasonLabel(reason) }}</span>
+              </div>
             </td>
-            <td class="px-4 py-3 text-gray-300">{{ r.reporter_username ?? 'Anonim' }}</td>
+            <td class="px-4 py-3 text-center text-gray-100 font-semibold">{{ g.report_count }}</td>
             <td class="px-4 py-3">
-              <span class="text-xs px-2 py-1 rounded bg-gray-700 text-gray-300">{{ reasonLabel(r.reason) }}</span>
+              <span :class="statusClass(g.status)" class="text-xs px-2 py-1 rounded font-medium whitespace-nowrap">{{ statusLabel(g.status) }}</span>
             </td>
-            <td class="px-4 py-3">
-              <span :class="statusClass(r.status)" class="text-xs px-2 py-1 rounded font-medium">{{ statusLabel(r.status) }}</span>
-            </td>
-            <td class="px-4 py-3 text-gray-400 text-xs">{{ formatDate(r.created_at) }}</td>
-            <td class="px-4 py-3 text-center">
-              <button class="text-purple-400 hover:text-purple-300 text-sm" @click="openDetail(r)">Detay</button>
-            </td>
+            <td class="px-4 py-3 text-gray-400 text-xs">{{ formatDate(g.last_reported_at) }}</td>
           </tr>
         </tbody>
       </table>
@@ -82,46 +76,57 @@
         v-for="p in paginationRange"
         :key="p"
         :class="['px-3 py-1.5 rounded text-sm font-medium transition-colors', p === page ? 'bg-purple-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600']"
-        @click="loadReports(p)"
+        @click="loadGroups(p)"
       >{{ p }}</button>
     </div>
 
     <!-- Detail Modal -->
     <div v-if="selected" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60" @click.self="selected = null">
-      <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 w-full max-w-lg mx-4 space-y-4">
+      <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 w-full max-w-2xl mx-4 space-y-4 max-h-[90vh] overflow-y-auto">
         <div class="flex items-center justify-between">
-          <h3 class="text-lg font-semibold text-white">Rapor Detayı</h3>
-          <button class="text-gray-400 hover:text-white" @click="selected = null">&times;</button>
+          <h3 class="text-lg font-semibold text-white">Soru Raporları</h3>
+          <button class="text-gray-400 hover:text-white text-xl leading-none" @click="selected = null">&times;</button>
         </div>
 
-        <div class="text-sm space-y-2">
-          <p><span class="text-gray-400">Soru:</span></p>
-          <div class="bg-gray-900 rounded p-3 text-gray-300 text-sm">{{ selected.question_text }}</div>
+        <div class="bg-gray-900 rounded p-3 text-gray-300 text-sm whitespace-pre-line">{{ stripHtml(selected.question_text) }}</div>
 
-          <p><span class="text-gray-400">Raporlayan:</span> {{ selected.reporter_username ?? 'Anonim' }} ({{ selected.reporter_email ?? '-' }})</p>
-          <p><span class="text-gray-400">Sebep:</span> {{ reasonLabel(selected.reason) }}</p>
-          <p v-if="selected.description"><span class="text-gray-400">Açıklama:</span> {{ selected.description }}</p>
+        <div class="text-sm">
+          <p class="text-gray-400 mb-2">
+            {{ selected.report_count }} bildirim<template v-if="selected.guest_count > 0"> ({{ selected.guest_count }} misafir)</template>
+          </p>
+          <div v-if="detailLoading" class="text-gray-500">Yükleniyor...</div>
+          <ul v-else class="divide-y divide-gray-700 border border-gray-700 rounded-lg">
+            <li v-for="r in detailReports" :key="r.id" class="px-3 py-2 space-y-1">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-gray-200 truncate">{{ reporterLabel(r) }}</span>
+                <div class="flex items-center gap-2 shrink-0">
+                  <span class="text-xs px-2 py-0.5 rounded bg-gray-700 text-gray-300">{{ reasonLabel(r.reason) }}</span>
+                  <span class="text-xs text-gray-500">{{ formatDate(r.created_at) }}</span>
+                </div>
+              </div>
+              <p v-if="r.description" class="text-xs text-gray-400 italic">{{ r.description }}</p>
+            </li>
+          </ul>
         </div>
 
         <div class="space-y-3 border-t border-gray-700 pt-4">
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-1">Durum</label>
             <select v-model="modalForm.status" class="admin-select">
-              <option value="pending">Beklemede</option>
-              <option value="reviewed">İncelendi</option>
-              <option value="fixed">Düzeltildi</option>
-              <option value="dismissed">Reddedildi</option>
+              <option v-for="tab in statusTabs.slice(1)" :key="tab.value" :value="tab.value">{{ tab.label }}</option>
             </select>
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-1">Admin Notu</label>
-            <textarea v-model="modalForm.admin_note" rows="2" class="admin-input" placeholder="İsteğe bağlı not" />
+            <textarea v-model="modalForm.admin_note" rows="2" maxlength="1000" class="admin-input" placeholder="İsteğe bağlı not" />
           </div>
+          <p class="text-xs text-gray-500">Durum ve not bu sorunun tüm bildirimlerine uygulanır.</p>
+          <p v-if="updateError" class="text-xs text-red-400">{{ updateError }}</p>
           <div class="flex gap-3">
-            <button :disabled="updating" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white text-sm font-medium rounded-lg transition-colors" @click="updateReport">
-              {{ updating ? 'Güncelleniyor...' : 'Güncelle' }}
+            <button :disabled="updating || detailLoading" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white text-sm font-medium rounded-lg transition-colors" @click="updateReports">
+              {{ updating ? 'Kaydediliyor...' : 'Kaydet' }}
             </button>
-            <NuxtLink v-if="selected.question_id" :to="`/admin/questions/${selected.question_id}`" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium rounded-lg transition-colors">
+            <NuxtLink :to="`/admin/questions/${selected.question_id}`" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-medium rounded-lg transition-colors">
               Soruyu Düzenle
             </NuxtLink>
           </div>
@@ -136,17 +141,64 @@ definePageMeta({ layout: 'admin', middleware: ['admin'] })
 
 const { api, extractError } = useApi()
 
+type ReportStatus = 'pending' | 'reviewed' | 'fixed' | 'dismissed'
+
+interface ReportGroup {
+  question_id: string
+  question_text: string
+  status: ReportStatus
+  report_count: number
+  guest_count: number
+  reasons: string[]
+  last_reported_at: string
+}
+
+interface QuestionReport {
+  id: string
+  guest_id: string | null
+  reporter_username: string | null
+  reason: string
+  description: string | null
+  admin_note: string | null
+  created_at: string
+}
+
+const REASON_LABELS: Record<string, string> = {
+  wrong_answer: 'Yanlış Cevap',
+  unclear_question: 'Belirsiz Soru',
+  wrong_explanation: 'Yanlış Açıklama',
+  typo: 'Yazım Hatası',
+  missing_image: 'Eksik Görsel',
+  other: 'Diğer',
+}
+
+const STATUS_LABELS: Record<ReportStatus, string> = {
+  pending: 'Beklemede',
+  reviewed: 'İncelendi',
+  fixed: 'Düzeltildi',
+  dismissed: 'Reddedildi',
+}
+
+const statusTabs: { value: '' | ReportStatus; label: string }[] = [
+  { value: '', label: 'Tümü' },
+  ...(Object.entries(STATUS_LABELS) as [ReportStatus, string][]).map(([value, label]) => ({ value, label })),
+]
+
 const loading = ref(true)
-const reports = ref<any[]>([])
+const loadError = ref('')
+const groups = ref<ReportGroup[]>([])
 const total = ref(0)
 const page = ref(1)
 const limit = 20
 const reportStats = ref<Record<string, number> | null>(null)
-const selected = ref<any>(null)
+const selected = ref<ReportGroup | null>(null)
+const detailReports = ref<QuestionReport[]>([])
+const detailLoading = ref(false)
 const updating = ref(false)
-const modalForm = reactive({ status: '', admin_note: '' })
+const updateError = ref('')
+const modalForm = reactive<{ status: ReportStatus; admin_note: string }>({ status: 'pending', admin_note: '' })
 
-const filters = reactive({ status: '', reason: '' })
+const filters = reactive<{ status: '' | ReportStatus; reason: string }>({ status: 'pending', reason: '' })
 
 const totalPages = computed(() => Math.ceil(total.value / limit))
 const paginationRange = computed(() => {
@@ -157,28 +209,27 @@ const paginationRange = computed(() => {
   return pages
 })
 
-function stripHtml(html: string) {
-  return html?.replace(/<[^>]*>/g, '').slice(0, 100) ?? ''
+function stripHtml(html: string, max = Infinity) {
+  const text = html?.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim() ?? ''
+  return text.length > max ? `${text.slice(0, max)}…` : text
 }
 
 function reasonLabel(r: string) {
-  const map: Record<string, string> = {
-    wrong_answer: 'Yanlış Cevap',
-    unclear_question: 'Belirsiz Soru',
-    wrong_explanation: 'Yanlış Açıklama',
-    typo: 'Yazım Hatası',
-    other: 'Diğer',
-  }
-  return map[r] ?? r
+  return REASON_LABELS[r] ?? r
 }
 
-function statusLabel(s: string) {
-  const map: Record<string, string> = { pending: 'Beklemede', reviewed: 'İncelendi', fixed: 'Düzeltildi', dismissed: 'Reddedildi' }
-  return map[s] ?? s
+function reporterLabel(r: QuestionReport) {
+  if (r.reporter_username) return r.reporter_username
+  if (r.guest_id) return `Misafir #${r.guest_id.slice(0, 4)}`
+  return 'Silinmiş kullanıcı'
 }
 
-function statusClass(s: string) {
-  const map: Record<string, string> = {
+function statusLabel(s: ReportStatus) {
+  return STATUS_LABELS[s] ?? s
+}
+
+function statusClass(s: ReportStatus) {
+  const map: Record<ReportStatus, string> = {
     pending: 'bg-yellow-600/20 text-yellow-400',
     reviewed: 'bg-blue-600/20 text-blue-400',
     fixed: 'bg-green-600/20 text-green-400',
@@ -191,59 +242,75 @@ function formatDate(d: string) {
   return new Date(d).toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric' })
 }
 
-function openDetail(r: any) {
-  selected.value = r
-  modalForm.status = r.status
-  modalForm.admin_note = r.admin_note ?? ''
+function setStatusFilter(status: '' | ReportStatus) {
+  filters.status = status
+  loadGroups(1)
 }
 
-async function updateReport() {
+async function openDetail(g: ReportGroup) {
+  selected.value = g
+  modalForm.status = g.status
+  modalForm.admin_note = ''
+  updateError.value = ''
+  detailReports.value = []
+  detailLoading.value = true
+  try {
+    const res = await api<{ reports: QuestionReport[] }>(`/api/admin/reports?questionId=${g.question_id}&limit=100`)
+    detailReports.value = res.reports
+    // The note is stored on every report of the question; show the one that is set.
+    modalForm.admin_note = res.reports.find((r) => r.admin_note)?.admin_note ?? ''
+  } catch (e) {
+    updateError.value = extractError(e)
+  } finally {
+    detailLoading.value = false
+  }
+}
+
+async function updateReports() {
   if (!selected.value) return
   updating.value = true
+  updateError.value = ''
   try {
-    await api(`/api/admin/reports/${selected.value.id}`, {
+    await api(`/api/admin/reports/question/${selected.value.question_id}`, {
       method: 'PATCH',
-      body: { status: modalForm.status, admin_note: modalForm.admin_note || undefined },
+      body: { status: modalForm.status, admin_note: modalForm.admin_note },
     })
-    // Update in list
-    const idx = reports.value.findIndex((r) => r.id === selected.value.id)
-    if (idx !== -1) {
-      reports.value[idx].status = modalForm.status
-      reports.value[idx].admin_note = modalForm.admin_note
-    }
     selected.value = null
-    // Refresh stats
-    reportStats.value = await api<Record<string, number>>('/api/admin/reports/stats').catch(() => null)
+    await Promise.all([loadGroups(page.value), loadStats()])
   } catch (e) {
-    alert(extractError(e))
+    updateError.value = extractError(e)
   } finally {
     updating.value = false
   }
 }
 
-async function loadReports(p: number = 1) {
+async function loadStats() {
+  reportStats.value = await api<Record<string, number>>('/api/admin/reports/stats').catch(() => null)
+}
+
+async function loadGroups(p: number = 1) {
   page.value = p
   loading.value = true
+  loadError.value = ''
   try {
     const params = new URLSearchParams({ page: String(p), limit: String(limit) })
     if (filters.status) params.set('status', filters.status)
     if (filters.reason) params.set('reason', filters.reason)
 
-    const res = await api<{ reports: any[]; total: number }>(`/api/admin/reports?${params}`)
-    reports.value = res.reports
+    const res = await api<{ groups: ReportGroup[]; total: number }>(`/api/admin/reports/groups?${params}`)
+    groups.value = res.groups
     total.value = res.total
-  } catch {
-    // ignore
+    // The last row of a page was resolved away under a status filter: step back a page.
+    if (res.groups.length === 0 && p > 1) await loadGroups(p - 1)
+  } catch (e) {
+    loadError.value = extractError(e)
   } finally {
     loading.value = false
   }
 }
 
 onMounted(async () => {
-  await Promise.all([
-    loadReports(),
-    api<Record<string, number>>('/api/admin/reports/stats').then((s) => (reportStats.value = s)).catch(() => {}),
-  ])
+  await Promise.all([loadGroups(), loadStats()])
 })
 </script>
 

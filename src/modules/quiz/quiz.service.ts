@@ -1,7 +1,13 @@
 import db from "../../db/knex";
 import type { Knex } from "knex";
 import { AppError } from "../../middleware/error";
-import type { StartQuizInput, AnswerInput, BulkFinishInput, ReportQuestionInput } from "./quiz.schema";
+import type {
+  StartQuizInput,
+  AnswerInput,
+  BulkFinishInput,
+  ReportQuestionInput,
+  GuestReportQuestionInput,
+} from "./quiz.schema";
 import { regenerateEnergy } from "../user/user.service";
 
 // Normal test: fixed 10 questions from a specific test record
@@ -924,6 +930,27 @@ export const reportQuestion = async (userId: string, input: ReportQuestionInput)
       description: input.description ?? null,
     })
     .returning("*");
+
+  return report;
+};
+
+export const guestReportQuestion = async (input: GuestReportQuestionInput) => {
+  const question = await db("questions").where({ id: input.questionId }).first();
+  if (!question) throw new AppError(404, "Question not found");
+
+  const existing = await db("question_reports")
+    .where({ question_id: input.questionId, guest_id: input.guestId })
+    .first();
+  if (existing) throw new AppError(409, "You have already reported this question");
+
+  const [report] = await db("question_reports")
+    .insert({
+      question_id: input.questionId,
+      guest_id: input.guestId,
+      reason: input.reason,
+      description: input.description ?? null,
+    })
+    .returning(["id", "question_id", "reason", "status", "created_at"]);
 
   return report;
 };

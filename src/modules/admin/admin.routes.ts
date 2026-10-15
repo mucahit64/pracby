@@ -81,7 +81,9 @@ router.post("/topics/:id/reject", requirePermission("manage_exams"), AdminContro
 
 // Reports
 router.get("/reports", AdminController.listReports);
+router.get("/reports/groups", AdminController.listReportGroups);
 router.get("/reports/stats", AdminController.getReportStats);
+router.patch("/reports/question/:questionId", validate(UpdateReportSchema), AdminController.updateQuestionReports);
 router.patch("/reports/:id", validate(UpdateReportSchema), AdminController.updateReport);
 
 // Users

@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
 import * as QuizService from "./quiz.service";
-import type { BulkFinishInput } from "./quiz.schema";
+import type { BulkFinishInput, GuestReportQuestionInput } from "./quiz.schema";
 
 export const startSession = async (req: Request, res: Response): Promise<void> => {
   const result = await QuizService.startSession(req.user!.userId, req.body);
@@ -56,5 +56,10 @@ export const finishSessionBulk = async (req: Request, res: Response): Promise<vo
 
 export const reportQuestion = async (req: Request, res: Response): Promise<void> => {
   const result = await QuizService.reportQuestion(req.user!.userId, req.body);
+  res.status(201).json(result);
+};
+
+export const guestReportQuestion = async (req: Request, res: Response): Promise<void> => {
+  const result = await QuizService.guestReportQuestion(req.body as GuestReportQuestionInput);
   res.status(201).json(result);
 };

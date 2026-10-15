@@ -46,7 +46,6 @@
             class="text-xs font-extrabold text-blue-600 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-full"
           >📚 {{ currentQuestion.exam_source }}</span>
           <button
-            v-if="!guestMode"
             class="text-gray-300 hover:text-red-400 transition-colors"
             title="Soruyu Raporla"
             @click="openReportModal"
@@ -421,6 +420,7 @@
         <textarea
           v-model="reportDescription"
           rows="2"
+          :maxlength="guestMode ? 200 : 500"
           class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm text-gray-800 focus:border-primary focus:outline-none resize-none"
           placeholder="Ek açıklama (isteğe bağlı)..."
         />
@@ -1191,21 +1191,31 @@ async function submitReport() {
   reportSuccess.value = '';
 
   try {
-    const token = getToken();
-    await $fetch('/api/quiz/report-question', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${token}` },
-      body: {
-        questionId: currentQuestion.value.id,
-        reason: reportReason.value,
-        description: reportDescription.value || undefined,
-      },
-    });
+    const body = {
+      questionId: currentQuestion.value.id,
+      reason: reportReason.value,
+      description: reportDescription.value || undefined,
+    };
+    if (guestMode.value) {
+      const { getGuestId } = useGuestState();
+      await $fetch('/api/quiz/guest-report-question', {
+        method: 'POST',
+        body: { ...body, guestId: getGuestId() },
+      });
+    } else {
+      await $fetch('/api/quiz/report-question', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${getToken()}` },
+        body,
+      });
+    }
     reportSuccess.value = 'Rapor gönderildi, teşekkürler!';
     setTimeout(() => { reportModalOpen.value = false; }, 1500);
   } catch (e: unknown) {
-    const err = e as { data?: { error?: string; message?: string } };
-    reportError.value = err?.data?.error ?? err?.data?.message ?? 'Rapor gönderilemedi.';
+    const err = e as { statusCode?: number; data?: { error?: string; message?: string } };
+    if (err?.statusCode === 409) reportError.value = 'Bu soruyu zaten bildirdin.';
+    else if (err?.statusCode === 429) reportError.value = 'Çok fazla bildirim gönderdin, daha sonra tekrar dene.';
+    else reportError.value = err?.data?.error ?? err?.data?.message ?? 'Rapor gönderilemedi.';
   } finally {
     reportSubmitting.value = false;
   }

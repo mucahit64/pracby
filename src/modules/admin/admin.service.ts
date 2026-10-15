@@ -339,7 +339,9 @@ export const getDashboardStats = async () => {
   const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString();
   const [newUsersWeek] = await db("users").where("created_at", ">=", weekAgo).count("id as count");
 
-  const [pendingReports] = await db("question_reports").where("status", "pending").count("id as count");
+  const [pendingReports] = await db("question_reports")
+    .where("status", "pending")
+    .countDistinct("question_id as count");
 
   return {
     users: Number(users?.count ?? 0),
@@ -355,7 +357,55 @@ export const getDashboardStats = async () => {
 
 // ── Reports ────────────────────────────────────────────
 
+// A question's reports are reviewed together, so a question has one status:
+// pending while any report is still pending, otherwise the status of its latest report.
+const GROUP_STATUS_SQL = `CASE WHEN bool_or(r.status = 'pending') THEN 'pending'
+  ELSE (array_agg(r.status ORDER BY r.created_at DESC))[1] END`;
+
+export const listReportGroups = async (filters: {
+  status?: string;
+  reason?: string;
+  page?: number;
+  limit?: number;
+}) => {
+  const page = filters.page ?? 1;
+  const limit = Math.min(filters.limit ?? 50, 100);
+  const offset = (page - 1) * limit;
+
+  // Filters apply to the question as a whole so the counts always cover all of its reports.
+  const query = db("question_reports as r")
+    .join("questions as q", "r.question_id", "q.id")
+    .groupBy("r.question_id", "q.question_text");
+  if (filters.status) query.havingRaw(`${GROUP_STATUS_SQL} = ?`, [filters.status]);
+  if (filters.reason) query.havingRaw("bool_or(r.reason = ?)", [filters.reason]);
+
+  const [countResult] = (await db
+    .from(query.clone().select("r.question_id").as("g"))
+    .count("* as total")) as { total: string | number }[];
+  const total = Number(countResult?.total ?? 0);
+
+  // Open questions first, then the most reported ones.
+  const groups = await query
+    .select(
+      "r.question_id",
+      "q.question_text",
+      db.raw(`${GROUP_STATUS_SQL} as status`),
+      db.raw("count(*)::int as report_count"),
+      db.raw("count(r.guest_id)::int as guest_count"),
+      db.raw("array_agg(distinct r.reason) as reasons"),
+      db.raw("max(r.created_at) as last_reported_at"),
+    )
+    .orderByRaw("bool_or(r.status = 'pending') desc")
+    .orderByRaw("count(*) desc")
+    .orderByRaw("max(r.created_at) desc")
+    .offset(offset)
+    .limit(limit);
+
+  return { groups, total, page, limit };
+};
+
 export const listReports = async (filters: {
+  questionId?: string;
   status?: string;
   reason?: string;
   page?: number;
@@ -369,6 +419,7 @@ export const listReports = async (filters: {
     .leftJoin("users as u", "r.user_id", "u.id")
     .leftJoin("questions as q", "r.question_id", "q.id");
 
+  if (filters.questionId) query.where("r.question_id", filters.questionId);
   if (filters.status) query.where("r.status", filters.status);
   if (filters.reason) query.where("r.reason", filters.reason);
 
@@ -406,8 +457,33 @@ export const updateReport = async (id: string, input: UpdateReportInput, adminId
   return updated;
 };
 
+/** Applies one decision (status + note) to every report of a question. */
+export const updateQuestionReports = async (questionId: string, input: UpdateReportInput, adminId: string) => {
+  const resolved = input.status !== "pending";
+  const updateData: Record<string, unknown> = {
+    status: input.status,
+    resolved_by: resolved ? adminId : null,
+    resolved_at: resolved ? new Date() : null,
+  };
+  if (input.admin_note !== undefined) updateData.admin_note = input.admin_note.trim() || null;
+
+  const updated = await db("question_reports").where({ question_id: questionId }).update(updateData);
+  if (updated === 0) throw new AppError(404, "No reports found for this question");
+  return { updated };
+};
+
+/** Number of reported questions per status. */
 export const getReportStats = async () => {
-  const rows = await db("question_reports").select("status").count("id as count").groupBy("status");
+  const rows = await db
+    .from(
+      db("question_reports as r")
+        .select(db.raw(`${GROUP_STATUS_SQL} as status`))
+        .groupBy("r.question_id")
+        .as("g"),
+    )
+    .select("status")
+    .count("* as count")
+    .groupBy("status");
   const stats: Record<string, number> = { pending: 0, reviewed: 0, fixed: 0, dismissed: 0 };
   for (const row of rows) {
     stats[row.status as string] = Number(row.count);

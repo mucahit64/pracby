@@ -40,3 +40,10 @@ export const ReportQuestionSchema = z.object({
 });
 
 export type ReportQuestionInput = z.infer<typeof ReportQuestionSchema>;
+
+export const GuestReportQuestionSchema = ReportQuestionSchema.extend({
+  guestId: z.uuid(),
+  description: z.string().max(200).optional(),
+});
+
+export type GuestReportQuestionInput = z.infer<typeof GuestReportQuestionSchema>;

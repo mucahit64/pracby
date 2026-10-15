@@ -17,6 +17,7 @@ interface GuestState {
 }
 
 const STORAGE_KEY = 'guestState';
+const GUEST_ID_KEY = 'guestId';
 const MAX_ENERGY = 25;
 const REGEN_INTERVAL_MS = 10 * 60 * 1000; // 10 minutes per energy
 
@@ -183,6 +184,16 @@ export function useGuestState() {
     state.value = { examTypeId: null, examGroupId: null, quizResults: [], claimedRewardStepIds: [], acornBalance: 500, energyCount: 25, energyRefreshedAt: null };
   }
 
+  /** Stable anonymous id for this browser, used to dedupe guest question reports. */
+  function getGuestId(): string {
+    let id = localStorage.getItem(GUEST_ID_KEY);
+    if (!id) {
+      id = crypto.randomUUID();
+      localStorage.setItem(GUEST_ID_KEY, id);
+    }
+    return id;
+  }
+
   const isGuest = computed(() => !localStorage.getItem('pb_token'));
 
   return {
@@ -198,5 +209,6 @@ export function useGuestState() {
     refreshEnergy,
     getRegistrationPayload,
     clearGuestState,
+    getGuestId,
   };
 }

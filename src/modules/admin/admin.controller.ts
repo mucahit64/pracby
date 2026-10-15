@@ -142,8 +142,19 @@ export const getDashboardStats = async (_req: Request, res: Response): Promise<v
 
 // ── Reports ────────────────────────────────────────────
 
+export const listReportGroups = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.listReportGroups({
+    status: req.query.status as string | undefined,
+    reason: req.query.reason as string | undefined,
+    page: req.query.page ? Number(req.query.page) : undefined,
+    limit: req.query.limit ? Number(req.query.limit) : undefined,
+  });
+  res.json(result);
+};
+
 export const listReports = async (req: Request, res: Response): Promise<void> => {
   const result = await AdminService.listReports({
+    questionId: req.query.questionId as string | undefined,
     status: req.query.status as string | undefined,
     reason: req.query.reason as string | undefined,
     page: req.query.page ? Number(req.query.page) : undefined,
@@ -154,6 +165,15 @@ export const listReports = async (req: Request, res: Response): Promise<void> =>
 
 export const updateReport = async (req: Request, res: Response): Promise<void> => {
   const result = await AdminService.updateReport(req.params.id as string, req.body, req.user!.userId);
+  res.json(result);
+};
+
+export const updateQuestionReports = async (req: Request, res: Response): Promise<void> => {
+  const result = await AdminService.updateQuestionReports(
+    req.params.questionId as string,
+    req.body,
+    req.user!.userId,
+  );
   res.json(result);
 };
 
