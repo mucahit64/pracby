@@ -33,6 +33,16 @@ function applyEnergyRegen(state: GuestState): GuestState {
   return { ...state, energyCount: newEnergy, energyRefreshedAt: newRefreshedAt };
 }
 
+// The chosen exam lives only in `guestExamTypeId` / `guestExamGroupId`, which
+// the welcome page, layout and lesson map read. Copying it into guestState
+// went stale when the guest picked another exam, so always read the keys.
+function examSelection() {
+  return {
+    examTypeId: localStorage.getItem('guestExamTypeId') || null,
+    examGroupId: localStorage.getItem('guestExamGroupId') || null,
+  };
+}
+
 function loadState(): GuestState {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -40,6 +50,7 @@ function loadState(): GuestState {
       const parsed = JSON.parse(raw);
       const state: GuestState = {
         ...parsed,
+        ...examSelection(),
         claimedRewardStepIds: parsed.claimedRewardStepIds ?? [],
         acornBalance: parsed.acornBalance ?? 500,
         energyCount: parsed.energyCount ?? 25,
@@ -49,8 +60,7 @@ function loadState(): GuestState {
     }
   } catch { /* ignore */ }
   return {
-    examTypeId: localStorage.getItem('guestExamTypeId'),
-    examGroupId: localStorage.getItem('guestExamGroupId'),
+    ...examSelection(),
     quizResults: [],
     claimedRewardStepIds: [],
     acornBalance: 500,
@@ -167,7 +177,7 @@ export function useGuestState() {
 
   function getRegistrationPayload() {
     return {
-      exam_type_id: state.value.examTypeId,
+      exam_type_id: examSelection().examTypeId,
       acorn_balance: state.value.acornBalance,
       energy: state.value.energyCount,
       guest_data: {
