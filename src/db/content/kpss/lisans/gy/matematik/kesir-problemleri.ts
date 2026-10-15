@@ -176,7 +176,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
 // ─── SAYISAL MANTIK PROBLEMLERİ TEST - 2 ──────────────────────────────────────
 
   {
-    text: "<p>2 basamaklı AB doğal sayısı için kare içine yazılan AB = A<sup>2</sup> + B biçiminde tanımlanıyor.</p><p>Örneğin; kare içindeki 43 = 4<sup>2</sup> + 3 = 19'dur.</p><p><b>Buna göre yukarıda verilen ifadenin değeri aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>2 basamaklı AB doğal sayısı için kare içine yazılan AB = A<sup>2</sup> + B biçiminde tanımlanıyor.</p><p>Örneğin; kare içindeki 43 = 4<sup>2</sup> + 3 = 19'dur.</p><!--img--><p><b>Buna göre yukarıda verilen ifadenin değeri aşağıdakilerden hangisidir?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q15.jpg",
     diff: 1,
     expl: "42 → 4<sup>2</sup> + 2 = 18, 37 → 3<sup>2</sup> + 7 = 16, 23 → 2<sup>2</sup> + 3 = 7. Sonuç 18 + 16 − 7 = 27.",
@@ -189,7 +189,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>2 basamaklı AB doğal sayısı için kare içine yazılan AB = A<sup>2</sup> + B biçiminde tanımlanıyor.</p><p><b>Buna göre yukarıda verilen eşitliği sağlayan <u>en büyük</u> ve <u>en küçük</u> AB sayılarının toplamı kaçtır?</b></p>",
+    text: "<p>2 basamaklı AB doğal sayısı için kare içine yazılan AB = A<sup>2</sup> + B biçiminde tanımlanıyor.</p><!--img--><p><b>Buna göre yukarıda verilen eşitliği sağlayan <u>en büyük</u> ve <u>en küçük</u> AB sayılarının toplamı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q16.jpg",
     diff: 2,
     expl: "A<sup>2</sup> + B = B<sup>2</sup> + A ⇒ (A − B)(A + B − 1) = 0. AB ve BA iki basamaklı olduğundan A, B ≠ 0; A + B = 1 olamaz, dolayısıyla A = B. Uygun sayılar 11, 22, …, 99. Toplam 99 + 11 = 110.",
@@ -202,7 +202,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>n kenarlı bir çokgenin içine yazılan bir A doğal sayısı için çokgenin sonucu A<sup>n</sup>/n ifadesinin tam kısmı olarak tanımlanıyor.</p><p>Örneğin: üçgen içine yazılan 6 = 6<sup>3</sup>/3 = 72'dir.</p><p><b>Buna göre yukarıda verilen ifadenin sonucu aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>n kenarlı bir çokgenin içine yazılan bir A doğal sayısı için çokgenin sonucu A<sup>n</sup>/n ifadesinin tam kısmı olarak tanımlanıyor.</p><p>Örneğin: üçgen içine yazılan 6 = 6<sup>3</sup>/3 = 72'dir.</p><!--img--><p><b>Buna göre yukarıda verilen ifadenin sonucu aşağıdakilerden hangisidir?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q17.jpg",
     diff: 2,
     expl: "Kare içindeki 3: 3<sup>4</sup>/4 = 81/4 = 20,25 ⇒ 20. Üçgen içindeki 6: 6<sup>3</sup>/3 = 72. Sonuç 20 + 72 = 92.",
@@ -215,7 +215,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>n kenarlı bir çokgenin içine yazılan bir A doğal sayısı için çokgenin sonucu A<sup>n</sup>/n ifadesinin tam kısmı olarak tanımlanıyor.</p><p><b>Yukarıdaki eşitliği sağlayan xy ifadesinin rakamları toplamı kaçtır?</b></p>",
+    text: "<p>n kenarlı bir çokgenin içine yazılan bir A doğal sayısı için çokgenin sonucu A<sup>n</sup>/n ifadesinin tam kısmı olarak tanımlanıyor.</p><!--img--><p><b>Yukarıdaki eşitliği sağlayan xy ifadesinin rakamları toplamı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q18.jpg",
     diff: 2,
     expl: "A beşgen içindedir: sonuç A<sup>5</sup>/5'in tam kısmıdır. A = 2 için 32/5 ⇒ 6 (tek basamaklı), A = 3 için 243/5 = 48,6 ⇒ 48, A = 4 için 1024/5 ⇒ 204 (üç basamaklı). xy = 48, rakamları toplamı 12.",
@@ -228,7 +228,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir tam sayının karesine eşit olan sayılara tam kare sayı denir. x sayısına eşit veya x sayısından büyük en küçük tam kare sayı, daire içine yazılan x olarak gösteriliyor.</p><p>Örnek: daire içindeki 34 = 36 = 6<sup>2</sup>, daire içindeki 49 = 49 = 7<sup>2</sup></p><p><b>Buna göre yukarıda verilen ifadenin değeri kaçtır?</b></p>",
+    text: "<p>Bir tam sayının karesine eşit olan sayılara tam kare sayı denir. x sayısına eşit veya x sayısından büyük en küçük tam kare sayı, daire içine yazılan x olarak gösteriliyor.</p><p>Örnek: daire içindeki 34 = 36 = 6<sup>2</sup>, daire içindeki 49 = 49 = 7<sup>2</sup></p><!--img--><p><b>Buna göre yukarıda verilen ifadenin değeri kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q19.jpg",
     diff: 2,
     expl: "Daire içindeki 45 = 49 olduğundan büyük dairenin içi 68 − 49 = 19 olur; daire içindeki 19 = 25. Daire içindeki 68 = 81. Sonuç 81 − 25 = 56.",
@@ -241,7 +241,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir tam sayının karesine eşit olan sayılara tam kare sayı denir. x sayısına eşit veya x sayısından büyük en küçük tam kare sayı, daire içine yazılan x olarak gösteriliyor.</p><p><b>Yukarıdaki eşitliği sağlayan <u>en küçük</u> 2 farklı n doğal sayısının toplamı kaçtır?</b></p>",
+    text: "<p>Bir tam sayının karesine eşit olan sayılara tam kare sayı denir. x sayısına eşit veya x sayısından büyük en küçük tam kare sayı, daire içine yazılan x olarak gösteriliyor.</p><!--img--><p><b>Yukarıdaki eşitliği sağlayan <u>en küçük</u> 2 farklı n doğal sayısının toplamı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q20.jpg",
     diff: 3,
     expl: "n ile n + 5 aynı tam kareye yuvarlanmalıdır. n = 0, …, 9 için n ile n + 5 farklı tam karelere gider (örneğin 9 → 9, 14 → 16). n = 10 için 10 ve 15 → 16; n = 11 için 11 ve 16 → 16; n = 12 için 17 → 25 olur. En küçük iki değer 10 ve 11, toplam 21.",
@@ -254,7 +254,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>En az iki farklı asal böleni olan bir A pozitif tam sayısının en küçük ve en büyük asal bölenlerinin çarpımı, üçgen içine yazılan A ile gösteriliyor.</p><p><b>Buna göre yukarıda verilen işlemin sonucu kaçtır?</b></p>",
+    text: "<p>En az iki farklı asal böleni olan bir A pozitif tam sayısının en küçük ve en büyük asal bölenlerinin çarpımı, üçgen içine yazılan A ile gösteriliyor.</p><!--img--><p><b>Buna göre yukarıda verilen işlemin sonucu kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q21.jpg",
     diff: 2,
     expl: "360 = 2<sup>3</sup> · 3<sup>2</sup> · 5 ⇒ 2 · 5 = 10. 1260 = 2<sup>2</sup> · 3<sup>2</sup> · 5 · 7 ⇒ 2 · 7 = 14. Sonuç 10 + 14 = 24.",
@@ -267,7 +267,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>En az iki farklı asal böleni olan bir A pozitif tam sayısının en küçük ve en büyük asal bölenlerinin çarpımı, üçgen içine yazılan A ile gösteriliyor.</p><p><b>Yukarıdaki eşitliği sağlayan 3 basamaklı en büyük A sayısının rakamları toplamı kaçtır?</b></p>",
+    text: "<p>En az iki farklı asal böleni olan bir A pozitif tam sayısının en küçük ve en büyük asal bölenlerinin çarpımı, üçgen içine yazılan A ile gösteriliyor.</p><!--img--><p><b>Yukarıdaki eşitliği sağlayan 3 basamaklı en büyük A sayısının rakamları toplamı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q22.jpg",
     diff: 3,
     expl: "22 = 2 · 11 olduğundan A'nın en küçük asal böleni 2, en büyüğü 11'dir. A = 22k ve k yalnızca 2, 3, 5, 7, 11 asallarını içerebilir. En büyük üç basamaklı değer k = 45 için A = 990'dır. Rakamları toplamı 9 + 9 + 0 = 18.",
@@ -283,7 +283,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
 // ─── SAYISAL MANTIK PROBLEMLERİ TEST - 3 ──────────────────────────────────────
 
   {
-    text: "<p>1'den 18'e kadar sayılar en fazla birer kez kullanılarak sekiz eş dilime ayrılan daire biçimindeki bir dart tahtasının dilimlerine yerleştiriliyor. Bu dart tahtasına oklarla atış yapılarak oynanan bir oyunun kuralları aşağıda verilmiştir.</p><ul><li>Her bir atışta dart farklı bir daire dilimine gelmektedir.</li><li>Her bir turda oyunculardan her biri, daire dilimlerinin içine toplam 3 ok isabet edene kadar atış yapmaktadır.</li><li>Her bir turda okların isabet ettiği daire dilimlerindeki sayıların toplamı oyuncunun tur puanını belirlemektedir.</li><li>Bir tur sonunda oyuncunun tur puanları toplamı o oyuncunun oyun puanını belirlemektedir.</li><li>Oyun puanı en yüksek olan oyuncu oyunu kazanmaktadır.</li></ul><p>Yukarıda içindeki sayıları verilen dart tahtasında 2 oyuncunun oynadığı oyun berabere bitmiştir.</p><p><b>Buna göre oyuncuların aldıkları puanların toplamı <u>en fazla</u> kaç olabilir?</b></p>",
+    text: "<p>1'den 18'e kadar sayılar en fazla birer kez kullanılarak sekiz eş dilime ayrılan daire biçimindeki bir dart tahtasının dilimlerine yerleştiriliyor. Bu dart tahtasına oklarla atış yapılarak oynanan bir oyunun kuralları aşağıda verilmiştir.</p><ul><li>Her bir atışta dart farklı bir daire dilimine gelmektedir.</li><li>Her bir turda oyunculardan her biri, daire dilimlerinin içine toplam 3 ok isabet edene kadar atış yapmaktadır.</li><li>Her bir turda okların isabet ettiği daire dilimlerindeki sayıların toplamı oyuncunun tur puanını belirlemektedir.</li><li>Bir tur sonunda oyuncunun tur puanları toplamı o oyuncunun oyun puanını belirlemektedir.</li><li>Oyun puanı en yüksek olan oyuncu oyunu kazanmaktadır.</li></ul><p>Aşağıda içindeki sayıları verilen dart tahtasında 2 oyuncunun oynadığı oyun berabere bitmiştir.</p><!--img--><p><b>Buna göre oyuncuların aldıkları puanların toplamı <u>en fazla</u> kaç olabilir?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q23.jpg",
     diff: 3,
     expl: "Tahtadaki sayılar 2, 4, …, 16 (toplam 72). İki oyuncu farklı 6 dilime atış yapar, 2 dilim boş kalır. Toplam en çok 72 − (2 + 4) = 66 olabilir; ancak bu durumda her oyuncu 33 almalıdır ve çift sayıların toplamı tek olamaz. Boş dilimler 2 ve 6 olursa toplam 64 olur: 16 + 12 + 4 = 32 ve 14 + 10 + 8 = 32. En fazla 64.",
@@ -296,7 +296,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>1'den 18'e kadar sayılar en fazla birer kez kullanılarak sekiz eş dilime ayrılan daire biçimindeki bir dart tahtasının dilimlerine yerleştiriliyor. Bu dart tahtasına oklarla atış yapılarak oynanan bir oyunun kuralları aşağıda verilmiştir.</p><ul><li>Her bir atışta dart farklı bir daire dilimine gelmektedir.</li><li>Her bir turda oyunculardan her biri, daire dilimlerinin içine toplam 3 ok isabet edene kadar atış yapmaktadır.</li><li>Her bir turda okların isabet ettiği daire dilimlerindeki sayıların toplamı oyuncunun tur puanını belirlemektedir.</li><li>Bir tur sonunda oyuncunun tur puanları toplamı o oyuncunun oyun puanını belirlemektedir.</li><li>Oyun puanı en yüksek olan oyuncu oyunu kazanmaktadır.</li></ul><p>Yukarıda numaraları verilen dart tahtasında 1. Oyuncu 21 puan almıştır.</p><p><b>2. Oyuncu oyunu kaybettiğine göre aldığı puan aşağıdakilerden hangisi <u>olamaz</u>?</b></p>",
+    text: "<p>1'den 18'e kadar sayılar en fazla birer kez kullanılarak sekiz eş dilime ayrılan daire biçimindeki bir dart tahtasının dilimlerine yerleştiriliyor. Bu dart tahtasına oklarla atış yapılarak oynanan bir oyunun kuralları aşağıda verilmiştir.</p><ul><li>Her bir atışta dart farklı bir daire dilimine gelmektedir.</li><li>Her bir turda oyunculardan her biri, daire dilimlerinin içine toplam 3 ok isabet edene kadar atış yapmaktadır.</li><li>Her bir turda okların isabet ettiği daire dilimlerindeki sayıların toplamı oyuncunun tur puanını belirlemektedir.</li><li>Bir tur sonunda oyuncunun tur puanları toplamı o oyuncunun oyun puanını belirlemektedir.</li><li>Oyun puanı en yüksek olan oyuncu oyunu kazanmaktadır.</li></ul><p>Aşağıda numaraları verilen dart tahtasında 1. Oyuncu 21 puan almıştır.</p><!--img--><p><b>2. Oyuncu oyunu kaybettiğine göre aldığı puan aşağıdakilerden hangisi <u>olamaz</u>?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q24.jpg",
     diff: 3,
     expl: "Kitabın cevap anahtarı C (13) seçeneğini vermektedir. 1. oyuncunun 21 puanı {1, 5, 15}, {1, 7, 13}, {1, 9, 11}, {3, 5, 13}, {3, 7, 11} veya {5, 7, 9} ile alınır. 13 puan yalnızca {1, 3, 9} veya {1, 5, 7} ile alınabilir ve her ikisi de 1. oyuncunun her seçeneğiyle ortak dilim içerdiğinden 13 puan alınamaz. 15, 17, 19 alınabilir (örneğin {5, 7, 9} karşısında {1, 3, 11} = 15). Not: 11 puanı veren tek üçlü {1, 3, 7} de her seçenekle çakıştığından 11 de alınamaz.",
@@ -309,7 +309,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>Şekildeki 6 dairenin içine birbirinden farklı rakamlar yazılacaktır.</p><ul><li>her daireye gelecek rakamlar birbirinden farklı,</li><li>ortadaki daireye çevresindeki teğet olan dairelerin toplamı</li></ul><p>olacak şekilde yerleştiriliyor. Örnek: çevredeki dairelerde 7, 2, 3, 4, 5, 6 varken ortadaki dairede 27 yazar.</p><p>Yukarıda sayıları verilen şekildeki bilgilere göre ortadaki daire içindeki x sayısı 3 ile tam bölünmektedir.</p><p><b>Buna göre a + b toplamı <u>en çok</u> kaçtır?</b></p>",
+    text: "<p>Şekildeki 6 dairenin içine birbirinden farklı rakamlar yazılacaktır.</p><ul><li>her daireye gelecek rakamlar birbirinden farklı,</li><li>ortadaki daireye çevresindeki teğet olan dairelerin toplamı</li></ul><p>olacak şekilde yerleştiriliyor. Örnek: çevredeki dairelerde 7, 2, 3, 4, 5, 6 varken ortadaki dairede 27 yazar.</p><!--img--><p>Yukarıda sayıları verilen şekildeki bilgilere göre ortadaki daire içindeki x sayısı 3 ile tam bölünmektedir.</p><p><b>Buna göre a + b toplamı <u>en çok</u> kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q25.jpg",
     diff: 2,
     expl: "x = 1 + 4 + 3 + 5 + a + b = 13 + a + b. a ve b, 1, 3, 4, 5'ten farklıdır; en büyük seçim 8 ve 9 ile a + b = 17 olur ve x = 30, 3'e tam bölünür. En çok 17.",
@@ -322,7 +322,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>Şekildeki 6 dairenin içine birbirinden farklı rakamlar yazılacaktır.</p><ul><li>her daireye gelecek rakamlar birbirinden farklı,</li><li>ortadaki daireye çevresindeki teğet olan dairelerin toplamı</li></ul><p>olacak şekilde yerleştiriliyor.</p><p><b>Yukarıda sayıları yerleştirilmiş şekildeki bilgilere göre a sayısının yerine yazılabilecek rakamların toplamı kaçtır?</b></p>",
+    text: "<p>Şekildeki 6 dairenin içine birbirinden farklı rakamlar yazılacaktır.</p><ul><li>her daireye gelecek rakamlar birbirinden farklı,</li><li>ortadaki daireye çevresindeki teğet olan dairelerin toplamı</li></ul><p>olacak şekilde yerleştiriliyor.</p><!--img--><p><b>Yukarıda sayıları yerleştirilmiş şekildeki bilgilere göre a sayısının yerine yazılabilecek rakamların toplamı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q26.jpg",
     diff: 3,
     expl: "7 + 4 + 3 + 5 + a + b = 29 ⇒ a + b = 10. a ve b, 3, 4, 5, 7'den ve birbirinden farklıdır: (1, 9), (9, 1), (2, 8), (8, 2). a'nın alabileceği değerler 1, 9, 2, 8; toplam 20.",
@@ -386,7 +386,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
 // ─── SAYISAL MANTIK PROBLEMLERİ TEST - 4 ──────────────────────────────────────
 
   {
-    text: "<p>Bir müşteri, evinin önünden taksiye binmiş ve şoföre şunu söylemiştir:</p><p>\"Önce yol üzerindeki restauranta uğramam lazım. Oradan yemek aldığımda beni iş yerime bırakırsın.\"</p><p>Taksici de müşteriye şu şekilde karşılık vermiştir:</p><p>\"Beklediğim süreler için ayrı bir ücret alıyorum. Kabul ediyorsanız devam edeyim.\"</p><p>Müşterinin kabul ettiği bu ücret tarifesi yukarıdaki tabloda verilmiştir.</p><p>Rastaurantta 15 dk bekleyen bu müşteri toplam 8 km yol gitmiştir.</p><p><b>Buna göre taksiciye kaç TL ödeme yapmıştır?</b></p>",
+    text: "<p>Bir müşteri, evinin önünden taksiye binmiş ve şoföre şunu söylemiştir:</p><p>\"Önce yol üzerindeki restauranta uğramam lazım. Oradan yemek aldığımda beni iş yerime bırakırsın.\"</p><p>Taksici de müşteriye şu şekilde karşılık vermiştir:</p><p>\"Beklediğim süreler için ayrı bir ücret alıyorum. Kabul ediyorsanız devam edeyim.\"</p><p>Müşterinin kabul ettiği bu ücret tarifesi aşağıdaki tabloda verilmiştir.</p><!--img--><p>Rastaurantta 15 dk bekleyen bu müşteri toplam 8 km yol gitmiştir.</p><p><b>Buna göre taksiciye kaç TL ödeme yapmıştır?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q31.jpg",
     diff: 2,
     expl: "Açılış 2,5 TL; 8 km = 80 · 100 m ⇒ 80 · 0,25 = 20 TL; bekleme 15 · 0,20 = 3 TL. Toplam 2,5 + 20 + 3 = 25,5 TL.",
@@ -399,7 +399,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir müşteri, evinin önünden taksiye binmiş ve şoföre şunu söylemiştir:</p><p>\"Önce yol üzerindeki restauranta uğramam lazım. Oradan yemek aldığımda beni iş yerime bırakırsın.\"</p><p>Taksici de müşteriye şu şekilde karşılık vermiştir:</p><p>\"Beklediğim süreler için ayrı bir ücret alıyorum. Kabul ediyorsanız devam edeyim.\"</p><p>Müşterinin kabul ettiği bu ücret tarifesi yukarıdaki tabloda verilmiştir.</p><p><b>Bu müşteri taksiyle toplam 12 km yol gitmiş ve taksiciye 35,9 TL verdiğine göre taksiciyi uğradığı restaurantta kaç dk bekletmiştir?</b></p>",
+    text: "<p>Bir müşteri, evinin önünden taksiye binmiş ve şoföre şunu söylemiştir:</p><p>\"Önce yol üzerindeki restauranta uğramam lazım. Oradan yemek aldığımda beni iş yerime bırakırsın.\"</p><p>Taksici de müşteriye şu şekilde karşılık vermiştir:</p><p>\"Beklediğim süreler için ayrı bir ücret alıyorum. Kabul ediyorsanız devam edeyim.\"</p><p>Müşterinin kabul ettiği bu ücret tarifesi aşağıdaki tabloda verilmiştir.</p><!--img--><p><b>Bu müşteri taksiyle toplam 12 km yol gitmiş ve taksiciye 35,9 TL verdiğine göre taksiciyi uğradığı restaurantta kaç dk bekletmiştir?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q32.jpg",
     diff: 2,
     expl: "Açılış 2,5 TL; 12 km = 120 · 100 m ⇒ 30 TL. Bekleme ücreti 35,9 − 32,5 = 3,4 TL ⇒ 3,4 / 0,20 = 17 dakika.",
@@ -412,7 +412,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>Ali, Berk ve Can'ın katıldığı bir poligon yarışmasında yarışmanın kuralları şu şekildedir:</p><ul><li>Her bir yarışmacı, dört farklı mesafenin her birinden 3 atış yapacaktır.</li><li>Hedefe isabet eden her atış için yarışmacılara yukarıdaki tabloda verilen puanlar verilecektir.</li><li>Yarışmacıların aldıkları puana göre sıralama oluşturulmuştur.</li></ul><p><b>Birinci olan kişi 4 atış kaçırdığına göre ikinci olan kişi <u>en az</u> kaç atış kaçırmıştır?</b></p>",
+    text: "<p>Ali, Berk ve Can'ın katıldığı bir poligon yarışmasında yarışmanın kuralları şu şekildedir:</p><ul><li>Her bir yarışmacı, dört farklı mesafenin her birinden 3 atış yapacaktır.</li><li>Hedefe isabet eden her atış için yarışmacılara aşağıdaki tabloda verilen puanlar verilecektir.</li><li>Yarışmacıların aldıkları puana göre sıralama oluşturulmuştur.</li></ul><!--img--><p><b>Birinci olan kişi 4 atış kaçırdığına göre ikinci olan kişi <u>en az</u> kaç atış kaçırmıştır?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q33.jpg",
     diff: 3,
     expl: "Tüm atışlar isabet ederse puan 3 · (20 + 25 + 35 + 50) = 390 olur. Birinci 4 atış kaçırdığından en fazla 390 − (3 · 20 + 25) = 305 puan alabilir. İkinci 1 atış kaçırsaydı en az 390 − 50 = 340 puan alırdı ve birinciyi geçerdi. 2 atış kaçırırsa (iki 100 m atışı) 290 puan alabilir. En az 2.",
@@ -425,7 +425,7 @@ export const MAT_KESIR_PROBLEMLERI_T3: McQ[] = [
     ]
   },
   {
-    text: "<p>Ali, Berk ve Can'ın katıldığı bir poligon yarışmasında yarışmanın kuralları şu şekildedir:</p><ul><li>Her bir yarışmacı, dört farklı mesafenin her birinden 3 atış yapacaktır.</li><li>Hedefe isabet eden her atış için yarışmacılara yukarıdaki tabloda verilen puanlar verilecektir.</li><li>Yarışmacıların aldıkları puana göre sıralama oluşturulmuştur.</li></ul><p>Toplam da 175 puan alan Berk 20 m ve 100 m atışlarının sadece birini kaçırmıştır.</p><p><b>Buna göre Berk 30 m ve 50 m atışlarında toplam kaç atışı kaçırmıştır?</b></p>",
+    text: "<p>Ali, Berk ve Can'ın katıldığı bir poligon yarışmasında yarışmanın kuralları şu şekildedir:</p><ul><li>Her bir yarışmacı, dört farklı mesafenin her birinden 3 atış yapacaktır.</li><li>Hedefe isabet eden her atış için yarışmacılara aşağıdaki tabloda verilen puanlar verilecektir.</li><li>Yarışmacıların aldıkları puana göre sıralama oluşturulmuştur.</li></ul><!--img--><p>Toplam da 175 puan alan Berk 20 m ve 100 m atışlarının sadece birini kaçırmıştır.</p><p><b>Buna göre Berk 30 m ve 50 m atışlarında toplam kaç atışı kaçırmıştır?</b></p>",
     img: "QuestionsImage/kpss/matematik/kesir-problemleri_t1_q34.jpg",
     diff: 3,
     expl: "Berk 20 m ve 100 m mesafelerinin her birinde birer atış kaçırmıştır: 2 · 20 + 2 · 50 = 140 puan. Kalan 35 puan yalnızca bir adet 50 m isabetiyle alınabilir. 30 m'de 3, 50 m'de 2 atış kaçırmıştır; toplam 5.",

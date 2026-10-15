@@ -799,7 +799,7 @@ export const MAT_CARPANLARA_AYIRMA_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>A ve B çubukları iki farklı su deposunun gösterge çubukları ve bölmeler eşit aralıklı olmak üzere her iki çubuk da yukarıdaki şekildeki durumdayken A deposunda 480 lt, B deposunda 640 lt su bulunduğunu gösteriyor.</p><p><b>O halde her iki deponun da dolması için toplam kaç lt su gereklidir?</b></p>",
+    text: "<p>A ve B çubukları iki farklı su deposunun gösterge çubukları ve bölmeler eşit aralıklı olmak üzere her iki çubuk da aşağıdaki şekildeki durumdayken A deposunda 480 lt, B deposunda 640 lt su bulunduğunu gösteriyor.</p><!--img--><p><b>O halde her iki deponun da dolması için toplam kaç lt su gereklidir?</b></p>",
     img: "QuestionsImage/kpss/matematik/carpanlara-ayirma_t1_q66.jpg",
     diff: 3,
     expl: "Gösterge çubuklarına göre A deposunda 480 lt, B deposunda 640 lt su vardır. Kitabın cevap anahtarı E (1120 = 480 + 640) olup bu, her iki deponun da yarı dolu olduğu (dolması için içindeki su kadar daha su gerektiği) yorumuna karşılık gelir: 480 + 640 = 1120 lt.",

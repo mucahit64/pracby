@@ -513,7 +513,7 @@ export const MAT_ARDISIK_SAYILAR_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>x, y, z ardışık tam sayılardır.</p><p>x &lt; y &lt; z</p><p><b>olduğuna göre yukarıda verilen ifadenin sonucu kaçtır?</b></p>",
+    text: "<p>x, y, z ardışık tam sayılardır.</p><p>x &lt; y &lt; z</p><!--img--><p><b>olduğuna göre yukarıda verilen ifadenin sonucu kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/temel-kavramlar_t3_q15.jpg",
     diff: 2,
     expl: "x − y = −1, x − z = −2, y − z = −1. İfade: (−1 − 2) / (−1) = 3.",
@@ -526,7 +526,7 @@ export const MAT_ARDISIK_SAYILAR_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>a, b, c ardışık çift tam sayılardır.</p><p>c &lt; b &lt; a</p><p><b>olduğuna göre yukarıda verilen ifadenin sonucu kaçtır?</b></p>",
+    text: "<p>a, b, c ardışık çift tam sayılardır.</p><p>c &lt; b &lt; a</p><!--img--><p><b>olduğuna göre yukarıda verilen ifadenin sonucu kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/temel-kavramlar_t3_q16.jpg",
     diff: 2,
     expl: "a − c = 4, a − b = 2, b − c = 2. İfade: (4 + 2) / 2 = 3.",
@@ -614,7 +614,7 @@ export const MAT_ARDISIK_SAYILAR_T2: McQ[] = [
     ]
   },
   {
-    text: "<p>Ahmet, 9'dan başlayarak ve yukarıdaki kurallara uyarak sayma yapıyor.</p><p><b>Buna göre Ahmet'in söylediği 35. sayı kaçtır?</b></p>",
+    text: "<p>Ahmet, 9'dan başlayarak ve yukarıdaki kurallara uyarak sayma yapıyor.</p><!--img--><p><b>Buna göre Ahmet'in söylediği 35. sayı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/temel-kavramlar_t4_q7.jpg",
     diff: 3,
     expl: "Sırasıyla +4 ve +7 eklendiğinden her iki adımda sayı 11 artar. Tek sıradaki terimler: 1. terim 9, 3. terim 20, 5. terim 31, ... ⇒ (2k + 1). terim = 9 + 11k. 35. terim için k = 17: 9 + 187 = 196.",
@@ -627,7 +627,7 @@ export const MAT_ARDISIK_SAYILAR_T2: McQ[] = [
     ]
   },
   {
-    text: "<p>3'ten başlanarak yukarıda verilen kurallara göre sayma işlemi yapılıyor.</p><p><b>Buna göre 93. sayı kaçtır?</b></p>",
+    text: "<p>3'ten başlanarak yukarıda verilen kurallara göre sayma işlemi yapılıyor.</p><!--img--><p><b>Buna göre 93. sayı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/temel-kavramlar_t4_q8.jpg",
     diff: 3,
     expl: "Sırasıyla −3 ve +1 eklendiğinden her iki adımda sayı 2 azalır. Tek sıradaki terimler: 1. terim 3, 3. terim 1, 5. terim −1, ... ⇒ n tek ise n. terim = 4 − n. 93. terim: 4 − 93 = −89.",

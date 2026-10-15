@@ -67,7 +67,7 @@ export const MAT_KATI_CISIMLER_T2: McQ[] = [
     ]
   },
   {
-    text: "<p>Bilgi: Tabanları ve yükseklikleri aynı olan silindirin hacmi koninin hacminin 3 katıdır.</p><p><b>Yukarıdaki bilgiye göre şekilde içi sıvı dolu olan kap ters çevrilirse sıvı yüksekliği kaç br olur?</b></p>",
+    text: "<p>Bilgi: Tabanları ve yükseklikleri aynı olan silindirin hacmi koninin hacminin 3 katıdır.</p><!--img--><p><b>Yukarıdaki bilgiye göre şekilde içi sıvı dolu olan kap ters çevrilirse sıvı yüksekliği kaç br olur?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t1_q6.jpg",
     diff: 3,
     expl: "Sıvı, yüksekliği 6 olan koniyi ve silindirin 6 birimlik kısmını doldurur. Koni hacmi 6 yükseklikli silindirin 1/3'ü, yani 2 birim yükseklikli silindire eşittir. Ters çevrilince sıvı silindirde 2 + 6 = 8 br yükseklik oluşturur.",
@@ -80,7 +80,7 @@ export const MAT_KATI_CISIMLER_T2: McQ[] = [
     ]
   },
   {
-    text: "<p>Tabanı kare yan yüzeyleri eşkenar üçgen olan piramidin bir yüksekliği 3√2 cm'dir.</p><p>|TK| = 3√2 cm</p><p><b>Buna göre yanal alanı kaç cm<sup>2</sup> dir?</b></p>",
+    text: "<p>Tabanı kare yan yüzeyleri eşkenar üçgen olan piramidin bir yüksekliği 3√2 cm'dir.</p><p>|TK| = 3√2 cm</p><!--img--><p><b>Buna göre yanal alanı kaç cm<sup>2</sup> dir?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t1_q7.jpg",
     diff: 3,
     expl: "Ayrıt a olsun. Yan ayrıt da a, merkezden köşeye uzaklık a√2/2'dir. a<sup>2</sup> = 18 + a<sup>2</sup>/2 ⇒ a<sup>2</sup> = 36 ⇒ a = 6. Yanal alan: 4 · (36√3/4) = 36√3.",
@@ -93,7 +93,7 @@ export const MAT_KATI_CISIMLER_T2: McQ[] = [
     ]
   },
   {
-    text: "<p>ABC üçgen<br>|AC| = 3 br<br>|AB| = 4 br</p><p><b>Şekilde verilen üçgenin AB etrafında 360° dönmesiyle oluşan koninin, AC etrafında 360° dönmesiyle oluşan koninin hacmine oranı kaçtır?</b></p>",
+    text: "<p>ABC üçgen<br>|AC| = 3 br<br>|AB| = 4 br</p><!--img--><p><b>Şekilde verilen üçgenin AB etrafında 360° dönmesiyle oluşan koninin, AC etrafında 360° dönmesiyle oluşan koninin hacmine oranı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t1_q8.jpg",
     diff: 1,
     expl: "AB etrafında: yükseklik 4, yarıçap 3 ⇒ V<sub>1</sub> = (1/3)π · 9 · 4 = 12π. AC etrafında: yükseklik 3, yarıçap 4 ⇒ V<sub>2</sub> = (1/3)π · 16 · 3 = 16π. Oran: 12π/16π = 3/4.",
@@ -106,7 +106,7 @@ export const MAT_KATI_CISIMLER_T2: McQ[] = [
     ]
   },
   {
-    text: "<p>ABC ve ADE konilerinin merkezleri K ve L noktalarıdır.</p><p>|AB| = 10<br>|DK| = 3</p><p><b>Taralı bölgedeki kesik koninin hacmi kaç cm<sup>3</sup> tür?</b></p>",
+    text: "<p>ABC ve ADE konilerinin merkezleri K ve L noktalarıdır.</p><p>|AB| = 10<br>|DK| = 3</p><!--img--><p><b>Taralı bölgedeki kesik koninin hacmi kaç cm<sup>3</sup> tür?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t1_q9.jpg",
     diff: 3,
     expl: "Şekildeki işaretlerden D, [AB]'nin orta noktasıdır; büyük koninin yarıçapı 2 · 3 = 6, yüksekliği √(100 − 36) = 8; küçük koninin yarıçapı 3, yüksekliği 4'tür. Kesik koni hacmi: (1/3)π · 36 · 8 − (1/3)π · 9 · 4 = 96π − 12π = 84π.",
@@ -119,7 +119,7 @@ export const MAT_KATI_CISIMLER_T2: McQ[] = [
     ]
   },
   {
-    text: "<p>Su dolu silindirik kabın yarıçapı r = 4 cm, yüksekliği h = 10 cm'dir.</p><p><b>Silindir 45° eğilirse kaç cm<sup>3</sup> su dökülür?</b></p>",
+    text: "<p>Su dolu silindirik kabın yarıçapı r = 4 cm, yüksekliği h = 10 cm'dir.</p><!--img--><p><b>Silindir 45° eğilirse kaç cm<sup>3</sup> su dökülür?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t1_q10.jpg",
     diff: 3,
     expl: "45° eğilince su yüzeyi taban çapı boyunca 8 · tan45° = 8 cm'lik bir yükseklik farkı oluşturur. Dökülen su, yüksekliği 8 cm olan silindirin yarısıdır: (1/2) · π · 4<sup>2</sup> · 8 = 64π.",
@@ -135,7 +135,7 @@ export const MAT_KATI_CISIMLER_T2: McQ[] = [
 
 export const MAT_ANALITIK_GEOMETRI_T1: McQ[] = [
   {
-    text: "<p>Analitik düzlemde ABCD paralelkenar D(a, 7), C(8, b) noktaları veriliyor.</p><p><b>2 · |OA| = |OB| = 6 ise a · b kaçtır?</b></p>",
+    text: "<p>Analitik düzlemde ABCD paralelkenar D(a, 7), C(8, b) noktaları veriliyor.</p><!--img--><p><b>2 · |OA| = |OB| = 6 ise a · b kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t2_q1.jpg",
     diff: 2,
     expl: "|OA| = 3, |OB| = 6 olduğundan A(0, 3), B(6, 0). Paralelkenarda D − A = C − B: (a, 7 − 3) = (8 − 6, b) ⇒ a = 2, b = 4. a · b = 8.",
@@ -161,7 +161,7 @@ export const MAT_ANALITIK_GEOMETRI_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>Yandaki koordinat düzleminde verilen A karesinin x eksenine göre B karesinin y eksenine göre simetrisi alınarak C bölgesi oluşturuluyor.</p><p><b>Buna göre oluşan bölgenin alanı kaç birim karedir?</b></p>",
+    text: "<p>Yandaki koordinat düzleminde verilen A karesinin x eksenine göre B karesinin y eksenine göre simetrisi alınarak C bölgesi oluşturuluyor.</p><!--img--><p><b>Buna göre oluşan bölgenin alanı kaç birim karedir?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t2_q3.jpg",
     diff: 3,
     expl: "A karesi: 1 ≤ x ≤ 5, 1 ≤ y ≤ 5; x eksenine göre simetriği 1 ≤ x ≤ 5, −5 ≤ y ≤ −1. B karesi: −7 ≤ x ≤ −2, −7 ≤ y ≤ −2; y eksenine göre simetriği 2 ≤ x ≤ 7, −7 ≤ y ≤ −2. Ortak C bölgesi 2 ≤ x ≤ 5, −5 ≤ y ≤ −2 olup 3 × 3'lük karedir. Alan = 9.",
@@ -198,7 +198,7 @@ export const MAT_ANALITIK_GEOMETRI_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>Koordinat düzleminde A(8, −3) noktası veriliyor.</p><p>m(ABO) = 45°</p><p><b>Yukarıda verilenlere göre ABO üçgeninin alanı kaçtır?</b></p>",
+    text: "<p>Koordinat düzleminde A(8, −3) noktası veriliyor.</p><p>m(ABO) = 45°</p><!--img--><p><b>Yukarıda verilenlere göre ABO üçgeninin alanı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t2_q6.jpg",
     diff: 3,
     expl: "B, y ekseni üzerindedir ve AB doğrusu y ekseniyle 45° yapar; eğim −1'dir. (−3 − y<sub>B</sub>)/8 = −1 ⇒ y<sub>B</sub> = 5. Taban |OB| = 5, yükseklik A'nın apsisi 8. Alan = (5 · 8)/2 = 20.",
@@ -211,7 +211,7 @@ export const MAT_ANALITIK_GEOMETRI_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>Dik koordinat düzleminde verilen [CD] doğru parçasının uzunluğu 18 br'dir.</p><p><b>CDO üçgeninin ağırlık merkezi P(a, b) noktası olduğuna göre a<sup>2</sup> + b<sup>2</sup> değeri kaçtır?</b></p>",
+    text: "<p>Dik koordinat düzleminde verilen [CD] doğru parçasının uzunluğu 18 br'dir.</p><!--img--><p><b>CDO üçgeninin ağırlık merkezi P(a, b) noktası olduğuna göre a<sup>2</sup> + b<sup>2</sup> değeri kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t2_q7.jpg",
     diff: 2,
     expl: "CDO dik üçgeninde O'dan hipotenüse çizilen kenarortay 18/2 = 9'dur. Ağırlık merkezi bu kenarortayı 2:1 böldüğünden |OP| = 6. a<sup>2</sup> + b<sup>2</sup> = |OP|<sup>2</sup> = 36.",
@@ -224,7 +224,7 @@ export const MAT_ANALITIK_GEOMETRI_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>A, B, C, D, E noktalarından biri orjin olmak üzere birim kareli verilen dik koordinat düzleminde K ve L noktalarının orijine uzaklıkları eşittir.</p><p><b>Buna göre x noktasının orijine uzaklığı kaç br'dir?</b></p>",
+    text: "<p>A, B, C, D, E noktalarından biri orjin olmak üzere birim kareli verilen dik koordinat düzleminde K ve L noktalarının orijine uzaklıkları eşittir.</p><!--img--><p><b>Buna göre x noktasının orijine uzaklığı kaç br'dir?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t2_q8.jpg",
     diff: 3,
     expl: "Orijin E alınırsa K(−3, −2) ve L(2, 3) olur; |EK| = |EL| = √13 sağlanır (diğer noktalar için eşitlik sağlanmaz). Bu durumda x noktası (−3, 4) olup orijine uzaklığı √(9 + 16) = 5'tir.",
@@ -249,7 +249,7 @@ export const MAT_ANALITIK_GEOMETRI_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>ABCD kare<br>A(7, 4) ve |OB| = 2 cm</p><p><b>Yukarıdaki verilenlere göre C noktasının koordinatları toplamı kaçtır?</b></p>",
+    text: "<p>ABCD kare<br>A(7, 4) ve |OB| = 2 cm</p><!--img--><p><b>Yukarıdaki verilenlere göre C noktasının koordinatları toplamı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t2_q10.jpg",
     diff: 3,
     expl: "B(2, 0) ve BA = (5, 4). Karede BC, BA'nın 90° döndürülmüşüdür: BC = (−4, 5). C = (2 − 4, 0 + 5) = (−2, 5). Koordinatlar toplamı 3.",
@@ -265,7 +265,7 @@ export const MAT_ANALITIK_GEOMETRI_T1: McQ[] = [
 
 export const MAT_ANALITIK_GEOMETRI_T2: McQ[] = [
   {
-    text: "<p>Şekilde verilen d<sub>1</sub> ve d<sub>2</sub> doğruları K noktasında kesişmektedir.</p><p><b>Buna göre K noktasının apsisi kaçtır?</b></p>",
+    text: "<p>Şekilde verilen d<sub>1</sub> ve d<sub>2</sub> doğruları K noktasında kesişmektedir.</p><!--img--><p><b>Buna göre K noktasının apsisi kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t3_q1.jpg",
     diff: 2,
     expl: "d<sub>1</sub>: (−10, 0) ve (0, 5) ⇒ −x + 2y = 10. d<sub>2</sub>: (6, 0) ve (0, 6) ⇒ x + y = 6. Toplanırsa 3y = 16 ⇒ y = 16/3, x = 6 − 16/3 = 2/3.",
@@ -303,7 +303,7 @@ export const MAT_ANALITIK_GEOMETRI_T2: McQ[] = [
     ]
   },
   {
-    text: "<p>Yanda verilen koordinat sisteminde y = 7 br, y = 3 br doğruları arasında çizilen ABCD karesinin B ve D noktalarının y eksenine uzaklıkları farkı 3 tür.</p><p><b>Buna göre A(ABCD) kaç br<sup>2</sup> dir?</b></p>",
+    text: "<p>Yanda verilen koordinat sisteminde y = 7 br, y = 3 br doğruları arasında çizilen ABCD karesinin B ve D noktalarının y eksenine uzaklıkları farkı 3 tür.</p><!--img--><p><b>Buna göre A(ABCD) kaç br<sup>2</sup> dir?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t3_q4.jpg",
     diff: 3,
     expl: "B ve D'nin ordinatları farkı 7 − 3 = 4, apsisleri farkı 3'tür. Köşegen |BD| = √(9 + 16) = 5. Karenin alanı köşegenin karesinin yarısıdır: 25/2.",
@@ -352,7 +352,7 @@ export const MAT_ANALITIK_GEOMETRI_T2: McQ[] = [
     ]
   },
   {
-    text: "<p>d<sub>1</sub>: x − y + 1 = 0<br>d<sub>2</sub>: x − 2y + 4 = 0</p><p>y eksenine teğet çizilen ABCD karesinin ağırlık merkezi d<sub>1</sub> ve d<sub>2</sub> doğrularının kesişim noktasından geçmektedir.</p><p><b>Buna göre ABCD karesinin alanı kaç br<sup>2</sup> dir?</b></p>",
+    text: "<p>d<sub>1</sub>: x − y + 1 = 0<br>d<sub>2</sub>: x − 2y + 4 = 0</p><p>y eksenine teğet çizilen ABCD karesinin ağırlık merkezi d<sub>1</sub> ve d<sub>2</sub> doğrularının kesişim noktasından geçmektedir.</p><!--img--><p><b>Buna göre ABCD karesinin alanı kaç br<sup>2</sup> dir?</b></p>",
     img: "QuestionsImage/kpss/matematik/geometri_t3_q8.jpg",
     diff: 3,
     expl: "x = y − 1 ikinci denkleme yazılırsa y = 3, x = 2. Ağırlık merkezi (2, 3)'tür. Karenin bir kenarı y ekseni üzerinde olduğundan merkezin y eksenine uzaklığı yarım kenardır: a/2 = 2 ⇒ a = 4. Alan = 16.",

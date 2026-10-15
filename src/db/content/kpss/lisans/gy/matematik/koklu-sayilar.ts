@@ -158,7 +158,7 @@ export const MAT_KOKLU_SAYILAR_T1: McQ[] = [
 // ─── KÖKLÜ SAYILAR TEST - 2 ───────────────────────────────────────────────────
 
   {
-    text: "<p>a ve b pozitif gerçel sayılardır.</p><p><b>Yukarıda verilen eşitliğe göre a · b çarpımı kaçtır?</b></p>",
+    text: "<p>a ve b pozitif gerçel sayılardır.</p><!--img--><p><b>Yukarıda verilen eşitliğe göre a · b çarpımı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/koklu-sayilar_t1_q13.jpg",
     diff: 3,
     expl: "İlk terim: √(a²b²) / √b = ab / √b = a√b.\nİkinci terim: √(a³b) / √a = a√(ab) / √a = a√b.\nToplam: 2a√b = 3√a. Her iki tarafın karesi alınırsa 4a²b = 9a ⇒ 4ab = 9 ⇒ ab = 9/4 bulunur.",

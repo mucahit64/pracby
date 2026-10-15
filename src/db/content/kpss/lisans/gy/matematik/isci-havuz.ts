@@ -110,7 +110,7 @@ export const MAT_ISCI_HAVUZ_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>Şekilde 2 havuz ve 1 fıskiye verilmiştir. Fıskiyeden akan su önce I numaralı havuzu, I numaralı havuzdan taşan su ise 2 numaralı havuzu doldurmaktadır. Havuzlar boşken I numaralı havuz 15 saatte doluyor.</p><p><b>Buna göre fıskiye çalıştırıldıktan 30 saat sonra II numaralı havuzun yüzde kaçı dolmuş olur?</b></p>",
+    text: "<p>Şekilde 2 havuz ve 1 fıskiye verilmiştir. Fıskiyeden akan su önce I numaralı havuzu, I numaralı havuzdan taşan su ise 2 numaralı havuzu doldurmaktadır. Havuzlar boşken I numaralı havuz 15 saatte doluyor.</p><!--img--><p><b>Buna göre fıskiye çalıştırıldıktan 30 saat sonra II numaralı havuzun yüzde kaçı dolmuş olur?</b></p>",
     img: "QuestionsImage/kpss/matematik/isci-havuz_t1_q10.jpg",
     diff: 2,
     expl: "I numaralı havuz 3V, II numaralı havuz 6V hacimlidir. 3V su 15 saatte aktığından fıskiye 5 saatte V su akıtır; 30 saatte 6V akıtır. 3V'si I numaralı havuzu doldurur, kalan 3V II numaralı havuza geçer: 3V/6V = %50.",
@@ -123,7 +123,7 @@ export const MAT_ISCI_HAVUZ_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>Yandaki A musluğu boş havuzu 24 saatte dolduruyor. B musluğu ise kendi seviyesine kadar olan kısmı 18 saatte boşaltmaktadır.</p><p><b>Buna göre iki musluk aynı anda açılırsa havuz toplam kaç saatte dolar?</b></p>",
+    text: "<p>Yandaki A musluğu boş havuzu 24 saatte dolduruyor. B musluğu ise kendi seviyesine kadar olan kısmı 18 saatte boşaltmaktadır.</p><!--img--><p><b>Buna göre iki musluk aynı anda açılırsa havuz toplam kaç saatte dolar?</b></p>",
     img: "QuestionsImage/kpss/matematik/isci-havuz_t1_q11.jpg",
     diff: 3,
     expl: "B musluğu havuzun yarı yüksekliğindedir. A, havuzun her yarısını 12 saatte doldurur. Alt yarı dolarken B su boşaltmaz: 12 saat. Üst yarıda A doldururken B boşaltır: 1/12 − 1/18 = 1/36 ⇒ 36 saat. Toplam = 12 + 36 = 48 saat.",
@@ -136,7 +136,7 @@ export const MAT_ISCI_HAVUZ_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>Yandaki A, B, C özdeş muslukları aynı anda açıldığında dolu havuz 44 saatte boşalmaktadır.</p><p><b>Buna göre C musluğu tek başına açıldığında havuz kaç saatte boşalır?</b></p>",
+    text: "<p>Yandaki A, B, C özdeş muslukları aynı anda açıldığında dolu havuz 44 saatte boşalmaktadır.</p><!--img--><p><b>Buna göre C musluğu tek başına açıldığında havuz kaç saatte boşalır?</b></p>",
     img: "QuestionsImage/kpss/matematik/isci-havuz_t1_q12.jpg",
     diff: 3,
     expl: "Havuz eşit hacimli üç bölmedir; bir musluk bir bölmeyi x saatte boşaltsın. Üst bölmeyi üç musluk x/3, orta bölmeyi B ve C x/2, alt bölmeyi yalnız C x saatte boşaltır. x/3 + x/2 + x = 11x/6 = 44 ⇒ x = 24. C tek başına üç bölmeyi 3 · 24 = 72 saatte boşaltır.",
@@ -281,7 +281,7 @@ export const MAT_ISCI_HAVUZ_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>O merkezli dairesel grafikte bir kumaş fabrikasında üretilen A, B, C, D ürünlerinin miktarları arasındaki dağılım gösterilmiştir.</p><p><b>B ürününün yıllık üretim miktarı 60 ton olduğuna göre, C ürününün yıllık üretim miktarı kaç tondur?</b></p>",
+    text: "<p>O merkezli dairesel grafikte bir kumaş fabrikasında üretilen A, B, C, D ürünlerinin miktarları arasındaki dağılım gösterilmiştir.</p><!--img--><p><b>B ürününün yıllık üretim miktarı 60 ton olduğuna göre, C ürününün yıllık üretim miktarı kaç tondur?</b></p>",
     img: "QuestionsImage/kpss/matematik/isci-havuz_t1_q23.jpg",
     diff: 2,
     expl: "C'nin açısı = 360° − (80° + 120° + 50°) = 110°. 120° → 60 ton ise 1° → 0,5 ton. C = 110 · 0,5 = 55 ton.",
@@ -294,7 +294,7 @@ export const MAT_ISCI_HAVUZ_T1: McQ[] = [
     ]
   },
   {
-    text: "<p>Yandaki dairesel grafikte bir üreticinin ürettiği A, B, C ürünlerinin üretim miktarlarının dağılımı verilmiştir.</p><p><b>Buna göre A, B ve C ürünlerinin miktarları sırasıyla hangi sayılarla orantılıdır?</b></p>",
+    text: "<p>Yandaki dairesel grafikte bir üreticinin ürettiği A, B, C ürünlerinin üretim miktarlarının dağılımı verilmiştir.</p><!--img--><p><b>Buna göre A, B ve C ürünlerinin miktarları sırasıyla hangi sayılarla orantılıdır?</b></p>",
     img: "QuestionsImage/kpss/matematik/isci-havuz_t1_q24.jpg",
     diff: 2,
     expl: "A: 126°, B: 90°, C: 144°. 18'e bölünürse 7, 5, 8 bulunur.",

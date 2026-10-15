@@ -2,7 +2,7 @@ import type { McQ } from "../../../../types";
 
 export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
   {
-    text: "<p>Yukarıdaki tabloda hafta içi bir fabrikada üretilen makine sayılarının dağılımı gösterilmektedir.</p><p><b>Hangi gün işçi başına düşen bozuk makine sayısı <u>en yüksektir</u>?</b></p>",
+    text: "<p>Aşağıdaki tabloda hafta içi bir fabrikada üretilen makine sayılarının dağılımı gösterilmektedir.</p><!--img--><p><b>Hangi gün işçi başına düşen bozuk makine sayısı <u>en yüksektir</u>?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q1.jpg",
     diff: 1,
     expl: "İşçi başına düşen bozuk makine sayıları: Pazartesi 12/20 = 0,6; Salı 15/18 ≈ 0,83; Çarşamba 19/20 = 0,95; Perşembe 16/18 ≈ 0,89; Cuma 18/18 = 1. En yüksek değer Cuma günüdür.",
@@ -15,7 +15,7 @@ export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
     ]
   },
   {
-    text: "<p>Yukarıdaki tabloda hafta içi bir fabrikada üretilen makine sayılarının dağılımı gösterilmektedir.</p><p><b>Beş günün sonunda üretilen tüm makineler göz önüne alındığında rastgele seçilen bir makinenin pazartesi günü üretilen bozuk makine olma olasılığı kaçtır?</b></p>",
+    text: "<p>Aşağıdaki tabloda hafta içi bir fabrikada üretilen makine sayılarının dağılımı gösterilmektedir.</p><!--img--><p><b>Beş günün sonunda üretilen tüm makineler göz önüne alındığında rastgele seçilen bir makinenin pazartesi günü üretilen bozuk makine olma olasılığı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q2.jpg",
     diff: 1,
     expl: "Beş günde üretilen toplam makine sayısı 900 + 800 + 850 + 750 + 700 = 4000'dir. Pazartesi üretilen bozuk makine sayısı 12'dir. Olasılık = 12/4000 = 3/1000.",
@@ -28,7 +28,7 @@ export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
     ]
   },
   {
-    text: "<p>Yukarıdaki tabloda hafta içi bir fabrikada üretilen makine sayılarının dağılımı gösterilmektedir.</p><p>Perşembe günü üretilen makinelerin sayısı x fazla olsaydı hafta içi üretilen makinelerin sayısının %35'ini oluşturacaktı.</p><p><b>Buna göre Perşembe günü üretilen fazla makine sayısı aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Aşağıdaki tabloda hafta içi bir fabrikada üretilen makine sayılarının dağılımı gösterilmektedir.</p><!--img--><p>Perşembe günü üretilen makinelerin sayısı x fazla olsaydı hafta içi üretilen makinelerin sayısının %35'ini oluşturacaktı.</p><p><b>Buna göre Perşembe günü üretilen fazla makine sayısı aşağıdakilerden hangisidir?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q3.jpg",
     diff: 2,
     expl: "Perşembe üretimi 750 + x, haftalık toplam 4000 + x olur. (750 + x)/(4000 + x) = 35/100 = 7/20 ⇒ 20(750 + x) = 7(4000 + x) ⇒ 15000 + 20x = 28000 + 7x ⇒ 13x = 13000 ⇒ x = 1000.",
@@ -77,7 +77,7 @@ export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir üniversitedeki harf notlarının 4'lük sistemde karşılığı yukarıdaki tabloda verilmiştir. Bu üniversitedeki öğrencilerin 4'lük sistemdeki akademik not ortalaması şöyle hesaplanıyor.</p><p>• Bir dersin ortalamaya katkısı o dersten alınan harf notunun 4'lük sistemde karşılığı ile dersin kredisi çarpılarak elde edilir.<br>• Alınan tüm derslerin ortalamaya katkıları toplanarak genel toplam değeri bulunur.<br>• Genel toplam değeri, alınan tüm derslerin kredilerinin toplamına bölünerek akademik not ortalaması hesaplanır.</p><p>Bu üniversiteye yeni başlayan bir öğrenci kredisi 4, 3 ve 3 olan derslerden sırasıyla CB, BB ve AA notlarını almıştır.</p><p><b>Buna göre, öğrencinin akademik not ortalaması kaçtır?</b></p>",
+    text: "<p>Bir üniversitedeki harf notlarının 4'lük sistemde karşılığı aşağıdaki tabloda verilmiştir.</p><!--img--><p>Bu üniversitedeki öğrencilerin 4'lük sistemdeki akademik not ortalaması şöyle hesaplanıyor.</p><p>• Bir dersin ortalamaya katkısı o dersten alınan harf notunun 4'lük sistemde karşılığı ile dersin kredisi çarpılarak elde edilir.<br>• Alınan tüm derslerin ortalamaya katkıları toplanarak genel toplam değeri bulunur.<br>• Genel toplam değeri, alınan tüm derslerin kredilerinin toplamına bölünerek akademik not ortalaması hesaplanır.</p><p>Bu üniversiteye yeni başlayan bir öğrenci kredisi 4, 3 ve 3 olan derslerden sırasıyla CB, BB ve AA notlarını almıştır.</p><p><b>Buna göre, öğrencinin akademik not ortalaması kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q7.jpg",
     diff: 1,
     expl: "CB = 2,5; BB = 3,0; AA = 4,0. Genel toplam = 4 · 2,5 + 3 · 3 + 3 · 4 = 10 + 9 + 12 = 31. Toplam kredi = 4 + 3 + 3 = 10. Ortalama = 31/10 = 3,1.",
@@ -90,7 +90,7 @@ export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir üniversitedeki harf notlarının 4'lük sistemde karşılığı yukarıdaki tabloda verilmiştir. Bu üniversitedeki öğrencilerin 4'lük sistemdeki akademik not ortalaması şöyle hesaplanıyor.</p><p>• Bir dersin ortalamaya katkısı o dersten alınan harf notunun 4'lük sistemde karşılığı ile dersin kredisi çarpılarak elde edilir.<br>• Alınan tüm derslerin ortalamaya katkıları toplanarak genel toplam değeri bulunur.<br>• Genel toplam değeri, alınan tüm derslerin kredilerinin toplamına bölünerek akademik not ortalaması hesaplanır.</p><p>Toplam 46 kredilik ders almış bir öğrencinin akademik not ortalaması 2,50'dır. Bu öğrenci, 4 kredilik bir ders daha alıp bu dersten AA notunu alıyor.</p><p><b>Buna göre, öğrencinin akademik not ortalaması kaç olmuştur?</b></p>",
+    text: "<p>Bir üniversitedeki harf notlarının 4'lük sistemde karşılığı aşağıdaki tabloda verilmiştir.</p><!--img--><p>Bu üniversitedeki öğrencilerin 4'lük sistemdeki akademik not ortalaması şöyle hesaplanıyor.</p><p>• Bir dersin ortalamaya katkısı o dersten alınan harf notunun 4'lük sistemde karşılığı ile dersin kredisi çarpılarak elde edilir.<br>• Alınan tüm derslerin ortalamaya katkıları toplanarak genel toplam değeri bulunur.<br>• Genel toplam değeri, alınan tüm derslerin kredilerinin toplamına bölünerek akademik not ortalaması hesaplanır.</p><p>Toplam 46 kredilik ders almış bir öğrencinin akademik not ortalaması 2,50'dır. Bu öğrenci, 4 kredilik bir ders daha alıp bu dersten AA notunu alıyor.</p><p><b>Buna göre, öğrencinin akademik not ortalaması kaç olmuştur?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q8.jpg",
     diff: 2,
     expl: "Mevcut genel toplam = 46 · 2,50 = 115. Yeni dersin katkısı = 4 · 4,0 = 16. Yeni toplam = 131, yeni kredi = 50. Ortalama = 131/50 = 2,62.",
@@ -103,7 +103,7 @@ export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
     ]
   },
   {
-    text: "<p>Bir üniversitedeki harf notlarının 4'lük sistemde karşılığı yukarıdaki tabloda verilmiştir. Bu üniversitedeki öğrencilerin 4'lük sistemdeki akademik not ortalaması şöyle hesaplanıyor.</p><p>• Bir dersin ortalamaya katkısı o dersten alınan harf notunun 4'lük sistemde karşılığı ile dersin kredisi çarpılarak elde edilir.<br>• Alınan tüm derslerin ortalamaya katkıları toplanarak genel toplam değeri bulunur.<br>• Genel toplam değeri, alınan tüm derslerin kredilerinin toplamına bölünerek akademik not ortalaması hesaplanır.</p><p><b>Toplam 40 kredilik ders almış bir öğrencinin akademik not ortalaması 3,00'dır. Bu öğrenci yeni bir dersten BA notunu aldığında akademik not ortalamasının 3,10'u geçmesi için bu dersin en az kaç kredilik olması gereklidir?</b></p>",
+    text: "<p>Bir üniversitedeki harf notlarının 4'lük sistemde karşılığı aşağıdaki tabloda verilmiştir.</p><!--img--><p>Bu üniversitedeki öğrencilerin 4'lük sistemdeki akademik not ortalaması şöyle hesaplanıyor.</p><p>• Bir dersin ortalamaya katkısı o dersten alınan harf notunun 4'lük sistemde karşılığı ile dersin kredisi çarpılarak elde edilir.<br>• Alınan tüm derslerin ortalamaya katkıları toplanarak genel toplam değeri bulunur.<br>• Genel toplam değeri, alınan tüm derslerin kredilerinin toplamına bölünerek akademik not ortalaması hesaplanır.</p><p><b>Toplam 40 kredilik ders almış bir öğrencinin akademik not ortalaması 3,00'dır. Bu öğrenci yeni bir dersten BA notunu aldığında akademik not ortalamasının 3,10'u geçmesi için bu dersin en az kaç kredilik olması gereklidir?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q9.jpg",
     diff: 3,
     expl: "Mevcut genel toplam = 40 · 3 = 120. Yeni dersin kredisi x olsun; BA = 3,5. (120 + 3,5x)/(40 + x) > 3,10 ⇒ 120 + 3,5x > 124 + 3,1x ⇒ 0,4x > 4 ⇒ x > 10. En az 11 kredi olmalıdır.",
@@ -119,7 +119,7 @@ export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
 // ─── SAYISAL MANTIK PROBLEMLERİ TEST - 6 ──────────────────────────────────────
 
   {
-    text: "<p>10 daireden oluşan bir şekilde, teğet iki daireye komşu daireler denir. 1'den 20'ye kadar olan tek sayılar bu dairelerin içine her dairede farklı bir sayı olacak biçimde yazılıyor. Bir daireye yazılan sayı kendisine komşu olan iki dairedeki sayıdan büyük ise daire griye boyanıyor.</p><p><b>Yukarıdaki şekilde kaç daire griye boyanacaktır?</b></p>",
+    text: "<p>10 daireden oluşan bir şekilde, teğet iki daireye komşu daireler denir. 1'den 20'ye kadar olan tek sayılar bu dairelerin içine her dairede farklı bir sayı olacak biçimde yazılıyor. Bir daireye yazılan sayı kendisine komşu olan iki dairedeki sayıdan büyük ise daire griye boyanıyor.</p><!--img--><p><b>Yukarıdaki şekilde kaç daire griye boyanacaktır?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q10.jpg",
     diff: 2,
     expl: "Saat yönünde sayılar: 7, 13, 11, 19, 17, 9, 1, 15, 5, 3. İki komşusundan da büyük olanlar: 13 (7 ve 11'den büyük), 19 (11 ve 17'den büyük), 15 (1 ve 5'ten büyük). Diğerlerinin en az bir komşusu kendisinden büyüktür. Toplam 3 daire griye boyanır.",
@@ -132,7 +132,7 @@ export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
     ]
   },
   {
-    text: "<p>10 daireden oluşan bir şekilde, teğet iki daireye komşu daireler denir. 1'den 20'ye kadar olan tek sayılar bu dairelerin içine her dairede farklı bir sayı olacak biçimde yazılıyor. Bir daireye yazılan sayı kendisine komşu olan iki dairedeki sayıdan büyük ise daire griye boyanıyor.</p><p><b>Yukarıda verilen şekilde a, b, c harflerinin olduğu dairesel bölgeler gri renkli olduğuna göre a + b'nin <u>en büyük</u> değeri aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>10 daireden oluşan bir şekilde, teğet iki daireye komşu daireler denir. 1'den 20'ye kadar olan tek sayılar bu dairelerin içine her dairede farklı bir sayı olacak biçimde yazılıyor. Bir daireye yazılan sayı kendisine komşu olan iki dairedeki sayıdan büyük ise daire griye boyanıyor.</p><!--img--><p><b>Yukarıda verilen şekilde a, b, c harflerinin olduğu dairesel bölgeler gri renkli olduğuna göre a + b'nin <u>en büyük</u> değeri aşağıdakilerden hangisidir?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q11.jpg",
     diff: 3,
     expl: "Kullanılmayan sayılar 13, 17 ve 19'dur. c, 11 ve 15'ten; a, 15 ve 9'dan büyük olmalıdır. Bu yüzden a ve c, 17 ve 19 değerlerini alır; b'ye 13 kalır (13 > 1 ve 13 > 3). a + b'nin en büyük değeri 19 + 13 = 32'dir.",
@@ -145,7 +145,7 @@ export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
     ]
   },
   {
-    text: "<p>10 daireden oluşan bir şekilde, teğet iki daireye komşu daireler denir. 1'den 20'ye kadar olan tek sayılar bu dairelerin içine her dairede farklı bir sayı olacak biçimde yazılıyor. Bir daireye yazılan sayı kendisine komşu olan iki dairedeki sayıdan büyük ise daire griye boyanıyor.</p><p>Yukarıdaki gri renkli hücreler verilmiştir.</p><p><b>Buna göre sayılar yerleştirildikten sonra a − b ifadesinin <u>en az</u> değeri kaçtır?</b></p>",
+    text: "<p>10 daireden oluşan bir şekilde, teğet iki daireye komşu daireler denir. 1'den 20'ye kadar olan tek sayılar bu dairelerin içine her dairede farklı bir sayı olacak biçimde yazılıyor. Bir daireye yazılan sayı kendisine komşu olan iki dairedeki sayıdan büyük ise daire griye boyanıyor.</p><!--img--><p>Yukarıdaki gri renkli hücreler verilmiştir.</p><p><b>Buna göre sayılar yerleştirildikten sonra a − b ifadesinin <u>en az</u> değeri kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q12.jpg",
     diff: 3,
     expl: "Şekilde saat yönünde: 1 (beyaz), b (gri), boş (beyaz), 9 (gri), boş (beyaz), a (gri), 11 (beyaz), boş (gri), 15 (beyaz), boş (gri). 9 gri olduğundan iki beyaz komşusu 9'dan küçüktür, yani 3, 5, 7'den ikisidir. 11 ile 15 arasındaki ve 15 ile 1 arasındaki gri daireler 15'ten büyük olmalıdır: 17 ve 19. Geriye 13 ile 3, 5, 7'den biri kalır. a, 11'den büyük olmak zorunda olduğundan a = 13'tür. b, 3, 5, 7'den kalan sayıdır ve en büyük 7 olabilir (komşusu 3 veya 5 olur). En az a − b = 13 − 7 = 6.",
@@ -158,7 +158,7 @@ export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
     ]
   },
   {
-    text: "<p>Üçgen biçimindeki bir düzeneğin dairesel hücrelerine 1'den 6'ya kadar olan rakamlar, her hücrede farklı bir rakam olacak biçimde yerleştiriliyor. Sonra, her karenin (ve eşkenar dörtgenin) içine o kare ile aynı doğrultuda bulunan üç dairesel hücredeki sayıların çarpımı yazılıyor: tepedeki kareye sol kenardaki, sağ alttaki kareye sağ kenardaki, soldaki eşkenar dörtgene alt kenardaki üç sayının çarpımı yazılır.</p><p>Örnek: Tepe 5, sol kenar ortası 1, sol alt köşe 3, sağ kenar ortası 4, sağ alt köşe 2, alt kenar ortası 6 ise tepedeki kareye 5 · 1 · 3 = 15, sağ alttaki kareye 5 · 4 · 2 = 40, eşkenar dörtgene 3 · 6 · 2 = 36 yazılır.</p><p><b>Yukarıda verilenlere göre x en çok kaçtır?</b></p>",
+    text: "<p>Üçgen biçimindeki bir düzeneğin dairesel hücrelerine 1'den 6'ya kadar olan rakamlar, her hücrede farklı bir rakam olacak biçimde yerleştiriliyor. Sonra, her karenin (ve eşkenar dörtgenin) içine o kare ile aynı doğrultuda bulunan üç dairesel hücredeki sayıların çarpımı yazılıyor: tepedeki kareye sol kenardaki, sağ alttaki kareye sağ kenardaki, soldaki eşkenar dörtgene alt kenardaki üç sayının çarpımı yazılır.</p><p>Örnek: Tepe 5, sol kenar ortası 1, sol alt köşe 3, sağ kenar ortası 4, sağ alt köşe 2, alt kenar ortası 6 ise tepedeki kareye 5 · 1 · 3 = 15, sağ alttaki kareye 5 · 4 · 2 = 40, eşkenar dörtgene 3 · 6 · 2 = 36 yazılır.</p><!--img--><p><b>Yukarıda verilenlere göre x en çok kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q13.jpg",
     diff: 3,
     expl: "Sağ kenar: tepe · 4 · sağ alt = 60 ⇒ tepe · sağ alt = 15 ⇒ {3, 5}. Alt kenar çarpımı 10'dur; sağ alt 3 olursa kalan çarpım 10/3 olur, bu yüzden sağ alt = 5, tepe = 3. Alt kenarda kalan iki sayının çarpımı 2 ⇒ {1, 2}. Sol kenar ortasına kalan 6 gelir. x = 3 · 6 · (sol alt); sol alt 1 veya 2 olabilir. x en çok 3 · 6 · 2 = 36.",
@@ -171,7 +171,7 @@ export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
     ]
   },
   {
-    text: "<p>Üçgen biçimindeki bir düzeneğin dairesel hücrelerine 1'den 6'ya kadar olan rakamlar, her hücrede farklı bir rakam olacak biçimde yerleştiriliyor. Sonra, her karenin (ve eşkenar dörtgenin) içine o kare ile aynı doğrultuda bulunan üç dairesel hücredeki sayıların çarpımı yazılıyor: tepedeki kareye sol kenardaki, sağ alttaki kareye sağ kenardaki, soldaki eşkenar dörtgene alt kenardaki üç sayının çarpımı yazılır.</p><p>Örnek: Tepe 5, sol kenar ortası 1, sol alt köşe 3, sağ kenar ortası 4, sağ alt köşe 2, alt kenar ortası 6 ise tepedeki kareye 5 · 1 · 3 = 15, sağ alttaki kareye 5 · 4 · 2 = 40, eşkenar dörtgene 3 · 6 · 2 = 36 yazılır.</p><p><b>Yukarıda verilenlere göre A sayısının alabileceği değerler toplamı kaçtır?</b></p>",
+    text: "<p>Üçgen biçimindeki bir düzeneğin dairesel hücrelerine 1'den 6'ya kadar olan rakamlar, her hücrede farklı bir rakam olacak biçimde yerleştiriliyor. Sonra, her karenin (ve eşkenar dörtgenin) içine o kare ile aynı doğrultuda bulunan üç dairesel hücredeki sayıların çarpımı yazılıyor: tepedeki kareye sol kenardaki, sağ alttaki kareye sağ kenardaki, soldaki eşkenar dörtgene alt kenardaki üç sayının çarpımı yazılır.</p><p>Örnek: Tepe 5, sol kenar ortası 1, sol alt köşe 3, sağ kenar ortası 4, sağ alt köşe 2, alt kenar ortası 6 ise tepedeki kareye 5 · 1 · 3 = 15, sağ alttaki kareye 5 · 4 · 2 = 40, eşkenar dörtgene 3 · 6 · 2 = 36 yazılır.</p><!--img--><p><b>Yukarıda verilenlere göre A sayısının alabileceği değerler toplamı kaçtır?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q14.jpg",
     diff: 3,
     expl: "Sağ kenar: 3 · (sağ orta) · 4 = 24 ⇒ sağ orta = 2. Alt kenar: (sol alt) · (alt orta) · 4 = 20 ⇒ sol alt ile alt ortanın çarpımı 5 ⇒ {1, 5}. Sol kenar ortasına kalan 6 gelir. A = 3 · 6 · (sol alt); sol alt 1 ise A = 18, 5 ise A = 90. Toplam 18 + 90 = 108.",
@@ -184,7 +184,7 @@ export const MAT_SAYISAL_MANTIK_T5: McQ[] = [
     ]
   },
   {
-    text: "<p>Üçgen biçimindeki bir düzeneğin dairesel hücrelerine 1'den 6'ya kadar olan rakamlar, her hücrede farklı bir rakam olacak biçimde yerleştiriliyor. Sonra, her karenin (ve eşkenar dörtgenin) içine o kare ile aynı doğrultuda bulunan üç dairesel hücredeki sayıların çarpımı yazılıyor: tepedeki kareye sol kenardaki, sağ alttaki kareye sağ kenardaki, soldaki eşkenar dörtgene alt kenardaki üç sayının çarpımı yazılır.</p><p>Örnek: Tepe 5, sol kenar ortası 1, sol alt köşe 3, sağ kenar ortası 4, sağ alt köşe 2, alt kenar ortası 6 ise tepedeki kareye 5 · 1 · 3 = 15, sağ alttaki kareye 5 · 4 · 2 = 40, eşkenar dörtgene 3 · 6 · 2 = 36 yazılır.</p><p><b>Yukarıda verilenlere göre A + B + C toplamı aşağıdakilerden hangisidir?</b></p>",
+    text: "<p>Üçgen biçimindeki bir düzeneğin dairesel hücrelerine 1'den 6'ya kadar olan rakamlar, her hücrede farklı bir rakam olacak biçimde yerleştiriliyor. Sonra, her karenin (ve eşkenar dörtgenin) içine o kare ile aynı doğrultuda bulunan üç dairesel hücredeki sayıların çarpımı yazılıyor: tepedeki kareye sol kenardaki, sağ alttaki kareye sağ kenardaki, soldaki eşkenar dörtgene alt kenardaki üç sayının çarpımı yazılır.</p><p>Örnek: Tepe 5, sol kenar ortası 1, sol alt köşe 3, sağ kenar ortası 4, sağ alt köşe 2, alt kenar ortası 6 ise tepedeki kareye 5 · 1 · 3 = 15, sağ alttaki kareye 5 · 4 · 2 = 40, eşkenar dörtgene 3 · 6 · 2 = 36 yazılır.</p><!--img--><p><b>Yukarıda verilenlere göre A + B + C toplamı aşağıdakilerden hangisidir?</b></p>",
     img: "QuestionsImage/kpss/matematik/sayisal-mantik_t1_q15.jpg",
     diff: 3,
     expl: "Alt kenar: B · (alt orta) · C = 15 ⇒ bu üç sayı 1, 3, 5'tir. Kalan 2, 4, 6 sayıları A ve iki kenar ortasına gelir. Sağ kenar: A · (sağ orta) · C = 36; 2, 4, 6'dan iki sayının çarpımı 8, 12 veya 24 olabildiğinden C = 3 ve A · (sağ orta) = 12 ⇒ {2, 6}. Sol kenar: A · (sol orta) · B = 24; B = 1 ise A · (sol orta) = 24 ⇒ {4, 6}. Ortak sayı A = 6'dır. A + B + C = 6 + 1 + 3 = 10.",

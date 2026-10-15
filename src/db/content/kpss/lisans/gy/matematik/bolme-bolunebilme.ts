@@ -446,7 +446,7 @@ export const MAT_BOLUNEBILME_T2: McQ[] = [
     ]
   },
   {
-    text: "<p>875B dört basamaklı bir doğal sayıdır.</p><p><b>Yukarıdaki bölme işlemine göre B'nin alabileceği kaç farklı değer vardır?</b></p>",
+    text: "<p>875B dört basamaklı bir doğal sayıdır.</p><!--img--><p><b>Yukarıdaki bölme işlemine göre B'nin alabileceği kaç farklı değer vardır?</b></p>",
     img: "QuestionsImage/kpss/matematik/bolme-bolunebilme_t2_q25.jpg",
     diff: 3,
     expl: "875B = 20k + 13'tür. 20k'nın birler basamağı 0 olduğundan 20k + 13'ün birler basamağı 3'tür; B = 3 (8753 = 20 · 437 + 13). 1 farklı değer.",
