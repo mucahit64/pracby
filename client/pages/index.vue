@@ -100,11 +100,14 @@
                     node.type === 'lesson' && node.status === 'locked'
                       ? 'bg-gray-200 text-gray-400 shadow-[0_8px_0_0_var(--node-shadow-color)] cursor-not-allowed'
                       : '',
-                    node.type === 'chest' && node.status !== 'locked'
+                    node.type === 'chest' && node.status === 'active'
                       ? 'bg-warning text-white shadow-[0_8px_0_0_var(--node-shadow-color)] hover:shadow-[0_6px_0_0_var(--node-shadow-color)] hover:translate-y-[2px] active:shadow-none active:translate-y-[8px] cursor-pointer'
                       : '',
                     node.type === 'chest' && node.status === 'locked'
                       ? 'bg-amber-100 text-amber-400 opacity-60 shadow-[0_8px_0_0_var(--node-shadow-color)] cursor-pointer'
+                      : '',
+                    node.type === 'chest' && node.status === 'completed'
+                      ? 'bg-amber-100 text-amber-500 shadow-[0_8px_0_0_var(--node-shadow-color)] cursor-default'
                       : '',
                     node.type === 'boss' && node.status === 'active'
                       ? 'bg-negative text-white shadow-[0_8px_0_0_var(--node-shadow-color)] hover:shadow-[0_6px_0_0_var(--node-shadow-color)] hover:translate-y-[2px] active:shadow-none active:translate-y-[8px] cursor-pointer'
@@ -113,13 +116,21 @@
                       ? 'bg-gray-200 text-gray-400 shadow-[0_8px_0_0_var(--node-shadow-color)] cursor-not-allowed'
                       : '',
                   ]"
-                  :disabled="node.status === 'locked' && node.type !== 'chest'"
+                  :disabled="(node.status === 'locked' && node.type !== 'chest') || (node.type === 'chest' && node.status === 'completed')"
                   @click="goToLesson(node)"
                 >
                   <template v-if="node.status === 'completed' && node.type === 'lesson'">
                     <span class="text-xl font-black text-white/95 leading-none">{{ node.bestScore ?? 0 }}</span>
                     <span class="text-[10px] font-bold text-white/70 leading-none mt-0.5">puan</span>
                   </template>
+                  <!-- Claimed reward: opened gift box -->
+                  <svg v-else-if="node.type === 'chest' && node.status === 'completed'" class="w-9 h-9" viewBox="0 0 48 48" fill="none" aria-label="Alınmış hediye">
+                    <path d="M10 26h28v14a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2z" fill="#f59e0b" />
+                    <path d="M21 26h6v16h-6z" fill="#dc2626" />
+                    <path d="M7 17.5 38.5 9.5 40.5 17 9 25z" fill="#fbbf24" />
+                    <path d="M20.5 13.8 26.3 12.3 28.3 19.8 22.5 21.3z" fill="#ef4444" />
+                    <path d="M23.4 13c-4-3-9-3.5-9.3-.5s5 2.6 9.3.5zM23.4 13c2-4.5 6.5-7 8.2-4.5s-3.6 4.4-8.2 4.5z" fill="#ef4444" />
+                  </svg>
                   <span v-else-if="node.type === 'chest'" class="drop-shadow-sm">🎁</span>
                   <span v-else class="drop-shadow-sm">
                     {{ node.status === 'locked' ? '🔒' : node.icon }}
@@ -336,6 +347,7 @@ function buildLessonNodes(topic: Topic, colorBg: string, colorBorder: string, co
 
 function getNodeShadowColor(node: LessonNode): string {
   if (node.type === 'chest') {
+    if (node.status === 'completed') return '#fcd34d';
     return node.status === 'locked' ? '#d97706' : '#cc7800';
   }
   if (node.type === 'boss') {
