@@ -9,7 +9,9 @@ import db from "./db/knex";
 
 export const app = express();
 
-app.set("trust proxy", "loopback");
+// nginx runs in its own container on the docker network, so trust private addresses too;
+// otherwise req.ip is nginx's address and IP-based rate limits are shared by every visitor.
+app.set("trust proxy", "loopback, uniquelocal");
 
 // ── Security middleware ──────────────────────────────────────
 app.use(helmet());
