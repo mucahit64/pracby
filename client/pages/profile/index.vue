@@ -445,7 +445,8 @@ const fetchProfile = async () => {
       $fetch<{ label: string; date: string; done: boolean; isToday: boolean }[]>('/api/users/me/streak-history', { headers: h }),
     ]);
 
-    const level = stats.level ?? Math.floor((stats.total_xp ?? 0) / 500) + 1;
+    // The API's `level` is never updated (always 1), so derive it from XP.
+    const level = Math.floor((stats.total_xp ?? 0) / 500) + 1;
     const xpForLevel = (stats.total_xp ?? 0) % 500;
 
     profile.value = {

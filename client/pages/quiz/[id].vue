@@ -339,12 +339,12 @@
     <!-- Quiz finished -->
     <template v-else-if="finished">
       <div class="flex flex-col items-center gap-5 py-10">
-        <div :class="{ 'animate-bounce': isBossSession && stepCompleted }" class="text-[72px] leading-none select-none">
-          {{ energyDepleted ? '🔋' : (isBossSession && stepCompleted ? '⚔️' : '🎊') }}
+        <div :class="{ 'animate-bounce': isBossSession && !energyDepleted }" class="text-[72px] leading-none select-none">
+          {{ energyDepleted ? '🔋' : (isBossSession ? '⚔️' : '🎊') }}
         </div>
 
         <div class="text-center space-y-1">
-          <h1 class="text-2xl font-black text-gray-800">{{ energyDepleted ? 'Enerjin Bitti! 🔋' : (isBossSession && stepCompleted ? '⚔️ Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
+          <h1 class="text-2xl font-black text-gray-800">{{ energyDepleted ? 'Enerjin Bitti! 🔋' : (isBossSession ? '⚔️ Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
           <p class="text-sm font-semibold text-gray-400">{{ energyDepleted ? 'Enerjin tükendi, test sonlandırıldı.' : (isBossSession ? 'Adım finali tamamlandı!' : 'Quiz tamamlandı!') }}</p>
         </div>
 
@@ -514,7 +514,8 @@ const guestTopicId = ref('');
 const guestStepId = ref('');
 const guestTestId = ref('');
 
-const isBossSession = computed(() => route.query.sessionType === 'step_final');
+// The map starts boss nodes with sessionType "topic_final".
+const isBossSession = computed(() => route.query.sessionType === 'topic_final');
 
 const energyEmptyDialog = ref(false);
 const exitWarningDialog = ref(false);
@@ -796,7 +797,9 @@ async function submitToBackend(body: Record<string, unknown>) {
   if (isCorrect) {
     correctCount.value++;
     xpEarned.value += 1;
-  } else {
+  } else if (!unlimitedEnergy.value) {
+    // With unlimited energy the server doesn't deduct either, so the quiz
+    // must not stop at 0.
     energy.value = Math.max(0, energy.value - 1);
     if (energy.value === 0) energyDepleted.value = true;
 

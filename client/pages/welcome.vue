@@ -104,6 +104,8 @@ function selectGroup(groupId: string) {
   const group = examGroups.value.find((g) => g.id === groupId);
   if (!group || !group.is_active) return;
   if (group && group.exam_types.length === 1) {
+    // Set the group first so selectExamType stores its ID, not ''.
+    selectedGroupId.value = groupId;
     selectExamType(group.exam_types[0].id);
     return;
   }
