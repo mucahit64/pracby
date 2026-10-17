@@ -19,6 +19,11 @@
             <div class="w-7 h-7 border-3 border-gray-200 border-t-primary rounded-full animate-spin" />
           </div>
 
+          <!-- Packages couldn't be loaded (offline) -->
+          <p v-else-if="packages.length === 0" class="text-sm font-semibold text-gray-400 text-center">
+            Enerji paketleri yüklenemedi. İnternet bağlantını kontrol et.
+          </p>
+
           <!-- Packages -->
           <div v-else class="flex flex-col gap-2.5 w-full">
             <button

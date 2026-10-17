@@ -9,6 +9,7 @@
     <!-- Error -->
     <div v-else-if="error" class="flex flex-col items-center justify-center flex-1 gap-4 py-20">
       <p class="text-gray-400 font-bold text-center">{{ error }}</p>
+      <button class="bg-white text-primary font-black text-sm py-3 px-6 rounded-xl border-2 border-b-4 border-primary/30 active:border-b-2 active:translate-y-0.5 transition-all cursor-pointer font-[inherit]" @click="retryStart">Tekrar Dene</button>
       <NuxtLink to="/learn" class="bg-primary text-white font-black text-sm py-3 px-6 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all">Öğrenmeye Dön</NuxtLink>
     </div>
 
@@ -52,7 +53,7 @@
         <!-- Question image (placed at the IMAGE_MARKER in question_text, otherwise above the text) -->
         <div v-if="currentQuestion.image_url" class="w-full">
           <img
-            :src="`/${currentQuestion.image_url}`"
+            :src="imageSrc(currentQuestion)"
             :alt="'Soru görseli'"
             class="block mx-auto w-auto max-w-full sm:max-w-md max-h-56 object-contain rounded-lg"
             @error="imageLoadError = true"
@@ -543,6 +544,46 @@ const totalAnswered = ref(0);
 
 // Image error tracking — reset per question
 const imageLoadError = ref(false);
+
+const OFFLINE_ERROR = 'Sorular yüklenemedi. İnternet bağlantını kontrol et.';
+
+// Question images are downloaded before the quiz starts and shown from memory,
+// so a quiz started online can be finished without a connection.
+const preloadedImages = ref<Record<string, string>>({});
+
+function imageSrc(q: Question) {
+  return preloadedImages.value[q.id] ?? `/${q.image_url}`;
+}
+
+/** False when an image could not be fetched because of the connection. Images the
+ *  server doesn't have (4xx) don't block the quiz: they show "görsel yüklenemedi". */
+async function preloadImages(qs: Question[]): Promise<boolean> {
+  const results = await Promise.all(
+    qs.filter((q) => q.image_url).map(async (q) => {
+      try {
+        const res = await fetch(`/${q.image_url}`);
+        if (!res.ok) return res.status >= 400 && res.status < 500;
+        preloadedImages.value[q.id] = URL.createObjectURL(await res.blob());
+        return true;
+      } catch {
+        return false;
+      }
+    }),
+  );
+  return results.every(Boolean);
+}
+
+function releaseImages() {
+  Object.values(preloadedImages.value).forEach((url) => URL.revokeObjectURL(url));
+  preloadedImages.value = {};
+}
+
+/** A start request that failed without a response means there is no connection. */
+function startErrorMessage(e: unknown) {
+  const err = e as { status?: number; data?: { error?: string; message?: string } };
+  if (!err?.status) return OFFLINE_ERROR;
+  return err.data?.error || err.data?.message || 'Quiz başlatılamadı';
+}
 // Mobile feedback sheet hides the explanation until expanded
 const explanationOpen = ref(false);
 const IMAGE_MARKER = '<!--img-->';
@@ -650,6 +691,10 @@ async function startQuiz() {
       if (query.sessionType) params.set('sessionType', query.sessionType as string);
 
       const data = await $fetch<{ questions: Question[] }>(`/api/quiz/guest-start?${params.toString()}`);
+      if (!(await preloadImages(data.questions))) {
+        error.value = OFFLINE_ERROR;
+        return;
+      }
       guestMode.value = true;
       guestTopicId.value = topicId;
       guestStepId.value = (query.stepId as string) || '';
@@ -659,8 +704,7 @@ async function startQuiz() {
       questions.value = data.questions;
       initQuestionState();
     } catch (e: unknown) {
-      const errData = (e as { data?: { error?: string; message?: string } })?.data;
-      error.value = errData?.error || errData?.message || 'Quiz başlatılamadı';
+      error.value = startErrorMessage(e);
     } finally {
       loading.value = false;
     }
@@ -685,6 +729,17 @@ async function startQuiz() {
       }),
     ]);
 
+    if (!(await preloadImages(data.questions))) {
+      // The quiz can't be played; close the session it opened (nothing was answered).
+      $fetch(`/api/quiz/${data.session.id}/finish-bulk`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
+        body: { answers: [], skip_rewards: true },
+      }).catch(() => {});
+      error.value = OFFLINE_ERROR;
+      return;
+    }
+
     energy.value = user.energy ?? 25;
     sessionId.value = data.session.id;
     questions.value = data.questions;
@@ -696,8 +751,7 @@ async function startQuiz() {
       openEnergyDialog();
       return;
     }
-    const errData = fetchErr?.data;
-    error.value = errData?.error || errData?.message || 'Quiz başlatılamadı';
+    error.value = startErrorMessage(e);
   } finally {
     loading.value = false;
   }
@@ -1111,11 +1165,12 @@ function exitQuiz() {
   const token = getToken();
   // Discard buffered answers — session abandoned without rewards
   resetAnswers();
-  $fetch(`/api/quiz/${sessionId.value}/finish-bulk`, {
+  const id = sessionId.value;
+  $fetch(`/api/quiz/${id}/finish-bulk`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}` },
     body: { answers: [], skip_rewards: true },
-  }).catch(() => {});
+  }).catch(() => savePending(id, [], true)); // offline: close it once back online
   router.replace('/learn');
 }
 
@@ -1150,6 +1205,14 @@ function restartQuiz() {
   loading.value = true;
   error.value = '';
   resetAnswers();
+  releaseImages();
+  startQuiz();
+}
+
+/** "Tekrar Dene" on the error screen, e.g. once the connection is back. */
+function retryStart() {
+  error.value = '';
+  loading.value = true;
   startQuiz();
 }
 
@@ -1161,6 +1224,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+  releaseImages();
   document.removeEventListener('mousemove', swipeMouseMove);
   document.removeEventListener('mouseup', swipeMouseUp);
   window.removeEventListener('online', syncPendingSessions);
