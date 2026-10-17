@@ -39,20 +39,11 @@
       <!-- Question body -->
       <div class="flex flex-col gap-5 flex-1 mt-3">
         <!-- Meta -->
-        <div class="flex items-center justify-end gap-3 -mb-1">
+        <div v-if="currentQuestion.exam_source" class="flex items-center justify-end gap-3 -mb-1">
           <!-- Çıkmış Soru -->
           <span
-            v-if="currentQuestion.exam_source"
             class="text-xs font-extrabold text-blue-600 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-full"
           >📚 {{ currentQuestion.exam_source }}</span>
-          <button
-            class="text-gray-300 hover:text-red-400 transition-colors"
-            title="Soruyu Raporla"
-            @click="openReportModal"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
-          </button>
-          <span class="text-xs font-extrabold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-full">⚡ +{{ xpEarned }} XP</span>
         </div>
 
         <!-- Question text before image (not for swipe/fill_blank) -->
@@ -503,7 +494,6 @@ const correctCount = ref(0);
 const energy = useState('userEnergy', () => 25);
 const unlimitedEnergy = useState('unlimitedEnergy', () => false);
 const energyDepleted = ref(false);
-const xpEarned = ref(0);
 const acornEarned = ref(0);
 const lastAnswerCorrect = ref(false);
 const answeredCount = ref(0);
@@ -796,7 +786,6 @@ async function submitToBackend(body: Record<string, unknown>) {
 
   if (isCorrect) {
     correctCount.value++;
-    xpEarned.value += 1;
   } else if (!unlimitedEnergy.value) {
     // With unlimited energy the server doesn't deduct either, so the quiz
     // must not stop at 0.
@@ -995,7 +984,6 @@ async function finishQuiz() {
       headers: { Authorization: `Bearer ${token}` },
       body: { answers: answersToSend, skip_rewards: energyDepleted.value },
     });
-    xpEarned.value = result.xp_earned;
     acornEarned.value = result.acorn_earned;
     correctCount.value = result.correct_answers;
     stepCompleted.value = result.step_completed;
@@ -1155,7 +1143,6 @@ function restartQuiz() {
   pendingSync.value = false;
   correctCount.value = 0;
   answeredCount.value = 0;
-  xpEarned.value = 0;
   acornEarned.value = 0;
   stepCompleted.value = false;
   topicCompleted.value = false;
