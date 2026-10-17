@@ -245,11 +245,12 @@ function getToken() {
 
 const { modules, selectedModuleId, courses, selectedCourseId, courseFull, loadingFull, selectModule, selectCourse } = useExamContent()
 
-const { syncPendingSessions, loadPending } = useOfflineQuiz();
+const { syncPendingSessions, loadPending, syncPendingReports } = useOfflineQuiz();
 const isOnline = ref(true);
 const syncing = ref(false);
 
 async function runSync() {
+  syncPendingReports();
   if (loadPending().length === 0) return;
   
   syncing.value = true;

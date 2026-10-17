@@ -295,7 +295,7 @@ onMounted(async () => {
     stats.value.acorns = guestBalance;
     sharedEnergy.value = gs.value.energyCount;
     try {
-      const items = await $fetch<EnergyPackage[]>('/api/store/items');
+      const items = await cachedFetch<EnergyPackage[]>('/api/store/items');
       energyPackages.value = items.filter(i => i.item_type === 'energy_refill');
     } catch { /* skip */ }
     return;
@@ -306,7 +306,7 @@ onMounted(async () => {
     const [user, userStats, items, streakHist, effects] = await Promise.all([
       $fetch<{ acorn_balance?: number; energy?: number; daily_goal_xp?: number }>('/api/users/me', { headers: h }),
       $fetch<{ streak?: number; current_streak?: number; daily_xp?: number }>('/api/users/me/stats', { headers: h }),
-      $fetch<EnergyPackage[]>('/api/store/items', { headers: h }),
+      cachedFetch<EnergyPackage[]>('/api/store/items', { headers: h }),
       $fetch<StreakDay[]>('/api/users/me/streak-history', { headers: h }),
       $fetch<{ item_type: string; expires_at: string }[]>('/api/store/effects', { headers: h }).catch(() => [] as { item_type: string; expires_at: string }[]),
     ]);

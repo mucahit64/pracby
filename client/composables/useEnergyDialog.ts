@@ -26,7 +26,7 @@ export function useEnergyDialog() {
       const { state: gs } = useGuestState()
       acornBalance.value = gs.value.acornBalance
       try {
-        const items = await $fetch<EnergyPackage[]>('/api/store/items')
+        const items = await cachedFetch<EnergyPackage[]>('/api/store/items')
         energyPackages.value = items.filter((i) => i.item_type === 'energy_refill')
       } catch {
         energyPackages.value = []
@@ -35,7 +35,7 @@ export function useEnergyDialog() {
       const token = localStorage.getItem('pb_token') ?? ''
       try {
         const [items, user] = await Promise.all([
-          $fetch<EnergyPackage[]>('/api/store/items', { headers: { Authorization: `Bearer ${token}` } }),
+          cachedFetch<EnergyPackage[]>('/api/store/items', { headers: { Authorization: `Bearer ${token}` } }),
           $fetch<{ acorn_balance?: number }>('/api/users/me', { headers: { Authorization: `Bearer ${token}` } }),
         ])
         energyPackages.value = items.filter((i) => i.item_type === 'energy_refill')

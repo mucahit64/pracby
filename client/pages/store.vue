@@ -212,7 +212,7 @@ async function fetchBalance() {
 
 async function fetchItems() {
   try {
-    items.value = await $fetch<StoreItem[]>('/api/store/items', { headers: headers() });
+    items.value = await cachedFetch<StoreItem[]>('/api/store/items', { headers: headers() });
   } catch { /* skip */ }
   loadingItems.value = false;
 }

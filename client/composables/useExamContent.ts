@@ -74,7 +74,7 @@ export function useExamContent() {
     if (token) headers.Authorization = `Bearer ${token}`
 
     try {
-      const data = await $fetch<CourseFull>(`/api/courses/${courseId}/full`, { headers })
+      const data = await cachedFetch<CourseFull>(`/api/courses/${courseId}/full`, { headers })
       if (!token) {
         const { overlayGuestProgress } = useGuestState()
         overlayGuestProgress(data.topics)
@@ -95,7 +95,7 @@ export function useExamContent() {
     if (token) headers.Authorization = `Bearer ${token}`
 
     try {
-      const data = await $fetch<Course[]>(`/api/courses?module_id=${moduleId}`, { headers })
+      const data = await cachedFetch<Course[]>(`/api/courses?module_id=${moduleId}`, { headers })
       courses.value = data
 
       if (data.length > 0) {
@@ -117,7 +117,7 @@ export function useExamContent() {
     if (!examTypeId) return
     activeExamTypeId.value = examTypeId
     try {
-      const examGroups = await $fetch<Array<{ exam_types: Array<{ id: string; name: string }> }>>('/api/exam-groups')
+      const examGroups = await cachedFetch<Array<{ exam_types: Array<{ id: string; name: string }> }>>('/api/exam-groups')
       const allTypes = examGroups.flatMap((g) => g.exam_types)
       const match = allTypes.find((t) => t.id === examTypeId)
       if (!match) {
@@ -136,7 +136,7 @@ export function useExamContent() {
       const token = getToken()
       const headers: Record<string, string> = {}
       if (token) headers.Authorization = `Bearer ${token}`
-      const mods = await $fetch<Module[]>(`/api/modules?exam_type_id=${examTypeId}`, { headers })
+      const mods = await cachedFetch<Module[]>(`/api/modules?exam_type_id=${examTypeId}`, { headers })
       modules.value = mods
       if (mods.length > 0) {
         const savedModuleId = clearSaved ? null : localStorage.getItem('pb_selectedModuleId')

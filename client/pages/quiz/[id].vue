@@ -443,7 +443,7 @@ definePageMeta({ layout: false });
 const route = useRoute();
 const router = useRouter();
 
-const { localAnswers, addAnswer, resetAnswers, savePending, syncPendingSessions } = useOfflineQuiz();
+const { localAnswers, addAnswer, resetAnswers, savePending, syncPendingSessions, savePendingReport, syncPendingReports } = useOfflineQuiz();
 
 interface EnergyPackage {
   id: string;
@@ -1061,7 +1061,7 @@ async function openEnergyDialog() {
     const { state: gs } = useGuestState();
     acornBalanceForDialog.value = gs.value.acornBalance;
     try {
-      const items = await $fetch<EnergyPackage[]>('/api/store/items');
+      const items = await cachedFetch<EnergyPackage[]>('/api/store/items');
       energyPackages.value = items.filter((i) => i.item_type === 'energy_refill');
     } catch { energyPackages.value = []; }
     loadingPackages.value = false;
@@ -1075,7 +1075,7 @@ async function openEnergyDialog() {
   acornBalanceForDialog.value = cachedAcorn.value;
   try {
     const [items, user] = await Promise.all([
-      $fetch<EnergyPackage[]>('/api/store/items', { headers: { Authorization: `Bearer ${token}` } }),
+      cachedFetch<EnergyPackage[]>('/api/store/items', { headers: { Authorization: `Bearer ${token}` } }),
       $fetch<{ acorn_balance?: number }>('/api/users/me', { headers: { Authorization: `Bearer ${token}` } }),
     ]);
     energyPackages.value = items.filter((i) => i.item_type === 'energy_refill');
@@ -1216,18 +1216,23 @@ function retryStart() {
   startQuiz();
 }
 
+function syncPending() {
+  syncPendingSessions();
+  syncPendingReports();
+}
+
 onMounted(() => {
   startQuiz();
-  // Sync any sessions that failed to submit in a previous visit
-  syncPendingSessions();
-  window.addEventListener('online', syncPendingSessions);
+  // Sync sessions and reports that failed to submit in a previous visit
+  syncPending();
+  window.addEventListener('online', syncPending);
 });
 
 onUnmounted(() => {
   releaseImages();
   document.removeEventListener('mousemove', swipeMouseMove);
   document.removeEventListener('mouseup', swipeMouseUp);
-  window.removeEventListener('online', syncPendingSessions);
+  window.removeEventListener('online', syncPending);
 });
 
 function openReportModal() {
@@ -1244,17 +1249,17 @@ async function submitReport() {
   reportError.value = '';
   reportSuccess.value = '';
 
+  let body: { questionId: string; reason: string; description?: string } | null = null;
   try {
-    const body = {
+    body = {
       questionId: currentQuestion.value.id,
       reason: reportReason.value,
       description: reportDescription.value || undefined,
     };
     if (guestMode.value) {
-      const { getGuestId } = useGuestState();
       await $fetch('/api/quiz/guest-report-question', {
         method: 'POST',
-        body: { ...body, guestId: getGuestId() },
+        body: { ...body, guestId: useGuestState().getGuestId() },
       });
     } else {
       await $fetch('/api/quiz/report-question', {
@@ -1267,7 +1272,12 @@ async function submitReport() {
     setTimeout(() => { reportModalOpen.value = false; }, 1500);
   } catch (e: unknown) {
     const err = e as { statusCode?: number; data?: { error?: string; message?: string } };
-    if (err?.statusCode === 409) reportError.value = 'Bu soruyu zaten bildirdin.';
+    if (!err?.statusCode && body) {
+      // Offline: send it once the connection is back.
+      savePendingReport(guestMode.value ? { ...body, guestId: useGuestState().getGuestId() } : body);
+      reportSuccess.value = 'Teşekkürler! Raporun internet gelince gönderilecek.';
+      setTimeout(() => { reportModalOpen.value = false; }, 1500);
+    } else if (err?.statusCode === 409) reportError.value = 'Bu soruyu zaten bildirdin.';
     else if (err?.statusCode === 429) reportError.value = 'Çok fazla bildirim gönderdin, daha sonra tekrar dene.';
     else reportError.value = err?.data?.error ?? err?.data?.message ?? 'Rapor gönderilemedi.';
   } finally {
