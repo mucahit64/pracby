@@ -84,7 +84,7 @@
       <div v-if="!isGuest" class="flex flex-col gap-3">
         <h2 class="text-base font-extrabold text-gray-800">Envanter</h2>
         <div v-if="loadingInventory" class="text-sm font-semibold text-gray-400 py-3">Yükleniyor…</div>
-        <div v-else-if="inventory.length === 0" class="text-sm font-semibold text-gray-400 py-3">Henüz hiç ürün almadınız.</div>
+        <div v-else-if="inventory.length === 0" class="text-sm font-semibold text-gray-400 py-3">Henüz hiç ürün almadın.</div>
         <div v-else class="flex flex-col gap-2">
           <div v-for="item in inventory" :key="item.id" class="flex items-center gap-3 bg-white border-2 border-gray-200 rounded-xl px-4 py-3">
             <span class="text-xl">{{ item.icon_url || '📦' }}</span>
@@ -92,11 +92,13 @@
             <span class="text-sm font-extrabold text-gray-400">x{{ item.quantity }}</span>
             <button
               v-if="item.duration_hours"
-              class="bg-primary text-white font-bold text-xs px-3 py-1.5 rounded-lg border-b-2 border-primary-dark active:border-b-0 active:translate-y-0.5 transition-all cursor-pointer font-[inherit]"
+              class="bg-primary text-white font-bold text-xs px-3 py-1.5 rounded-lg border-b-2 border-primary-dark active:border-b-0 active:translate-y-0.5 transition-all cursor-pointer font-[inherit] disabled:opacity-60 disabled:cursor-not-allowed"
+              :disabled="activatingId !== null"
               @click="activateItem(item)"
-            >Kullan</button>
+            >{{ activatingId === item.item_id ? '…' : 'Kullan' }}</button>
           </div>
         </div>
+        <p v-if="activateMessage" class="text-sm font-semibold" :class="activateMessage.ok ? 'text-positive' : 'text-negative'">{{ activateMessage.text }}</p>
       </div>
 
       <!-- Acorn packages -->
@@ -163,7 +165,7 @@ interface InventoryItem {
   item_type: string;
   quantity: number;
   duration_hours: number | null;
-  item_id?: string;
+  item_id: string;
 }
 
 interface ActiveEffect {
@@ -219,7 +221,9 @@ async function fetchItems() {
 
 async function fetchInventory() {
   try {
-    inventory.value = await $fetch<InventoryItem[]>('/api/store/inventory', { headers: headers() });
+    const items = await $fetch<InventoryItem[]>('/api/store/inventory', { headers: headers() });
+    // Used-up rows stay in the response with quantity 0; they can't be used.
+    inventory.value = items.filter((i) => i.quantity > 0);
   } catch { /* skip */ }
   loadingInventory.value = false;
 }
@@ -280,15 +284,41 @@ async function confirmPurchase() {
   purchasing.value = false;
 }
 
+const activatingId = ref<string | null>(null);
+const activateMessage = ref<{ ok: boolean; text: string } | null>(null);
+
 async function activateItem(item: InventoryItem) {
+  // The server replaces a running effect of the same type: its remaining time
+  // is lost, not added. Ask first.
+  const running = effects.value.find(
+    (e) => e.item_type === item.item_type && new Date(e.expires_at).getTime() > Date.now(),
+  );
+  if (running && !confirm(
+    `${effectLabel(item.item_type)} zaten aktif. Şimdi kullanırsan süre baştan başlar ve kalan ${formatExpiry(running.expires_at)} eklenmez. Yine de kullanmak istiyor musun?`,
+  )) return;
+
+  activatingId.value = item.item_id;
+  activateMessage.value = null;
   try {
-    await $fetch(`/api/store/activate/${item.item_id}`, {
+    const result = await $fetch<{ itemType: string; expiresAt: string }>(`/api/store/activate/${item.item_id}`, {
       method: 'POST',
       headers: headers(),
     });
     await Promise.all([fetchInventory(), fetchEffects()]);
     unlimitedEnergy.value = effects.value.some(e => e.item_type === 'unlimited_energy');
-  } catch { /* skip */ }
+    activateMessage.value = {
+      ok: true,
+      text: `${effectLabel(result.itemType)} etkinleştirildi! ${formatExpiry(result.expiresAt)} boyunca aktif.`,
+    };
+  } catch (e) {
+    const err = e as { status?: number; data?: { error?: string } };
+    activateMessage.value = {
+      ok: false,
+      text: err?.status ? (err.data?.error ?? 'Kullanılamadı.') : 'Bu işlem için internet bağlantısı gerekli.',
+    };
+  } finally {
+    activatingId.value = null;
+  }
 }
 
 function buyAcorn(_pkg: AcornPackage) {
