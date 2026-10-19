@@ -26,6 +26,15 @@ const areStepIdsValid = async (trx: Knex.Transaction, stepIds: string[]): Promis
   return existing.length === new Set(stepIds).size;
 };
 
+type GuestQuizResult = { correctCount: number; totalQuestions: number };
+
+// Misafirin bir adımdaki en iyi puanı (0-100); üye quiz'iyle aynı formül (quiz.service newScore).
+const guestBestScore = (results: GuestQuizResult[]): number =>
+  results.reduce(
+    (best, r) => Math.max(best, r.totalQuestions > 0 ? Math.round((r.correctCount / r.totalQuestions) * 100) : 0),
+    0,
+  );
+
 export const register = async (input: RegisterInput) => {
   return db.transaction(async (trx) => {
     const emailExists = await trx("users").where({ email: input.email }).first();
@@ -98,7 +107,8 @@ export const register = async (input: RegisterInput) => {
             step_id: stepId,
             tests_completed: completedTests,
             is_step_completed: isCompleted,
-            step_final_passed: false,
+            step_final_passed: isCompleted,
+            best_score: guestBestScore(results),
             stars: 0,
             ...(isCompleted && { completed_at: new Date() }),
           };
@@ -215,6 +225,7 @@ export const mergeGuestProgress = async (
         const guestIsCompleted = guestTestsCompleted >= testsRequired;
 
         const existing = existingMap.get(stepId);
+        const guestScore = guestBestScore(results);
 
         if (!existing) {
           await trx("user_step_progress").insert({
@@ -222,24 +233,36 @@ export const mergeGuestProgress = async (
             step_id: stepId,
             tests_completed: guestTestsCompleted,
             is_step_completed: guestIsCompleted,
-            step_final_passed: false,
+            step_final_passed: guestIsCompleted,
+            best_score: guestScore,
             stars: 0,
             ...(guestIsCompleted && { completed_at: new Date() }),
           });
           const stepXp = results.reduce((sum, r) => sum + r.correctCount, 0);
           newXp += stepXp;
-        } else if (guestTestsCompleted > (existing.tests_completed as number)) {
-          await trx("user_step_progress")
-            .where({ id: existing.id })
-            .update({
-              tests_completed: guestTestsCompleted,
-              is_step_completed: guestIsCompleted,
-              ...(guestIsCompleted && !existing.is_step_completed && { completed_at: new Date() }),
-            });
-          const deltaTests = guestTestsCompleted - (existing.tests_completed as number);
-          const sortedResults = [...results].sort((a, b) => b.correctCount - a.correctCount);
-          const deltaXp = sortedResults.slice(0, deltaTests).reduce((sum, r) => sum + r.correctCount, 0);
-          newXp += deltaXp;
+        } else {
+          const testsGained = guestTestsCompleted > (existing.tests_completed as number);
+          const scoreImproved = guestScore > ((existing.best_score as number) ?? 0);
+          if (testsGained || scoreImproved) {
+            await trx("user_step_progress")
+              .where({ id: existing.id })
+              .update({
+                ...(testsGained && {
+                  tests_completed: guestTestsCompleted,
+                  is_step_completed: guestIsCompleted,
+                  ...(guestIsCompleted && { step_final_passed: true }),
+                  ...(guestIsCompleted && !existing.is_step_completed && { completed_at: new Date() }),
+                }),
+                ...(scoreImproved && { best_score: guestScore }),
+              });
+          }
+          // XP yalnızca yeni tamamlanan testler için verilir; daha iyi puan tek başına XP getirmez.
+          if (testsGained) {
+            const deltaTests = guestTestsCompleted - (existing.tests_completed as number);
+            const sortedResults = [...results].sort((a, b) => b.correctCount - a.correctCount);
+            const deltaXp = sortedResults.slice(0, deltaTests).reduce((sum, r) => sum + r.correctCount, 0);
+            newXp += deltaXp;
+          }
         }
       }
     }
