@@ -369,10 +369,11 @@ function goToLesson(node: LessonNode) {
   if (node.status === 'locked') return;
 
   const token = getToken();
+  const { energyCount, unlimitedEnergy } = useEnergyTimer();
   const currentEnergy = token
-    ? useState('userEnergy', () => 25).value
+    ? energyCount.value
     : useGuestState().state.value.energyCount;
-  if (currentEnergy <= 0) {
+  if (currentEnergy <= 0 && !(token && unlimitedEnergy.value)) {
     energyEmptyOpen.value = true;
     return;
   }
