@@ -63,6 +63,19 @@
         <p v-if="fieldErrors.newPassword" class="text-negative text-xs font-semibold">{{ fieldErrors.newPassword }}</p>
       </div>
 
+      <!-- Confirm New Password -->
+      <div v-if="form.newPassword" class="flex flex-col gap-1.5">
+        <label class="text-sm font-bold text-gray-400 uppercase tracking-wide">Yeni Şifre (Tekrar)</label>
+        <input
+          v-model="form.confirmPassword"
+          type="password"
+          class="bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors focus:border-primary"
+          placeholder="••••••"
+          autocomplete="new-password"
+        >
+        <p v-if="fieldErrors.confirmPassword" class="text-negative text-xs font-semibold">{{ fieldErrors.confirmPassword }}</p>
+      </div>
+
       <!-- Error / Success -->
       <p v-if="error" class="text-negative text-sm font-semibold text-center">{{ error }}</p>
       <p v-if="success" class="text-positive text-sm font-semibold text-center">{{ success }}</p>
@@ -94,11 +107,11 @@ useHead({
 const router = useRouter();
 
 const originalProfile = ref({ username: '', email: '' });
-const form = reactive({ username: '', email: '', currentPassword: '', newPassword: '' });
+const form = reactive({ username: '', email: '', currentPassword: '', newPassword: '', confirmPassword: '' });
 const error = ref('');
 const success = ref('');
 const loading = ref(false);
-const fieldErrors = reactive({ username: '', email: '', currentPassword: '', newPassword: '' });
+const fieldErrors = reactive({ username: '', email: '', currentPassword: '', newPassword: '', confirmPassword: '' });
 
 const hasChanges = computed(() => {
   return (
@@ -113,6 +126,7 @@ function clearFieldErrors() {
   fieldErrors.email = '';
   fieldErrors.currentPassword = '';
   fieldErrors.newPassword = '';
+  fieldErrors.confirmPassword = '';
 }
 
 function validate(): boolean {
@@ -139,6 +153,11 @@ function validate(): boolean {
 
   if (form.newPassword && form.newPassword.length < 6) {
     fieldErrors.newPassword = 'Yeni şifre en az 6 karakter olmalı';
+    valid = false;
+  }
+
+  if (form.newPassword && form.confirmPassword !== form.newPassword) {
+    fieldErrors.confirmPassword = 'Şifreler eşleşmiyor';
     valid = false;
   }
 
@@ -173,11 +192,18 @@ const submit = async () => {
     if (body.email) originalProfile.value.email = body.email;
     form.currentPassword = '';
     form.newPassword = '';
+    form.confirmPassword = '';
     // Redirect after short delay
     setTimeout(() => router.push('/profile'), 1200);
   } catch (e: unknown) {
-    const data = (e as { data?: { message?: string; error?: string } })?.data;
-    error.value = data?.message || data?.error || 'Güncelleme başarısız. Tekrar deneyin.';
+    const err = e as { status?: number; data?: { message?: string; error?: string } };
+    const message = err?.data?.error || err?.data?.message;
+    // Show the API's Turkish 401/409 messages under the field they are about.
+    if (err?.status === 401 && message) fieldErrors.currentPassword = message;
+    else if (err?.status === 409 && message?.includes('e-posta')) fieldErrors.email = message;
+    else if (err?.status === 409 && message) fieldErrors.username = message;
+    else if (!err?.status) error.value = 'İnternet bağlantısı yok. Bağlanınca tekrar dene.';
+    else error.value = message || 'Güncelleme başarısız. Tekrar deneyin.';
   } finally {
     loading.value = false;
   }
