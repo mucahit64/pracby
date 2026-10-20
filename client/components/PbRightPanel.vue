@@ -305,7 +305,7 @@ onMounted(async () => {
   try {
     const [user, userStats, items, streakHist, effects] = await Promise.all([
       $fetch<{ acorn_balance?: number; energy?: number; daily_goal_xp?: number }>('/api/users/me', { headers: h }),
-      $fetch<{ streak?: number; current_streak?: number; daily_xp?: number }>('/api/users/me/stats', { headers: h }),
+      $fetch<{ streak?: number; current_streak?: number; last_active_date?: string | null; daily_xp?: number }>('/api/users/me/stats', { headers: h }),
       cachedFetch<EnergyPackage[]>('/api/store/items', { headers: h }),
       $fetch<StreakDay[]>('/api/users/me/streak-history', { headers: h }),
       $fetch<{ item_type: string; expires_at: string }[]>('/api/store/effects', { headers: h }).catch(() => [] as { item_type: string; expires_at: string }[]),
@@ -314,7 +314,7 @@ onMounted(async () => {
     setAcornBalance(user.acorn_balance ?? 0);
     sharedEnergy.value = user.energy ?? 25;
     stats.value.dailyGoal = user.daily_goal_xp ?? 50;
-    stats.value.streak = userStats.current_streak ?? userStats.streak ?? 0;
+    stats.value.streak = displayStreak(userStats.current_streak ?? userStats.streak, userStats.last_active_date);
     stats.value.dailyXp = userStats.daily_xp ?? 0;
     energyPackages.value = (items as EnergyPackage[]).filter(i => i.item_type === 'energy_refill');
     streakHistory.value = streakHist as StreakDay[];

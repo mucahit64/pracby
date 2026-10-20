@@ -431,6 +431,7 @@ const fetchProfile = async () => {
         total_xp: number;
         level: number;
         current_streak: number;
+        last_active_date: string | null;
         max_streak: number;
         quizzes_completed: number;
       }>('/api/users/me/stats', { headers: h }),
@@ -456,7 +457,7 @@ const fetchProfile = async () => {
       level,
       xpInLevel: xpForLevel,
       xpNextLevel: 500,
-      currentStreak: stats.current_streak ?? 0,
+      currentStreak: displayStreak(stats.current_streak, stats.last_active_date),
       maxStreak: stats.max_streak ?? 0,
       quizzesCompleted: stats.quizzes_completed ?? 0,
       acornBalance: user.acorn_balance ?? 0,

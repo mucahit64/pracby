@@ -85,7 +85,7 @@ export function useUserSession() {
           role?: string
           permissions?: string[]
         }>('/api/users/me', { headers: { Authorization: `Bearer ${token}` } }),
-        $fetch<{ streak?: number }>('/api/users/me/stats', {
+        $fetch<{ streak?: number; current_streak?: number; last_active_date?: string | null }>('/api/users/me/stats', {
           headers: { Authorization: `Bearer ${token}` },
         }),
         $fetch<Enrollment[]>('/api/users/me/enrollments', {
@@ -101,7 +101,7 @@ export function useUserSession() {
 
       setAcornBalance(user.acorn_balance ?? 0)
       energyCount.value = user.energy ?? 25
-      streakCount.value = userStats.streak ?? 0
+      streakCount.value = displayStreak(userStats.current_streak ?? userStats.streak, userStats.last_active_date)
       nextEnergyAt.value = user.next_energy_at ?? null
       activeExamTypeId.value = user.active_exam_type_id ?? ''
       enrollments.value = enrollmentList

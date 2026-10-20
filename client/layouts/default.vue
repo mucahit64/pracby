@@ -33,9 +33,17 @@ function onResize() {
   isMobile.value = window.innerWidth < 1024
 }
 
+// Back to the tab (MOBILE_APP_DOCS.md 10.4): energy regenerated in the
+// meantime and a new day may have broken the streak, so reload the session.
+// The quiz page has its own layout, so a running quiz's energy isn't touched.
+function onVisibilityChange() {
+  if (document.visibilityState === 'visible') init()
+}
+
 onMounted(async () => {
   onResize()
   window.addEventListener('resize', onResize)
+  document.addEventListener('visibilitychange', onVisibilityChange)
   await init()
 
   // 1. Durum: Misafir kullanıcı ve henüz bir sınav seçmemiş
@@ -57,6 +65,7 @@ onMounted(async () => {
 
 onUnmounted(() => {
   window.removeEventListener('resize', onResize)
+  document.removeEventListener('visibilitychange', onVisibilityChange)
   stopEnergyCountdown()
 })
 </script>
