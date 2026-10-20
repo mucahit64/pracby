@@ -1163,14 +1163,17 @@ function exitQuiz() {
     return;
   }
   const token = getToken();
-  // Discard buffered answers — session abandoned without rewards
+  // Send the answers given so far with skip_rewards: no XP or acorns, but the
+  // server deducts energy only for wrong answers it receives — sending none
+  // let users quit to get their energy back.
+  const answers = [...localAnswers.value];
   resetAnswers();
   const id = sessionId.value;
   $fetch(`/api/quiz/${id}/finish-bulk`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}` },
-    body: { answers: [], skip_rewards: true },
-  }).catch(() => savePending(id, [], true)); // offline: close it once back online
+    body: { answers, skip_rewards: true },
+  }).catch(() => savePending(id, answers, true)); // offline: close it once back online
   router.replace('/learn');
 }
 
