@@ -1127,7 +1127,13 @@ async function buyEnergyInDialog(pkg: EnergyPackage) {
     energyDepleted.value = false;
     energyEmptyDialog.value = false;
     exitWarningDialog.value = false;
-    if (currentIndex.value < questions.value.length - 1) {
+    if (questions.value.length === 0) {
+      // The start was refused for energy (403), so there is no session yet:
+      // start the quiz now instead of finishing an empty one.
+      loading.value = true;
+      error.value = '';
+      startQuiz();
+    } else if (currentIndex.value < questions.value.length - 1) {
       currentIndex.value++;
       initQuestionState();
     } else {
@@ -1152,7 +1158,8 @@ function declineEnergyPurchase() {
 
 function continueFromWarning() {
   exitWarningDialog.value = false;
-  if (energy.value === 0) {
+  // With unlimited energy the quiz can go on at 0.
+  if (energy.value === 0 && !unlimitedEnergy.value) {
     openEnergyDialog();
   }
 }
@@ -1189,7 +1196,8 @@ function restartQuiz() {
   const currentEnergy = guestMode.value
     ? useGuestState().state.value.energyCount
     : energy.value;
-  if (currentEnergy <= 0) {
+  // Unlimited energy can start a quiz at 0 (the server allows it too).
+  if (currentEnergy <= 0 && !unlimitedEnergy.value) {
     openEnergyDialog();
     return;
   }

@@ -362,16 +362,24 @@ const submit = async () => {
 
     await router.push('/');
   } catch (e: unknown) {
-    const err = e as { data?: { errors?: Record<string, { _errors: string[] }>; error?: string } };
+    // Zod errors come as z.treeifyError: { errors: [], properties: { field: { errors: [] } } }.
+    type ZodTree = { errors?: string[]; properties?: Record<string, { errors?: string[] }> };
+    const err = e as { data?: { errors?: ZodTree; error?: string } };
     const zodErrors = err?.data?.errors;
     const serviceError = err?.data?.error;
     if (zodErrors) {
-      fieldErrors.email = zodErrors.email?._errors[0] ?? '';
-      fieldErrors.username = zodErrors.username?._errors[0] ?? '';
-      fieldErrors.password = zodErrors.password?._errors[0] ?? '';
+      const fieldError = (field: string) => zodErrors.properties?.[field]?.errors?.[0] ?? '';
+      fieldErrors.email = fieldError('email');
+      fieldErrors.username = fieldError('username');
+      fieldErrors.password = fieldError('password');
       if (fieldErrors.email) emailStatus.value = 'error';
       if (fieldErrors.username) usernameStatus.value = 'error';
-      step.value = 1;
+      if (fieldErrors.email || fieldErrors.username || fieldErrors.password) {
+        step.value = 1;
+      } else {
+        // An error on another field (e.g. the exam) has no input to show it under.
+        error.value = zodErrors.errors?.[0] ?? 'Kayıt başarısız. Bilgilerini kontrol et.';
+      }
     } else if (serviceError) {
       const msg = serviceError.toLowerCase();
       if (msg.includes('email')) {

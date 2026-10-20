@@ -123,6 +123,7 @@
             <h2 class="text-lg font-black text-gray-800">{{ purchaseModal.name }}</h2>
             <p class="text-sm font-semibold text-gray-400">{{ purchaseModal.description }}</p>
             <div class="text-xl font-black text-amber-700">🌰 {{ purchaseModal.price_acorn }}</div>
+            <p v-if="purchaseError" class="text-sm font-semibold text-negative">{{ purchaseError }}</p>
             <div class="flex flex-col gap-2 w-full mt-2">
               <button class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="purchasing" @click="confirmPurchase">
                 {{ purchasing ? 'İşleniyor…' : 'Satın Al' }}
@@ -191,6 +192,7 @@ const packages = ref<AcornPackage[]>([]);
 const loadingItems = ref(true);
 const loadingInventory = ref(true);
 const purchaseModal = ref<StoreItem | null>(null);
+const purchaseError = ref('');
 const purchasing = ref(false);
 
 const regularItems = computed(() => items.value.filter((i) => i.item_type !== 'energy_refill'));
@@ -242,24 +244,29 @@ async function fetchPackages() {
 }
 
 function openPurchaseModal(item: StoreItem) {
+  purchaseError.value = '';
   purchaseModal.value = item;
 }
 
 async function confirmPurchase() {
   if (!purchaseModal.value) return;
   purchasing.value = true;
+  purchaseError.value = '';
 
   if (isGuest.value) {
     if (purchaseModal.value.item_type === 'energy_refill') {
       const { spendAcorns, setEnergy } = useGuestState();
-      if (spendAcorns(purchaseModal.value.price_acorn)) {
-        balance.value -= purchaseModal.value.price_acorn;
-        setAcornBalance(balance.value);
-        const energyToAdd = purchaseModal.value.metadata?.energy_count ?? 1;
-        const newEnergy = Math.min(25, sharedEnergy.value + energyToAdd);
-        sharedEnergy.value = newEnergy;
-        setEnergy(newEnergy);
+      if (!spendAcorns(purchaseModal.value.price_acorn)) {
+        purchaseError.value = 'Yetersiz palamut.';
+        purchasing.value = false;
+        return;
       }
+      balance.value -= purchaseModal.value.price_acorn;
+      setAcornBalance(balance.value);
+      const energyToAdd = purchaseModal.value.metadata?.energy_count ?? 1;
+      const newEnergy = Math.min(25, sharedEnergy.value + energyToAdd);
+      sharedEnergy.value = newEnergy;
+      setEnergy(newEnergy);
     }
     purchaseModal.value = null;
     purchasing.value = false;
@@ -280,7 +287,17 @@ async function confirmPurchase() {
     }
     purchaseModal.value = null;
     await fetchInventory();
-  } catch { /* skip */ }
+  } catch (e: unknown) {
+    // Errors used to be swallowed, leaving the modal open with no feedback.
+    const err = e as { statusCode?: number; data?: { error?: string } };
+    if (!err?.statusCode) {
+      purchaseError.value = 'İnternet bağlantısı yok. Bağlanınca tekrar dene.';
+    } else if (err.data?.error === 'Insufficient acorn balance') {
+      purchaseError.value = 'Yetersiz palamut.';
+    } else {
+      purchaseError.value = 'Satın alma başarısız. Tekrar dene.';
+    }
+  }
   purchasing.value = false;
 }
 
