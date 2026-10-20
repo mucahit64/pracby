@@ -245,6 +245,40 @@ function getToken() {
 
 const { modules, selectedModuleId, courses, selectedCourseId, courseFull, loadingFull, selectModule, selectCourse } = useExamContent()
 
+// Nuxt scrolls to the top after the page transition, which would undo the
+// restore below; skip that while a saved position is waiting.
+definePageMeta({
+  scrollToTop: () => {
+    try {
+      return !sessionStorage.getItem('pb_learnScroll');
+    } catch {
+      return true;
+    }
+  },
+});
+
+// Map scroll position, restored after the map reloads (back from a quiz or
+// the register wall, or after opening a chest) instead of starting at the top.
+const SCROLL_KEY = 'pb_learnScroll';
+
+function saveScroll() {
+  try {
+    sessionStorage.setItem(SCROLL_KEY, JSON.stringify({ courseId: selectedCourseId.value, y: window.scrollY }));
+  } catch { /* storage unavailable */ }
+}
+
+watch([loadingFull, courseFull], async ([loading, full]) => {
+  if (loading || !full) return;
+  let saved: { courseId: string; y: number } | null = null;
+  try {
+    saved = JSON.parse(sessionStorage.getItem(SCROLL_KEY) ?? 'null');
+    sessionStorage.removeItem(SCROLL_KEY);
+  } catch { /* storage unavailable */ }
+  if (!saved || saved.courseId !== selectedCourseId.value) return;
+  await nextTick();
+  window.scrollTo({ top: saved.y });
+}, { immediate: true });
+
 const { syncPendingSessions, loadPending, syncPendingReports } = useOfflineQuiz();
 const isOnline = ref(true);
 const syncing = ref(false);
@@ -396,6 +430,7 @@ async function claimReward() {
     incrementAcornBalance(rewardAmount);
     rewardDialogOpen.value = false;
     rewardDialogNode.value = null;
+    saveScroll();
     await selectCourse(selectedCourseId.value);
     return;
   }
@@ -409,6 +444,7 @@ async function claimReward() {
 
     rewardDialogOpen.value = false;
     rewardDialogNode.value = null;
+    saveScroll();
     await selectCourse(selectedCourseId.value);
   } catch {
     // silently fail
@@ -424,6 +460,7 @@ function startLesson() {
   if (node.stepId) query.stepId = node.stepId;
   if (node.sessionType) query.sessionType = node.sessionType;
 
+  saveScroll();
   navigateTo({ path: `/quiz/${node.topicId}`, query });
 }
 </script>
