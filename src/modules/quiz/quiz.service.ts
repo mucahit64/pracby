@@ -444,12 +444,14 @@ export const finishSession = async (userId: string, sessionId: string, skipRewar
       }
     }
 
-    // Check and grant achievements
-    await checkAndGrantAchievementsInTrx(trx, userId, {
-      correctCount,
-      totalQuestions: answers.length,
-      sessionId,
-    });
+    // Achievements are rewards: none for an abandoned quiz (skip_rewards).
+    if (!skipRewards) {
+      await checkAndGrantAchievementsInTrx(trx, userId, {
+        correctCount,
+        totalQuestions: answers.length,
+        sessionId,
+      });
+    }
 
     return {
       ...updated,
@@ -732,12 +734,14 @@ export const finishSessionWithAnswers = async (
       }
     }
 
-    // Achievements (outside trx to avoid long-running read contention, but still inside for atomicity)
-    await checkAndGrantAchievementsInTrx(trx, userId, {
-      correctCount,
-      totalQuestions: evaluatedAnswers.length,
-      sessionId,
-    });
+    // Achievements are rewards: none for an abandoned quiz (skip_rewards).
+    if (!skipRewards) {
+      await checkAndGrantAchievementsInTrx(trx, userId, {
+        correctCount,
+        totalQuestions: evaluatedAnswers.length,
+        sessionId,
+      });
+    }
 
     return {
       ...updated,
@@ -758,13 +762,9 @@ async function checkAndGrantAchievementsInTrx(
   const earnedIds = new Set(userAchievements.map((ua) => ua.achievement_id));
 
   const stats = await trx("user_stats").where({ user_id: userId }).first();
-  const totalQuizzes = await trx("quiz_sessions")
-    .where({ user_id: userId })
-    .whereNotNull("finished_at")
-    .count("id as count")
-    .first();
-
-  const quizzesCompleted = Number(totalQuizzes?.count ?? 0);
+  // user_stats.quizzes_completed only counts rewarded quizzes; counting every
+  // finished session also counted the ones left early.
+  const quizzesCompleted = Number(stats?.quizzes_completed ?? 0);
   const accuracy = sessionResult.totalQuestions > 0
     ? sessionResult.correctCount / sessionResult.totalQuestions
     : 0;
