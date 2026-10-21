@@ -112,8 +112,10 @@ export function useExamContent() {
     }
   }
 
-  // clearSaved=true when switching exams so stale module/course from old exam is ignored
-  async function loadForExam(examTypeId: string, clearSaved = false) {
+  // The saved module/course are used only if they belong to this exam, so after
+  // switching exams a stale pair falls back to the first module and course,
+  // while a pair picked for the new exam (map picker) is kept.
+  async function loadForExam(examTypeId: string) {
     if (!examTypeId) return
     activeExamTypeId.value = examTypeId
     try {
@@ -139,8 +141,8 @@ export function useExamContent() {
       const mods = await cachedFetch<Module[]>(`/api/modules?exam_type_id=${examTypeId}`, { headers })
       modules.value = mods
       if (mods.length > 0) {
-        const savedModuleId = clearSaved ? null : localStorage.getItem('pb_selectedModuleId')
-        const savedCourseId = clearSaved ? null : localStorage.getItem('pb_selectedCourseId')
+        const savedModuleId = localStorage.getItem('pb_selectedModuleId')
+        const savedCourseId = localStorage.getItem('pb_selectedCourseId')
         const targetModule = savedModuleId && mods.find((m) => m.id === savedModuleId) ? savedModuleId : mods[0].id
         await selectModule(targetModule, savedCourseId ?? undefined)
       }
@@ -161,7 +163,7 @@ export function useExamContent() {
 
   // When the active exam changes (e.g. after switchExam), reload content fresh
   watch(globalActiveExamTypeId, (newId, oldId) => {
-    if (newId && newId !== oldId) loadForExam(newId, true)
+    if (newId && newId !== oldId) loadForExam(newId)
   })
 
   function reset() {

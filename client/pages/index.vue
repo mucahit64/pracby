@@ -11,8 +11,8 @@
       <svg class="w-4 h-4 shrink-0 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>
       Önceki test sonuçları senkronize ediliyor…
     </div>
-    <!-- Module tabs -->
-    <div v-if="modules.length > 0" class="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+    <!-- Module tabs (desktop; on a phone the header opens the map picker) -->
+    <div v-if="modules.length > 0" class="hidden lg:flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
       <button
         v-for="mod in modules"
         :key="mod.id"
@@ -27,8 +27,8 @@
       </button>
     </div>
 
-    <!-- Course selector -->
-    <div v-if="courses.length > 0" class="flex gap-2 flex-wrap">
+    <!-- Course selector (desktop) -->
+    <div v-if="courses.length > 0" class="hidden lg:flex gap-2 flex-wrap">
       <button
         v-for="course in courses"
         :key="course.id"
@@ -171,10 +171,23 @@
       @close="energyEmptyOpen = false"
       @go-store="navigateTo('/store')"
     />
+
+    <!-- ===== Map Picker (mobile header) ===== -->
+    <DialogsMapPickerSheet
+      :open="mapPickerOpen"
+      :active-exam-type-id="activeExamTypeId"
+      :active-modules="modules"
+      :active-module-id="selectedModuleId"
+      :active-courses="courses"
+      :selected-course-id="selectedCourseId"
+      @close="mapPickerOpen = false"
+      @select="onMapPick"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
+import type { MapPick } from '~/components/dialogs/MapPickerSheet.vue';
 useHead({
   meta: [
     { name: "robots", content: "noindex, follow" },
@@ -243,7 +256,28 @@ function getToken() {
   return localStorage.getItem('pb_token') ?? '';
 }
 
-const { modules, selectedModuleId, courses, selectedCourseId, courseFull, loadingFull, selectModule, selectCourse } = useExamContent()
+const { activeExamTypeId, modules, selectedModuleId, courses, selectedCourseId, courseFull, loadingFull, selectModule, selectCourse } = useExamContent()
+const { switchExam } = useUserSession()
+
+// The mobile header shows the selected course and opens the picker below.
+const { courseLabel, open: mapPickerOpen } = useMapPicker()
+watchEffect(() => {
+  courseLabel.value = courses.value.find((c) => c.id === selectedCourseId.value)?.name ?? ''
+})
+
+async function onMapPick(pick: MapPick) {
+  mapPickerOpen.value = false
+  if (pick.examTypeId !== activeExamTypeId.value) {
+    // Loading the new exam keeps a saved module/course that belongs to it.
+    localStorage.setItem('pb_selectedModuleId', pick.moduleId)
+    localStorage.setItem('pb_selectedCourseId', pick.courseId)
+    await switchExam(pick.examTypeId)
+  } else if (pick.moduleId !== selectedModuleId.value) {
+    await selectModule(pick.moduleId, pick.courseId)
+  } else if (pick.courseId !== selectedCourseId.value) {
+    await selectCourse(pick.courseId)
+  }
+}
 
 // Nuxt scrolls to the top after the page transition, which would undo the
 // restore below; skip that while a saved position is waiting.
@@ -316,6 +350,8 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('online', setOnline);
   window.removeEventListener('offline', setOffline);
+  courseLabel.value = '';
+  mapPickerOpen.value = false;
 });
 
 function buildLessonNodes(topic: Topic, colorBg: string, colorBorder: string, colorHex: string, colorShadow: string): LessonNode[] {

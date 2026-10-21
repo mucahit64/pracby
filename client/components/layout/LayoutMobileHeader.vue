@@ -3,7 +3,17 @@
 
     <div v-if="activeTooltip" class="fixed inset-0 z-[40]" @click="close" />
 
-    <div class="relative z-[50] flex items-center justify-center gap-6 pointer-events-none">
+    <div class="relative z-[50] flex items-center justify-center pointer-events-none" :class="courseLabel ? 'gap-4' : 'gap-6'">
+
+      <!-- Map picker: the selected course, on the learn page -->
+      <button
+        v-if="courseLabel"
+        class="pointer-events-auto mr-auto min-w-0 flex items-center gap-0.5 bg-gray-100 rounded-xl pl-3 pr-1.5 py-1.5 text-[0.95rem] font-extrabold text-gray-800 cursor-pointer border-0 font-[inherit]"
+        @click="close(); mapPickerOpen = true"
+      >
+        <span class="truncate">{{ courseLabel }}</span>
+        <svg class="w-5 h-5 text-gray-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+      </button>
 
       <!-- Streak -->
       <div class="relative pointer-events-auto">
@@ -122,6 +132,7 @@ type MobileTooltip = 'streak' | 'acorns' | 'energy'
 const { acornBalance } = useAcornBalance()
 const { energyCount, energyCountdown, unlimitedEnergy } = useEnergyTimer()
 const { streakCount, streakHistory } = useUserSession()
+const { courseLabel, open: mapPickerOpen } = useMapPicker()
 
 const activeTooltip = useState<MobileTooltip | null>('pbMobileTooltip', () => null)
 
