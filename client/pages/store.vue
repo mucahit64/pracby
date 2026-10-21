@@ -31,7 +31,7 @@
             <div class="flex-1 min-w-0">
               <div class="text-sm font-extrabold text-gray-800">{{ item.name }}</div>
               <div class="text-xs font-semibold text-gray-400 mt-0.5">{{ item.description }}</div>
-              <div v-if="item.duration_hours" class="text-[0.7rem] font-semibold text-gray-400 mt-1">⏱️ {{ item.duration_hours }}s süre</div>
+              <div v-if="item.duration_hours" class="text-[0.7rem] font-semibold text-gray-400 mt-1"><PbUiIcon name="clock" /> {{ item.duration_hours }}s süre</div>
             </div>
             <button
               class="shrink-0 bg-amber-50 border-2 border-amber-600 text-amber-700 font-extrabold text-sm px-4 py-2.5 rounded-xl cursor-pointer hover:bg-amber-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed font-[inherit]"

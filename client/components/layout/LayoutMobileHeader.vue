@@ -1,14 +1,15 @@
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b-2 border-gray-200 px-5 py-3">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white px-5 py-3">
 
     <div v-if="activeTooltip" class="fixed inset-0 z-[40]" @click="close" />
 
-    <div class="relative z-[50] flex items-center justify-center pointer-events-none" :class="courseLabel ? 'gap-4' : 'gap-6'">
+    <!-- With the map picker the course and the counts spread evenly -->
+    <div class="relative z-[50] flex items-center pointer-events-none" :class="courseLabel ? 'justify-between gap-2' : 'justify-center gap-6'">
 
       <!-- Map picker: the selected course, on the learn page -->
       <button
         v-if="courseLabel"
-        class="pointer-events-auto mr-auto min-w-0 flex items-center gap-0.5 bg-gray-100 rounded-xl pl-3 pr-1.5 py-1.5 text-[0.95rem] font-extrabold text-gray-800 cursor-pointer border-0 font-[inherit]"
+        class="pointer-events-auto min-w-0 max-w-[150px] flex items-center gap-0.5 bg-gray-100 rounded-xl pl-3 pr-1.5 py-1.5 text-[0.95rem] font-extrabold text-gray-800 cursor-pointer border-0 font-[inherit]"
         @click="close(); mapPickerOpen = true"
       >
         <span class="truncate">{{ courseLabel }}</span>
@@ -108,9 +109,9 @@
             </div>
             <div v-if="energyCountdown" class="flex items-center gap-2 bg-negative/10 rounded-xl px-2.5 py-2">
               <span class="text-xs font-bold text-gray-400">Sonraki enerji</span>
-              <span class="text-xs font-extrabold text-negative tabular-nums tracking-wide">⏱ {{ energyCountdown }}</span>
+              <span class="text-xs font-extrabold text-negative tabular-nums tracking-wide"><PbUiIcon name="clock" /> {{ energyCountdown }}</span>
             </div>
-            <div v-else-if="energyCount >= 25" class="text-sm font-bold text-positive text-center">Enerjin dolu! 🎉</div>
+            <div v-else-if="energyCount >= 25" class="text-sm font-bold text-positive text-center">Enerjin dolu!</div>
             <NuxtLink
               to="/store"
               class="w-full bg-primary text-white font-extrabold text-sm py-2.5 rounded-xl border-b-[3px] border-primary-dark text-center block"

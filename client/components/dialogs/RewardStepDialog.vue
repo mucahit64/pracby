@@ -36,7 +36,7 @@
           <!-- Unlocked state -->
           <template v-else>
             <div class="flex flex-col items-center gap-1.5">
-              <div class="text-lg font-black text-gray-800 text-center">Tebrikler! 🎉</div>
+              <div class="text-lg font-black text-gray-800 text-center">Tebrikler!</div>
               <p class="text-sm text-gray-500 font-semibold text-center">Bu bölümü tamamladın. Ödülünü almaya hazır mısın?</p>
             </div>
             <div class="flex items-center gap-2 bg-amber-50 border-2 border-amber-200 rounded-2xl px-5 py-3">

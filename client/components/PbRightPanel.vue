@@ -79,9 +79,9 @@
             </div>
             <div v-if="energyCountdown" class="flex items-center gap-2 bg-negative/10 rounded-xl px-2.5 py-2 relative z-10">
               <span class="text-xs font-bold text-gray-400">Sonraki enerji</span>
-              <span class="text-xs font-extrabold text-negative tabular-nums tracking-wide">⏱ {{ energyCountdown }}</span>
+              <span class="text-xs font-extrabold text-negative tabular-nums tracking-wide"><PbUiIcon name="clock" /> {{ energyCountdown }}</span>
             </div>
-            <div v-else-if="sharedEnergy >= 25" class="text-sm font-bold text-positive text-center relative z-10">Enerjin dolu! 🎉</div>
+            <div v-else-if="sharedEnergy >= 25" class="text-sm font-bold text-positive text-center relative z-10">Enerjin dolu!</div>
           </template>
           <template v-if="!unlimitedEnergy && sharedEnergy < 25 && energyPackages.length > 0">
             <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-wide mt-1 relative z-10">Enerji Satın Al</div>

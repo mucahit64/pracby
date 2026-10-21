@@ -6,7 +6,7 @@
         class="fixed inset-0 bg-black/50 flex items-end justify-center z-[1000]"
         @click.self="$emit('close')"
       >
-        <div class="bg-white rounded-t-3xl w-full max-w-[600px] max-h-[80vh] overflow-y-auto px-6 pt-3 pb-[calc(1.5rem+env(safe-area-inset-bottom))] flex flex-col gap-5">
+        <div class="bg-white border-2 border-gray-200 rounded-t-3xl animate-slide-up w-full max-w-[600px] max-h-[80vh] overflow-y-auto px-6 pt-3 pb-[calc(1.5rem+env(safe-area-inset-bottom))] flex flex-col gap-5">
           <div class="w-10 h-1 bg-gray-300 rounded-full self-center" />
 
           <section v-if="enrollments.length > 1" class="flex flex-col gap-2.5">

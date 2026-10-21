@@ -337,7 +337,7 @@
         </div>
 
         <div class="text-center space-y-1">
-          <h1 class="text-2xl font-black text-gray-800">{{ energyDepleted ? 'Enerjin Bitti!' : (isBossSession ? 'Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
+          <h1 class="text-2xl font-black text-gray-800">{{ energyDepleted ? 'Enerjin Bitti!' : (isBossSession ? 'Boss Testi Geçildi!' : 'Tebrikler!') }}</h1>
           <p class="text-sm font-semibold text-gray-400">{{ energyDepleted ? 'Enerjin tükendi, test sonlandırıldı.' : (isBossSession ? 'Adım finali tamamlandı!' : 'Quiz tamamlandı!') }}</p>
         </div>
 
@@ -364,7 +364,7 @@
           </div>
         </div>
 
-        <div v-if="stepCompleted" class="bg-positive/10 text-positive font-extrabold text-sm px-5 py-2.5 rounded-full border-2 border-positive/30">🎉 Adım tamamlandı!</div>
+        <div v-if="stepCompleted" class="bg-positive/10 text-positive font-extrabold text-sm px-5 py-2.5 rounded-full border-2 border-positive/30"><PbIcon name="check" /> Adım tamamlandı!</div>
         <div v-if="topicCompleted" class="bg-warning/10 text-warning font-extrabold text-sm px-5 py-2.5 rounded-full border-2 border-warning/30"><PbIcon name="trophy" /> Konu tamamlandı!</div>
 
         <!-- Pending sync notice -->
@@ -374,7 +374,7 @@
         </div>
 
         <div class="flex gap-3 w-full max-w-[420px] mt-1">
-          <button class="flex-1 bg-white text-gray-500 font-bold text-sm py-3.5 rounded-2xl border-2 border-gray-200 hover:border-gray-300 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="restartQuiz">🔄 Tekrar Dene</button>
+          <button class="flex-1 bg-white text-gray-500 font-bold text-sm py-3.5 rounded-2xl border-2 border-gray-200 hover:border-gray-300 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="restartQuiz"><PbUiIcon name="refresh" /> Tekrar Dene</button>
           <NuxtLink :to="guestMode ? '/auth/register-wall' : '/'" class="flex-1 bg-primary text-white font-black text-sm py-3.5 rounded-2xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all text-center">Devam Et →</NuxtLink>
         </div>
       </div>

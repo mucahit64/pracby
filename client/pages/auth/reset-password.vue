@@ -51,7 +51,7 @@
                 required
               >
               <button type="button" class="absolute right-2.5 bg-transparent border-0 cursor-pointer text-lg p-1 text-gray-400" tabindex="-1" @click="showPassword = !showPassword">
-                {{ showPassword ? '🙈' : '🐵' }}
+                <PbUiIcon :name="showPassword ? 'eye-off' : 'eye'" />
               </button>
             </div>
           </div>
