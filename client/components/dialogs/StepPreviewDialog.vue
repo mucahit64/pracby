@@ -8,7 +8,7 @@
       >
         <div class="bg-white border-2 border-gray-200 rounded-3xl p-7 max-w-[360px] w-full flex flex-col items-center gap-3.5">
           <div class="flex flex-col items-center gap-1.5">
-            <span class="text-4xl">📝</span>
+            <PbIcon name="test" class="text-4xl" />
             <div class="text-lg font-black text-gray-800 text-center">Teste Hazır mısın?</div>
           </div>
           <p class="text-sm text-gray-500 font-semibold text-center">Bu testi tamamladığında bir sonraki adıma geçeceksin.</p>

@@ -3,7 +3,7 @@
     <!-- Main Content -->
     <div class="flex flex-col gap-7 max-w-[600px] mx-auto pb-10">
       <div class="flex items-center justify-between py-2">
-        <h1 class="text-2xl font-black text-gray-800">🌰 Market</h1>
+        <h1 class="text-2xl font-black text-gray-800"><PbIcon name="acorn" /> Market</h1>
       </div>
 
       <!-- Store Items -->
@@ -12,7 +12,7 @@
 
         <!-- Guest banner -->
         <div v-if="isGuest" class="flex items-center gap-3 bg-amber-50 border-2 border-amber-200 rounded-2xl px-4 py-3">
-          <span class="text-2xl shrink-0">🌰</span>
+          <PbIcon name="acorn" class="text-2xl shrink-0" />
           <div class="flex-1 text-sm font-semibold text-gray-800 leading-snug">
             <strong>{{ balance }} palamut kazandın!</strong> Mağazada harcamak için bir profil oluştur!
           </div>
@@ -37,16 +37,16 @@
               class="shrink-0 bg-amber-50 border-2 border-amber-600 text-amber-700 font-extrabold text-sm px-4 py-2.5 rounded-xl cursor-pointer hover:bg-amber-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed font-[inherit]"
               :disabled="isGuest || balance < item.price_acorn"
               @click="openPurchaseModal(item)"
-            >🌰 {{ item.price_acorn }}</button>
+            ><PbIcon name="acorn" /> {{ item.price_acorn }}</button>
           </div>
         </div>
       </div>
 
       <!-- Energy refill -->
       <div v-if="energyItems.length > 0" class="flex flex-col gap-3">
-        <h2 class="text-base font-extrabold text-gray-800">🔋 Enerji Doldur</h2>
+        <h2 class="text-base font-extrabold text-gray-800"><PbIcon name="energy" /> Enerji Doldur</h2>
         <div v-if="unlimitedEnergy" class="flex items-center gap-2.5 bg-positive/10 border-2 border-positive/30 rounded-2xl px-4 py-3">
-          <span class="text-xl">♾️🔋</span>
+          <PbIcon name="energy-infinite" class="text-xl" />
           <span class="text-sm font-bold text-positive">Sınırsız enerji aktif — enerji doldurmanıza gerek yok!</span>
         </div>
         <div v-else class="flex flex-col gap-2.5">
@@ -64,7 +64,7 @@
               class="shrink-0 bg-amber-50 border-2 border-amber-600 text-amber-700 font-extrabold text-sm px-4 py-2.5 rounded-xl cursor-pointer hover:bg-amber-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed font-[inherit]"
               :disabled="balance < item.price_acorn"
               @click="openPurchaseModal(item)"
-            >🌰 {{ item.price_acorn }}</button>
+            ><PbIcon name="acorn" /> {{ item.price_acorn }}</button>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@
         <h2 class="text-base font-extrabold text-gray-800">Aktif Etkiler</h2>
         <div class="flex flex-col gap-2">
           <div v-for="effect in effects" :key="effect.item_type" class="flex items-center justify-between bg-primary/5 border-2 border-primary rounded-2xl px-4 py-3">
-            <span class="text-sm font-extrabold text-gray-800">{{ effectLabel(effect.item_type) }}</span>
+            <span class="text-sm font-extrabold text-gray-800"><PbIcon v-if="effectIcons[effect.item_type]" :name="effectIcons[effect.item_type]" /> {{ effectLabel(effect.item_type) }}</span>
             <span class="text-xs font-bold text-gray-400">{{ formatExpiry(effect.expires_at) }} kaldı</span>
           </div>
         </div>
@@ -103,10 +103,10 @@
 
       <!-- Acorn packages -->
       <div v-if="!isGuest" class="flex flex-col gap-3">
-        <h2 class="text-base font-extrabold text-gray-800">🌰 Buy Acorn</h2>
+        <h2 class="text-base font-extrabold text-gray-800"><PbIcon name="acorn" /> Buy Acorn</h2>
         <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
           <div v-for="pkg in packages" :key="pkg.id" class="bg-white border-2 border-gray-200 rounded-2xl p-4 flex flex-col items-center gap-2 text-center sm:p-5">
-            <div class="text-xl font-black text-amber-700">🌰 {{ pkg.amount }}</div>
+            <div class="text-xl font-black text-amber-700"><PbIcon name="acorn" /> {{ pkg.amount }}</div>
             <div class="text-xs font-bold text-gray-400">{{ pkg.label }}</div>
             <button class="w-full bg-amber-50 border-2 border-amber-600 text-amber-700 font-extrabold text-xs py-2 rounded-xl cursor-pointer hover:bg-amber-100 transition-colors font-[inherit]" @click="buyAcorn(pkg)">Satın Al</button>
           </div>
@@ -122,7 +122,7 @@
             <span class="text-5xl">{{ purchaseModal.icon_url || '📦' }}</span>
             <h2 class="text-lg font-black text-gray-800">{{ purchaseModal.name }}</h2>
             <p class="text-sm font-semibold text-gray-400">{{ purchaseModal.description }}</p>
-            <div class="text-xl font-black text-amber-700">🌰 {{ purchaseModal.price_acorn }}</div>
+            <div class="text-xl font-black text-amber-700"><PbIcon name="acorn" /> {{ purchaseModal.price_acorn }}</div>
             <p v-if="purchaseError" class="text-sm font-semibold text-negative">{{ purchaseError }}</p>
             <div class="flex flex-col gap-2 w-full mt-2">
               <button class="w-full bg-primary text-white font-black text-sm py-3 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed" :disabled="purchasing" @click="confirmPurchase">
@@ -342,11 +342,17 @@ function buyAcorn(_pkg: AcornPackage) {
   alert('Payment system coming soon!');
 }
 
+const effectIcons: Record<string, string> = {
+  streak_freeze: 'freeze',
+  unlimited_energy: 'energy-infinite',
+  xp_boost: 'xp',
+};
+
 function effectLabel(type: string) {
   const labels: Record<string, string> = {
-    streak_freeze: '🧊 Seri Dondurma',
-    unlimited_energy: '🔋 Sınırsız Enerji',
-    xp_boost: '⚡ XP Boost',
+    streak_freeze: 'Seri Dondurma',
+    unlimited_energy: 'Sınırsız Enerji',
+    xp_boost: 'XP Boost',
   };
   return labels[type] || type;
 }

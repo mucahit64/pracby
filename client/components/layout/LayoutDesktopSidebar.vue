@@ -14,7 +14,7 @@
         class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-bold text-gray-600 uppercase tracking-wide border-2 border-transparent transition-all duration-150 hover:bg-gray-100 hover:text-gray-800"
         :class="{ '!bg-primary/10 !text-primary !border-primary/30': isActive(item) }"
       >
-        <span class="text-xl w-7 text-center">{{ item.emoji }}</span>
+        <PbIcon :name="item.icon" class="text-xl" />
         <span class="text-sm tracking-widest">{{ item.label }}</span>
       </NuxtLink>
     </nav>
@@ -25,7 +25,7 @@
       to="/admin"
       class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-bold text-gray-600 uppercase tracking-wide border-2 border-transparent transition-all duration-150 hover:bg-primary/10 hover:text-primary"
     >
-      <span class="text-xl w-7 text-center">⚙️</span>
+      <PbIcon name="settings" class="text-xl w-7 text-center" />
       <span class="text-sm tracking-widest">PANEL</span>
     </NuxtLink>
 
@@ -52,10 +52,10 @@ const { enrollments, activeExamTypeId, isLoggedIn, switchExam } = useUserSession
 const { hasPermission } = useRBAC()
 
 const navItems = computed(() => [
-  { emoji: '📚', label: 'ÖĞREN', to: '/learn', exact: true },
-  { emoji: '🏆', label: 'LİDERLİK', to: '/leaderboard', exact: false },
-  { emoji: '🌰', label: 'MARKET', to: '/store', exact: false },
-  { emoji: '👤', label: 'PROFİL', to: isLoggedIn.value ? '/profile' : '/auth/register', exact: false },
+  { icon: 'book', label: 'ÖĞREN', to: '/learn', exact: true },
+  { icon: 'trophy', label: 'LİDERLİK', to: '/leaderboard', exact: false },
+  { icon: 'acorn', label: 'MARKET', to: '/store', exact: false },
+  { icon: 'profile', label: 'PROFİL', to: isLoggedIn.value ? '/profile' : '/auth/register', exact: false },
 ])
 
 function isActive(item: { to: string; exact?: boolean }) {

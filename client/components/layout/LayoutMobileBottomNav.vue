@@ -24,7 +24,7 @@
         :class="{ '!text-primary': isActive(item) }"
         @click="closeTooltip"
       >
-        <span class="text-xl">{{ item.emoji }}</span>
+        <PbIcon :name="item.icon" class="text-xl" />
         <span>{{ item.label }}</span>
       </NuxtLink>
     </div>
@@ -39,14 +39,14 @@ const { hasPermission } = useRBAC()
 const activeTooltip = useState('pbMobileTooltip', () => null)
 
 const navItems = computed(() => {
-  const items: Array<{ emoji: string; label: string; to: string; exact: boolean }> = [
-    { emoji: '📚', label: 'ÖĞREN', to: '/learn', exact: true },
-    { emoji: '🏆', label: 'LİDERLİK', to: '/leaderboard', exact: false },
-    { emoji: '🌰', label: 'MARKET', to: '/store', exact: false },
-    { emoji: '👤', label: 'PROFİL', to: isLoggedIn.value ? '/profile' : '/auth/register', exact: false },
+  const items: Array<{ icon: string; label: string; to: string; exact: boolean }> = [
+    { icon: 'book', label: 'ÖĞREN', to: '/learn', exact: true },
+    { icon: 'trophy', label: 'LİDERLİK', to: '/leaderboard', exact: false },
+    { icon: 'acorn', label: 'MARKET', to: '/store', exact: false },
+    { icon: 'profile', label: 'PROFİL', to: isLoggedIn.value ? '/profile' : '/auth/register', exact: false },
   ]
   if (hasPermission('view_admin_panel')) {
-    items.push({ emoji: '⚙️', label: 'PANEL', to: '/admin', exact: false })
+    items.push({ icon: 'settings', label: 'PANEL', to: '/admin', exact: false })
   }
   return items
 })

@@ -45,7 +45,7 @@
               @blur="checkEmailAvailability"
             >
             <span v-if="emailStatus === 'checking'" class="absolute right-3 pointer-events-none">⏳</span>
-            <span v-else-if="emailStatus === 'ok'" class="absolute right-3 pointer-events-none">✅</span>
+            <span v-else-if="emailStatus === 'ok'" class="absolute right-3 pointer-events-none"><PbIcon name="check" /></span>
           </div>
           <span v-if="fieldErrors.email" class="text-xs font-semibold text-negative -mt-0.5">
             {{ fieldErrors.email }}
@@ -72,7 +72,7 @@
               @blur="checkUsernameAvailability"
             >
             <span v-if="usernameStatus === 'checking'" class="absolute right-3 pointer-events-none">⏳</span>
-            <span v-else-if="usernameStatus === 'ok'" class="absolute right-3 pointer-events-none">✅</span>
+            <span v-else-if="usernameStatus === 'ok'" class="absolute right-3 pointer-events-none"><PbIcon name="check" /></span>
           </div>
           <span v-if="fieldErrors.username" class="text-xs font-semibold text-negative -mt-0.5">{{ fieldErrors.username }}</span>
         </div>
@@ -96,7 +96,7 @@
           </div>
           <span class="text-xs font-semibold -mt-0.5" :class="passwordOk ? 'text-positive' : 'text-gray-400'">
             <template v-if="form.password.length > 0">
-              En az 6 karakter (Şu an: {{ form.password.length }}) <span v-if="passwordOk">✅</span>
+              En az 6 karakter (Şu an: {{ form.password.length }}) <span v-if="passwordOk"><PbIcon name="check" /></span>
             </template>
           </span>
         </div>

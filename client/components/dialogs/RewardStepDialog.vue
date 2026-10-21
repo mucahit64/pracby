@@ -12,7 +12,7 @@
             class="w-20 h-20 rounded-full flex items-center justify-center text-4xl border-4"
             :class="locked ? 'bg-gray-100 border-gray-200' : 'bg-amber-50 border-amber-300'"
           >
-            🎁
+            <PbIcon name="gift" />
           </div>
 
           <!-- Locked state -->
@@ -22,7 +22,7 @@
               <p class="text-sm text-gray-500 font-semibold text-center">Bu ödülü kazanmak için önceki adımları tamamla.</p>
             </div>
             <div class="flex items-center gap-2 bg-gray-50 border-2 border-gray-200 rounded-2xl px-5 py-3">
-              <span class="text-2xl opacity-50">🌰</span>
+              <PbIcon name="acorn" class="text-2xl opacity-50" />
               <span class="text-xl font-black text-gray-400">+{{ rewardAmount ?? 10 }}</span>
             </div>
             <button
@@ -40,7 +40,7 @@
               <p class="text-sm text-gray-500 font-semibold text-center">Bu bölümü tamamladın. Ödülünü almaya hazır mısın?</p>
             </div>
             <div class="flex items-center gap-2 bg-amber-50 border-2 border-amber-200 rounded-2xl px-5 py-3">
-              <span class="text-2xl">🌰</span>
+              <PbIcon name="acorn" class="text-2xl" />
               <span class="text-xl font-black text-amber-700">+{{ rewardAmount ?? 10 }}</span>
             </div>
             <div class="flex flex-col gap-2.5 w-full mt-1">

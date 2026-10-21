@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-5 max-w-[560px] mx-auto pb-10">
     <div class="text-center py-2">
-      <h1 class="text-2xl font-black text-gray-800">🏆 Liderlik Tablosu</h1>
+      <h1 class="text-2xl font-black text-gray-800"><PbIcon name="trophy" /> Liderlik Tablosu</h1>
       <p class="text-sm font-semibold text-gray-400 mt-1">Bu haftanın en iyileri arasına gir!</p>
     </div>
 
@@ -14,7 +14,7 @@
         :class="activeLeague === league.id ? '!bg-primary !text-white' : 'hover:bg-gray-100 hover:text-gray-800'"
         @click="activeLeague = league.id"
       >
-        <span class="text-lg">{{ league.emoji }}</span>
+        <PbIcon :name="league.icon" class="text-lg" />
         <span class="uppercase">{{ league.name }}</span>
       </button>
     </div>
@@ -29,7 +29,7 @@ class="flex items-center gap-3.5 rounded-2xl px-5 py-4 text-white border-b-4"
         'bg-blue-500 border-blue-700': activeLeague === 'diamond',
       }"
     >
-      <span class="text-3xl">{{ currentLeague.emoji }}</span>
+      <PbIcon :name="currentLeague.icon" class="text-3xl" />
       <div>
         <div class="text-lg font-black">{{ currentLeague.name }} Ligi</div>
         <div class="text-xs font-semibold opacity-80 mt-0.5">Top 10 → Gümüş'e yüksel • Alt 5 → Bronza düş</div>
@@ -55,9 +55,9 @@ class="flex items-center gap-3.5 rounded-2xl px-5 py-4 text-white border-b-4"
         >
           <!-- Rank -->
           <div class="w-8 text-center shrink-0">
-            <span v-if="index === 0" class="text-xl">🥇</span>
-            <span v-else-if="index === 1" class="text-xl">🥈</span>
-            <span v-else-if="index === 2" class="text-xl">🥉</span>
+            <span v-if="index === 0" class="text-xl"><PbIcon name="medal-gold" /></span>
+            <span v-else-if="index === 1" class="text-xl"><PbIcon name="medal-silver" /></span>
+            <span v-else-if="index === 2" class="text-xl"><PbIcon name="medal-bronze" /></span>
             <span v-else class="text-sm font-extrabold text-gray-400">{{ index + 1 }}</span>
           </div>
 
@@ -106,17 +106,17 @@ useHead({
 const activeLeague = ref('bronze');
 
 const leagues = [
-  { id: 'bronze', name: 'Bronz', emoji: '🥉' },
-  { id: 'silver', name: 'Gümüş', emoji: '🥈' },
-  { id: 'gold', name: 'Altın', emoji: '🥇' },
-  { id: 'diamond', name: 'Elmas', emoji: '💎' },
+  { id: 'bronze', name: 'Bronz', icon: 'medal-bronze' },
+  { id: 'silver', name: 'Gümüş', icon: 'medal-silver' },
+  { id: 'gold', name: 'Altın', icon: 'medal-gold' },
+  { id: 'diamond', name: 'Elmas', icon: 'diamond' },
 ];
 
-const leagueMap: Record<string, { name: string; emoji: string }> = {
-  bronze: { name: 'Bronz', emoji: '🥉' },
-  silver: { name: 'Gümüş', emoji: '🥈' },
-  gold: { name: 'Altın', emoji: '🥇' },
-  diamond: { name: 'Elmas', emoji: '💎' },
+const leagueMap: Record<string, { name: string; icon: string }> = {
+  bronze: { name: 'Bronz', icon: 'medal-bronze' },
+  silver: { name: 'Gümüş', icon: 'medal-silver' },
+  gold: { name: 'Altın', icon: 'medal-gold' },
+  diamond: { name: 'Elmas', icon: 'diamond' },
 };
 
 const currentLeague = computed(() => leagueMap[activeLeague.value]);

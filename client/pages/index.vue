@@ -131,9 +131,9 @@
                     <path d="M20.5 13.8 26.3 12.3 28.3 19.8 22.5 21.3z" fill="#ef4444" />
                     <path d="M23.4 13c-4-3-9-3.5-9.3-.5s5 2.6 9.3.5zM23.4 13c2-4.5 6.5-7 8.2-4.5s-3.6 4.4-8.2 4.5z" fill="#ef4444" />
                   </svg>
-                  <span v-else-if="node.type === 'chest'" class="drop-shadow-sm">🎁</span>
+                  <span v-else-if="node.type === 'chest'" class="drop-shadow-sm"><PbIcon name="gift" /></span>
                   <span v-else class="drop-shadow-sm">
-                    {{ node.status === 'locked' ? '🔒' : node.icon }}
+                    <PbIcon :name="node.status === 'locked' ? 'lock' : node.icon" />
                   </span>
                 </button>
               </div>
@@ -338,7 +338,7 @@ function buildLessonNodes(topic: Topic, colorBg: string, colorBorder: string, co
     if (step.step_type === 'reward') {
       nodes.push({
         id: `reward-${step.id}`,
-        icon: isCompleted ? '✅' : '🎁',
+        icon: isCompleted ? 'check' : 'gift',
         type: 'chest',
         status,
         topicId: topic.id,
@@ -349,7 +349,7 @@ function buildLessonNodes(topic: Topic, colorBg: string, colorBorder: string, co
     } else {
       nodes.push({
         id: step.id,
-        icon: '📝',
+        icon: 'test',
         type: 'lesson',
         status,
         topicId: topic.id,
@@ -369,7 +369,7 @@ function buildLessonNodes(topic: Topic, colorBg: string, colorBorder: string, co
 
     nodes.push({
       id: `boss-${topic.id}`,
-      icon: '⚔️',
+      icon: 'swords',
       type: 'boss',
       status: allCompleted ? 'active' : 'locked',
       topicId: topic.id,

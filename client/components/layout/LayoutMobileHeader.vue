@@ -11,7 +11,7 @@
           class="flex items-center gap-1 text-base font-extrabold text-gray-800 cursor-pointer bg-transparent border-0 font-[inherit] p-1"
           @click="toggle('streak')"
         >
-          🔥 {{ streakCount }}
+          <PbIcon name="fire" /> {{ streakCount }}
         </button>
         <div v-if="activeTooltip === 'streak'" class="absolute top-full mt-2 left-0 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5 shadow-lg">
           <div class="absolute -top-[8px] left-8 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]" />
@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="flex items-center gap-1.5">
-            <span>🔥</span>
+            <PbIcon name="fire" />
             <span class="text-xl font-black text-gray-800">{{ streakCount }}</span>
             <span class="text-sm font-semibold text-gray-400">günlük seri</span>
           </div>
@@ -43,16 +43,16 @@
           class="flex items-center gap-1 text-base font-extrabold text-gray-800 cursor-pointer bg-transparent border-0 font-[inherit] p-1"
           @click="toggle('acorns')"
         >
-          🌰 {{ acornBalance }}
+          <PbIcon name="acorn" /> {{ acornBalance }}
         </button>
         <div v-if="activeTooltip === 'acorns'" class="absolute top-full mt-2 left-1/2 -translate-x-1/2 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5 shadow-lg">
           <div class="absolute -top-[8px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]" />
           <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest">Palamutların</div>
           <div class="flex items-center gap-2">
-            <span class="text-3xl">🌰</span>
+            <PbIcon name="acorn" class="text-3xl" />
             <span class="text-xl font-black text-gray-800">{{ acornBalance }}</span>
           </div>
-          <p class="text-xs text-gray-400 font-semibold leading-relaxed">Doğru cevap = 1 🌰</p>
+          <p class="text-xs text-gray-400 font-semibold leading-relaxed">Doğru cevap = 1 <PbIcon name="acorn" /></p>
           <p class="text-xs text-gray-400 font-semibold leading-relaxed">Palamutlarınla mağazadan ürün al!</p>
           <NuxtLink
             to="/store"
@@ -70,9 +70,9 @@
           class="flex items-center gap-1 text-base font-extrabold text-gray-800 cursor-pointer bg-transparent border-0 font-[inherit] p-1"
           @click="toggle('energy')"
         >
-          <template v-if="unlimitedEnergy">♾️🔋</template>
+          <template v-if="unlimitedEnergy"><PbIcon name="energy-infinite" /></template>
           <template v-else>
-            🔋 {{ energyCount }}
+            <PbIcon name="energy" /> {{ energyCount }}
             <span v-if="energyCountdown" class="ml-1 text-xs font-bold text-white bg-negative px-1.5 py-0.5 rounded-full tabular-nums tracking-wide">
               {{ energyCountdown }}
             </span>
@@ -83,13 +83,13 @@
           <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest">Enerjin</div>
           <template v-if="unlimitedEnergy">
             <div class="flex items-center gap-2">
-              <span class="text-2xl">♾️🔋</span>
+              <PbIcon name="energy-infinite" class="text-2xl" />
             </div>
             <div class="text-sm font-bold text-positive text-center">Sınırsız enerji aktif!</div>
           </template>
           <template v-else>
             <div class="flex items-center gap-2">
-              <span class="text-2xl">🔋</span>
+              <PbIcon name="energy" class="text-2xl" />
               <span class="text-2xl font-black text-gray-800">{{ energyCount }}</span>
               <span class="text-sm font-semibold text-gray-400">/ 25</span>
             </div>

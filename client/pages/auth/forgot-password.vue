@@ -10,7 +10,7 @@
       <!-- Başarı ekranı -->
       <template v-if="submitted">
         <div class="flex flex-col items-center gap-4 py-2">
-          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-3xl">📬</div>
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-3xl"><PbIcon name="mail" /></div>
           <h2 class="text-xl font-extrabold text-gray-800 text-center">E-posta gönderildi</h2>
           <p class="text-sm text-gray-500 text-center leading-relaxed">
             Eğer bu adres kayıtlıysa, şifre sıfırlama bağlantısı gönderildi.<br >

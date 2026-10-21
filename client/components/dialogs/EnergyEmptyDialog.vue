@@ -3,13 +3,13 @@
     <transition name="fade">
       <div v-if="visible" class="fixed inset-0 bg-black/60 z-[1000] flex items-end justify-center">
         <div class="bg-white border-2 border-gray-200 rounded-t-3xl p-7 pb-11 w-full max-w-[480px] flex flex-col items-center gap-3.5 animate-slide-up">
-          <span class="text-5xl">🪫</span>
+          <PbIcon name="energy-empty" class="text-5xl" />
           <h2 class="text-2xl font-black text-gray-800">Enerjin Bitti!</h2>
           <p class="text-sm font-semibold text-gray-400 text-center">Devam etmek için enerji satın al.</p>
 
           <!-- Balance pill -->
           <div class="flex items-center gap-2 bg-gray-50 border-2 border-gray-200 rounded-full px-5 py-2 my-1">
-            <span class="text-lg">🌰</span>
+            <PbIcon name="acorn" class="text-lg" />
             <span class="text-lg font-black text-amber-700">{{ acornBalance }}</span>
             <span class="text-xs font-bold text-gray-400 uppercase">Palamut</span>
           </div>
@@ -37,7 +37,7 @@
               <span class="flex-1 text-sm font-extrabold text-gray-800 text-left">{{ pkg.name }}</span>
               <span class="shrink-0 text-sm font-extrabold text-amber-700 bg-amber-50 px-3 py-1 rounded-full min-w-[64px] flex items-center justify-center">
                 <span v-if="purchasingId === pkg.id" class="w-3.5 h-3.5 border-2 border-amber-200 border-t-amber-700 rounded-full animate-spin" />
-                <template v-else>🌰 {{ pkg.price_acorn }}</template>
+                <template v-else><PbIcon name="acorn" /> {{ pkg.price_acorn }}</template>
               </span>
             </button>
           </div>

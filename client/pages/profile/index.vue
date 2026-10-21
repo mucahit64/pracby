@@ -26,7 +26,7 @@
       <!-- Stats Grid -->
       <div class="grid grid-cols-2 gap-3">
         <div v-for="stat in statCards" :key="stat.label" class="bg-white border-2 border-gray-200 rounded-2xl p-4 flex flex-col items-center gap-1 text-center hover:bg-gray-50 transition-colors">
-          <span class="text-2xl">{{ stat.icon }}</span>
+          <PbIcon :name="stat.icon" class="text-2xl" />
           <span class="text-xl font-black text-gray-800">{{ stat.value }}</span>
           <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">{{ stat.label }}</span>
         </div>
@@ -34,7 +34,7 @@
 
       <!-- Streak Calendar -->
       <div class="flex flex-col gap-3.5">
-        <h2 class="text-base font-extrabold text-gray-800">📅 Bu Haftaki Seri</h2>
+        <h2 class="text-base font-extrabold text-gray-800"><PbIcon name="calendar" /> Bu Haftaki Seri</h2>
         <div class="flex justify-between bg-white border-2 border-gray-200 rounded-2xl p-4 gap-2">
           <div
             v-for="day in weekDays"
@@ -48,7 +48,7 @@
                 'border-2 border-primary border-dashed': day.isToday && !day.done,
                 'bg-gray-100': !day.done && !day.isToday,
               }"
-            >{{ day.done ? '🔥' : '·' }}</div>
+            ><PbIcon v-if="day.done" name="fire" /><template v-else>·</template></div>
             <span
               class="text-[0.68rem] font-bold uppercase tracking-wide"
               :class="day.isToday ? 'text-primary' : 'text-gray-400'"
@@ -59,7 +59,7 @@
 
       <!-- Achievements -->
       <div class="flex flex-col gap-3.5">
-        <h2 class="text-base font-extrabold text-gray-800">🏅 Başarımlar</h2>
+        <h2 class="text-base font-extrabold text-gray-800"><PbIcon name="medal" /> Başarımlar</h2>
         <div v-if="achievements.length === 0" class="text-sm font-semibold text-gray-400 text-center py-4">Henüz başarım kazanılmadı.</div>
         <div v-else class="grid grid-cols-3 sm:grid-cols-4 gap-3">
           <div
@@ -69,7 +69,8 @@
             :class="{ 'opacity-40 grayscale': !badge.earned }"
             :title="badge.description"
           >
-            <span class="text-2xl">{{ badge.icon }}</span>
+            <span v-if="badge.icon" class="text-2xl">{{ badge.icon }}</span>
+            <PbIcon v-else name="medal" class="text-2xl" />
             <span class="text-[0.68rem] font-bold text-gray-800 leading-tight">{{ badge.name }}</span>
             <div v-if="badge.earned" class="absolute -top-1 -right-1 w-4 h-4 bg-positive rounded-full border-2 border-white" />
           </div>
@@ -78,7 +79,7 @@
 
       <!-- Enrollments -->
       <div class="flex flex-col gap-3.5">
-        <h2 class="text-base font-extrabold text-gray-800">🎓 Kayıtlı Sınavlarım</h2>
+        <h2 class="text-base font-extrabold text-gray-800"><PbIcon name="graduation" /> Kayıtlı Sınavlarım</h2>
         <div v-if="loadingEnrollments" class="text-sm font-semibold text-gray-400 text-center py-4">Yükleniyor…</div>
         <div v-else class="flex flex-col gap-2.5">
           <div
@@ -114,7 +115,7 @@
       <!-- Actions -->
       <div class="flex gap-3">
         <button class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]" @click="router.push('/profile/edit')">✏️ Profili Düzenle</button>
-        <button class="flex-1 bg-white text-negative font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-negative hover:bg-negative/5 transition-all cursor-pointer font-[inherit]" @click="signOut">🚪 Çıkış</button>
+        <button class="flex-1 bg-white text-negative font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-negative hover:bg-negative/5 transition-all cursor-pointer font-[inherit]" @click="signOut"><PbIcon name="door" /> Çıkış</button>
       </div>
     </div>
 
@@ -125,7 +126,7 @@
           <div class="bg-white border-2 border-gray-200 rounded-2xl max-w-[380px] w-full p-5 relative flex flex-col gap-5 sm:rounded-3xl sm:p-8">
             <button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center text-gray-400 font-bold cursor-pointer hover:bg-gray-200 transition-colors" @click="closeDeleteConfirm">✕</button>
             <div class="flex flex-col items-center gap-3 text-center">
-              <div class="w-14 h-14 rounded-full bg-negative/10 flex items-center justify-center text-2xl">🗑️</div>
+              <div class="w-14 h-14 rounded-full bg-negative/10 flex items-center justify-center text-2xl"><PbIcon name="trash" /></div>
               <h2 class="text-lg font-black text-gray-800">Sınavı Kaldır</h2>
               <p class="text-sm font-semibold text-gray-500 leading-relaxed">İlerlemeniz korunur ve istediğiniz zaman yeniden katılabilirsiniz.</p>
             </div>
@@ -388,11 +389,11 @@ const profile = ref({
 });
 
 const statCards = computed(() => [
-  { icon: '⚡', value: profile.value.totalXp.toLocaleString('tr'), label: 'Toplam XP' },
-  { icon: '🔥', value: profile.value.currentStreak, label: 'Güncel Seri' },
-  { icon: '🏆', value: profile.value.maxStreak, label: 'En Uzun Seri' },
-  { icon: '🎯', value: profile.value.quizzesCompleted, label: 'Quiz' },
-  { icon: '🌰', value: profile.value.acornBalance.toLocaleString('tr'), label: 'Acorn' },
+  { icon: 'xp', value: profile.value.totalXp.toLocaleString('tr'), label: 'Toplam XP' },
+  { icon: 'fire', value: profile.value.currentStreak, label: 'Güncel Seri' },
+  { icon: 'trophy', value: profile.value.maxStreak, label: 'En Uzun Seri' },
+  { icon: 'target', value: profile.value.quizzesCompleted, label: 'Quiz' },
+  { icon: 'acorn', value: profile.value.acornBalance.toLocaleString('tr'), label: 'Acorn' },
 ]);
 
 const weekDays = ref([
@@ -472,7 +473,7 @@ const fetchProfile = async () => {
     const earnedIds = new Set(earnedAchievements.map((a) => a.name));
     achievements.value = earnedAchievements.map((a) => ({
       name: a.name,
-      icon: a.icon_url || '🏅',
+      icon: a.icon_url ?? '',
       description: a.description,
       earned: true,
     }));
@@ -480,7 +481,7 @@ const fetchProfile = async () => {
       if (!earnedIds.has(a.name)) {
         achievements.value.push({
           name: a.name,
-          icon: a.icon_url || '🏅',
+          icon: a.icon_url ?? '',
           description: a.description,
           earned: false,
         });

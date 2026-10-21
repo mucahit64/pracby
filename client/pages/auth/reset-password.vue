@@ -8,7 +8,7 @@
       <!-- Başarı ekranı -->
       <template v-if="success">
         <div class="flex flex-col items-center gap-4 py-2">
-          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-3xl">✅</div>
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-3xl"><PbIcon name="check" /></div>
           <h2 class="text-xl font-extrabold text-gray-800 text-center">Şifren güncellendi!</h2>
           <p class="text-sm text-gray-500 text-center">Yeni şifrenle giriş yapabilirsin.</p>
           <NuxtLink to="/auth/login" class="w-full mt-2 bg-primary text-white font-black text-base py-3.5 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 text-center block">
@@ -20,7 +20,7 @@
       <!-- Geçersiz token ekranı -->
       <template v-else-if="!token">
         <div class="flex flex-col items-center gap-4 py-2">
-          <div class="w-16 h-16 rounded-full bg-negative/10 flex items-center justify-center text-3xl">⚠️</div>
+          <div class="w-16 h-16 rounded-full bg-negative/10 flex items-center justify-center text-3xl"><PbIcon name="warning" /></div>
           <h2 class="text-xl font-extrabold text-gray-800 text-center">Geçersiz bağlantı</h2>
           <p class="text-sm text-gray-500 text-center">Bu bağlantı geçersiz veya süresi dolmuş.</p>
           <NuxtLink to="/auth/forgot-password" class="w-full mt-2 bg-primary text-white font-black text-base py-3.5 rounded-xl border-b-4 border-primary-dark active:border-b-0 active:translate-y-1 transition-all duration-100 text-center block">

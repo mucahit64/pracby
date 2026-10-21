@@ -4,7 +4,7 @@
 <div class="flex border-2 border-gray-200 rounded-2xl p-2.5 justify-between relative">
       <div class="relative flex flex-col items-center flex-1 group" @mouseenter="openTooltip('streak')" @mouseleave="closeTooltip">
         <div class="flex items-center gap-1.5 px-2 py-1.5 rounded-xl cursor-default transition-colors group-hover:bg-gray-100">
-          <span class="text-xl">🔥</span>
+          <PbIcon name="fire" class="text-xl" />
           <span class="text-base font-extrabold text-gray-800">{{ stats.streak }}</span>
         </div>
         <div v-if="activeTooltip === 'streak'" class="absolute top-full mt-2.5 left-0 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
@@ -25,7 +25,7 @@
             </div>
           </div>
           <div class="flex items-center gap-1.5 relative z-10">
-            <span>🔥</span>
+            <PbIcon name="fire" />
             <span class="text-xl font-black text-gray-800">{{ stats.streak }}</span>
             <span class="text-sm font-semibold text-gray-400">günlük seri</span>
           </div>
@@ -35,7 +35,7 @@
 
       <div class="relative flex flex-col items-center flex-1 group" @mouseenter="openTooltip('acorns')" @mouseleave="closeTooltip">
         <div class="flex items-center gap-1.5 px-2 py-1.5 rounded-xl cursor-default transition-colors group-hover:bg-gray-100">
-          <span class="text-xl">🌰</span>
+          <PbIcon name="acorn" class="text-xl" />
           <span class="text-base font-extrabold text-gray-800">{{ sharedAcornBalance }}</span>
         </div>
         <div v-if="activeTooltip === 'acorns'" class="absolute top-full mt-2.5 left-1/2 -translate-x-1/2 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
@@ -43,10 +43,10 @@
 
           <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest relative z-10">Palamutların</div>
           <div class="flex items-center gap-2 relative z-10">
-            <span class="text-3xl">🌰</span>
+            <PbIcon name="acorn" class="text-3xl" />
             <span class="text-xl font-black text-gray-800">{{ sharedAcornBalance }}</span>
           </div>
-          <p class="text-xs text-gray-400 font-semibold leading-relaxed relative z-10">Doğru cevap = 1 🌰</p>
+          <p class="text-xs text-gray-400 font-semibold leading-relaxed relative z-10">Doğru cevap = 1 <PbIcon name="acorn" /></p>
           <p class="text-xs text-gray-400 font-semibold leading-relaxed relative z-10">Palamutlarınla mağazadan ürün al!</p>
           <button class="w-full bg-primary text-white font-extrabold text-sm py-2.5 rounded-xl border-b-[3px] border-primary-dark active:translate-y-0.5 active:border-b-[2px] transition-all duration-100 cursor-pointer relative z-10" @click="navigateTo('/store')">Mağazaya Git →</button>
         </div>
@@ -54,9 +54,9 @@
 
       <div class="relative flex flex-col items-center flex-1 group" @mouseenter="openTooltip('energy')" @mouseleave="closeTooltip">
         <div class="flex items-center gap-1.5 px-2 py-1.5 rounded-xl cursor-default transition-colors group-hover:bg-gray-100">
-          <span class="text-xl">🔋</span>
+          <PbIcon name="energy" class="text-xl" />
           <span v-if="!unlimitedEnergy" class="text-base font-extrabold text-gray-800">{{ sharedEnergy }}</span>
-          <span v-else class="text-base font-extrabold text-gray-800">♾️</span>
+          <span v-else class="text-base font-extrabold text-gray-800"><PbIcon name="infinity" /></span>
         </div>
         <div v-if="activeTooltip === 'energy'" class="absolute top-full mt-2.5 right-0 z-[500] w-60 bg-white border-2 border-gray-200 rounded-2xl p-3.5 flex flex-col gap-2.5 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
           <div class="absolute -top-[8px] right-10 w-3.5 h-3.5 bg-white border-t-2 border-l-2 border-gray-200 rotate-45 rounded-tl-[2px]"/>
@@ -64,13 +64,13 @@
           <div class="text-[0.72rem] font-extrabold text-gray-400 uppercase tracking-widest relative z-10">Enerjin</div>
           <template v-if="unlimitedEnergy">
             <div class="flex items-center gap-2 relative z-10">
-              <span class="text-2xl">♾️🔋</span>
+              <PbIcon name="energy-infinite" class="text-2xl" />
             </div>
             <div class="text-sm font-bold text-positive text-center relative z-10">Sınırsız enerji aktif!</div>
           </template>
           <template v-else>
             <div class="flex items-center gap-2 relative z-10">
-              <span class="text-2xl">🔋</span>
+              <PbIcon name="energy" class="text-2xl" />
               <span class="text-2xl font-black text-gray-800">{{ sharedEnergy }}</span>
               <span class="text-sm font-semibold text-gray-400">/ 25</span>
             </div>
@@ -96,7 +96,7 @@
                 <span class="text-sm font-bold text-gray-800">{{ pkg.name }}</span>
                 <span class="text-sm font-extrabold text-warning">
                   <span v-if="purchasingId === pkg.id" class="inline-block w-3 h-3 border-2 border-gray-200 border-t-primary rounded-full animate-spin" />
-                  <template v-else>🌰 {{ pkg.price_acorn }}</template>
+                  <template v-else><PbIcon name="acorn" /> {{ pkg.price_acorn }}</template>
                 </span>
               </button>
             </div>
@@ -114,7 +114,7 @@
 
     <!-- Unlock Leaderboard Card -->
     <div class="bg-white border-2 border-gray-200 rounded-2xl p-4 flex flex-col gap-2.5">
-      <div class="text-3xl">🏆</div>
+      <div class="text-3xl"><PbIcon name="trophy" /></div>
       <div>
         <div class="text-base font-extrabold text-gray-800">Liderliği Aç!</div>
         <div class="text-sm text-gray-400 leading-snug mt-0.5">Rekabet etmeye başlamak için 10 ders daha tamamla.</div>
@@ -134,7 +134,7 @@
         <button class="bg-transparent border-0 text-primary text-[0.72rem] font-extrabold cursor-pointer tracking-wide font-[inherit] hover:text-primary-dark" @click="navigateTo('/quests')">TÜMÜNÜ GÖR</button>
       </div>
       <div v-for="quest in dailyQuests" :key="quest.id" class="flex items-center gap-2.5 py-2 border-b border-gray-100 last:border-b-0 last:pb-0 relative">
-        <div class="text-xl w-8 text-center">{{ quest.icon }}</div>
+        <div class="text-xl w-8 text-center"><PbIcon :name="quest.icon" /></div>
         <div class="flex-1 min-w-0">
           <div class="text-sm font-bold text-gray-800 mb-1">{{ quest.name }}</div>
           <div class="h-[7px] bg-gray-100 rounded-full overflow-hidden mb-0.5">
@@ -157,7 +157,7 @@
     <div class="bg-white border-2 border-gray-200 rounded-2xl p-4">
       <div class="flex justify-between items-center mb-3.5">
         <span class="text-base font-extrabold text-gray-800">Günlük Hedef</span>
-        <span class="text-sm font-bold text-warning bg-warning/10 px-2.5 py-1 rounded-full">⚡ {{ stats.dailyXp }} / {{ stats.dailyGoal }} XP</span>
+        <span class="text-sm font-bold text-warning bg-warning/10 px-2.5 py-1 rounded-full"><PbIcon name="xp" /> {{ stats.dailyXp }} / {{ stats.dailyGoal }} XP</span>
       </div>
       <div class="h-3.5 bg-gray-100 rounded-full overflow-hidden mb-1.5">
         <div
@@ -212,9 +212,9 @@ const stats = ref({
 });
 
 const dailyQuests = ref([
-  { id: 1, icon: '⚡', name: '10 XP Kazan', current: 0, target: 10, xp: 10 },
-  { id: 2, icon: '🎯', name: '5 Soru Çöz', current: 0, target: 5, xp: 20 },
-  { id: 3, icon: '🔥', name: '3 Ders Tamamla', current: 0, target: 3, xp: 30 },
+  { id: 1, icon: 'xp', name: '10 XP Kazan', current: 0, target: 10, xp: 10 },
+  { id: 2, icon: 'target', name: '5 Soru Çöz', current: 0, target: 5, xp: 20 },
+  { id: 3, icon: 'fire', name: '3 Ders Tamamla', current: 0, target: 3, xp: 30 },
 ]);
 
 const activeTooltip = ref<'streak' | 'acorns' | 'energy' | null>(null);
@@ -259,7 +259,7 @@ async function buyEnergy(pkg: EnergyPackage) {
     const newEnergy = Math.min(25, sharedEnergy.value + energyToAdd);
     sharedEnergy.value = newEnergy;
     setEnergy(newEnergy);
-    purchaseMsg.value = `${pkg.name} satın alındı! 🔋`;
+    purchaseMsg.value = `${pkg.name} satın alındı!`;
     purchasingId.value = null;
     return;
   }
@@ -276,7 +276,7 @@ async function buyEnergy(pkg: EnergyPackage) {
     stats.value.acorns = user.acorn_balance ?? stats.value.acorns;
     setAcornBalance(stats.value.acorns);
     sharedEnergy.value = user.energy ?? sharedEnergy.value;
-    purchaseMsg.value = `${pkg.name} satın alındı! 🔋`;
+    purchaseMsg.value = `${pkg.name} satın alındı!`;
   } catch {
     purchaseMsg.value = 'Satın alınamadı.';
     purchaseFailed.value = true;

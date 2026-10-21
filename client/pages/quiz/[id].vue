@@ -30,9 +30,9 @@
           </div>
 
           <template v-if="unlimitedEnergy">
-            <span class="text-sm font-extrabold text-positive shrink-0">♾️🔋</span>
+            <PbIcon name="energy-infinite" class="text-sm font-extrabold text-positive shrink-0" />
           </template>
-          <span v-else class="text-sm font-extrabold text-negative shrink-0 bg-red-50 border border-red-100 px-2.5 py-1 rounded-full">🔋 {{ energy }}</span>
+          <span v-else class="text-sm font-extrabold text-negative shrink-0 bg-red-50 border border-red-100 px-2.5 py-1 rounded-full"><PbIcon name="energy" /> {{ energy }}</span>
           
         </div>
       </div>
@@ -44,7 +44,7 @@
           <!-- Çıkmış Soru -->
           <span
             class="text-xs font-extrabold text-blue-600 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-full"
-          >📚 {{ currentQuestion.exam_source }}</span>
+          ><PbIcon name="book" /> {{ currentQuestion.exam_source }}</span>
         </div>
 
         <!-- Question text before image (not for swipe/fill_blank) -->
@@ -332,11 +332,12 @@
     <template v-else-if="finished">
       <div class="flex flex-col items-center gap-5 py-10">
         <div :class="{ 'animate-bounce': isBossSession && !energyDepleted }" class="text-[72px] leading-none select-none">
-          {{ energyDepleted ? '🔋' : (isBossSession ? '⚔️' : '🎊') }}
+          <PbIcon v-if="energyDepleted || isBossSession" :name="energyDepleted ? 'energy-empty' : 'swords'" />
+          <template v-else>🎊</template>
         </div>
 
         <div class="text-center space-y-1">
-          <h1 class="text-2xl font-black text-gray-800">{{ energyDepleted ? 'Enerjin Bitti! 🔋' : (isBossSession ? '⚔️ Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
+          <h1 class="text-2xl font-black text-gray-800">{{ energyDepleted ? 'Enerjin Bitti!' : (isBossSession ? 'Boss Testi Geçildi!' : 'Tebrikler! 🎊') }}</h1>
           <p class="text-sm font-semibold text-gray-400">{{ energyDepleted ? 'Enerjin tükendi, test sonlandırıldı.' : (isBossSession ? 'Adım finali tamamlandı!' : 'Quiz tamamlandı!') }}</p>
         </div>
 
@@ -364,7 +365,7 @@
         </div>
 
         <div v-if="stepCompleted" class="bg-positive/10 text-positive font-extrabold text-sm px-5 py-2.5 rounded-full border-2 border-positive/30">🎉 Adım tamamlandı!</div>
-        <div v-if="topicCompleted" class="bg-warning/10 text-warning font-extrabold text-sm px-5 py-2.5 rounded-full border-2 border-warning/30">🏆 Konu tamamlandı!</div>
+        <div v-if="topicCompleted" class="bg-warning/10 text-warning font-extrabold text-sm px-5 py-2.5 rounded-full border-2 border-warning/30"><PbIcon name="trophy" /> Konu tamamlandı!</div>
 
         <!-- Pending sync notice -->
         <div v-if="pendingSync" class="flex items-center gap-2 bg-amber-50 border-2 border-amber-200 text-amber-700 font-semibold text-sm px-4 py-3 rounded-2xl w-full max-w-[420px]">
