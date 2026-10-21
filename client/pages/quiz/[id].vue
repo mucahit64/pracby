@@ -1165,11 +1165,15 @@ function continueFromWarning() {
   }
 }
 
-function exitQuiz() {
+const leaving = ref(false);
+
+async function exitQuiz() {
   if (guestMode.value) {
     router.replace('/learn');
     return;
   }
+  if (leaving.value) return;
+  leaving.value = true;
   const token = getToken();
   // Send the answers given so far with skip_rewards: no XP or acorns, but the
   // server deducts energy only for wrong answers it receives — sending none
@@ -1177,11 +1181,17 @@ function exitQuiz() {
   const answers = [...localAnswers.value];
   resetAnswers();
   const id = sessionId.value;
-  $fetch(`/api/quiz/${id}/finish-bulk`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}` },
-    body: { answers, skip_rewards: true },
-  }).catch(() => savePending(id, answers, true)); // offline: close it once back online
+  // Wait for it: the map reloads the session on arrival and would otherwise
+  // read the energy from before these answers.
+  try {
+    await $fetch(`/api/quiz/${id}/finish-bulk`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+      body: { answers, skip_rewards: true },
+    });
+  } catch {
+    savePending(id, answers, true); // offline: close it once back online
+  }
   router.replace('/learn');
 }
 
