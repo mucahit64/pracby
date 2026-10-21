@@ -60,7 +60,14 @@
               <div class="text-sm font-extrabold text-gray-800">{{ item.name }}</div>
               <div class="text-xs font-semibold text-gray-400 mt-0.5">{{ item.description }}</div>
             </div>
+            <!-- A refill can't add anything to full energy -->
             <button
+              v-if="energyFull"
+              class="shrink-0 bg-gray-50 border-2 border-gray-200 text-gray-400 font-extrabold text-sm px-4 py-2.5 rounded-xl cursor-not-allowed font-[inherit]"
+              disabled
+            >Enerji dolu</button>
+            <button
+              v-else
               class="shrink-0 bg-amber-50 border-2 border-amber-600 text-amber-700 font-extrabold text-sm px-4 py-2.5 rounded-xl cursor-pointer hover:bg-amber-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed font-[inherit]"
               :disabled="balance < item.price_acorn"
               @click="openPurchaseModal(item)"
@@ -183,6 +190,7 @@ interface AcornPackage {
 const balance = ref(0);
 const isGuest = ref(false);
 const sharedEnergy = useState('userEnergy', () => 25);
+const energyFull = computed(() => sharedEnergy.value >= 25);
 const unlimitedEnergy = useState('unlimitedEnergy', () => false);
 const { setAcornBalance } = useAcornBalance();
 const items = ref<StoreItem[]>([]);

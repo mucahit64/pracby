@@ -29,26 +29,9 @@ export async function seed(knex: Knex): Promise<void> {
       item_type: "xp_boost",
       duration_hours: 1,
     },
+    // One refill that fills energy to the max (25); see migration 003.
     {
-      name: "5 Enerji",
-      description: "Anında 5 enerji doldur.",
-      icon_url: "🔋",
-      price_acorn: 15,
-      item_type: "energy_refill",
-      duration_hours: null,
-      metadata: JSON.stringify({ energy_count: 5 }),
-    },
-    {
-      name: "15 Enerji",
-      description: "Anında 15 enerji doldur.",
-      icon_url: "🔋",
-      price_acorn: 35,
-      item_type: "energy_refill",
-      duration_hours: null,
-      metadata: JSON.stringify({ energy_count: 15 }),
-    },
-    {
-      name: "25 Enerji (Tam Doldur)",
+      name: "Enerji Doldur",
       description: "Enerjini tamamen doldur.",
       icon_url: "🔋",
       price_acorn: 50,
