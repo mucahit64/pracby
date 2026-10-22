@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 z-[200] flex flex-col pb-[env(safe-area-inset-bottom)]">
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 z-[200] flex flex-col pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
     <!-- Nav items -->
     <!-- Icons only, like the mobile app; the labels stay for screen readers -->
     <div class="flex justify-around py-2">
