@@ -1015,6 +1015,7 @@ async function finishQuiz() {
       topicId: guestTopicId.value,
       stepId: guestStepId.value || undefined,
       testId: guestTestId.value || undefined,
+      sessionType: isBossSession.value ? 'topic_final' : undefined,
       correctCount: correctCount.value,
       totalQuestions: questions.value.length,
     });

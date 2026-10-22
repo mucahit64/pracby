@@ -61,83 +61,18 @@
           <div class="text-lg font-black text-white">{{ topic.name}}</div>
         </div>
 
-        <div class="flex flex-col items-center gap-8">
+        <div class="flex flex-col items-center gap-2">
           <div
             v-for="(node, nIdx) in buildLessonNodes(topic, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].bg, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].border, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].hex, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].shadowHex)"
             :key="node.id"
-            class="flex items-end relative py-4"
+            class="flex items-end relative"
             :class="{
               'translate-x-0': nIdx % 5 === 0 || nIdx % 5 === 4,
               'translate-x-[40px]': nIdx % 5 === 1 || nIdx % 5 === 3,
               'translate-x-[65px]': nIdx % 5 === 2,
             }"
           >
-            <div class="flex flex-col items-center relative">
-             <div class="relative flex items-center justify-center">
-              <svg
-                v-if="node.status === 'completed' && node.type === 'lesson'"
-                class="absolute w-[100px] h-[100px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-90deg] pointer-events-none mt-[4px]"
-                viewBox="0 0 100 100"
-              >
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#e5e7eb" stroke-width="8" />
-                <circle
-                  cx="50" cy="50" r="45" fill="none"
-                  :stroke="node.colorHex ?? '#22c55e'"
-                  stroke-width="8"
-                  stroke-linecap="round"
-                  :stroke-dasharray="2 * Math.PI * 45"
-                  :stroke-dashoffset="2 * Math.PI * 45 * (1 - (node.bestScore ?? 0) / 100)"
-                />
-              </svg>
-                
-                <button
-                  class="rounded-[50%] flex flex-col items-center justify-center text-2xl transition-all duration-150 font-[inherit] select-none w-[70px] h-[62px]"
-                  :style="{ '--node-shadow-color': getNodeShadowColor(node) }"
-                  :class="[
-                    node.type === 'lesson' && node.status !== 'locked'
-                      ? `${node.colorBg ?? ''} text-white shadow-[0_8px_0_0_var(--node-shadow-color)] hover:shadow-[0_6px_0_0_var(--node-shadow-color)] hover:translate-y-[2px] active:shadow-none active:translate-y-[8px] cursor-pointer`
-                      : '',
-                    node.type === 'lesson' && node.status === 'locked'
-                      ? 'bg-gray-200 text-gray-400 shadow-[0_8px_0_0_var(--node-shadow-color)] cursor-not-allowed'
-                      : '',
-                    node.type === 'chest' && node.status === 'active'
-                      ? 'bg-warning text-white shadow-[0_8px_0_0_var(--node-shadow-color)] hover:shadow-[0_6px_0_0_var(--node-shadow-color)] hover:translate-y-[2px] active:shadow-none active:translate-y-[8px] cursor-pointer'
-                      : '',
-                    node.type === 'chest' && node.status === 'locked'
-                      ? 'bg-amber-100 text-amber-400 opacity-60 shadow-[0_8px_0_0_var(--node-shadow-color)] cursor-pointer'
-                      : '',
-                    node.type === 'chest' && node.status === 'completed'
-                      ? 'bg-amber-100 text-amber-500 shadow-[0_8px_0_0_var(--node-shadow-color)] cursor-default'
-                      : '',
-                    node.type === 'boss' && node.status === 'active'
-                      ? 'bg-negative text-white shadow-[0_8px_0_0_var(--node-shadow-color)] hover:shadow-[0_6px_0_0_var(--node-shadow-color)] hover:translate-y-[2px] active:shadow-none active:translate-y-[8px] cursor-pointer'
-                      : '',
-                    node.type === 'boss' && node.status === 'locked'
-                      ? 'bg-gray-200 text-gray-400 shadow-[0_8px_0_0_var(--node-shadow-color)] cursor-not-allowed'
-                      : '',
-                  ]"
-                  :disabled="(node.status === 'locked' && node.type !== 'chest') || (node.type === 'chest' && node.status === 'completed')"
-                  @click="goToLesson(node)"
-                >
-                  <template v-if="node.status === 'completed' && node.type === 'lesson'">
-                    <span class="text-xl font-black text-white/95 leading-none">{{ node.bestScore ?? 0 }}</span>
-                    <span class="text-[10px] font-bold text-white/70 leading-none mt-0.5">puan</span>
-                  </template>
-                  <!-- Claimed reward: opened gift box -->
-                  <svg v-else-if="node.type === 'chest' && node.status === 'completed'" class="w-9 h-9" viewBox="0 0 48 48" fill="none" aria-label="Alınmış hediye">
-                    <path d="M10 26h28v14a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2z" fill="#f59e0b" />
-                    <path d="M21 26h6v16h-6z" fill="#dc2626" />
-                    <path d="M7 17.5 38.5 9.5 40.5 17 9 25z" fill="#fbbf24" />
-                    <path d="M20.5 13.8 26.3 12.3 28.3 19.8 22.5 21.3z" fill="#ef4444" />
-                    <path d="M23.4 13c-4-3-9-3.5-9.3-.5s5 2.6 9.3.5zM23.4 13c2-4.5 6.5-7 8.2-4.5s-3.6 4.4-8.2 4.5z" fill="#ef4444" />
-                  </svg>
-                  <span v-else-if="node.type === 'chest'" class="drop-shadow-sm"><PbIcon name="gift" /></span>
-                  <span v-else class="drop-shadow-sm">
-                    <PbIcon :name="node.status === 'locked' ? 'lock' : node.icon" />
-                  </span>
-                </button>
-              </div>
-            </div>
+            <PbStepCoin v-bind="coinOf(node)" :size="84" @click="goToLesson(node)" />
           </div>
         </div>
       </div>
@@ -218,6 +153,9 @@ interface TopicProgress {
   crown_level: number;
   is_unlocked: boolean;
   lessons_completed: number;
+  /** The topic final (boss): best score and first finish. */
+  final_best_score?: number;
+  final_completed_at?: string | null;
 }
 
 interface Topic {
@@ -402,30 +340,55 @@ function buildLessonNodes(topic: Topic, colorBg: string, colorBorder: string, co
 
   if (topic.steps.length > 0) {
     const allCompleted = topic.steps.every((s) => s.progress?.is_step_completed);
+    // Like a lesson: finished once is completed (and can be replayed), with its best score.
+    const finished = !!topic.progress?.final_completed_at;
 
     nodes.push({
       id: `boss-${topic.id}`,
       icon: 'swords',
       type: 'boss',
-      status: allCompleted ? 'active' : 'locked',
+      status: finished ? 'completed' : allCompleted ? 'active' : 'locked',
       topicId: topic.id,
       sessionType: 'topic_final',
+      bestScore: finished ? topic.progress?.final_best_score ?? 0 : undefined,
     });
   }
 
   return nodes;
 }
 
-function getNodeShadowColor(node: LessonNode): string {
+const LOCKED = { color: '#e5e7eb', shadow: '#9ca3af', disabled: true };
+
+/** How a map node looks as a PbStepCoin (colours from the old map buttons). */
+function coinOf(node: LessonNode) {
+  const score = node.status === 'completed' ? node.bestScore ?? 0 : null;
   if (node.type === 'chest') {
-    if (node.status === 'completed') return '#fcd34d';
-    return node.status === 'locked' ? '#d97706' : '#cc7800';
+    if (node.status === 'completed') {
+      return { color: '#fef3c7', shadow: '#fcd34d', icon: 'gift-open', disabled: true, label: 'Sandık, alındı' };
+    }
+    if (node.status === 'locked') {
+      return { color: '#fef3c7', shadow: '#d97706', icon: 'gift', disabled: true, dim: true, label: 'Sandık, kilitli' };
+    }
+    return { color: '#ff9600', shadow: '#cc7800', icon: 'gift', label: 'Sandık' };
   }
   if (node.type === 'boss') {
-    return node.status === 'locked' ? '#9ca3af' : '#cc2222';
+    if (node.status === 'locked') return { ...LOCKED, icon: 'swords', fadedIcon: true, label: 'Konu sonu testi, kilitli' };
+    return {
+      color: '#ff4b4b',
+      shadow: '#cc2222',
+      icon: 'swords',
+      score,
+      label: score === null ? 'Konu sonu testi' : `Konu sonu testi, ${score} puan`,
+    };
   }
-  if (node.status === 'locked') return '#9ca3af';
-  return node.colorShadow ?? '#6d28d9';
+  if (node.status === 'locked') return { ...LOCKED, icon: 'lock', label: 'Ders, kilitli' };
+  return {
+    color: node.colorHex ?? '#3b82f6',
+    shadow: node.colorShadow ?? '#1d4ed8',
+    icon: 'test',
+    score,
+    label: score === null ? 'Ders' : `Ders, ${score} puan`,
+  };
 }
 
 function goToLesson(node: LessonNode) {

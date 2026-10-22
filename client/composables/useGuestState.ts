@@ -2,6 +2,8 @@ interface GuestQuizResult {
   topicId: string;
   stepId?: string;
   testId?: string;
+  /** 'topic_final' for the boss. Older results have none; a result without a step is a final. */
+  sessionType?: string;
   correctCount: number;
   totalQuestions: number;
 }
@@ -130,6 +132,7 @@ export function useGuestState() {
    * Mutates `topics` in-place so that `step.progress` reflects completed steps.
    */
   function overlayGuestProgress(topics: Array<{
+    id?: string;
     progress?: object | null;
     steps?: Array<{
       id: string;
@@ -141,7 +144,17 @@ export function useGuestState() {
     const results = state.value.quizResults;
     const claimedRewards = state.value.claimedRewardStepIds;
     for (const topic of topics) {
-      if (!topic.progress) topic.progress = { is_unlocked: true };
+      if (!topic.progress) {
+        // The boss: the best of the topic's finals (results without a step).
+        const finals = results.filter((r) => r.topicId === topic.id && !r.stepId);
+        topic.progress = {
+          is_unlocked: true,
+          final_best_score: finals.length
+            ? Math.max(...finals.map((r) => (r.totalQuestions > 0 ? Math.round((r.correctCount / r.totalQuestions) * 100) : 0)))
+            : 0,
+          final_completed_at: finals.length ? new Date().toISOString() : null,
+        };
+      }
       for (const step of topic.steps ?? []) {
         if (step.progress) continue;
         if (step.step_type === 'reward') {
