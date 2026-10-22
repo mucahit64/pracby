@@ -26,6 +26,11 @@ export const updateProfile = async (req: Request, res: Response): Promise<void> 
   res.json(updated);
 };
 
+export const deleteAccount = async (req: Request, res: Response): Promise<void> => {
+  await UserService.deleteAccount(req.user!.userId, req.body);
+  res.status(204).end();
+};
+
 export const getEnrollments = async (req: Request, res: Response): Promise<void> => {
   const enrollments = await UserService.getEnrollments(req.user!.userId);
   res.json(enrollments);

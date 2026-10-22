@@ -14,7 +14,7 @@ export const registerUser = async (overrides: Partial<{ email: string; username:
   if (res.status !== 201) {
     throw new Error(`register failed: ${res.status} ${JSON.stringify(res.body)}`);
   }
-  return { token: res.body.token as string, userId: res.body.user.id as string, email, username };
+  return { token: res.body.token as string, userId: res.body.user.id as string, email, username, password };
 };
 
 export const loginAdmin = async () => {

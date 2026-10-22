@@ -24,3 +24,9 @@ export const UpdateProfileSchema = z.object({
 );
 
 export type UpdateProfileInput = z.infer<typeof UpdateProfileSchema>;
+
+export const DeleteAccountSchema = z.object({
+  password: z.string().min(1, "Şifre gerekli"),
+});
+
+export type DeleteAccountInput = z.infer<typeof DeleteAccountSchema>;

@@ -1,7 +1,7 @@
 import db from "../../db/knex";
 import bcrypt from "bcrypt";
 import { AppError } from "../../middleware/error";
-import type { UpdateProfileInput } from "./user.schema";
+import type { UpdateProfileInput, DeleteAccountInput } from "./user.schema";
 
 const MAX_ENERGY = 25;
 const REGEN_INTERVAL_MS = 10 * 60 * 1000; // 10 minutes
@@ -234,6 +234,28 @@ export const switchActiveExam = async (userId: string, examTypeId: string) => {
     .update({ active_exam_type_id: examTypeId })
     .returning(["id", "username", "email", "active_exam_type_id"]);
   return updated;
+};
+
+// Self-service account deletion (KVKK, and required by Google Play / App Store). Everything
+// tied to the user is removed by ON DELETE CASCADE; question reports and content they created
+// stay, without the link to them. 403 (not 401) on a wrong password so clients don't log out.
+export const deleteAccount = async (userId: string, input: DeleteAccountInput) => {
+  const user = await db("users as u")
+    .join("roles as r", "u.role_id", "r.id")
+    .where("u.id", userId)
+    .select("u.id", "u.password_hash", "r.name as role_name")
+    .first();
+  if (!user) throw new AppError(404, "User not found");
+  if (user.role_name === "admin") throw new AppError(403, "Admin hesabı buradan silinemez");
+
+  const valid = await bcrypt.compare(input.password, user.password_hash as string);
+  if (!valid) throw new AppError(403, "Şifre hatalı");
+
+  await db.transaction(async (trx) => {
+    // questions.created_by has no ON DELETE rule, so a teacher's questions would block the delete
+    await trx("questions").where({ created_by: userId }).update({ created_by: null });
+    await trx("users").where({ id: userId }).delete();
+  });
 };
 
 export const updateProfile = async (userId: string, input: UpdateProfileInput) => {
