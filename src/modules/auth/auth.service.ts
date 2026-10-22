@@ -17,13 +17,39 @@ const signToken = (userId: string, username: string): string =>
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-// Misafir verisindeki stepId'lerin TAMAMI DB'de mevcut değilse false döner;
-// çağıran taraf bu durumda misafir verisinin tamamını yok saymalı (kısmi aktarım yapmamalı).
-const areStepIdsValid = async (trx: Knex.Transaction, stepIds: string[]): Promise<boolean> => {
-  if (stepIds.length === 0) return true;
-  if (!stepIds.every((id) => UUID_RE.test(id))) return false;
-  const existing = await trx("steps").whereIn("id", stepIds).select("id");
-  return existing.length === new Set(stepIds).size;
+// Misafir verisindeki adım ID'lerinden DB'de hâlâ var olanlar. Silinmiş bir adımın (ya da
+// sıfırlanmış bir dev DB'den kalan ID'nin) sonucu tek başına atılır; geri kalan ilerleme aktarılır.
+const existingStepIds = async (trx: Knex.Transaction, stepIds: (string | undefined)[]): Promise<Set<string>> => {
+  const ids = [...new Set(stepIds.filter((id): id is string => !!id && UUID_RE.test(id)))];
+  if (ids.length === 0) return new Set();
+  const rows = await trx("steps").whereIn("id", ids).select("id");
+  return new Set(rows.map((r) => r.id as string));
+};
+
+// Sandıklar üyelerdeki claimReward kuralıyla aktarılır: sandıktan hemen önceki adım bir dersse
+// o ders tamamlanmış olmalı. [completedStepIds]: hesapta ya da bu aktarımda tamamlanan adımlar.
+const openableChests = async (
+  trx: Knex.Transaction,
+  rewardStepIds: string[],
+  completedStepIds: Set<string>,
+): Promise<string[]> => {
+  if (rewardStepIds.length === 0) return [];
+  const chests = await trx("steps")
+    .whereIn("id", [...new Set(rewardStepIds)])
+    .where({ step_type: "reward" })
+    .select("id", "topic_id");
+  if (chests.length === 0) return [];
+  const topicSteps = await trx("steps")
+    .whereIn("topic_id", [...new Set(chests.map((c) => c.topic_id as string))])
+    .orderBy("sort_order", "asc")
+    .select("id", "topic_id", "step_type");
+  return chests
+    .filter((chest) => {
+      const steps = topicSteps.filter((s) => s.topic_id === chest.topic_id);
+      const previous = steps[steps.findIndex((s) => s.id === chest.id) - 1];
+      return !previous || previous.step_type !== "lesson" || completedStepIds.has(previous.id as string);
+    })
+    .map((c) => c.id as string);
 };
 
 type GuestQuizResult = { correctCount: number; totalQuestions: number };
@@ -103,24 +129,37 @@ export const register = async (input: RegisterInput) => {
       examTypeId = defaultType?.id;
     }
 
-    // Misafir verisindeki stepId'lerin (test sonuçları + ödül sandıkları) tamamı DB'de
-    // gerçekten var mı diye tek seferde doğrula. Biri bile geçersizse (ör. dev DB sıfırlandıktan
-    // sonra tarayıcıda kalan eski stepId'ler), misafir verisinin tamamı yok sayılır — kısmen
-    // onarılmaz. Kullanıcı yine de kayıt olur, sadece geçmiş ilerlemesi aktarılmaz.
-    const guestStepIds = [
-      ...new Set([
-        ...(input.guest_data?.quiz_results?.map((r) => r.stepId).filter(Boolean) ?? []),
-        ...(input.guest_data?.claimed_reward_step_ids ?? []),
-      ]),
-    ] as string[];
-    const guestData = (await areStepIdsValid(trx, guestStepIds)) ? input.guest_data : undefined;
-    const guestResults = await capGuestResults(trx, guestData?.quiz_results ?? []);
+    const guestQuizResults = input.guest_data?.quiz_results ?? [];
+    const knownSteps = await existingStepIds(trx, guestQuizResults.map((r) => r.stepId));
+    const guestResults = await capGuestResults(
+      trx,
+      guestQuizResults.filter((r) => r.stepId && knownSteps.has(r.stepId)),
+    );
     const totalCorrect = guestResults.reduce((sum, r) => sum + r.correctCount, 0);
+
+    const stepIds = [...new Set(guestResults.map((r) => r.stepId))] as string[];
+    const steps = stepIds.length ? await trx("steps").whereIn("id", stepIds).select("id", "tests_required") : [];
+    const stepMap = new Map(steps.map((s) => [s.id as string, s.tests_required as number]));
+    const guestProgress = stepIds.map((stepId) => {
+      const results = guestResults.filter((r) => r.stepId === stepId);
+      const completedTestIds = new Set(results.filter((r) => r.testId).map((r) => r.testId!));
+      const completedTests = completedTestIds.size > 0 ? completedTestIds.size : (results.length > 0 ? 1 : 0);
+      return {
+        stepId,
+        completedTests,
+        isCompleted: completedTests >= (stepMap.get(stepId) ?? 1),
+        bestScore: guestBestScore(results),
+      };
+    });
+    const chests = await openableChests(
+      trx,
+      input.guest_data?.claimed_reward_step_ids ?? [],
+      new Set(guestProgress.filter((p) => p.isCompleted).map((p) => p.stepId)),
+    );
 
     // The guest's balance can't be more than the start balance plus what its quizzes
     // (1 per correct answer) and chests could have given.
-    const maxAcorns =
-      GUEST_START_ACORNS + totalCorrect + (await rewardAcorns(trx, guestData?.claimed_reward_step_ids ?? []));
+    const maxAcorns = GUEST_START_ACORNS + totalCorrect + (await rewardAcorns(trx, chests));
 
     const [user] = await trx("users")
       .insert({
@@ -141,41 +180,28 @@ export const register = async (input: RegisterInput) => {
     }
 
     // Apply guest quiz progress if provided
-    if (guestResults.length) {
-      const stepIds = [...new Set(guestResults.map((r) => r.stepId))] as string[];
-      if (stepIds.length > 0) {
-        const steps = await trx("steps").whereIn("id", stepIds).select("id", "tests_required");
-        const stepMap = new Map(steps.map((s) => [s.id as string, s.tests_required as number]));
-
-        if (totalCorrect > 0) {
-          await trx("user_stats").where({ user_id: user.id }).increment({ xp: totalCorrect, total_xp: totalCorrect });
-        }
-
-        const stepProgressRows = stepIds.map((stepId) => {
-          const results = guestResults.filter((r) => r.stepId === stepId);
-          const completedTestIds = new Set(results.filter((r) => r.testId).map((r) => r.testId!));
-          const completedTests = completedTestIds.size > 0 ? completedTestIds.size : (results.length > 0 ? 1 : 0);
-          const testsRequired = stepMap.get(stepId) ?? 1;
-          const isCompleted = completedTests >= testsRequired;
-          return {
-            user_id: user.id,
-            step_id: stepId,
-            tests_completed: completedTests,
-            is_step_completed: isCompleted,
-            step_final_passed: isCompleted,
-            best_score: guestBestScore(results),
-            stars: 0,
-            ...(isCompleted && { completed_at: new Date() }),
-          };
-        });
-
-        await trx("user_step_progress").insert(stepProgressRows).onConflict(["user_id", "step_id"]).merge();
+    if (guestProgress.length) {
+      if (totalCorrect > 0) {
+        await trx("user_stats").where({ user_id: user.id }).increment({ xp: totalCorrect, total_xp: totalCorrect });
       }
+
+      const stepProgressRows = guestProgress.map((p) => ({
+        user_id: user.id,
+        step_id: p.stepId,
+        tests_completed: p.completedTests,
+        is_step_completed: p.isCompleted,
+        step_final_passed: p.isCompleted,
+        best_score: p.bestScore,
+        stars: 0,
+        ...(p.isCompleted && { completed_at: new Date() }),
+      }));
+
+      await trx("user_step_progress").insert(stepProgressRows).onConflict(["user_id", "step_id"]).merge();
     }
 
     // Apply guest claimed rewards if provided
-    if (guestData?.claimed_reward_step_ids?.length) {
-      const rewardStepIds = guestData.claimed_reward_step_ids;
+    if (chests.length) {
+      const rewardStepIds = chests;
 
       const claimInserts = rewardStepIds.map((stepId) => ({
         user_id: user.id,
@@ -250,13 +276,11 @@ export const mergeGuestProgress = async (
   return db.transaction(async (trx) => {
     let newXp = 0;
 
-    // Misafir verisindeki stepId'lerin tamamı DB'de gerçekten var mı diye tek seferde doğrula.
-    // Biri bile geçersizse, adım ilerlemesi/ödül aktarımı tamamen atlanır (kısmen onarılmaz).
-    // earnedAcorns adım ID'sine referans vermediği için bu kontrolden etkilenmez.
-    const guestStepIds = [...new Set([...quizResults.map((r) => r.stepId).filter(Boolean), ...claimedRewards])] as string[];
-    const guestDataValid = await areStepIdsValid(trx, guestStepIds);
-    const validQuizResults = guestDataValid ? await capGuestResults(trx, quizResults) : [];
-    const validClaimedRewards = guestDataValid ? claimedRewards : [];
+    const knownSteps = await existingStepIds(trx, quizResults.map((r) => r.stepId));
+    const validQuizResults = await capGuestResults(
+      trx,
+      quizResults.filter((r) => r.stepId && knownSteps.has(r.stepId)),
+    );
 
     // ==========================================
     // 1. NORMAL TESTLERİN AKTARILMASI (Mevcut mantığın)
@@ -325,6 +349,12 @@ export const mergeGuestProgress = async (
     // ==========================================
     // 2. ÖDÜL SANDIKLARININ (REWARDS) AKTARILMASI
     // ==========================================
+    // Ders ilerlemesi yukarıda yazıldı; sandık kuralı hesabın güncel hâline bakar.
+    const completedSteps = await trx("user_step_progress")
+      .where({ user_id: userId, is_step_completed: true })
+      .pluck("step_id");
+    const validClaimedRewards = await openableChests(trx, claimedRewards, new Set(completedSteps as string[]));
+
     let newRewardAcorns = 0;
     if (validClaimedRewards.length > 0) {
       // a. user_reward_claims tablosuna ekle (Aynı sandığı tekrar açmasın diye)
