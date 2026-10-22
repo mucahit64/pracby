@@ -90,6 +90,53 @@
         <span v-else>Kaydet</span>
       </button>
     </form>
+
+    <!-- Delete account -->
+    <section class="flex flex-col gap-3 border-t-2 border-gray-100 pt-6">
+      <h2 class="text-sm font-bold text-negative uppercase tracking-wide">Hesabı Sil</h2>
+      <p class="text-sm font-semibold text-gray-400 leading-relaxed">
+        Hesabın, ilerlemen, palamutların ve envanterin kalıcı olarak silinir. Bu işlem geri alınamaz.
+      </p>
+      <button
+        v-if="!deleteOpen"
+        type="button"
+        class="w-full bg-white text-negative font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-negative hover:bg-negative/5 transition-all cursor-pointer font-[inherit]"
+        @click="deleteOpen = true"
+      >
+        Hesabımı sil
+      </button>
+      <form v-else class="flex flex-col gap-3" @submit.prevent="deleteAccount">
+        <div class="flex flex-col gap-1.5">
+          <label class="text-sm font-bold text-gray-400 uppercase tracking-wide">Şifren</label>
+          <input
+            v-model="deletePassword"
+            type="password"
+            class="bg-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-base font-[inherit] outline-none transition-colors focus:border-negative"
+            placeholder="••••••"
+            autocomplete="current-password"
+          >
+          <p v-if="deleteError" class="text-negative text-xs font-semibold">{{ deleteError }}</p>
+        </div>
+        <div class="flex gap-2.5">
+          <button
+            type="button"
+            class="flex-1 bg-white text-gray-400 font-bold text-sm py-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 hover:text-gray-800 transition-all cursor-pointer font-[inherit]"
+            :disabled="deleting"
+            @click="cancelDelete"
+          >
+            Vazgeç
+          </button>
+          <button
+            type="submit"
+            class="flex-1 bg-negative text-white font-black text-sm py-3 rounded-xl border-b-4 border-black/20 active:border-b-0 active:translate-y-1 transition-all duration-100 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed font-[inherit]"
+            :disabled="deleting || !deletePassword"
+          >
+            <span v-if="deleting">Siliniyor…</span>
+            <span v-else>Kalıcı olarak sil</span>
+          </button>
+        </div>
+      </form>
+    </section>
   </div>
 </template>
 
@@ -206,6 +253,45 @@ const submit = async () => {
     else error.value = message || 'Güncelleme başarısız. Tekrar deneyin.';
   } finally {
     loading.value = false;
+  }
+};
+
+const deleteOpen = ref(false);
+const deletePassword = ref('');
+const deleteError = ref('');
+const deleting = ref(false);
+
+function cancelDelete() {
+  deleteOpen.value = false;
+  deletePassword.value = '';
+  deleteError.value = '';
+}
+
+const deleteAccount = async () => {
+  const token = localStorage.getItem('pb_token');
+  if (!token) { router.push('/auth/login'); return; }
+
+  deleteError.value = '';
+  deleting.value = true;
+  try {
+    await $fetch('/api/users/me', {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${token}` },
+      body: { password: deletePassword.value },
+    });
+    // Same cleanup as signing out, plus the guest progress so it isn't merged into a new account
+    useUserSession().reset();
+    useExamContent().reset();
+    useGuestState().clearGuestState();
+    localStorage.removeItem('pb_token');
+    await router.replace('/');
+  } catch (e: unknown) {
+    const err = e as { status?: number; data?: { message?: string; error?: string } };
+    const message = err?.data?.error || err?.data?.message;
+    if (!err?.status) deleteError.value = 'İnternet bağlantısı yok. Bağlanınca tekrar dene.';
+    else deleteError.value = message || 'Hesap silinemedi. Tekrar deneyin.';
+  } finally {
+    deleting.value = false;
   }
 };
 

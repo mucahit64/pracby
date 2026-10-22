@@ -95,9 +95,10 @@
     <footer class="border-t border-gray-200 bg-white">
       <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-sm font-semibold text-gray-500 sm:px-5 sm:py-7 sm:flex-row sm:items-center sm:justify-between">
         <span>© {{ new Date().getFullYear() }} Pracby</span>
-        <div class="flex gap-5">
+        <div class="flex flex-wrap gap-x-5 gap-y-2">
           <NuxtLink to="/auth/login" class="hover:text-primary">Giriş yap</NuxtLink>
           <NuxtLink to="/auth/register" class="hover:text-primary">Kayıt ol</NuxtLink>
+          <NuxtLink v-for="link in LEGAL_LINKS" :key="link.to" :to="link.to" class="hover:text-primary">{{ link.label }}</NuxtLink>
         </div>
       </div>
     </footer>

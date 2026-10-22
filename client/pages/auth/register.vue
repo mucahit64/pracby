@@ -165,6 +165,12 @@
         </div>
       </div>
 
+      <p v-if="step === 3" class="text-center text-xs font-semibold leading-relaxed text-gray-400">
+        Kayıt olarak <NuxtLink to="/kullanim-kosullari" target="_blank" class="text-primary underline">Kullanım Koşulları</NuxtLink>'nı
+        kabul edersin. Kişisel verilerinin nasıl işlendiğini
+        <NuxtLink to="/gizlilik" target="_blank" class="text-primary underline">Gizlilik ve KVKK Aydınlatma Metni</NuxtLink>'nde bulabilirsin.
+      </p>
+
       <p class="text-center text-sm text-gray-400">
         Zaten hesabın var mı?
         <NuxtLink to="/auth/login" class="text-primary font-bold underline">Giriş Yap</NuxtLink>

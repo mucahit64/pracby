@@ -7,7 +7,7 @@ export default defineNuxtRouteMiddleware((to) => {
     return navigateTo("/learn", { replace: true });
   }
 
-  const publicPaths = ["/auth/login", "/auth/register", "/auth/register-wall", "/auth/forgot-password", "/auth/reset-password", "/welcome", "/admin/login"];
+  const publicPaths = ["/auth/login", "/auth/register", "/auth/register-wall", "/auth/forgot-password", "/auth/reset-password", "/welcome", "/admin/login", "/gizlilik", "/kullanim-kosullari", "/hesap-silme"];
   if (publicPaths.some((p) => to.path.startsWith(p))) return;
 
   // Admin pages are handled by their own middleware

@@ -1,6 +1,6 @@
 export default defineEventHandler((event) => {
   const { public: { siteUrl } } = useRuntimeConfig(event)
-  const urls = [`${siteUrl}/`]
+  const urls = ['/', '/gizlilik', '/kullanim-kosullari', '/hesap-silme'].map(path => `${siteUrl}${path}`)
   const entries = urls.map(url => `  <url><loc>${url}</loc></url>`).join('\n')
 
   setHeader(event, 'Content-Type', 'application/xml; charset=utf-8')
