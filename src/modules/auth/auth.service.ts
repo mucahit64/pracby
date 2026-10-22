@@ -6,6 +6,7 @@ import type { Knex } from "knex";
 import db from "../../db/knex";
 import { env } from "../../config/env";
 import { AppError } from "../../middleware/error";
+import { TOPIC_FINAL_QUESTION_COUNT } from "../quiz/quiz.service";
 import type { RegisterInput, LoginInput, ForgotPasswordInput, ResetPasswordInput } from "./auth.schema";
 
 const resend = new Resend(env.resendApiKey);
@@ -53,7 +54,7 @@ const openableChests = async (
 };
 
 type GuestQuizResult = { correctCount: number; totalQuestions: number };
-type GuestStepResult = GuestQuizResult & { topicId: string; stepId?: string; testId?: string };
+type GuestStepResult = GuestQuizResult & { topicId: string; stepId?: string; testId?: string; sessionType?: string };
 
 const GUEST_START_ACORNS = 500;
 
@@ -91,6 +92,49 @@ const capGuestResults = async (trx: Knex.Transaction, results: GuestStepResult[]
     if (correctCount > (best.get(key)?.correctCount ?? -1)) best.set(key, { ...r, correctCount });
   }
   return [...best.values()];
+};
+
+
+// Results without a step are topic finals: the map starts every lesson with its step.
+const isTopicFinal = (r: GuestStepResult) => r.sessionType === "topic_final" || !r.stepId;
+
+type GuestFinal = { topicId: string; correctCount: number; score: number };
+
+// The guest's best topic final per topic that still exists, capped like the lessons.
+const capGuestFinals = async (trx: Knex.Transaction, results: GuestStepResult[]): Promise<GuestFinal[]> => {
+  const finals = results.filter((r) => isTopicFinal(r) && UUID_RE.test(r.topicId));
+  if (finals.length === 0) return [];
+  const rows = await trx("questions")
+    .whereIn("topic_id", [...new Set(finals.map((r) => r.topicId))])
+    .where({ status: "approved" })
+    .groupBy("topic_id")
+    .select("topic_id")
+    .count("* as n");
+  const questionsOf = new Map(rows.map((r) => [r.topic_id as string, Number(r.n)]));
+
+  const best = new Map<string, GuestFinal>();
+  for (const r of finals) {
+    // The guest's final asks the member's questions: at most TOPIC_FINAL_QUESTION_COUNT.
+    const available = Math.min(TOPIC_FINAL_QUESTION_COUNT, questionsOf.get(r.topicId) ?? 0);
+    if (available === 0) continue;
+    const correctCount = Math.min(r.correctCount, r.totalQuestions, available);
+    const score = guestBestScore([{ correctCount, totalQuestions: r.totalQuestions }]);
+    if (score > (best.get(r.topicId)?.score ?? -1)) best.set(r.topicId, { topicId: r.topicId, correctCount, score });
+  }
+  return [...best.values()];
+};
+
+// Saves topic finals like a member's (quiz.service recordTopicFinal): the best score and
+// the first finish.
+const saveGuestFinals = async (trx: Knex.Transaction, userId: string, finals: GuestFinal[]) => {
+  if (finals.length === 0) return;
+  await trx("user_topic_progress")
+    .insert(finals.map((f) => ({ user_id: userId, topic_id: f.topicId, final_best_score: f.score, final_completed_at: trx.fn.now() })))
+    .onConflict(["user_id", "topic_id"])
+    .merge({
+      final_best_score: trx.raw("GREATEST(user_topic_progress.final_best_score, EXCLUDED.final_best_score)"),
+      final_completed_at: trx.raw("COALESCE(user_topic_progress.final_completed_at, EXCLUDED.final_completed_at)"),
+    });
 };
 
 // Acorns the given reward steps (chests) give; ids that aren't acorn chests count as 0.
@@ -135,7 +179,10 @@ export const register = async (input: RegisterInput) => {
       trx,
       guestQuizResults.filter((r) => r.stepId && knownSteps.has(r.stepId)),
     );
-    const totalCorrect = guestResults.reduce((sum, r) => sum + r.correctCount, 0);
+    const guestFinals = await capGuestFinals(trx, guestQuizResults);
+    const totalCorrect =
+      guestResults.reduce((sum, r) => sum + r.correctCount, 0) +
+      guestFinals.reduce((sum, f) => sum + f.correctCount, 0);
 
     const stepIds = [...new Set(guestResults.map((r) => r.stepId))] as string[];
     const steps = stepIds.length ? await trx("steps").whereIn("id", stepIds).select("id", "tests_required") : [];
@@ -179,12 +226,13 @@ export const register = async (input: RegisterInput) => {
       await trx("user_exam_enrollments").insert({ user_id: user.id, exam_type_id: examTypeId });
     }
 
+    if (totalCorrect > 0) {
+      await trx("user_stats").where({ user_id: user.id }).increment({ xp: totalCorrect, total_xp: totalCorrect });
+    }
+    await saveGuestFinals(trx, user.id as string, guestFinals);
+
     // Apply guest quiz progress if provided
     if (guestProgress.length) {
-      if (totalCorrect > 0) {
-        await trx("user_stats").where({ user_id: user.id }).increment({ xp: totalCorrect, total_xp: totalCorrect });
-      }
-
       const stepProgressRows = guestProgress.map((p) => ({
         user_id: user.id,
         step_id: p.stepId,
@@ -263,7 +311,7 @@ export const login = async (input: LoginInput) => {
 
 export const mergeGuestProgress = async (
   userId: string,
-  quizResults: { topicId: string; stepId?: string; testId?: string; correctCount: number; totalQuestions: number }[],
+  quizResults: GuestStepResult[],
   claimedRewards: string[] = [], // YENİ: Misafirin açtığı sandıkların ID'leri
   earnedAcorns: number = 0       // YENİ: Misafirin kazandığı palamutlar
 ) => {
@@ -349,6 +397,20 @@ export const mergeGuestProgress = async (
     // ==========================================
     // 2. ÖDÜL SANDIKLARININ (REWARDS) AKTARILMASI
     // ==========================================
+    // Konu sonu testleri (boss): XP yalnızca ilk bitirişte, dersler gibi.
+    const guestFinals = await capGuestFinals(trx, quizResults);
+    if (guestFinals.length > 0) {
+      const finishedBefore = new Set(
+        (await trx("user_topic_progress")
+          .where({ user_id: userId })
+          .whereIn("topic_id", guestFinals.map((f) => f.topicId))
+          .whereNotNull("final_completed_at")
+          .pluck("topic_id")) as string[],
+      );
+      newXp += guestFinals.filter((f) => !finishedBefore.has(f.topicId)).reduce((sum, f) => sum + f.correctCount, 0);
+      await saveGuestFinals(trx, userId, guestFinals);
+    }
+
     // Ders ilerlemesi yukarıda yazıldı; sandık kuralı hesabın güncel hâline bakar.
     const completedSteps = await trx("user_step_progress")
       .where({ user_id: userId, is_step_completed: true })

@@ -12,14 +12,43 @@ import { regenerateEnergy, spendEnergyUpdate } from "../user/user.service";
 
 // Normal test: fixed 10 questions from a specific test record
 // Step final: 15 questions from all tests in the step (2×d1, 7×d2, 6×d3)
-// Topic final: 15 questions from all steps in the topic (2×d1, 7×d2, 6×d3)
 const STEP_FINAL_DISTRIBUTION = [
   { difficulty: 1, count: 2 },
   { difficulty: 2, count: 7 },
   { difficulty: 3, count: 6 },
 ];
 
-const TOPIC_FINAL_DISTRIBUTION = STEP_FINAL_DISTRIBUTION;
+// Topic final (the boss on the map): 20 questions of the topic (3×d1, 9×d2, 8×d3).
+const TOPIC_FINAL_DISTRIBUTION = [
+  { difficulty: 1, count: 3 },
+  { difficulty: 2, count: 9 },
+  { difficulty: 3, count: 8 },
+];
+export const TOPIC_FINAL_QUESTION_COUNT = TOPIC_FINAL_DISTRIBUTION.reduce((sum, d) => sum + d.count, 0);
+
+// The boss's questions, the same for every member and guest: the topic's questions in a
+// fixed mixed order (a hash of topic and question id) instead of a random one. A
+// difficulty short of questions is made up from the others; a topic with fewer questions
+// gets a shorter quiz. Easy to hard.
+async function topicFinalQuestions(topicId: string) {
+  const ordered = await db("questions")
+    .where({ topic_id: topicId, status: "approved" })
+    .orderByRaw("md5(topic_id::text || id::text)");
+  const picked = new Set<string>();
+  for (const { difficulty, count } of TOPIC_FINAL_DISTRIBUTION) {
+    ordered
+      .filter((q) => q.difficulty === difficulty)
+      .slice(0, count)
+      .forEach((q) => picked.add(q.id as string));
+  }
+  for (const q of ordered) {
+    if (picked.size >= TOPIC_FINAL_QUESTION_COUNT) break;
+    picked.add(q.id as string);
+  }
+  return ordered
+    .filter((q) => picked.has(q.id as string))
+    .sort((a, b) => (a.difficulty as number) - (b.difficulty as number));
+}
 
 async function fetchQuestionsForFinal(
   filterColumn: string,
@@ -55,6 +84,25 @@ const sessionAnswers = <T extends { questionId: string }>(
   return allowed ? kept : kept.slice(0, session.total_questions);
 };
 
+// A finished topic final (the boss): keeps the best score and the first finish, like a
+// lesson's best_score. Not for an abandoned quiz (skip_rewards).
+const recordTopicFinal = async (
+  trx: Knex.Transaction,
+  userId: string,
+  topicId: string,
+  correctCount: number,
+  answered: number,
+) => {
+  const score = answered > 0 ? Math.round((correctCount / answered) * 100) : 0;
+  await trx("user_topic_progress")
+    .insert({ user_id: userId, topic_id: topicId, final_best_score: score, final_completed_at: trx.fn.now() })
+    .onConflict(["user_id", "topic_id"])
+    .merge({
+      final_best_score: trx.raw("GREATEST(user_topic_progress.final_best_score, EXCLUDED.final_best_score)"),
+      final_completed_at: trx.raw("COALESCE(user_topic_progress.final_completed_at, EXCLUDED.final_completed_at)"),
+    });
+};
+
 export const startSession = async (userId: string, input: StartQuizInput) => {
   const topic = await db("topics").where({ id: input.topicId }).first();
   if (!topic) throw new AppError(404, "Topic not found");
@@ -75,8 +123,7 @@ export const startSession = async (userId: string, input: StartQuizInput) => {
   let questions;
 
   if (input.sessionType === "topic_final") {
-    // Topic final: questions from all steps, mixed by difficulty
-    questions = await fetchQuestionsForFinal("topic_id", input.topicId, TOPIC_FINAL_DISTRIBUTION);
+    questions = await topicFinalQuestions(input.topicId);
   } else if (input.sessionType === "step_final" && input.stepId) {
     if (input.testId) {
       // Boss test: static questions from a specific final test
@@ -180,10 +227,8 @@ export const guestStartSession = async (input: {
         .limit(10);
     }
   } else {
-    questions = await db("questions")
-      .where({ topic_id: input.topicId, status: "approved" })
-      .orderByRaw("RANDOM()")
-      .limit(10);
+    // Without a step this is the topic final: the same questions a member gets.
+    questions = await topicFinalQuestions(input.topicId);
   }
 
   if (questions.length === 0) throw new AppError(404, "No questions available");
@@ -467,6 +512,10 @@ export const finishSession = async (userId: string, sessionId: string, skipRewar
 
         topicCompleted = completedSteps.length === lessonSteps.length;
       }
+    }
+
+    if (session.session_type === "topic_final" && session.topic_id && !skipRewards) {
+      await recordTopicFinal(trx, userId, session.topic_id as string, correctCount, answers.length);
     }
 
     // Achievements are rewards: none for an abandoned quiz (skip_rewards).
@@ -759,6 +808,10 @@ export const finishSessionWithAnswers = async (
           .whereIn("step_id", lessonSteps.map((s) => s.id));
         topicCompleted = completedSteps.length === lessonSteps.length;
       }
+    }
+
+    if (session.session_type === "topic_final" && session.topic_id && !skipRewards) {
+      await recordTopicFinal(trx, userId, session.topic_id as string, correctCount, evaluatedAnswers.length);
     }
 
     // Achievements are rewards: none for an abandoned quiz (skip_rewards).
