@@ -7,7 +7,7 @@ set -e
 cd "$(dirname "$0")"
 
 echo "[$(date -Iseconds)] Running certbot renew..."
-docker compose run --rm certbot certbot renew --quiet
+docker compose run --rm certbot renew --quiet
 
 echo "[$(date -Iseconds)] Reloading nginx..."
 docker compose exec nginx nginx -s reload

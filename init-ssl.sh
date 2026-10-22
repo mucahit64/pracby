@@ -23,6 +23,12 @@ fi
 echo "▶ Starting nginx with temporary certificate..."
 docker compose up -d nginx
 
+# nginx has the temporary certificate loaded now. Remove it so certbot writes the real one to
+# live/$DOMAIN; otherwise it would pick live/$DOMAIN-0001 and nginx would keep the temporary one.
+if [ ! -f "certbot/conf/renewal/$DOMAIN.conf" ]; then
+  rm -rf "certbot/conf/live/$DOMAIN"
+fi
+
 echo "▶ Requesting Let's Encrypt certificate..."
 docker compose run --rm certbot certonly \
   --webroot \

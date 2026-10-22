@@ -77,6 +77,27 @@ cd client
 pnpm dev
 ```
 
+## Sunucu (production)
+
+```bash
+# .env: DB_*, JWT_SECRET, ALLOWED_ORIGINS, RESEND_API_KEY, APP_URL, ADMIN_*, DOMAIN, BACKUP_REMOTE
+docker compose up -d --build
+
+# İlk kez SSL sertifikası (DNS'te alan adı ve www bu sunucuyu göstermeli)
+./init-ssl.sh pracby.com you@example.com
+```
+
+Host'un crontab'ına (`crontab -e`):
+
+```cron
+0 */12 * * * /path/to/pracby/renew.sh >> /var/log/pracby-renew.log 2>&1
+0 3 * * *    /path/to/pracby/backup.sh >> /var/log/pracby-backup.log 2>&1
+```
+
+Yedekler `backups/` içinde 7 gün tutulur. Sunucu dışı kopya için `rclone config` ile bir hedef
+tanımlayıp `.env`'e `BACKUP_REMOTE=<remote>:<klasör>` yaz (orada 30 gün tutulur).
+Geri yükleme: `./restore.sh backups/pracby_YYYYMMDD_HHMMSS.sql.gz` (veritabanındaki her şeyi değiştirir).
+
 ## API Özeti
 
 | Yöntem | Endpoint | Açıklama |
