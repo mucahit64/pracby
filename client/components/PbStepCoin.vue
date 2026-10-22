@@ -54,6 +54,11 @@
           <path d="M20.5 13.8 26.3 12.3 28.3 19.8 22.5 21.3z" fill="#ef4444" />
           <path d="M23.4 13c-4-3-9-3.5-9.3-.5s5 2.6 9.3.5zM23.4 13c2-4.5 6.5-7 8.2-4.5s-3.6 4.4-8.2 4.5z" fill="#ef4444" />
         </svg>
+        <!-- A completed lesson shows its best score instead of its icon. -->
+        <span v-else-if="showScore" class="coin-score">
+          <span class="coin-score-value">{{ ringScore }}</span>
+          <span class="coin-score-unit">puan</span>
+        </span>
         <PbIcon v-else :name="iconName" class="coin-icon" :class="{ 'is-faded': fadedIcon }" />
       </span>
     </button>
@@ -102,6 +107,9 @@ const iconName = computed(() => {
   if (!perfect.value) return props.icon
   return props.icon === 'swords' ? 'crown' : 'trophy'
 })
+
+// A boss keeps its swords so it reads as the boss; its score is on the ring.
+const showScore = computed(() => ringScore.value !== null && props.icon !== 'swords')
 
 const vars = computed(() => ({
   '--step-diameter': `${props.size}px`,
@@ -257,6 +265,27 @@ svg.coin-icon {
 
 .coin-icon-trophy {
   color: #c98a00;
+}
+
+.coin-score {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  color: #fff;
+}
+
+.coin-score-value {
+  font-size: calc(var(--step-diameter) * 0.3);
+  font-weight: 900;
+}
+
+.coin-score-unit {
+  margin-top: calc(var(--step-diameter) * 0.02);
+  font-size: calc(var(--step-diameter) * 0.13);
+  font-weight: 700;
+  opacity: 0.75;
 }
 
 .coin-icon.is-faded {
