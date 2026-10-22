@@ -245,8 +245,8 @@ const submit = async () => {
   } catch (e: unknown) {
     const err = e as { status?: number; data?: { message?: string; error?: string } };
     const message = err?.data?.error || err?.data?.message;
-    // Show the API's Turkish 401/409 messages under the field they are about.
-    if (err?.status === 401 && message) fieldErrors.currentPassword = message;
+    // Show the API's Turkish 403/409 messages under the field they are about.
+    if (err?.status === 403 && message) fieldErrors.currentPassword = message;
     else if (err?.status === 409 && message?.includes('e-posta')) fieldErrors.email = message;
     else if (err?.status === 409 && message) fieldErrors.username = message;
     else if (!err?.status) error.value = 'İnternet bağlantısı yok. Bağlanınca tekrar dene.';

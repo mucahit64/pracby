@@ -51,3 +51,14 @@ describe("DELETE /api/users/me", () => {
     }
   });
 });
+
+describe("PATCH /api/users/me with a wrong current password", () => {
+  it("answers 403, not a 401 that would log the user out", async () => {
+    const { token } = await registerUser();
+    const res = await request(app)
+      .patch("/api/users/me")
+      .set("Authorization", `Bearer ${token}`)
+      .send({ currentPassword: "wrong-password", newPassword: "NewPassword123!" });
+    expect(res.status).toBe(403);
+  });
+});

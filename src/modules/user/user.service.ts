@@ -265,7 +265,8 @@ export const updateProfile = async (userId: string, input: UpdateProfileInput) =
   // Verify current password if changing email or password
   if (input.currentPassword) {
     const valid = await bcrypt.compare(input.currentPassword, user.password_hash as string);
-    if (!valid) throw new AppError(401, "Mevcut şifre hatalı");
+    // 403, not 401: clients treat a 401 as an expired session and log the user out
+    if (!valid) throw new AppError(403, "Mevcut şifre hatalı");
   }
 
   if (input.username) {
