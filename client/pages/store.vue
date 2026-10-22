@@ -109,8 +109,8 @@
       </div>
 
       <!-- Acorn packages -->
-      <div v-if="!isGuest" class="flex flex-col gap-3">
-        <h2 class="text-base font-extrabold text-gray-800"><PbIcon name="acorn" /> Buy Acorn</h2>
+      <div v-if="!isGuest && ACORN_PURCHASE_ENABLED" class="flex flex-col gap-3">
+        <h2 class="text-base font-extrabold text-gray-800"><PbIcon name="acorn" /> Palamut Satın Al</h2>
         <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
           <div v-for="pkg in packages" :key="pkg.id" class="bg-white border-2 border-gray-200 rounded-2xl p-4 flex flex-col items-center gap-2 text-center sm:p-5">
             <div class="text-xl font-black text-amber-700"><PbIcon name="acorn" /> {{ pkg.amount }}</div>
@@ -189,6 +189,9 @@ interface AcornPackage {
 
 const balance = ref(0);
 const isGuest = ref(false);
+// Buying acorns with money isn't built yet; the section stays hidden until it is
+// (in the app it must go through the store's in-app purchases).
+const ACORN_PURCHASE_ENABLED = false;
 const sharedEnergy = useState('userEnergy', () => 25);
 const energyFull = computed(() => sharedEnergy.value >= 25);
 const unlimitedEnergy = useState('unlimitedEnergy', () => false);
