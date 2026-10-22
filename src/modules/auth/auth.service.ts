@@ -27,6 +27,55 @@ const areStepIdsValid = async (trx: Knex.Transaction, stepIds: string[]): Promis
 };
 
 type GuestQuizResult = { correctCount: number; totalQuestions: number };
+type GuestStepResult = GuestQuizResult & { topicId: string; stepId?: string; testId?: string };
+
+const GUEST_START_ACORNS = 500;
+
+// Guest results come from the client, so they are capped to what the content allows before
+// they turn into progress, XP or acorns: only results for a step (and a test of that step),
+// the best one per test, and no more correct answers than the quiz guestStartSession serves
+// for it has questions.
+const capGuestResults = async (trx: Knex.Transaction, results: GuestStepResult[]): Promise<GuestStepResult[]> => {
+  const stepIds = [...new Set(results.map((r) => r.stepId).filter(Boolean))] as string[];
+  if (stepIds.length === 0) return [];
+
+  const tests = await trx("tests").whereIn("step_id", stepIds).orderBy("sort_order").select("id", "step_id");
+  const stepOfTest = new Map(tests.map((t) => [t.id as string, t.step_id as string]));
+  const firstTestOfStep = new Map<string, string>();
+  for (const t of tests) if (!firstTestOfStep.has(t.step_id)) firstTestOfStep.set(t.step_id, t.id);
+
+  const countBy = async (column: "test_id" | "step_id", ids: string[]) => {
+    const rows = ids.length
+      ? await trx("questions").whereIn(column, ids).where({ status: "approved" }).groupBy(column).select(column).count("* as n")
+      : [];
+    return new Map(rows.map((r) => [r[column] as string, Number(r.n)]));
+  };
+  const testQuestions = await countBy("test_id", tests.map((t) => t.id as string));
+  const stepQuestions = await countBy("step_id", stepIds.filter((id) => !firstTestOfStep.has(id)));
+
+  const best = new Map<string, GuestStepResult>();
+  for (const r of results) {
+    if (!r.stepId) continue;
+    const testId = r.testId ?? firstTestOfStep.get(r.stepId);
+    if (testId && stepOfTest.get(testId) !== r.stepId) continue;
+    // A step without tests serves up to 10 random questions of the step.
+    const maxCorrect = testId ? (testQuestions.get(testId) ?? 0) : Math.min(10, stepQuestions.get(r.stepId) ?? 0);
+    const correctCount = Math.min(r.correctCount, r.totalQuestions, maxCorrect);
+    const key = `${r.stepId}:${r.testId ?? ""}`;
+    if (correctCount > (best.get(key)?.correctCount ?? -1)) best.set(key, { ...r, correctCount });
+  }
+  return [...best.values()];
+};
+
+// Acorns the given reward steps (chests) give; ids that aren't acorn chests count as 0.
+const rewardAcorns = async (trx: Knex.Transaction, stepIds: string[]): Promise<number> => {
+  if (stepIds.length === 0) return 0;
+  const steps = await trx("steps")
+    .whereIn("id", stepIds)
+    .where({ step_type: "reward", reward_type: "acorn" })
+    .select("reward_amount");
+  return steps.reduce((sum, s) => sum + (Number(s.reward_amount) || 0), 0);
+};
 
 // Misafirin bir adımdaki en iyi puanı (0-100); üye quiz'iyle aynı formül (quiz.service newScore).
 const guestBestScore = (results: GuestQuizResult[]): number =>
@@ -54,24 +103,6 @@ export const register = async (input: RegisterInput) => {
       examTypeId = defaultType?.id;
     }
 
-    const [user] = await trx("users")
-      .insert({
-        email: input.email,
-        username: input.username,
-        password_hash: passwordHash,
-        role_id: studentRole.id,
-        acorn_balance: input.acorn_balance ?? 500,
-        energy: input.energy ?? 25,
-        ...(examTypeId && { active_exam_type_id: examTypeId }),
-      })
-      .returning(["id", "email", "username", "active_exam_type_id", "created_at"]);
-
-    await trx("user_stats").insert({ user_id: user.id });
-
-    if (examTypeId) {
-      await trx("user_exam_enrollments").insert({ user_id: user.id, exam_type_id: examTypeId });
-    }
-
     // Misafir verisindeki stepId'lerin (test sonuçları + ödül sandıkları) tamamı DB'de
     // gerçekten var mı diye tek seferde doğrula. Biri bile geçersizse (ör. dev DB sıfırlandıktan
     // sonra tarayıcıda kalan eski stepId'ler), misafir verisinin tamamı yok sayılır — kısmen
@@ -83,21 +114,45 @@ export const register = async (input: RegisterInput) => {
       ]),
     ] as string[];
     const guestData = (await areStepIdsValid(trx, guestStepIds)) ? input.guest_data : undefined;
+    const guestResults = await capGuestResults(trx, guestData?.quiz_results ?? []);
+    const totalCorrect = guestResults.reduce((sum, r) => sum + r.correctCount, 0);
+
+    // The guest's balance can't be more than the start balance plus what its quizzes
+    // (1 per correct answer) and chests could have given.
+    const maxAcorns =
+      GUEST_START_ACORNS + totalCorrect + (await rewardAcorns(trx, guestData?.claimed_reward_step_ids ?? []));
+
+    const [user] = await trx("users")
+      .insert({
+        email: input.email,
+        username: input.username,
+        password_hash: passwordHash,
+        role_id: studentRole.id,
+        acorn_balance: Math.min(input.acorn_balance ?? GUEST_START_ACORNS, maxAcorns),
+        energy: input.energy ?? 25,
+        ...(examTypeId && { active_exam_type_id: examTypeId }),
+      })
+      .returning(["id", "email", "username", "active_exam_type_id", "created_at"]);
+
+    await trx("user_stats").insert({ user_id: user.id });
+
+    if (examTypeId) {
+      await trx("user_exam_enrollments").insert({ user_id: user.id, exam_type_id: examTypeId });
+    }
 
     // Apply guest quiz progress if provided
-    if (guestData?.quiz_results?.length) {
-      const stepIds = [...new Set(guestData.quiz_results.map((r) => r.stepId).filter(Boolean))] as string[];
+    if (guestResults.length) {
+      const stepIds = [...new Set(guestResults.map((r) => r.stepId))] as string[];
       if (stepIds.length > 0) {
         const steps = await trx("steps").whereIn("id", stepIds).select("id", "tests_required");
         const stepMap = new Map(steps.map((s) => [s.id as string, s.tests_required as number]));
 
-        const totalCorrect = guestData.quiz_results.reduce((sum, r) => sum + r.correctCount, 0);
         if (totalCorrect > 0) {
           await trx("user_stats").where({ user_id: user.id }).increment({ xp: totalCorrect, total_xp: totalCorrect });
         }
 
         const stepProgressRows = stepIds.map((stepId) => {
-          const results = guestData.quiz_results!.filter((r) => r.stepId === stepId);
+          const results = guestResults.filter((r) => r.stepId === stepId);
           const completedTestIds = new Set(results.filter((r) => r.testId).map((r) => r.testId!));
           const completedTests = completedTestIds.size > 0 ? completedTestIds.size : (results.length > 0 ? 1 : 0);
           const testsRequired = stepMap.get(stepId) ?? 1;
@@ -200,7 +255,7 @@ export const mergeGuestProgress = async (
     // earnedAcorns adım ID'sine referans vermediği için bu kontrolden etkilenmez.
     const guestStepIds = [...new Set([...quizResults.map((r) => r.stepId).filter(Boolean), ...claimedRewards])] as string[];
     const guestDataValid = await areStepIdsValid(trx, guestStepIds);
-    const validQuizResults = guestDataValid ? quizResults : [];
+    const validQuizResults = guestDataValid ? await capGuestResults(trx, quizResults) : [];
     const validClaimedRewards = guestDataValid ? claimedRewards : [];
 
     // ==========================================
@@ -270,16 +325,19 @@ export const mergeGuestProgress = async (
     // ==========================================
     // 2. ÖDÜL SANDIKLARININ (REWARDS) AKTARILMASI
     // ==========================================
+    let newRewardAcorns = 0;
     if (validClaimedRewards.length > 0) {
       // a. user_reward_claims tablosuna ekle (Aynı sandığı tekrar açmasın diye)
       const claimInserts = validClaimedRewards.map((stepId) => ({
         user_id: userId,
         step_id: stepId,
       }));
-      await trx("user_reward_claims")
+      const newClaims = await trx("user_reward_claims")
         .insert(claimInserts)
         .onConflict(["user_id", "step_id"])
-        .ignore(); // Zaten varsa hata verme, atla
+        .ignore() // Zaten varsa hata verme, atla
+        .returning("step_id");
+      newRewardAcorns = await rewardAcorns(trx, newClaims.map((c) => c.step_id as string));
 
       // b. user_step_progress tablosuna "Tamamlandı" olarak ekle (Frontend mavi tik yapsın diye)
       const rewardProgressInserts = validClaimedRewards.map((stepId) => ({
@@ -303,21 +361,25 @@ export const mergeGuestProgress = async (
         .increment({ xp: newXp, total_xp: newXp });
     }
 
-    if (earnedAcorns > 0) {
+    // Palamut yalnızca bu aktarımda yeni sayılan ilerlemeden gelebilir: XP verilen doğru
+    // cevaplar (1 palamut/doğru) ve ilk kez açılan sandıklar. Aynı veriyle tekrar çağrılınca 0 olur.
+    const acornsAwarded = Math.min(earnedAcorns, newXp + newRewardAcorns);
+
+    if (acornsAwarded > 0) {
       // Users tablosundaki bakiyeyi artır
       await trx("users")
         .where({ id: userId })
-        .increment("acorn_balance", earnedAcorns);
-      
+        .increment("acorn_balance", acornsAwarded);
+
       // İşlemi geçmiş (log) tablosuna kaydet
       await trx("acorn_transactions").insert({
         user_id: userId,
-        amount: earnedAcorns,
+        amount: acornsAwarded,
         type: "guest_sync",
       });
     }
 
-    return { merged: true, xp_awarded: newXp, acorns_awarded: earnedAcorns };
+    return { merged: true, xp_awarded: newXp, acorns_awarded: acornsAwarded };
   });
 };
 

@@ -38,6 +38,23 @@ async function fetchQuestionsForFinal(
   return allQuestions;
 }
 
+// Keeps only answers to the session's own questions, the first one for each question, so a
+// client can't repeat or invent questions to earn more. Sessions started before question_ids
+// existed fall back to at most total_questions answers.
+const sessionAnswers = <T extends { questionId: string }>(
+  session: { question_ids: string[] | null; total_questions: number },
+  answers: T[],
+): T[] => {
+  const allowed = session.question_ids ? new Set(session.question_ids) : null;
+  const seen = new Set<string>();
+  const kept = answers.filter((a) => {
+    if (seen.has(a.questionId) || (allowed && !allowed.has(a.questionId))) return false;
+    seen.add(a.questionId);
+    return true;
+  });
+  return allowed ? kept : kept.slice(0, session.total_questions);
+};
+
 export const startSession = async (userId: string, input: StartQuizInput) => {
   const topic = await db("topics").where({ id: input.topicId }).first();
   if (!topic) throw new AppError(404, "Topic not found");
@@ -128,6 +145,7 @@ export const startSession = async (userId: string, input: StartQuizInput) => {
       session_type: input.sessionType,
       is_final_test: isFinal,
       total_questions: questions.length,
+      question_ids: JSON.stringify(questions.map((q) => q.id)),
     })
     .returning("*");
 
@@ -201,6 +219,13 @@ export const submitAnswer = async (
   const session = await db("quiz_sessions").where({ id: sessionId, user_id: userId }).first();
   if (!session) throw new AppError(404, "Session not found");
   if (session.finished_at) throw new AppError(400, "Session already finished");
+  if (session.question_ids && !(session.question_ids as string[]).includes(input.questionId)) {
+    throw new AppError(400, "Question is not part of this session");
+  }
+  const alreadyAnswered = await db("user_answers")
+    .where({ session_id: sessionId, question_id: input.questionId })
+    .first();
+  if (alreadyAnswered) throw new AppError(400, "Question already answered");
 
   const question = await db("questions").where({ id: input.questionId }).first();
   if (!question) throw new AppError(404, "Question not found");
@@ -489,15 +514,17 @@ export const finishSessionWithAnswers = async (
     .where("expires_at", ">", db.fn.now())
     .first();
 
+  const sentAnswers = sessionAnswers(session, input.answers);
+
   // Fetch all questions needed for server-side validation
-  const questionIds = input.answers.filter((a) => !a.isSkipped).map((a) => a.questionId);
+  const questionIds = sentAnswers.filter((a) => !a.isSkipped).map((a) => a.questionId);
   const questions = questionIds.length > 0
     ? await db("questions").whereIn("id", questionIds)
     : [];
   const questionMap = new Map(questions.map((q) => [q.id, q]));
 
   // Fetch all MC answers needed for validation
-  const answerIds = input.answers.map((a) => a.answerId).filter(Boolean) as string[];
+  const answerIds = sentAnswers.map((a) => a.answerId).filter(Boolean) as string[];
   const dbAnswers = answerIds.length > 0
     ? await db("answers").whereIn("id", answerIds).select("id", "question_id", "is_correct")
     : [];
@@ -517,7 +544,7 @@ export const finishSessionWithAnswers = async (
 
     let energyToDeduct = 0;
 
-    for (const ans of input.answers) {
+    for (const ans of sentAnswers) {
       let isCorrect = false;
 
       if (!ans.isSkipped) {

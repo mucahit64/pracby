@@ -25,7 +25,7 @@ export const AnswerSchema = z.object({
 });
 
 export const BulkFinishSchema = z.object({
-  answers: z.array(AnswerSchema),
+  answers: z.array(AnswerSchema).max(200),
   skip_rewards: z.boolean().default(false),
 });
 

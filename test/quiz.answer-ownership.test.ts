@@ -3,32 +3,44 @@ import request from "supertest";
 import { app, db } from "./helpers";
 import { registerUser } from "./helpers";
 
-async function findTwoUnrelatedMcQuestions() {
-  const candidates = await db("answers as a")
+// Starts a lesson and returns one of its MC questions with its correct answer (qA), plus the
+// correct answer of a different question (qB). Answers only count for the session's own questions.
+async function startWithTwoUnrelatedMcQuestions(token: string) {
+  const topic = await db("answers as a")
     .join("questions as q", "a.question_id", "q.id")
     .where({ "a.is_correct": true, "q.status": "approved", "q.question_type": "multiple_choice" })
-    .select("q.id as question_id", "a.id as answer_id", "q.topic_id")
-    .limit(50);
+    .select("q.topic_id")
+    .first();
 
-  // Pick two whose question ids differ.
-  const qA = candidates[0];
-  const qB = candidates.find((c) => c.question_id !== qA.question_id);
-  if (!qA || !qB) throw new Error("fixture data: need at least 2 distinct MC questions with a correct answer");
-  return { qA, qB };
+  const startRes = await request(app)
+    .post("/api/quiz/start")
+    .set("Authorization", `Bearer ${token}`)
+    .send({ topicId: topic.topic_id, sessionType: "lesson" });
+  expect(startRes.status).toBe(201);
+  const sessionId = startRes.body.session?.id as string;
+  expect(sessionId).toBeTruthy();
+
+  const questions = startRes.body.questions as {
+    id: string;
+    question_type: string;
+    answers: { id: string; is_correct: boolean }[];
+  }[];
+  const q = questions.find((x) => x.question_type === "multiple_choice" && x.answers.some((a) => a.is_correct));
+  if (!q) throw new Error("fixture data: need an MC question with a correct answer in the lesson");
+  const qA = { question_id: q.id, answer_id: q.answers.find((a) => a.is_correct)!.id };
+
+  const qB = await db("answers")
+    .where({ is_correct: true })
+    .whereNot({ question_id: qA.question_id })
+    .select("question_id", "id as answer_id")
+    .first();
+  return { sessionId, qA, qB };
 }
 
 describe("POST /api/quiz/:sessionId/answer — cross-question answer ownership", () => {
   it("does not credit a correct answer that belongs to a different question", async () => {
     const { token } = await registerUser();
-    const { qA, qB } = await findTwoUnrelatedMcQuestions();
-
-    const startRes = await request(app)
-      .post("/api/quiz/start")
-      .set("Authorization", `Bearer ${token}`)
-      .send({ topicId: qA.topic_id, sessionType: "lesson" });
-    expect(startRes.status).toBe(201);
-    const sessionId = startRes.body.session?.id;
-    expect(sessionId).toBeTruthy();
+    const { sessionId, qA, qB } = await startWithTwoUnrelatedMcQuestions(token);
 
     // Exploit attempt: qA's question paired with qB's correct answer id.
     const exploitRes = await request(app)
@@ -42,13 +54,7 @@ describe("POST /api/quiz/:sessionId/answer — cross-question answer ownership",
 
   it("still credits a correctly-paired answer (sanity check)", async () => {
     const { token } = await registerUser();
-    const { qA } = await findTwoUnrelatedMcQuestions();
-
-    const startRes = await request(app)
-      .post("/api/quiz/start")
-      .set("Authorization", `Bearer ${token}`)
-      .send({ topicId: qA.topic_id, sessionType: "lesson" });
-    const sessionId = startRes.body.session?.id;
+    const { sessionId, qA } = await startWithTwoUnrelatedMcQuestions(token);
 
     const res = await request(app)
       .post(`/api/quiz/${sessionId}/answer`)

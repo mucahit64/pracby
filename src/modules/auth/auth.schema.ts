@@ -26,8 +26,9 @@ export const RegisterSchema = z.object({
             totalQuestions: z.number().int().min(0),
           }),
         )
+        .max(500)
         .optional(),
-      claimed_reward_step_ids: z.array(z.string()).optional(),
+      claimed_reward_step_ids: z.array(z.string()).max(500).optional(),
     })
     .optional(),
 });
@@ -46,8 +47,8 @@ export const MergeGuestProgressSchema = z.object({
       correctCount: z.number().int().min(0),
       totalQuestions: z.number().int().min(0),
     }),
-  ).default([]),
-  claimed_rewards: z.array(z.string()).default([]),
+  ).max(500).default([]),
+  claimed_rewards: z.array(z.string()).max(500).default([]),
   earned_acorns: z.number().int().min(0).default(0),
 });
 
