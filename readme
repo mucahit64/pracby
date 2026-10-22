@@ -83,15 +83,19 @@ pnpm dev
 # .env: DB_*, JWT_SECRET, ALLOWED_ORIGINS, RESEND_API_KEY, APP_URL, ADMIN_*, DOMAIN, BACKUP_REMOTE
 docker compose up -d --build
 
-# İlk kez SSL sertifikası (DNS'te alan adı ve www bu sunucuyu göstermeli)
-./init-ssl.sh pracby.com you@example.com
 ```
+
+**SSL:** pracby.com Cloudflare arkasında (proxy açık). nginx, `certbot/conf/live/pracby.com/` içindeki
+Cloudflare Origin sertifikasını kullanır (2041'e kadar geçerli, yenileme gerekmez); Cloudflare'de
+SSL modu "Full (strict)" olmalı. nginx gerçek ziyaretçi IP'sini `CF-Connecting-IP`'den alır
+(`nginx/nginx.conf`), Cloudflare IP listesi değişirse orası da güncellenmeli.
+`init-ssl.sh` / `renew.sh` yalnızca Cloudflare'siz, Let's Encrypt'li bir kurulum içindir; bu
+sunucuda çalıştırılırsa Origin sertifikasının yerine geçer.
 
 Host'un crontab'ına (`crontab -e`):
 
 ```cron
-0 */12 * * * /path/to/pracby/renew.sh >> /var/log/pracby-renew.log 2>&1
-0 3 * * *    /path/to/pracby/backup.sh >> /var/log/pracby-backup.log 2>&1
+0 3 * * * /path/to/pracby/backup.sh >> $HOME/pracby-backup.log 2>&1
 ```
 
 Yedekler `backups/` içinde 7 gün tutulur. Sunucu dışı kopya için `rclone config` ile bir hedef
