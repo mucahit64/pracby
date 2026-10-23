@@ -393,7 +393,7 @@ const statCards = computed(() => [
   { icon: 'fire', value: profile.value.currentStreak, label: 'Güncel Seri' },
   { icon: 'trophy', value: profile.value.maxStreak, label: 'En Uzun Seri' },
   { icon: 'target', value: profile.value.quizzesCompleted, label: 'Quiz' },
-  { icon: 'acorn', value: profile.value.acornBalance.toLocaleString('tr'), label: 'Acorn' },
+  { icon: 'acorn', value: profile.value.acornBalance.toLocaleString('tr'), label: 'Palamut' },
 ]);
 
 const weekDays = ref([

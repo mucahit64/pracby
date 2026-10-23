@@ -359,7 +359,7 @@
             </div>
             <div class="py-3 text-center">
               <div class="text-lg font-black text-amber-600">+{{ acornEarned }}</div>
-              <div class="text-[0.6rem] font-bold text-gray-400 uppercase">Acorn</div>
+              <div class="text-[0.6rem] font-bold text-gray-400 uppercase">Palamut</div>
             </div>
           </div>
         </div>

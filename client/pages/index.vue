@@ -140,6 +140,7 @@ interface Step {
   step_type: string;
   tests_required: number;
   reward_amount?: number;
+  reward_type?: string;
   progress: StepProgress | null;
 }
 
@@ -169,6 +170,7 @@ interface LessonNode {
   stepId?: string;
   sessionType: string;
   rewardAmount?: number;
+  rewardType?: string;
   bestScore?: number;
   colorBg?: string;
   colorBorder?: string;
@@ -308,6 +310,7 @@ function buildLessonNodes(topic: Topic, colorBg: string, colorBorder: string, co
         stepId: step.id,
         sessionType: 'lesson',
         rewardAmount: step.reward_amount,
+        rewardType: step.reward_type,
       });
     } else {
       nodes.push({
@@ -408,7 +411,8 @@ async function claimReward() {
   const node = rewardDialogNode.value;
   if (!node?.stepId) return;
 
-  const rewardAmount = node.rewardAmount ?? 10;
+  // Store-item chests only change the inventory, not the acorn balance (like the server).
+  const rewardAmount = node.rewardType === 'store_item' ? 0 : node.rewardAmount ?? 10;
   const token = getToken();
 
   if (!token) {

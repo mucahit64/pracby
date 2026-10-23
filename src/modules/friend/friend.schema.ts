@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const FriendRequestSchema = z.object({
-  username: z.string().min(1, "Username is required"),
+  username: z.string().min(1, "Kullanıcı adı gir"),
 });
 
 export const FriendActionSchema = z.object({
