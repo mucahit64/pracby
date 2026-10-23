@@ -12,7 +12,9 @@ useHead({
       name: "description", 
       content: "Pracby ile KPSS Tarih, Coğrafya ve Vatandaşlık derslerini oyun oynayarak, sıkılmadan öğrenin. 3D haritalı ve oyunlaştırılmış soru çözüm platformu." 
     },
-    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    // No zooming, like a native app: no pinch zoom and no auto zoom into
+    // focused inputs on iOS (plugins/no-zoom.client.ts covers iOS pinch)
+    { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" },
     
     { property: "og:title", content: "Pracby | Oyunlaştırılmış KPSS Platformu" },
     { property: "og:description", content: "KPSS'ye çalışmanın en eğlenceli yolu. Hemen test çözmeye başla!" },
@@ -66,6 +68,11 @@ useHead({
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  /* No double-tap zoom */
+  touch-action: manipulation;
+}
 
 html, body, #__nuxt {
   height: 100%;
