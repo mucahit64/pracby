@@ -2,6 +2,7 @@ import db from "../../db/knex";
 import { AppError } from "../../middleware/error";
 import type { PurchaseInput } from "./store.schema";
 import { regenerateEnergy } from "../user/user.service";
+import { freezeDays } from "../user/streak";
 
 export const getItems = async () => {
   return db("store_items").where({ is_active: true }).orderBy("price_acorn", "asc");
@@ -112,6 +113,11 @@ export const activateItem = async (userId: string, itemId: string) => {
       })
       .onConflict(["user_id", "item_type"])
       .merge({ expires_at: expiresAt });
+
+    // The days it covers keep the streak going even without a quiz
+    if (userItem.item_type === "streak_freeze") {
+      await freezeDays(trx, userId, new Date(), expiresAt);
+    }
 
     return { itemType: userItem.item_type, expiresAt };
   });

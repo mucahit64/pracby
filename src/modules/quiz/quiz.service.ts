@@ -9,6 +9,7 @@ import type {
   GuestReportQuestionInput,
 } from "./quiz.schema";
 import { regenerateEnergy, spendEnergyUpdate } from "../user/user.service";
+import { playedDay, recordQuizDay } from "../user/streak";
 
 // Normal test: fixed 10 questions from a specific test record
 // Step final: 15 questions from all tests in the step (2×d1, 7×d2, 6×d3)
@@ -405,44 +406,8 @@ export const finishSession = async (userId: string, sessionId: string, skipRewar
       await trx("user_stats").where({ user_id: userId }).increment("total_xp", xpEarned);
       await trx("user_stats").where({ user_id: userId }).increment("quizzes_completed", 1);
 
-      // Update streak
-      const today = new Date().toISOString().split("T")[0];
-      const currentStats = await trx("user_stats").where({ user_id: userId }).first();
-      const lastActive = currentStats?.last_active_date
-        ? (currentStats.last_active_date instanceof Date
-            ? currentStats.last_active_date.toISOString().split("T")[0]
-            : String(currentStats.last_active_date).split("T")[0])
-        : null;
-      const yesterday = new Date(Date.now() - 86400000).toISOString().split("T")[0];
-
-      let newStreak = currentStats?.current_streak ?? 0;
-      if (lastActive !== today) {
-        newStreak = lastActive === yesterday ? newStreak + 1 : 1;
-        const newMaxStreak = Math.max(newStreak, currentStats?.max_streak ?? 0);
-        await trx("user_stats").where({ user_id: userId }).update({
-          current_streak: newStreak,
-          streak: newStreak,
-          max_streak: newMaxStreak,
-          last_active_date: today,
-        });
-        // Upsert streak_history
-        const existing = await trx("streak_history").where({ user_id: userId, date: today }).first();
-        if (!existing) {
-          await trx("streak_history").insert({ user_id: userId, date: today, xp_earned: xpEarned, quizzes_completed: 1 });
-        } else {
-          await trx("streak_history").where({ user_id: userId, date: today })
-            .increment("xp_earned", xpEarned).increment("quizzes_completed", 1);
-        }
-      } else {
-        // Same day — just increment streak_history
-        const existing = await trx("streak_history").where({ user_id: userId, date: today }).first();
-        if (!existing) {
-          await trx("streak_history").insert({ user_id: userId, date: today, xp_earned: xpEarned, quizzes_completed: 1 });
-        } else {
-          await trx("streak_history").where({ user_id: userId, date: today })
-            .increment("xp_earned", xpEarned).increment("quizzes_completed", 1);
-        }
-      }
+      // Streak: answers sent one by one are recorded as they arrive, so it's today
+      await recordQuizDay(trx, userId, playedDay([]), xpEarned);
 
       // Update acorn balance
       if (acornEarned > 0) {
@@ -714,42 +679,8 @@ export const finishSessionWithAnswers = async (
       await trx("user_stats").where({ user_id: userId }).increment("total_xp", xpEarned);
       await trx("user_stats").where({ user_id: userId }).increment("quizzes_completed", 1);
 
-      // Update streak
-      const today = new Date().toISOString().split("T")[0];
-      const currentStats = await trx("user_stats").where({ user_id: userId }).first();
-      const lastActive = currentStats?.last_active_date
-        ? (currentStats.last_active_date instanceof Date
-            ? currentStats.last_active_date.toISOString().split("T")[0]
-            : String(currentStats.last_active_date).split("T")[0])
-        : null;
-      const yesterday = new Date(Date.now() - 86400000).toISOString().split("T")[0];
-
-      let newStreak = currentStats?.current_streak ?? 0;
-      if (lastActive !== today) {
-        newStreak = lastActive === yesterday ? newStreak + 1 : 1;
-        const newMaxStreak = Math.max(newStreak, currentStats?.max_streak ?? 0);
-        await trx("user_stats").where({ user_id: userId }).update({
-          current_streak: newStreak,
-          streak: newStreak,
-          max_streak: newMaxStreak,
-          last_active_date: today,
-        });
-        const existingStreak = await trx("streak_history").where({ user_id: userId, date: today }).first();
-        if (!existingStreak) {
-          await trx("streak_history").insert({ user_id: userId, date: today, xp_earned: xpEarned, quizzes_completed: 1 });
-        } else {
-          await trx("streak_history").where({ user_id: userId, date: today })
-            .increment("xp_earned", xpEarned).increment("quizzes_completed", 1);
-        }
-      } else {
-        const existingStreak = await trx("streak_history").where({ user_id: userId, date: today }).first();
-        if (!existingStreak) {
-          await trx("streak_history").insert({ user_id: userId, date: today, xp_earned: xpEarned, quizzes_completed: 1 });
-        } else {
-          await trx("streak_history").where({ user_id: userId, date: today })
-            .increment("xp_earned", xpEarned).increment("quizzes_completed", 1);
-        }
-      }
+      // Streak: the day the quiz was played (a queued offline result keeps its own day)
+      await recordQuizDay(trx, userId, playedDay(sentAnswers.map((a) => a.answeredAt)), xpEarned);
 
       // Update acorn balance
       if (acornEarned > 0) {

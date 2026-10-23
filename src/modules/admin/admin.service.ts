@@ -334,7 +334,10 @@ export const getDashboardStats = async () => {
   const [courses] = await db("courses").count("id as count");
 
   const today = new Date().toISOString().slice(0, 10);
-  const [activeToday] = await db("streak_history").where("date", today).countDistinct("user_id as count");
+  const [activeToday] = await db("streak_history")
+    .where("date", today)
+    .where("quizzes_completed", ">", 0) // not days only kept by a streak freeze
+    .countDistinct("user_id as count");
 
   const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString();
   const [newUsersWeek] = await db("users").where("created_at", ">=", weekAgo).count("id as count");

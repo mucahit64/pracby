@@ -112,7 +112,7 @@ export const getStreakHistory = async (userId: string) => {
   const rows = await db("streak_history")
     .where("user_id", userId)
     .whereIn("date", days)
-    .select("date", "quizzes_completed");
+    .select("date", "quizzes_completed", "frozen");
 
   const rowMap = new Map(rows.map((r) => [r.date instanceof Date ? r.date.toISOString().split("T")[0] : String(r.date).split("T")[0], r]));
   const todayStr = today.toISOString().split("T")[0];
@@ -122,6 +122,8 @@ export const getStreakHistory = async (userId: string) => {
     label: labels[i],
     date,
     done: (rowMap.get(date)?.quizzes_completed ?? 0) > 0,
+    // Kept by a streak freeze without a quiz
+    frozen: Boolean(rowMap.get(date)?.frozen) && !((rowMap.get(date)?.quizzes_completed ?? 0) > 0),
     isToday: date === todayStr,
   }));
 };
