@@ -61,7 +61,7 @@
           <div class="text-lg font-black text-white">{{ topic.name}}</div>
         </div>
 
-        <div class="flex flex-col items-center gap-2">
+        <div class="flex flex-col items-center gap-4">
           <div
             v-for="(node, nIdx) in buildLessonNodes(topic, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].bg, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].border, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].hex, TOPIC_COLORS[tIdx % TOPIC_COLORS.length].shadowHex)"
             :key="node.id"
@@ -72,7 +72,7 @@
               'translate-x-[65px]': nIdx % 5 === 2,
             }"
           >
-            <PbStepCoin v-bind="coinOf(node)" :size="84" @click="goToLesson(node)" />
+            <PbStepCoin v-bind="coinOf(node)" :size="76" @click="goToLesson(node)" />
           </div>
         </div>
       </div>
