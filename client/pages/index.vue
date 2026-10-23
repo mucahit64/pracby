@@ -1,11 +1,5 @@
 <template>
   <div class="flex flex-col gap-8 pb-10 flex-1 overflow-y-auto scrollbar-hide">
-    <!-- Offline banner -->
-    <div v-if="!isOnline" class="flex items-center gap-2 bg-gray-800 text-white text-sm font-semibold px-4 py-3 rounded-2xl">
-      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728M15.536 8.464a5 5 0 010 7.072M12 12h.01M6.343 6.343a9 9 0 000 12.728M9.172 9.172a5 5 0 000 7.071" /></svg>
-      İnternet bağlantısı yok. Bazı özellikler kullanılamayabilir.
-    </div>
-
     <!-- Sync loading banner -->
     <div v-if="syncing" class="flex items-center gap-2 bg-primary/10 border-2 border-primary/20 text-primary text-sm font-semibold px-4 py-3 rounded-2xl">
       <svg class="w-4 h-4 shrink-0 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>
@@ -252,7 +246,6 @@ watch([loadingFull, courseFull], async ([loading, full]) => {
 }, { immediate: true });
 
 const { syncPendingSessions, loadPending, syncPendingReports } = useOfflineQuiz();
-const isOnline = ref(true);
 const syncing = ref(false);
 
 async function runSync() {
@@ -269,13 +262,10 @@ async function runSync() {
   }
 }
 
-function setOnline() { isOnline.value = true; runSync(); }
-function setOffline() { isOnline.value = false; }
-
+// No offline banner on the web (it's expected to be online), but results
+// queued during a dropped connection are still sent once it is back.
 onMounted(() => {
-  isOnline.value = navigator.onLine;
-  window.addEventListener('online', setOnline);
-  window.addEventListener('offline', setOffline);
+  window.addEventListener('online', runSync);
 
   runSync();
 
@@ -286,8 +276,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  window.removeEventListener('online', setOnline);
-  window.removeEventListener('offline', setOffline);
+  window.removeEventListener('online', runSync);
   courseLabel.value = '';
   mapPickerOpen.value = false;
 });
