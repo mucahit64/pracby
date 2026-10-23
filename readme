@@ -92,6 +92,24 @@ SSL modu "Full (strict)" olmalı. nginx gerçek ziyaretçi IP'sini `CF-Connectin
 `init-ssl.sh` / `renew.sh` yalnızca Cloudflare'siz, Let's Encrypt'li bir kurulum içindir; bu
 sunucuda çalıştırılırsa Origin sertifikasının yerine geçer.
 
+### Otomatik deploy
+
+`main`'e push edilince CI testleri ve client build'i çalıştırır; geçerse `deploy` adımı sunucuya
+SSH ile bağlanıp `deploy.sh`'i çalıştırır (`git pull --ff-only` + `docker compose up -d --build --wait`).
+Elle deploy: sunucuda `./deploy.sh`. Kurulum (bir kez):
+
+1. Kendi bilgisayarında sadece deploy için bir anahtar üret:
+   `ssh-keygen -t ed25519 -N "" -C pracby-deploy -f ~/pracby-deploy`
+2. Sunucuda `~/.ssh/authorized_keys`'e, `~/pracby-deploy.pub` içeriğinin önüne şunu ekleyerek tek satır yaz
+   (anahtar yalnızca `deploy.sh`'i çalıştırabilir):
+   `command="/home/mucahit/pracby/deploy.sh",no-port-forwarding,no-agent-forwarding,no-X11-forwarding,no-pty ssh-ed25519 AAAA... pracby-deploy`
+3. GitHub → repo → Settings → Secrets and variables → Actions → New repository secret:
+   - `DEPLOY_HOST`: sunucu IP'si, `DEPLOY_PORT`: SSH portu, `DEPLOY_USER`: `mucahit`
+   - `DEPLOY_SSH_KEY`: `~/pracby-deploy` (gizli anahtar) dosyasının tamamı
+   - `DEPLOY_KNOWN_HOSTS`: `ssh-keygen -F '[<ip>]:<port>'` çıktısındaki satır (sunucunun parmak izi)
+4. Dene: `ssh -T -i ~/pracby-deploy -p <port> mucahit@<ip>` deploy'u çalıştırmalı. Sonra gizli anahtarı
+   bilgisayarından sil (`rm ~/pracby-deploy`); artık yalnızca GitHub'da durur.
+
 Host'un crontab'ına (`crontab -e`):
 
 ```cron

@@ -7,7 +7,8 @@ on:
 
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  # Pushes to main queue up instead: cancelling would stop a deploy halfway
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   api:
@@ -59,3 +60,31 @@ jobs:
           cache-dependency-path: client/pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile --ignore-workspace
       - run: pnpm build
+
+  # After the tests and the build pass on main, update the server (deploy.sh).
+  # Secrets (Settings → Secrets and variables → Actions): DEPLOY_HOST,
+  # DEPLOY_PORT, DEPLOY_USER, DEPLOY_SSH_KEY, DEPLOY_KNOWN_HOSTS. See readme.
+  deploy:
+    name: Deploy
+    needs: [api, client]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run deploy.sh on the server
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          HOST: ${{ secrets.DEPLOY_HOST }}
+          PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+        run: |
+          if [ -z "$SSH_KEY" ] || [ -z "$HOST" ]; then
+            echo "::warning::Deploy secrets are not set; skipping the deploy"
+            exit 0
+          fi
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          # The key is locked to deploy.sh on the server, so no command is sent
+          ssh -T -i ~/.ssh/deploy_key -p "$PORT" -o BatchMode=yes "$DEPLOY_USER@$HOST"
